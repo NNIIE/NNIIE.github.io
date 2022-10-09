@@ -1,6 +1,6 @@
-<div align="center">
+<div align>
 
-<div align=center>
+<div align>
 Hi
 <br>
 I am a Backend Developer
