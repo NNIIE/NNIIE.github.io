@@ -1,13 +1,6 @@
 <div align>
-ㅇㄹㅎ
+매일 새롭게 배운 또는 공부한 내용을 기록
 <div align>
-Hi
-<br>
-I am a Backend Developer
-<br>
-I am working in Seoul, South Korea
-<br>
-I study hard to become a good developer
-<div align=center><h1></h1></div>    
+<div align><h1></h1></div>    
 </div>
 TECH STACK
