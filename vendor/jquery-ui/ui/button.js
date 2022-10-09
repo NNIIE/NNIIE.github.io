@@ -34,15 +34,15 @@ var lastActive,
 		}, 1 );
 	},
 	radioGroup = function( radio ) {
-		var name = form-check.name,
-			form = form-check.form,
+		var name = radio.name,
+			form = radio.form,
 			radios = $( [] );
 		if ( name ) {
 			name = name.replace( /'/g, "\\'" );
 			if ( form ) {
 				radios = $( form ).find( "[name='" + name + "'][type=radio]" );
 			} else {
-				radios = $( "[name='" + name + "'][type=radio]", form-check.ownerDocument )
+				radios = $( "[name='" + name + "'][type=radio]", radio.ownerDocument )
 					.filter(function() {
 						return !this.form;
 					});
