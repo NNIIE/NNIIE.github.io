@@ -1,5 +1,0 @@
-Template.layout.onRendered(function(){
-
-
-});
-
