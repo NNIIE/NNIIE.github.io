@@ -2,7 +2,6 @@
 
 # Import the theme
 theme: jekyll-theme-chirpy
-remote_theme : cotes2020/jekyll-theme-chirpy
 
 # Change the following value to '/PROJECT_NAME' ONLY IF your site type is GitHub Pages Project sites
 # and doesn't have a custom domain.
@@ -28,7 +27,7 @@ description: >-                        # used by seo meta and the atom feed
   A minimal, responsive, and powerful Jekyll theme for presenting professional writing.
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
-url: 'https://NNIIE.github.io'
+url: 'https://nniie.github.io/'
 
 github:
   username: github_username             # change to your github username
@@ -199,4 +198,3 @@ jekyll-archives:
   permalinks:
     tag: /tags/:name/
     category: /categories/:name/
-    
