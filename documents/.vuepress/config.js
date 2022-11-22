@@ -73,10 +73,10 @@ module.exports = {
     ],
     nav: [{
         text: 'GitHub',
-        link: 'https://github.com/milooy/'
+        link: 'https://github.com/NNIIE/'
       }, {
         text: 'Blog',
-        link: 'https://milooy.wordpress.com/'
+        link: 'https://velog.io/@kakdark'
       }
     ]
   },
