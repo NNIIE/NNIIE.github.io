@@ -16,16 +16,16 @@ minimal_mistakes_skin    : "mint" # "air", "aqua", "contrast", "dark", "dirt", "
 
 # Site Settings
 locale                   : "ko-KR"
-title                    : "테디노트"
+title                    : "NNIIE"
 title_separator          : "|"
-subtitle                 : "small positive action"
-name                     : "TeddyNote"
-description              : "테디노트의 블로그 입니다"
-url                      : "https://teddynote.github.io"
+subtitle                 : "backend developer"
+name                     : "NNIIE"
+description              : "nniie의 블로그 입니다"
+url                      : "https://nniie.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
-logo                     : "/assets/images/teddynote.png"
+logo                     : "/images/2021-05-10-first-posting/profile_image.png"
 masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
 breadcrumbs              : true # true, false (default)
 words_per_minute         : 200
@@ -94,24 +94,24 @@ analytics:
 
 # Site Author
 author:
-  name             : "TeddyNote"
+  name             : "NNIIE"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "테디노트의 샘플 블로그입니다"
+  bio              : "NNIIE 의 블로그"
   location         : "South Korea"
   email            : 
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
-      url: "mailto:teddylee777@gmail.com"
-    - label: "Website"
+      url: "mailto:greg0917@naver.com"
+    - label: "Velog"
       icon: "fas fa-fw fa-link"
-      url: "https://teddylee777.github.io"
+      url: "https://velog.io/@kakdark"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/teddylee777"
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
-      url: "https://instagram.com/teddynote"
+      url: "https://github.com/NNIIE"
+    # - label: "Instagram"
+    #   icon: "fab fa-fw fa-instagram"
+    #   url: "https://instagram.com/teddynote"
 
 # Site Footer
 footer:
