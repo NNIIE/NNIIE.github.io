@@ -1,5 +1,7 @@
 # [TIL](https://nniie.github.io/) - 매일 새롭게 배운 내용을 정리
 
+[blog변경](https://mmistakes.github.io/minimal-mistakes/docs/configuration/)
+
 <!-- [![LICENSE](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/mmistakes/minimal-mistakes/master/LICENSE)
 [![Jekyll](https://img.shields.io/badge/jekyll-%3E%3D%203.7-blue.svg)](https://jekyllrb.com/)
 [![Ruby gem](https://img.shields.io/gem/v/minimal-mistakes-jekyll.svg)](https://rubygems.org/gems/minimal-mistakes-jekyll)
