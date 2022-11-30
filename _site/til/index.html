@@ -239,7 +239,7 @@
           <aside class="sidebar__right ">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> TIL</h4></header>
-              <ul class="toc__menu"><li><a href="#equals--hashcode">equals &amp; hashcode</a><ul><li><a href="#equals">equals</a></li><li><a href="#hashcode">hashcode</a><ul><li><a href="#hashtable">HashTable</a></li></ul></li><li><a href="#equals-와-hashcode를-같이-재정의-하는-이유">equals() 와 hashcode()를 같이 재정의 하는 이유</a></li></ul></li></ul>
+              <ul class="toc__menu"><li><a href="#equals--hashcode">equals &amp; hashcode</a><ul><li><a href="#equals">equals</a></li><li><a href="#hashcode">hashcode</a><ul><li><a href="#hashtable">HashTable</a></li></ul></li><li><a href="#equals-와-hashcode를-같이-재정의-하는-이유">equals() 와 hashcode()를 같이 재정의 하는 이유</a></li></ul></li><li><a href="#정적-팩토리-메소드">정적 팩토리 메소드</a></li></ul>
 
             </nav>
           </aside>
@@ -333,6 +333,9 @@ HashTable에 put 메서드로 객체를 추가하는 경우
 따라서 역시 원하는 객체를 찾을 수 없다.
 <br />
 이러한 이유로 객체의 정확한 동등 비교를 위해서는 (특히 Hash 관련 컬렉션 프레임워크를 사용할때!) Object의 equals() 메소드만 재정의하지 말고 hashCode()메소드도 재정의해서 논리적 동등 객체일경우 동일한 해시코드가 리턴되도록 해야한다.</p>
+
+<h1 id="정적-팩토리-메소드">정적 팩토리 메소드</h1>
+<p><strong><em>생성자 대신 정적 팩토리 메서드를 고려하라</em></strong></p>
 
 
         
