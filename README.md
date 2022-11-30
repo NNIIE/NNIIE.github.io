@@ -1,4 +1,5 @@
-# [TIL](https://nniie.github.io/) - 매일 새롭게 배운 내용을 자유롭게 정리
+# Today I Learned - 매일 새롭게 배운 내용을 자유롭게 정리
+[https://nniie.github.io/](https://nniie.github.io/)
 
 [configuration](https://mmistakes.github.io/minimal-mistakes/docs/configuration/)
 
