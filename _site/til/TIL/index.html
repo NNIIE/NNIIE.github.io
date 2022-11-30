@@ -9,7 +9,7 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>22.11.4 | NNIIE</title>
+<!-- begin _includes/seo.html --><title>22.11 | NNIIE</title>
 <meta name="description" content="">
 
 
@@ -22,8 +22,8 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="NNIIE">
-<meta property="og:title" content="22.11.4">
-<meta property="og:url" content="http://localhost:4000/til/">
+<meta property="og:title" content="22.11">
+<meta property="og:url" content="http://localhost:4000/til/TIL/">
 
 
   <meta property="og:description" content="">
@@ -45,7 +45,7 @@
   
 
 
-<link rel="canonical" href="http://localhost:4000/til/">
+<link rel="canonical" href="http://localhost:4000/til/TIL/">
 
 
 
@@ -179,7 +179,17 @@
         <span class="sep">/</span>
       
       
-        <li class="current">22.11.4</li>
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/categories/#til" itemprop="item"><span itemprop="name">Til</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">22.11</li>
       
     
   </ol>
@@ -193,7 +203,7 @@
 
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="22.11.4">
+    <meta itemprop="headline" content="22.11">
     <meta itemprop="description" content="">
     <meta itemprop="datePublished" content="2022-11-24T00:00:00+09:00">
     
@@ -201,7 +211,7 @@
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">22.11.4
+          <h1 id="page-title" class="page__title" itemprop="headline">22.11
 </h1>
           
 
@@ -224,7 +234,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          2 분 소요
+          1 분 소요
         
       </span>
     
@@ -239,7 +249,7 @@
           <aside class="sidebar__right ">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> TIL</h4></header>
-              <ul class="toc__menu"><li><a href="#equals--hashcode">equals &amp; hashcode</a><ul><li><a href="#equals">equals</a></li><li><a href="#hashcode">hashcode</a><ul><li><a href="#hashtable">HashTable</a></li></ul></li><li><a href="#equals-와-hashcode를-같이-재정의-하는-이유">equals() 와 hashcode()를 같이 재정의 하는 이유</a></li></ul></li><li><a href="#정적-팩토리-메소드">정적 팩토리 메소드</a><ul><li><a href="#장점">장점</a><ul><li><a href="#1-이름을-가질-수-있다">1. 이름을 가질 수 있다.</a></li></ul></li></ul></li></ul>
+              <ul class="toc__menu"><li><a href="#equals--hashcode">equals &amp; hashcode</a><ul><li><a href="#equals">equals</a></li><li><a href="#hashcode">hashcode</a><ul><li><a href="#hashtable">HashTable</a></li></ul></li><li><a href="#equals-와-hashcode를-같이-재정의-하는-이유">equals() 와 hashcode()를 같이 재정의 하는 이유</a></li></ul></li></ul>
 
             </nav>
           </aside>
@@ -334,51 +344,6 @@ HashTable에 put 메서드로 객체를 추가하는 경우
 <br />
 이러한 이유로 객체의 정확한 동등 비교를 위해서는 (특히 Hash 관련 컬렉션 프레임워크를 사용할때!) Object의 equals() 메소드만 재정의하지 말고 hashCode()메소드도 재정의해서 논리적 동등 객체일경우 동일한 해시코드가 리턴되도록 해야한다.</p>
 
-<h1 id="정적-팩토리-메소드">정적 팩토리 메소드</h1>
-<p><strong><em>생성자 대신 정적 팩토리 메서드를 고려하라</em></strong>
-<br />
-<br />
-클라이언트가 클래스의 인스턴스를 얻는 전통적인 수단은 public 생성자 이다.
-<br />
-하지만 클래스는 public생성자와 대신 (혹은 생성자와 함께) 정적 팩터리 메서드를 제공할 수 있다.
-<br /></p>
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 정적 팩토리 메소드 ex</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Person</span> <span class="o">{</span>
-
-    <span class="kd">private</span> <span class="kd">final</span> <span class="nc">String</span> <span class="n">name</span><span class="o">;</span>
-    <span class="kd">private</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">age</span><span class="o">;</span>
-
-    <span class="kd">private</span> <span class="nf">Person</span><span class="o">(</span><span class="nc">String</span> <span class="n">name</span><span class="o">,</span> <span class="kt">int</span> <span class="n">age</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">this</span><span class="o">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">;</span>
-        <span class="k">this</span><span class="o">.</span><span class="na">age</span> <span class="o">=</span> <span class="n">age</span><span class="o">;</span>
-    <span class="o">}</span>
-
-    <span class="kd">public</span> <span class="kd">static</span> <span class="nc">Person</span> <span class="nf">of</span><span class="o">(</span><span class="nc">String</span> <span class="n">name</span><span class="o">,</span> <span class="kt">int</span> <span class="n">age</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">return</span> <span class="k">new</span> <span class="nf">Person</span><span class="o">(</span><span class="n">name</span><span class="o">,</span> <span class="n">age</span><span class="o">);</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-</code></pre></div></div>
-
-<h2 id="장점">장점</h2>
-<h3 id="1-이름을-가질-수-있다">1. 이름을 가질 수 있다.</h3>
-
-<p>생성자에 넘기는 매개변수와 생성자 만으로는 반환될 객체의 특성을 제대로 파악하기 힘들다.
-<br />
-그러나 정적 팩터리는 네이밍이 가능함으로 반환될 객체의 특성을 쉽게 파악할 수 있다.</p>
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Car</span> <span class="o">{</span>
-
-    <span class="kd">private</span> <span class="kd">final</span> <span class="nc">String</span> <span class="n">brand</span><span class="o">;</span>
-
-    <span class="kd">private</span> <span class="nf">Car</span><span class="o">(</span><span class="nc">String</span> <span class="n">brand</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">this</span><span class="o">.</span><span class="na">brand</span> <span class="o">=</span> <span class="n">brand</span><span class="o">;</span>
-    <span class="o">}</span>
-
-    <span class="kd">public</span> <span class="kd">static</span> <span class="nc">Car</span> <span class="nf">brandFrom</span><span class="o">(</span><span class="nc">String</span> <span class="n">brand</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">return</span> <span class="k">new</span> <span class="nf">Car</span><span class="o">(</span><span class="n">brand</span><span class="o">);</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-</code></pre></div></div>
-
 
         
       </section>
@@ -395,11 +360,7 @@ HashTable에 put 메서드로 객체를 추가하는 경우
     <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
     <span itemprop="keywords">
     
-      <a href="/tags/#java" class="page__taxonomy-item" rel="tag">java</a><span class="sep">, </span>
-    
-      <a href="/tags/#%EB%94%94%EC%9E%90%EC%9D%B8%ED%8C%A8%ED%84%B4" class="page__taxonomy-item" rel="tag">디자인패턴</a><span class="sep">, </span>
-    
-      <a href="/tags/#%EC%9D%B4%ED%8E%99%ED%8B%B0%EB%B8%8C%EC%9E%90%EB%B0%94" class="page__taxonomy-item" rel="tag">이펙티브자바</a>
+      <a href="/tags/#java" class="page__taxonomy-item" rel="tag">Java</a>
     
     </span>
   </p>
@@ -434,15 +395,25 @@ HashTable에 put 메서드로 객체를 추가하는 경우
     <h4 class="page__share-title">공유하기</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=22.11.4%20http%3A%2F%2Flocalhost%3A4000%2Ftil%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=22.11%20http%3A%2F%2Flocalhost%3A4000%2Ftil%2FTIL%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Ftil%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Ftil%2FTIL%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Ftil%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Ftil%2FTIL%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
+  <nav class="pagination">
+    
+      <a href="#" class="pagination--pager disabled">이전</a>
+    
+    
+      <a href="/effective_java/%EC%9D%B4%ED%8E%99%ED%8B%B0%EB%B8%8C%EC%9E%90%EB%B0%94/" class="pagination--pager" title="이펙티브 자바 - 객체 생성과 파괴
+">다음</a>
+    
+  </nav>
+
     </div>
 
     
@@ -455,9 +426,55 @@ HashTable에 put 메서드로 객체를 추가하는 경우
       <div class="grid__wrapper">
         
           
-            
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/effective_java/%EC%9D%B4%ED%8E%99%ED%8B%B0%EB%B8%8C%EC%9E%90%EB%B0%94/" rel="permalink">이펙티브 자바 - 객체 생성과 파괴
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-11-30T00:00:00+09:00">2022-11-30</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          2 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+</p>
+  </article>
+</div>
+
+        
       </div>
     </div>
+  
   
 </div>
 
@@ -507,8 +524,8 @@ HashTable에 put 메서드로 객체를 추가하는 경우
     
   <script>
     var disqus_config = function () {
-      this.page.url = "http://localhost:4000/til/";  /* Replace PAGE_URL with your page's canonical URL variable */
-      this.page.identifier = "/"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+      this.page.url = "http://localhost:4000/til/TIL/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/til/TIL"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
     };
     (function() { /* DON'T EDIT BELOW THIS LINE */
       var d = document, s = d.createElement('script');
