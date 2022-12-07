@@ -249,7 +249,7 @@
           <aside class="sidebar__right ">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> TIL</h4></header>
-              <ul class="toc__menu"><li><a href="#lombok">lombok</a><ul><li><a href="#getter---prefix">@getter - prefix</a></li><li><a href="#noargsconstructor">@NoArgsConstructor</a></li><li><a href="#allargsconstructor">@AllArgsConstructor</a></li><li><a href="#requireargsconstructor">@RequireArgsConstructor</a></li><li><a href="#data">@Data</a></li></ul></li></ul>
+              <ul class="toc__menu"><li><a href="#lombok">lombok</a><ul><li><a href="#getter---prefix">@getter - prefix</a></li><li><a href="#builder">@Builder</a></li><li><a href="#noargsconstructor">@NoArgsConstructor</a></li><li><a href="#allargsconstructor">@AllArgsConstructor</a></li><li><a href="#requireargsconstructor">@RequireArgsConstructor</a></li><li><a href="#data">@Data</a></li></ul></li></ul>
 
             </nav>
           </aside>
@@ -299,6 +299,25 @@
     <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">getIsMan</span><span class="o">()</span> <span class="o">{</span>
         <span class="k">return</span> <span class="n">isMan</span><span class="o">;</span>
     <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h2 id="builder">@Builder</h2>
+<p>생성자 대신 builder 패턴 적용</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Getter</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Person</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">name</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">age</span><span class="o">;</span>
+
+    <span class="nd">@Builder</span>
+    <span class="kd">public</span> <span class="nf">Person</span><span class="o">(</span><span class="nc">String</span> <span class="n">name</span><span class="o">,</span> <span class="kt">int</span> <span class="n">age</span><span class="o">){</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">;</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">age</span> <span class="o">=</span> <span class="n">age</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="c1">// 사용</span>
+    <span class="nc">Person</span><span class="o">.</span><span class="na">builder</span><span class="o">().</span><span class="na">name</span><span class="o">(</span><span class="s">"이름"</span><span class="o">).</span><span class="na">age</span><span class="o">(</span><span class="mi">1</span><span class="o">).</span><span class="na">build</span><span class="o">();</span>
 <span class="o">}</span>
 </code></pre></div></div>
 

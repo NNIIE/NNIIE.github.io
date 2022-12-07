@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-12-07T19:19:18+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">22.12</title><link href="http://localhost:4000/til/1-TIL/" rel="alternate" type="text/html" title="22.12" /><published>2022-12-04T00:00:00+09:00</published><updated>2022-12-04T00:00:00+09:00</updated><id>http://localhost:4000/til/1-TIL</id><content type="html" xml:base="http://localhost:4000/til/1-TIL/"><![CDATA[<p><br /><br /><br /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-12-07T19:35:56+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">22.12</title><link href="http://localhost:4000/til/1-TIL/" rel="alternate" type="text/html" title="22.12" /><published>2022-12-04T00:00:00+09:00</published><updated>2022-12-04T00:00:00+09:00</updated><id>http://localhost:4000/til/1-TIL</id><content type="html" xml:base="http://localhost:4000/til/1-TIL/"><![CDATA[<p><br /><br /><br /></p>
 
 <h1 id="lombok">lombok</h1>
 <h2 id="getter---prefix">@getter - prefix</h2>
@@ -43,6 +43,25 @@
     <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">getIsMan</span><span class="o">()</span> <span class="o">{</span>
         <span class="k">return</span> <span class="n">isMan</span><span class="o">;</span>
     <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h2 id="builder">@Builder</h2>
+<p>생성자 대신 builder 패턴 적용</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Getter</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Person</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">name</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">age</span><span class="o">;</span>
+
+    <span class="nd">@Builder</span>
+    <span class="kd">public</span> <span class="nf">Person</span><span class="o">(</span><span class="nc">String</span> <span class="n">name</span><span class="o">,</span> <span class="kt">int</span> <span class="n">age</span><span class="o">){</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">;</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">age</span> <span class="o">=</span> <span class="n">age</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="c1">// 사용</span>
+    <span class="nc">Person</span><span class="o">.</span><span class="na">builder</span><span class="o">().</span><span class="na">name</span><span class="o">(</span><span class="s">"이름"</span><span class="o">).</span><span class="na">age</span><span class="o">(</span><span class="mi">1</span><span class="o">).</span><span class="na">build</span><span class="o">();</span>
 <span class="o">}</span>
 </code></pre></div></div>
 
