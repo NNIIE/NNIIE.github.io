@@ -234,7 +234,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          최대 1 분 소요
+          1 분 소요
         
       </span>
     
@@ -249,7 +249,7 @@
           <aside class="sidebar__right ">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> TIL</h4></header>
-              <ul class="toc__menu"><li><a href="#lombok">lombok</a><ul><li><a href="#getter---prefix">@getter - prefix</a></li></ul></li></ul>
+              <ul class="toc__menu"><li><a href="#lombok">lombok</a><ul><li><a href="#getter---prefix">@getter - prefix</a></li><li><a href="#noargsconstructor">@NoArgsConstructor</a></li><li><a href="#allargsconstructor">@AllArgsConstructor</a></li><li><a href="#requireargsconstructor">@RequireArgsConstructor</a></li><li><a href="#data">@Data</a></li></ul></li></ul>
 
             </nav>
           </aside>
@@ -303,10 +303,60 @@
 </code></pre></div></div>
 
 <p><br />
-같은 이름과 같은 매게변수를 가진 메서드가 있으면 @Getter는 메서드를 생성하지 않는다.
-<br />
-그냥 이방법을 쓰자.</p>
+같은 이름과 같은 매게변수를 가진 메서드가 있으면 @Getter는 메서드를 생성하지 않는다.</p>
 
+<h2 id="noargsconstructor">@NoArgsConstructor</h2>
+<p>파라미터 없는 기본생성자</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@NoArgsConstructor</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Person</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">name</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">age</span><span class="o">;</span>
+<span class="o">}</span>
+
+<span class="c1">// 기본생성자 생성</span>
+<span class="kd">public</span> <span class="nf">Person</span><span class="o">()</span> <span class="o">{</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h2 id="allargsconstructor">@AllArgsConstructor</h2>
+<p>모든 필드값을 파라미터로 받는 생성자</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@AllArgsConstructor</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Person</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">name</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">age</span><span class="o">;</span>
+<span class="o">}</span>
+
+<span class="c1">// 모든 필드를 가진 생성자 생성</span>
+<span class="kd">public</span> <span class="nf">Person</span><span class="o">(</span><span class="nc">String</span> <span class="n">name</span><span class="o">,</span> <span class="kt">int</span> <span class="n">age</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">;</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">age</span> <span class="o">=</span> <span class="n">age</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h2 id="requireargsconstructor">@RequireArgsConstructor</h2>
+<p>final이나 @NonNull인 필드 값만 파라미터로 받는 생성자 생성</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@RequireArgsConstructor</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Person</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="kt">long</span> <span class="n">id</span><span class="o">;</span> 
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">name</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">age</span><span class="o">;</span>
+<span class="o">}</span>
+
+<span class="c1">// final이나 @NonNull인 필드를 가진 생성자 생성</span>
+<span class="kd">public</span> <span class="nf">Person</span><span class="o">(</span><span class="kt">long</span> <span class="n">id</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">id</span> <span class="o">=</span> <span class="n">id</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h2 id="data">@Data</h2>
+<p>@Getter @Setter @ToString @EqualsAndHashCode @RequiredArgsConstructor 자동생성
+<br />
+최대한 지양하자</p>
+<ul>
+  <li>무분별한 getter / setter 남용</li>
+  <li>ToString으로 인한 양방향 연관관계시 순환 참조 문제</li>
+</ul>
 
         
       </section>
