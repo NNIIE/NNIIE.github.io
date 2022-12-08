@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-12-08T23:44:31+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">22.12</title><link href="http://localhost:4000/til/1-TIL/" rel="alternate" type="text/html" title="22.12" /><published>2022-12-04T00:00:00+09:00</published><updated>2022-12-04T00:00:00+09:00</updated><id>http://localhost:4000/til/1-TIL</id><content type="html" xml:base="http://localhost:4000/til/1-TIL/"><![CDATA[<p><br /><br /><br /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-12-08T23:59:41+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">22.12</title><link href="http://localhost:4000/til/1-TIL/" rel="alternate" type="text/html" title="22.12" /><published>2022-12-04T00:00:00+09:00</published><updated>2022-12-04T00:00:00+09:00</updated><id>http://localhost:4000/til/1-TIL</id><content type="html" xml:base="http://localhost:4000/til/1-TIL/"><![CDATA[<p><br /><br /><br /></p>
 
 <h1 id="lombok">lombok</h1>
 <h2 id="getter---prefix">@getter - prefix</h2>
@@ -121,11 +121,33 @@
   <li>ToString으로 인한 양방향 연관관계시 순환 참조 문제</li>
 </ul>
 
+<p><br /></p>
+
 <h1 id="maven--gradle">maven / gradle</h1>
 <p>빌드관리도구
 <br /></p>
 <ul>
   <li>소스코드에서 어플리케이션 생성을 하면서 여러가지 여부 라이브러리를 사용하는데, 빌드 관리 도구는 사용자가 직접 관리할 필요 없이 필요한 라이브러리들을 자동으로 관리한다.</li>
+</ul>
+
+<h2 id="maven">maven</h2>
+<ul>
+  <li>java용 프로젝트 관리 도구로 Apache 의 Ant 대안으로 만들어졌다.</li>
+  <li>빌드중인 프로젝트, 빌드순서, 외부라이브러리 종속성 관계를 pom.xml파일에 명시</li>
+  <li>멀티프로젝트에서 특정 설정을 다른 모듈에서 사용하려면 <strong><em>상속</em></strong>방식 사용</li>
+</ul>
+
+<h2 id="gradle">gradle</h2>
+<ul>
+  <li>JVM의 스크립트 언어인 groovy로 만들어졌다.</li>
+  <li>멀티프로젝트에서 특정 설정을 다른 모듈에서 사용하려면 <strong><em>설정주입</em></strong>방식 사용</li>
+</ul>
+
+<h2 id="maven-vs-gradle">maven vs gradle</h2>
+<ul>
+  <li>gradle 은 빌드시 <strong><em>변경된 파일만 작업</em></strong>하기 때문에 maven 보다 빠름 (10~100배)</li>
+  <li>gradle 은 스크립트 언어로 프로젝트가 커질수록 가독성이 maven 보다 좋음</li>
+  <li>gradle 이 멀티 프로젝트에 maven보다 적합하다.</li>
 </ul>]]></content><author><name>NNIIE</name></author><category term="TIL" /><category term="lombok" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">이펙티브 자바 - 객체 생성과 파괴</title><link href="http://localhost:4000/effective_java/%EC%9D%B4%ED%8E%99%ED%8B%B0%EB%B8%8C%EC%9E%90%EB%B0%94/" rel="alternate" type="text/html" title="이펙티브 자바 - 객체 생성과 파괴" /><published>2022-11-30T00:00:00+09:00</published><updated>2022-11-30T00:00:00+09:00</updated><id>http://localhost:4000/effective_java/%EC%9D%B4%ED%8E%99%ED%8B%B0%EB%B8%8C%EC%9E%90%EB%B0%94</id><content type="html" xml:base="http://localhost:4000/effective_java/%EC%9D%B4%ED%8E%99%ED%8B%B0%EB%B8%8C%EC%9E%90%EB%B0%94/"><![CDATA[<p><br /><br /><br /></p>
 
 <h1 id="정적-팩토리-메소드">정적 팩토리 메소드</h1>
