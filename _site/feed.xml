@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-12-09T00:04:59+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">22.12</title><link href="http://localhost:4000/til/1-TIL/" rel="alternate" type="text/html" title="22.12" /><published>2022-12-04T00:00:00+09:00</published><updated>2022-12-04T00:00:00+09:00</updated><id>http://localhost:4000/til/1-TIL</id><content type="html" xml:base="http://localhost:4000/til/1-TIL/"><![CDATA[<p><br /><br /><br /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-12-12T19:57:46+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">22.12</title><link href="http://localhost:4000/til/1-TIL/" rel="alternate" type="text/html" title="22.12" /><published>2022-12-04T00:00:00+09:00</published><updated>2022-12-04T00:00:00+09:00</updated><id>http://localhost:4000/til/1-TIL</id><content type="html" xml:base="http://localhost:4000/til/1-TIL/"><![CDATA[<p><br /><br /><br /></p>
 
 <h1 id="lombok">lombok</h1>
 <h2 id="getter---prefix">@getter - prefix</h2>
@@ -148,7 +148,44 @@
   <li>gradle 은 빌드시 <strong><em>변경된 파일만 작업</em></strong>하기 때문에 maven 보다 빠름 (10~100배)</li>
   <li>gradle 은 스크립트 언어로 프로젝트가 커질수록 가독성이 maven 보다 좋음</li>
   <li>gradle 이 멀티 프로젝트에 maven보다 적합하다.</li>
-</ul>]]></content><author><name>NNIIE</name></author><category term="TIL" /><category term="lombok" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">이펙티브 자바 - 객체 생성과 파괴</title><link href="http://localhost:4000/effective_java/%EC%9D%B4%ED%8E%99%ED%8B%B0%EB%B8%8C%EC%9E%90%EB%B0%94/" rel="alternate" type="text/html" title="이펙티브 자바 - 객체 생성과 파괴" /><published>2022-11-30T00:00:00+09:00</published><updated>2022-11-30T00:00:00+09:00</updated><id>http://localhost:4000/effective_java/%EC%9D%B4%ED%8E%99%ED%8B%B0%EB%B8%8C%EC%9E%90%EB%B0%94</id><content type="html" xml:base="http://localhost:4000/effective_java/%EC%9D%B4%ED%8E%99%ED%8B%B0%EB%B8%8C%EC%9E%90%EB%B0%94/"><![CDATA[<p><br /><br /><br /></p>
+</ul>
+
+<p><br /></p>
+
+<h1 id="oom-java-out-of-memory">OOM (java Out Of Memory)</h1>
+<h2 id="자바의-메모리">자바의 메모리</h2>
+<p>자바는 가비지컬렉터로 메모리 관리를 한다.
+<br />
+덕분에 개발자는 메모리에 큰 신경을 쓰지 않고 코드를 작성할수 있다
+<br />
+하지만 가비지컬렉터가 정리해야 할 메모리가 정리되지 못하고 계속 메모리에 남아있게 되는걸 Memory Leak(메모리 누수)
+라고 한다. 
+<br />
+메모리 릭이 계속 될 경우 결국 JVM이 종료되고 만다. 
+<br />
+메모리 릭의 양이 아주 작고 메모리는 많은 경우에는 주기적으로 JVM을 재시작 하면서 크게 신경안써도 될 경우도 있지만, 메모리릭이 빠르게 증가하는 경우에는 반드시 해결해줘야 한다</p>
+
+<h2 id="왜-발생">왜 발생?</h2>
+<p>메모리가 부족하기 때문이다. 한정된 서버 자원에 여러 어플리케이션을 띄운다던가
+<br />
+static같은 정적 메모리를 남발하여 지워지지 않고 계속 쌓일경우 이다.</p>
+
+<h2 id="어떻게-찾을까">어떻게 찾을까?</h2>
+<ol>
+  <li>JVM이 oom 에러로 정지된걸 확인</li>
+  <li>정지된 JVM 메모리영역을 확인했더니 특정 영역이 Full로 가득차있고, GC후 메모리할당에 실패하는걸 확인</li>
+  <li>코드레벨 (대게 싱글톤이나 static 잘못사용)</li>
+  <li>쓰레드생성이나 JNI에서 oom이 일어날 경우 OS의 자원소진일 수 있다. 이경우 외부자원을 조심스럽게 쓰던지 외부자원량을 늘림</li>
+  <li>외부 라이브러리가 많을 경우 문제해결이 쉽지않다. JVM옵션과 tool의 도움을 받자</li>
+  <li>옵션 추가
+    <ul>
+      <li>JVM 시작시 -verbose:gc옵션을 추가 - 가비지콜렉션 로그를 자세히 볼수있음</li>
+      <li>JVM 시작시에 -XX:+HeapDumpOnOutOfMemoryError 추가 - JVM 정지시에 힙덤프를 받아놓을수 있음</li>
+      <li>JVM 시작시에  –verbose:class옵션을 추가 - 클래스 로드, 언로드 상황을 볼수 있음</li>
+    </ul>
+  </li>
+  <li>힙덤프 내역을 분석</li>
+</ol>]]></content><author><name>NNIIE</name></author><category term="TIL" /><category term="lombok" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">이펙티브 자바 - 객체 생성과 파괴</title><link href="http://localhost:4000/effective_java/%EC%9D%B4%ED%8E%99%ED%8B%B0%EB%B8%8C%EC%9E%90%EB%B0%94/" rel="alternate" type="text/html" title="이펙티브 자바 - 객체 생성과 파괴" /><published>2022-11-30T00:00:00+09:00</published><updated>2022-11-30T00:00:00+09:00</updated><id>http://localhost:4000/effective_java/%EC%9D%B4%ED%8E%99%ED%8B%B0%EB%B8%8C%EC%9E%90%EB%B0%94</id><content type="html" xml:base="http://localhost:4000/effective_java/%EC%9D%B4%ED%8E%99%ED%8B%B0%EB%B8%8C%EC%9E%90%EB%B0%94/"><![CDATA[<p><br /><br /><br /></p>
 
 <h1 id="정적-팩토리-메소드">정적 팩토리 메소드</h1>
 <p><br />
