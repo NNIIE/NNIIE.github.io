@@ -3,8 +3,8 @@
 
 [configuration](https://mmistakes.github.io/minimal-mistakes/docs/configuration/)
 
-```bash
-$ bundle exec jekyll serve
+```java
+bundle exec jekyll serve
 ```
 
 <!-- [![LICENSE](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/mmistakes/minimal-mistakes/master/LICENSE)
