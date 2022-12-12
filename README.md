@@ -3,7 +3,7 @@
 
 [configuration](https://mmistakes.github.io/minimal-mistakes/docs/configuration/)
 
-```java
+```bash
 $ bundle exec jekyll serve
 ```
 
