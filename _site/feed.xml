@@ -1,4 +1,30 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-12-12T19:57:46+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">22.12</title><link href="http://localhost:4000/til/1-TIL/" rel="alternate" type="text/html" title="22.12" /><published>2022-12-04T00:00:00+09:00</published><updated>2022-12-04T00:00:00+09:00</updated><id>http://localhost:4000/til/1-TIL</id><content type="html" xml:base="http://localhost:4000/til/1-TIL/"><![CDATA[<p><br /><br /><br /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-12-15T17:41:08+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">1주차</title><link href="http://localhost:4000/til/1%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="1주차" /><published>2022-12-15T00:00:00+09:00</published><updated>2022-12-15T00:00:00+09:00</updated><id>http://localhost:4000/til/1%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/1%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
+
+<h1 id="today-i-learned">Today I Learned</h1>
+
+<h2 id="객체와-클래스는-무엇이-다른가-인스턴스는-무엇인가">객체와 클래스는 무엇이 다른가? 인스턴스는 무엇인가</h2>
+<h2 id="절차형-객체지향-함수형-프로그래밍은-무엇인가">절차형, 객체지향, 함수형 프로그래밍은 무엇인가</h2>
+
+<ul>
+  <li>함수형은 데이터를 핸들링 함수형은 어떤 데이터가 들어가도 로직 수행 후 의도한 데이터를 리턴한다. 객체지향은 여기에 상태까지 관리해 줘야 하기 때문에 신경 쓸것이 많다. 어플리케이션은 함수형과 객체지향을 모두 사용한다. 내가 매일 작업하는 로직들은 함수형 이지만, 디비에 접근하는 순간만큼은 함수형일 수가 없다. 데이터를 저장해야 하고 값을 리턴받아야 하고 등의 상태값이 존재하기 때문에.. 이외에도 여러가지가 있겠지만 둘다 사용한다 자바8에 추가된 람다의 함수형 프로그래밍도 이와 같다. 람다로 코드를 짤 경우 데이터의 무결성을 보장한다. 왜냐하면 전통적인 for루프의 경우 객체를 작업하지만 람다의 경우 데이터 그 자체를 핸들링 하기 때문에</li>
+</ul>
+
+<h2 id="기본형-타입primitive-type과-참조형-타입reference-type은-무엇이-다른가">기본형 타입(Primitive type)과 참조형 타입(Reference type)은 무엇이 다른가</h2>
+
+<h2 id="wrapper-class는-무엇이며-왜쓰는가">wrapper class는 무엇이며 왜쓰는가?</h2>
+<ul>
+  <li>기본타입을 객체로 써야할 경우가 있음 - 리스트에 넣던가</li>
+</ul>
+
+<h2 id="동일성과-동등성">동일성과 동등성</h2>
+
+<p><br /></p>
+
+<h1 id="next-week-learn">Next Week Learn</h1>
+
+<h2 id="자바의-4가지-접근제어자">자바의 4가지 접근제어자</h2>
+<h2 id="상속">상속</h2>
+<h2 id="다형성">다형성</h2>]]></content><author><name>NNIIE</name></author><category term="TIL" /><category term="java" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">22.12</title><link href="http://localhost:4000/til/1-TIL/" rel="alternate" type="text/html" title="22.12" /><published>2022-12-04T00:00:00+09:00</published><updated>2022-12-04T00:00:00+09:00</updated><id>http://localhost:4000/til/1-TIL</id><content type="html" xml:base="http://localhost:4000/til/1-TIL/"><![CDATA[<p><br /><br /><br /></p>
 
 <h1 id="lombok">lombok</h1>
 <h2 id="getter---prefix">@getter - prefix</h2>
@@ -185,7 +211,9 @@ static같은 정적 메모리를 남발하여 지워지지 않고 계속 쌓일�
     </ul>
   </li>
   <li>힙덤프 내역을 분석</li>
-</ol>]]></content><author><name>NNIIE</name></author><category term="TIL" /><category term="lombok" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">이펙티브 자바 - 객체 생성과 파괴</title><link href="http://localhost:4000/effective_java/%EC%9D%B4%ED%8E%99%ED%8B%B0%EB%B8%8C%EC%9E%90%EB%B0%94/" rel="alternate" type="text/html" title="이펙티브 자바 - 객체 생성과 파괴" /><published>2022-11-30T00:00:00+09:00</published><updated>2022-11-30T00:00:00+09:00</updated><id>http://localhost:4000/effective_java/%EC%9D%B4%ED%8E%99%ED%8B%B0%EB%B8%8C%EC%9E%90%EB%B0%94</id><content type="html" xml:base="http://localhost:4000/effective_java/%EC%9D%B4%ED%8E%99%ED%8B%B0%EB%B8%8C%EC%9E%90%EB%B0%94/"><![CDATA[<p><br /><br /><br /></p>
+</ol>
+
+<h2 id="함수형">함수형</h2>]]></content><author><name>NNIIE</name></author><category term="TIL" /><category term="lombok" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">이펙티브 자바 - 객체 생성과 파괴</title><link href="http://localhost:4000/effective_java/%EC%9D%B4%ED%8E%99%ED%8B%B0%EB%B8%8C%EC%9E%90%EB%B0%94/" rel="alternate" type="text/html" title="이펙티브 자바 - 객체 생성과 파괴" /><published>2022-11-30T00:00:00+09:00</published><updated>2022-11-30T00:00:00+09:00</updated><id>http://localhost:4000/effective_java/%EC%9D%B4%ED%8E%99%ED%8B%B0%EB%B8%8C%EC%9E%90%EB%B0%94</id><content type="html" xml:base="http://localhost:4000/effective_java/%EC%9D%B4%ED%8E%99%ED%8B%B0%EB%B8%8C%EC%9E%90%EB%B0%94/"><![CDATA[<p><br /><br /><br /></p>
 
 <h1 id="정적-팩토리-메소드">정적 팩토리 메소드</h1>
 <p><br />

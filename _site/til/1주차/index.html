@@ -9,7 +9,7 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>22.11 | NNIIE</title>
+<!-- begin _includes/seo.html --><title>1주차 | NNIIE</title>
 <meta name="description" content="">
 
 
@@ -22,8 +22,8 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="NNIIE">
-<meta property="og:title" content="22.11">
-<meta property="og:url" content="http://localhost:4000/til/TIL/">
+<meta property="og:title" content="1주차">
+<meta property="og:url" content="http://localhost:4000/til/1%EC%A3%BC%EC%B0%A8/">
 
 
   <meta property="og:description" content="">
@@ -34,7 +34,7 @@
 
 
 
-  <meta property="article:published_time" content="2022-11-24T00:00:00+09:00">
+  <meta property="article:published_time" content="2022-12-15T00:00:00+09:00">
 
 
 
@@ -45,7 +45,7 @@
   
 
 
-<link rel="canonical" href="http://localhost:4000/til/TIL/">
+<link rel="canonical" href="http://localhost:4000/til/1%EC%A3%BC%EC%B0%A8/">
 
 
 
@@ -189,7 +189,7 @@
     
       
       
-        <li class="current">22.11</li>
+        <li class="current">1주차</li>
       
     
   </ol>
@@ -203,15 +203,15 @@
 
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="22.11">
+    <meta itemprop="headline" content="1주차">
     <meta itemprop="description" content="">
-    <meta itemprop="datePublished" content="2022-11-24T00:00:00+09:00">
+    <meta itemprop="datePublished" content="2022-12-15T00:00:00+09:00">
     
 
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">22.11
+          <h1 id="page-title" class="page__title" itemprop="headline">1주차
 </h1>
           
 
@@ -221,7 +221,7 @@
       <span class="page__meta-date">
         <i class="far fa-calendar-alt" aria-hidden="true"></i>
         
-        <time datetime="2022-11-24T00:00:00+09:00">2022-11-24</time>
+        <time datetime="2022-12-15T00:00:00+09:00">2022-12-15</time>
       </span>
     
 
@@ -234,7 +234,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          1 분 소요
+          최대 1 분 소요
         
       </span>
     
@@ -249,101 +249,38 @@
           <aside class="sidebar__right ">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> TIL</h4></header>
-              <ul class="toc__menu"><li><a href="#equals--hashcode">equals &amp; hashcode</a><ul><li><a href="#equals">equals</a></li><li><a href="#hashcode">hashcode</a><ul><li><a href="#hashtable">HashTable</a></li></ul></li><li><a href="#equals-와-hashcode를-같이-재정의-하는-이유">equals() 와 hashcode()를 같이 재정의 하는 이유</a></li></ul></li></ul>
+              <ul class="toc__menu"><li><a href="#today-i-learned">Today I Learned</a><ul><li><a href="#객체와-클래스는-무엇이-다른가-인스턴스는-무엇인가">객체와 클래스는 무엇이 다른가? 인스턴스는 무엇인가</a></li><li><a href="#절차형-객체지향-함수형-프로그래밍은-무엇인가">절차형, 객체지향, 함수형 프로그래밍은 무엇인가</a></li><li><a href="#기본형-타입primitive-type과-참조형-타입reference-type은-무엇이-다른가">기본형 타입(Primitive type)과 참조형 타입(Reference type)은 무엇이 다른가</a></li><li><a href="#wrapper-class는-무엇이며-왜쓰는가">wrapper class는 무엇이며 왜쓰는가?</a></li><li><a href="#동일성과-동등성">동일성과 동등성</a></li></ul></li><li><a href="#next-week-learn">Next Week Learn</a><ul><li><a href="#자바의-4가지-접근제어자">자바의 4가지 접근제어자</a></li><li><a href="#상속">상속</a></li><li><a href="#다형성">다형성</a></li></ul></li></ul>
 
             </nav>
           </aside>
         
         <p><br /><br /><br /></p>
 
-<h1 id="equals--hashcode">equals &amp; hashcode</h1>
-<p>Object 클래스의 메소드이다.
-<br />
-모든 클래스가 Object를 상속받기 때문에
-<br />
-어떤 객체라도 Object의 메소드인 equals와 hashcode를 사용할 수 있다.
-<br /></p>
+<h1 id="today-i-learned">Today I Learned</h1>
 
-<h2 id="equals">equals</h2>
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Object의 equals()</span>
-<span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">equals</span><span class="o">(</span><span class="nc">Object</span> <span class="n">obj</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">return</span> <span class="o">(</span><span class="k">this</span> <span class="o">==</span> <span class="n">obj</span><span class="o">);</span>
-<span class="o">}</span>
-</code></pre></div></div>
-<p>equals()는 오로지 참조값(객체의 주소값)이 같은지 즉, 동일 객체인지 확인하는 기능이다.
-<br />
-equals 메소드는 두 객체를 비교해서 논리적으로 동등하면 true를 반환한다.
-<br />
-논리적으로 동등하다는 것은 둘의 참조값이 다르더라도 객체 내부의 value는 같다는걸 의미한다.
-<br /></p>
-<ul>
-  <li><strong><em>동일성</em></strong> : ==비교. 객체 인스턴스 주소 값을 비교</li>
-  <li><strong><em>동등성</em></strong> : equals() 메소드를 사용해 객체 내부의 값을 비교한다.</li>
-</ul>
-
-<h2 id="hashcode">hashcode</h2>
-<p>객체 해시코드란 객체를 식별하는 하나의 정수값을 말한다. 
-<br />
-Object의 hashCode() 메소드는 객체의 메모리 번지를 이용해서 해시코드를 만들어 리턴하기 때문에 객체 마다 다른 값을 가지고 있다.
-<br /><br />
-<strong><em>hashcode 를 재정의 하지 않으면</em></strong></p>
-<ul>
-  <li>같은 값을 가진 객체가 서로 다른 해시값을 갖게 될 수 있다.</li>
-  <li>특히 HashMap의 key 값으로 해당 객체를 사용할 경우 문제가 발생한다.</li>
-</ul>
-
-<h3 id="hashtable">HashTable</h3>
-<p>HashTable은 &lt;key,value&gt; 형태로 데이터를 저장한다. 이 때 해시 함수(Hash Function)을 이용하여 key값을 기준으로 고유한 식별값인 해시값을 만든다. (hashcode가 해시값을 만드는 역할을 한다.) 
-<br />
-이 해시값을 버킷(Bucket)에 저장한다.
-<br />
-하지만 HashTable 크기는 한정적이기 때문에 같은 서로 다른 객체라 하더라도 같은 해시값을 갖게 될 수도 있다.
-<br />
-이것을 <strong>해시 충돌(Hash Collisions)</strong>이라고 한다.
-<br />
-이런 경우 아래와 같이 해당 버킷(Bucket)에 LinkedList 형태로 객체를 추가한다.
-<br /><br />
-이처럼 같은 해시값의 버킷 안에 다른 객체가 있는 경우 equals 메서드가 사용된다.
-<br /><br />
-HashTable에 put 메서드로 객체를 추가하는 경우
-<br /></p>
-<ul>
-  <li>값이 같은 객체가 이미 있다면(equals()가 true) 기존 객체를 덮어쓴다.</li>
-  <li>값이 같은 객체가 없다면(equals()가 false) 해당 entry를 LinkedList에 추가한다.
-<br /><br /></li>
-</ul>
-
-<p>HashTable에 get 메서드로 객체를 조회하는 경우</p>
+<h2 id="객체와-클래스는-무엇이-다른가-인스턴스는-무엇인가">객체와 클래스는 무엇이 다른가? 인스턴스는 무엇인가</h2>
+<h2 id="절차형-객체지향-함수형-프로그래밍은-무엇인가">절차형, 객체지향, 함수형 프로그래밍은 무엇인가</h2>
 
 <ul>
-  <li>값이 같은 객체가 있다면 (equals()가 true) 그 객체를 리턴한다.</li>
-  <li>값이 같은 객체가 없다면(equals()가 false) null을 리턴한다.</li>
+  <li>함수형은 데이터를 핸들링 함수형은 어떤 데이터가 들어가도 로직 수행 후 의도한 데이터를 리턴한다. 객체지향은 여기에 상태까지 관리해 줘야 하기 때문에 신경 쓸것이 많다. 어플리케이션은 함수형과 객체지향을 모두 사용한다. 내가 매일 작업하는 로직들은 함수형 이지만, 디비에 접근하는 순간만큼은 함수형일 수가 없다. 데이터를 저장해야 하고 값을 리턴받아야 하고 등의 상태값이 존재하기 때문에.. 이외에도 여러가지가 있겠지만 둘다 사용한다 자바8에 추가된 람다의 함수형 프로그래밍도 이와 같다. 람다로 코드를 짤 경우 데이터의 무결성을 보장한다. 왜냐하면 전통적인 for루프의 경우 객체를 작업하지만 람다의 경우 데이터 그 자체를 핸들링 하기 때문에</li>
 </ul>
 
-<h2 id="equals-와-hashcode를-같이-재정의-하는-이유">equals() 와 hashcode()를 같이 재정의 하는 이유</h2>
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Override</span>
-<span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">equals</span><span class="o">(</span><span class="nc">Object</span> <span class="n">o</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">if</span> <span class="o">(</span><span class="k">this</span> <span class="o">==</span> <span class="n">o</span><span class="o">)</span> <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
-    <span class="k">if</span> <span class="o">(</span><span class="n">o</span> <span class="o">==</span> <span class="kc">null</span> <span class="o">||</span> <span class="n">getClass</span><span class="o">()</span> <span class="o">!=</span> <span class="n">o</span><span class="o">.</span><span class="na">getClass</span><span class="o">())</span> <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
-    <span class="nc">LottoNumber</span> <span class="n">that</span> <span class="o">=</span> <span class="o">(</span><span class="nc">LottoNumber</span><span class="o">)</span> <span class="n">o</span><span class="o">;</span>
-    <span class="k">return</span> <span class="nc">Objects</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">getLottoNumbers</span><span class="o">(),</span> <span class="n">that</span><span class="o">.</span><span class="na">getLottoNumbers</span><span class="o">());</span>
-<span class="o">}</span>
+<h2 id="기본형-타입primitive-type과-참조형-타입reference-type은-무엇이-다른가">기본형 타입(Primitive type)과 참조형 타입(Reference type)은 무엇이 다른가</h2>
 
-<span class="nd">@Override</span>
-<span class="kd">public</span> <span class="kt">int</span> <span class="nf">hashCode</span><span class="o">()</span> <span class="o">{</span>
-    <span class="k">return</span> <span class="nc">Objects</span><span class="o">.</span><span class="na">hash</span><span class="o">(</span><span class="n">getLottoNumbers</span><span class="o">());</span>
-<span class="o">}</span>
-</code></pre></div></div>
-<p>만약 equals()와 hashcode() 중 하나만 재정의 하면 어떻게 될까?
-<br /> 
-위 예에서도 봤듯이 hashcode()를 재정의 하지 않으면 같은 값 객체라도 해시값이 다를 수 있다. 따라서 HashTable에서 해당 객체가 저장된 버킷을 찾을 수 없다.
-<br />
-반대로 equals()를 재정의하지 않으면 hashcode()가 만든 해시값을 이용해 객체가 저장된 버킷을 찾을 수는 있지만 해당 객체가 자신과 같은 객체인지 값을 비교할 수 없기 때문에 null을 리턴하게 된다. 
-<br />
-따라서 역시 원하는 객체를 찾을 수 없다.
-<br />
-이러한 이유로 객체의 정확한 동등 비교를 위해서는 (특히 Hash 관련 컬렉션 프레임워크를 사용할때!) Object의 equals() 메소드만 재정의하지 말고 hashCode()메소드도 재정의해서 논리적 동등 객체일경우 동일한 해시코드가 리턴되도록 해야한다.</p>
+<h2 id="wrapper-class는-무엇이며-왜쓰는가">wrapper class는 무엇이며 왜쓰는가?</h2>
+<ul>
+  <li>기본타입을 객체로 써야할 경우가 있음 - 리스트에 넣던가</li>
+</ul>
 
+<h2 id="동일성과-동등성">동일성과 동등성</h2>
+
+<p><br /></p>
+
+<h1 id="next-week-learn">Next Week Learn</h1>
+
+<h2 id="자바의-4가지-접근제어자">자바의 4가지 접근제어자</h2>
+<h2 id="상속">상속</h2>
+<h2 id="다형성">다형성</h2>
 
         
       </section>
@@ -360,7 +297,7 @@ HashTable에 put 메서드로 객체를 추가하는 경우
     <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
     <span itemprop="keywords">
     
-      <a href="/tags/#java" class="page__taxonomy-item" rel="tag">Java</a>
+      <a href="/tags/#java" class="page__taxonomy-item" rel="tag">java</a>
     
     </span>
   </p>
@@ -385,7 +322,7 @@ HashTable에 put 메서드로 객체를 추가하는 경우
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2022-11-24T00:00:00+09:00">2022-11-24</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2022-12-15T00:00:00+09:00">2022-12-15</time></p>
 
 
       </footer>
@@ -395,22 +332,22 @@ HashTable에 put 메서드로 객체를 추가하는 경우
     <h4 class="page__share-title">공유하기</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=22.11%20http%3A%2F%2Flocalhost%3A4000%2Ftil%2FTIL%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=1%EC%A3%BC%EC%B0%A8%20http%3A%2F%2Flocalhost%3A4000%2Ftil%2F1%25EC%25A3%25BC%25EC%25B0%25A8%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Ftil%2FTIL%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Ftil%2F1%25EC%25A3%25BC%25EC%25B0%25A8%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Ftil%2FTIL%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Ftil%2F1%25EC%25A3%25BC%25EC%25B0%25A8%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="#" class="pagination--pager disabled">이전</a>
+      <a href="/til/1-TIL/" class="pagination--pager" title="22.12
+">이전</a>
     
     
-      <a href="/effective_java/%EC%9D%B4%ED%8E%99%ED%8B%B0%EB%B8%8C%EC%9E%90%EB%B0%94/" class="pagination--pager" title="이펙티브 자바 - 객체 생성과 파괴
-">다음</a>
+      <a href="#" class="pagination--pager disabled">다음</a>
     
   </nav>
 
@@ -424,53 +361,6 @@ HashTable에 put 메서드로 객체를 추가하는 경우
     <div class="page__related">
       <h4 class="page__related-title">참고</h4>
       <div class="grid__wrapper">
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/til/1%EC%A3%BC%EC%B0%A8/" rel="permalink">1주차
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
-        
-        <time datetime="2022-12-15T00:00:00+09:00">2022-12-15</time>
-      </span>
-    
-
-    <span class="page__meta-sep"></span>
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
-        
-          최대 1 분 소요
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">
-</p>
-  </article>
-</div>
-
         
           
 
@@ -566,6 +456,53 @@ HashTable에 put 메서드로 객체를 추가하는 경우
 </div>
 
         
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/til/TIL/" rel="permalink">22.11
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-11-24T00:00:00+09:00">2022-11-24</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+</p>
+  </article>
+</div>
+
+        
       </div>
     </div>
   
@@ -618,8 +555,8 @@ HashTable에 put 메서드로 객체를 추가하는 경우
     
   <script>
     var disqus_config = function () {
-      this.page.url = "http://localhost:4000/til/TIL/";  /* Replace PAGE_URL with your page's canonical URL variable */
-      this.page.identifier = "/til/TIL"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+      this.page.url = "http://localhost:4000/til/1%EC%A3%BC%EC%B0%A8/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/til/1주차"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
     };
     (function() { /* DON'T EDIT BELOW THIS LINE */
       var d = document, s = d.createElement('script');
