@@ -1,23 +1,23 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-12-15T18:16:58+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">1주차</title><link href="http://localhost:4000/til/1%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="1주차" /><published>2022-12-15T00:00:00+09:00</published><updated>2022-12-15T00:00:00+09:00</updated><id>http://localhost:4000/til/1%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/1%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-12-15T19:55:16+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">1주차</title><link href="http://localhost:4000/til/1%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="1주차" /><published>2022-12-15T00:00:00+09:00</published><updated>2022-12-15T00:00:00+09:00</updated><id>http://localhost:4000/til/1%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/1%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
 
 <h1 id="today-i-learned">Today I Learned</h1>
 
 <h2 id="객체와-클래스는-무엇이-다른가-인스턴스는-무엇인가">객체와 클래스는 무엇이 다른가? 인스턴스는 무엇인가</h2>
 <ul>
-  <li>객체
+  <li><strong><em>객체</em></strong>
     <ul>
       <li>물리적, 추상적으로 생각할 수 있는것 중에서 자신의 속성을 가지고 있고 다른것과 식별 가능한 것.</li>
       <li>소프트웨어 에서 구현할 대상</li>
     </ul>
   </li>
-  <li>클래스
+  <li><strong><em>클래스</em></strong>
     <ul>
       <li>java에서 객체를 생성하기 위한 일종의 설계도</li>
       <li>속성(필드)을 가지고 있고, 행위(메소드)를 가지고있다.</li>
       <li>oop의 관점에서 클래스 타입으로 선언되었을 때 ‘객체’라고 부른다.</li>
     </ul>
   </li>
-  <li>인스턴스
+  <li><strong><em>인스턴스</em></strong>
     <ul>
       <li>클래스를 가지고 객체를 실체화 한것.</li>
       <li>메모리에 할당되어 실제로 사용되는 객체</li>
@@ -26,9 +26,34 @@
 </ul>
 
 <h2 id="절차형-객체지향-함수형-프로그래밍은-무엇인가">절차형, 객체지향, 함수형 프로그래밍은 무엇인가</h2>
-
 <ul>
-  <li>함수형은 데이터를 핸들링 함수형은 어떤 데이터가 들어가도 로직 수행 후 의도한 데이터를 리턴한다. 객체지향은 여기에 상태까지 관리해 줘야 하기 때문에 신경 쓸것이 많다. 어플리케이션은 함수형과 객체지향을 모두 사용한다. 내가 매일 작업하는 로직들은 함수형 이지만, 디비에 접근하는 순간만큼은 함수형일 수가 없다. 데이터를 저장해야 하고 값을 리턴받아야 하고 등의 상태값이 존재하기 때문에.. 이외에도 여러가지가 있겠지만 둘다 사용한다 자바8에 추가된 람다의 함수형 프로그래밍도 이와 같다. 람다로 코드를 짤 경우 데이터의 무결성을 보장한다. 왜냐하면 전통적인 for루프의 경우 객체를 작업하지만 람다의 경우 데이터 그 자체를 핸들링 하기 때문에</li>
+  <li><strong><em>절차형 프로그래밍 (Procedural Programming)</em></strong>
+<br />
+위에서부터 아래로의 순차적인 처리를 중요시 하며 루틴, 서브루틴, 메소드, 함수 등을 이용한 프로그래밍 패러다임
+    <ul>
+      <li><strong><em>장점</em></strong>
+        <ul>
+          <li>컴퓨터 처리구조와 유사해 실행속도가 빠르다.</li>
+        </ul>
+      </li>
+      <li><strong><em>단점</em></strong>
+        <ul>
+          <li>코드가 길어지면 가독성이 떨어지며 유지보수가 어렵다.</li>
+          <li>정해진 순서대로 입력을 해야하므로 순서가 바뀌면 결과를 보장할 수 없다.</li>
+          <li>대형 프로젝트에 적합하지 않다.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><strong><em>객체지향 프로그래밍</em></strong></p>
+  </li>
+  <li>
+    <p><strong><em>함수형 프로그래밍</em></strong></p>
+  </li>
+  <li><strong><em>둘의 차이?</em></strong>
+<br />
+함수형은 데이터를 핸들링 함수형은 어떤 데이터가 들어가도 로직 수행 후 의도한 데이터를 리턴한다. 객체지향은 여기에 상태까지 관리해 줘야 하기 때문에 신경 쓸것이 많다. 어플리케이션은 함수형과 객체지향을 모두 사용한다. 내가 매일 작업하는 로직들은 함수형 이지만, 디비에 접근하는 순간만큼은 함수형일 수가 없다. 데이터를 저장해야 하고 값을 리턴받아야 하고 등의 상태값이 존재하기 때문에.. 이외에도 여러가지가 있겠지만 둘다 사용한다 자바8에 추가된 람다의 함수형 프로그래밍도 이와 같다. 람다로 코드를 짤 경우 데이터의 무결성을 보장한다. 왜냐하면 전통적인 for루프의 경우 객체를 작업하지만 람다의 경우 데이터 그 자체를 핸들링 하기 때문에</li>
 </ul>
 
 <h2 id="기본형-타입primitive-type과-참조형-타입reference-type은-무엇이-다른가">기본형 타입(Primitive type)과 참조형 타입(Reference type)은 무엇이 다른가</h2>
