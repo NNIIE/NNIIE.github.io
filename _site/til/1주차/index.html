@@ -249,7 +249,7 @@
           <aside class="sidebar__right ">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> TIL</h4></header>
-              <ul class="toc__menu"><li><a href="#today-i-learned">Today I Learned</a><ul><li><a href="#객체와-클래스-그리고-인스턴스">객체와 클래스 그리고 인스턴스</a></li><li><a href="#절차형-객체지향-함수형-패러다임">절차형, 객체지향, 함수형 패러다임</a></li><li><a href="#기본형-타입과-참조형-타입">기본형 타입과 참조형 타입</a></li><li><a href="#wrapper-class는-무엇이며-왜쓰는가">wrapper class는 무엇이며 왜쓰는가?</a></li><li><a href="#동일성과-동등성">동일성과 동등성</a></li></ul></li><li><a href="#to-do">To Do</a><ul><li><a href="#자바의-신-2권">자바의 신 2권</a></li><li><a href="#자바의-4가지-접근제어자">자바의 4가지 접근제어자</a></li><li><a href="#상속">상속</a></li><li><a href="#다형성">다형성</a></li></ul></li></ul>
+              <ul class="toc__menu"><li><a href="#today-i-learned">Today I Learned</a><ul><li><a href="#객체와-클래스-그리고-인스턴스">객체와 클래스 그리고 인스턴스</a></li><li><a href="#절차형-객체지향-함수형-패러다임">절차형, 객체지향, 함수형 패러다임</a></li><li><a href="#기본형-타입과-참조형-타입">기본형 타입과 참조형 타입</a></li><li><a href="#wrapper-class는-무엇이며-왜쓰는가">wrapper class는 무엇이며 왜쓰는가?</a></li><li><a href="#동일성과-동등성">동일성과 동등성</a></li></ul></li><li><a href="#to-do">To Do</a><ul><li><a href="#자바의-접근제어자">자바의 접근제어자</a></li><li><a href="#상속">상속</a></li><li><a href="#다형성">다형성</a></li><li><a href="#자바의-신-2권">자바의 신 2권</a></li></ul></li></ul>
 
             </nav>
           </aside>
@@ -495,10 +495,11 @@ OOP와는 데이터(상태)를 다루는 개념과, 간결한 코드 작성에 �
 
 <h1 id="to-do">To Do</h1>
 
-<h2 id="자바의-신-2권">자바의 신 2권</h2>
-<h2 id="자바의-4가지-접근제어자">자바의 4가지 접근제어자</h2>
+<h2 id="자바의-접근제어자">자바의 접근제어자</h2>
 <ul>
-  <li>접근제어자
+  <li>
+    <p><strong><em>접근제어자</em></strong>
+<br />
 객체지향 패러다임에서 정보은닉이란 필요한 정보만 오픈한다는 개념이다.
 <br />
 자바에서는 정보은닉을 위해 접근제어자 라는 기능을 제공하여 클래스 외부에서 직접적인 접근을 허용하지 않는
@@ -507,11 +508,29 @@ OOP와는 데이터(상태)를 다루는 개념과, 간결한 코드 작성에 �
 <strong><em>단, 인터페이스의 접근제어자는 무조건 public 이다.</em></strong> 
 <br />
 인터페이스는 구현클래스가 아니라 추상클래스 이기 때문에
-해당 인터페이스를 구현하는 구현클래스에서 구현이 꼭 필요하다. 그렇기 때문에 접근제어자를 생략하더라도 컴파일시 public으로 열어둔다.
-    <h2 id="상속">상속</h2>
-    <h2 id="다형성">다형성</h2>
+해당 인터페이스를 구현하는 구현클래스에서 구현이 꼭 필요하다. 그렇기 때문에 접근제어자를 생략하더라도 컴파일시 public으로 열어둔다.</p>
+  </li>
+  <li>
+    <p><strong><em>private</em></strong></p>
+  </li>
+  <li>
+    <p><strong><em>public</em></strong>
+<br />
+public으로 선언된 클래스 멤버는 외부에서 접근이 가능하며, 프로그램 어디에서도 접근이 가능하다.
+자바는 public메소드를 통해서만 해당 객체의 private멤버에 접근할수 있고, 따라서 public 메소드는 private 멤버와 외부사이의
+인터페이스 역할을 수행한다고 할 수 있다.</p>
+  </li>
+  <li>
+    <p><strong><em>default</em></strong></p>
+  </li>
+  <li>
+    <p><strong><em>protected</em></strong></p>
   </li>
 </ul>
+
+<h2 id="상속">상속</h2>
+<h2 id="다형성">다형성</h2>
+<h2 id="자바의-신-2권">자바의 신 2권</h2>
 
         
       </section>
