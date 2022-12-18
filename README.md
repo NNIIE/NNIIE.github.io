@@ -1,5 +1,5 @@
 # Today I Learned - 새롭게 배운 내용을 자유롭게 정리
-* 가능한 X는 무엇이다. 라고 정의 할수 있을때까지 공부하기
+* 가능한 XX는 무엇이다. 라고 정의 할수 있을때까지 공부하기
 * [TIL 바로가기](https://nniie.github.io/)
 * [configuration](https://mmistakes.github.io/minimal-mistakes/docs/configuration/)
 
