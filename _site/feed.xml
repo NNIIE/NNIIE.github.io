@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-12-20T01:19:46+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">1주차</title><link href="http://localhost:4000/til/1%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="1주차" /><published>2022-12-15T00:00:00+09:00</published><updated>2022-12-15T00:00:00+09:00</updated><id>http://localhost:4000/til/1%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/1%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-12-20T01:25:09+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">1주차</title><link href="http://localhost:4000/til/1%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="1주차" /><published>2022-12-15T00:00:00+09:00</published><updated>2022-12-15T00:00:00+09:00</updated><id>http://localhost:4000/til/1%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/1%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
 
 <h1 id="today-i-learned">Today I Learned</h1>
 
@@ -492,8 +492,8 @@ SOLID원칙의 리스코프치환 원칙에서 알 수 있다.
   변하지 않는 부분을 Context에 두고 변하는 부분을 Strategy 인터페이스 구현체에 작성한다.
   <br />
   전략에 해당하는 Strategy인터페이스와 구현체에는 비즈니스 로직 이외에 아무런 로직이 없기때문에 공통 로직이 변경되어도 아무런 영향이 없다.
-  <br />
-  <img src="../images/2021-05-10-first-posting/Strategy_Pattern.png" alt="이미지" />
+  <br /><br />
+  <img src="/images/2021-05-10-first-posting/Strategy_Pattern.png" alt="이미지" />
   <br />
   <br /></li>
       <li><strong><em>장점</em></strong>
