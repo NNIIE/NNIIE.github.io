@@ -234,7 +234,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          7 분 소요
+          9 분 소요
         
       </span>
     
@@ -281,6 +281,8 @@
   </li>
 </ul>
 
+<p><br /></p>
+
 <h2 id="절차형-객체지향-함수형-패러다임">절차형, 객체지향, 함수형 패러다임</h2>
 <ul>
   <li><strong><em>절차형 프로그래밍 (Procedural Programming)</em></strong>
@@ -301,6 +303,11 @@
       </li>
     </ul>
   </li>
+</ul>
+
+<p><br /></p>
+
+<ul>
   <li><strong><em>객체지향 프로그래밍 (OOP)</em></strong>
 <br />
 모든 것을 객체로 취급하고 객체가 처리요청을 받았을 때, 객체 내부의 기능을 사용해 처리하는 방법이다.
@@ -331,6 +338,11 @@
       </li>
     </ul>
   </li>
+</ul>
+
+<p><br /></p>
+
+<ul>
   <li>
     <p><strong><em>함수형 프로그래밍</em></strong>
 <br />
@@ -360,6 +372,7 @@ OOP와는 데이터(상태)를 다루는 개념과, 간결한 코드 작성에 �
 </ul>
 
 <p><br /></p>
+
 <ul>
   <li><strong><em>그래서 뭐가 좋은데?</em></strong>
 <br />
@@ -387,6 +400,8 @@ OOP와는 데이터(상태)를 다루는 개념과, 간결한 코드 작성에 �
 뭐가 더 좋다기 보단 둘다 적재적소에 사용하는게 중요하겠다.</li>
 </ul>
 
+<p><br /></p>
+
 <h2 id="기본형-타입과-참조형-타입">기본형 타입과 참조형 타입</h2>
 <ul>
   <li><strong><em>원시타입(Primitive type)</em></strong>
@@ -395,8 +410,10 @@ OOP와는 데이터(상태)를 다루는 개념과, 간결한 코드 작성에 �
       <li>기본값이 있기때문에 Null이 존재하지 않는다. 기본형 타입에 Null을 넣고싶다면 래퍼클래스를 활용한다.</li>
       <li>제네릭 타입에서 사용할 수 없다.</li>
       <li>실제값을 저장하는 공간으로 Stack 영역에 저장된다.</li>
-      <li>실제값이 Stack영역에 있으므로 참조타입보다 접근속도가 빠르다</li>
+      <li>실제값이 Stack영역에 있으므로 참조타입보다 접근속도가</li>
     </ul>
+
+    <p><br /></p>
   </li>
   <li><strong><em>참조타입(Reference type)</em></strong>
     <ul>
@@ -407,6 +424,8 @@ OOP와는 데이터(상태)를 다루는 개념과, 간결한 코드 작성에 �
       <li>실제값이 Heap 영역에 있고 Stack메모리에는 참조값만 있으므로 값이 필요할 때마다 최소 2번 메모리 접근을 해야하고 박싱/언박싱 과정을 거쳐야 해서 원시타입보다 접근속도가 느리다.</li>
       <li>실제 사용하는 메모리양도 원시타입보다 월등히 많다.</li>
     </ul>
+
+    <p><br /></p>
   </li>
   <li><strong><em>String?</em></strong>
     <ul>
@@ -416,6 +435,8 @@ OOP와는 데이터(상태)를 다루는 개념과, 간결한 코드 작성에 �
     </ul>
   </li>
 </ul>
+
+<p><br /></p>
 
 <h2 id="wrapper-class는-무엇이며-왜쓰는가">wrapper class는 무엇이며 왜쓰는가?</h2>
 <p>원시타입을 객체로 다루기 위해 사용하는 클래스이다. 기본타입의 값을 내부에 두고 포장해서 포장객체 라고도 불리는데 래퍼클래스로 감싸고 있는 값은 외부에서 변경이 불가능하고 변경하려면 새로운 포장객체를 만들어야 한다. 자바의 모든 객체가 그러하듯 Object를 상속받는다.</p>
@@ -428,6 +449,11 @@ OOP와는 데이터(상태)를 다루는 개념과, 간결한 코드 작성에 �
       <li>래퍼클래스와 원시타입 비교는 둘다 가능하다. JDK 1.5 이후로 오토 박싱/언박싱을 지원하기 때문이다</li>
     </ul>
   </li>
+</ul>
+
+<p><br /></p>
+
+<ul>
   <li><strong><em>왜 쓰는데?</em></strong>
     <ul>
       <li>원시타입을 클래스화 하여 클래스의 장점을 활용할 수 있다. (클래스에 지원되는 여러 메소드들)</li>
@@ -453,6 +479,8 @@ OOP와는 데이터(상태)를 다루는 개념과, 간결한 코드 작성에 �
   </li>
 </ul>
 
+<p><br /></p>
+
 <h2 id="동일성과-동등성">동일성과 동등성</h2>
 <ul>
   <li><strong><em>동일성</em></strong>
@@ -464,6 +492,11 @@ OOP와는 데이터(상태)를 다루는 개념과, 간결한 코드 작성에 �
       <li>원시타입은 객체가 아닌 스택메모리에 직접 값이 올라가기 때문에 == 결과가 같으면 동일하다.</li>
     </ul>
   </li>
+</ul>
+
+<p><br /></p>
+
+<ul>
   <li><strong><em>동등성</em></strong>
     <ul>
       <li>두 객체가 같은 정보를 가지고 있는 경우.
@@ -512,12 +545,18 @@ OOP와는 데이터(상태)를 다루는 개념과, 간결한 코드 작성에 �
 <br />
 또한 클래스의 접근제한은 public 과 default만 적용할 수 있다.</p>
   </li>
-  <li><strong><em>왜 쓰는데?</em></strong>
+  <li>
+    <p><strong><em>왜 쓰는데?</em></strong></p>
     <ul>
       <li>클래스 내부의 데이터를 보호하기 위해</li>
       <li>객체지향에서 캡슐화 라고 부른다.</li>
     </ul>
   </li>
+</ul>
+
+<p><br /></p>
+
+<ul>
   <li>
     <p><strong><em>private</em></strong>
 <br />
@@ -543,13 +582,14 @@ public으로 선언된 클래스 멤버는 외부에서 접근이 가능하며, 
 <br />
 아무것도 선언하지 않으면 default 접근자가 붙는다. 같은 패키지내에서만 접근이 가능하다.</p>
   </li>
-  <li><strong><em>protected</em></strong>
+  <li>
+    <p><strong><em>protected</em></strong>
 <br />
 default 접근제어자 처럼 같은패키지 내에서 접근이 가능하지만, 좀더 범위가 넓다.
 <br />
 protected멤버는 부모 클래스에게는 public 멤버처럼 취급되며, 외부에서는 private 멤버로 취급된다.
 <br />
-결국 protected로 선언된 멤버는 아래와 같은 접근 영역을 가진다.
+결국 protected로 선언된 멤버는 아래와 같은 접근 영역을 가진다.</p>
     <ul>
       <li>protected를 선언한 클래스의 멤버</li>
       <li>protected를 선언한 클래스가 속한 패키지의 멤버</li>
@@ -557,6 +597,8 @@ protected멤버는 부모 클래스에게는 public 멤버처럼 취급되며, �
     </ul>
   </li>
 </ul>
+
+<p><br /></p>
 
 <h2 id="상속">상속</h2>
 <p>자바의 상속(Inheritance)은 부모클래스와 자식클래스 관계에서 발생하며,
@@ -578,15 +620,23 @@ protected멤버는 부모 클래스에게는 public 멤버처럼 취급되며, �
       <li>동일한 시그니처 : 메서드의 이름, 매개변수, 반환타입이 같아야 하고 중괄호 안의 내용만 바뀔 수 있다.</li>
     </ul>
   </li>
-  <li>
-    <p><strong><em>인터페이스 상속</em></strong>
+</ul>
+
+<p><br /></p>
+
+<ul>
+  <li><strong><em>인터페이스 상속</em></strong>
 <br />
 implements 키워드로 상속받을 수 있다. 일반 상속과 다르게 인터페이스는 상속은 다중상속이 가능하다.
 <br />
 인터페이스를 상속받은 클래스는 반드시 인터페이스의 메소드를 재정의(@Override) 해야한다.
 <br />
-인터페이스 상속은 보통 설계 목적으로 구현한다.</p>
-  </li>
+인터페이스 상속은 보통 설계 목적으로 구현한다.</li>
+</ul>
+
+<p><br /></p>
+
+<ul>
   <li>
     <p><strong><em>왜 쓰는데?</em></strong>
 <br />
@@ -620,6 +670,10 @@ implements 키워드로 상속받을 수 있다. 일반 상속과 다르게 인�
 <br />
 이처럼, 상속을 이용할 경우 유지보수가 좋아지고 확장성이 좋아지며 중복코드를 많이 줄일 수 있게 된다.</p>
   </li>
+</ul>
+
+<p><br /></p>
+<ul>
   <li><strong><em>단점</em></strong>
 <br />
     <ul>
@@ -631,8 +685,12 @@ implements 키워드로 상속받을 수 있다. 일반 상속과 다르게 인�
       <li>그로인해 단일상속만 지원하는 자바에서는 오히려 중복코드의 양이 늘어날 수 있다.</li>
     </ul>
   </li>
-  <li>
-    <p><strong><em>어떻게 쓰면 좋을까?</em></strong>
+</ul>
+
+<p><br /></p>
+
+<ul>
+  <li><strong><em>어떻게 쓰면 좋을까?</em></strong>
 <br />
 SOLID원칙의 리스코프치환 원칙에서 알 수 있다.
 <br />
@@ -642,15 +700,21 @@ SOLID원칙의 리스코프치환 원칙에서 알 수 있다.
 <br />
 즉, 상속은 클래스의 행동을 확장하는 것이 아닌 정제할 때 사용하는것이 좋다.
 <br />
-또한 재정의 되지 않길 원하는 메서드일 경우 final 메서드로 만들어 두는것도 좋은 방법이겠다.</p>
-  </li>
+또한 재정의 되지 않길 원하는 메서드일 경우 final 메서드로 만들어 두는것도 좋은 방법이겠다.</li>
+</ul>
+
+<p><br /></p>
+
+<ul>
   <li><strong><em>합성(Compotistion)??</em></strong>
+<br />
+구현에 의존하지 않고, public interface에만 의존한다.객체 관계가 수평적인 관계가 된다.
     <ul>
       <li>두 객체 사이 의존성을 런타임에 해결한다. (상속은 컴파일단계에서 해결)</li>
       <li>코드의 재사용만 생각하면 상속보다는 합성을 사용하는게 좋을 수 있다.</li>
       <li>상속의 is-a 관계가 아닌 has-a관계
         <ul>
-          <li>is-a
+          <li><strong><em>is-a</em></strong>
             <ul>
               <li>A는 B이다. -&gt; 학생은 사람이다.</li>
               <li>추상화 사이의 포함관계를 의미한다.</li>
@@ -659,7 +723,7 @@ SOLID원칙의 리스코프치환 원칙에서 알 수 있다.
               <li>결합도가 높기 때문에 계층구조에 좀 더 적합하다.</li>
             </ul>
           </li>
-          <li>has-a
+          <li><strong><em>has-a</em></strong>
             <ul>
               <li>구성 포함 관계를 의미한다. -&gt; 경찰은 총을 가진다 (경찰클래스 안에 권총클래스의 객체를 멤버로 가지고 있는 경우)</li>
               <li>한 오브젝트가 다른 오브젝트에 속한다 라고 말한다.</li>
@@ -672,10 +736,134 @@ SOLID원칙의 리스코프치환 원칙에서 알 수 있다.
         </ul>
       </li>
     </ul>
+
+    <p><br /></p>
+    <ul>
+      <li><strong><em>전략패턴(Strategy Pattern)</em></strong>
+  <br />
+  합성을 이용한 디자인 패턴으로 프로그램 실행중에 알고리즘을 선택할 수 있게하는 패턴이다. 
+  <br />
+  즉, 특정 Context에서 알고리즘을 별도로 분리하는 설계 방법이다.
+  <br />
+  변하지 않는 부분을 Context에 두고 변하는 부분을 Strategy 인터페이스 구현체에 작성한다.
+  <br />
+  전략에 해당하는 Strategy인터페이스와 구현체에는 비즈니스 로직 이외에 아무런 로직이 없기때문에 공통 로직이 변경되어도 아무런 영향이 없다.
+  <br />
+  <img src="../images/2021-05-10-first-posting/Strategy_Pattern.png" alt="이미지" />
+  <br />
+  <br /></li>
+      <li><strong><em>장점</em></strong>
+        <ul>
+          <li>런타임에 객체 내부의 알고리즘을 바꿀 수 있다.</li>
+          <li>공통로직이 부모클래스에 있지 않고 Context라는 별도의 클래스에 존재하기 떄문에 구현체들에 대한 영향도가 적다.</li>
+          <li>Context 가 Strategy 라는 인터페이스를 의존하고 있기 때문에 구현체를 갈아끼우기 쉽다.</li>
+          <li>결국 확장에 유리하다.</li>
+          <li>단일책임원칙을 지키면서 새로운 전략을 추가할 수 있다.</li>
+        </ul>
+      </li>
+    </ul>
+
+    <p><br /></p>
+
+    <ul>
+      <li><strong><em>단점</em></strong>
+        <ul>
+          <li>클래스로 분리된 전략에 대해 모두 알아야 한다.</li>
+          <li>알고리즘 변경이 많지 않다면, 오히려 분기를 타는것보다 코드를 복잡하게 만들 수 있다.</li>
+          <li>로직이 늘어날때마다 구현클래스가 늘어난다.</li>
+        </ul>
+      </li>
+    </ul>
+
+    <p><br /></p>
+    <ul>
+      <li><strong><em>어떻게 쓰는데?</em></strong>
+  <br />
+  과일매장은 상황에 따라 다른 가격할인정책을 적용하고 있다.
+        <ul>
+          <li>첫손님에게 10% 할인</li>
+          <li>마지막손님은 20% 할인</li>
+          <li>신선도가 떨어진 과일은 20%할인
+  <br />
+  <br /></li>
+        </ul>
+
+        <p>할인이라는 알고리즘을 <code class="language-plaintext highlighter-rouge">DiscountPolicy</code>라는 인터페이스로 분리해보자.</p>
+
+        <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">public</span> <span class="kd">interface</span> <span class="nc">DiscountPolicy</span> <span class="o">{</span>
+      <span class="kt">double</span> <span class="nf">calculateWithDisCountRate</span><span class="o">(</span><span class="nc">Item</span> <span class="n">item</span><span class="o">);</span>
+  <span class="o">}</span>
+
+  <span class="kd">public</span> <span class="kd">class</span> <span class="nc">FirstCustomerDiscount</span> <span class="kd">implements</span> <span class="nc">DiscountPolicy</span> <span class="o">{</span>
+      <span class="nd">@Override</span>
+      <span class="kd">public</span> <span class="kt">double</span> <span class="nf">calculateWithDisCountRate</span><span class="o">(</span><span class="nc">Item</span> <span class="n">item</span><span class="o">)</span> <span class="o">{</span>
+          <span class="k">return</span> <span class="n">item</span><span class="o">.</span><span class="na">getPrice</span><span class="o">()</span> <span class="o">*</span> <span class="mf">0.9</span><span class="o">;</span>
+      <span class="o">}</span>
+  <span class="o">}</span>
+
+  <span class="kd">public</span> <span class="kd">class</span> <span class="nc">LastCustomerDiscount</span> <span class="kd">implements</span> <span class="nc">DiscountPolicy</span><span class="o">{</span>
+      <span class="nd">@Override</span>
+      <span class="kd">public</span> <span class="kt">double</span> <span class="nf">calculateWithDisCountRate</span><span class="o">(</span><span class="nc">Item</span> <span class="n">item</span><span class="o">)</span> <span class="o">{</span>
+          <span class="k">return</span> <span class="n">item</span><span class="o">.</span><span class="na">getPrice</span><span class="o">()</span> <span class="o">*</span> <span class="mf">0.8</span><span class="o">;</span>
+      <span class="o">}</span>
+  <span class="o">}</span>
+    
+  <span class="kd">public</span> <span class="kd">class</span> <span class="nc">UnFreshFruitDiscount</span> <span class="kd">implements</span> <span class="nc">DiscountPolicy</span><span class="o">{</span>
+      <span class="nd">@Override</span>
+      <span class="kd">public</span> <span class="kt">double</span> <span class="nf">calculateWithDisCountRate</span><span class="o">(</span><span class="nc">Item</span> <span class="n">item</span><span class="o">)</span> <span class="o">{</span>
+          <span class="k">return</span> <span class="n">item</span><span class="o">.</span><span class="na">getPrice</span><span class="o">()</span> <span class="o">*</span> <span class="mf">0.8</span><span class="o">;</span>
+      <span class="o">}</span>
+  <span class="o">}</span>
+</code></pre></div>        </div>
+
+        <p>그리고 이를 <code class="language-plaintext highlighter-rouge">Calculator</code>클래스에서 생성자를 통해 필요한 하위타입을 주입받아 사용해보자.
+  <br />
+  이렇게 되는 경우 외부에서 특정 경우(첫번째 손님, 마지막 손님, 싱싱하지 않은 과일)에 대한 할인정책을 생성자를 통해 전달해줄 수 있다.
+  <br /></p>
+
+        <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Calculator</span> <span class="o">{</span>
+			
+      <span class="kd">private</span> <span class="kd">final</span> <span class="nc">DiscountPolicy</span> <span class="n">discountPolicy</span><span class="o">;</span>
+			
+      <span class="kd">public</span> <span class="nf">Calculator</span><span class="o">(</span><span class="nc">DiscountPolicy</span> <span class="n">discountPolicy</span><span class="o">)</span> <span class="o">{</span>
+          <span class="k">this</span><span class="o">.</span><span class="na">discountPolicy</span> <span class="o">=</span> <span class="n">discountPolicy</span><span class="o">;</span>
+      <span class="o">}</span>
+			
+      <span class="kd">public</span> <span class="kt">double</span> <span class="nf">calculate</span><span class="o">(</span><span class="nc">List</span><span class="o">&lt;</span><span class="nc">Item</span><span class="o">&gt;</span> <span class="n">items</span><span class="o">)</span> <span class="o">{</span>
+          <span class="kt">double</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+          <span class="k">for</span> <span class="o">(</span><span class="nc">Item</span> <span class="n">item</span> <span class="o">:</span> <span class="n">items</span><span class="o">)</span> <span class="o">{</span>
+              <span class="n">sum</span> <span class="o">+=</span> <span class="n">discountPolicy</span><span class="o">.</span><span class="na">calculateWithDisCountRate</span><span class="o">(</span><span class="n">item</span><span class="o">);</span>
+          <span class="o">}</span>
+          <span class="k">return</span> <span class="n">sum</span><span class="o">;</span>
+      <span class="o">}</span>
+  <span class="o">}</span>
+</code></pre></div>        </div>
+
+        <p>아래의 경우는 첫번째 손님 할인정책을 적용하는 코드이다. 
+  <br />
+  일반적으로 Controller는 사용자의 요청 등을 매핑하여 받아오기 때문에 특정 알고리즘(첫번째 손님 계산)을 선택되었다는걸 알 수 있다.
+  <br />
+  요청에 맞는 객체를 Calculator에 주입해주는 방식을 통해 전략패턴을 구현했다.</p>
+
+        <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">public</span> <span class="kd">class</span> <span class="nc">FruitController</span> <span class="o">{</span>
+      <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+          <span class="nc">Calculator</span> <span class="n">calculator</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Calculator</span><span class="o">(</span><span class="k">new</span> <span class="nc">FirstCustomerDiscount</span><span class="o">());</span>
+          <span class="n">calculator</span><span class="o">.</span><span class="na">calculate</span><span class="o">(</span><span class="nc">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span>
+              <span class="k">new</span> <span class="nf">Item</span><span class="o">(</span><span class="s">"Apple"</span><span class="o">,</span> <span class="mi">3000</span><span class="o">),</span>
+              <span class="k">new</span> <span class="nf">Item</span><span class="o">(</span><span class="s">"Banana"</span><span class="o">,</span> <span class="mi">3000</span><span class="o">),</span>
+              <span class="k">new</span> <span class="nf">Item</span><span class="o">(</span><span class="s">"Orange"</span><span class="o">,</span> <span class="mi">2000</span><span class="o">),</span>
+              <span class="k">new</span> <span class="nf">Item</span><span class="o">(</span><span class="s">"Pitch"</span><span class="o">,</span> <span class="mi">4000</span><span class="o">)</span>
+          <span class="o">));</span>
+      <span class="o">}</span>
+  <span class="o">}</span>
+</code></pre></div>        </div>
+        <p><br /></p>
+      </li>
+    </ul>
   </li>
   <li><strong><em>상속 vs 합성?</em></strong>
-<br />
-   상속은 is-a 합성은 has-a
+  <br />
+   상속은 is-a, 합성은 has-a
    <br />
    결국, 코드의 재사용성 만을 위해 상속을 사용하는 방식은 여러 문제점을 가지고 있기 때문에 재사용성 뿐만 아니라 클래스간의 확실한 계층구조를 만들때 상속을 사용하며 그 외에는 합성을 사용하는 것이 좋다고 생각이 든다.</li>
 </ul>
