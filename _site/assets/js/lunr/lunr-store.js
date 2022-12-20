@@ -22,4 +22,10 @@ var store = [{
         "tags": ["java"],
         "url": "/til/1%EC%A3%BC%EC%B0%A8/",
         "teaser": null
+      },{
+        "title": "Annotation",
+        "excerpt":"@EnableScheduling 스프링의 스케쥴링을 위한 어노테이션이다. 기본적으로 스프링에 의헤 생성된 한개의 Thread Pool에서 작동한다. 하나의 스케쥴이 돌고 있으면 그것이 다 끝나야 다음 스케쥴이 실행되기 때문에 설정을 통해 스케쥴에 대한 스레드풀을 생성하고 그 스레드풀을 사용해서 병렬적으로 처리하는게 좋을 수 있다. 스프링 스케쥴링에 사용 스프링 빈으로 등록해서 사용한다. Application Class에 @EnableScheduling 선언 scheduler를...","categories": ["TIL"],
+        "tags": ["java","Spring","Annotation"],
+        "url": "/til/Annotation/",
+        "teaser": null
       }]
