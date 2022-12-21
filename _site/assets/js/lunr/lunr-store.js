@@ -30,7 +30,7 @@ var store = [{
         "teaser": null
       },{
         "title": "2주차",
-        "excerpt":"Today I Learned enum 싱글톤 hash 작동하는 방식이라던가.. Set 자료구조 확인하기 성능적으로 어떻게 사용하면 훨씬 효율적일까? 예를들면 contains 인터페이스 추상클래스 둘의 차이 가장 중요한건 필드 즉, 상태값을 가진다 못가진다의 차이였지만 인터페이스의 디폴트 메서드는 무엇인가? To Do 인터페이스 default method 디폴트 메서드랑 일반 메서드랑 뭐가달라서 인터페이스에서 사용할 수 있게 됬지? 자바의...","categories": ["TIL"],
+        "excerpt":"Today I Learned enum 싱글톤 hash 작동하는 방식이라던가.. Set 자료구조 확인하기 성능적으로 어떻게 사용하면 훨씬 효율적일까? 예를들면 contains 인터페이스 추상클래스 둘의 차이 가장 중요한건 필드 즉, 상태값을 가진다 못가진다의 차이였지만 인터페이스의 디폴트 메서드는 무엇인가? Strangler Pattern (교살자 패턴) To Do 인터페이스 default method 디폴트 메서드랑 일반 메서드랑 뭐가달라서 인터페이스에서 사용할...","categories": ["TIL"],
         "tags": ["java"],
         "url": "/til/2%EC%A3%BC%EC%B0%A8/",
         "teaser": null
