@@ -1,4 +1,42 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-12-21T21:05:46+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">Annotation</title><link href="http://localhost:4000/til/Annotation/" rel="alternate" type="text/html" title="Annotation" /><published>2022-12-20T00:00:00+09:00</published><updated>2022-12-20T00:00:00+09:00</updated><id>http://localhost:4000/til/Annotation</id><content type="html" xml:base="http://localhost:4000/til/Annotation/"><![CDATA[<p><br /><br /><br /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-12-22T01:45:44+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">2주차</title><link href="http://localhost:4000/til/2%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="2주차" /><published>2022-12-22T00:00:00+09:00</published><updated>2022-12-22T00:00:00+09:00</updated><id>http://localhost:4000/til/2%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/2%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
+
+<h1 id="today-i-learned">Today I Learned</h1>
+
+<h2 id="enum">enum</h2>
+
+<h2 id="싱글톤">싱글톤</h2>
+
+<h2 id="hash">hash</h2>
+<ul>
+  <li>작동하는 방식이라던가..</li>
+</ul>
+
+<h2 id="set-자료구조-확인하기">Set 자료구조 확인하기</h2>
+<ul>
+  <li>성능적으로 어떻게 사용하면 훨씬 효율적일까? 예를들면 contains</li>
+</ul>
+
+<h2 id="인터페이스">인터페이스</h2>
+
+<h2 id="추상클래스">추상클래스</h2>
+
+<h2 id="둘의-차이">둘의 차이</h2>
+<ul>
+  <li>가장 중요한건 필드 즉, 상태값을 가진다 못가진다의 차이였지만 인터페이스의 디폴트 메서드는 무엇인가?</li>
+</ul>
+
+<p><br /></p>
+
+<h1 id="to-do">To Do</h1>
+
+<h2 id="인터페이스-1">인터페이스</h2>
+
+<h2 id="default-method">default method</h2>
+<ul>
+  <li>디폴트 메서드랑 일반 메서드랑 뭐가달라서 인터페이스에서 사용할 수 있게 됬지?</li>
+</ul>
+
+<h2 id="자바의-신-2권">자바의 신 2권</h2>]]></content><author><name>NNIIE</name></author><category term="TIL" /><category term="java" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Annotation</title><link href="http://localhost:4000/til/Annotation/" rel="alternate" type="text/html" title="Annotation" /><published>2022-12-20T00:00:00+09:00</published><updated>2022-12-20T00:00:00+09:00</updated><id>http://localhost:4000/til/Annotation</id><content type="html" xml:base="http://localhost:4000/til/Annotation/"><![CDATA[<p><br /><br /><br /></p>
 
 <h1 id="enablescheduling">@EnableScheduling</h1>
 <p>스프링의 스케쥴링을 위한 어노테이션이다.
@@ -801,6 +839,8 @@ SOLID원칙의 리스코프치환 원칙에서 알 수 있다.
 </code></pre></div>    </div>
   </li>
 </ul>
+
+<p><br /></p>
 
 <h2 id="자바의-신-2권">자바의 신 2권</h2>]]></content><author><name>NNIIE</name></author><category term="TIL" /><category term="java" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">22.12</title><link href="http://localhost:4000/til/1-TIL/" rel="alternate" type="text/html" title="22.12" /><published>2022-12-04T00:00:00+09:00</published><updated>2022-12-04T00:00:00+09:00</updated><id>http://localhost:4000/til/1-TIL</id><content type="html" xml:base="http://localhost:4000/til/1-TIL/"><![CDATA[<p><br /><br /><br /></p>
 

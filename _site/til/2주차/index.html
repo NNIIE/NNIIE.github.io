@@ -9,7 +9,7 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Annotation | NNIIE</title>
+<!-- begin _includes/seo.html --><title>2주차 | NNIIE</title>
 <meta name="description" content="">
 
 
@@ -22,8 +22,8 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="NNIIE">
-<meta property="og:title" content="Annotation">
-<meta property="og:url" content="http://localhost:4000/til/Annotation/">
+<meta property="og:title" content="2주차">
+<meta property="og:url" content="http://localhost:4000/til/2%EC%A3%BC%EC%B0%A8/">
 
 
   <meta property="og:description" content="">
@@ -34,7 +34,7 @@
 
 
 
-  <meta property="article:published_time" content="2022-12-20T00:00:00+09:00">
+  <meta property="article:published_time" content="2022-12-22T00:00:00+09:00">
 
 
 
@@ -45,7 +45,7 @@
   
 
 
-<link rel="canonical" href="http://localhost:4000/til/Annotation/">
+<link rel="canonical" href="http://localhost:4000/til/2%EC%A3%BC%EC%B0%A8/">
 
 
 
@@ -189,7 +189,7 @@
     
       
       
-        <li class="current">Annotation</li>
+        <li class="current">2주차</li>
       
     
   </ol>
@@ -203,15 +203,15 @@
 
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="Annotation">
+    <meta itemprop="headline" content="2주차">
     <meta itemprop="description" content="">
-    <meta itemprop="datePublished" content="2022-12-20T00:00:00+09:00">
+    <meta itemprop="datePublished" content="2022-12-22T00:00:00+09:00">
     
 
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">Annotation
+          <h1 id="page-title" class="page__title" itemprop="headline">2주차
 </h1>
           
 
@@ -221,7 +221,7 @@
       <span class="page__meta-date">
         <i class="far fa-calendar-alt" aria-hidden="true"></i>
         
-        <time datetime="2022-12-20T00:00:00+09:00">2022-12-20</time>
+        <time datetime="2022-12-22T00:00:00+09:00">2022-12-22</time>
       </span>
     
 
@@ -249,44 +249,50 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> TIL</h4></header>
-              <ul class="toc__menu"><li><a href="#enablescheduling">@EnableScheduling</a></li></ul>
+              <ul class="toc__menu"><li><a href="#today-i-learned">Today I Learned</a><ul><li><a href="#enum">enum</a></li><li><a href="#싱글톤">싱글톤</a></li><li><a href="#hash">hash</a></li><li><a href="#set-자료구조-확인하기">Set 자료구조 확인하기</a></li><li><a href="#인터페이스">인터페이스</a></li><li><a href="#추상클래스">추상클래스</a></li><li><a href="#둘의-차이">둘의 차이</a></li></ul></li><li><a href="#to-do">To Do</a><ul><li><a href="#인터페이스-1">인터페이스</a></li><li><a href="#default-method">default method</a></li><li><a href="#자바의-신-2권">자바의 신 2권</a></li></ul></li></ul>
 
             </nav>
           </aside>
         
         <p><br /><br /><br /></p>
 
-<h1 id="enablescheduling">@EnableScheduling</h1>
-<p>스프링의 스케쥴링을 위한 어노테이션이다.
-<br />
-기본적으로 스프링에 의헤 생성된 한개의 <code class="language-plaintext highlighter-rouge">Thread Pool</code>에서 작동한다. 
-<br />
-하나의 스케쥴이 돌고 있으면 그것이 다 끝나야 다음 스케쥴이 실행되기 때문에 설정을 통해 스케쥴에 대한 스레드풀을 생성하고 
-그 스레드풀을 사용해서 병렬적으로 처리하는게 좋을 수 있다.</p>
+<h1 id="today-i-learned">Today I Learned</h1>
 
+<h2 id="enum">enum</h2>
+
+<h2 id="싱글톤">싱글톤</h2>
+
+<h2 id="hash">hash</h2>
 <ul>
-  <li>스프링 스케쥴링에 사용</li>
-  <li>스프링 빈으로 등록해서 사용한다.</li>
-  <li>Application Class에 @EnableScheduling 선언</li>
-  <li>scheduler를 사용할 class에 @Component 선언, 메서드에 @Scheduled 선언
-    <ul>
-      <li>메서드 타입은 void</li>
-      <li>메서드에 매개변수 사용 불가</li>
-    </ul>
-  </li>
+  <li>작동하는 방식이라던가..</li>
+</ul>
+
+<h2 id="set-자료구조-확인하기">Set 자료구조 확인하기</h2>
+<ul>
+  <li>성능적으로 어떻게 사용하면 훨씬 효율적일까? 예를들면 contains</li>
+</ul>
+
+<h2 id="인터페이스">인터페이스</h2>
+
+<h2 id="추상클래스">추상클래스</h2>
+
+<h2 id="둘의-차이">둘의 차이</h2>
+<ul>
+  <li>가장 중요한건 필드 즉, 상태값을 가진다 못가진다의 차이였지만 인터페이스의 디폴트 메서드는 무엇인가?</li>
 </ul>
 
 <p><br /></p>
 
+<h1 id="to-do">To Do</h1>
+
+<h2 id="인터페이스-1">인터페이스</h2>
+
+<h2 id="default-method">default method</h2>
 <ul>
-  <li><strong><em>왜 이거쓰는데?</em></strong>
-<br />
-  <code class="language-plaintext highlighter-rouge">Spring Quartz</code>라는 더 많은 기능을 가진 스케줄러도 존재한다.
-  <br />
-  하지만 의존성이 추가되어야 하고 사용법이 좀 더 복잡하기 때문에 단순한 스케쥴링 작업에는 
-  <br />
-  별도의 추가적인 의존성이 필요없고 사용법이 간단한 <code class="language-plaintext highlighter-rouge">Spring Scheduler</code>를 추천한다.</li>
+  <li>디폴트 메서드랑 일반 메서드랑 뭐가달라서 인터페이스에서 사용할 수 있게 됬지?</li>
 </ul>
+
+<h2 id="자바의-신-2권">자바의 신 2권</h2>
 
         
       </section>
@@ -303,11 +309,7 @@
     <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
     <span itemprop="keywords">
     
-      <a href="/tags/#annotation" class="page__taxonomy-item" rel="tag">Annotation</a><span class="sep">, </span>
-    
-      <a href="/tags/#java" class="page__taxonomy-item" rel="tag">java</a><span class="sep">, </span>
-    
-      <a href="/tags/#spring" class="page__taxonomy-item" rel="tag">Spring</a>
+      <a href="/tags/#java" class="page__taxonomy-item" rel="tag">java</a>
     
     </span>
   </p>
@@ -332,7 +334,7 @@
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2022-12-20T00:00:00+09:00">2022-12-20</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2022-12-22T00:00:00+09:00">2022-12-22</time></p>
 
 
       </footer>
@@ -342,23 +344,22 @@
     <h4 class="page__share-title">공유하기</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=Annotation%20http%3A%2F%2Flocalhost%3A4000%2Ftil%2FAnnotation%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=2%EC%A3%BC%EC%B0%A8%20http%3A%2F%2Flocalhost%3A4000%2Ftil%2F2%25EC%25A3%25BC%25EC%25B0%25A8%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Ftil%2FAnnotation%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Ftil%2F2%25EC%25A3%25BC%25EC%25B0%25A8%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Ftil%2FAnnotation%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Ftil%2F2%25EC%25A3%25BC%25EC%25B0%25A8%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="/til/1%EC%A3%BC%EC%B0%A8/" class="pagination--pager" title="1주차
+      <a href="/til/Annotation/" class="pagination--pager" title="Annotation
 ">이전</a>
     
     
-      <a href="/til/2%EC%A3%BC%EC%B0%A8/" class="pagination--pager" title="2주차
-">다음</a>
+      <a href="#" class="pagination--pager disabled">다음</a>
     
   </nav>
 
@@ -382,7 +383,7 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/til/2%EC%A3%BC%EC%B0%A8/" rel="permalink">2주차
+        <a href="/til/Annotation/" rel="permalink">Annotation
 </a>
       
     </h2>
@@ -394,7 +395,7 @@
       <span class="page__meta-date">
         <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
         
-        <time datetime="2022-12-22T00:00:00+09:00">2022-12-22</time>
+        <time datetime="2022-12-20T00:00:00+09:00">2022-12-20</time>
       </span>
     
 
@@ -613,8 +614,8 @@
     
   <script>
     var disqus_config = function () {
-      this.page.url = "http://localhost:4000/til/Annotation/";  /* Replace PAGE_URL with your page's canonical URL variable */
-      this.page.identifier = "/til/Annotation"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+      this.page.url = "http://localhost:4000/til/2%EC%A3%BC%EC%B0%A8/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/til/2주차"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
     };
     (function() { /* DON'T EDIT BELOW THIS LINE */
       var d = document, s = d.createElement('script');
