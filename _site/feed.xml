@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-12-20T17:08:32+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">Annotation</title><link href="http://localhost:4000/til/Annotation/" rel="alternate" type="text/html" title="Annotation" /><published>2022-12-20T00:00:00+09:00</published><updated>2022-12-20T00:00:00+09:00</updated><id>http://localhost:4000/til/Annotation</id><content type="html" xml:base="http://localhost:4000/til/Annotation/"><![CDATA[<p><br /><br /><br /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-12-21T21:05:46+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">Annotation</title><link href="http://localhost:4000/til/Annotation/" rel="alternate" type="text/html" title="Annotation" /><published>2022-12-20T00:00:00+09:00</published><updated>2022-12-20T00:00:00+09:00</updated><id>http://localhost:4000/til/Annotation</id><content type="html" xml:base="http://localhost:4000/til/Annotation/"><![CDATA[<p><br /><br /><br /></p>
 
 <h1 id="enablescheduling">@EnableScheduling</h1>
 <p>스프링의 스케쥴링을 위한 어노테이션이다.
@@ -644,7 +644,163 @@ SOLID원칙의 리스코프치환 원칙에서 알 수 있다.
    결국, 코드의 재사용성 만을 위해 상속을 사용하는 방식은 여러 문제점을 가지고 있기 때문에 재사용성 뿐만 아니라 클래스간의 확실한 계층구조를 만들때 상속을 사용하며 그 외에는 의존성이 낮은 합성을 사용하는 것이 좋다고 생각이 든다.</li>
 </ul>
 
+<p><br /></p>
+
 <h2 id="다형성">다형성</h2>
+<p>변화에 유연한 소프트웨어를 만들기 위한 객체지향 패러다임의 가장 중추적인 방법이다.
+<br />
+<code class="language-plaintext highlighter-rouge">다형성</code>이란 하나의 타입에 여러 객체를 대입할 수 있는 성질이고, 이것을 위해서 여러 객체들중 공통 특성으로
+타입을 추상화하고 그것을 상속 또는 인터페이스라면 구현해야한다.
+<br /></p>
+<ul>
+  <li><strong><em>업캐스팅</em></strong>
+    <ul>
+      <li>서로 다른 클래스의 인스턴스를 동일한 타입에 할당할 수 있게 해준다.</li>
+      <li>부모클래스의 인스턴스 대신 자식클래스의 인스턴스를 사용해도 메시지를 처리하는데 문제가 없으며, 컴파일러는 명시적인 타입변환 없이도 자식클래스가 부모클래스를 대체할 수 있게 허용한다.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<ul>
+  <li><strong><em>동적 바인딩</em></strong>
+    <ul>
+      <li>메시지를 수신했을 때 실행될 메서드가 런타임에 결정된다.</li>
+      <li>이와같이 런타임에 실행될 메서드를 결정하는 방식을 동적바인딩 혹은 지연바인딩 이라고 한다.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<ul>
+  <li>
+    <p><strong><em>오버로딩(Overloading)</em></strong>
+  <br />
+  자바 <code class="language-plaintext highlighter-rouge">PrintStream</code> 클래스에는 매개변수만 다른 <code class="language-plaintext highlighter-rouge">println</code>이라는 메서드가 여러개 정의되어 있다.</p>
+
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">public</span> <span class="kd">class</span> <span class="nc">PrintStream</span> <span class="o">{</span>
+      <span class="o">...</span>
+      <span class="kd">public</span> <span class="kt">void</span> <span class="nf">println</span><span class="o">()</span> <span class="o">{</span>
+          <span class="n">newLine</span><span class="o">();</span>
+      <span class="o">}</span>
+
+      <span class="kd">public</span> <span class="kt">void</span> <span class="nf">println</span><span class="o">(</span><span class="kt">boolean</span> <span class="n">x</span><span class="o">)</span> <span class="o">{</span>
+          <span class="kd">synchronized</span> <span class="o">(</span><span class="k">this</span><span class="o">)</span> <span class="o">{</span>
+              <span class="n">print</span><span class="o">(</span><span class="n">x</span><span class="o">);</span>
+              <span class="n">newLine</span><span class="o">();</span>
+          <span class="o">}</span>
+      <span class="o">}</span>
+
+      <span class="kd">public</span> <span class="kt">void</span> <span class="nf">println</span><span class="o">(</span><span class="kt">char</span> <span class="n">x</span><span class="o">)</span> <span class="o">{</span>
+          <span class="kd">synchronized</span> <span class="o">(</span><span class="k">this</span><span class="o">)</span> <span class="o">{</span>
+              <span class="n">print</span><span class="o">(</span><span class="n">x</span><span class="o">);</span>
+              <span class="n">newLine</span><span class="o">();</span>
+          <span class="o">}</span>
+      <span class="o">}</span>
+      <span class="o">...</span>
+  <span class="o">}</span>
+</code></pre></div>    </div>
+
+    <ul>
+      <li>매개변수로 어떤 타입을 넣어주든, 모두 <code class="language-plaintext highlighter-rouge">println</code>이라는 메서드 시그니처를 호출하여 원하는 내용을 출력하는 기능을 수행한다.</li>
+      <li>오버로딩은 여러종류의 타입을 받아 같은 기능을 하도록 만들기 위함이고 런타임 시점에 특정 메서드를 바인딩 할수 있다.</li>
+      <li>즉, 다형성 이라고 할 수 있다.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<ul>
+  <li><strong><em>오버라이딩(Overriding)</em></strong>
+  <br />
+  앞서 상속에서도 정리했던 오버라이딩은 부모클래스의 메서드를 하위클래스에서 재정의 하는것을 의미한다.
+  <br />
+  <br />
+  아래 <code class="language-plaintext highlighter-rouge">Figure</code>라는 추상클래스에서는 하위 클래스에서 오버라이딩 해야할 메서드를 정의해 두었다.
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">public</span> <span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">Figure</span> <span class="o">{</span>
+      <span class="kd">protected</span> <span class="kt">int</span> <span class="n">dot</span><span class="o">;</span>
+      <span class="kd">protected</span> <span class="kt">int</span> <span class="n">area</span><span class="o">;</span>
+
+      <span class="kd">public</span> <span class="nf">Figure</span><span class="o">(</span><span class="kd">final</span> <span class="kt">int</span> <span class="n">dot</span><span class="o">,</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">area</span><span class="o">)</span> <span class="o">{</span>
+          <span class="k">this</span><span class="o">.</span><span class="na">dot</span> <span class="o">=</span> <span class="n">dot</span><span class="o">;</span>
+          <span class="k">this</span><span class="o">.</span><span class="na">area</span> <span class="o">=</span> <span class="n">area</span><span class="o">;</span>
+      <span class="o">}</span>
+
+      <span class="kd">public</span> <span class="kd">abstract</span> <span class="kt">void</span> <span class="nf">display</span><span class="o">();</span>
+  <span class="o">}</span>
+</code></pre></div>    </div>
+    <p><code class="language-plaintext highlighter-rouge">Figure</code>를 상속받는 하위클래스 들이다.</p>
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Triangle</span> <span class="kd">extends</span> <span class="nc">Figure</span> <span class="o">{</span>
+      <span class="kd">public</span> <span class="nf">Triangle</span><span class="o">(</span><span class="kd">final</span> <span class="kt">int</span> <span class="n">dot</span><span class="o">,</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">area</span><span class="o">)</span> <span class="o">{</span>
+          <span class="kd">super</span><span class="o">(</span><span class="n">dot</span><span class="o">,</span> <span class="n">area</span><span class="o">);</span>
+      <span class="o">}</span>
+
+      <span class="nd">@Override</span>
+      <span class="kd">public</span> <span class="kt">void</span> <span class="nf">display</span><span class="o">()</span> <span class="o">{</span>
+          <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">"넓이가 %d인 삼각형입니다."</span><span class="o">,</span> <span class="n">area</span><span class="o">);</span>
+      <span class="o">}</span>
+  <span class="o">}</span>
+
+  <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Square</span> <span class="kd">extends</span> <span class="nc">Figure</span> <span class="o">{</span>
+      <span class="kd">public</span> <span class="nf">Square</span><span class="o">(</span><span class="kd">final</span> <span class="kt">int</span> <span class="n">dot</span><span class="o">,</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">area</span><span class="o">)</span> <span class="o">{</span>
+          <span class="kd">super</span><span class="o">(</span><span class="n">dot</span><span class="o">,</span> <span class="n">area</span><span class="o">);</span>
+      <span class="o">}</span>
+
+      <span class="nd">@Override</span>
+      <span class="kd">public</span> <span class="kt">void</span> <span class="nf">display</span><span class="o">()</span> <span class="o">{</span>
+          <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">"넓이가 %d인 사각형입니다."</span><span class="o">,</span> <span class="n">area</span><span class="o">);</span>
+      <span class="o">}</span>
+  <span class="o">}</span>
+</code></pre></div>    </div>
+    <ul>
+      <li>이런식으로 새로운 도형 객체가 추가될 때 <code class="language-plaintext highlighter-rouge">Figure</code>를 상속받고 메서드를 재정의 해주면 실제로 사용되는 비즈니스로직의 변경을 최소화 할 수 있다.</li>
+      <li>다형성을 사용하지 않고 도형 객체를 추가하려고 하면 if-else 분기가 늘어나게 되버린다.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<ul>
+  <li><strong><em>함수형 인터페이스(Funtional Interface)</em></strong>
+  <br />
+  람다식을 사용하기 위한 API로 자바에서 제공하는 인터페이스에 구현할 메서드가 하나 뿐인 인터페이스 이다.
+  <br />
+  <code class="language-plaintext highlighter-rouge">enum</code>과 함께 사용할 시 다형성의 장점을 경험할 수 있다.
+  <br />
+  <br />
+  문자열 계산기 이다.
+  <br />
+  각각의 연산자를 <code class="language-plaintext highlighter-rouge">enum</code>으로 정의하고 연산 방식을 <code class="language-plaintext highlighter-rouge">BiFuntion</code>을 사용한 람다식으로 정의한다면 연산자를 추가 해야 할 때, <code class="language-plaintext highlighter-rouge">enum</code>에만 추가해주면 실제로 연산을 수행하는 <code class="language-plaintext highlighter-rouge">calculate</code> 메서드는 아무 수정없이 기능확장을 할 수 있다.
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">public</span> <span class="kd">enum</span> <span class="nc">Operator</span> <span class="o">{</span>
+      <span class="no">PLUS</span><span class="o">(</span><span class="s">"+"</span><span class="o">,</span> <span class="o">(</span><span class="n">a</span><span class="o">,</span> <span class="n">b</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="o">),</span>
+      <span class="no">MINUS</span><span class="o">(</span><span class="s">"-"</span><span class="o">,</span> <span class="o">(</span><span class="n">a</span><span class="o">,</span> <span class="n">b</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">a</span> <span class="o">-</span> <span class="n">b</span><span class="o">),</span>
+      <span class="no">MULTIPLY</span><span class="o">(</span><span class="s">"*"</span><span class="o">,</span> <span class="o">(</span><span class="n">a</span><span class="o">,</span> <span class="n">b</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span><span class="o">),</span>
+      <span class="no">DIVIDE</span><span class="o">(</span><span class="s">"/"</span><span class="o">,</span> <span class="o">(</span><span class="n">a</span><span class="o">,</span> <span class="n">b</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">a</span> <span class="o">/</span> <span class="n">b</span><span class="o">);</span>
+
+      <span class="kd">private</span> <span class="kd">final</span> <span class="nc">String</span> <span class="n">sign</span><span class="o">;</span>
+      <span class="kd">private</span> <span class="kd">final</span> <span class="nc">BiFunction</span><span class="o">&lt;</span><span class="nc">Long</span><span class="o">,</span> <span class="nc">Long</span><span class="o">,</span> <span class="nc">Long</span><span class="o">&gt;</span> <span class="n">bi</span><span class="o">;</span>
+
+      <span class="nc">Operator</span><span class="o">(</span><span class="nc">String</span> <span class="n">sign</span><span class="o">,</span> <span class="nc">BiFunction</span><span class="o">&lt;</span><span class="nc">Long</span><span class="o">,</span> <span class="nc">Long</span><span class="o">,</span> <span class="nc">Long</span><span class="o">&gt;</span> <span class="n">bi</span><span class="o">)</span> <span class="o">{</span>
+          <span class="k">this</span><span class="o">.</span><span class="na">sign</span> <span class="o">=</span> <span class="n">sign</span><span class="o">;</span>
+          <span class="k">this</span><span class="o">.</span><span class="na">bi</span> <span class="o">=</span> <span class="n">bi</span><span class="o">;</span>
+      <span class="o">}</span>
+
+      <span class="kd">public</span> <span class="kd">static</span> <span class="kt">long</span> <span class="nf">calculate</span><span class="o">(</span><span class="kt">long</span> <span class="n">a</span><span class="o">,</span> <span class="kt">long</span> <span class="n">b</span><span class="o">,</span> <span class="nc">String</span> <span class="n">sign</span><span class="o">)</span> <span class="o">{</span>
+          <span class="nc">Operator</span> <span class="n">operator</span> <span class="o">=</span> <span class="nc">Arrays</span><span class="o">.</span><span class="na">stream</span><span class="o">(</span><span class="n">values</span><span class="o">())</span>
+                  <span class="o">.</span><span class="na">filter</span><span class="o">(</span><span class="n">v</span> <span class="o">-&gt;</span> <span class="n">v</span><span class="o">.</span><span class="na">sign</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">sign</span><span class="o">))</span>
+                  <span class="o">.</span><span class="na">findFirst</span><span class="o">()</span>
+                  <span class="o">.</span><span class="na">orElseThrow</span><span class="o">(</span><span class="nl">IllegalArgumentException:</span><span class="o">:</span><span class="k">new</span><span class="o">);</span>
+
+          <span class="k">return</span> <span class="n">operator</span><span class="o">.</span><span class="na">bi</span><span class="o">.</span><span class="na">apply</span><span class="o">(</span><span class="n">a</span><span class="o">,</span> <span class="n">b</span><span class="o">);</span>
+      <span class="o">}</span>
+  <span class="o">}</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
 
 <h2 id="자바의-신-2권">자바의 신 2권</h2>]]></content><author><name>NNIIE</name></author><category term="TIL" /><category term="java" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">22.12</title><link href="http://localhost:4000/til/1-TIL/" rel="alternate" type="text/html" title="22.12" /><published>2022-12-04T00:00:00+09:00</published><updated>2022-12-04T00:00:00+09:00</updated><id>http://localhost:4000/til/1-TIL</id><content type="html" xml:base="http://localhost:4000/til/1-TIL/"><![CDATA[<p><br /><br /><br /></p>
 
