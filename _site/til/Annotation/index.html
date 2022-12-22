@@ -249,7 +249,7 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> TIL</h4></header>
-              <ul class="toc__menu"><li><a href="#enablescheduling">@EnableScheduling</a></li><li><a href="#value">@Value</a></li><li><a href="#bean">@Bean</a></li></ul>
+              <ul class="toc__menu"><li><a href="#enablescheduling">@EnableScheduling</a></li><li><a href="#value">@Value</a></li><li><a href="#bean">@Bean</a></li><li><a href="#async">@Async</a></li></ul>
 
             </nav>
           </aside>
@@ -328,6 +328,51 @@
       <li>외부라이브러리 또는 내장 클래스를 Bean으로 등록하고자 할 경우 사용한다.</li>
       <li>1개 이상의 @Bean을 제공하는 클래스의 경우 반드시 @Configuration를 선언한다.</li>
       <li>선언 시 Component-Scan에 의해 Bean으로 등록 된다.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h1 id="async">@Async</h1>
+<p>스프링에서 제공하는 <code class="language-plaintext highlighter-rouge">Thread Pool</code>을 활용하는 비동기 메서드 지원 어노테이션이다.
+<br />
+간단하게 사용하고 싶다면 Application 클래스에 <code class="language-plaintext highlighter-rouge">@EnableAsync</code>를 선언하고 비동기로 작동하고자 하는 메서드에 <code class="language-plaintext highlighter-rouge">@Async</code>를 선언해주면 사용할 수 있다.
+<br />
+하지만 이럴 경우 기본설정인 <code class="language-plaintext highlighter-rouge">SimpleAsyncTaskExecutor</code>를 사용해서 스레드를 관리하지 않는 등의 문제가 있기 때문에 <code class="language-plaintext highlighter-rouge">AsyncConfigurer</code> 인터페이스를 상속받아 구현하는게 좋을 수 있다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Configuration</span>
+<span class="nd">@EnableAsync</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">AsyncConfig</span> <span class="kd">implements</span> <span class="nc">AsyncConfigurer</span> <span class="o">{</span>
+	
+	<span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="nc">Executor</span> <span class="nf">getAsyncExecutor</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">ThreadPoolTaskExecutor</span> <span class="n">executor</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ThreadPoolTaskExecutor</span><span class="o">();</span>
+        <span class="n">executor</span><span class="o">.</span><span class="na">setCorePoolSize</span><span class="o">(</span><span class="mi">5</span><span class="o">);</span>
+        <span class="n">executor</span><span class="o">.</span><span class="na">setMaxPoolSize</span><span class="o">(</span><span class="mi">30</span><span class="o">);</span>
+        <span class="n">executor</span><span class="o">.</span><span class="na">setQueueCapacity</span><span class="o">(</span><span class="mi">50</span><span class="o">);</span>
+        <span class="n">executor</span><span class="o">.</span><span class="na">setThreadNamePrefix</span><span class="o">(</span><span class="s">"async-pool"</span><span class="o">);</span>
+        <span class="n">executor</span><span class="o">.</span><span class="na">initialize</span><span class="o">();</span>
+        <span class="k">return</span> <span class="n">executor</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong><em>@Configuration</em></strong> : 빈 등록</li>
+  <li><strong><em>@EnableAsync</em></strong> : 메서드에서 비동기 기능을 사용할 수 있게 한다.</li>
+  <li><strong><em>CorePoolSize</em></strong> : 기본 실행 대기하는 Thread의 수</li>
+  <li><strong><em>MaxPoolSize</em></strong> : 동시 동작하는 최대 Thread의 수</li>
+  <li><strong><em>QueueCapacity</em></strong> : MaxPoolSize 초과 요청에서 Thread 생성 요청시,  해당 요청을 Queue에 저장하는데 이때 최대 수용 가능한 Queue의 수,   Queue에 저장되어있다가 Thread에 자리가 생기면 하나씩 빠져나가 동작</li>
+  <li><strong><em>ThreadNamePrefix</em></strong> : 생성되는 Thread 접두사 지정</li>
+  <li>
+    <p>그 후 비동기를 원하는 메서드에 <code class="language-plaintext highlighter-rouge">@Async</code> 어노테이션을 선언해 주면 된다.</p>
+  </li>
+  <li><strong><em>주의할 점</em></strong>
+    <ul>
+      <li>private method에 사용 불가</li>
+      <li>자가호출 불가 즉, 이너클래스에서 사용 불가</li>
+      <li>QueueCapacity 초과 요청에 대한 비동기 method 호출시 방어 코드 작성</li>
     </ul>
   </li>
 </ul>

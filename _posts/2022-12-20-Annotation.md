@@ -71,3 +71,43 @@ properties 파일의 설정정보를 key-value형태로 가져오는데 쓰인�
 	* 외부라이브러리 또는 내장 클래스를 Bean으로 등록하고자 할 경우 사용한다.
 	* 1개 이상의 @Bean을 제공하는 클래스의 경우 반드시 @Configuration를 선언한다.
 	* 선언 시 Component-Scan에 의해 Bean으로 등록 된다.
+
+<br>
+
+# @Async
+스프링에서 제공하는 `Thread Pool`을 활용하는 비동기 메서드 지원 어노테이션이다.
+<br>
+간단하게 사용하고 싶다면 Application 클래스에 `@EnableAsync`를 선언하고 비동기로 작동하고자 하는 메서드에 `@Async`를 선언해주면 사용할 수 있다.
+<br>
+하지만 이럴 경우 기본설정인 `SimpleAsyncTaskExecutor`를 사용해서 스레드를 관리하지 않는 등의 문제가 있기 때문에 `AsyncConfigurer` 인터페이스를 상속받아 구현하는게 좋을 수 있다.
+
+```java
+@Configuration
+@EnableAsync
+public class AsyncConfig implements AsyncConfigurer {
+	
+	@Override
+    public Executor getAsyncExecutor() {
+        ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
+        executor.setCorePoolSize(5);
+        executor.setMaxPoolSize(30);
+        executor.setQueueCapacity(50);
+        executor.setThreadNamePrefix("async-pool");
+        executor.initialize();
+        return executor;
+    }
+}
+```
+
+* ***@Configuration*** : 빈 등록
+* ***@EnableAsync*** : 메서드에서 비동기 기능을 사용할 수 있게 한다.
+* ***CorePoolSize*** : 기본 실행 대기하는 Thread의 수
+* ***MaxPoolSize*** : 동시 동작하는 최대 Thread의 수
+* ***QueueCapacity*** : MaxPoolSize 초과 요청에서 Thread 생성 요청시,  해당 요청을 Queue에 저장하는데 이때 최대 수용 가능한 Queue의 수,   Queue에 저장되어있다가 Thread에 자리가 생기면 하나씩 빠져나가 동작
+* ***ThreadNamePrefix*** : 생성되는 Thread 접두사 지정
+* 그 후 비동기를 원하는 메서드에 `@Async` 어노테이션을 선언해 주면 된다.
+
+* ***주의할 점***
+	* private method에 사용 불가
+	* 자가호출 불가 즉, 이너클래스에서 사용 불가
+	* QueueCapacity 초과 요청에 대한 비동기 method 호출시 방어 코드 작성
