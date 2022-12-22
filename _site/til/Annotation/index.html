@@ -249,7 +249,7 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> TIL</h4></header>
-              <ul class="toc__menu"><li><a href="#enablescheduling">@EnableScheduling</a></li></ul>
+              <ul class="toc__menu"><li><a href="#enablescheduling">@EnableScheduling</a></li><li><a href="#value">@Value</a></li></ul>
 
             </nav>
           </aside>
@@ -286,6 +286,25 @@
   하지만 의존성이 추가되어야 하고 사용법이 좀 더 복잡하기 때문에 단순한 스케쥴링 작업에는 
   <br />
   별도의 추가적인 의존성이 필요없고 사용법이 간단한 <code class="language-plaintext highlighter-rouge">Spring Scheduler</code>를 추천한다.</li>
+</ul>
+
+<p><br /></p>
+
+<h1 id="value">@Value</h1>
+<p>properties 파일의 설정정보를 key-value형태로 가져오는데 쓰인다.
+<br />
+단일값 주입에 권장되고 있으며 여러개의 값을 주입받아야 할 경우
+<br />
+<code class="language-plaintext highlighter-rouge">@ConfigurationProperties</code> 사용을 권장한다.</p>
+
+<ul>
+  <li><strong><em>이거 왜쓰는데?</em></strong>
+<br />
+  만약 소스코드로 설정정보를 관리한다면 보안에도 좋지않고, 컴파일 된 바이트코드를 JVM에서 실행 후에 의미있는 정보가 되기때문에 서버를 내리지 않고는 변경할 수 없다.
+  <br />
+  하지만 properties 파일로 관리하면 key-value값만 불러서 치환하기 때문에 소스코드를 수정 할 필요가 없고 서버의 properties파일만 수정하면 되기 때문에 서버를 중단할 필요가 없다.
+  <br />
+  또한 각 서버환경에 따라 설정도 유연하게 관리할 수 있다.</li>
 </ul>
 
         
