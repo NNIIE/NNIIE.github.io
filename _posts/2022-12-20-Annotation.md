@@ -55,3 +55,19 @@ properties 파일의 설정정보를 key-value형태로 가져오는데 쓰인�
 	하지만 properties 파일로 관리하면 key-value값만 불러서 치환하기 때문에 소스코드를 수정 할 필요가 없고 서버의 properties파일만 수정하면 되기 때문에 서버를 중단할 필요가 없다.
 	<br>
 	또한 각 서버환경에 따라 설정도 유연하게 관리할 수 있다.
+
+<br>
+
+# @Bean
+* ***@Bean***
+	* 스프링에서 IoC 컨테이너가 관리하는 자바 객체
+	* 기본적으로 싱글톤으로 생성하고 관리한다.
+
+* ***@Component***
+	* 개발자가 직접 작성한 클래스를 Bean으로 등록할 때 사용한다.
+	* 선언 시 Component-Scan에 의해 Bean으로 등록 된다.
+
+* ***@Configuration***
+	* 외부라이브러리 또는 내장 클래스를 Bean으로 등록하고자 할 경우 사용한다.
+	* 1개 이상의 @Bean을 제공하는 클래스의 경우 반드시 @Configuration를 선언한다.
+	* 선언 시 Component-Scan에 의해 Bean으로 등록 된다.
