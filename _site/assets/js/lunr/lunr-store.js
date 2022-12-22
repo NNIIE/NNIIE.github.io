@@ -30,7 +30,7 @@ var store = [{
         "teaser": null
       },{
         "title": "2주차",
-        "excerpt":"Today I Learned enum 싱글톤 hash 작동하는 방식이라던가.. Set 자료구조 확인하기 성능적으로 어떻게 사용하면 훨씬 효율적일까? 예를들면 contains 인터페이스 추상클래스 둘의 차이 가장 중요한건 필드 즉, 상태값을 가진다 못가진다의 차이였지만 인터페이스의 디폴트 메서드는 무엇인가? Strangler Pattern (교살자 패턴) To Do 인터페이스 default method 디폴트 메서드랑 일반 메서드랑 뭐가달라서 인터페이스에서 사용할...","categories": ["TIL"],
+        "excerpt":"Today I Learned enum 열거형이라고 부르며, 서로 연관된 상수들의 집합이다. 모든 열거형은 Enum클래스의 자손이며 Enum클래스의 멤버를 상속받는다. 특징과 장점 enum은 컴파일 후 public static final 필드이며 객체로 제공된다. 상수들은 JVM 메서드 영역에 자리한다. Enum클래스는 상수와 같이 인스턴스가 단 한번만 생성된다. 컴파일 시점에 타입안정성이 보장되기 때문에 private 생성자만을 가진다. 즉, 인스턴스...","categories": ["TIL"],
         "tags": ["java"],
         "url": "/til/2%EC%A3%BC%EC%B0%A8/",
         "teaser": null

@@ -259,6 +259,58 @@
 <h1 id="today-i-learned">Today I Learned</h1>
 
 <h2 id="enum">enum</h2>
+<p>열거형이라고 부르며, 서로 연관된 상수들의 집합이다.
+<br />
+모든 열거형은 <code class="language-plaintext highlighter-rouge">Enum</code>클래스의 자손이며 <code class="language-plaintext highlighter-rouge">Enum</code>클래스의 멤버를 상속받는다.</p>
+
+<ul>
+  <li><strong><em>특징과 장점</em></strong>
+    <ul>
+      <li>enum은 컴파일 후 <code class="language-plaintext highlighter-rouge">public static final</code> 필드이며 객체로 제공된다.</li>
+      <li>상수들은 JVM 메서드 영역에 자리한다.</li>
+      <li>Enum클래스는 상수와 같이 인스턴스가 단 한번만 생성된다.</li>
+      <li>컴파일 시점에 타입안정성이 보장되기 때문에 <code class="language-plaintext highlighter-rouge">private</code> 생성자만을 가진다. 
+  <br />
+  즉, 인스턴스 생성을 제어하며 싱글톤을 일반화 한다. (싱글톤 구현의 방법으로도 사용됨)</li>
+      <li>그렇기 때문에 주소값을 비교하는 == 연산자의 사용이 가능하다.
+  <br />
+  즉, 객체의 값을 비교하는 equals()보다 빠르고 컴파일 단계에서 검사되기 때문에 실수를 방지할 수 있다.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<ul>
+  <li><strong><em>Enum클래스의 메서드</em></strong>
+    <ul>
+      <li><strong><em>values()</em></strong> : enum클래스의 모든 상수를 배열로 반환한다.</li>
+    </ul>
+
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// values 활용</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="nc">LottoRank</span> <span class="nf">countOfMatchNumber</span><span class="o">(</span><span class="kt">int</span> <span class="n">countOfMatchNumber</span><span class="o">)</span> <span class="o">{</span>
+      <span class="k">return</span> <span class="nc">Arrays</span><span class="o">.</span><span class="na">stream</span><span class="o">(</span><span class="n">values</span><span class="o">())</span>
+              <span class="o">.</span><span class="na">filter</span><span class="o">(</span><span class="nc">LottoRank</span> <span class="o">-&gt;</span> <span class="nc">LottoRank</span><span class="o">.</span><span class="na">countOfMatchNumber</span> <span class="o">==</span> <span class="n">countOfMatchNumber</span><span class="o">)</span>
+              <span class="o">.</span><span class="na">findAny</span><span class="o">()</span>
+              <span class="o">.</span><span class="na">orElse</span><span class="o">(</span><span class="no">MISS</span><span class="o">);</span>
+              <span class="c1">// 또는 orElseThrow(new IllegalArgumentException(error message))</span>
+  <span class="o">}</span>
+</code></pre></div>    </div>
+
+    <ul>
+      <li><strong><em>valueOf()</em></strong> : <code class="language-plaintext highlighter-rouge">String</code>을 매개변수로 받아 일치하는 상수를 반환한다. (없으면 런타임 에러 발생)</li>
+      <li><strong><em>ordinal()</em></strong> : 상수들의 index를 반환한다.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<ul>
+  <li><strong><em>단점</em></strong>
+<br />
+enum자체가 가지는 비용이 적지 않다. static final 상수로도 충분하다면 enum의 사용 여부는 고려해보자</li>
+</ul>
 
 <h2 id="싱글톤">싱글톤</h2>
 
