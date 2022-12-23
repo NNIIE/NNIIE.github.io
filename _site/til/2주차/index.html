@@ -234,7 +234,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          최대 1 분 소요
+          2 분 소요
         
       </span>
     
@@ -249,7 +249,7 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> TIL</h4></header>
-              <ul class="toc__menu"><li><a href="#today-i-learned">Today I Learned</a><ul><li><a href="#enum">enum</a></li><li><a href="#싱글톤">싱글톤</a></li><li><a href="#hash">hash</a></li><li><a href="#set-자료구조-확인하기">Set 자료구조 확인하기</a></li><li><a href="#인터페이스">인터페이스</a></li><li><a href="#추상클래스">추상클래스</a></li><li><a href="#둘의-차이">둘의 차이</a></li><li><a href="#strangler-pattern-교살자-패턴">Strangler Pattern (교살자 패턴)</a></li></ul></li><li><a href="#to-do">To Do</a><ul><li><a href="#인터페이스-1">인터페이스</a></li><li><a href="#default-method">default method</a></li><li><a href="#자바의-신-2권">자바의 신 2권</a></li></ul></li></ul>
+              <ul class="toc__menu"><li><a href="#today-i-learned">Today I Learned</a><ul><li><a href="#enum">enum</a></li><li><a href="#싱글톤패턴">싱글톤패턴</a></li><li><a href="#hash">hash</a></li><li><a href="#set-자료구조-확인하기">Set 자료구조 확인하기</a></li><li><a href="#인터페이스">인터페이스</a></li><li><a href="#추상클래스">추상클래스</a></li><li><a href="#둘의-차이">둘의 차이</a></li><li><a href="#strangler-pattern-교살자-패턴">Strangler Pattern (교살자 패턴)</a></li></ul></li><li><a href="#to-do">To Do</a><ul><li><a href="#인터페이스-1">인터페이스</a></li><li><a href="#default-method">default method</a></li><li><a href="#자바의-신-2권">자바의 신 2권</a></li></ul></li></ul>
 
             </nav>
           </aside>
@@ -312,7 +312,113 @@
 enum자체가 가지는 비용이 적지 않다. static final 상수로도 충분하다면 enum의 사용 여부는 고려해보자</li>
 </ul>
 
-<h2 id="싱글톤">싱글톤</h2>
+<p><br /></p>
+
+<h2 id="싱글톤패턴">싱글톤패턴</h2>
+<p>객체의 인스턴스가 오직 1개만 생성되는 패턴이다.
+<br />
+하나의 인스턴스로 공유되며 접근, 사용할 수 있다</p>
+
+<ul>
+  <li>가장 단순한 코드레벨의 싱글톤 패턴</li>
+</ul>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 동시성 이슈를 배제한 Lazy initialization 방식</span>
+<span class="c1">// Thread Safety 하지 않다.</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Person</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="nc">Person</span> <span class="n">instance</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+    
+    <span class="kd">private</span> <span class="nf">Person</span><span class="o">()</span> <span class="o">{</span>
+    <span class="o">}</span>
+    
+    <span class="kd">public</span> <span class="kd">static</span> <span class="nc">Person</span> <span class="nf">getInstance</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">instance</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">instance</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Person</span><span class="o">();</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="n">instance</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong><em>장점</em></strong>
+    <ul>
+      <li>인스턴스가 하나기 때문에 매번 새로 인스턴스를 생성할 필요가 없다.</li>
+      <li>싱글톤 패턴으로 만들어진 클래스는 전역 인스턴스이기 때문에 접근하기 편하다.</li>
+    </ul>
+  </li>
+  <li><strong><em>단점</em></strong>
+    <ul>
+      <li>클라이언트가 구체클래스에 의존 -&gt; DIP OCP 위반</li>
+      <li>멀티스레드 환경에서 인스턴스가 하나이기 때문에 문제가 발생할 수 있다.</li>
+      <li>테스트가 어렵다. 인스턴스가 하나기 때문에 테스트를 하려면 매번 초기화를 시켜주어야 한다.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<ul>
+  <li><strong><em>사용법?</em></strong>
+    <ul>
+      <li><strong><em>synchronized</em></strong> : 사용하지 말자. 락을 걸어버리는 방법으로 동기화 문제를 간단하고 확실하게 해결하지만 그렇기 때문에 멀티스레드의 이점을 모두 막아버린다.</li>
+      <li><strong><em>Lazy initialization + Double-checked Locking</em></strong> : 이것도 좋지 않다.</li>
+    </ul>
+
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// 조건문으로 먼저 인스턴스를 확인한 다음 synchronized를 동기화 시켜 인스턴스를</span>
+  <span class="c1">// 생성하는방법, 처음 생성이후 synchronized를 실행하지 않아서 성능저하 완화 가능</span>
+  <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Person</span> <span class="o">{</span>
+      <span class="kd">private</span> <span class="kd">static</span> <span class="kd">volatile</span> <span class="nc">Person</span> <span class="n">instance</span><span class="o">;</span>
+        
+      <span class="kd">private</span> <span class="nf">Person</span><span class="o">()</span> <span class="o">{</span>
+      <span class="o">}</span>
+		
+      <span class="kd">public</span> <span class="kd">static</span> <span class="nc">Person</span> <span class="nf">getInstance</span><span class="o">()</span> <span class="o">{</span>
+          <span class="k">if</span> <span class="o">(</span><span class="n">instance</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+              <span class="kd">synchronized</span> <span class="o">(</span><span class="nc">Person</span><span class="o">.</span><span class="na">class</span><span class="o">)</span> <span class="o">{</span>
+                  <span class="k">if</span> <span class="o">(</span><span class="n">instance</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+                      <span class="n">instance</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Person</span><span class="o">();</span>
+                  <span class="o">}</span>
+              <span class="o">}</span>
+          <span class="o">}</span>
+          <span class="k">return</span> <span class="n">instance</span><span class="o">;</span>
+      <span class="o">}</span>
+  <span class="o">}</span>
+</code></pre></div>    </div>
+
+    <ul>
+      <li><strong><em>Initialization on demand holder idiom</em></strong> : 제일 많이 사용되는 방법</li>
+    </ul>
+
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// 클래스 안에 클래스(holder)를 두어 JVM의 클래스 로더 매커니즘과 클래스가 로드되는</span>
+  <span class="c1">// 시점을 이용한 방법</span>
+  <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Person</span> <span class="o">{</span>
+      <span class="kd">private</span> <span class="nf">Person</span><span class="o">()</span> <span class="o">{</span>
+      <span class="o">}</span>
+		
+      <span class="kd">private</span> <span class="kd">static</span> <span class="kd">class</span> <span class="nc">LazyHorder</span> <span class="o">{</span>
+          <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="nc">Person</span> <span class="no">INSTANCE</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Person</span><span class="o">();</span>
+      <span class="o">}</span>
+
+      <span class="kd">public</span> <span class="kd">static</span> <span class="nc">Person</span> <span class="nf">getInstance</span><span class="o">()</span> <span class="o">{</span>
+          <span class="k">return</span> <span class="nc">LazyHorder</span><span class="o">.</span><span class="na">INSTANCE</span><span class="o">;</span>
+      <span class="o">}</span>
+  <span class="o">}</span>
+</code></pre></div>    </div>
+
+    <ul>
+      <li><strong><em>스프링 컨테이너를 사용하는게 가장 좋다.</em></strong>
+        <ul>
+          <li>상태를 유지(stateful)하면 안되고 무상태(stateless)로 설계해야 한다.</li>
+          <li>특정 클라이언트가 값을 변경할 수 있는 필드가 있으면 안된다</li>
+          <li>읽기만 가능해야 한다.</li>
+          <li>필드 대신에 자바에서 공유되지 않는, 지역변수, 파라미터, ThreadLocal 등을 사용해야 한다.</li>
+          <li><code class="language-plaintext highlighter-rouge">@Configuration</code>, <code class="language-plaintext highlighter-rouge">@Bean</code>을 같이 사용한다.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
 
 <h2 id="hash">hash</h2>
 <ul>
