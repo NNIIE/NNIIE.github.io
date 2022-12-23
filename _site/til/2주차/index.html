@@ -234,7 +234,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          2 분 소요
+          3 분 소요
         
       </span>
     
@@ -249,7 +249,7 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> TIL</h4></header>
-              <ul class="toc__menu"><li><a href="#today-i-learned">Today I Learned</a><ul><li><a href="#enum">enum</a></li><li><a href="#싱글톤패턴">싱글톤패턴</a></li><li><a href="#hash">hash</a></li><li><a href="#set-자료구조-확인하기">Set 자료구조 확인하기</a></li><li><a href="#인터페이스">인터페이스</a></li><li><a href="#추상클래스">추상클래스</a></li><li><a href="#둘의-차이">둘의 차이</a></li><li><a href="#strangler-pattern-교살자-패턴">Strangler Pattern (교살자 패턴)</a></li></ul></li><li><a href="#to-do">To Do</a><ul><li><a href="#인터페이스-1">인터페이스</a></li><li><a href="#default-method">default method</a></li><li><a href="#자바의-신-2권">자바의 신 2권</a></li></ul></li></ul>
+              <ul class="toc__menu"><li><a href="#today-i-learned">Today I Learned</a><ul><li><a href="#enum">enum</a></li><li><a href="#싱글톤패턴">싱글톤패턴</a></li><li><a href="#hashtable">HashTable</a></li><li><a href="#set-자료구조-확인하기">Set 자료구조 확인하기</a></li><li><a href="#인터페이스">인터페이스</a></li><li><a href="#추상클래스">추상클래스</a></li><li><a href="#둘의-차이">둘의 차이</a></li><li><a href="#strangler-pattern-교살자-패턴">Strangler Pattern (교살자 패턴)</a></li></ul></li><li><a href="#to-do">To Do</a><ul><li><a href="#인터페이스-1">인터페이스</a></li><li><a href="#default-method">default method</a></li><li><a href="#자바의-신-2권">자바의 신 2권</a></li></ul></li></ul>
 
             </nav>
           </aside>
@@ -420,24 +420,113 @@ enum자체가 가지는 비용이 적지 않다. static final 상수로도 충�
   </li>
 </ul>
 
-<h2 id="hash">hash</h2>
+<p><br /></p>
+
+<h2 id="hashtable">HashTable</h2>
+<p>key와 value의 쌍으로 이루어진 데이터 구조이다.
+<br />
+해시충돌이 일어나지 않는 가정 하에 평균 시간복잡도 O(1)로 효율적이다. 
+<br />
+이는 배열에서 <code class="language-plaintext highlighter-rouge">index</code>를 알고 접근하는 것과 동일한 시간복잡도를 보인다.</p>
+
 <ul>
-  <li>작동하는 방식이라던가..</li>
+  <li><strong><em>key</em></strong> : 해시함수의 input이 되는 고유 값, 키는 해시함수를 통해 해시로 변경되고 <code class="language-plaintext highlighter-rouge">index</code> 역할을 하게된다.</li>
+  <li><strong><em>value</em></strong> : 저장소(버킷, 슬롯)에 최종적으로 저장되는 값.</li>
+  <li><strong><em>Hash</em></strong> : 임의의 값을 가지는 key값을 고정된 길이로 변환하는 것</li>
+  <li><strong><em>Hash Function</em></strong> : 임의의 값을 고정된 크기의 값으로 변환하는 함수.  key -&gt; hash</li>
+  <li><strong><em>저장소(Bucket, Slot)</em></strong> : Hash Table 에서 하나의 데이터가 저장되는 공간</li>
+  <li>
+    <p><strong><em>해시충돌</em></strong> : 서로 다른 key가 같은 hash값이 되는 경우</p>
+
+    <ul>
+      <li>
+        <p><strong><em>데이터 저장</em></strong>
+  <br />
+  해시함수를 이용해 키값을 해시로 변경한 후 미리 준비해둔 저장소(버킷, 슬롯)중 
+  <br />
+  알맞는 해시값을 찾아 value를 저장한다.
+  <br />
+  이 과정의 시간복잡도는 O(1) 이다.</p>
+      </li>
+      <li>
+        <p><strong><em>데이터 삭제</em></strong>
+  <br />
+  버킷에서 삭제하려고 하는 key와 매핑되는 value값을 찾아서 삭제한다
+  <br />
+  이 과정의 시간복잡도는 O(1) 이다.</p>
+      </li>
+      <li>
+        <p><strong><em>데이터 검색</em></strong>
+  <br />
+  key를 이용해 value를 찾아내는 과정.
+  <br />
+  먼저 key값과 해시함수를 이용해 hash를 찾아내고 해당 hash로 value를 찾는다.
+  <br />
+  이 과정의 시간복잡도는 O(1) 이다.</p>
+      </li>
+    </ul>
+  </li>
 </ul>
+
+<p><br /></p>
+
+<ul>
+  <li><strong><em>자바의 Hash?</em></strong>
+    <ul>
+      <li>자바에서는 <code class="language-plaintext highlighter-rouge">Object</code>클래스의 hashCode() 메서드로 모든 객체의 해시코드를 쉽게 구할 수 있다</li>
+      <li>자바는 객체의 주소를 이용하는 알고리즘으로 해시코드를 만들어 내기 때문에 모든 객체에 대해 중복되지 않는 값을 제공한다.</li>
+      <li>String의 경우 <code class="language-plaintext highlighter-rouge">Object</code>로부터 상속받은 hashCode()를 오버라이딩 하여 문자열의 내용으로 해시코드를 만들어 낸다. 그렇기 때문에 다른 인스턴스의 String이어도 문자열이 같다면 같은 해시코드값을 가진다.</li>
+      <li>HashMap도 같은 방법으로 객체를 구별하기 때문에 이미 존재하는 키와 동일한 값을 저장하면 기존의 값을 덮어쓰게 된다.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<ul>
+  <li><strong><em>HashTable과 HashMap</em></strong>
+  <br />
+  둘의 차이는 <code class="language-plaintext highlighter-rouge">Thread-Safe</code> 의 차이이다. 
+  <br />
+  HashTable은 동기화가 걸려있어 안전하지만 느리고 HashMap은 동기화가 없어서 불안전하지만 빠르다.</li>
+</ul>
+
+<p><br /></p>
+
+<ul>
+  <li><strong><em>단점</em></strong>
+    <ul>
+      <li>정렬이나 순차적인 데이터 저장에 적합하지 않다</li>
+      <li>데이터가 저장되기 전에 저장공간을 확보해야 하기 때문에 공간효율성이 떨어진다.</li>
+      <li>Hash Function이 복잡할수록 연산속도가 증가한다.</li>
+      <li>해시충돌이 발생할 경우 최악의 경우 시간복잡도가 O(N) 에 점점 수렴함</li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
 
 <h2 id="set-자료구조-확인하기">Set 자료구조 확인하기</h2>
 <ul>
   <li>성능적으로 어떻게 사용하면 훨씬 효율적일까? 예를들면 contains</li>
 </ul>
 
+<p><br /></p>
+
 <h2 id="인터페이스">인터페이스</h2>
 
+<p><br /></p>
+
 <h2 id="추상클래스">추상클래스</h2>
+
+<p><br /></p>
 
 <h2 id="둘의-차이">둘의 차이</h2>
 <ul>
   <li>가장 중요한건 필드 즉, 상태값을 가진다 못가진다의 차이였지만 인터페이스의 디폴트 메서드는 무엇인가?</li>
 </ul>
+
+<p><br /></p>
 
 <h2 id="strangler-pattern-교살자-패턴">Strangler Pattern (교살자 패턴)</h2>
 
@@ -445,12 +534,18 @@ enum자체가 가지는 비용이 적지 않다. static final 상수로도 충�
 
 <h1 id="to-do">To Do</h1>
 
+<p><br /></p>
+
 <h2 id="인터페이스-1">인터페이스</h2>
+
+<p><br /></p>
 
 <h2 id="default-method">default method</h2>
 <ul>
   <li>디폴트 메서드랑 일반 메서드랑 뭐가달라서 인터페이스에서 사용할 수 있게 됬지?</li>
 </ul>
+
+<p><br /></p>
 
 <h2 id="자바의-신-2권">자바의 신 2권</h2>
 
