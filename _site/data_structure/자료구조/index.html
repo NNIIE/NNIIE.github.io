@@ -9,7 +9,7 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Annotation | NNIIE</title>
+<!-- begin _includes/seo.html --><title>자료구조 | NNIIE</title>
 <meta name="description" content="">
 
 
@@ -22,8 +22,8 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="NNIIE">
-<meta property="og:title" content="Annotation">
-<meta property="og:url" content="http://localhost:4000/til/Annotation/">
+<meta property="og:title" content="자료구조">
+<meta property="og:url" content="http://localhost:4000/data_structure/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/">
 
 
   <meta property="og:description" content="">
@@ -34,7 +34,7 @@
 
 
 
-  <meta property="article:published_time" content="2022-12-20T00:00:00+09:00">
+  <meta property="article:published_time" content="2022-12-24T00:00:00+09:00">
 
 
 
@@ -45,7 +45,7 @@
   
 
 
-<link rel="canonical" href="http://localhost:4000/til/Annotation/">
+<link rel="canonical" href="http://localhost:4000/data_structure/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/">
 
 
 
@@ -181,7 +181,7 @@
       
         
         <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-          <a href="/categories/#til" itemprop="item"><span itemprop="name">Til</span></a>
+          <a href="/categories/#data_structure" itemprop="item"><span itemprop="name">Data_structure</span></a>
           <meta itemprop="position" content="2" />
         </li>
         <span class="sep">/</span>
@@ -189,7 +189,7 @@
     
       
       
-        <li class="current">Annotation</li>
+        <li class="current">자료구조</li>
       
     
   </ol>
@@ -203,15 +203,15 @@
 
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="Annotation">
+    <meta itemprop="headline" content="자료구조">
     <meta itemprop="description" content="">
-    <meta itemprop="datePublished" content="2022-12-20T00:00:00+09:00">
+    <meta itemprop="datePublished" content="2022-12-24T00:00:00+09:00">
     
 
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">Annotation
+          <h1 id="page-title" class="page__title" itemprop="headline">자료구조
 </h1>
           
 
@@ -221,7 +221,7 @@
       <span class="page__meta-date">
         <i class="far fa-calendar-alt" aria-hidden="true"></i>
         
-        <time datetime="2022-12-20T00:00:00+09:00">2022-12-20</time>
+        <time datetime="2022-12-24T00:00:00+09:00">2022-12-24</time>
       </span>
     
 
@@ -249,133 +249,147 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> TIL</h4></header>
-              <ul class="toc__menu"><li><a href="#enablescheduling">@EnableScheduling</a></li><li><a href="#value">@Value</a></li><li><a href="#bean">@Bean</a></li><li><a href="#async">@Async</a></li></ul>
+              <ul class="toc__menu"><li><a href="#hash">Hash</a></li><li><a href="#set-자료구조-확인하기">Set 자료구조 확인하기</a></li><li><a href="#list">List</a></li><li><a href="#array">Array</a></li><li><a href="#map">Map</a></li><li><a href="#stack">Stack</a></li><li><a href="#queue">Queue</a></li><li><a href="#tree">Tree</a></li><li><a href="#graph">Graph</a></li></ul>
 
             </nav>
           </aside>
         
         <p><br /><br /><br /></p>
 
-<h1 id="enablescheduling">@EnableScheduling</h1>
-<p>스프링의 스케쥴링을 위한 어노테이션이다.
+<h1 id="hash">Hash</h1>
+<p>임의의 크기를 가진 데이터를 고정된 크기의 데이터로 바꾸는 것.
 <br />
-기본적으로 스프링에 의헤 생성된 한개의 <code class="language-plaintext highlighter-rouge">Thread Pool</code>에서 작동한다. 
+단방향 암호화 기법으로 해시함수 또는 해시 알고리즘를 이용해 고정된 길이의 비트열로 변경한다.
 <br />
-하나의 스케쥴이 돌고 있으면 그것이 다 끝나야 다음 스케쥴이 실행되기 때문에 설정을 통해 스케쥴에 대한 스레드풀을 생성하고 
-그 스레드풀을 사용해서 병렬적으로 처리하는게 좋을 수 있다.</p>
+10 X 10 = 100 이라는 것은 쉽게 알지만, 몇과 몇을 곱해야 100이 나오는지는 많은 경우의 수가 나오는데
+<br />
+해싱은 이런식으로 복호화가 어렵다.
+<br />
+예를들어 같은 비밀번호는 항상 <code class="language-plaintext highlighter-rouge">해시값이 같다는 단점</code>이 존재한다.</p>
 
 <ul>
-  <li>스프링 스케쥴링에 사용</li>
-  <li>스프링 빈으로 등록해서 사용한다.</li>
-  <li>Application Class에 @EnableScheduling 선언</li>
-  <li>scheduler를 사용할 class에 @Component 선언, 메서드에 @Scheduled 선언
-    <ul>
-      <li>메서드 타입은 void</li>
-      <li>메서드에 매개변수 사용 불가</li>
-    </ul>
-  </li>
-</ul>
-
-<p><br /></p>
-
-<ul>
-  <li><strong><em>왜 이거쓰는데?</em></strong>
-<br />
-  <code class="language-plaintext highlighter-rouge">Spring Quartz</code>라는 더 많은 기능을 가진 스케줄러도 존재한다.
-  <br />
-  하지만 의존성이 추가되어야 하고 사용법이 좀 더 복잡하기 때문에 단순한 스케쥴링 작업에는 
-  <br />
-  별도의 추가적인 의존성이 필요없고 사용법이 간단한 <code class="language-plaintext highlighter-rouge">Spring Scheduler</code>를 추천한다.</li>
-</ul>
-
-<p><br /></p>
-
-<h1 id="value">@Value</h1>
-<p>properties 파일의 설정정보를 key-value형태로 가져오는데 쓰인다.
-<br />
-단일값 주입에 권장되고 있으며 여러개의 값을 주입받아야 할 경우
-<br />
-<code class="language-plaintext highlighter-rouge">@ConfigurationProperties</code> 사용을 권장한다.</p>
-
-<ul>
-  <li><strong><em>이거 왜쓰는데?</em></strong>
-<br />
-  만약 소스코드로 설정정보를 관리한다면 보안에도 좋지않고, 컴파일 된 바이트코드를 JVM에서 실행 후에 의미있는 정보가 되기때문에 서버를 내리지 않고는 변경할 수 없다.
-  <br />
-  하지만 properties 파일로 관리하면 key-value값만 불러서 치환하기 때문에 소스코드를 수정 할 필요가 없고 서버의 properties파일만 수정하면 되기 때문에 서버를 중단할 필요가 없다.
-  <br />
-  또한 각 서버환경에 따라 설정도 유연하게 관리할 수 있다.</li>
-</ul>
-
-<p><br /></p>
-
-<h1 id="bean">@Bean</h1>
-<ul>
-  <li><strong><em>@Bean</em></strong>
-    <ul>
-      <li>스프링에서 IoC 컨테이너가 관리하는 자바 객체</li>
-      <li>기본적으로 싱글톤으로 생성하고 관리한다.</li>
-    </ul>
-  </li>
-  <li><strong><em>@Component</em></strong>
-    <ul>
-      <li>개발자가 직접 작성한 클래스를 Bean으로 등록할 때 사용한다.</li>
-      <li>선언 시 Component-Scan에 의해 Bean으로 등록 된다.</li>
-    </ul>
-  </li>
-  <li><strong><em>@Configuration</em></strong>
-    <ul>
-      <li>외부라이브러리 또는 내장 클래스를 Bean으로 등록하고자 할 경우 사용한다.</li>
-      <li>1개 이상의 @Bean을 제공하는 클래스의 경우 반드시 @Configuration를 선언한다.</li>
-      <li>선언 시 Component-Scan에 의해 Bean으로 등록 된다.</li>
-    </ul>
-  </li>
-</ul>
-
-<p><br /></p>
-
-<h1 id="async">@Async</h1>
-<p>스프링에서 제공하는 <code class="language-plaintext highlighter-rouge">Thread Pool</code>을 활용하는 비동기 메서드 지원 어노테이션이다.
-<br />
-간단하게 사용하고 싶다면 Application 클래스에 <code class="language-plaintext highlighter-rouge">@EnableAsync</code>를 선언하고 비동기로 작동하고자 하는 메서드에 <code class="language-plaintext highlighter-rouge">@Async</code>를 선언해주면 사용할 수 있다.
-<br />
-하지만 이럴 경우 기본설정인 <code class="language-plaintext highlighter-rouge">SimpleAsyncTaskExecutor</code>를 사용해서 스레드를 관리하지 않는 등의 문제가 있기 때문에 <code class="language-plaintext highlighter-rouge">AsyncConfigurer</code> 인터페이스를 상속받아 구현하는게 좋을 수 있다.</p>
-
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Configuration</span>
-<span class="nd">@EnableAsync</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">AsyncConfig</span> <span class="kd">implements</span> <span class="nc">AsyncConfigurer</span> <span class="o">{</span>
-	
-	<span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="nc">Executor</span> <span class="nf">getAsyncExecutor</span><span class="o">()</span> <span class="o">{</span>
-        <span class="nc">ThreadPoolTaskExecutor</span> <span class="n">executor</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ThreadPoolTaskExecutor</span><span class="o">();</span>
-        <span class="n">executor</span><span class="o">.</span><span class="na">setCorePoolSize</span><span class="o">(</span><span class="mi">5</span><span class="o">);</span>
-        <span class="n">executor</span><span class="o">.</span><span class="na">setMaxPoolSize</span><span class="o">(</span><span class="mi">30</span><span class="o">);</span>
-        <span class="n">executor</span><span class="o">.</span><span class="na">setQueueCapacity</span><span class="o">(</span><span class="mi">50</span><span class="o">);</span>
-        <span class="n">executor</span><span class="o">.</span><span class="na">setThreadNamePrefix</span><span class="o">(</span><span class="s">"async-pool"</span><span class="o">);</span>
-        <span class="n">executor</span><span class="o">.</span><span class="na">initialize</span><span class="o">();</span>
-        <span class="k">return</span> <span class="n">executor</span><span class="o">;</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-</code></pre></div></div>
-
-<ul>
-  <li><strong><em>@Configuration</em></strong> : 빈 등록</li>
-  <li><strong><em>@EnableAsync</em></strong> : 메서드에서 비동기 기능을 사용할 수 있게 한다.</li>
-  <li><strong><em>CorePoolSize</em></strong> : 기본 실행 대기하는 Thread의 수</li>
-  <li><strong><em>MaxPoolSize</em></strong> : 동시 동작하는 최대 Thread의 수</li>
-  <li><strong><em>QueueCapacity</em></strong> : MaxPoolSize 초과 요청에서 Thread 생성 요청시,  해당 요청을 Queue에 저장하는데 이때 최대 수용 가능한 Queue의 수,   Queue에 저장되어있다가 Thread에 자리가 생기면 하나씩 빠져나가 동작</li>
-  <li><strong><em>ThreadNamePrefix</em></strong> : 생성되는 Thread 접두사 지정</li>
   <li>
-    <p>그 후 비동기를 원하는 메서드에 <code class="language-plaintext highlighter-rouge">@Async</code> 어노테이션을 선언해 주면 된다.</p>
+    <p><strong><em>HashTable</em></strong>
+<br />
+key와 value의 쌍으로 이루어진 데이터 구조이다.
+<br />
+해시충돌이 일어나지 않는 가정 하에 평균 시간복잡도 O(1)로 효율적이다. 
+<br />
+이는 배열에서 <code class="language-plaintext highlighter-rouge">index</code>를 알고 접근하는 것과 동일한 시간복잡도를 보인다.</p>
   </li>
-  <li><strong><em>주의할 점</em></strong>
+  <li><strong><em>key</em></strong> : 해시함수의 input이 되는 고유 값, 키는 해시함수를 통해 해시로 변경되고 <code class="language-plaintext highlighter-rouge">index</code> 역할을 하게된다.</li>
+  <li><strong><em>value</em></strong> : 저장소(버킷, 슬롯)에 최종적으로 저장되는 값.</li>
+  <li><strong><em>Hash</em></strong> : 임의의 값을 가지는 key값을 고정된 길이로 변환하는 것</li>
+  <li><strong><em>Hash Function</em></strong> : 임의의 값을 고정된 크기의 값으로 변환하는 함수.  key -&gt; hash</li>
+  <li><strong><em>저장소(Bucket, Slot)</em></strong> : Hash Table 에서 하나의 데이터가 저장되는 공간</li>
+  <li>
+    <p><strong><em>해시충돌</em></strong> : 서로 다른 key가 같은 hash값이 되는 경우</p>
+
     <ul>
-      <li>private method에 사용 불가</li>
-      <li>자가호출 불가 즉, 이너클래스에서 사용 불가</li>
-      <li>QueueCapacity 초과 요청에 대한 비동기 method 호출시 방어 코드 작성</li>
+      <li>
+        <p><strong><em>데이터 저장</em></strong>
+  <br />
+  해시함수를 이용해 키값을 해시로 변경한 후 미리 준비해둔 저장소(버킷, 슬롯)중 
+  <br />
+  알맞는 해시값을 찾아 value를 저장한다.
+  <br />
+  이 과정의 시간복잡도는 O(1) 이다.</p>
+      </li>
+      <li>
+        <p><strong><em>데이터 삭제</em></strong>
+  <br />
+  버킷에서 삭제하려고 하는 key와 매핑되는 value값을 찾아서 삭제한다
+  <br />
+  이 과정의 시간복잡도는 O(1) 이다.</p>
+      </li>
+      <li>
+        <p><strong><em>데이터 검색</em></strong>
+  <br />
+  key를 이용해 value를 찾아내는 과정.
+  <br />
+  먼저 key값과 해시함수를 이용해 hash를 찾아내고 해당 hash로 value를 찾는다.
+  <br />
+  이 과정의 시간복잡도는 O(1) 이다.</p>
+      </li>
     </ul>
   </li>
 </ul>
+
+<p><br /></p>
+
+<ul>
+  <li><strong><em>자바의 Hash?</em></strong>
+    <ul>
+      <li>자바에서는 <code class="language-plaintext highlighter-rouge">Object</code>클래스의 hashCode() 메서드로 모든 객체의 해시코드를 쉽게 구할 수 있다</li>
+      <li>자바는 객체의 주소를 이용하는 알고리즘으로 해시코드를 만들어 내기 때문에 모든 객체에 대해 중복되지 않는 값을 제공한다.</li>
+      <li>String의 경우 <code class="language-plaintext highlighter-rouge">Object</code>로부터 상속받은 hashCode()를 오버라이딩 하여 문자열의 내용으로 해시코드를 만들어 낸다. 그렇기 때문에 다른 인스턴스의 String이어도 문자열이 같다면 같은 해시코드값을 가진다.</li>
+      <li>HashMap도 같은 방법으로 객체를 구별하기 때문에 이미 존재하는 키와 동일한 값을 저장하면 기존의 값을 덮어쓰게 된다.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<ul>
+  <li><strong><em>HashTable과 HashMap</em></strong>
+  <br />
+  둘의 차이는 <code class="language-plaintext highlighter-rouge">Thread-Safe</code> 의 차이이다. 
+  <br />
+  HashTable은 동기화가 걸려있어 안전하지만 느리고 HashMap은 동기화가 없어서 불안전하지만 빠르다.</li>
+</ul>
+
+<p><br /></p>
+
+<ul>
+  <li><strong><em>단점</em></strong>
+    <ul>
+      <li>정렬이나 순차적인 데이터 저장에 적합하지 않다</li>
+      <li>데이터가 저장되기 전에 저장공간을 확보해야 하기 때문에 공간효율성이 떨어진다.</li>
+      <li>Hash Function이 복잡할수록 연산속도가 증가한다.</li>
+      <li>해시충돌이 발생할 경우 최악의 경우 시간복잡도가 O(N) 에 점점 수렴함</li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h1 id="set-자료구조-확인하기">Set 자료구조 확인하기</h1>
+<p>데이터의 집합이며 순서가 없고 집합이므로 중복된 데이터를 허용하지 않는다.
+<br />
+중복되지 않은 데이터를 구할 때 유용하고 빠른 검색 속도를 가진다.
+<br />
+인덱스가 따로 존재하지 않기 때문에 iterator를 사용함</p>
+<ul>
+  <li>성능적으로 어떻게 사용하면 훨씬 효율적일까? 예를들면 contains</li>
+</ul>
+
+<p><br /></p>
+
+<h1 id="list">List</h1>
+
+<p><br /></p>
+
+<h1 id="array">Array</h1>
+
+<p><br /></p>
+
+<h1 id="map">Map</h1>
+
+<p><br /></p>
+
+<h1 id="stack">Stack</h1>
+
+<p><br /></p>
+
+<h1 id="queue">Queue</h1>
+
+<p><br /></p>
+
+<h1 id="tree">Tree</h1>
+
+<p><br /></p>
+
+<h1 id="graph">Graph</h1>
 
         
       </section>
@@ -392,11 +406,7 @@
     <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
     <span itemprop="keywords">
     
-      <a href="/tags/#annotation" class="page__taxonomy-item" rel="tag">Annotation</a><span class="sep">, </span>
-    
-      <a href="/tags/#java" class="page__taxonomy-item" rel="tag">java</a><span class="sep">, </span>
-    
-      <a href="/tags/#spring" class="page__taxonomy-item" rel="tag">Spring</a>
+      <a href="/tags/#data-structure" class="page__taxonomy-item" rel="tag">data structure</a>
     
     </span>
   </p>
@@ -413,7 +423,7 @@
     <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
     <span itemprop="keywords">
     
-      <a href="/categories/#til" class="page__taxonomy-item" rel="tag">TIL</a>
+      <a href="/categories/#data-structure" class="page__taxonomy-item" rel="tag">Data_Structure</a>
     
     </span>
   </p>
@@ -421,7 +431,7 @@
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2022-12-20T00:00:00+09:00">2022-12-20</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2022-12-24T00:00:00+09:00">2022-12-24</time></p>
 
 
       </footer>
@@ -431,23 +441,22 @@
     <h4 class="page__share-title">공유하기</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=Annotation%20http%3A%2F%2Flocalhost%3A4000%2Ftil%2FAnnotation%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0%20http%3A%2F%2Flocalhost%3A4000%2Fdata_structure%2F%25EC%259E%2590%25EB%25A3%258C%25EA%25B5%25AC%25EC%25A1%25B0%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Ftil%2FAnnotation%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fdata_structure%2F%25EC%259E%2590%25EB%25A3%258C%25EA%25B5%25AC%25EC%25A1%25B0%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Ftil%2FAnnotation%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fdata_structure%2F%25EC%259E%2590%25EB%25A3%258C%25EA%25B5%25AC%25EC%25A1%25B0%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="/til/1%EC%A3%BC%EC%B0%A8/" class="pagination--pager" title="1주차
+      <a href="/til/2%EC%A3%BC%EC%B0%A8/" class="pagination--pager" title="2주차
 ">이전</a>
     
     
-      <a href="/til/2%EC%A3%BC%EC%B0%A8/" class="pagination--pager" title="2주차
-">다음</a>
+      <a href="#" class="pagination--pager disabled">다음</a>
     
   </nav>
 
@@ -461,53 +470,6 @@
     <div class="page__related">
       <h4 class="page__related-title">참고</h4>
       <div class="grid__wrapper">
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/data_structure/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/" rel="permalink">자료구조
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
-        
-        <time datetime="2022-12-24T00:00:00+09:00">2022-12-24</time>
-      </span>
-    
-
-    <span class="page__meta-sep"></span>
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
-        
-          1 분 소요
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">
-</p>
-  </article>
-</div>
-
         
           
 
@@ -544,6 +506,53 @@
         <i class="far fa-fw fa-clock" aria-hidden="true"></i>
         
           2 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/til/Annotation/" rel="permalink">Annotation
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-12-20T00:00:00+09:00">2022-12-20</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          1 분 소요
         
       </span>
     
@@ -702,8 +711,8 @@
     
   <script>
     var disqus_config = function () {
-      this.page.url = "http://localhost:4000/til/Annotation/";  /* Replace PAGE_URL with your page's canonical URL variable */
-      this.page.identifier = "/til/Annotation"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+      this.page.url = "http://localhost:4000/data_structure/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/data_structure/자료구조"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
     };
     (function() { /* DON'T EDIT BELOW THIS LINE */
       var d = document, s = d.createElement('script');
