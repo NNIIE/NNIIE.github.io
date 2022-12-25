@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-12-25T23:48:49+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">자료구조</title><link href="http://localhost:4000/data_structure/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/" rel="alternate" type="text/html" title="자료구조" /><published>2022-12-24T00:00:00+09:00</published><updated>2022-12-24T00:00:00+09:00</updated><id>http://localhost:4000/data_structure/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0</id><content type="html" xml:base="http://localhost:4000/data_structure/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/"><![CDATA[<p><br /><br /><br /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-12-25T23:55:36+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">자료구조</title><link href="http://localhost:4000/data_structure/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/" rel="alternate" type="text/html" title="자료구조" /><published>2022-12-24T00:00:00+09:00</published><updated>2022-12-24T00:00:00+09:00</updated><id>http://localhost:4000/data_structure/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0</id><content type="html" xml:base="http://localhost:4000/data_structure/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/"><![CDATA[<p><br /><br /><br /></p>
 
 <h1 id="hash">Hash</h1>
 <p>임의의 크기를 가진 데이터를 고정된 크기의 데이터로 바꾸는 것.
@@ -106,6 +106,8 @@ key와 value의 쌍으로 이루어진 데이터 구조이다.
 <br />
 낭비되는 메모리가 없고 빈틈없는 데이터 구조를 가질 수 있다.
 <br />
+또한 배열과 다르게 데이터를 담을 공간의 추가가 가능하다.
+<br />
 하지만 배열처럼 고정된 <code class="language-plaintext highlighter-rouge">index</code>를 식별자로 이용할 수 없다.
 <br /></p>
 <ul>
@@ -159,8 +161,16 @@ key와 value의 쌍으로 이루어진 데이터 구조이다.
 <ul>
   <li><strong><em>활용?</em></strong>
     <ul>
-      <li><strong><em>ArrayList</em></strong> : 탐색에 유용</li>
-      <li><strong><em>LinkedList</em></strong> : 추가/삭제에 유용</li>
+      <li><strong><em>ArrayList</em></strong> : 탐색에 유용
+        <ul>
+          <li>데이터를 중간에 추가 / 삭제하는 경우가 적다면 사용을 고려해보자.</li>
+        </ul>
+      </li>
+      <li><strong><em>LinkedList</em></strong> : 추가/삭제에 유용
+        <ul>
+          <li>데이터를 중간에 추가 / 삭제하는 경우가 많다면 사용을 고려해보자.</li>
+        </ul>
+      </li>
     </ul>
   </li>
 </ul>
