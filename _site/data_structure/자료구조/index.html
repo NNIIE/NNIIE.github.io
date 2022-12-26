@@ -249,7 +249,7 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> Data Structure</h4></header>
-              <ul class="toc__menu"><li><a href="#hash">Hash</a></li><li><a href="#list">List</a></li><li><a href="#set">Set</a></li><li><a href="#array">Array</a></li><li><a href="#map">Map</a></li><li><a href="#stack">Stack</a></li><li><a href="#queue">Queue</a></li><li><a href="#tree">Tree</a></li><li><a href="#graph">Graph</a></li></ul>
+              <ul class="toc__menu"><li><a href="#hash">Hash</a></li><li><a href="#array">Array</a></li><li><a href="#list">List</a></li><li><a href="#set">Set</a></li><li><a href="#map">Map</a></li><li><a href="#stack">Stack</a></li><li><a href="#queue">Queue</a></li><li><a href="#tree">Tree</a></li><li><a href="#graph">Graph</a></li></ul>
 
             </nav>
           </aside>
@@ -349,6 +349,59 @@ key와 value의 쌍으로 이루어진 데이터 구조이다.
       <li>데이터가 저장되기 전에 저장공간을 확보해야 하기 때문에 공간효율성이 떨어진다.</li>
       <li>Hash Function이 복잡할수록 연산속도가 증가한다.</li>
       <li>해시충돌이 발생할 경우 최악의 경우 시간복잡도가 O(N) 에 점점 수렴함</li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="array">Array</h2>
+<p>메모리상에 데이터를 순차적으로 배치하는 자료구조
+<br />
+동일한 <code class="language-plaintext highlighter-rouge">type</code>의 데이터를 여러개 나열한 선형구조이다.
+<br />
+<code class="language-plaintext highlighter-rouge">index</code>를 사용할 수 있으며, <code class="language-plaintext highlighter-rouge">index</code>값을 알고 접근할 경우 시간복잡도는 O(1)이다.</p>
+
+<ul>
+  <li><strong><em>특징</em></strong>
+    <ul>
+      <li>선언할 때 지정한 크기가 고정된다.</li>
+      <li>선언된 값은 다시 배열을 선언하지 않는이상 변경할 수 없다.</li>
+      <li>삽입 순서대로 저장된다. (새로운 데이터는 배열 맨 끝에 들어감)</li>
+      <li>중복 가능</li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<ul>
+  <li><strong><em>단점</em></strong>
+    <ul>
+      <li>처음에 선언한 배열의 크기를 수정할 수 없다.</li>
+      <li>데이터의 추가 / 삭제를 할 경우 뒤에있는 데이터들을 앞으로 옮기는 작업이 추가로 필요하다.
+        <ul>
+          <li>원소의 개수가 1000개인 배열에서 0번 <code class="language-plaintext highlighter-rouge">index</code>를 삭제하면,  삭제를 하는 작업 외에 (1000 - 1)만큼의 원소를 이동하는 추가작업 필요</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<ul>
+  <li><strong><em>활용?</em></strong>
+    <ul>
+      <li>순차적인 데이터를 저장할 때 유용</li>
+      <li>특정요소를 빠르게 읽을 때 (<code class="language-plaintext highlighter-rouge">index</code>값이 필요함)</li>
+      <li>데이터 사이즈가 바뀌지 않거나 데이터의 추가 / 삭제가 자주 일어나지 않을 때</li>
+      <li>이펙티브 자바에서는 배열보다 리스트를 사용하라 라는 챕터가 있다.
+        <ul>
+          <li>간단하게 말해 타입실수를 컴파일 단계에서 확인할 수 있냐 없냐의 차이</li>
+          <li>배열의 성능이점보다 안전함을 더 중요하게 생각하는듯 하다.</li>
+        </ul>
+      </li>
     </ul>
   </li>
 </ul>
@@ -504,10 +557,6 @@ key와 value의 쌍으로 이루어진 데이터 구조이다.
     </ul>
   </li>
 </ul>
-
-<p><br /></p>
-
-<h2 id="array">Array</h2>
 
 <p><br /></p>
 
