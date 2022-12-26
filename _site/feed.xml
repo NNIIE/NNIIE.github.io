@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-12-27T01:50:07+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">자료구조</title><link href="http://localhost:4000/data_structure/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/" rel="alternate" type="text/html" title="자료구조" /><published>2022-12-24T00:00:00+09:00</published><updated>2022-12-24T00:00:00+09:00</updated><id>http://localhost:4000/data_structure/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0</id><content type="html" xml:base="http://localhost:4000/data_structure/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/"><![CDATA[<p><br /><br /><br /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-12-27T01:53:25+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">자료구조</title><link href="http://localhost:4000/data_structure/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/" rel="alternate" type="text/html" title="자료구조" /><published>2022-12-24T00:00:00+09:00</published><updated>2022-12-24T00:00:00+09:00</updated><id>http://localhost:4000/data_structure/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0</id><content type="html" xml:base="http://localhost:4000/data_structure/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/"><![CDATA[<p><br /><br /><br /></p>
 
 <h2 id="시간복잡도">시간복잡도</h2>
 <p>알고리즘 효율성을 판단하는 지표로써,
@@ -22,8 +22,6 @@
     </ul>
   </li>
 </ul>
-
-<p><br /></p>
 
 <p><img src="/images/big-o/big-o.png" alt="이미지" /></p>
 
