@@ -234,7 +234,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          2 분 소요
+          4 분 소요
         
       </span>
     
@@ -423,6 +423,142 @@ enum자체가 가지는 비용이 적지 않다. static final 상수로도 충�
 <p><br /></p>
 
 <h2 id="인터페이스">인터페이스</h2>
+<p>컴퓨터 사이언스에서 인터페이스란 서로간의 약속, 규약 등의 개념으로 사용하게 끔 오픈된 것을 말한다.
+<br />
+일종의 서로를 이어주는 <strong><em>메시지 창구</em></strong> 역할을 하며, 대표적인 소프트웨어 인터페이스로는 <code class="language-plaintext highlighter-rouge">API</code>가 있다.
+<br />
+<strong><em>자바</em></strong> 에서 인터페이스란, 다른 클래스의 기본이 되는 틀을 제공하면서
+<br />
+다른 클래스 사이의 중간 매개역할을 하는 일종의 추상클래스 이다.
+<br />
+자바8 이전에는 오로지 추상메서드와 상수만을 포함할 수 있었는데 
+<br />
+자바8이후 <code class="language-plaintext highlighter-rouge">default method</code>, <code class="language-plaintext highlighter-rouge">static method</code>가 추가되었다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 은행시스템을 운영하려면 이 금융결제원 인터페이스에 맞게 구현해야 한다고 치자</span>
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Bank</span> <span class="o">{</span>
+
+	<span class="c1">// 상수 (하루 최대 인출 금액)</span>
+	<span class="kd">public</span> <span class="kt">int</span> <span class="no">MAX_INTEGER</span> <span class="o">=</span> <span class="mi">10000000</span><span class="o">;</span>
+	
+	<span class="c1">// 추상메서드 (인출)</span>
+	<span class="kt">void</span> <span class="nf">withDraw</span><span class="o">(</span><span class="kt">int</span> <span class="n">price</span><span class="o">);</span>
+	
+	<span class="c1">// 추상메서드 (입금)</span>
+	<span class="kt">void</span> <span class="nf">deposit</span><span class="o">(</span><span class="kt">int</span> <span class="n">price</span><span class="o">);</span>
+	
+	<span class="c1">// defualt 메서드 (고객의 휴면계좌 찾아주는 메서드 : 필수구현은 선택사항)</span>
+	<span class="k">default</span> <span class="nc">String</span> <span class="nf">findDormancyAccount</span><span class="o">(</span><span class="nc">String</span> <span class="n">custId</span><span class="o">){</span>
+		<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"**금융개정법안 00이후 고객의 휴면계좌 찾아주기 운동**"</span><span class="o">);</span>
+		<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"**금융결제원에서 제공하는 로직**"</span><span class="o">);</span>
+		<span class="k">return</span> <span class="s">"00은행 000-000-0000-00"</span><span class="o">;</span>
+	<span class="o">}</span>
+	
+	<span class="c1">// 정적 메서드 (블록체인 인증)</span>
+	<span class="kd">static</span> <span class="kt">void</span> <span class="nf">BCAuth</span><span class="o">(</span><span class="nc">String</span> <span class="n">bankName</span><span class="o">){</span>
+		<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">bankName</span><span class="o">+</span><span class="s">" 에서 블록체인 인증을 요청합니다."</span><span class="o">);</span>
+		<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"전 금융사 공통 블록체인 로직 수행"</span><span class="o">);</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+<ul>
+  <li><strong><em>상수</em></strong> : 컴파일 단계에서 정해지는, 인터페이스가 제공하는 변하지 않는 값
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">public static final</code>을 명시하지 않아도 컴파일 단계에서 자동 선언 된다.</li>
+    </ul>
+  </li>
+  <li><strong><em>정적메서드</em></strong> : 인터페이스에서 제공하는 변하지 않는 메서드
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">public</code>을 명시하지 않아도 컴파일 단계에서 자동 선언 된다.</li>
+    </ul>
+  </li>
+  <li><strong><em>추상메서드</em></strong> : 구현클래스에서 구현해야만 하고 거기서 실행된다.
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">public abstract</code>를 명시하지 않아도 컴파일 단계에서 자동 선언 된다.</li>
+    </ul>
+  </li>
+  <li><strong><em>디폴트메서드</em></strong> : 인터페이스에서 제공해주지만, 구현클래스에서 재구현 할 수 있고 안써도 된다.
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">public</code>을 명시하지 않아도 컴파일 단계에서 자동 선언 된다.</li>
+      <li>구현클래스에 인스턴스 메서드로 추가됨. 즉, 구현객체가 있어야 사용할 수 있다.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<ul>
+  <li><strong><em>default method?</em></strong>
+<br />
+이미 잘 운영중인데 휴면계좌 서비스를 점진적으로 도입하기로 정책이 바뀌었다고 치자.
+<br />
+추상메서드로 새로 추가하려고 하면 금융결제원의 Bank 인터페이스를 implements한 
+<br />
+각 은행사의 모든 클래스에서 무조건 구현을 해야한다.
+<br />
+은행사 마다 개발, 운영환경이 다르고 개발기간도 다르기 때문에 쉽지않다.
+<br />
+만약 <code class="language-plaintext highlighter-rouge">default method</code>로 정의하고 기본적인 구현부를 제공하면 각 은행에서 자신들만의 로직으로 재구현 할 수도 있고
+사용을 안할 수도 있어서 점진적으로 도입하기로 한 정책을 실행할 수 있을것이다.
+<br />
+그대로 쓰거나, 재구현 하거나, 안쓰거나 할 수 있는것이다.
+<br />
+이것은 구현클래스가 자신만의 메서드를 각자 추가하는 것과는 엄연히 다르다.
+<br />
+<strong><em>즉, 운영중인 시스템에 효과적으로 유연함을 제공한다.</em></strong></li>
+</ul>
+
+<p><br /></p>
+
+<ul>
+  <li><strong><em>특징</em></strong>
+    <ul>
+      <li>인터페이스는 직접 인스턴스를 생성할 수는 없고 추상메서드를 구현해 줄 클래스를 작성해야 한다.</li>
+      <li>자바에서 다중상속은 지원하지 않지만 다중 인터페이스는 구현할 수 있다.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<ul>
+  <li><strong><em>쓰는 이유?</em></strong>
+    <ul>
+      <li>추상메서드와 상수를 통해 구현클래스에 <strong><em>동일한 동작</em></strong>을 보장한다.
+        <ul>
+          <li>클래스의 설계 또는 표준화를 유도할 수 있다.</li>
+          <li>자바8 이후 <code class="language-plaintext highlighter-rouge">default method</code>로 유연성을 추가로 확보했다.</li>
+        </ul>
+      </li>
+      <li><strong><em>다형성</em></strong>을 이용하여 타입변환을 한다.
+        <ul>
+          <li>회사에서 입출금 업무를 하는 로직이 있다면 인터페이스를 이용할 시 
+  <br /> 새로운 은행에 대한 코드만 작성해서 인스턴스만 바꿔 끼면 끝난다.</li>
+        </ul>
+      </li>
+      <li>개인적으로 상속보다 좋아보인다..
+        <ul>
+          <li><strong><em>has-a</em></strong> : “~를 할 수 있는”</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<ul>
+  <li><strong><em>문제점</em></strong>
+    <ul>
+      <li>수정이 어렵다.
+        <ul>
+          <li>자바8 이후 대대적인 개선으로 많이 좋아졌다고 생각한다. <code class="language-plaintext highlighter-rouge">(default method)</code></li>
+        </ul>
+      </li>
+      <li><strong><em>잘사용해야한다..</em></strong> 불필요하게 어플리케이션의 복잡도만 증가시킬 수 있다.</li>
+    </ul>
+  </li>
+</ul>
 
 <p><br /></p>
 
@@ -432,7 +568,7 @@ enum자체가 가지는 비용이 적지 않다. static final 상수로도 충�
 
 <h2 id="둘의-차이">둘의 차이</h2>
 <ul>
-  <li>가장 중요한건 필드 즉, 상태값을 가진다 못가진다의 차이였지만 인터페이스의 디폴트 메서드는 무엇인가?</li>
+  <li>가장 중요한건 필드(멤버 변수) 즉, 상태값을 가진다 못가진다의 차이였지만 인터페이스의 디폴트 메서드는 무엇인가?</li>
 </ul>
 
 <p><br /></p>
