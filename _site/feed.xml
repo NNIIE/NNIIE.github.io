@@ -1,4 +1,104 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-12-28T02:48:17+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">자료구조</title><link href="http://localhost:4000/data_structure/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/" rel="alternate" type="text/html" title="자료구조" /><published>2022-12-24T00:00:00+09:00</published><updated>2022-12-24T00:00:00+09:00</updated><id>http://localhost:4000/data_structure/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0</id><content type="html" xml:base="http://localhost:4000/data_structure/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/"><![CDATA[<p><br /><br /><br /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-12-29T00:51:40+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">3주차</title><link href="http://localhost:4000/til/3%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="3주차" /><published>2022-12-29T00:00:00+09:00</published><updated>2022-12-29T00:00:00+09:00</updated><id>http://localhost:4000/til/3%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/3%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
+
+<h1 id="today-i-learned">Today I Learned</h1>
+
+<h2 id="property">Property</h2>
+<p>자바는 property가 없고 코틀린이나 자바스크립트는 property를 사용</p>
+<ul>
+  <li>이건 왜그래?</li>
+  <li>property의 정확한 정의에 대해 알아보자</li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="string">String</h2>
+<ul>
+  <li>String을 특별대우 하는 이유?</li>
+  <li>String은 불변(immutable)하기 때문에 값을 변경할 수 없다?</li>
+  <li>constant pool?</li>
+  <li>String을 더할 때 안좋은 이유?
+    <ul>
+      <li>StringBuffer</li>
+      <li>StringBuilder</li>
+      <li>자바 1.5 이후에 컴파일러가 자동으로 StringBuffer / StringBuilder 로 최적화 해주지만 for문을 돌아서 더해주거나 할때는 컴파일러가 최적화를 못해주네? 자세히 알아보자</li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="annotation">Annotation</h2>
+<p>맨날 쓰는 Annotation 이것에 대한 기본기를 확실하게 다져보자</p>
+<ul>
+  <li>어노테이션의 정의는?</li>
+  <li>어노테이션은 주석과 같다?</li>
+  <li>어노테이션은 결정된 값을 담아야 하는 제약이 있다? -&gt; 컴파일 단계에서 다 알아야해?</li>
+  <li>어노테이션의 타겟?</li>
+  <li>어노테이션을 어디까지 붙일 수 있을까?</li>
+</ul>
+
+<p><br /></p>
+
+<h1 id="to-do">To Do</h1>
+
+<h2 id="exception">Exception</h2>
+<ul>
+  <li>
+    <p><strong><em>Checked Exception</em></strong></p>
+  </li>
+  <li>
+    <p><strong><em>UnChecked Exception</em></strong></p>
+  </li>
+  <li>
+    <p>try/catch 를 쓰지 않아도 우리의 프레임 워크는 알아서 Exception을 메인메서드까지 던지는걸 막아준다. 그 결과 어플리케이션은 죽지 않고 500에러 등으로 내려주네? 자세히 알아보자</p>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="자바는-왜-checked-exception을-도입했는가">자바는 왜 Checked Exception을 도입했는가?</h2>
+<ul>
+  <li>왜 도입했고 요즘은 좀 다른데 어떤 분위기인가?</li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="의문점">의문점</h2>
+<p>가비지컬렉터는 알아서 메모리를 관리해 주는데, 결국 한계점에선 Major GC를 실행할 수 밖에 없고
+<br />
+이것이 실행되는 동안에는 결국 <code class="language-plaintext highlighter-rouge">stop the world</code> 즉, JVM이 멈추게 되는 현상이 발생하는데 그렇기 때문에
+<br />
+과거에는 GC를 튜닝해서(도메인에 따라 메모리 관리가 틀리기 때문에) 이런 현상이 최대한 적게 일어나게
+<br />
+하는것이 한동안 이슈였다.<br />
+<br />
+그렇다면 하나의 큰 JVM 말고 여러개의 소규모 컨테이너로 JVM을 실행하면? 마치 로드밸런싱과도 비슷한데..
+<br />
+이렇게 하면 하나의 JVM에서 Major GC가 발생해도 어플리케이션 전체가 <code class="language-plaintext highlighter-rouge">stop the world</code>에 빠지진 않는데?
+<br />
+하지만 이 방법은 JVM이 나뉘어 짐에 따라 스택프레임을 공유할 수 없다는 단점이 있는데
+<br />
+<br />
+요즘은 웬만한 프로그램도 웹어플리케이션으로 패러다임이 움직임에 따라 프로그램은 
+<br />
+request -&gt; response 이후 스레드가 종료되는 단순한 형태로 바뀌기 시작했고
+<br />
+그 결과 스택프레임을 공유하는 빈도 수 가 줄면서 GC튜닝 이슈는 좀 사그라 들었다.
+<br />
+하지만 완벽한 해결법은 아니고 자바 11 이후 GC의 방식이 조금 바뀌었다. 하지만 이것도 장단점..</p>
+
+<ul>
+  <li>자바 11 이후 바뀐 가비지컬렉터에 대해 자세히 알아보자</li>
+  <li>스택프레임에 대해 알고있는 것보다 더 자세히 알아보자</li>
+  <li>하나의 JVM으로 띄우는 것과 여러개의 컨테이너로 띄우는 것의 장단점에 대해 자세히 알아보자
+    <ul>
+      <li>노드js에선 쓰고있는거 같던데?</li>
+    </ul>
+  </li>
+  <li>로드밸런싱에 대해서 자세히 알아보자</li>
+</ul>
+
+<p><br /></p>]]></content><author><name>NNIIE</name></author><category term="TIL" /><category term="java" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">자료구조</title><link href="http://localhost:4000/data_structure/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/" rel="alternate" type="text/html" title="자료구조" /><published>2022-12-24T00:00:00+09:00</published><updated>2022-12-24T00:00:00+09:00</updated><id>http://localhost:4000/data_structure/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0</id><content type="html" xml:base="http://localhost:4000/data_structure/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/"><![CDATA[<p><br /><br /><br /></p>
 
 <h2 id="시간복잡도">시간복잡도</h2>
 <p>알고리즘 효율성을 판단하는 지표로써,
@@ -677,7 +777,11 @@ enum자체가 가지는 비용이 적지 않다. static final 상수로도 충�
 <br />
 이것은 구현클래스가 자신만의 메서드를 각자 추가하는 것과는 엄연히 다르다.
 <br />
-<strong><em>즉, 운영중인 시스템에 효과적으로 유연함을 제공한다.</em></strong></li>
+<strong><em>즉, 운영중인 시스템에 효과적으로 유연함을 제공한다.</em></strong>
+<br />
+또한 <code class="language-plaintext highlighter-rouge">default method</code>는 <code class="language-plaintext highlighter-rouge">functional</code> 하다.
+<br />
+이 말은 에러에 최소화 되었다는 의미 이기도 하다.</li>
 </ul>
 
 <p><br /></p>
@@ -735,6 +839,14 @@ enum자체가 가지는 비용이 적지 않다. static final 상수로도 충�
 <p><br /></p>
 
 <h2 id="추상클래스">추상클래스</h2>
+<ul>
+  <li><strong><em>쓰는이유?</em></strong>
+    <ul>
+      <li>구조를 재사용하기 위해서?</li>
+      <li>특정필드를 재사용하고싶고 공개하고싶지않아서?</li>
+    </ul>
+  </li>
+</ul>
 
 <p><br /></p>
 
@@ -745,26 +857,7 @@ enum자체가 가지는 비용이 적지 않다. static final 상수로도 충�
 
 <p><br /></p>
 
-<h2 id="strangler-pattern-교살자-패턴">Strangler Pattern (교살자 패턴)</h2>
-
-<p><br /></p>
-
-<h1 id="to-do">To Do</h1>
-
-<p><br /></p>
-
-<h2 id="인터페이스-1">인터페이스</h2>
-
-<p><br /></p>
-
-<h2 id="default-method">default method</h2>
-<ul>
-  <li>디폴트 메서드랑 일반 메서드랑 뭐가달라서 인터페이스에서 사용할 수 있게 됬지?</li>
-</ul>
-
-<p><br /></p>
-
-<h2 id="자바의-신-2권">자바의 신 2권</h2>]]></content><author><name>NNIIE</name></author><category term="TIL" /><category term="java" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Annotation</title><link href="http://localhost:4000/til/Annotation/" rel="alternate" type="text/html" title="Annotation" /><published>2022-12-20T00:00:00+09:00</published><updated>2022-12-20T00:00:00+09:00</updated><id>http://localhost:4000/til/Annotation</id><content type="html" xml:base="http://localhost:4000/til/Annotation/"><![CDATA[<p><br /><br /><br /></p>
+<h2 id="strangler-pattern-교살자-패턴">Strangler Pattern (교살자 패턴)</h2>]]></content><author><name>NNIIE</name></author><category term="TIL" /><category term="java" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Annotation</title><link href="http://localhost:4000/til/Annotation/" rel="alternate" type="text/html" title="Annotation" /><published>2022-12-20T00:00:00+09:00</published><updated>2022-12-20T00:00:00+09:00</updated><id>http://localhost:4000/til/Annotation</id><content type="html" xml:base="http://localhost:4000/til/Annotation/"><![CDATA[<p><br /><br /><br /></p>
 
 <h1 id="enablescheduling">@EnableScheduling</h1>
 <p>스프링의 스케쥴링을 위한 어노테이션이다.

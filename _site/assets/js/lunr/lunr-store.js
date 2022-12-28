@@ -40,4 +40,10 @@ var store = [{
         "tags": ["data structure"],
         "url": "/data_structure/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/",
         "teaser": null
+      },{
+        "title": "3주차",
+        "excerpt":"Today I Learned Property 자바는 property가 없고 코틀린이나 자바스크립트는 property를 사용 이건 왜그래? property의 정확한 정의에 대해 알아보자 String String을 특별대우 하는 이유? String은 불변(immutable)하기 때문에 값을 변경할 수 없다? constant pool? String을 더할 때 안좋은 이유? StringBuffer StringBuilder 자바 1.5 이후에 컴파일러가 자동으로 StringBuffer / StringBuilder 로 최적화 해주지만...","categories": ["TIL"],
+        "tags": ["java"],
+        "url": "/til/3%EC%A3%BC%EC%B0%A8/",
+        "teaser": null
       }]

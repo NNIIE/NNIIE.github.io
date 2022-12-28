@@ -249,7 +249,7 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> TIL</h4></header>
-              <ul class="toc__menu"><li><a href="#today-i-learned">Today I Learned</a><ul><li><a href="#enum">enum</a></li><li><a href="#싱글톤패턴">싱글톤패턴</a></li><li><a href="#인터페이스">인터페이스</a></li><li><a href="#추상클래스">추상클래스</a></li><li><a href="#둘의-차이">둘의 차이</a></li><li><a href="#strangler-pattern-교살자-패턴">Strangler Pattern (교살자 패턴)</a></li></ul></li><li><a href="#to-do">To Do</a><ul><li><a href="#인터페이스-1">인터페이스</a></li><li><a href="#default-method">default method</a></li><li><a href="#자바의-신-2권">자바의 신 2권</a></li></ul></li></ul>
+              <ul class="toc__menu"><li><a href="#today-i-learned">Today I Learned</a><ul><li><a href="#enum">enum</a></li><li><a href="#싱글톤패턴">싱글톤패턴</a></li><li><a href="#인터페이스">인터페이스</a></li><li><a href="#추상클래스">추상클래스</a></li><li><a href="#둘의-차이">둘의 차이</a></li><li><a href="#strangler-pattern-교살자-패턴">Strangler Pattern (교살자 패턴)</a></li></ul></li></ul>
 
             </nav>
           </aside>
@@ -505,7 +505,11 @@ enum자체가 가지는 비용이 적지 않다. static final 상수로도 충�
 <br />
 이것은 구현클래스가 자신만의 메서드를 각자 추가하는 것과는 엄연히 다르다.
 <br />
-<strong><em>즉, 운영중인 시스템에 효과적으로 유연함을 제공한다.</em></strong></li>
+<strong><em>즉, 운영중인 시스템에 효과적으로 유연함을 제공한다.</em></strong>
+<br />
+또한 <code class="language-plaintext highlighter-rouge">default method</code>는 <code class="language-plaintext highlighter-rouge">functional</code> 하다.
+<br />
+이 말은 에러에 최소화 되었다는 의미 이기도 하다.</li>
 </ul>
 
 <p><br /></p>
@@ -563,6 +567,14 @@ enum자체가 가지는 비용이 적지 않다. static final 상수로도 충�
 <p><br /></p>
 
 <h2 id="추상클래스">추상클래스</h2>
+<ul>
+  <li><strong><em>쓰는이유?</em></strong>
+    <ul>
+      <li>구조를 재사용하기 위해서?</li>
+      <li>특정필드를 재사용하고싶고 공개하고싶지않아서?</li>
+    </ul>
+  </li>
+</ul>
 
 <p><br /></p>
 
@@ -574,25 +586,6 @@ enum자체가 가지는 비용이 적지 않다. static final 상수로도 충�
 <p><br /></p>
 
 <h2 id="strangler-pattern-교살자-패턴">Strangler Pattern (교살자 패턴)</h2>
-
-<p><br /></p>
-
-<h1 id="to-do">To Do</h1>
-
-<p><br /></p>
-
-<h2 id="인터페이스-1">인터페이스</h2>
-
-<p><br /></p>
-
-<h2 id="default-method">default method</h2>
-<ul>
-  <li>디폴트 메서드랑 일반 메서드랑 뭐가달라서 인터페이스에서 사용할 수 있게 됬지?</li>
-</ul>
-
-<p><br /></p>
-
-<h2 id="자바의-신-2권">자바의 신 2권</h2>
 
         
       </section>
@@ -674,6 +667,53 @@ enum자체가 가지는 비용이 적지 않다. static final 상수로도 충�
     <div class="page__related">
       <h4 class="page__related-title">참고</h4>
       <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/til/3%EC%A3%BC%EC%B0%A8/" rel="permalink">3주차
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-12-29T00:00:00+09:00">2022-12-29</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+</p>
+  </article>
+</div>
+
         
           
 
@@ -804,53 +844,6 @@ enum자체가 가지는 비용이 적지 않다. static final 상수로도 충�
         <i class="far fa-fw fa-clock" aria-hidden="true"></i>
         
           11 분 소요
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/til/1-TIL/" rel="permalink">22.12
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
-        
-        <time datetime="2022-12-04T00:00:00+09:00">2022-12-04</time>
-      </span>
-    
-
-    <span class="page__meta-sep"></span>
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
-        
-          2 분 소요
         
       </span>
     
