@@ -234,7 +234,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          4 분 소요
+          5 분 소요
         
       </span>
     
@@ -249,7 +249,7 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> TIL</h4></header>
-              <ul class="toc__menu"><li><a href="#today-i-learned">Today I Learned</a><ul><li><a href="#enum">enum</a></li><li><a href="#싱글톤패턴">싱글톤패턴</a></li><li><a href="#인터페이스">인터페이스</a></li><li><a href="#추상클래스">추상클래스</a></li><li><a href="#둘의-차이">둘의 차이</a></li><li><a href="#strangler-pattern-교살자-패턴">Strangler Pattern (교살자 패턴)</a></li></ul></li></ul>
+              <ul class="toc__menu"><li><a href="#today-i-learned">Today I Learned</a><ul><li><a href="#enum">enum</a></li><li><a href="#싱글톤패턴">싱글톤패턴</a></li><li><a href="#인터페이스">인터페이스</a></li><li><a href="#추상클래스">추상클래스</a></li><li><a href="#둘의-차이">둘의 차이</a></li></ul></li></ul>
 
             </nav>
           </aside>
@@ -617,14 +617,28 @@ enum자체가 가지는 비용이 적지 않다. static final 상수로도 충�
 <br />
 추상클래스는 인스턴스를 생성할 수 없으며, 자식클래스가 인스턴스를 생성할 수 있다.</p>
 
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">Person</span> <span class="o">{</span>
+	<span class="kd">public</span> <span class="nc">String</span> <span class="n">name</span><span class="o">;</span>
+	<span class="kd">public</span> <span class="nc">Int</span> <span class="n">age</span><span class="o">;</span>
+
+	<span class="kd">public</span> <span class="kd">abstract</span> <span class="kt">void</span> <span class="nf">say</span><span class="o">();</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
 <p><br /></p>
 
 <ul>
   <li><strong><em>쓰는이유?</em></strong>
     <ul>
-      <li>상속받는 클래스에게 추상메서드를 반드시 구현하도록 강제하기 위해</li>
-      <li>구조를 재사용하기 위해서?</li>
-      <li>특정필드를 재사용하고싶고 공개하고싶지않아서?</li>
+      <li>상속받는 클래스에게 추상메서드를 <strong><em>반드시 구현하도록 강제하기 위해</em></strong>
+        <ul>
+          <li>공통적인 부분에 대한 어느정도의 <strong><em>규격</em></strong>을 잡아 놓는다. (미완성 설계도)</li>
+          <li>공통된 필드와 메서드를 통일할 목적 - 중복 제거</li>
+          <li>다형성</li>
+        </ul>
+      </li>
+      <li>구조를 재사용하기 위해서</li>
+      <li>특정필드를 재사용하고 싶고 공개하고 싶지 않아서</li>
     </ul>
   </li>
 </ul>
@@ -632,10 +646,27 @@ enum자체가 가지는 비용이 적지 않다. static final 상수로도 충�
 <p><br /></p>
 
 <h2 id="둘의-차이">둘의 차이</h2>
+<p>인터페이스는 정의된 메서드를 각 클래스의 목적에 맞게 기능 구현을 하는 느낌.
+<br />
+(구현 객체가 같은 동작을 한다는것을 보장하기 위해)
+<br />
+추상클래스는 자신의 기능들을 하위클래스로 확장시키는 느낌으로 다가가자.
+<br />
+(같은 부모클래스가 가진 기능들을 구현하기 위해)</p>
 
-<p><br /></p>
+<ul>
+  <li>상태의 차이
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">non-static</code> 멤버 즉, <strong><em>상태 값</em></strong> 을 가지는가에 대한 차이</li>
+    </ul>
+  </li>
+  <li>다중 상속
+    <ul>
+      <li>인터페이스는 다중으로 구현이 가능하지만 추상클래스는 단일 상속만 가능하다.</li>
+    </ul>
+  </li>
+</ul>
 
-<h2 id="strangler-pattern-교살자-패턴">Strangler Pattern (교살자 패턴)</h2>
 
         
       </section>

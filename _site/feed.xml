@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-12-31T20:45:06+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">3주차</title><link href="http://localhost:4000/til/3%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="3주차" /><published>2022-12-29T00:00:00+09:00</published><updated>2022-12-29T00:00:00+09:00</updated><id>http://localhost:4000/til/3%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/3%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-12-31T21:05:27+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">3주차</title><link href="http://localhost:4000/til/3%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="3주차" /><published>2022-12-29T00:00:00+09:00</published><updated>2022-12-29T00:00:00+09:00</updated><id>http://localhost:4000/til/3%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/3%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
 
 <h1 id="today-i-learned">Today I Learned</h1>
 
@@ -894,14 +894,28 @@ enum자체가 가지는 비용이 적지 않다. static final 상수로도 충�
 <br />
 추상클래스는 인스턴스를 생성할 수 없으며, 자식클래스가 인스턴스를 생성할 수 있다.</p>
 
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">Person</span> <span class="o">{</span>
+	<span class="kd">public</span> <span class="nc">String</span> <span class="n">name</span><span class="o">;</span>
+	<span class="kd">public</span> <span class="nc">Int</span> <span class="n">age</span><span class="o">;</span>
+
+	<span class="kd">public</span> <span class="kd">abstract</span> <span class="kt">void</span> <span class="nf">say</span><span class="o">();</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
 <p><br /></p>
 
 <ul>
   <li><strong><em>쓰는이유?</em></strong>
     <ul>
-      <li>상속받는 클래스에게 추상메서드를 반드시 구현하도록 강제하기 위해</li>
-      <li>구조를 재사용하기 위해서?</li>
-      <li>특정필드를 재사용하고싶고 공개하고싶지않아서?</li>
+      <li>상속받는 클래스에게 추상메서드를 <strong><em>반드시 구현하도록 강제하기 위해</em></strong>
+        <ul>
+          <li>공통적인 부분에 대한 어느정도의 <strong><em>규격</em></strong>을 잡아 놓는다. (미완성 설계도)</li>
+          <li>공통된 필드와 메서드를 통일할 목적 - 중복 제거</li>
+          <li>다형성</li>
+        </ul>
+      </li>
+      <li>구조를 재사용하기 위해서</li>
+      <li>특정필드를 재사용하고 싶고 공개하고 싶지 않아서</li>
     </ul>
   </li>
 </ul>
@@ -909,10 +923,26 @@ enum자체가 가지는 비용이 적지 않다. static final 상수로도 충�
 <p><br /></p>
 
 <h2 id="둘의-차이">둘의 차이</h2>
+<p>인터페이스는 정의된 메서드를 각 클래스의 목적에 맞게 기능 구현을 하는 느낌.
+<br />
+(구현 객체가 같은 동작을 한다는것을 보장하기 위해)
+<br />
+추상클래스는 자신의 기능들을 하위클래스로 확장시키는 느낌으로 다가가자.
+<br />
+(같은 부모클래스가 가진 기능들을 구현하기 위해)</p>
 
-<p><br /></p>
-
-<h2 id="strangler-pattern-교살자-패턴">Strangler Pattern (교살자 패턴)</h2>]]></content><author><name>NNIIE</name></author><category term="TIL" /><category term="java" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Annotation</title><link href="http://localhost:4000/til/Annotation/" rel="alternate" type="text/html" title="Annotation" /><published>2022-12-20T00:00:00+09:00</published><updated>2022-12-20T00:00:00+09:00</updated><id>http://localhost:4000/til/Annotation</id><content type="html" xml:base="http://localhost:4000/til/Annotation/"><![CDATA[<p><br /><br /><br /></p>
+<ul>
+  <li>상태의 차이
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">non-static</code> 멤버 즉, <strong><em>상태 값</em></strong> 을 가지는가에 대한 차이</li>
+    </ul>
+  </li>
+  <li>다중 상속
+    <ul>
+      <li>인터페이스는 다중으로 구현이 가능하지만 추상클래스는 단일 상속만 가능하다.</li>
+    </ul>
+  </li>
+</ul>]]></content><author><name>NNIIE</name></author><category term="TIL" /><category term="java" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Annotation</title><link href="http://localhost:4000/til/Annotation/" rel="alternate" type="text/html" title="Annotation" /><published>2022-12-20T00:00:00+09:00</published><updated>2022-12-20T00:00:00+09:00</updated><id>http://localhost:4000/til/Annotation</id><content type="html" xml:base="http://localhost:4000/til/Annotation/"><![CDATA[<p><br /><br /><br /></p>
 
 <h1 id="enablescheduling">@EnableScheduling</h1>
 <p>스프링의 스케쥴링을 위한 어노테이션이다.
