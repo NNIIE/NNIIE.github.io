@@ -249,7 +249,7 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> TIL</h4></header>
-              <ul class="toc__menu"><li><a href="#today-i-learned">Today I Learned</a><ul><li><a href="#property">Property</a></li><li><a href="#string">String</a></li><li><a href="#annotation">Annotation</a></li></ul></li><li><a href="#to-do">To Do</a><ul><li><a href="#exception">Exception</a><ul><li><a href="#checked-exception">Checked Exception</a></li><li><a href="#unchecked-exception">UnChecked Exception</a></li><li><a href="#던져도-어플리케이션-안죽던데">던져도 어플리케이션 안죽던데?</a></li></ul></li><li><a href="#자바는-왜-checked-exception을-도입했는가">자바는 왜 Checked Exception을 도입했는가?</a></li><li><a href="#nested-class">nested class</a></li><li><a href="#의문점">의문점</a></li></ul></li></ul>
+              <ul class="toc__menu"><li><a href="#today-i-learned">Today I Learned</a><ul><li><a href="#property">Property</a></li><li><a href="#string">String</a></li><li><a href="#annotation">Annotation</a></li></ul></li><li><a href="#to-do">To Do</a><ul><li><a href="#exception">Exception</a><ul><li><a href="#checked-exception">Checked Exception</a></li><li><a href="#unchecked-exception">UnChecked Exception</a></li><li><a href="#예외-던져도-안죽던데">예외 던져도 안죽던데?</a></li><li><a href="#자바-checked-exception">자바 Checked Exception???</a></li></ul></li><li><a href="#nested-class">nested class</a></li><li><a href="#의문점">의문점</a></li></ul></li></ul>
 
             </nav>
           </aside>
@@ -316,9 +316,9 @@
 <code class="language-plaintext highlighter-rouge">Exception</code>과 <code class="language-plaintext highlighter-rouge">Error</code>는 다르다</p>
   </li>
   <li>
-    <p><strong><em>상위 예외를 잡으면 하위 예외까지</em></strong> 잡아버리기 때문에 
+    <p><strong><em>상위 예외를 잡으면 하위 예외까지</em></strong> 잡아버리기 때문에 어플리케이션에선 <code class="language-plaintext highlighter-rouge">Exception</code> 예외부터 필요한 예외로 잡아야 한다.
 <br />
-어플리케이션에선 <code class="language-plaintext highlighter-rouge">Exception</code> 예외부터 필요한 예외로 잡아야 한다.</p>
+또한, <code class="language-plaintext highlighter-rouge">Layer</code>에 역할에 맞는 <code class="language-plaintext highlighter-rouge">Exception</code>을 던질 필요가 있다.</p>
   </li>
 </ul>
 
@@ -326,6 +326,10 @@
 
 <h3 id="checked-exception"><strong><em>Checked Exception</em></strong></h3>
 <p><code class="language-plaintext highlighter-rouge">Exception</code>을 상속받는 예외는 <code class="language-plaintext highlighter-rouge">checked exception</code>이 되며 <code class="language-plaintext highlighter-rouge">Exception</code>은 어플리케이션에서 사용할 수 있는 실질적인 최상위 예외이다. 컴파일러가 체크하며 잡아서 처리하거나, 또는 밖으로 던지도록 선언해야 한다.
+<br />
+예외 발생 시 트랜잭션 <code class="language-plaintext highlighter-rouge">roll-back</code> 처리를 하지 않는다. 
+<br />
+(복구가 가능하다는 매커니즘을 가지고 있기 때문에 복구를 하라고 하고 롤백은 처리하지 않겠다 아닐까?)
 <br />
 <strong><em>단, RuntimeException을 상속받는 경우 unchecked exception이 된다.</em></strong></p>
 
@@ -349,11 +353,21 @@
       </li>
     </ul>
   </li>
-  <li><strong><em>활용</em></strong>
+  <li>
+    <p><strong><em>활용</em></strong>
 <br />
   기본적으로 <code class="language-plaintext highlighter-rouge">unecked exception</code>을 사용하자. <code class="language-plaintext highlighter-rouge">checked exception</code>은 비즈니스 로직상 반드시 처리해야 하는 경우에만 (계좌 이체 실패, 결제시 포인트 부족 등)
   <br />
-  즉, 개발자가 실수로 놓치게 되면 치명적인 문제가 발생하는 경우에 컴파일러의 도움을 받기위해 사용하자</li>
+  즉, 개발자가 실수로 놓치게 되면 치명적인 문제가 발생하는 경우에 컴파일러의 도움을 받기위해 사용하자.
+  <br />
+  또한, <code class="language-plaintext highlighter-rouge">catch</code> 절에서 딱히 할일이 없을 경우 사용하지 말고 확실히 할일이 있는 경우에 사용하자</p>
+  </li>
+  <li>대표적인 <code class="language-plaintext highlighter-rouge">Exception</code>
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">IOException</code></li>
+      <li><code class="language-plaintext highlighter-rouge">SQLException</code></li>
+    </ul>
+  </li>
 </ul>
 
 <p><br /></p>
@@ -363,7 +377,9 @@
 <br />
 컴파일러가 체크하지 않는 예외이며 <code class="language-plaintext highlighter-rouge">throw</code>를 생략할 수 있고 이럴 경우 자동으로 예외를 던진다.
 <br />
-즉, 예외를 잡아서 처리하지 않아도 <code class="language-plaintext highlighter-rouge">throw</code>를 생략할 수 있다.</p>
+즉, 예외를 잡아서 처리하지 않아도 <code class="language-plaintext highlighter-rouge">throw</code>를 생략할 수 있다.
+<br />
+예외 발생 시 트랜잭션 <code class="language-plaintext highlighter-rouge">roll-back</code> 처리를 한다.</p>
 
 <ul>
   <li><strong><em>장점</em></strong>
@@ -378,11 +394,17 @@
       <li>컴파일 단계에서 체크가 안되기 때문에 실수할 가능성이 있다.</li>
     </ul>
   </li>
+  <li>대표적인 <code class="language-plaintext highlighter-rouge">Exception</code>
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">NullPointerException</code></li>
+      <li><code class="language-plaintext highlighter-rouge">IllegalArgumentException</code></li>
+    </ul>
+  </li>
 </ul>
 
 <p><br /></p>
 
-<h3 id="던져도-어플리케이션-안죽던데">던져도 어플리케이션 안죽던데?</h3>
+<h3 id="예외-던져도-안죽던데">예외 던져도 안죽던데?</h3>
 <p>웹 어플리케이션은 <code class="language-plaintext highlighter-rouge">servlet</code>의 오류 페이지나, 또는 <code class="language-plaintext highlighter-rouge">Spring MVC</code>가 제공하는 <code class="language-plaintext highlighter-rouge">ControllerAdvice</code> 에서 이런 예외를 공통으로 처리해 주기 때문에 예외가 메인메서드까지 가지 않는다.</p>
 <ul>
   <li>하지만 이런 문제들은 클라이언트 입장에선 어떤 문제가 발생했는지 자세히 알기 어렵다.</li>
@@ -394,10 +416,23 @@
 
 <p><br /></p>
 
-<h2 id="자바는-왜-checked-exception을-도입했는가">자바는 왜 Checked Exception을 도입했는가?</h2>
-<ul>
-  <li>왜 도입했고 요즘은 좀 다른데 어떤 분위기인가?</li>
-</ul>
+<h3 id="자바-checked-exception">자바 Checked Exception???</h3>
+<p>자바의 <code class="language-plaintext highlighter-rouge">Checked Exception</code>은 자바만의 독특한 특징이다.
+<br />
+<strong><em>“강제성이 없기 때문에 실수할 여지가 있다”</em></strong> 를 해결하기위해 도입했지만
+컴파일단계에서 예외를 처리하라고 
+<br />
+강요하는 <code class="language-plaintext highlighter-rouge">Checked Exception</code> 은 자바 이후 설계된 <code class="language-plaintext highlighter-rouge">C#</code> 이나 <code class="language-plaintext highlighter-rouge">ruby</code>등에서도 채택되지 않았다.
+<br />
+요즘은 극단적으로는 자바의 <code class="language-plaintext highlighter-rouge">Checked Exception</code> 도입은 실패라는 주장도 심심치 않게 보인다.
+<br />
+<code class="language-plaintext highlighter-rouge">JDBC API</code>에서는 <code class="language-plaintext highlighter-rouge">Checked Exception</code>을 남발하고 <code class="language-plaintext highlighter-rouge">catch</code>절에서 아무것도 하지 않았고 
+<br />
+이런 문제점을 알고 그후에 <code class="language-plaintext highlighter-rouge">JDBC</code>를 활용한 <code class="language-plaintext highlighter-rouge">Spring-JdbcTemplet</code>, <code class="language-plaintext highlighter-rouge">Hibernate</code>, <code class="language-plaintext highlighter-rouge">JPA</code> 등에서는 
+<br />
+<code class="language-plaintext highlighter-rouge">Checked Exception</code>인 <code class="language-plaintext highlighter-rouge">SQLException</code>을 볼수 없게 설계되었고 이런 사례들을 보면 자바의 
+<br />
+<code class="language-plaintext highlighter-rouge">Checked Exception</code>은 도입은 논란의 여지가 있는듯 하다.</p>
 
 <p><br /></p>
 
