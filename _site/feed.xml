@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-01-04T20:37:58+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">3주차</title><link href="http://localhost:4000/til/3%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="3주차" /><published>2022-12-29T00:00:00+09:00</published><updated>2022-12-29T00:00:00+09:00</updated><id>http://localhost:4000/til/3%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/3%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-01-04T20:39:06+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">3주차</title><link href="http://localhost:4000/til/3%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="3주차" /><published>2022-12-29T00:00:00+09:00</published><updated>2022-12-29T00:00:00+09:00</updated><id>http://localhost:4000/til/3%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/3%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
 
 <h1 id="today-i-learned">Today I Learned</h1>
 
@@ -168,7 +168,7 @@
 <br />
 강요하는 <code class="language-plaintext highlighter-rouge">Checked Exception</code> 은 자바 이후 설계된 <code class="language-plaintext highlighter-rouge">C#</code> 이나 <code class="language-plaintext highlighter-rouge">ruby</code>등에서도 채택되지 않았다.
 <br />
-요즘은 극단적으로는 자바의 <code class="language-plaintext highlighter-rouge">Checked Exception</code> 도입은 실패라는 주장도 심심치 않게 보인다.
+요즘은 극단적으로 자바의 <code class="language-plaintext highlighter-rouge">Checked Exception</code> 도입은 실패라는 주장도 심심치 않게 보인다.
 <br />
 <code class="language-plaintext highlighter-rouge">JDBC API</code>에서는 <code class="language-plaintext highlighter-rouge">Checked Exception</code>을 남발하고 <code class="language-plaintext highlighter-rouge">catch</code>절에서 아무것도 하지 않았고 
 <br />
