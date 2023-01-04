@@ -249,7 +249,7 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> TIL</h4></header>
-              <ul class="toc__menu"><li><a href="#today-i-learned">Today I Learned</a><ul><li><a href="#property">Property</a></li><li><a href="#string">String</a></li><li><a href="#annotation">Annotation</a></li></ul></li><li><a href="#to-do">To Do</a><ul><li><a href="#exception">Exception</a><ul><li><a href="#checked-exception">Checked Exception</a></li><li><a href="#unchecked-exception">UnChecked Exception</a></li><li><a href="#예외-던져도-안죽던데">예외 던져도 안죽던데?</a></li><li><a href="#자바-checked-exception">자바 Checked Exception???</a></li></ul></li><li><a href="#nested-class">nested class</a></li><li><a href="#의문점">의문점</a></li></ul></li></ul>
+              <ul class="toc__menu"><li><a href="#today-i-learned">Today I Learned</a><ul><li><a href="#property">Property</a></li><li><a href="#string">String</a></li><li><a href="#annotation">Annotation</a></li></ul></li><li><a href="#to-do">To Do</a><ul><li><a href="#exception">Exception</a><ul><li><a href="#checked-exception">Checked Exception</a></li><li><a href="#unchecked-exception">UnChecked Exception</a></li><li><a href="#예외-던져도-안죽던데">예외 던져도 안죽던데?</a></li><li><a href="#자바-checked-exception">자바 Checked Exception???</a></li></ul></li><li><a href="#의문점">의문점</a><ul><li><a href="#자바-11-이후-바뀐-가비지컬렉션에-대해-자세히-알아보자">자바 11 이후 바뀐 가비지컬렉션에 대해 자세히 알아보자</a></li><li><a href="#스택프레임에-대해-알고있는-것보다-더-자세히-알아보자">스택프레임에 대해 알고있는 것보다 더 자세히 알아보자</a></li><li><a href="#하나의-jvm으로-띄우는-것과-여러개의-컨테이너로-띄우는-것의-장단점에-대해-자세히-알아보자">하나의 JVM으로 띄우는 것과 여러개의 컨테이너로 띄우는 것의 장단점에 대해 자세히 알아보자</a></li><li><a href="#하나의-프로세스는-하나의-cpu-core를-사용하는건가">하나의 프로세스는 하나의 cpu core를 사용하는건가?</a></li><li><a href="#로드밸런싱에-대해서-자세히-알아보자">로드밸런싱에 대해서 자세히 알아보자</a></li></ul></li></ul></li></ul>
 
             </nav>
           </aside>
@@ -436,15 +436,6 @@
 
 <p><br /></p>
 
-<h2 id="nested-class">nested class</h2>
-<ul>
-  <li>inner class</li>
-  <li>static inner class</li>
-  <li>둘의 차이 ex)가비지컬렉션</li>
-</ul>
-
-<p><br /></p>
-
 <h2 id="의문점">의문점</h2>
 <p>가비지컬렉터는 알아서 메모리를 관리해 주는데, 결국 한계점에선 Major GC를 실행할 수 밖에 없고
 <br />
@@ -469,21 +460,27 @@ request -&gt; response 이후 스레드가 종료되는 단순한 형태로 바�
 <br />
 하지만 완벽한 해결법은 아니고 자바 11 이후 GC의 방식이 조금 바뀌었다. 하지만 이것도 장단점..</p>
 
-<ul>
-  <li>자바 11 이후 바뀐 가비지컬렉터에 대해 자세히 알아보자</li>
-  <li>스택프레임에 대해 알고있는 것보다 더 자세히 알아보자</li>
-  <li>하나의 JVM으로 띄우는 것과 여러개의 컨테이너로 띄우는 것의 장단점에 대해 자세히 알아보자
-    <ul>
-      <li>노드js에선 쓰고있는거 같던데?</li>
-    </ul>
-  </li>
-  <li>하나의 프로세스는 하나의 cpu core를 사용하는건가?
-    <ul>
-      <li>맞다면 그 안에서 멀티 스레딩 처리를 하는데 만약 cpu가 multicore라면 JVM은 어떤 방식으로 돌아가지?</li>
-    </ul>
-  </li>
-  <li>로드밸런싱에 대해서 자세히 알아보자</li>
-</ul>
+<p><br /></p>
+
+<h3 id="자바-11-이후-바뀐-가비지컬렉션에-대해-자세히-알아보자">자바 11 이후 바뀐 가비지컬렉션에 대해 자세히 알아보자</h3>
+
+<p><br /></p>
+
+<h3 id="스택프레임에-대해-알고있는-것보다-더-자세히-알아보자">스택프레임에 대해 알고있는 것보다 더 자세히 알아보자</h3>
+
+<p><br /></p>
+
+<h3 id="하나의-jvm으로-띄우는-것과-여러개의-컨테이너로-띄우는-것의-장단점에-대해-자세히-알아보자">하나의 JVM으로 띄우는 것과 여러개의 컨테이너로 띄우는 것의 장단점에 대해 자세히 알아보자</h3>
+<p>노드js에선 쓰고있는거 같던데?</p>
+
+<p><br /></p>
+
+<h3 id="하나의-프로세스는-하나의-cpu-core를-사용하는건가">하나의 프로세스는 하나의 cpu core를 사용하는건가?</h3>
+<p>맞다면 그 안에서 멀티 스레딩 처리를 하는데 만약 cpu가 multicore라면 JVM은 어떤 방식으로 돌아가지?</p>
+
+<p><br /></p>
+
+<h3 id="로드밸런싱에-대해서-자세히-알아보자">로드밸런싱에 대해서 자세히 알아보자</h3>
 
 <p><br /></p>
 
@@ -552,7 +549,8 @@ request -&gt; response 이후 스레드가 종료되는 단순한 형태로 바�
 ">이전</a>
     
     
-      <a href="#" class="pagination--pager disabled">다음</a>
+      <a href="/til/4%EC%A3%BC%EC%B0%A8/" class="pagination--pager" title="4주차
+">다음</a>
     
   </nav>
 
@@ -566,6 +564,53 @@ request -&gt; response 이후 스레드가 종료되는 단순한 형태로 바�
     <div class="page__related">
       <h4 class="page__related-title">참고</h4>
       <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/til/4%EC%A3%BC%EC%B0%A8/" rel="permalink">4주차
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-01-05T00:00:00+09:00">2023-01-05</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          최대 1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+</p>
+  </article>
+</div>
+
         
           
 
@@ -696,53 +741,6 @@ request -&gt; response 이후 스레드가 종료되는 단순한 형태로 바�
         <i class="far fa-fw fa-clock" aria-hidden="true"></i>
         
           1 분 소요
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/til/1%EC%A3%BC%EC%B0%A8/" rel="permalink">1주차
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
-        
-        <time datetime="2022-12-15T00:00:00+09:00">2022-12-15</time>
-      </span>
-    
-
-    <span class="page__meta-sep"></span>
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
-        
-          11 분 소요
         
       </span>
     

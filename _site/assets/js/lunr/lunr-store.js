@@ -46,4 +46,10 @@ var store = [{
         "tags": ["java"],
         "url": "/til/3%EC%A3%BC%EC%B0%A8/",
         "teaser": null
+      },{
+        "title": "4주차",
+        "excerpt":"      Today I Learned   Property       String       Annotation       To Do       nested class     inner class   static inner class   둘의 차이 ex)가비지컬렉션          ","categories": ["TIL"],
+        "tags": ["java"],
+        "url": "/til/4%EC%A3%BC%EC%B0%A8/",
+        "teaser": null
       }]
