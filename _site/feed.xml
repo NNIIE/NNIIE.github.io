@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-01-05T02:13:53+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">4주차</title><link href="http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="4주차" /><published>2023-01-05T00:00:00+09:00</published><updated>2023-01-05T00:00:00+09:00</updated><id>http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-01-05T02:20:08+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">4주차</title><link href="http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="4주차" /><published>2023-01-05T00:00:00+09:00</published><updated>2023-01-05T00:00:00+09:00</updated><id>http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
 
 <h1 id="today-i-learned">Today I Learned</h1>
 
@@ -13,17 +13,20 @@
 타입시스템을 더 견고하게 사용하기 위해 제네릭을 사용한다</p>
 
 <ul>
-  <li>타입시스템</li>
-  <li>자바는 타입시스템에 관대해서 제네릭을 쓴다?</li>
+  <li>타입시스템이란? 그리고 자바의 타입시스템</li>
   <li>타입을 재사용하고 싶어서? -&gt; 이유는 제네릭 다이아몬드 문법 안에 어쩌고?</li>
-  <li>공변? 반공변?</li>
+  <li>공변? 반공변?
+    <ul>
+      <li>무엇인지 정도만</li>
+    </ul>
+  </li>
   <li>자바는 공변설정이 약하다?</li>
-  <li>평소 우리가 제네릭 제일많이 쓰는건 Map&lt;Integer, Integer&gt; 같은거</li>
-  <li>자바는 강타입 언어 자바스크립트는 약타입 언어 이건 왜?
+  <li>평소 우리가 제네릭을 제일많이 쓰는곳은 Map&lt;Integer, Integer&gt; 같은거</li>
+  <li>자바는 강타입 언어 자바스크립트는 약타입 언어
     <ul>
       <li>자바는 서버언어로 쓰는데 서버는 다르다… 안정성이 제일 중요하다?
         <ul>
-          <li>왜냐하면 서버에서 고치는것보다 컴파일단계에서 서버에 올라가기 전에 고치는게 훨씬 좋다 -&gt; 그래서 최대한 빠른단계에서(컴파일) 실수를 잡는게 좋다.</li>
+          <li>왜냐하면 서버에서 고치는것보다 컴파일단계에서 서버에 올라가기 전에 고치는게 훨씬 좋다 -&gt; 그래서 최대한 빠른단계에서(컴파일) 실수를 잡는게 좋다. 디비에 올라간거 고치기 힘들잖아</li>
         </ul>
       </li>
     </ul>
