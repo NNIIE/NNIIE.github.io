@@ -2,7 +2,7 @@
 layout: single
 title:  "Annotation"
 categories: TIL
-tag: [java, Spring, Annotation]
+tag: [Spring Annotation]
 author_profile: false
 toc: true
 toc_label: "TIL"
