@@ -303,7 +303,10 @@
 <br />
 물론 이 둘이 모든 상황에서 정 반대에 있는건 아니다.</p>
 
+<p><br /></p>
+
 <h3 id="caching">Caching</h3>
+<hr />
 <ul>
   <li>시간복잡도의 리소스를 공간복잡도의 리소스로 바꾸는거다.</li>
   <li><code class="language-plaintext highlighter-rouge">redis</code>를 사용 해서 데이터를 보다 빠르게 조회할 수 있다면 그만큼 탐색범위를 줄여 시간복잡도를
@@ -311,17 +314,26 @@
 줄일 수 있지만 그만큼 캐싱에 들어가는 메모리를 사용해서 공간복잡도는 올라가게 된다.</li>
 </ul>
 
+<p><br /></p>
+
 <h3 id="hashmap">HashMap</h3>
+<hr />
 <ul>
   <li>해시알고리즘으로 만든 key를 메모리에 올려두고 그 key값만 찾아가면 되기때문에 데이터 크기에 상관 없이 시간복잡도가 O(1)인 대신 그만큼 key값을 저장하는 메모리 공간을 사용하기 때문에 공간복잡도는 올라간다.</li>
 </ul>
 
+<p><br /></p>
+
 <h3 id="만약-메모리가-부족하다면">만약 메모리가 부족하다면?</h3>
+<hr />
 <p>메모리를 적게 써야하는 상황이라면 공간복잡도를 줄여서 시간을 많이쓰는
 <br />
 즉, 탐색을 더해서 시간복잡도를 올려야 한다.</p>
 
+<p><br /></p>
+
 <h3 id="의문점">의문점</h3>
+<hr />
 <p>보통 공간복잡도 보다 시간복잡도를 더 우위에 두고 작업을 하기 마련이다.
 <br />
 그렇다면 그 이유는 과거에 비해 하드웨어의 발전이 많이 이루어 졌기 때문이고
@@ -385,7 +397,7 @@
 <p><br /></p>
 
 <h3 id="inner-class">Inner Class</h3>
-
+<hr />
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">OuterClass</span> <span class="o">{</span>
 	<span class="kd">private</span> <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">10</span><span class="o">;</span>
 
@@ -429,7 +441,7 @@
 <p><br /></p>
 
 <h3 id="static-inner-class">Static Inner Class</h3>
-
+<hr />
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">OuterClass</span> <span class="o">{</span>
 	<span class="o">...</span>
 	<span class="kd">static</span> <span class="kd">class</span> <span class="nc">StaticInnerClass</span> <span class="o">{</span>
@@ -449,6 +461,7 @@
 <p><br /></p>
 
 <h3 id="익명클래스">익명클래스</h3>
+<hr />
 <p>펑션을 상속받는? 이름이 없는 로컬클래스.
 <br />
 이름이 없기 때문에 익명클래스는 객체를 여러번 생성할 수 없으며 생성자를 만들수도 없다.
@@ -458,10 +471,12 @@
 <p><br /></p>
 
 <h3 id="lambda">Lambda</h3>
+<hr />
 
 <p><br /></p>
 
 <h3 id="활용">활용</h3>
+<hr />
 <ul>
   <li><code class="language-plaintext highlighter-rouge">inner class</code>는 참조값을 담아야 하기 때문에 인스턴스 생성시 시간,공간적으로 성능이 낮아진다.</li>
   <li><code class="language-plaintext highlighter-rouge">static inner class</code>는 외부 인스턴스에 대한 참조가 존재하기 때문에, 
@@ -474,6 +489,7 @@
 <p><br /></p>
 
 <h3 id="의문점-1">의문점</h3>
+<hr />
 <ul>
   <li><strong><em>Lambda</em></strong> 로 파라미터를 넘기면 그건 객체, 그게 바로 익명클래스라는데 알아보자</li>
   <li><strong><em>Lambda</em></strong> 는 일종의 <code class="language-plaintext highlighter-rouge">inner class</code> 인데 가비지컬렉터의 메모리 누수에는 안전하다 알아보자
@@ -607,7 +623,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-fw fa-clock" aria-hidden="true"></i>
         
-          3 분 소요
+          4 분 소요
         
       </span>
     

@@ -234,7 +234,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          3 분 소요
+          4 분 소요
         
       </span>
     
@@ -249,7 +249,7 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> TIL</h4></header>
-              <ul class="toc__menu"><li><a href="#today-i-learned">Today I Learned</a><ul><li><a href="#property">Property</a></li><li><a href="#string">String</a></li><li><a href="#annotation">Annotation</a></li></ul></li><li><a href="#to-do">To Do</a><ul><li><a href="#exception">Exception</a><ul><li><a href="#checked-exception">Checked Exception</a></li><li><a href="#unchecked-exception">UnChecked Exception</a></li><li><a href="#예외-던져도-안죽던데">예외 던져도 안죽던데?</a></li><li><a href="#자바-checked-exception">자바 Checked Exception???</a></li></ul></li><li><a href="#의문점">의문점</a><ul><li><a href="#자바-11-이후-바뀐-가비지컬렉션에-대해-자세히-알아보자">자바 11 이후 바뀐 가비지컬렉션에 대해 자세히 알아보자</a></li><li><a href="#스택프레임에-대해-알고있는-것보다-더-자세히-알아보자">스택프레임에 대해 알고있는 것보다 더 자세히 알아보자</a></li><li><a href="#하나의-jvm으로-띄우는-것과-여러개의-컨테이너로-띄우는-것의-장단점에-대해-자세히-알아보자">하나의 JVM으로 띄우는 것과 여러개의 컨테이너로 띄우는 것의 장단점에 대해 자세히 알아보자</a></li><li><a href="#하나의-프로세스는-하나의-cpu-core를-사용하는건가">하나의 프로세스는 하나의 cpu core를 사용하는건가?</a></li><li><a href="#로드밸런싱에-대해서-자세히-알아보자">로드밸런싱에 대해서 자세히 알아보자</a></li></ul></li></ul></li></ul>
+              <ul class="toc__menu"><li><a href="#today-i-learned">Today I Learned</a><ul><li><a href="#property">Property</a></li><li><a href="#string">String</a></li><li><a href="#annotation">Annotation</a></li></ul></li><li><a href="#to-do">To Do</a><ul><li><a href="#exception">Exception</a><ul><li><a href="#checked-exception">Checked Exception</a></li><li><a href="#unchecked-exception">UnChecked Exception</a></li><li><a href="#예외-던져도-안죽던데">예외 던져도 안죽던데?</a></li><li><a href="#자바-checked-exception">자바 Checked Exception???</a></li></ul></li><li><a href="#의문점">의문점</a><ul><li><a href="#자바-11-이후-바뀐-가비지컬렉션에-대해-자세히-알아보자">자바 11 이후 바뀐 가비지컬렉션에 대해 자세히 알아보자</a></li><li><a href="#스택프레임에-대해-알고있는-것보다-더-자세히-알아보자">스택프레임에 대해 알고있는 것보다 더 자세히 알아보자</a></li><li><a href="#하나의-jvm으로-띄우는-것과-여러개의-컨테이너로-띄우는-것의-장단점에-대해-자세히-알아보자">하나의 JVM으로 띄우는 것과 여러개의 컨테이너로 띄우는 것의 장단점에 대해 자세히 알아보자</a></li><li><a href="#멀티코어에서의-jvm과-멀티스레드">멀티코어에서의 JVM과 멀티스레드</a></li><li><a href="#로드밸런싱에-대해서-자세히-알아보자">로드밸런싱에 대해서 자세히 알아보자</a></li></ul></li></ul></li></ul>
 
             </nav>
           </aside>
@@ -328,6 +328,7 @@ Property의 읽기와 쓰기는 일반적으로 <code class="language-plaintext 
 <p><br /></p>
 
 <h3 id="checked-exception"><strong><em>Checked Exception</em></strong></h3>
+<hr />
 <p><code class="language-plaintext highlighter-rouge">Exception</code>을 상속받는 예외는 <code class="language-plaintext highlighter-rouge">checked exception</code>이 되며 <code class="language-plaintext highlighter-rouge">Exception</code>은 어플리케이션에서 사용할 수 있는 실질적인 최상위 예외이다. 컴파일러가 체크하며 잡아서 처리하거나, 또는 밖으로 던지도록 선언해야 한다.
 <br />
 예외 발생 시 트랜잭션 <code class="language-plaintext highlighter-rouge">roll-back</code> 처리를 하지 않는다. 
@@ -376,6 +377,7 @@ Property의 읽기와 쓰기는 일반적으로 <code class="language-plaintext 
 <p><br /></p>
 
 <h3 id="unchecked-exception"><strong><em>UnChecked Exception</em></strong></h3>
+<hr />
 <p><code class="language-plaintext highlighter-rouge">RuntimeException</code>과 그걸 상속받는 예외들은 <code class="language-plaintext highlighter-rouge">unchecked exception</code>이다.
 <br />
 컴파일러가 체크하지 않는 예외이며 <code class="language-plaintext highlighter-rouge">throw</code>를 생략할 수 있고 이럴 경우 자동으로 예외를 던진다.
@@ -408,6 +410,7 @@ Property의 읽기와 쓰기는 일반적으로 <code class="language-plaintext 
 <p><br /></p>
 
 <h3 id="예외-던져도-안죽던데">예외 던져도 안죽던데?</h3>
+<hr />
 <p>웹 어플리케이션은 <code class="language-plaintext highlighter-rouge">servlet</code>의 오류 페이지나, 또는 <code class="language-plaintext highlighter-rouge">Spring MVC</code>가 제공하는 <code class="language-plaintext highlighter-rouge">ControllerAdvice</code> 에서 이런 예외를 공통으로 처리해 주기 때문에 예외가 메인메서드까지 가지 않는다.</p>
 <ul>
   <li>하지만 이런 문제들은 클라이언트 입장에선 어떤 문제가 발생했는지 자세히 알기 어렵다.</li>
@@ -420,6 +423,7 @@ Property의 읽기와 쓰기는 일반적으로 <code class="language-plaintext 
 <p><br /></p>
 
 <h3 id="자바-checked-exception">자바 Checked Exception???</h3>
+<hr />
 <p>자바의 <code class="language-plaintext highlighter-rouge">Checked Exception</code>은 자바만의 독특한 특징이다.
 <br />
 <strong><em>“강제성이 없기 때문에 실수할 여지가 있다”</em></strong> 를 해결하기위해 도입했지만
@@ -466,24 +470,76 @@ request -&gt; response 이후 스레드가 종료되는 단순한 형태로 바�
 <p><br /></p>
 
 <h3 id="자바-11-이후-바뀐-가비지컬렉션에-대해-자세히-알아보자">자바 11 이후 바뀐 가비지컬렉션에 대해 자세히 알아보자</h3>
+<hr />
 
 <p><br /></p>
 
 <h3 id="스택프레임에-대해-알고있는-것보다-더-자세히-알아보자">스택프레임에 대해 알고있는 것보다 더 자세히 알아보자</h3>
+<hr />
 
 <p><br /></p>
 
 <h3 id="하나의-jvm으로-띄우는-것과-여러개의-컨테이너로-띄우는-것의-장단점에-대해-자세히-알아보자">하나의 JVM으로 띄우는 것과 여러개의 컨테이너로 띄우는 것의 장단점에 대해 자세히 알아보자</h3>
+<hr />
 <p>노드js에선 쓰고있는거 같던데?</p>
 
 <p><br /></p>
 
-<h3 id="하나의-프로세스는-하나의-cpu-core를-사용하는건가">하나의 프로세스는 하나의 cpu core를 사용하는건가?</h3>
-<p>맞다면 그 안에서 멀티 스레딩 처리를 하는데 만약 cpu가 multicore라면 JVM은 어떤 방식으로 돌아가지?</p>
+<h3 id="멀티코어에서의-jvm과-멀티스레드">멀티코어에서의 JVM과 멀티스레드</h3>
+<hr />
+<p>과거에는 싱글코어의 성능을 극한으로 올렸다. 하지만 전력소모, 코어의 면적을 넓히는 방식으로의 해결등이 한계에 다다르면서 코어 수를 늘려서 CPU 전체의 성능을 향상하는 쪽으로 발전했다.</p>
+
+<ul>
+  <li>멀티코어 : 2개 이상의 독립코어를 단일 직접회로로 이루어진 하나의 CPU로 통합한 것</li>
+  <li>프로세서 : 컴퓨터 내에서 프로그램을 수행하는 하드웨어 유닛 즉, 중앙처리장치 혹은 CPU
+    <ul>
+      <li>소프트웨어적으로는 데이터포맷을 변환하는 역할을 수행하는 프로세싱 시스템
+        <ul>
+          <li>워드프로세서, 컴파일러, 어셈블러 등</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>프로세스 : 메모리에 적재되어 프로세서에 의해 실행중이거나 대기중인 프로그램</li>
+</ul>
+
+<p><br /></p>
+
+<ul>
+  <li>멀티스레드
+    <ul>
+      <li>프로세스를 생성하여 자원을 할당하는 운영체제의 시스템콜이 줄어든다.</li>
+      <li>프로세스간 통신보다 스레드간의 통신의 비용이 적다.</li>
+      <li>힙영역을 공유하므로 동기화 문제에 안전하지 않다.</li>
+      <li>하나의 스레드에 문제가 생기면 전체 프로세스 전체가 영향을 받는다.</li>
+    </ul>
+  </li>
+  <li>멀티프로세스
+    <ul>
+      <li>하나의 프로세스에 문제가 생겨도 다른 프로세스에 영향을 주지 않는다.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>JVM은 하나의 프로세스에서 동작한다.
+<br />
+하나의 프로세스는 여러 작업단위를 가질 수 있는데 이것이 스레드 이다.
+<br />
+해당 JVM에서 스레드를 생성해 사용할 때는 OS의 스레드를 사용하는데 이 OS의 스레드는 다른 코어에 있고, 
+<br />
+결국 하나의 JVM에서 멀티코어를 사용할 수 있는것이다.
+<br />
+<br />
+<br />
+근데 이말은 무슨말인지 자세히 알아보자</p>
+<ul>
+  <li>프로세스는 독자적인 메모리를 할당받아서 서로 다른 프로세스끼리는 일반적으로 서로의 메모리 영역을 침범하지 못한다?</li>
+</ul>
 
 <p><br /></p>
 
 <h3 id="로드밸런싱에-대해서-자세히-알아보자">로드밸런싱에 대해서 자세히 알아보자</h3>
+<hr />
 
 <p><br /></p>
 
@@ -505,6 +561,10 @@ request -&gt; response 이후 스레드가 종료되는 단순한 형태로 바�
       <a href="/tags/#annotation" class="page__taxonomy-item" rel="tag">Annotation</a><span class="sep">, </span>
     
       <a href="/tags/#exception" class="page__taxonomy-item" rel="tag">Exception</a><span class="sep">, </span>
+    
+      <a href="/tags/#gc" class="page__taxonomy-item" rel="tag">GC</a><span class="sep">, </span>
+    
+      <a href="/tags/#jvm" class="page__taxonomy-item" rel="tag">JVM</a><span class="sep">, </span>
     
       <a href="/tags/#property" class="page__taxonomy-item" rel="tag">Property</a><span class="sep">, </span>
     

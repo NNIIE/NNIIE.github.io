@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-01-05T12:08:42+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">4주차</title><link href="http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="4주차" /><published>2023-01-05T00:00:00+09:00</published><updated>2023-01-05T00:00:00+09:00</updated><id>http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-01-05T16:32:11+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">4주차</title><link href="http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="4주차" /><published>2023-01-05T00:00:00+09:00</published><updated>2023-01-05T00:00:00+09:00</updated><id>http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
 
 <h1 id="today-i-learned">Today I Learned</h1>
 
@@ -47,7 +47,10 @@
 <br />
 물론 이 둘이 모든 상황에서 정 반대에 있는건 아니다.</p>
 
+<p><br /></p>
+
 <h3 id="caching">Caching</h3>
+<hr />
 <ul>
   <li>시간복잡도의 리소스를 공간복잡도의 리소스로 바꾸는거다.</li>
   <li><code class="language-plaintext highlighter-rouge">redis</code>를 사용 해서 데이터를 보다 빠르게 조회할 수 있다면 그만큼 탐색범위를 줄여 시간복잡도를
@@ -55,17 +58,26 @@
 줄일 수 있지만 그만큼 캐싱에 들어가는 메모리를 사용해서 공간복잡도는 올라가게 된다.</li>
 </ul>
 
+<p><br /></p>
+
 <h3 id="hashmap">HashMap</h3>
+<hr />
 <ul>
   <li>해시알고리즘으로 만든 key를 메모리에 올려두고 그 key값만 찾아가면 되기때문에 데이터 크기에 상관 없이 시간복잡도가 O(1)인 대신 그만큼 key값을 저장하는 메모리 공간을 사용하기 때문에 공간복잡도는 올라간다.</li>
 </ul>
 
+<p><br /></p>
+
 <h3 id="만약-메모리가-부족하다면">만약 메모리가 부족하다면?</h3>
+<hr />
 <p>메모리를 적게 써야하는 상황이라면 공간복잡도를 줄여서 시간을 많이쓰는
 <br />
 즉, 탐색을 더해서 시간복잡도를 올려야 한다.</p>
 
+<p><br /></p>
+
 <h3 id="의문점">의문점</h3>
+<hr />
 <p>보통 공간복잡도 보다 시간복잡도를 더 우위에 두고 작업을 하기 마련이다.
 <br />
 그렇다면 그 이유는 과거에 비해 하드웨어의 발전이 많이 이루어 졌기 때문이고
@@ -129,7 +141,7 @@
 <p><br /></p>
 
 <h3 id="inner-class">Inner Class</h3>
-
+<hr />
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">OuterClass</span> <span class="o">{</span>
 	<span class="kd">private</span> <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">10</span><span class="o">;</span>
 
@@ -173,7 +185,7 @@
 <p><br /></p>
 
 <h3 id="static-inner-class">Static Inner Class</h3>
-
+<hr />
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">OuterClass</span> <span class="o">{</span>
 	<span class="o">...</span>
 	<span class="kd">static</span> <span class="kd">class</span> <span class="nc">StaticInnerClass</span> <span class="o">{</span>
@@ -193,6 +205,7 @@
 <p><br /></p>
 
 <h3 id="익명클래스">익명클래스</h3>
+<hr />
 <p>펑션을 상속받는? 이름이 없는 로컬클래스.
 <br />
 이름이 없기 때문에 익명클래스는 객체를 여러번 생성할 수 없으며 생성자를 만들수도 없다.
@@ -202,10 +215,12 @@
 <p><br /></p>
 
 <h3 id="lambda">Lambda</h3>
+<hr />
 
 <p><br /></p>
 
 <h3 id="활용">활용</h3>
+<hr />
 <ul>
   <li><code class="language-plaintext highlighter-rouge">inner class</code>는 참조값을 담아야 하기 때문에 인스턴스 생성시 시간,공간적으로 성능이 낮아진다.</li>
   <li><code class="language-plaintext highlighter-rouge">static inner class</code>는 외부 인스턴스에 대한 참조가 존재하기 때문에, 
@@ -218,6 +233,7 @@
 <p><br /></p>
 
 <h3 id="의문점-1">의문점</h3>
+<hr />
 <ul>
   <li><strong><em>Lambda</em></strong> 로 파라미터를 넘기면 그건 객체, 그게 바로 익명클래스라는데 알아보자</li>
   <li><strong><em>Lambda</em></strong> 는 일종의 <code class="language-plaintext highlighter-rouge">inner class</code> 인데 가비지컬렉터의 메모리 누수에는 안전하다 알아보자
@@ -305,6 +321,7 @@ Property의 읽기와 쓰기는 일반적으로 <code class="language-plaintext 
 <p><br /></p>
 
 <h3 id="checked-exception"><strong><em>Checked Exception</em></strong></h3>
+<hr />
 <p><code class="language-plaintext highlighter-rouge">Exception</code>을 상속받는 예외는 <code class="language-plaintext highlighter-rouge">checked exception</code>이 되며 <code class="language-plaintext highlighter-rouge">Exception</code>은 어플리케이션에서 사용할 수 있는 실질적인 최상위 예외이다. 컴파일러가 체크하며 잡아서 처리하거나, 또는 밖으로 던지도록 선언해야 한다.
 <br />
 예외 발생 시 트랜잭션 <code class="language-plaintext highlighter-rouge">roll-back</code> 처리를 하지 않는다. 
@@ -353,6 +370,7 @@ Property의 읽기와 쓰기는 일반적으로 <code class="language-plaintext 
 <p><br /></p>
 
 <h3 id="unchecked-exception"><strong><em>UnChecked Exception</em></strong></h3>
+<hr />
 <p><code class="language-plaintext highlighter-rouge">RuntimeException</code>과 그걸 상속받는 예외들은 <code class="language-plaintext highlighter-rouge">unchecked exception</code>이다.
 <br />
 컴파일러가 체크하지 않는 예외이며 <code class="language-plaintext highlighter-rouge">throw</code>를 생략할 수 있고 이럴 경우 자동으로 예외를 던진다.
@@ -385,6 +403,7 @@ Property의 읽기와 쓰기는 일반적으로 <code class="language-plaintext 
 <p><br /></p>
 
 <h3 id="예외-던져도-안죽던데">예외 던져도 안죽던데?</h3>
+<hr />
 <p>웹 어플리케이션은 <code class="language-plaintext highlighter-rouge">servlet</code>의 오류 페이지나, 또는 <code class="language-plaintext highlighter-rouge">Spring MVC</code>가 제공하는 <code class="language-plaintext highlighter-rouge">ControllerAdvice</code> 에서 이런 예외를 공통으로 처리해 주기 때문에 예외가 메인메서드까지 가지 않는다.</p>
 <ul>
   <li>하지만 이런 문제들은 클라이언트 입장에선 어떤 문제가 발생했는지 자세히 알기 어렵다.</li>
@@ -397,6 +416,7 @@ Property의 읽기와 쓰기는 일반적으로 <code class="language-plaintext 
 <p><br /></p>
 
 <h3 id="자바-checked-exception">자바 Checked Exception???</h3>
+<hr />
 <p>자바의 <code class="language-plaintext highlighter-rouge">Checked Exception</code>은 자바만의 독특한 특징이다.
 <br />
 <strong><em>“강제성이 없기 때문에 실수할 여지가 있다”</em></strong> 를 해결하기위해 도입했지만
@@ -443,26 +463,78 @@ request -&gt; response 이후 스레드가 종료되는 단순한 형태로 바�
 <p><br /></p>
 
 <h3 id="자바-11-이후-바뀐-가비지컬렉션에-대해-자세히-알아보자">자바 11 이후 바뀐 가비지컬렉션에 대해 자세히 알아보자</h3>
+<hr />
 
 <p><br /></p>
 
 <h3 id="스택프레임에-대해-알고있는-것보다-더-자세히-알아보자">스택프레임에 대해 알고있는 것보다 더 자세히 알아보자</h3>
+<hr />
 
 <p><br /></p>
 
 <h3 id="하나의-jvm으로-띄우는-것과-여러개의-컨테이너로-띄우는-것의-장단점에-대해-자세히-알아보자">하나의 JVM으로 띄우는 것과 여러개의 컨테이너로 띄우는 것의 장단점에 대해 자세히 알아보자</h3>
+<hr />
 <p>노드js에선 쓰고있는거 같던데?</p>
 
 <p><br /></p>
 
-<h3 id="하나의-프로세스는-하나의-cpu-core를-사용하는건가">하나의 프로세스는 하나의 cpu core를 사용하는건가?</h3>
-<p>맞다면 그 안에서 멀티 스레딩 처리를 하는데 만약 cpu가 multicore라면 JVM은 어떤 방식으로 돌아가지?</p>
+<h3 id="멀티코어에서의-jvm과-멀티스레드">멀티코어에서의 JVM과 멀티스레드</h3>
+<hr />
+<p>과거에는 싱글코어의 성능을 극한으로 올렸다. 하지만 전력소모, 코어의 면적을 넓히는 방식으로의 해결등이 한계에 다다르면서 코어 수를 늘려서 CPU 전체의 성능을 향상하는 쪽으로 발전했다.</p>
+
+<ul>
+  <li>멀티코어 : 2개 이상의 독립코어를 단일 직접회로로 이루어진 하나의 CPU로 통합한 것</li>
+  <li>프로세서 : 컴퓨터 내에서 프로그램을 수행하는 하드웨어 유닛 즉, 중앙처리장치 혹은 CPU
+    <ul>
+      <li>소프트웨어적으로는 데이터포맷을 변환하는 역할을 수행하는 프로세싱 시스템
+        <ul>
+          <li>워드프로세서, 컴파일러, 어셈블러 등</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>프로세스 : 메모리에 적재되어 프로세서에 의해 실행중이거나 대기중인 프로그램</li>
+</ul>
+
+<p><br /></p>
+
+<ul>
+  <li>멀티스레드
+    <ul>
+      <li>프로세스를 생성하여 자원을 할당하는 운영체제의 시스템콜이 줄어든다.</li>
+      <li>프로세스간 통신보다 스레드간의 통신의 비용이 적다.</li>
+      <li>힙영역을 공유하므로 동기화 문제에 안전하지 않다.</li>
+      <li>하나의 스레드에 문제가 생기면 전체 프로세스 전체가 영향을 받는다.</li>
+    </ul>
+  </li>
+  <li>멀티프로세스
+    <ul>
+      <li>하나의 프로세스에 문제가 생겨도 다른 프로세스에 영향을 주지 않는다.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>JVM은 하나의 프로세스에서 동작한다.
+<br />
+하나의 프로세스는 여러 작업단위를 가질 수 있는데 이것이 스레드 이다.
+<br />
+해당 JVM에서 스레드를 생성해 사용할 때는 OS의 스레드를 사용하는데 이 OS의 스레드는 다른 코어에 있고, 
+<br />
+결국 하나의 JVM에서 멀티코어를 사용할 수 있는것이다.
+<br />
+<br />
+<br />
+근데 이말은 무슨말인지 자세히 알아보자</p>
+<ul>
+  <li>프로세스는 독자적인 메모리를 할당받아서 서로 다른 프로세스끼리는 일반적으로 서로의 메모리 영역을 침범하지 못한다?</li>
+</ul>
 
 <p><br /></p>
 
 <h3 id="로드밸런싱에-대해서-자세히-알아보자">로드밸런싱에 대해서 자세히 알아보자</h3>
+<hr />
 
-<p><br /></p>]]></content><author><name>NNIIE</name></author><category term="TIL" /><category term="String" /><category term="Annotation" /><category term="Exception" /><category term="Property" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">자료구조</title><link href="http://localhost:4000/data_structure/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/" rel="alternate" type="text/html" title="자료구조" /><published>2022-12-24T00:00:00+09:00</published><updated>2022-12-24T00:00:00+09:00</updated><id>http://localhost:4000/data_structure/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0</id><content type="html" xml:base="http://localhost:4000/data_structure/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/"><![CDATA[<p><br /><br /><br /></p>
+<p><br /></p>]]></content><author><name>NNIIE</name></author><category term="TIL" /><category term="String" /><category term="Annotation" /><category term="Exception" /><category term="Property" /><category term="JVM" /><category term="GC" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">자료구조</title><link href="http://localhost:4000/data_structure/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/" rel="alternate" type="text/html" title="자료구조" /><published>2022-12-24T00:00:00+09:00</published><updated>2022-12-24T00:00:00+09:00</updated><id>http://localhost:4000/data_structure/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0</id><content type="html" xml:base="http://localhost:4000/data_structure/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/"><![CDATA[<p><br /><br /><br /></p>
 
 <h2 id="시간복잡도">시간복잡도</h2>
 <p>알고리즘 효율성을 판단하는 지표로써,
@@ -918,7 +990,8 @@ Key와 Value로 이루어진 자료구조이다.
 <p><br /></p>
 
 <ul>
-  <li><strong><em>Enum클래스의 메서드</em></strong>
+  <li>
+    <h2 id="enum클래스의-메서드"><strong><em>Enum클래스의 메서드</em></strong></h2>
     <ul>
       <li><strong><em>values()</em></strong> : enum클래스의 모든 상수를 배열로 반환한다.</li>
     </ul>
@@ -995,7 +1068,8 @@ enum자체가 가지는 비용이 적지 않다. static final 상수로도 충�
 <p><br /></p>
 
 <ul>
-  <li><strong><em>사용법?</em></strong>
+  <li>
+    <h2 id="사용법"><strong><em>사용법?</em></strong></h2>
     <ul>
       <li><strong><em>synchronized</em></strong> : 사용하지 말자. 락을 걸어버리는 방법으로 동기화 문제를 간단하고 확실하게 해결하지만 그렇기 때문에 멀티스레드의 이점을 모두 막아버린다.</li>
       <li><strong><em>Lazy initialization + Double-checked Locking</em></strong> : 이것도 좋지 않다.</li>
@@ -1453,9 +1527,9 @@ enum자체가 가지는 비용이 적지 않다. static final 상수로도 충�
 
 <h2 id="절차형-객체지향-함수형-패러다임">절차형, 객체지향, 함수형 패러다임</h2>
 <ul>
-  <li><strong><em>절차형 프로그래밍 (Procedural Programming)</em></strong>
-<br />
-위에서부터 아래로의 순차적인 처리를 중요시 하며 루틴, 서브루틴, 메소드, 함수 등을 이용한 프로그래밍 패러다임
+  <li>
+    <h2 id="절차형-프로그래밍-procedural-programming"><strong><em>절차형 프로그래밍 (Procedural Programming)</em></strong></h2>
+    <p>위에서부터 아래로의 순차적인 처리를 중요시 하며 루틴, 서브루틴, 메소드, 함수 등을 이용한 프로그래밍 패러다임</p>
     <ul>
       <li><strong><em>장점</em></strong>
         <ul>
@@ -1476,13 +1550,13 @@ enum자체가 가지는 비용이 적지 않다. static final 상수로도 충�
 <p><br /></p>
 
 <ul>
-  <li><strong><em>객체지향 프로그래밍 (OOP)</em></strong>
-<br />
-모든 것을 객체로 취급하고 객체가 처리요청을 받았을 때, 객체 내부의 기능을 사용해 처리하는 방법이다.
+  <li>
+    <h2 id="객체지향-프로그래밍-oop"><strong><em>객체지향 프로그래밍 (OOP)</em></strong></h2>
+    <p>모든 것을 객체로 취급하고 객체가 처리요청을 받았을 때, 객체 내부의 기능을 사용해 처리하는 방법이다.
 <br />
 클래스 디자인과 객체들의 관계를 중심으로 설계가 이루어진다.
 <br />
-따라서, 상태, 멤버변수, 메서드 등이 긴밀한 관계를 가지고 있고, 멤버변수가 어떤 상태를 가지고 있는가에 따라 결과가 달라진다.
+따라서, 상태, 멤버변수, 메서드 등이 긴밀한 관계를 가지고 있고, 멤버변수가 어떤 상태를 가지고 있는가에 따라 결과가 달라진다.</p>
     <ul>
       <li><strong><em>특징</em></strong>
         <ul>
@@ -1512,9 +1586,8 @@ enum자체가 가지는 비용이 적지 않다. static final 상수로도 충�
 
 <ul>
   <li>
-    <p><strong><em>함수형 프로그래밍</em></strong>
-<br />
-순수함수를 사용해 상태를 제어하지 않고 빠른 처리에 집중하는 방식, 함수 자체가 일급객체가 된다. 
+    <h2 id="함수형-프로그래밍"><strong><em>함수형 프로그래밍</em></strong></h2>
+    <p>순수함수를 사용해 상태를 제어하지 않고 빠른 처리에 집중하는 방식, 함수 자체가 일급객체가 된다. 
 <br />
 OOP와는 데이터(상태)를 다루는 개념과, 간결한 코드 작성에 대한 관점차이가 있다.
 <br />
@@ -1542,9 +1615,9 @@ OOP와는 데이터(상태)를 다루는 개념과, 간결한 코드 작성에 �
 <p><br /></p>
 
 <ul>
-  <li><strong><em>그래서 뭐가 좋은데?</em></strong>
-<br />
-자바8에서 함수형 프로그래밍을 도입했다. 
+  <li>
+    <h2 id="그래서-뭐가-좋은데"><strong><em>그래서 뭐가 좋은데?</em></strong></h2>
+    <p>자바8에서 함수형 프로그래밍을 도입했다. 
 <br />
 객체지향을 추구하는 자바진영에서 왜 함수형 프로그래밍을 도입했을까?
 <br />
@@ -1565,7 +1638,8 @@ OOP와는 데이터(상태)를 다루는 개념과, 간결한 코드 작성에 �
 <br />
 결국 시대의 흐름에 맞게 병렬 프로세싱을 잘 활용하기위해 자바 8에서 도입을 했고 
 <br />
-뭐가 더 좋다기 보단 둘다 적재적소에 사용하는게 중요하겠다.</li>
+뭐가 더 좋다기 보단 둘다 적재적소에 사용하는게 중요하겠다.</p>
+  </li>
 </ul>
 
 <p><br /></p>
