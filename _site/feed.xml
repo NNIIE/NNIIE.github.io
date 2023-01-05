@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-01-05T16:32:11+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">4주차</title><link href="http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="4주차" /><published>2023-01-05T00:00:00+09:00</published><updated>2023-01-05T00:00:00+09:00</updated><id>http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-01-05T16:43:15+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">4주차</title><link href="http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="4주차" /><published>2023-01-05T00:00:00+09:00</published><updated>2023-01-05T00:00:00+09:00</updated><id>http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
 
 <h1 id="today-i-learned">Today I Learned</h1>
 
@@ -464,6 +464,71 @@ request -&gt; response 이후 스레드가 종료되는 단순한 형태로 바�
 
 <h3 id="자바-11-이후-바뀐-가비지컬렉션에-대해-자세히-알아보자">자바 11 이후 바뀐 가비지컬렉션에 대해 자세히 알아보자</h3>
 <hr />
+<ul>
+  <li>
+    <p><strong><em>Generational GC</em></strong>
+<br />
+JDK 7부터 본격적으로 사용할 수 있는 G1 GC를 제외한, Oracle JVM에서 제공하는 모든 GC</p>
+  </li>
+  <li>
+    <p><strong><em>The Serial GC</em></strong>
+<br />
+가장 단순한 GC이지만 사용하지 않는 것을 추천한다. 싱글 쓰레드 환경을 위해 설계 되었고 아주 작은 Heap영역을 가진다. 
+<br />
+Full GC가 일어나는 동안 애플리케이션 전체가 대기해야하는 현상이 발생하기 때문에 서버 애플리케이션에 적당하지 않다.</p>
+  </li>
+  <li>
+    <p><strong><em>Parallel GC</em></strong>
+<br />
+Java 8의 디폴트 GC이고 병렬로 GC한다. 
+<br />
+메모리가 충분하고 CPU의 성능과 코어 개수가 많아 순간적으로 트래픽이 몰려도 일시 중단을 견딜 수 있고 GC에 의해 야기된 CPU 오버 헤드에 대해 최적화할 수 있는 애플리케이션에 가장 적합하다.</p>
+  </li>
+  <li>
+    <p><strong><em>G1(Garbage First) GC</em></strong>
+<br />
+<strong>대용량 메모리가 있는 다중 프로세서 시스템을 대상</strong>으로 하는 서버-스타일 가비지 컬렉터이다.
+<br />
+GC GC는 Generational 한 알고리즘과는 다르게 백그라운드의 멀티 쓰레드를 활용해 1MB에서 32MB까지의 수 많은 리젼으로 Heap을 분할한다.
+<br />
+G1 GC는 위와 같이 바둑판의 각 영역에 객체를 할당하고 GC를 실행한다. 그러다가, 해당 영역이 꽉 차면
+<br />
+다른 영역에서 객체를 할당하고 GC를 실행한다. 
+<br />
+즉, 지금까지 설명한 Young의 세가지 영역에서 데이터가 Old 영역으로 이동하는 단계가 사라진 GC 방식이라고 이해하면 된다.
+<br />
+<br />
+G1 GC의 가장 큰 장점은 성능이다. 
+<br />
+G1은 지연 시간을 줄이기 위해서 지금까지 설명한 어떤 GC 방식보다도 빠르다.
+<br />
+하지만 이와 같이 4GB 이상의 큰 Heap을 가지는 것은 요즘과 같이 마이크로 서비스 아키텍쳐에서는 논쟁 거리가 될만하다. 
+<br />
+지난 몇 년동안 많은 개발자들이 거대한 시스템을 작은 마이크로 단위로 옮기는 노력을 해왔기 때문이다.
+<br />
+이러한 Garbage Collector에 대한 변화는 Parallel GC와 같이 처리량을 극대화하는 것보다 GC의 지연 시간을 제한하는 것이 더 중요하다는 가정 하에 이루어졌다</p>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h3 id="튜닝">튜닝?</h3>
+<hr />
+<p>JVM을 튜닝한다는 의미는 기존 GC 에서 Old 영역으로 넘어가는 객체의 수를 최소화하는 것과 Full GC의 실행 시간을 줄이는 노력이다.
+<br />
+Full GC 실행 시간을 줄이기 위해서 Old 영역의 크기를 줄이면 자칫 OutOfMemoryError가 발생하거나 
+<br />
+Full GC 횟수가 늘어난다. 반대로 Old 영역의 크기를 늘리면 Full GC 횟수는 줄어들지만 실행 시간이 늘어난다. 
+<br />
+Old 영역의 크기를 적절하게 <strong>잘</strong> 설정해야 한다.
+<br />
+G1 GC를 제외한 GC에서는 JVM Heap을 무한정 늘리면 Full GC 시간 증가로 인해 오히려 성능 병목이 될 수 있다.
+<br />
+JVM의 Heap을 증가시키기 보다는 JVM의 인스턴스를 늘려 클러스터링이나 로드밸런서로 가용성을 확보하는 방법을 권장한다.
+<br />
+<br />
+<br />
+멀티코어상황에서 유용하다는데? 알아보자</p>
 
 <p><br /></p>
 
