@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-01-05T16:43:15+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">4주차</title><link href="http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="4주차" /><published>2023-01-05T00:00:00+09:00</published><updated>2023-01-05T00:00:00+09:00</updated><id>http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-01-05T19:47:13+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">4주차</title><link href="http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="4주차" /><published>2023-01-05T00:00:00+09:00</published><updated>2023-01-05T00:00:00+09:00</updated><id>http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
 
 <h1 id="today-i-learned">Today I Learned</h1>
 
@@ -264,17 +264,50 @@ Property의 읽기와 쓰기는 일반적으로 <code class="language-plaintext 
 <p><br /></p>
 
 <h2 id="string">String</h2>
+<p>자바에서 제일 많이 사용되는 String은 <strong>특별대우</strong>를 받는다.
+<br />
+Reference Type 이지만 기본적인 사용은 Primitive Type 이다.
+<br />
+String 객체생성은 2가지 방법이 있다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">String</span> <span class="n">name</span> <span class="o">=</span> <span class="s">"kim"</span><span class="o">;</span>			<span class="c1">// 리터럴로 생성</span>
+<span class="nc">String</span> <span class="n">name2</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">String</span><span class="o">(</span><span class="s">"lee"</span><span class="o">);</span>	<span class="c1">// new 연산자로 생성</span>
+</code></pre></div></div>
 <ul>
-  <li>String을 특별대우 하는 이유?</li>
-  <li>String은 불변(immutable)하기 때문에 값을 변경할 수 없다?</li>
-  <li>constant pool?</li>
-  <li>String을 더할 때 안좋은 이유?
+  <li><strong>new</strong> : 일반 객체들처럼 힙 영역에 할당된다.</li>
+  <li><strong>리터럴</strong> : <code class="language-plaintext highlighter-rouge">Constant Pool</code> 영역에 할당된다.
     <ul>
-      <li>StringBuffer</li>
-      <li>StringBuilder</li>
-      <li>자바 1.5 이후에 컴파일러가 자동으로 StringBuffer / StringBuilder 로 최적화 해주지만 for문을 돌아서 더해주거나 할때는 컴파일러가 최적화를 못해주네? 자세히 알아보자</li>
+      <li>String의 intern()메서드를 호출한다.
+        <ul>
+          <li>intern() 메서드 : <code class="language-plaintext highlighter-rouge">Constant Pool</code>에 생성하려는 문자열이 존재할 경우 주소값을 반환하고 
+  <br />
+  없으면 객체 생성 후 주소값을 반환한다.</li>
+        </ul>
+      </li>
     </ul>
   </li>
+</ul>
+
+<h3 id="constant-pool">Constant Pool</h3>
+<hr />
+<p>문자열 리터럴을 사용해서 생성한 String 객체가 담기는 곳이며 자바8 이후 힙 영역에 속한다.
+<br />
+같은 문자열을 각각 2개씩 리터럴과 new연산자로 생성했을 때, new 연산자로 생성된 문자열은 서로 다른객체를 만들고 바라보지만 리터럴로 생성해 <code class="language-plaintext highlighter-rouge">Constant Pool</code>에 담긴 두 객체는 동일한 객체를 바라본다.</p>
+
+<h3 id="string은-불변immutable하고-thread-safe-하다">String은 불변(immutable)하고 thread-safe 하다.</h3>
+<hr />
+<p>문자열 리터럴은 불변이기 때문에 <code class="language-plaintext highlighter-rouge">Constant Pool</code>에서 문자열이 같다면 동일한 객체를 참조할 수 있다.</p>
+
+<h3 id="string을-더할-때-안좋은-이유">String을 더할 때 안좋은 이유?</h3>
+<hr />
+<p><code class="language-plaintext highlighter-rouge">Constant Pool</code>의 특성 때문에 연산을 하게되서 문자열이 변경될 경우 기존 객체는 불변이기 때문에 새로운 객체를 만들고 해당 객체를 참조한다. 그리고 곧 참조가 사라진 기존 문자열은 가비지컬렉터의 수집 대상이 된다.
+<br />
+그렇기 때문에 문자열의 + 연산은 좋지 않다.</p>
+
+<ul>
+  <li>StringBuffer</li>
+  <li>StringBuilder</li>
+  <li>자바 1.5 이후에 컴파일러가 자동으로 StringBuffer / StringBuilder 로 최적화 해주지만 for문을 돌아서 더해주거나 할때는 컴파일러가 최적화를 못해주네? 자세히 알아보자</li>
 </ul>
 
 <p><br /></p>

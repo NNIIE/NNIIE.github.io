@@ -249,7 +249,7 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> TIL</h4></header>
-              <ul class="toc__menu"><li><a href="#today-i-learned">Today I Learned</a><ul><li><a href="#property">Property</a></li><li><a href="#string">String</a></li><li><a href="#annotation">Annotation</a></li></ul></li><li><a href="#to-do">To Do</a><ul><li><a href="#exception">Exception</a><ul><li><a href="#checked-exception">Checked Exception</a></li><li><a href="#unchecked-exception">UnChecked Exception</a></li><li><a href="#예외-던져도-안죽던데">예외 던져도 안죽던데?</a></li><li><a href="#자바-checked-exception">자바 Checked Exception???</a></li></ul></li><li><a href="#의문점">의문점</a><ul><li><a href="#자바-11-이후-바뀐-가비지컬렉션에-대해-자세히-알아보자">자바 11 이후 바뀐 가비지컬렉션에 대해 자세히 알아보자</a></li><li><a href="#튜닝">튜닝?</a></li><li><a href="#스택프레임에-대해-알고있는-것보다-더-자세히-알아보자">스택프레임에 대해 알고있는 것보다 더 자세히 알아보자</a></li><li><a href="#하나의-jvm으로-띄우는-것과-여러개의-컨테이너로-띄우는-것의-장단점에-대해-자세히-알아보자">하나의 JVM으로 띄우는 것과 여러개의 컨테이너로 띄우는 것의 장단점에 대해 자세히 알아보자</a></li><li><a href="#멀티코어에서의-jvm과-멀티스레드">멀티코어에서의 JVM과 멀티스레드</a></li><li><a href="#로드밸런싱에-대해서-자세히-알아보자">로드밸런싱에 대해서 자세히 알아보자</a></li></ul></li></ul></li></ul>
+              <ul class="toc__menu"><li><a href="#today-i-learned">Today I Learned</a><ul><li><a href="#property">Property</a></li><li><a href="#string">String</a><ul><li><a href="#constant-pool">Constant Pool</a></li><li><a href="#string은-불변immutable하고-thread-safe-하다">String은 불변(immutable)하고 thread-safe 하다.</a></li><li><a href="#string을-더할-때-안좋은-이유">String을 더할 때 안좋은 이유?</a></li></ul></li><li><a href="#annotation">Annotation</a></li></ul></li><li><a href="#to-do">To Do</a><ul><li><a href="#exception">Exception</a><ul><li><a href="#checked-exception">Checked Exception</a></li><li><a href="#unchecked-exception">UnChecked Exception</a></li><li><a href="#예외-던져도-안죽던데">예외 던져도 안죽던데?</a></li><li><a href="#자바-checked-exception">자바 Checked Exception???</a></li></ul></li><li><a href="#의문점">의문점</a><ul><li><a href="#자바-11-이후-바뀐-가비지컬렉션에-대해-자세히-알아보자">자바 11 이후 바뀐 가비지컬렉션에 대해 자세히 알아보자</a></li><li><a href="#튜닝">튜닝?</a></li><li><a href="#스택프레임에-대해-알고있는-것보다-더-자세히-알아보자">스택프레임에 대해 알고있는 것보다 더 자세히 알아보자</a></li><li><a href="#하나의-jvm으로-띄우는-것과-여러개의-컨테이너로-띄우는-것의-장단점에-대해-자세히-알아보자">하나의 JVM으로 띄우는 것과 여러개의 컨테이너로 띄우는 것의 장단점에 대해 자세히 알아보자</a></li><li><a href="#멀티코어에서의-jvm과-멀티스레드">멀티코어에서의 JVM과 멀티스레드</a></li><li><a href="#로드밸런싱에-대해서-자세히-알아보자">로드밸런싱에 대해서 자세히 알아보자</a></li></ul></li></ul></li></ul>
 
             </nav>
           </aside>
@@ -271,17 +271,50 @@ Property의 읽기와 쓰기는 일반적으로 <code class="language-plaintext 
 <p><br /></p>
 
 <h2 id="string">String</h2>
+<p>자바에서 제일 많이 사용되는 String은 <strong>특별대우</strong>를 받는다.
+<br />
+Reference Type 이지만 기본적인 사용은 Primitive Type 이다.
+<br />
+String 객체생성은 2가지 방법이 있다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">String</span> <span class="n">name</span> <span class="o">=</span> <span class="s">"kim"</span><span class="o">;</span>			<span class="c1">// 리터럴로 생성</span>
+<span class="nc">String</span> <span class="n">name2</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">String</span><span class="o">(</span><span class="s">"lee"</span><span class="o">);</span>	<span class="c1">// new 연산자로 생성</span>
+</code></pre></div></div>
 <ul>
-  <li>String을 특별대우 하는 이유?</li>
-  <li>String은 불변(immutable)하기 때문에 값을 변경할 수 없다?</li>
-  <li>constant pool?</li>
-  <li>String을 더할 때 안좋은 이유?
+  <li><strong>new</strong> : 일반 객체들처럼 힙 영역에 할당된다.</li>
+  <li><strong>리터럴</strong> : <code class="language-plaintext highlighter-rouge">Constant Pool</code> 영역에 할당된다.
     <ul>
-      <li>StringBuffer</li>
-      <li>StringBuilder</li>
-      <li>자바 1.5 이후에 컴파일러가 자동으로 StringBuffer / StringBuilder 로 최적화 해주지만 for문을 돌아서 더해주거나 할때는 컴파일러가 최적화를 못해주네? 자세히 알아보자</li>
+      <li>String의 intern()메서드를 호출한다.
+        <ul>
+          <li>intern() 메서드 : <code class="language-plaintext highlighter-rouge">Constant Pool</code>에 생성하려는 문자열이 존재할 경우 주소값을 반환하고 
+  <br />
+  없으면 객체 생성 후 주소값을 반환한다.</li>
+        </ul>
+      </li>
     </ul>
   </li>
+</ul>
+
+<h3 id="constant-pool">Constant Pool</h3>
+<hr />
+<p>문자열 리터럴을 사용해서 생성한 String 객체가 담기는 곳이며 자바8 이후 힙 영역에 속한다.
+<br />
+같은 문자열을 각각 2개씩 리터럴과 new연산자로 생성했을 때, new 연산자로 생성된 문자열은 서로 다른객체를 만들고 바라보지만 리터럴로 생성해 <code class="language-plaintext highlighter-rouge">Constant Pool</code>에 담긴 두 객체는 동일한 객체를 바라본다.</p>
+
+<h3 id="string은-불변immutable하고-thread-safe-하다">String은 불변(immutable)하고 thread-safe 하다.</h3>
+<hr />
+<p>문자열 리터럴은 불변이기 때문에 <code class="language-plaintext highlighter-rouge">Constant Pool</code>에서 문자열이 같다면 동일한 객체를 참조할 수 있다.</p>
+
+<h3 id="string을-더할-때-안좋은-이유">String을 더할 때 안좋은 이유?</h3>
+<hr />
+<p><code class="language-plaintext highlighter-rouge">Constant Pool</code>의 특성 때문에 연산을 하게되서 문자열이 변경될 경우 기존 객체는 불변이기 때문에 새로운 객체를 만들고 해당 객체를 참조한다. 그리고 곧 참조가 사라진 기존 문자열은 가비지컬렉터의 수집 대상이 된다.
+<br />
+그렇기 때문에 문자열의 + 연산은 좋지 않다.</p>
+
+<ul>
+  <li>StringBuffer</li>
+  <li>StringBuilder</li>
+  <li>자바 1.5 이후에 컴파일러가 자동으로 StringBuffer / StringBuilder 로 최적화 해주지만 for문을 돌아서 더해주거나 할때는 컴파일러가 최적화를 못해주네? 자세히 알아보자</li>
 </ul>
 
 <p><br /></p>
