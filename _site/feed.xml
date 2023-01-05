@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-01-05T02:20:08+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">4주차</title><link href="http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="4주차" /><published>2023-01-05T00:00:00+09:00</published><updated>2023-01-05T00:00:00+09:00</updated><id>http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-01-05T12:04:38+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">4주차</title><link href="http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="4주차" /><published>2023-01-05T00:00:00+09:00</published><updated>2023-01-05T00:00:00+09:00</updated><id>http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
 
 <h1 id="today-i-learned">Today I Learned</h1>
 
@@ -67,6 +67,39 @@
 웹 어플리케이션의 등장으로 request / response의 단순함으로 인해 
 <br />
 메모리에 올려둔 객체들의 생명주기가 짧아져 가비지컬렉터에 의해 금방금방 지워지기 때문일까?</p>
+
+<hr />
+
+<p>틀린 접근은 아니다. 세상이 발전함에 따라 과거보다 현재 시간복잡도가 더 중요하게 되었다.</p>
+<ul>
+  <li>하드웨어의 폭발적인 발전</li>
+  <li>멀티코어를 통한 동시성 개발</li>
+  <li>request / response 사이클로 인한 짧은 객체의 생명주기</li>
+</ul>
+
+<p>하지만 우리가 접할 기회가 흔한건 아니지만
+<br />
+여전히 공간복잡도의 한계가 있는 경우가 있다.</p>
+
+<ul>
+  <li>빅데이터</li>
+  <li>백데이터의 크기
+    <ul>
+      <li>ex) 구글이 검색을 제공하기 위한 백데이터의 크기</li>
+    </ul>
+  </li>
+  <li>머신러닝이 학습하는 학습데이터는 거대한 메모리를 사용할까? 오랜 학습시간을 들일까?</li>
+</ul>
+
+<hr />
+
+<p>명확하지 않은 결론을 내리자면,
+<br />
+우리는 현재는 시간복잡도를 더 우선해서 경감하는게 더 장점이 많은 시대에 살고있고 
+<br />
+현업에서 어떠한 규칙으로 삼아도 될 정도이지만 몇십만명이 될지도 모르는 회원정보를 
+<br />
+<code class="language-plaintext highlighter-rouge">redis</code>에 올리지 않는 것처럼 경우에 따라 적절하게 사용하는것이 중요하겠다.</p>
 
 <p><br /></p>
 
