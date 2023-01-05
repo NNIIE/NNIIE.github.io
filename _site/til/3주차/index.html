@@ -234,7 +234,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          6 분 소요
+          7 분 소요
         
       </span>
     
@@ -249,7 +249,7 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> TIL</h4></header>
-              <ul class="toc__menu"><li><a href="#today-i-learned">Today I Learned</a><ul><li><a href="#property">Property</a></li><li><a href="#string">String</a><ul><li><a href="#constant-pool">Constant Pool</a></li><li><a href="#string은-불변immutable하고-thread-safe-하다">String은 불변(immutable)하고 thread-safe 하다.</a></li><li><a href="#string을-더할-때-안좋은-이유">String을 더할 때 안좋은 이유?</a></li></ul></li><li><a href="#annotation">Annotation</a></li></ul></li><li><a href="#to-do">To Do</a><ul><li><a href="#exception">Exception</a><ul><li><a href="#checked-exception">Checked Exception</a></li><li><a href="#unchecked-exception">UnChecked Exception</a></li><li><a href="#예외-던져도-안죽던데">예외 던져도 안죽던데?</a></li><li><a href="#자바-checked-exception">자바 Checked Exception???</a></li></ul></li><li><a href="#의문점">의문점</a><ul><li><a href="#자바-11-이후-바뀐-가비지컬렉션에-대해-자세히-알아보자">자바 11 이후 바뀐 가비지컬렉션에 대해 자세히 알아보자</a></li><li><a href="#튜닝">튜닝?</a></li><li><a href="#스택프레임에-대해-알고있는-것보다-더-자세히-알아보자">스택프레임에 대해 알고있는 것보다 더 자세히 알아보자</a></li><li><a href="#하나의-jvm으로-띄우는-것과-여러개의-컨테이너로-띄우는-것의-장단점에-대해-자세히-알아보자">하나의 JVM으로 띄우는 것과 여러개의 컨테이너로 띄우는 것의 장단점에 대해 자세히 알아보자</a></li><li><a href="#멀티코어에서의-jvm과-멀티스레드">멀티코어에서의 JVM과 멀티스레드</a></li><li><a href="#로드밸런싱에-대해서-자세히-알아보자">로드밸런싱에 대해서 자세히 알아보자</a></li></ul></li></ul></li></ul>
+              <ul class="toc__menu"><li><a href="#today-i-learned">Today I Learned</a><ul><li><a href="#property">Property</a></li><li><a href="#string">String</a><ul><li><a href="#constant-pool">Constant Pool</a></li><li><a href="#string은-불변immutable하고-thread-safe-하다">String은 불변(immutable)하고 thread-safe 하다.</a></li><li><a href="#string-연산">String 연산</a><ul><li><a href="#활용">활용</a></li></ul></li></ul></li><li><a href="#annotation">Annotation</a></li></ul></li><li><a href="#to-do">To Do</a><ul><li><a href="#exception">Exception</a><ul><li><a href="#checked-exception">Checked Exception</a></li><li><a href="#unchecked-exception">UnChecked Exception</a></li><li><a href="#예외-던져도-안죽던데">예외 던져도 안죽던데?</a></li><li><a href="#자바-checked-exception">자바 Checked Exception???</a></li></ul></li><li><a href="#의문점">의문점</a><ul><li><a href="#자바-11-이후-바뀐-가비지컬렉션에-대해-자세히-알아보자">자바 11 이후 바뀐 가비지컬렉션에 대해 자세히 알아보자</a></li><li><a href="#튜닝">튜닝?</a></li><li><a href="#스택프레임에-대해-알고있는-것보다-더-자세히-알아보자">스택프레임에 대해 알고있는 것보다 더 자세히 알아보자</a></li><li><a href="#하나의-jvm으로-띄우는-것과-여러개의-컨테이너로-띄우는-것의-장단점에-대해-자세히-알아보자">하나의 JVM으로 띄우는 것과 여러개의 컨테이너로 띄우는 것의 장단점에 대해 자세히 알아보자</a></li><li><a href="#멀티코어에서의-jvm과-멀티스레드">멀티코어에서의 JVM과 멀티스레드</a></li><li><a href="#로드밸런싱에-대해서-자세히-알아보자">로드밸런싱에 대해서 자세히 알아보자</a></li></ul></li></ul></li></ul>
 
             </nav>
           </aside>
@@ -295,25 +295,105 @@ String 객체생성은 2가지 방법이 있다.</p>
   </li>
 </ul>
 
+<p><br /></p>
+
 <h3 id="constant-pool">Constant Pool</h3>
 <hr />
 <p>문자열 리터럴을 사용해서 생성한 String 객체가 담기는 곳이며 자바8 이후 힙 영역에 속한다.
 <br />
 같은 문자열을 각각 2개씩 리터럴과 new연산자로 생성했을 때, new 연산자로 생성된 문자열은 서로 다른객체를 만들고 바라보지만 리터럴로 생성해 <code class="language-plaintext highlighter-rouge">Constant Pool</code>에 담긴 두 객체는 동일한 객체를 바라본다.</p>
 
+<p><br /></p>
+
 <h3 id="string은-불변immutable하고-thread-safe-하다">String은 불변(immutable)하고 thread-safe 하다.</h3>
 <hr />
 <p>문자열 리터럴은 불변이기 때문에 <code class="language-plaintext highlighter-rouge">Constant Pool</code>에서 문자열이 같다면 동일한 객체를 참조할 수 있다.</p>
 
-<h3 id="string을-더할-때-안좋은-이유">String을 더할 때 안좋은 이유?</h3>
+<p><br /></p>
+
+<h3 id="string-연산">String 연산</h3>
 <hr />
 <p><code class="language-plaintext highlighter-rouge">Constant Pool</code>의 특성 때문에 연산을 하게되서 문자열이 변경될 경우 기존 객체는 불변이기 때문에 새로운 객체를 만들고 해당 객체를 참조한다. 그리고 곧 참조가 사라진 기존 문자열은 가비지컬렉터의 수집 대상이 된다.
 <br />
-그렇기 때문에 문자열의 + 연산은 좋지 않다.</p>
+그렇기 때문에 문자열의 <code class="language-plaintext highlighter-rouge">+ 연산</code> 또는 <code class="language-plaintext highlighter-rouge">concat 연산</code> 은 좋지 않다.
+<br />
+아래 두 클래스는 내부 Buffer에 문자열을 저장해두고 그 안에서 추가,수정,삭제 등을 작업할 수 있다.</p>
 
 <ul>
-  <li>StringBuffer</li>
-  <li>StringBuilder</li>
+  <li><strong>StringBuffer</strong>
+    <ul>
+      <li>StringBuilder 보다 성능이 좋지 않다.</li>
+      <li>동기화를 지원하여 thread-safe 하다.</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<ul>
+  <li><strong>StringBuilder</strong>
+    <ul>
+      <li>StringBuffer 보다 성능이 좋다</li>
+      <li>동기화를 지원하지 않아 thread-safe 하지 않다.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h4 id="활용">활용</h4>
+<hr />
+<p>새로운 객체를 만들지 않고 문자열을 수정할 수 있기 때문에 참조가 끊어진 String 객체가
+<br />
+가비지컬렉션에 의해 메모리 해제를 기다리지 않아도 된다.
+<br />
+하지만 buffer의 크기를 초기에 설정해줘야 해서 생성속도가 String 객체보다 느리고 read가 느리다.
+<br />
+문자열 수정을 할 경우에도 Buffer의 크기를 줄이고 늘리고 명칭을 변경하는 등의 연산이 필요하다.</p>
+
+<ul>
+  <li><strong>String</strong>
+    <ul>
+      <li>문자열의 연산이 적을 경우</li>
+      <li>빠른 조회 성능을 기대해야 할때</li>
+      <li>문자열 연산이 적고 멀티스레드 환경일 경우</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<ul>
+  <li><strong>StringBuffer</strong>
+    <ul>
+      <li>문자열 연산이 많을 경우</li>
+      <li>thread-safe 이 필요한 경우
+        <ul>
+          <li>멀티스레드 환경</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<ul>
+  <li><strong>StringBuilder</strong>
+    <ul>
+      <li>문자열 연산이 많을 경우</li>
+      <li>thread-safe 이 필요하지 않은 경우
+        <ul>
+          <li>단일스레드 환경</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<ul>
   <li>자바 1.5 이후에 컴파일러가 자동으로 StringBuffer / StringBuilder 로 최적화 해주지만 for문을 돌아서 더해주거나 할때는 컴파일러가 최적화를 못해주네? 자세히 알아보자</li>
 </ul>
 

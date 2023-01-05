@@ -249,7 +249,7 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> TIL</h4></header>
-              <ul class="toc__menu"><li><a href="#today-i-learned">Today I Learned</a><ul><li><a href="#객체와-클래스-그리고-인스턴스">객체와 클래스 그리고 인스턴스</a></li><li><a href="#절차형-객체지향-함수형-패러다임">절차형, 객체지향, 함수형 패러다임</a></li><li><a href="#절차형-프로그래밍-procedural-programming">절차형 프로그래밍 (Procedural Programming)</a></li><li><a href="#객체지향-프로그래밍-oop">객체지향 프로그래밍 (OOP)</a></li><li><a href="#함수형-프로그래밍">함수형 프로그래밍</a></li><li><a href="#그래서-뭐가-좋은데">그래서 뭐가 좋은데?</a></li><li><a href="#기본형-타입과-참조형-타입">기본형 타입과 참조형 타입</a></li><li><a href="#wrapper-class는-무엇이며-왜쓰는가">wrapper class는 무엇이며 왜쓰는가?</a></li><li><a href="#동일성과-동등성">동일성과 동등성</a></li></ul></li><li><a href="#to-do">To Do</a><ul><li><a href="#자바의-접근제어자">자바의 접근제어자</a></li><li><a href="#상속">상속</a></li><li><a href="#다형성">다형성</a></li></ul></li></ul>
+              <ul class="toc__menu"><li><a href="#today-i-learned">Today I Learned</a><ul><li><a href="#객체와-클래스-그리고-인스턴스">객체와 클래스 그리고 인스턴스</a></li><li><a href="#절차형-객체지향-함수형-패러다임">절차형, 객체지향, 함수형 패러다임</a></li><li><a href="#절차형-프로그래밍-procedural-programming">절차형 프로그래밍 (Procedural Programming)</a></li><li><a href="#객체지향-프로그래밍-oop">객체지향 프로그래밍 (OOP)</a></li><li><a href="#함수형-프로그래밍">함수형 프로그래밍</a></li><li><a href="#그래서-뭐가-좋은데">그래서 뭐가 좋은데?</a></li><li><a href="#기본형-타입과-참조형-타입">기본형 타입과 참조형 타입</a></li><li><a href="#wrapper-class">wrapper Class</a><ul><li><a href="#왜-쓰는데">왜 쓰는데?</a></li></ul></li><li><a href="#동일성과-동등성">동일성과 동등성</a></li></ul></li><li><a href="#to-do">To Do</a><ul><li><a href="#자바의-접근제어자">자바의 접근제어자</a></li><li><a href="#상속">상속</a><ul><li><a href="#합성compotistion">합성(Compotistion)</a><ul><li><a href="#전략패턴strategy-pattern">전략패턴(Strategy Pattern)</a></li></ul></li><li><a href="#상속-vs-합성">상속 vs 합성?</a></li></ul></li><li><a href="#다형성">다형성</a></li></ul></li></ul>
 
             </nav>
           </aside>
@@ -438,7 +438,8 @@ OOP와는 데이터(상태)를 다루는 개념과, 간결한 코드 작성에 �
 
 <p><br /></p>
 
-<h2 id="wrapper-class는-무엇이며-왜쓰는가">wrapper class는 무엇이며 왜쓰는가?</h2>
+<h2 id="wrapper-class">wrapper Class</h2>
+<hr />
 <p>원시타입을 객체로 다루기 위해 사용하는 클래스이다. 기본타입의 값을 내부에 두고 포장해서 포장객체 라고도 불리는데 래퍼클래스로 감싸고 있는 값은 외부에서 변경이 불가능하고 변경하려면 새로운 포장객체를 만들어야 한다. 자바의 모든 객체가 그러하듯 Object를 상속받는다.</p>
 <ul>
   <li><strong><em>박싱 / 언박싱</em></strong>
@@ -453,26 +454,24 @@ OOP와는 데이터(상태)를 다루는 개념과, 간결한 코드 작성에 �
 
 <p><br /></p>
 
+<h3 id="왜-쓰는데">왜 쓰는데?</h3>
+<hr />
 <ul>
-  <li><strong><em>왜 쓰는데?</em></strong>
+  <li>원시타입을 클래스화 하여 클래스의 장점을 활용할 수 있다. (클래스에 지원되는 여러 메소드들)</li>
+  <li>null 지원</li>
+  <li>기본타입을 객체로 써야할 경우가 있음
     <ul>
-      <li>원시타입을 클래스화 하여 클래스의 장점을 활용할 수 있다. (클래스에 지원되는 여러 메소드들)</li>
-      <li>null 지원</li>
-      <li>기본타입을 객체로 써야할 경우가 있음
+      <li>ex) <strong><em>List&lt;</em></strong>Integer<strong><em>&gt;</em></strong> 에 원시타입 <strong><em>int</em></strong> 값을 넣는다던가… (오토박싱/언박싱 지원)</li>
+    </ul>
+  </li>
+  <li>제네릭에 원시타입은 쓸수가 없음</li>
+  <li><strong><em>일급콜렉션</em></strong>
+    <ul>
+      <li>콜렉션을 래핑할때, 그 외에 다른 멤버변수가 없는 상태를 일급콜렉션 이라한다.</li>
+      <li>이렇게 되면 하나의 인스턴스에서 비즈니스 로직을 관리할 수 있게 되는 장점이 있다.
         <ul>
-          <li>ex) <strong><em>List&lt;</em></strong>Integer<strong><em>&gt;</em></strong> 에 원시타입 <strong><em>int</em></strong> 값을 넣는다던가… (오토박싱/언박싱 지원)</li>
-        </ul>
-      </li>
-      <li>제네릭에 원시타입은 쓸수가 없음</li>
-      <li><strong><em>일급콜렉션</em></strong>
-        <ul>
-          <li>콜렉션을 래핑할때, 그 외에 다른 멤버변수가 없는 상태를 일급콜렉션 이라한다.</li>
-          <li>이렇게 되면 하나의 인스턴스에서 비즈니스 로직을 관리할 수 있게 되는 장점이 있다.
-            <ul>
-              <li>ex) 같은 객체를 여러개 생성해야 할때, 이 모든 인스턴스들을 담는 일급콜렉션을 만들다던가..</li>
-              <li>비즈니스 로직을 도메인에서 관리 (비즈니스에 종속적인 자료구조를 만들 수 있음)</li>
-            </ul>
-          </li>
+          <li>ex) 같은 객체를 여러개 생성해야 할때, 이 모든 인스턴스들을 담는 일급콜렉션을 만들다던가..</li>
+          <li>비즈니스 로직을 도메인에서 관리 (비즈니스에 종속적인 자료구조를 만들 수 있음)</li>
         </ul>
       </li>
     </ul>
@@ -705,92 +704,91 @@ SOLID원칙의 리스코프치환 원칙에서 알 수 있다.
 
 <p><br /></p>
 
+<h3 id="합성compotistion">합성(Compotistion)</h3>
+<hr />
+<p>구현에 의존하지 않고, public interface에만 의존한다.객체 관계가 수평적인 관계가 된다.</p>
 <ul>
-  <li><strong><em>합성(Compotistion)??</em></strong>
+  <li>두 객체 사이 의존성을 런타임에 해결한다. (상속은 컴파일단계에서 해결)</li>
+  <li>코드의 재사용만 생각하면 상속보다는 합성을 사용하는게 좋을 수 있다.</li>
+  <li>상속의 is-a 관계가 아닌 has-a관계
+    <ul>
+      <li><strong><em>is-a</em></strong>
+        <ul>
+          <li>A는 B이다. -&gt; 학생은 사람이다.</li>
+          <li>추상화 사이의 포함관계를 의미한다.</li>
+          <li>한 클래스 A가 다른 클래스 B의 파생클래스임을 나타낸다.</li>
+          <li>is-a 관계를 통해 생성된 클래스는 상속관계에서 밀접하게 결합된다.</li>
+          <li>결합도가 높기 때문에 계층구조에 좀 더 적합하다.</li>
+        </ul>
+      </li>
+      <li><strong><em>has-a</em></strong>
+        <ul>
+          <li>구성 포함 관계를 의미한다. -&gt; 경찰은 총을 가진다 (경찰클래스 안에 권총클래스의 객체를 멤버로 가지고 있는 경우)</li>
+          <li>한 오브젝트가 다른 오브젝트에 속한다 라고 말한다.</li>
+          <li>다른 클래스의 기능(변수 혹은 메서드)를 받아들여 사용한다.</li>
+          <li>객체의 멤버필드라고 불리는 객체를 말하며 계층구조를 형성하기위해 결합하는 경우를 말한다.</li>
+          <li>has-a 관계를 통해 생성된 클래스는 느슨하게 결합된다.</li>
+          <li>상속에 비해 변경이 발생하더라도 구성요소를 쉽게 변경할 수 있다.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h4 id="전략패턴strategy-pattern">전략패턴(Strategy Pattern)</h4>
+<hr />
+<p>합성을 이용한 디자인 패턴으로 프로그램 실행중에 알고리즘을 선택할 수 있게하는 패턴이다. 
 <br />
-구현에 의존하지 않고, public interface에만 의존한다.객체 관계가 수평적인 관계가 된다.
+즉, 특정 Context에서 알고리즘을 별도로 분리하는 설계 방법이다.
+<br />
+변하지 않는 부분을 Context에 두고 변하는 부분을 Strategy 인터페이스 구현체에 작성한다.
+<br />
+전략에 해당하는 Strategy인터페이스와 구현체에는 비즈니스 로직 이외에 아무런 로직이 없기때문에 공통 로직이 변경되어도 아무런 영향이 없다.
+<br /><br />
+<img src="/images/2021-05-10-first-posting/Strategy_Pattern.png" alt="이미지" />
+<br />
+<br /></p>
+
+<ul>
+  <li><strong><em>장점</em></strong>
     <ul>
-      <li>두 객체 사이 의존성을 런타임에 해결한다. (상속은 컴파일단계에서 해결)</li>
-      <li>코드의 재사용만 생각하면 상속보다는 합성을 사용하는게 좋을 수 있다.</li>
-      <li>상속의 is-a 관계가 아닌 has-a관계
-        <ul>
-          <li><strong><em>is-a</em></strong>
-            <ul>
-              <li>A는 B이다. -&gt; 학생은 사람이다.</li>
-              <li>추상화 사이의 포함관계를 의미한다.</li>
-              <li>한 클래스 A가 다른 클래스 B의 파생클래스임을 나타낸다.</li>
-              <li>is-a 관계를 통해 생성된 클래스는 상속관계에서 밀접하게 결합된다.</li>
-              <li>결합도가 높기 때문에 계층구조에 좀 더 적합하다.</li>
-            </ul>
-          </li>
-          <li><strong><em>has-a</em></strong>
-            <ul>
-              <li>구성 포함 관계를 의미한다. -&gt; 경찰은 총을 가진다 (경찰클래스 안에 권총클래스의 객체를 멤버로 가지고 있는 경우)</li>
-              <li>한 오브젝트가 다른 오브젝트에 속한다 라고 말한다.</li>
-              <li>다른 클래스의 기능(변수 혹은 메서드)를 받아들여 사용한다.</li>
-              <li>객체의 멤버필드라고 불리는 객체를 말하며 계층구조를 형성하기위해 결합하는 경우를 말한다.</li>
-              <li>has-a 관계를 통해 생성된 클래스는 느슨하게 결합된다.</li>
-              <li>상속에 비해 변경이 발생하더라도 구성요소를 쉽게 변경할 수 있다.</li>
-            </ul>
-          </li>
-        </ul>
-      </li>
+      <li>런타임에 객체 내부의 알고리즘을 바꿀 수 있다.</li>
+      <li>공통로직이 부모클래스에 있지 않고 Context라는 별도의 클래스에 존재하기 떄문에 구현체들에 대한 영향도가 적다.</li>
+      <li>Context 가 Strategy 라는 인터페이스를 의존하고 있기 때문에 구현체를 갈아끼우기 쉽다.</li>
+      <li>결국 확장에 유리하다.</li>
+      <li>단일책임원칙을 지키면서 새로운 전략을 추가할 수 있다.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<ul>
+  <li><strong><em>단점</em></strong>
+    <ul>
+      <li>클래스로 분리된 전략에 대해 모두 알아야 한다.</li>
+      <li>알고리즘 변경이 많지 않다면, 오히려 분기를 타는것보다 코드를 복잡하게 만들 수 있다.</li>
+      <li>로직이 늘어날때마다 구현클래스가 늘어난다.</li>
     </ul>
 
     <p><br /></p>
-    <ul>
-      <li><strong><em>전략패턴(Strategy Pattern)</em></strong>
-  <br />
-  합성을 이용한 디자인 패턴으로 프로그램 실행중에 알고리즘을 선택할 수 있게하는 패턴이다. 
-  <br />
-  즉, 특정 Context에서 알고리즘을 별도로 분리하는 설계 방법이다.
-  <br />
-  변하지 않는 부분을 Context에 두고 변하는 부분을 Strategy 인터페이스 구현체에 작성한다.
-  <br />
-  전략에 해당하는 Strategy인터페이스와 구현체에는 비즈니스 로직 이외에 아무런 로직이 없기때문에 공통 로직이 변경되어도 아무런 영향이 없다.
-  <br /><br />
-  <img src="/images/2021-05-10-first-posting/Strategy_Pattern.png" alt="이미지" />
-  <br />
-  <br /></li>
-      <li><strong><em>장점</em></strong>
-        <ul>
-          <li>런타임에 객체 내부의 알고리즘을 바꿀 수 있다.</li>
-          <li>공통로직이 부모클래스에 있지 않고 Context라는 별도의 클래스에 존재하기 떄문에 구현체들에 대한 영향도가 적다.</li>
-          <li>Context 가 Strategy 라는 인터페이스를 의존하고 있기 때문에 구현체를 갈아끼우기 쉽다.</li>
-          <li>결국 확장에 유리하다.</li>
-          <li>단일책임원칙을 지키면서 새로운 전략을 추가할 수 있다.</li>
-        </ul>
-      </li>
-    </ul>
-
-    <p><br /></p>
-
-    <ul>
-      <li><strong><em>단점</em></strong>
-        <ul>
-          <li>클래스로 분리된 전략에 대해 모두 알아야 한다.</li>
-          <li>알고리즘 변경이 많지 않다면, 오히려 분기를 타는것보다 코드를 복잡하게 만들 수 있다.</li>
-          <li>로직이 늘어날때마다 구현클래스가 늘어난다.</li>
-        </ul>
-      </li>
-    </ul>
-
-    <p><br /></p>
-    <ul>
-      <li><strong><em>어떻게 쓰는데?</em></strong>
-  <br />
+  </li>
+  <li><strong><em>어떻게 쓰는데?</em></strong>
+<br />
   과일매장은 상황에 따라 다른 가격할인정책을 적용하고 있다.
-        <ul>
-          <li>첫손님에게 10% 할인</li>
-          <li>마지막손님은 20% 할인</li>
-          <li>신선도가 떨어진 과일은 20%할인
+    <ul>
+      <li>첫손님에게 10% 할인</li>
+      <li>마지막손님은 20% 할인</li>
+      <li>신선도가 떨어진 과일은 20%할인
   <br />
   <br /></li>
-        </ul>
+    </ul>
 
-        <p>할인이라는 알고리즘을 <code class="language-plaintext highlighter-rouge">DiscountPolicy</code>라는 인터페이스로 분리해보자.</p>
+    <p>할인이라는 알고리즘을 <code class="language-plaintext highlighter-rouge">DiscountPolicy</code>라는 인터페이스로 분리해보자.</p>
 
-        <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">public</span> <span class="kd">interface</span> <span class="nc">DiscountPolicy</span> <span class="o">{</span>
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">public</span> <span class="kd">interface</span> <span class="nc">DiscountPolicy</span> <span class="o">{</span>
       <span class="kt">double</span> <span class="nf">calculateWithDisCountRate</span><span class="o">(</span><span class="nc">Item</span> <span class="n">item</span><span class="o">);</span>
   <span class="o">}</span>
 
@@ -807,28 +805,28 @@ SOLID원칙의 리스코프치환 원칙에서 알 수 있다.
           <span class="k">return</span> <span class="n">item</span><span class="o">.</span><span class="na">getPrice</span><span class="o">()</span> <span class="o">*</span> <span class="mf">0.8</span><span class="o">;</span>
       <span class="o">}</span>
   <span class="o">}</span>
-    
+
   <span class="kd">public</span> <span class="kd">class</span> <span class="nc">UnFreshFruitDiscount</span> <span class="kd">implements</span> <span class="nc">DiscountPolicy</span><span class="o">{</span>
       <span class="nd">@Override</span>
       <span class="kd">public</span> <span class="kt">double</span> <span class="nf">calculateWithDisCountRate</span><span class="o">(</span><span class="nc">Item</span> <span class="n">item</span><span class="o">)</span> <span class="o">{</span>
           <span class="k">return</span> <span class="n">item</span><span class="o">.</span><span class="na">getPrice</span><span class="o">()</span> <span class="o">*</span> <span class="mf">0.8</span><span class="o">;</span>
       <span class="o">}</span>
   <span class="o">}</span>
-</code></pre></div>        </div>
+</code></pre></div>    </div>
 
-        <p>그리고 이를 <code class="language-plaintext highlighter-rouge">Calculator</code>클래스에서 생성자를 통해 필요한 하위타입을 주입받아 사용해보자.
+    <p>그리고 이를 <code class="language-plaintext highlighter-rouge">Calculator</code>클래스에서 생성자를 통해 필요한 하위타입을 주입받아 사용해보자.
   <br />
   이렇게 되는 경우 외부에서 특정 경우(첫번째 손님, 마지막 손님, 싱싱하지 않은 과일)에 대한 할인정책을 생성자를 통해 전달해줄 수 있다.
   <br /></p>
 
-        <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Calculator</span> <span class="o">{</span>
-			
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Calculator</span> <span class="o">{</span>
+		
       <span class="kd">private</span> <span class="kd">final</span> <span class="nc">DiscountPolicy</span> <span class="n">discountPolicy</span><span class="o">;</span>
-			
+		
       <span class="kd">public</span> <span class="nf">Calculator</span><span class="o">(</span><span class="nc">DiscountPolicy</span> <span class="n">discountPolicy</span><span class="o">)</span> <span class="o">{</span>
           <span class="k">this</span><span class="o">.</span><span class="na">discountPolicy</span> <span class="o">=</span> <span class="n">discountPolicy</span><span class="o">;</span>
       <span class="o">}</span>
-			
+		
       <span class="kd">public</span> <span class="kt">double</span> <span class="nf">calculate</span><span class="o">(</span><span class="nc">List</span><span class="o">&lt;</span><span class="nc">Item</span><span class="o">&gt;</span> <span class="n">items</span><span class="o">)</span> <span class="o">{</span>
           <span class="kt">double</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
           <span class="k">for</span> <span class="o">(</span><span class="nc">Item</span> <span class="n">item</span> <span class="o">:</span> <span class="n">items</span><span class="o">)</span> <span class="o">{</span>
@@ -837,15 +835,15 @@ SOLID원칙의 리스코프치환 원칙에서 알 수 있다.
           <span class="k">return</span> <span class="n">sum</span><span class="o">;</span>
       <span class="o">}</span>
   <span class="o">}</span>
-</code></pre></div>        </div>
+</code></pre></div>    </div>
 
-        <p>아래의 경우는 첫번째 손님 할인정책을 적용하는 코드이다. 
+    <p>아래의 경우는 첫번째 손님 할인정책을 적용하는 코드이다. 
   <br />
   일반적으로 Controller는 사용자의 요청 등을 매핑하여 받아오기 때문에 특정 알고리즘(첫번째 손님 계산)을 선택되었다는걸 알 수 있다.
   <br />
   요청에 맞는 객체를 Calculator에 주입해주는 방식을 통해 전략패턴을 구현했다.</p>
 
-        <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">public</span> <span class="kd">class</span> <span class="nc">FruitController</span> <span class="o">{</span>
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">public</span> <span class="kd">class</span> <span class="nc">FruitController</span> <span class="o">{</span>
       <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
           <span class="nc">Calculator</span> <span class="n">calculator</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Calculator</span><span class="o">(</span><span class="k">new</span> <span class="nc">FirstCustomerDiscount</span><span class="o">());</span>
           <span class="n">calculator</span><span class="o">.</span><span class="na">calculate</span><span class="o">(</span><span class="nc">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span>
@@ -856,17 +854,17 @@ SOLID원칙의 리스코프치환 원칙에서 알 수 있다.
           <span class="o">));</span>
       <span class="o">}</span>
   <span class="o">}</span>
-</code></pre></div>        </div>
-        <p><br /></p>
-      </li>
-    </ul>
+</code></pre></div>    </div>
   </li>
-  <li><strong><em>상속 vs 합성?</em></strong>
-  <br />
-   상속은 is-a, 합성은 has-a
-   <br />
-   결국, 코드의 재사용성 만을 위해 상속을 사용하는 방식은 여러 문제점을 가지고 있기 때문에 재사용성 뿐만 아니라 클래스간의 확실한 계층구조를 만들때 상속을 사용하며 그 외에는 의존성이 낮은 합성을 사용하는 것이 좋다고 생각이 든다.</li>
 </ul>
+
+<p><br /></p>
+
+<h3 id="상속-vs-합성">상속 vs 합성?</h3>
+<hr />
+<p>상속은 is-a, 합성은 has-a
+<br />
+결국, 코드의 재사용성 만을 위해 상속을 사용하는 방식은 여러 문제점을 가지고 있기 때문에 재사용성 뿐만 아니라 클래스간의 확실한 계층구조를 만들때 상속을 사용하며 그 외에는 의존성이 낮은 합성을 사용하는 것이 좋다고 생각이 든다.</p>
 
 <p><br /></p>
 
