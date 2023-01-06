@@ -283,22 +283,24 @@
 
 <h3 id="enum-method">enum method</h3>
 <hr />
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>* ***values()*** : enum클래스의 모든 상수를 배열로 반환한다.
+<ul>
+  <li><strong><em>values()</em></strong> : enum클래스의 모든 상수를 배열로 반환한다.</li>
+</ul>
 
-```java
-// values 활용
-public static LottoRank countOfMatchNumber(int countOfMatchNumber) {
-    return Arrays.stream(values())
-            .filter(LottoRank -&gt; LottoRank.countOfMatchNumber == countOfMatchNumber)
-            .findAny()
-            .orElse(MISS);
-            // 또는 orElseThrow(new IllegalArgumentException(error message))
-}
-```
-
-* ***valueOf()*** : `String`을 매개변수로 받아 일치하는 상수를 반환한다. (없으면 런타임 에러 발생)
-* ***ordinal()*** : 상수들의 index를 반환한다.
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// values 활용</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="nc">LottoRank</span> <span class="nf">countOfMatchNumber</span><span class="o">(</span><span class="kt">int</span> <span class="n">countOfMatchNumber</span><span class="o">)</span> <span class="o">{</span>
+	<span class="k">return</span> <span class="nc">Arrays</span><span class="o">.</span><span class="na">stream</span><span class="o">(</span><span class="n">values</span><span class="o">())</span>
+			<span class="o">.</span><span class="na">filter</span><span class="o">(</span><span class="nc">LottoRank</span> <span class="o">-&gt;</span> <span class="nc">LottoRank</span><span class="o">.</span><span class="na">countOfMatchNumber</span> <span class="o">==</span> <span class="n">countOfMatchNumber</span><span class="o">)</span>
+			<span class="o">.</span><span class="na">findAny</span><span class="o">()</span>
+			<span class="o">.</span><span class="na">orElse</span><span class="o">(</span><span class="no">MISS</span><span class="o">);</span>
+			<span class="c1">// 또는 orElseThrow(new IllegalArgumentException(error message))</span>
+<span class="o">}</span>
 </code></pre></div></div>
+
+<ul>
+  <li><strong><em>valueOf()</em></strong> : <code class="language-plaintext highlighter-rouge">String</code>을 매개변수로 받아 일치하는 상수를 반환한다. (없으면 런타임 에러 발생)</li>
+  <li><strong><em>ordinal()</em></strong> : 상수들의 index를 반환한다.</li>
+</ul>
 
 <p><br /></p>
 
@@ -818,7 +820,7 @@ enum자체가 가지는 비용이 적지 않다. static final 상수로도 충�
       <span class="page__meta-readtime">
         <i class="far fa-fw fa-clock" aria-hidden="true"></i>
         
-          7 분 소요
+          8 분 소요
         
       </span>
     

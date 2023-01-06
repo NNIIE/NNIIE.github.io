@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-01-06T02:23:22+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">4주차</title><link href="http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="4주차" /><published>2023-01-05T00:00:00+09:00</published><updated>2023-01-05T00:00:00+09:00</updated><id>http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-01-06T15:58:28+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">4주차</title><link href="http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="4주차" /><published>2023-01-05T00:00:00+09:00</published><updated>2023-01-05T00:00:00+09:00</updated><id>http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
 
 <h1 id="today-i-learned">Today I Learned</h1>
 
@@ -301,6 +301,14 @@ String 객체생성은 2가지 방법이 있다.</p>
 <h3 id="string은-불변immutable하고-thread-safe-하다">String은 불변(immutable)하고 thread-safe 하다.</h3>
 <hr />
 <p>문자열 리터럴은 불변이기 때문에 <code class="language-plaintext highlighter-rouge">Constant Pool</code>에서 문자열이 같다면 동일한 객체를 참조할 수 있다.</p>
+<ul>
+  <li><strong><em>static String?</em></strong>
+<br />
+  두개의 클래스의 각각 <code class="language-plaintext highlighter-rouge">static String abc = "abc";</code> 를 선언하고
+  해시코드 값을 출력해보면 동일하다.
+  <br />
+  즉, <code class="language-plaintext highlighter-rouge">static</code> 으로 선언해도 동일성과 동등성이 보장된다.</li>
+</ul>
 
 <p><br /></p>
 
@@ -384,11 +392,21 @@ String 객체생성은 2가지 방법이 있다.</p>
   </li>
 </ul>
 
-<hr />
+<p><br /></p>
 
-<ul>
-  <li>자바 1.5 이후에 컴파일러가 자동으로 StringBuffer / StringBuilder 로 최적화 해주지만 for문을 돌아서 더해주거나 할때는 컴파일러가 최적화를 못해주네? 자세히 알아보자</li>
-</ul>
+<h4 id="jdk-15-이후">JDK 1.5 이후</h4>
+<hr />
+<p>자바 1.5 이후  String의 <code class="language-plaintext highlighter-rouge">immutable</code>속성의 문제점을 해결하기 위해 도입되었다.
+<br />
+그래서 자바 1.5 이후 <code class="language-plaintext highlighter-rouge">한줄 +</code> 연산시 자동으로 <code class="language-plaintext highlighter-rouge">StringBuilder</code> 로 자동변환되어 성능 최적화를 이뤘다.
+<br />
+하지만 <code class="language-plaintext highlighter-rouge">여러줄 +</code> 연산할 경우 매 연산마다 새로운 <code class="language-plaintext highlighter-rouge">StringBuilder</code> 객체를 선언한다.
+<br />
+또한 for문 같은 반복문같은 경우에도 컴파일러가 최적화를 해주지 못하고 있다.
+<br />
+추가로 <code class="language-plaintext highlighter-rouge">concat</code> 연산은 컴파일러가 아예 최적화를 해주지 못한다.
+<br />
+그냥 문자열 연산에는 <code class="language-plaintext highlighter-rouge">StringBuffer / StringBuilder</code> 를 쓰도록 하자.</p>
 
 <p><br /></p>
 
@@ -1169,22 +1187,24 @@ Key와 Value로 이루어진 자료구조이다.
 
 <h3 id="enum-method">enum method</h3>
 <hr />
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>* ***values()*** : enum클래스의 모든 상수를 배열로 반환한다.
+<ul>
+  <li><strong><em>values()</em></strong> : enum클래스의 모든 상수를 배열로 반환한다.</li>
+</ul>
 
-```java
-// values 활용
-public static LottoRank countOfMatchNumber(int countOfMatchNumber) {
-    return Arrays.stream(values())
-            .filter(LottoRank -&gt; LottoRank.countOfMatchNumber == countOfMatchNumber)
-            .findAny()
-            .orElse(MISS);
-            // 또는 orElseThrow(new IllegalArgumentException(error message))
-}
-```
-
-* ***valueOf()*** : `String`을 매개변수로 받아 일치하는 상수를 반환한다. (없으면 런타임 에러 발생)
-* ***ordinal()*** : 상수들의 index를 반환한다.
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// values 활용</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="nc">LottoRank</span> <span class="nf">countOfMatchNumber</span><span class="o">(</span><span class="kt">int</span> <span class="n">countOfMatchNumber</span><span class="o">)</span> <span class="o">{</span>
+	<span class="k">return</span> <span class="nc">Arrays</span><span class="o">.</span><span class="na">stream</span><span class="o">(</span><span class="n">values</span><span class="o">())</span>
+			<span class="o">.</span><span class="na">filter</span><span class="o">(</span><span class="nc">LottoRank</span> <span class="o">-&gt;</span> <span class="nc">LottoRank</span><span class="o">.</span><span class="na">countOfMatchNumber</span> <span class="o">==</span> <span class="n">countOfMatchNumber</span><span class="o">)</span>
+			<span class="o">.</span><span class="na">findAny</span><span class="o">()</span>
+			<span class="o">.</span><span class="na">orElse</span><span class="o">(</span><span class="no">MISS</span><span class="o">);</span>
+			<span class="c1">// 또는 orElseThrow(new IllegalArgumentException(error message))</span>
+<span class="o">}</span>
 </code></pre></div></div>
+
+<ul>
+  <li><strong><em>valueOf()</em></strong> : <code class="language-plaintext highlighter-rouge">String</code>을 매개변수로 받아 일치하는 상수를 반환한다. (없으면 런타임 에러 발생)</li>
+  <li><strong><em>ordinal()</em></strong> : 상수들의 index를 반환한다.</li>
+</ul>
 
 <p><br /></p>
 
