@@ -234,7 +234,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          7 분 소요
+          8 분 소요
         
       </span>
     
@@ -249,7 +249,7 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> TIL</h4></header>
-              <ul class="toc__menu"><li><a href="#today-i-learned">Today I Learned</a><ul><li><a href="#property">Property</a></li><li><a href="#string">String</a><ul><li><a href="#constant-pool">Constant Pool</a></li><li><a href="#string은-불변immutable하고-thread-safe-하다">String은 불변(immutable)하고 thread-safe 하다.</a></li><li><a href="#string-연산">String 연산</a><ul><li><a href="#활용">활용</a></li><li><a href="#jdk-15-이후">JDK 1.5 이후</a></li></ul></li></ul></li><li><a href="#annotation">Annotation</a></li></ul></li><li><a href="#to-do">To Do</a><ul><li><a href="#exception">Exception</a><ul><li><a href="#checked-exception">Checked Exception</a></li><li><a href="#unchecked-exception">UnChecked Exception</a></li><li><a href="#예외-던져도-안죽던데">예외 던져도 안죽던데?</a></li><li><a href="#자바-checked-exception">자바 Checked Exception???</a></li></ul></li><li><a href="#의문점">의문점</a><ul><li><a href="#자바-11-이후-바뀐-가비지컬렉션에-대해-자세히-알아보자">자바 11 이후 바뀐 가비지컬렉션에 대해 자세히 알아보자</a></li><li><a href="#튜닝">튜닝?</a></li><li><a href="#스택프레임에-대해-알고있는-것보다-더-자세히-알아보자">스택프레임에 대해 알고있는 것보다 더 자세히 알아보자</a></li><li><a href="#하나의-jvm으로-띄우는-것과-여러개의-컨테이너로-띄우는-것의-장단점에-대해-자세히-알아보자">하나의 JVM으로 띄우는 것과 여러개의 컨테이너로 띄우는 것의 장단점에 대해 자세히 알아보자</a></li><li><a href="#멀티코어에서의-jvm과-멀티스레드">멀티코어에서의 JVM과 멀티스레드</a></li><li><a href="#로드밸런싱에-대해서-자세히-알아보자">로드밸런싱에 대해서 자세히 알아보자</a></li></ul></li></ul></li></ul>
+              <ul class="toc__menu"><li><a href="#today-i-learned">Today I Learned</a><ul><li><a href="#property">Property</a></li><li><a href="#string">String</a><ul><li><a href="#constant-pool">Constant Pool</a></li><li><a href="#string은-불변immutable하고-thread-safe-하다">String은 불변(immutable)하고 thread-safe 하다.</a></li><li><a href="#string-연산">String 연산</a><ul><li><a href="#활용">활용</a></li><li><a href="#jdk-15-이후">JDK 1.5 이후</a></li></ul></li></ul></li><li><a href="#annotation">Annotation</a><ul><li><a href="#용도">용도</a></li><li><a href="#설정">설정</a></li><li><a href="#왜쓰는데">왜쓰는데?</a></li></ul></li></ul></li><li><a href="#to-do">To Do</a><ul><li><a href="#exception">Exception</a><ul><li><a href="#checked-exception">Checked Exception</a></li><li><a href="#unchecked-exception">UnChecked Exception</a></li><li><a href="#예외-던져도-안죽던데">예외 던져도 안죽던데?</a></li><li><a href="#자바의-checked-exception-도입">자바의 Checked Exception 도입?</a></li></ul></li><li><a href="#의문점">의문점</a><ul><li><a href="#자바-11-이후-바뀐-가비지컬렉션에-대해-자세히-알아보자">자바 11 이후 바뀐 가비지컬렉션에 대해 자세히 알아보자</a></li><li><a href="#튜닝">튜닝?</a></li><li><a href="#스택프레임에-대해-알고있는-것보다-더-자세히-알아보자">스택프레임에 대해 알고있는 것보다 더 자세히 알아보자</a></li><li><a href="#하나의-jvm으로-띄우는-것과-여러개의-컨테이너로-띄우는-것의-장단점에-대해-자세히-알아보자">하나의 JVM으로 띄우는 것과 여러개의 컨테이너로 띄우는 것의 장단점에 대해 자세히 알아보자</a></li><li><a href="#멀티코어에서의-jvm과-멀티스레드">멀티코어에서의 JVM과 멀티스레드</a></li><li><a href="#로드밸런싱에-대해서-자세히-알아보자">로드밸런싱에 대해서 자세히 알아보자</a></li></ul></li></ul></li></ul>
 
             </nav>
           </aside>
@@ -418,18 +418,62 @@ String 객체생성은 2가지 방법이 있다.</p>
 <p><br /></p>
 
 <h2 id="annotation">Annotation</h2>
-<p>맨날 쓰는 Annotation 이것에 대한 기본기를 확실하게 다져보자</p>
+<p><code class="language-plaintext highlighter-rouge">Annotation</code> 의 사전적인 의미로는 주석이다.
+<br />
+자바에서는 코드사이에 주석처럼 쓰여서 특별한 의미, 기능을 수행하도록 한다.
+<br />
+프로그램에게 추가정보를 제공해주는 메타데이터라고 볼 수 있다.
+<br />
+이 클래스에게 어떤 역할을 줄까? 이 속성을 어떤용도로 사용할까?</p>
+
 <ul>
-  <li>어노테이션의 정의는?</li>
-  <li>어노테이션은 주석과 같다?</li>
-  <li>어노테이션은 결정된 값을 담아야 하는 제약이 있다? -&gt; 컴파일 단계에서 다 알아야해?</li>
-  <li>어노테이션의 타겟?</li>
-  <li>어노테이션을 어디까지 붙일 수 있을까?</li>
+  <li>메타데이터 : 데이터를 위한 데이터</li>
 </ul>
 
 <p><br /></p>
 
+<h3 id="용도">용도</h3>
+<hr />
+<ul>
+  <li>컴파일러에게 에러를 체크하도록 정보 제공</li>
+  <li>빌드나 패치 시 코드를 자동으로 생성할 수 있도록 정보 제공</li>
+  <li>런타임단계에서 특정 기능을 실행하도록 정보 제공</li>
+</ul>
+
+<p><br /></p>
+
+<h3 id="설정">설정</h3>
+<hr />
+<ul>
+  <li><strong>@Target</strong> : 적용대상
+    <ul>
+      <li>어디(클래스, 필드, 메서드…)에 <code class="language-plaintext highlighter-rouge">Annotation</code> 을 적용할지</li>
+    </ul>
+  </li>
+  <li><strong>@Retention</strong> : 정보유지되는 대상
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">Annotation</code> 값들을 언제까지 유지할 것인지 (대부분 Runtime)</li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h3 id="왜쓰는데">왜쓰는데?</h3>
+<hr />
+<p><code class="language-plaintext highlighter-rouge">Annotation</code> 을 붙일 타겟과 유지시기 등을 설정해 자신이 원하는 용도로 활용이 가능하다.
+<br />
+이것은 비즈니스 로직과는 별도로 시스템 설정과 관련된 부가적인 사항들을 <code class="language-plaintext highlighter-rouge">Annotation</code>
+<br />
+에게 위임하고 개발자는 비즈니스 로직 구현에만 집중할 수 있도록 하는
+<br />
+즉, <code class="language-plaintext highlighter-rouge">Annotation</code> 을 사용함으로써 <code class="language-plaintext highlighter-rouge">AOP</code>를 편리하게 구성할 수 있다는 의미이기도 하다.</p>
+
+<p><br /></p>
+
 <h1 id="to-do">To Do</h1>
+
+<p><br /></p>
 
 <h2 id="exception">Exception</h2>
 <p>예외는 기본적으로 폭탄돌리기와 같다.
@@ -553,7 +597,7 @@ String 객체생성은 2가지 방법이 있다.</p>
 
 <p><br /></p>
 
-<h3 id="자바-checked-exception">자바 Checked Exception???</h3>
+<h3 id="자바의-checked-exception-도입">자바의 Checked Exception 도입?</h3>
 <hr />
 <p>자바의 <code class="language-plaintext highlighter-rouge">Checked Exception</code>은 자바만의 독특한 특징이다.
 <br />

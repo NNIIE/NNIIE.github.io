@@ -14,6 +14,7 @@ toc_sticky: true
 
 
 # @EnableScheduling
+---
 스프링의 스케쥴링을 위한 어노테이션이다.
 <br>
 기본적으로 스프링에 의헤 생성된 한개의 `Thread Pool`에서 작동한다. 
@@ -41,6 +42,7 @@ toc_sticky: true
 <br>
 
 # @Value
+---
 properties 파일의 설정정보를 key-value형태로 가져오는데 쓰인다.
 <br>
 단일값 주입에 권장되고 있으며 여러개의 값을 주입받아야 할 경우
@@ -59,6 +61,7 @@ properties 파일의 설정정보를 key-value형태로 가져오는데 쓰인�
 <br>
 
 # @Bean
+---
 * ***@Bean***
 	* 스프링에서 IoC 컨테이너가 관리하는 자바 객체
 	* 기본적으로 싱글톤으로 생성하고 관리한다.
@@ -75,6 +78,7 @@ properties 파일의 설정정보를 key-value형태로 가져오는데 쓰인�
 <br>
 
 # @Async
+---
 스프링에서 제공하는 `Thread Pool`을 활용하는 비동기 메서드 지원 어노테이션이다.
 <br>
 간단하게 사용하고 싶다면 Application 클래스에 `@EnableAsync`를 선언하고 비동기로 작동하고자 하는 메서드에 `@Async`를 선언해주면 사용할 수 있다.
@@ -106,6 +110,8 @@ public class AsyncConfig implements AsyncConfigurer {
 * ***QueueCapacity*** : MaxPoolSize 초과 요청에서 Thread 생성 요청시,  해당 요청을 Queue에 저장하는데 이때 최대 수용 가능한 Queue의 수,   Queue에 저장되어있다가 Thread에 자리가 생기면 하나씩 빠져나가 동작
 * ***ThreadNamePrefix*** : 생성되는 Thread 접두사 지정
 * 그 후 비동기를 원하는 메서드에 `@Async` 어노테이션을 선언해 주면 된다.
+
+<br>
 
 * ***주의할 점***
 	* private method에 사용 불가

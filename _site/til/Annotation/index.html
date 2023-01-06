@@ -257,6 +257,7 @@
         <p><br /><br /><br /></p>
 
 <h1 id="enablescheduling">@EnableScheduling</h1>
+<hr />
 <p>스프링의 스케쥴링을 위한 어노테이션이다.
 <br />
 기본적으로 스프링에 의헤 생성된 한개의 <code class="language-plaintext highlighter-rouge">Thread Pool</code>에서 작동한다. 
@@ -291,6 +292,7 @@
 <p><br /></p>
 
 <h1 id="value">@Value</h1>
+<hr />
 <p>properties 파일의 설정정보를 key-value형태로 가져오는데 쓰인다.
 <br />
 단일값 주입에 권장되고 있으며 여러개의 값을 주입받아야 할 경우
@@ -310,6 +312,7 @@
 <p><br /></p>
 
 <h1 id="bean">@Bean</h1>
+<hr />
 <ul>
   <li><strong><em>@Bean</em></strong>
     <ul>
@@ -335,6 +338,7 @@
 <p><br /></p>
 
 <h1 id="async">@Async</h1>
+<hr />
 <p>스프링에서 제공하는 <code class="language-plaintext highlighter-rouge">Thread Pool</code>을 활용하는 비동기 메서드 지원 어노테이션이다.
 <br />
 간단하게 사용하고 싶다면 Application 클래스에 <code class="language-plaintext highlighter-rouge">@EnableAsync</code>를 선언하고 비동기로 작동하고자 하는 메서드에 <code class="language-plaintext highlighter-rouge">@Async</code>를 선언해주면 사용할 수 있다.
@@ -365,9 +369,12 @@
   <li><strong><em>MaxPoolSize</em></strong> : 동시 동작하는 최대 Thread의 수</li>
   <li><strong><em>QueueCapacity</em></strong> : MaxPoolSize 초과 요청에서 Thread 생성 요청시,  해당 요청을 Queue에 저장하는데 이때 최대 수용 가능한 Queue의 수,   Queue에 저장되어있다가 Thread에 자리가 생기면 하나씩 빠져나가 동작</li>
   <li><strong><em>ThreadNamePrefix</em></strong> : 생성되는 Thread 접두사 지정</li>
-  <li>
-    <p>그 후 비동기를 원하는 메서드에 <code class="language-plaintext highlighter-rouge">@Async</code> 어노테이션을 선언해 주면 된다.</p>
-  </li>
+  <li>그 후 비동기를 원하는 메서드에 <code class="language-plaintext highlighter-rouge">@Async</code> 어노테이션을 선언해 주면 된다.</li>
+</ul>
+
+<p><br /></p>
+
+<ul>
   <li><strong><em>주의할 점</em></strong>
     <ul>
       <li>private method에 사용 불가</li>
