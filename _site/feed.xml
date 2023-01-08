@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-01-09T02:46:57+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">4주차</title><link href="http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="4주차" /><published>2023-01-05T00:00:00+09:00</published><updated>2023-01-05T00:00:00+09:00</updated><id>http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-01-09T02:53:51+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">4주차</title><link href="http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="4주차" /><published>2023-01-05T00:00:00+09:00</published><updated>2023-01-05T00:00:00+09:00</updated><id>http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
 
 <h1 id="today-i-learned">Today I Learned</h1>
 
@@ -277,10 +277,26 @@ read 와 write를 분리하는것을 뜻하며 어플리케이션까지만 적�
 
 <p><br /></p>
 
-<h2 id="중복">중복</h2>
+<h2 id="중복에-관한-의문점">중복에 관한 의문점</h2>
+<p>객체지향의 장점인 재사용성(상속, 다형성 등) 을 보면 중복은 좋지 않다?
+<br />
+유지보수 관점에서 중복을 하는것이 좋을지, 중복을 제거하는것이 좋을지 고려해야 한다.
+<br />
+멀티모듈의 최상위 모듈을 하나두고 설계하는 패턴의 장,단점과 관련이 있다고 한다.</p>
+
+<p><br /></p>
+
 <h3 id="중복이-나쁜경우">중복이 나쁜경우</h3>
 <hr />
+
+<p><br /></p>
+
 <h3 id="중복이-차라리-나은경우">중복이 차라리 나은경우</h3>
+<hr />
+
+<p><br /></p>
+
+<h3 id="멀티모듈의-설계">멀티모듈의 설계?</h3>
 <hr />
 
 <p><br /></p>]]></content><author><name>NNIIE</name></author><category term="TIL" /><category term="Generic" /><category term="시공간복잡도" /><category term="Nested Class" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">3주차</title><link href="http://localhost:4000/til/3%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="3주차" /><published>2022-12-29T00:00:00+09:00</published><updated>2022-12-29T00:00:00+09:00</updated><id>http://localhost:4000/til/3%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/3%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
