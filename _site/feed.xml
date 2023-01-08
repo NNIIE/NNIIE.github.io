@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-01-06T19:14:46+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">4주차</title><link href="http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="4주차" /><published>2023-01-05T00:00:00+09:00</published><updated>2023-01-05T00:00:00+09:00</updated><id>http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-01-09T02:36:52+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">4주차</title><link href="http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="4주차" /><published>2023-01-05T00:00:00+09:00</published><updated>2023-01-05T00:00:00+09:00</updated><id>http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
 
 <h1 id="today-i-learned">Today I Learned</h1>
 
@@ -247,6 +247,14 @@
 
 <h2 id="collection">Collection</h2>
 
+<p><br /></p>
+
+<h2 id="중복">중복</h2>
+<h3 id="중복이-나쁜경우">중복이 나쁜경우</h3>
+<hr />
+<h3 id="중복이-차라리-나은경우">중복이 차라리 나은경우</h3>
+<hr />
+
 <p><br /></p>]]></content><author><name>NNIIE</name></author><category term="TIL" /><category term="Generic" /><category term="시공간복잡도" /><category term="Nested Class" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">3주차</title><link href="http://localhost:4000/til/3%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="3주차" /><published>2022-12-29T00:00:00+09:00</published><updated>2022-12-29T00:00:00+09:00</updated><id>http://localhost:4000/til/3%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/3%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
 
 <h1 id="today-i-learned">Today I Learned</h1>
@@ -458,9 +466,9 @@ String 객체생성은 2가지 방법이 있다.</p>
 <br />
 이것은 비즈니스 로직과는 별도로 시스템 설정과 관련된 부가적인 사항들을 <code class="language-plaintext highlighter-rouge">Annotation</code>
 <br />
-에게 위임하고 개발자는 비즈니스 로직 구현에만 집중할 수 있도록 하는
+에게 위임하고 개발자는 비즈니스 로직 구현에만 집중할 수 있도록 하는 일종의 <code class="language-plaintext highlighter-rouge">AOP</code>
 <br />
-즉, <code class="language-plaintext highlighter-rouge">Annotation</code> 을 사용함으로써 <code class="language-plaintext highlighter-rouge">AOP</code>를 편리하게 구성할 수 있다는 의미이기도 하다.</p>
+즉, <code class="language-plaintext highlighter-rouge">Annotation</code> 을 사용함으로써 관심사의 분리를 가능하게 한다는 의미기도 하다.</p>
 
 <p><br /></p>
 
