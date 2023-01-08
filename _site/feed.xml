@@ -1,9 +1,37 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-01-09T02:36:52+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">4주차</title><link href="http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="4주차" /><published>2023-01-05T00:00:00+09:00</published><updated>2023-01-05T00:00:00+09:00</updated><id>http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-01-09T02:46:57+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">4주차</title><link href="http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="4주차" /><published>2023-01-05T00:00:00+09:00</published><updated>2023-01-05T00:00:00+09:00</updated><id>http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
 
 <h1 id="today-i-learned">Today I Learned</h1>
 
 <h2 id="cqrs-pattern">CQRS Pattern</h2>
-<p>(씨큐에스) : 아키텍쳐 패턴이다. 쿼리할때는 커맨드가 발생하면 안되고 어쩌고~ 커맨드부터 알아보자 하지만 간단하게 알아보자.</p>
+<p>Command and Query Responsibility Segregation (명령과 조회의 책임 분리)
+<br />
+즉, 명령(command)및 쿼리의 책임을 분리하는 패턴이다. 책임분리를 위해서는 코드의 모듈이 분리되어야 한다.
+<br />
+read 와 write를 분리하는것을 뜻하며 어플리케이션까지만 적용할 수도 있고, DB의 모델까지만 분리할 수도 있고, DB 그 자체를 분리하여 적용할 수도 있다.</p>
+
+<ul>
+  <li>명령은 데이터중심이 아니라 작업 기반이어야 한다.</li>
+  <li>명령은 동기적으로 처리되지 않고 비동기처리를 위해 큐에 배치될 수 있다.</li>
+  <li>쿼리는 데이터베이스를 수정하지 않는다. 쿼리는 도메인 지식을 캡슐화하지 않는 DTO를 반환한다.</li>
+</ul>
+
+<h3 id="장점">장점</h3>
+<hr />
+<ul>
+  <li>읽기 모델과 쓰기 모델을 필요에 따라 독립적으로 확장 가능</li>
+  <li>읽기 모델은 쿼리에 최적화된 스키마를 사용 가능</li>
+  <li>호출되는 도메인 엔티티에 대해 확인하는 로직 구현이 더 쉬움</li>
+  <li>보통 복잡한 비지니스 로직 구현은 대부분 쓰기 모델에 속하며, 읽기 모델은 간단하게 구현된다. 그에 따라 읽기와 쓰기를 분리하면 유지관리가 더 쉽고 유연한 모델이 구현될 수 있다.</li>
+  <li>DB에 논리적인 View가 아닌, Materialized View를 저장함으로써 애플리케이션에서 복잡한 조인이 사용된 쿼리문을 피할 수 있다.</li>
+</ul>
+
+<h3 id="언제-쓰면-좋을까">언제 쓰면 좋을까?</h3>
+<hr />
+<ul>
+  <li>많은 사용자가 동일한 테이터에 병렬로 엑세스 하는 공동작업 도메인일 경우</li>
+  <li>한팀은 쓰기모델에 포함되는 복잡한 도메인 모델에 집중하고 다른팀은 읽기모델과 사용자 인터페이스에 집중할 수 있을 환경일 경우</li>
+  <li>시스템이 시간이 자나면서 진화할 것으로예상되어 여러 버전의 모델을 포함할 수 있거나 비즈니스 규칙이 정기적으로 변하는 경우</li>
+</ul>
 
 <p><br /></p>
 

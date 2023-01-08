@@ -48,7 +48,7 @@ var store = [{
         "teaser": null
       },{
         "title": "4주차",
-        "excerpt":"Today I Learned CQRS Pattern (씨큐에스) : 아키텍쳐 패턴이다. 쿼리할때는 커맨드가 발생하면 안되고 어쩌고~ 커맨드부터 알아보자 하지만 간단하게 알아보자. Generic 아주 유용한 문법이고 대부분 최신 언어에선 사용한다. 타입시스템을 더 견고하게 사용하기 위해 제네릭을 사용한다 타입시스템이란? 그리고 자바의 타입시스템 타입을 재사용하고 싶어서? -&gt; 이유는 제네릭 다이아몬드 문법 안에 어쩌고? 공변? 반공변?...","categories": ["TIL"],
+        "excerpt":"Today I Learned CQRS Pattern Command and Query Responsibility Segregation (명령과 조회의 책임 분리) 즉, 명령(command)및 쿼리의 책임을 분리하는 패턴이다. 책임분리를 위해서는 코드의 모듈이 분리되어야 한다. read 와 write를 분리하는것을 뜻하며 어플리케이션까지만 적용할 수도 있고, DB의 모델까지만 분리할 수도 있고, DB 그 자체를 분리하여 적용할 수도 있다. 명령은 데이터중심이 아니라...","categories": ["TIL"],
         "tags": ["Generic","시공간복잡도","Nested Class"],
         "url": "/til/4%EC%A3%BC%EC%B0%A8/",
         "teaser": null
