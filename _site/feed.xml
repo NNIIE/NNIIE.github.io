@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-01-09T02:53:51+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">4주차</title><link href="http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="4주차" /><published>2023-01-05T00:00:00+09:00</published><updated>2023-01-05T00:00:00+09:00</updated><id>http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-01-09T14:56:57+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">4주차</title><link href="http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="4주차" /><published>2023-01-05T00:00:00+09:00</published><updated>2023-01-05T00:00:00+09:00</updated><id>http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
 
 <h1 id="today-i-learned">Today I Learned</h1>
 
@@ -38,29 +38,208 @@ read 와 write를 분리하는것을 뜻하며 어플리케이션까지만 적�
 <h2 id="generic">Generic</h2>
 <p>아주 유용한 문법이고 대부분 최신 언어에선 사용한다.
 <br />
-타입시스템을 더 견고하게 사용하기 위해 제네릭을 사용한다</p>
+타입시스템을 더 견고하게 사용하기 위해 제네릭을 사용한다.
+<br />
+제네릭은 형변환시 발생할 수 있는 문제들을 사전에 없앨 수 있다.
+<br />
+즉, 타입을 파라미터화 해서 컴파일 시 구체적인 타입이 결정되도록 해준다.</p>
 
 <ul>
-  <li>타입시스템이란? 그리고 자바의 타입시스템</li>
-  <li>타입을 재사용하고 싶어서? -&gt; 이유는 제네릭 다이아몬드 문법 안에 어쩌고?</li>
-  <li>공변? 반공변?
+  <li>파라미터 타입, 리턴 타입에 대한 정의를 클래스 내부가 아닌 외부에서 지정</li>
+  <li>타입에 대해 유연성과 안정성을 확보한다.</li>
+  <li>런타임 환경에 영향이 없는 컴파일 시점의 전처리 기술이다.
     <ul>
-      <li>무엇인지 정도만</li>
+      <li>타입을 유연하게 처리하며, 런타임에 발생할 수 있는 타입에러를 컴파일전에 검출한다.</li>
     </ul>
   </li>
-  <li>자바는 공변설정이 약하다?</li>
-  <li>평소 우리가 제네릭을 제일많이 쓰는곳은 Map&lt;Integer, Integer&gt; 같은거</li>
-  <li>자바는 강타입 언어 자바스크립트는 약타입 언어
+</ul>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">CastingDTO</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="o">{</span>
+	<span class="kd">private</span> <span class="no">T</span> <span class="nc">Object</span><span class="o">;</span>
+
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setObject</span><span class="o">(</span><span class="no">T</span> <span class="nc">Object</span><span class="o">)</span> <span class="o">{</span>
+		<span class="k">this</span><span class="o">.</span><span class="na">object</span> <span class="o">=</span> <span class="n">object</span>
+	<span class="o">}</span>
+
+	<span class="kd">public</span> <span class="no">T</span> <span class="nf">getObject</span><span class="o">()</span> <span class="o">{</span>
+		<span class="k">return</span> <span class="n">object</span><span class="o">;</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+
+<span class="c1">// 형변환을 하지않고 편리하게 사용할 수 있다.</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">checkCastingDTO</span><span class="o">()</span> <span class="o">{</span>
+	<span class="nc">CastingDTO</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">dto1</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">CastingDTO</span><span class="o">&lt;&gt;();</span>
+	<span class="n">dto1</span><span class="o">.</span><span class="na">setObject</span><span class="o">(</span><span class="k">new</span> <span class="nc">String</span><span class="o">());</span>
+
+	<span class="nc">CastingDTO</span><span class="o">&lt;</span><span class="nc">StringBuffer</span><span class="o">&gt;</span> <span class="n">dto2</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">CastingDTO</span><span class="o">&lt;&gt;();</span>
+	<span class="n">dto2</span><span class="o">.</span><span class="na">setObject</span><span class="o">(</span><span class="k">new</span> <span class="nc">StringBuffer</span><span class="o">());</span>
+
+	<span class="nc">String</span> <span class="n">test1</span> <span class="o">=</span> <span class="n">dto1</span><span class="o">.</span><span class="na">getObject</span><span class="o">();</span> 
+	<span class="nc">StringBuffer</span> <span class="n">test2</span> <span class="o">=</span> <span class="n">dto2</span><span class="o">.</span><span class="na">getObject</span><span class="o">();</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h3 id="컨벤션">컨벤션</h3>
+<hr />
+<p>제네릭 타입을 선언할 때 어느정도의 컨벤션이 존재한다.</p>
+<ul>
+  <li>E : Element (컬렉션에서 주로 사용됨)</li>
+  <li>K : Key</li>
+  <li>T : Type</li>
+  <li>N : Number</li>
+  <li>V : Value</li>
+  <li>? : Wild Card
     <ul>
-      <li>자바는 서버언어로 쓰는데 서버는 다르다… 안정성이 제일 중요하다?
+      <li>모든 타입을 다 매개변수로 받을 수 있다.
         <ul>
-          <li>왜냐하면 서버에서 고치는것보다 컴파일단계에서 서버에 올라가기 전에 고치는게 훨씬 좋다 -&gt; 그래서 최대한 빠른단계에서(컴파일) 실수를 잡는게 좋다. 디비에 올라간거 고치기 힘들잖아</li>
+          <li> extends T : 상한 경계</li>
+          <li>? super T : 하한 경계</li>
         </ul>
       </li>
     </ul>
   </li>
-  <li>자바는 컴파일 통과하면 런타임에선 타입정보가 다 지워진다. 그래서 제네릭으로 파라미터를 받으면 파라미터의 타입정보가 없다?</li>
 </ul>
+
+<p><br /></p>
+
+<h3 id="특징">특징</h3>
+<hr />
+<ul>
+  <li>클래스 또는 메서드에 선언 가능</li>
+  <li>동시에 여러타입 선언 가능</li>
+  <li>와일드카드를 이용해 타입에 대해 유연한 처리 가능</li>
+  <li>제네릭 선언 및 정의시 타입의 상속관계 지정 가능</li>
+</ul>
+
+<p><br /></p>
+
+<h3 id="타입범위지정">타입범위지정</h3>
+<hr />
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// T에 비교불가능한 타입이 온다면 이 메서드는 기능을 수행할 수 없다.</span>
+<span class="kd">public</span> <span class="kt">int</span> <span class="nf">compare</span><span class="o">(</span><span class="no">T</span> <span class="n">t1</span><span class="o">,</span> <span class="no">T</span> <span class="n">t2</span><span class="o">)</span> <span class="o">{</span> 
+	<span class="kt">double</span> <span class="n">v1</span> <span class="o">=</span> <span class="n">t1</span><span class="o">.</span><span class="na">doubleValue</span><span class="o">();</span> 
+	<span class="kt">double</span> <span class="n">v2</span> <span class="o">=</span> <span class="n">t2</span><span class="o">.</span><span class="na">doubleValue</span><span class="o">();</span> 
+	<span class="k">return</span> <span class="nc">Double</span><span class="o">.</span><span class="na">compare</span><span class="o">(</span><span class="n">v1</span><span class="o">,</span> <span class="n">v2</span><span class="o">);</span> 
+<span class="o">}</span>
+
+<span class="c1">// Number를 상속받는 클래스만 올 수 있도록 지정할 수 있다.</span>
+<span class="kd">public</span> <span class="o">&lt;</span><span class="no">T</span> <span class="kd">extends</span> <span class="nc">Number</span><span class="o">&gt;</span> <span class="kt">int</span> <span class="nf">compare</span><span class="o">(</span><span class="no">T</span> <span class="n">t1</span><span class="o">,</span> <span class="no">T</span> <span class="n">t2</span><span class="o">)</span> <span class="o">{</span> 
+	<span class="kt">double</span> <span class="n">v1</span> <span class="o">=</span> <span class="n">t1</span><span class="o">.</span><span class="na">doubleValue</span><span class="o">();</span> 
+	<span class="kt">double</span> <span class="n">v2</span> <span class="o">=</span> <span class="n">t2</span><span class="o">.</span><span class="na">doubleValue</span><span class="o">();</span> 
+	<span class="k">return</span> <span class="nc">Double</span><span class="o">.</span><span class="na">compare</span><span class="o">(</span><span class="n">v1</span><span class="o">,</span> <span class="n">v2</span><span class="o">);</span> 
+<span class="o">}</span>
+</code></pre></div></div>
+<ul>
+  <li><strong>&lt;? extends T&gt;</strong> 와일드 카드의 상한 제한(upper bound) : T 타입과 T를 상속 받고 있는 타입</li>
+  <li><strong>&lt;? super T&gt;</strong> 와일드 카드의 하한 제한(lower bound) : T 타입과 T의 상위 타입</li>
+</ul>
+
+<p><br /></p>
+
+<h3 id="제네릭-클래스">제네릭 클래스</h3>
+<hr />
+<p>클래스 인스턴스화 시점에 제네릭 파라미터를 통해 타입 전달</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Sample</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="o">{</span> 
+	<span class="kd">private</span> <span class="no">T</span> <span class="n">anonyTypeData</span><span class="o">;</span> 
+<span class="o">}</span>
+</code></pre></div></div>
+<p><br /></p>
+
+<h3 id="제네릭-메서드">제네릭 메서드</h3>
+<hr />
+<p>메서드 호출 시점에 제네릭으로 리턴 타입, 파라미터의 타입이 정해지는 메서드</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Student</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="o">{</span> 
+	<span class="kd">static</span> <span class="no">T</span> <span class="nf">getName</span><span class="o">(</span><span class="no">T</span> <span class="n">name</span><span class="o">)</span> <span class="o">{</span> 
+		<span class="k">return</span> <span class="n">name</span><span class="o">;</span> 
+	<span class="o">}</span> 
+<span class="o">}</span>
+</code></pre></div></div>
+<p>static 메서드는 제네릭을 사용할 수 없다.
+<br />
+인스턴스화 되기전에 메모리에 올라가야 하는데 타입이 결정되지 않았기 때문이다.</p>
+
+<p><br /></p>
+
+<h3 id="제네릭의-타입소거">제네릭의 타입소거</h3>
+<hr />
+<p><strong>제네릭의 primitive 타입 사용 불가</strong>
+<br />
+<strong>타입소거</strong>란 원소 타입을 컴파일 타임에만 검사하고 <strong>런타임에는 해당 타입 정보를 알 수 없는 것</strong>이다. 
+<br />
+다른 말로는 컴파일 타임에만 타입에 대한 제약 조건을 적용하고, 런타임에는 타입에 대한 정보를 소거하는 것을 말한다.
+<br />
+제네릭에 primitive 타입을 사용하지 못하는 이유는 타입 소거와 관련이 있다.
+<br />
+제네릭 클래스는 타입 소거의 첫번째 규칙에 의해 타입 파라미터를 Object로 교체하는데 primitive 타입은 
+<br />
+Object의 하위 타입이 아니기 때문에 제네릭에서 사용하는 것이 불가능하기 때문이다.</p>
+
+<ul>
+  <li>자바 컴파일러의 타입소거규칙
+    <ul>
+      <li>모든 타입 파라미터를 그들의 바운드나 Object 타입으로 교체한다.</li>
+      <li>제네릭 타입을 제거한 후 타입이 일치하지 않으면 타입 캐스팅을 추가한다</li>
+      <li>확장된(extended) 제네릭 타입의 다형성을 보존하기 위해 브릿지 메서드를 생성한다.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h3 id="왜쓰는데">왜쓰는데?</h3>
+<hr />
+<p>특정 타입으로 종속받지 않아서 편리하다.</p>
+<ul>
+  <li>재사용성 증가
+    <ul>
+      <li>여러타입의 파라미터를 삽입할 수 있기 때문에 코드를 간결하게하고 재사용성을 높임</li>
+    </ul>
+  </li>
+  <li>컴파일시 타입에러 발견
+    <ul>
+      <li>잘못된 타입이 들어오는걸 컴파일 단계에서 방지할 수 있음</li>
+      <li>컴파일단계에서 타입에러를 발견할 수 있다.
+        <ul>
+          <li>즉, 타입시스템을 더욱 견고하게 한다.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>컴파일러가 타입 변환 수행
+    <ul>
+      <li>컴파일 단계에서 형변환을 해주기때문에 <strong>코드에서 형변환 불필요</strong></li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h3 id="타입시스템">타입시스템?</h3>
+<hr />
+<p>개발자가 올바른 프로그램을 작성하기 위해 도우미 역할을 하고 컴파일단계에서 타입을 체크하는 대충 뭐 그런거다. 불편하기 때문에 많은 개발자들이 정적타이핑 하는 자바를 버리고 동적타이핑 하는 파이썬, 루비 같은 스크립트 언어로 갈아타는 이유이기도 하다.
+<br />
+대표적인 프론트엔드, 백엔드 언어인 자바스크립트와 자바는 각각 약타입언어, 강타입언어 라고도 불린다.
+<br />
+<br />
+<strong><em>왜 이런 차이가 발생할까?</em></strong>
+<br />
+더 고민을 해볼 주제이긴 하지만 일단 한가지 확실한 것은 자바는 보통 서버 언어로 쓰이는 경우가 많다. 
+<br />
+강타입 언어인 자바를 서버 언어로 채택하는 이유는 바로 서버이기 때문이다. 
+<br />
+생각해보자 런타임단계가 아닌 컴파일단계에서 강하게 체크를한다? 
+<br />
+이건 결국 서버에서 고치기 보다 서버에 올라가기 전에 고치려고 하기 때문이다.
+<br />
+서버에 올라간것을 고치는 것보다 서버에 올라가기전에 고치는것이 훨씬 비용이 적게들기 때문에 최대한 빠른단계
+<br />
+즉, 컴파일단계에서 실수를 잡는게 좋기 때문이다.
+<br />
+<br />
+ex) 디비에 올라간걸 고치기 힘들잖아… 그러니까 올라가기 전에 잡아야지</p>
 
 <p><br /></p>
 
