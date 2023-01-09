@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-01-09T21:42:43+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">4주차</title><link href="http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="4주차" /><published>2023-01-05T00:00:00+09:00</published><updated>2023-01-05T00:00:00+09:00</updated><id>http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-01-10T01:00:46+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">4주차</title><link href="http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="4주차" /><published>2023-01-05T00:00:00+09:00</published><updated>2023-01-05T00:00:00+09:00</updated><id>http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
 
 <h1 id="today-i-learned">Today I Learned</h1>
 
@@ -504,20 +504,120 @@ ex) 디비에 올라간걸 고치기 힘들잖아… 그러니까 올라가기 �
 
 <p><br /></p>
 
-<h3 id="lambda">Lambda</h3>
+<h2 id="람다">람다</h2>
 <hr />
+<p>익명 함수 (Anonymous functions) 를 지칭하는 용어이다.
+<br />
+익명함수란 함수의 이름이 없는 함수이고 익명함수들은 공통적으로 일급객체 이다.</p>
+
+<ul>
+  <li><strong>일급객체</strong> : 다른 객체들에 적용 가능한 연산을 모두 지원가는 객체.
+<br />
+함수를 값으로도 사용할 수 있고 파라미터로 전달 및 변수에 대입도 가능하다.</li>
+</ul>
+
+<p><br />
+<strong>Stream</strong> 연산들은 매개변수로 함수형 인터페이스를 받도록 되어있다.
+<br />
+그리고 람다식은 반환값으로 함수형 인터페이스를 반환하고 있다.
+<br />
+즉, 람다식이란 <strong>함수를 하나의 식</strong>으로 표현한 것이다.
+<br />
+함수를 람다식으로 표현하면 메서드의 이름이 필요 없기 때문에, 람다식은 익명 함수의 한 종류라고 볼 수 있다.</p>
+
+<p><br /></p>
+
+<h3 id="특징-1">특징</h3>
+<hr />
+<ul>
+  <li>람다식 내에서 사용되는 지역변수는 <code class="language-plaintext highlighter-rouge">final</code> 키워드가 붙지않아도 상수로 간주된다.
+    <ul>
+      <li>람다의 병렬처리가 <code class="language-plaintext highlighter-rouge">Thread safety</code> 한 이유이다.</li>
+    </ul>
+  </li>
+  <li>람다식으로 선언된 변수명은 다른 변수명과 중복될 수 없다.</li>
+</ul>
+
+<p><br /></p>
+
+<h3 id="장점-1">장점</h3>
+<hr />
+<ul>
+  <li>지연연산수행 : 지연연산을 수행함으로써 불필요한 연산을 최소화 할 수 있다.
+    <ul>
+      <li><strong>지연연산</strong>이라는 단어 뜻이 헷갈리는데, 
+  <br />
+  메서드를 호출하여 사용하려면 클래스를 만들고 클래스를 인스턴스화 하여 해당 메서드에 접근해야 하는데 이 과정을 수행하기 위해선 클래스가 반드시 초기화 되어야 된다는 의미이다.
+  <br />
+  여기서 <strong><em>람다식</em></strong> 을 사용하면 이런 과정 없이 필요한 순간에 <strong>1회용으로 익명함수</strong>를 정의하고 바로 호출하면 되므로 클래스의 초기화가 필요 없다는 의미이다.</li>
+    </ul>
+  </li>
+  <li>코드의 간결성 : 불필요한 반복문의 삭제가 가능하며 단순하게 표현할 수 있다.</li>
+  <li>함수를 만드는 과정없이 한번에 처리할 수 있어 생산성이 높아진다.</li>
+  <li>메서드를 변수처럼 다루는 것이 가능해진다.</li>
+  <li><strong><em>병렬처리 : 멀티스레드를 활용한 병렬처리에 안전하다.</em></strong>
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">Stream</code>은 람다식을 사용해 별도의 스레드에서 병렬 처리를 관리한다.</li>
+      <li>람다의 외부 참조변수가 항상 <code class="language-plaintext highlighter-rouge">final</code>이어야만 하는 이유이다.</li>
+      <li>즉, <strong>동시성 문제</strong>에 자유롭다.</li>
+      <li>어플리케이션의 크기가 거대해 짐에 따라 멀티스레드 환경에서 데이터의 무결성을 보장하는, 
+  <br />
+  자바에서 함수형 프로그래밍인 <strong>람다</strong> 를 도입한 이유중 가장 큰 이유 중 하나 라고 생각한다.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h3 id="단점">단점</h3>
+<hr />
+<ul>
+  <li>람다를 사용하면서 만든 익명함수는 재사용이 불가능하다.</li>
+  <li>디버깅이 어렵다.</li>
+  <li>남발할 시 오히려 가독성이 떨어진다.</li>
+  <li>람다의 <code class="language-plaintext highlighter-rouge">Stream</code>은 전통적인 for문에 비해 성능이 떨어진다.
+    <ul>
+      <li>하지만 람다를 사용하는 이유는 이제는 성능상의 이점보다 <strong>데이터 무결성</strong> 이 더 중요해진 건 아닐까?</li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h3 id="stream">Stream</h3>
+<hr />
+<p>다양한 데이터를 표준화된 방법으로 다루기 위한 라이브러리 - <strong>Java8</strong>에 추가
+<br />
+<code class="language-plaintext highlighter-rouge">Stream</code>의 문법에 대해서는 이 글에서 다루지 않는다.</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Stream</code>의 특징
+    <ul>
+      <li>데이터를 변경하지 않는다.</li>
+      <li>1회용 이다.</li>
+      <li>지연 연산을 수행한다.</li>
+      <li>병렬 실행이 가능하다.</li>
+    </ul>
+  </li>
+</ul>
 
 <p><br /></p>
 
 <h3 id="의문점-1">의문점</h3>
 <hr />
+
 <ul>
-  <li><strong><em>Lambda</em></strong> 로 파라미터를 넘기면 그건 객체, 그게 바로 익명클래스라는데 알아보자</li>
-  <li><strong><em>Lambda</em></strong> 는 일종의 <code class="language-plaintext highlighter-rouge">inner class</code> 인데 가비지컬렉터의 메모리 누수에는 안전하다 알아보자
-    <ul>
-      <li>객체는 또 다르다던데?</li>
-    </ul>
-  </li>
+  <li><strong><em>람다는 일종의 <code class="language-plaintext highlighter-rouge">inner class</code> 인데 가비지컬렉터의 메모리 누수에는 안전하다 알아보자.</em></strong>
+<br />
+<br />
+자바에서 모든 메서드는 반드시 클래스 안에 소속되어 있어야 한다. 메서드를 만들기 위해서는 클래스를 만들어줘야 하고 클래스를 만들려면 생성자를 비롯한 멤버들도 구성해야 한다. 
+<br />
+그리고 이 메서드를 사용하려면 별도로 <code class="language-plaintext highlighter-rouge">instance</code>를 생성해서 이 <code class="language-plaintext highlighter-rouge">instance</code>를 통해 메서드를 호출해야 한다.
+<br />
+하지만 람다로 일회용 메서드를 활용한다면 이 과정이 필요 없다.
+<br />
+즉, 인스턴스화를 시키지 않기 때문에 람다는 외부클래스 인스턴스에 대한 외부참조가 없고
+<br />
+따라서 가비지컬렉터가 수거하지 못하는 상황이 일어나지 않아 <code class="language-plaintext highlighter-rouge">memory leak</code>에 안전한 것이다.</li>
 </ul>
 
 <p><br /></p>
