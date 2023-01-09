@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-01-10T01:25:09+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">4주차</title><link href="http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="4주차" /><published>2023-01-05T00:00:00+09:00</published><updated>2023-01-05T00:00:00+09:00</updated><id>http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-01-10T01:35:33+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">4주차</title><link href="http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="4주차" /><published>2023-01-05T00:00:00+09:00</published><updated>2023-01-05T00:00:00+09:00</updated><id>http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
 
 <h1 id="cqrs-pattern">CQRS Pattern</h1>
 <hr />
@@ -40,7 +40,9 @@ read 와 write를 분리하는것을 뜻하며 어플리케이션까지만 적�
   </li>
 </ul>
 
-<p><br /></p>
+<p><br />
+<br />
+<br /></p>
 
 <h1 id="generic">Generic</h1>
 <hr />
@@ -241,7 +243,9 @@ Object의 하위 타입이 아니기 때문에 제네릭에서 사용하는 것�
 <br />
 ex) 디비에 올라간걸 고치기 힘들잖아… 그러니까 올라가기 전에 잡아야지</p>
 
-<p><br /></p>
+<p><br />
+<br />
+<br /></p>
 
 <h1 id="시간공간-복잡도의-상관관계">시간/공간 복잡도의 상관관계</h1>
 <hr />
@@ -493,7 +497,9 @@ ex) 디비에 올라간걸 고치기 힘들잖아… 그러니까 올라가기 �
   <li>하지만 <strong><em>Lambda</em></strong> 의 경우 얘기가 조금 달라지는데…</li>
 </ul>
 
-<p><br /></p>
+<p><br />
+<br />
+<br /></p>
 
 <h1 id="람다">람다</h1>
 <hr />
@@ -606,12 +612,16 @@ ex) 디비에 올라간걸 고치기 힘들잖아… 그러니까 올라가기 �
 따라서 가비지컬렉터가 수거하지 못하는 상황이 일어나지 않아 <code class="language-plaintext highlighter-rouge">memory leak</code>에 안전한 것이다.</li>
 </ul>
 
-<p><br /></p>
+<p><br />
+<br />
+<br /></p>
 
 <h1 id="collection">Collection</h1>
 <hr />
 
-<p><br /></p>
+<p><br />
+<br />
+<br /></p>
 
 <h1 id="중복에-관한-의문점">중복에 관한 의문점</h1>
 <hr />
@@ -646,7 +656,9 @@ Property의 읽기와 쓰기는 일반적으로 <code class="language-plaintext 
   <li>자바는 property가 없고 코틀린이나 자바스크립트는 property를 사용 이건 왜그래?</li>
 </ul>
 
-<p><br /></p>
+<p><br />
+<br />
+<br /></p>
 
 <h1 id="string">String</h1>
 <hr />
@@ -791,7 +803,9 @@ String 객체생성은 2가지 방법이 있다.</p>
 <br />
 그냥 문자열 연산에는 <code class="language-plaintext highlighter-rouge">StringBuffer / StringBuilder</code> 를 쓰도록 하자.</p>
 
-<p><br /></p>
+<p><br />
+<br />
+<br /></p>
 
 <h1 id="annotation">Annotation</h1>
 <hr />
@@ -991,7 +1005,9 @@ String 객체생성은 2가지 방법이 있다.</p>
 <br />
 <code class="language-plaintext highlighter-rouge">Checked Exception</code>은 도입은 논란의 여지가 있는듯 하다.</p>
 
-<p><br /></p>
+<p><br />
+<br />
+<br /></p>
 
 <h1 id="의문점">의문점</h1>
 <hr />
@@ -1179,7 +1195,9 @@ JVM의 Heap을 증가시키기 보다는 JVM의 인스턴스를 늘려 클러스
 
 <p><img src="/images/big-o/big-o.png" alt="이미지" /></p>
 
-<p><br /></p>
+<p><br />
+<br />
+<br /></p>
 
 <h1 id="hash">Hash</h1>
 <hr />
@@ -1279,7 +1297,9 @@ key와 value의 쌍으로 이루어진 데이터 구조이다.
   </li>
 </ul>
 
-<p><br /></p>
+<p><br />
+<br />
+<br /></p>
 
 <h1 id="array">Array</h1>
 <hr />
@@ -1333,7 +1353,9 @@ key와 value의 쌍으로 이루어진 데이터 구조이다.
   </li>
 </ul>
 
-<p><br /></p>
+<p><br />
+<br />
+<br /></p>
 
 <h1 id="list">List</h1>
 <hr />
@@ -1415,7 +1437,9 @@ key와 value의 쌍으로 이루어진 데이터 구조이다.
   </li>
 </ul>
 
-<p><br /></p>
+<p><br />
+<br />
+<br /></p>
 
 <h1 id="set">Set</h1>
 <hr />
@@ -1495,7 +1519,9 @@ key와 value의 쌍으로 이루어진 데이터 구조이다.
   </li>
 </ul>
 
-<p><br /></p>
+<p><br />
+<br />
+<br /></p>
 
 <h1 id="map">Map</h1>
 <hr />
@@ -1570,23 +1596,31 @@ Key와 Value로 이루어진 자료구조이다.
   </li>
 </ul>
 
-<p><br /></p>
+<p><br />
+<br />
+<br /></p>
 
 <h1 id="stack">Stack</h1>
 <hr />
 
-<p><br /></p>
+<p><br />
+<br />
+<br /></p>
 
 <h1 id="queue">Queue</h1>
 <hr />
 <p><img src="/images/big-o/queue.png" alt="이미지" /></p>
 
-<p><br /></p>
+<p><br />
+<br />
+<br /></p>
 
 <h1 id="tree">Tree</h1>
 <hr />
 
-<p><br /></p>
+<p><br />
+<br />
+<br /></p>
 
 <h1 id="graph">Graph</h1>
 <hr />]]></content><author><name>NNIIE</name></author><category term="Data_Structure" /><category term="Data Structure" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">2주차</title><link href="http://localhost:4000/til/2%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="2주차" /><published>2022-12-22T00:00:00+09:00</published><updated>2022-12-22T00:00:00+09:00</updated><id>http://localhost:4000/til/2%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/2%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
@@ -1642,7 +1676,9 @@ Key와 Value로 이루어진 자료구조이다.
 enum자체가 가지는 비용이 적지 않다. static final 상수로도 충분하다면 enum의 사용 여부는 고려해보자</li>
 </ul>
 
-<p><br /></p>
+<p><br />
+<br />
+<br /></p>
 
 <h1 id="싱글톤패턴">싱글톤패턴</h1>
 <hr />
@@ -1752,7 +1788,9 @@ enum자체가 가지는 비용이 적지 않다. static final 상수로도 충�
   </li>
 </ul>
 
-<p><br /></p>
+<p><br />
+<br />
+<br /></p>
 
 <h1 id="인터페이스">인터페이스</h1>
 <hr />
@@ -1925,7 +1963,9 @@ enum자체가 가지는 비용이 적지 않다. static final 상수로도 충�
 <span class="n">func</span><span class="o">.</span><span class="na">doSomething</span><span class="o">(</span><span class="s">"do something"</span><span class="o">);</span>
 </code></pre></div></div>
 
-<p><br /></p>
+<p><br />
+<br />
+<br /></p>
 
 <h1 id="추상클래스">추상클래스</h1>
 <hr />
@@ -1958,7 +1998,9 @@ enum자체가 가지는 비용이 적지 않다. static final 상수로도 충�
   <li>특정필드를 재사용하고 싶고 공개하고 싶지 않아서</li>
 </ul>
 
-<p><br /></p>
+<p><br />
+<br />
+<br /></p>
 
 <h1 id="둘의-차이">둘의 차이</h1>
 <hr />
@@ -2016,7 +2058,9 @@ enum자체가 가지는 비용이 적지 않다. static final 상수로도 충�
   별도의 추가적인 의존성이 필요없고 사용법이 간단한 <code class="language-plaintext highlighter-rouge">Spring Scheduler</code>를 추천한다.</li>
 </ul>
 
-<p><br /></p>
+<p><br />
+<br />
+<br /></p>
 
 <h1 id="value">@Value</h1>
 <hr />
@@ -2036,7 +2080,9 @@ enum자체가 가지는 비용이 적지 않다. static final 상수로도 충�
   또한 각 서버환경에 따라 설정도 유연하게 관리할 수 있다.</li>
 </ul>
 
-<p><br /></p>
+<p><br />
+<br />
+<br /></p>
 
 <h1 id="bean">@Bean</h1>
 <hr />
@@ -2062,7 +2108,9 @@ enum자체가 가지는 비용이 적지 않다. static final 상수로도 충�
   </li>
 </ul>
 
-<p><br /></p>
+<p><br />
+<br />
+<br /></p>
 
 <h1 id="async">@Async</h1>
 <hr />
@@ -2135,7 +2183,9 @@ enum자체가 가지는 비용이 적지 않다. static final 상수로도 충�
   </li>
 </ul>
 
-<p><br /></p>
+<p><br />
+<br />
+<br /></p>
 
 <h1 id="절차형-객체지향-함수형-패러다임">절차형, 객체지향, 함수형 패러다임</h1>
 <h2 id="절차형-프로그래밍-procedural-programming">절차형 프로그래밍 (Procedural Programming)</h2>
@@ -2223,7 +2273,9 @@ OOP와는 데이터(상태)를 다루는 개념과, 간결한 코드 작성에 �
   </li>
 </ul>
 
-<p><br /></p>
+<p><br />
+<br />
+<br /></p>
 
 <h1 id="자바의-type">자바의 Type</h1>
 <h2 id="primitive-type원시타입">Primitive Type(원시타입)</h2>
@@ -2259,7 +2311,9 @@ OOP와는 데이터(상태)를 다루는 개념과, 간결한 코드 작성에 �
   </li>
 </ul>
 
-<p><br /></p>
+<p><br />
+<br />
+<br /></p>
 
 <h1 id="wrapper-class">Wrapper Class</h1>
 <hr />
@@ -2300,7 +2354,9 @@ OOP와는 데이터(상태)를 다루는 개념과, 간결한 코드 작성에 �
   </li>
 </ul>
 
-<p><br /></p>
+<p><br />
+<br />
+<br /></p>
 
 <h1 id="동일성과-동등성">동일성과 동등성</h1>
 <h2 id="동일성">동일성</h2>
@@ -2415,7 +2471,9 @@ protected멤버는 부모 클래스에게는 public 멤버처럼 취급되며, �
   <li>객체지향에서 캡슐화 라고 부른다.</li>
 </ul>
 
-<p><br /></p>
+<p><br />
+<br />
+<br /></p>
 
 <h1 id="상속">상속</h1>
 <hr />
@@ -2683,9 +2741,12 @@ SOLID원칙의 리스코프치환 원칙에서 알 수 있다.
 <br />
 결국, 코드의 재사용성 만을 위해 상속을 사용하는 방식은 여러 문제점을 가지고 있기 때문에 재사용성 뿐만 아니라 클래스간의 확실한 계층구조를 만들때 상속을 사용하며 그 외에는 의존성이 낮은 합성을 사용하는 것이 좋다고 생각이 든다.</p>
 
-<p><br /></p>
+<p><br />
+<br />
+<br /></p>
 
-<h2 id="다형성">다형성</h2>
+<h1 id="다형성">다형성</h1>
+<hr />
 <p>변화에 유연한 소프트웨어를 만들기 위한 객체지향 패러다임의 가장 중추적인 방법이다.
 <br />
 <code class="language-plaintext highlighter-rouge">다형성</code>이란 하나의 타입에 여러 객체를 대입할 수 있는 성질이고, 이것을 위해서 여러 객체들중 공통 특성으로

@@ -40,6 +40,8 @@ toc_sticky: true
 	별도의 추가적인 의존성이 필요없고 사용법이 간단한 `Spring Scheduler`를 추천한다.
 
 <br>
+<br>
+<br>
 
 # @Value
 ---
@@ -59,6 +61,8 @@ properties 파일의 설정정보를 key-value형태로 가져오는데 쓰인�
 	또한 각 서버환경에 따라 설정도 유연하게 관리할 수 있다.
 
 <br>
+<br>
+<br>
 
 # @Bean
 ---
@@ -75,6 +79,8 @@ properties 파일의 설정정보를 key-value형태로 가져오는데 쓰인�
 	* 1개 이상의 @Bean을 제공하는 클래스의 경우 반드시 @Configuration를 선언한다.
 	* 선언 시 Component-Scan에 의해 Bean으로 등록 된다.
 
+<br>
+<br>
 <br>
 
 # @Async
