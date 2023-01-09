@@ -249,7 +249,7 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> TIL</h4></header>
-              <ul class="toc__menu"><li><a href="#today-i-learned">Today I Learned</a><ul><li><a href="#cqrs-pattern">CQRS Pattern</a><ul><li><a href="#장점">장점</a></li><li><a href="#언제-쓰면-좋을까">언제 쓰면 좋을까?</a></li></ul></li><li><a href="#generic">Generic</a><ul><li><a href="#컨벤션">컨벤션</a></li><li><a href="#특징">특징</a></li><li><a href="#타입범위지정">타입범위지정</a></li><li><a href="#제네릭-클래스">제네릭 클래스</a></li><li><a href="#제네릭-메서드">제네릭 메서드</a></li><li><a href="#제네릭의-타입소거">제네릭의 타입소거</a></li><li><a href="#왜쓰는데">왜쓰는데?</a></li><li><a href="#타입시스템">타입시스템?</a></li></ul></li><li><a href="#시간공간-복잡도의-상관관계">시간/공간 복잡도의 상관관계</a><ul><li><a href="#caching">Caching</a></li><li><a href="#hashmap">HashMap</a></li><li><a href="#만약-메모리가-부족하다면">만약 메모리가 부족하다면?</a></li><li><a href="#의문점">의문점</a></li></ul></li></ul></li><li><a href="#to-do">To Do</a><ul><li><a href="#nested-class">Nested Class</a><ul><li><a href="#inner-class">Inner Class</a></li><li><a href="#static-inner-class">Static Inner Class</a></li><li><a href="#익명클래스">익명클래스</a></li><li><a href="#lambda">Lambda</a></li><li><a href="#활용">활용</a></li><li><a href="#의문점-1">의문점</a></li></ul></li><li><a href="#collection">Collection</a></li><li><a href="#중복에-관한-의문점">중복에 관한 의문점</a><ul><li><a href="#중복이-나쁜경우">중복이 나쁜경우</a></li><li><a href="#중복이-차라리-나은경우">중복이 차라리 나은경우</a></li><li><a href="#멀티모듈의-설계">멀티모듈의 설계?</a></li></ul></li></ul></li></ul>
+              <ul class="toc__menu"><li><a href="#today-i-learned">Today I Learned</a><ul><li><a href="#cqrs-pattern">CQRS Pattern</a><ul><li><a href="#장점">장점</a></li><li><a href="#언제-쓰면-좋을까">언제 쓰면 좋을까?</a></li></ul></li><li><a href="#generic">Generic</a><ul><li><a href="#컨벤션">컨벤션</a></li><li><a href="#특징">특징</a></li><li><a href="#타입범위지정">타입범위지정</a></li><li><a href="#제네릭-클래스">제네릭 클래스</a></li><li><a href="#제네릭-메서드">제네릭 메서드</a></li><li><a href="#제네릭의-타입소거">제네릭의 타입소거</a></li><li><a href="#왜쓰는데">왜쓰는데?</a></li><li><a href="#타입시스템">타입시스템?</a></li></ul></li><li><a href="#시간공간-복잡도의-상관관계">시간/공간 복잡도의 상관관계</a><ul><li><a href="#caching">Caching</a></li><li><a href="#hashmap">HashMap</a></li><li><a href="#만약-메모리가-부족하다면">만약 메모리가 부족하다면?</a></li><li><a href="#의문점">의문점</a></li></ul></li></ul></li><li><a href="#to-do">To Do</a><ul><li><a href="#nested-class">Nested Class</a><ul><li><a href="#inner-class">Inner Class</a></li><li><a href="#static-inner-class">Static Inner Class</a></li><li><a href="#local-class">Local Class</a></li><li><a href="#익명-클래스">익명 클래스</a><ul><li><a href="#장점-1">장점</a></li></ul></li><li><a href="#lambda">Lambda</a></li><li><a href="#활용">활용</a></li><li><a href="#의문점-1">의문점</a></li></ul></li><li><a href="#collection">Collection</a></li><li><a href="#중복에-관한-의문점">중복에 관한 의문점</a><ul><li><a href="#중복이-나쁜경우">중복이 나쁜경우</a></li><li><a href="#중복이-차라리-나은경우">중복이 차라리 나은경우</a></li><li><a href="#멀티모듈의-설계">멀티모듈의 설계?</a></li></ul></li></ul></li></ul>
 
             </nav>
           </aside>
@@ -667,13 +667,75 @@ ex) 디비에 올라간걸 고치기 힘들잖아… 그러니까 올라가기 �
 
 <p><br /></p>
 
-<h3 id="익명클래스">익명클래스</h3>
+<h3 id="local-class">Local Class</h3>
+<hr />
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">OuterClass</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">doSomething</span><span class="o">()</span> <span class="o">{</span>
+    	<span class="kd">class</span> <span class="nc">LocalClass</span> <span class="o">{</span> <span class="c1">// 로컬 클래스</span>
+    		<span class="kd">public</span> <span class="kt">void</span> <span class="nf">doSomething</span><span class="o">()</span> <span class="o">{</span>
+    			<span class="c1">// ...</span>
+    		<span class="o">}</span>
+    	<span class="o">}</span>    	
+    	<span class="nc">LocalClass</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">LocalClass</span><span class="o">();</span>
+    	<span class="n">obj</span><span class="o">.</span><span class="na">doSomething</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+<ul>
+  <li>패키지나 클래스의 멤버가 아니므로 접근제어자 사용 불가</li>
+  <li><code class="language-plaintext highlighter-rouge">static</code> 멤버 선언 불가</li>
+  <li>객체 생성은 외부에서 불가능하고, 내부에서만 가능</li>
+</ul>
+
+<p><br /></p>
+
+<h3 id="익명-클래스">익명 클래스</h3>
 <hr />
 <p>펑션을 상속받는? 이름이 없는 로컬클래스.
 <br />
+선언과 동시에 초기화가 이루어 진다.
+<br />
 이름이 없기 때문에 익명클래스는 객체를 여러번 생성할 수 없으며 생성자를 만들수도 없다.
 <br />
-클래스가 딱 한번만 필요할 때 유용하다.</p>
+클래스가 딱 한번만 필요할 때 (일회용) 유용하다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Ex</span> <span class="o">{</span>
+	<span class="kd">final</span> <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">10</span><span class="o">;</span>
+	
+	<span class="nc">Inner</span> <span class="n">in</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Inner</span><span class="o">()</span> <span class="o">{</span>
+		<span class="kd">public</span> <span class="kt">void</span> <span class="nf">print</span><span class="o">()</span> <span class="o">{</span>
+			<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"overriding"</span><span class="o">);</span>
+			<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">x</span><span class="o">);</span>
+			<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">y</span><span class="o">);</span>
+		<span class="o">}</span>
+		
+		<span class="kd">public</span> <span class="kt">void</span> <span class="nf">printX</span><span class="o">()</span> <span class="o">{</span>
+			<span class="c1">//익명 클래스 안에서 메서드를 생성하여 사용 가능</span>
+			<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Method 추가"</span><span class="o">);</span>
+		<span class="o">}</span>
+	<span class="o">};</span>
+<span class="o">}</span>
+</code></pre></div></div>
+<ul>
+  <li>Outer Class의 지역변수가 <code class="language-plaintext highlighter-rouge">final</code> 로 선언되어야만 접근 가능</li>
+  <li><code class="language-plaintext highlighter-rouge">static</code> 멤버 선언 불가</li>
+  <li>멤버 인터페이스 선언 불가</li>
+</ul>
+
+<p><br /></p>
+
+<h4 id="장점-1">장점</h4>
+<hr />
+<p>어느 메서드에서 <strong>부모 클래스의 자원을 상속받아 재정의하여 사용할 자식 클래스가 한번만 사용</strong>되고 버려질 자료형이면, 굳이 상단에 클래스를 정의하기보다는, <strong>지역 변수처럼</strong> 익명 클래스로 정의하고 스택이 끝나면 삭제되도록 하는 것이 유지보수면에서나 프로그램 메모리면에서나 이점을 얻을 수 있다.
+<br />
+<br />
+즉, 익명 클래스는 재사용할 필요가 없는 일회성 클래스를 굳이 클래스를 정의하고 생성하는 것이 비효율적이기 때문에, 익명 클래스를 통해 <strong>코드를 줄이는 일종의 기법</strong>이라고 말 할 수 있다.
+<br />
+<br />
+다만, 익명 클래스 방식으로 선언한다면 <strong>오버라이딩 한 메서드 사용</strong>만 가능하고,
+<br />
+<strong>새로 정의한 메서드는 외부에서 사용이 불가능</strong> 하다.</p>
 
 <p><br /></p>
 
