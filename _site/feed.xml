@@ -1,8 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-01-10T01:00:46+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">4주차</title><link href="http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="4주차" /><published>2023-01-05T00:00:00+09:00</published><updated>2023-01-05T00:00:00+09:00</updated><id>http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-01-10T01:25:09+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">4주차</title><link href="http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="4주차" /><published>2023-01-05T00:00:00+09:00</published><updated>2023-01-05T00:00:00+09:00</updated><id>http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
 
-<h1 id="today-i-learned">Today I Learned</h1>
-
-<h2 id="cqrs-pattern">CQRS Pattern</h2>
+<h1 id="cqrs-pattern">CQRS Pattern</h1>
+<hr />
 <p>Command and Query Responsibility Segregation (명령과 조회의 책임 분리)
 <br />
 즉, 명령(command)및 쿼리의 책임을 분리하는 패턴이다. 책임분리를 위해서는 코드의 모듈이 분리되어야 한다.
@@ -43,7 +42,8 @@ read 와 write를 분리하는것을 뜻하며 어플리케이션까지만 적�
 
 <p><br /></p>
 
-<h2 id="generic">Generic</h2>
+<h1 id="generic">Generic</h1>
+<hr />
 <p>아주 유용한 문법이고 대부분 최신 언어에선 사용한다.
 <br />
 타입시스템을 더 견고하게 사용하기 위해 제네릭을 사용한다.
@@ -87,8 +87,7 @@ read 와 write를 분리하는것을 뜻하며 어플리케이션까지만 적�
 <span class="o">}</span>
 </code></pre></div></div>
 
-<h3 id="특징">특징</h3>
-<hr />
+<h2 id="특징">특징</h2>
 <ul>
   <li>클래스 또는 메서드에 선언 가능</li>
   <li>동시에 여러타입 선언 가능</li>
@@ -98,8 +97,7 @@ read 와 write를 분리하는것을 뜻하며 어플리케이션까지만 적�
 
 <p><br /></p>
 
-<h3 id="컨벤션">컨벤션</h3>
-<hr />
+<h2 id="컨벤션">컨벤션</h2>
 <p>제네릭 타입을 선언할 때 어느정도의 컨벤션이 존재한다.</p>
 <ul>
   <li>E : Element (컬렉션에서 주로 사용됨)</li>
@@ -121,8 +119,7 @@ read 와 write를 분리하는것을 뜻하며 어플리케이션까지만 적�
 
 <p><br /></p>
 
-<h3 id="타입범위지정">타입범위지정</h3>
-<hr />
+<h2 id="타입범위지정">타입범위지정</h2>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// T에 비교불가능한 타입이 온다면 이 메서드는 기능을 수행할 수 없다.</span>
 <span class="kd">public</span> <span class="kt">int</span> <span class="nf">compare</span><span class="o">(</span><span class="no">T</span> <span class="n">t1</span><span class="o">,</span> <span class="no">T</span> <span class="n">t2</span><span class="o">)</span> <span class="o">{</span> 
@@ -145,8 +142,7 @@ read 와 write를 분리하는것을 뜻하며 어플리케이션까지만 적�
 
 <p><br /></p>
 
-<h3 id="제네릭-클래스">제네릭 클래스</h3>
-<hr />
+<h2 id="제네릭-클래스">제네릭 클래스</h2>
 <p>클래스 인스턴스화 시점에 제네릭 파라미터를 통해 타입 전달</p>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Sample</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="o">{</span> 
@@ -155,8 +151,7 @@ read 와 write를 분리하는것을 뜻하며 어플리케이션까지만 적�
 </code></pre></div></div>
 <p><br /></p>
 
-<h3 id="제네릭-메서드">제네릭 메서드</h3>
-<hr />
+<h2 id="제네릭-메서드">제네릭 메서드</h2>
 <p>메서드 호출 시점에 제네릭으로 리턴 타입, 파라미터의 타입이 정해지는 메서드</p>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Student</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="o">{</span> 
@@ -171,8 +166,7 @@ read 와 write를 분리하는것을 뜻하며 어플리케이션까지만 적�
 
 <p><br /></p>
 
-<h3 id="제네릭의-타입소거">제네릭의 타입소거</h3>
-<hr />
+<h2 id="제네릭의-타입소거">제네릭의 타입소거</h2>
 <p><strong>제네릭의 primitive 타입 사용 불가</strong>
 <br />
 <strong>타입소거</strong>란 원소 타입을 컴파일 타임에만 검사하고 <strong>런타임에는 해당 타입 정보를 알 수 없는 것</strong>이다. 
@@ -197,8 +191,7 @@ Object의 하위 타입이 아니기 때문에 제네릭에서 사용하는 것�
 
 <p><br /></p>
 
-<h3 id="왜쓰는데">왜쓰는데?</h3>
-<hr />
+<h2 id="왜쓰는데">왜쓰는데?</h2>
 <p>특정 타입으로 종속받지 않아서 편리하다.</p>
 <ul>
   <li>재사용성 증가
@@ -225,8 +218,7 @@ Object의 하위 타입이 아니기 때문에 제네릭에서 사용하는 것�
 
 <p><br /></p>
 
-<h3 id="타입시스템">타입시스템?</h3>
-<hr />
+<h2 id="타입시스템">타입시스템?</h2>
 <p>개발자가 올바른 프로그램을 작성하기 위해 도우미 역할을 하고 컴파일단계에서 타입을 체크하는 대충 뭐 그런거다. 불편하기 때문에 많은 개발자들이 정적타이핑 하는 자바를 버리고 동적타이핑 하는 파이썬, 루비 같은 스크립트 언어로 갈아타는 이유이기도 하다.
 <br />
 대표적인 프론트엔드, 백엔드 언어인 자바스크립트와 자바는 각각 약타입언어, 강타입언어 라고도 불린다.
@@ -251,7 +243,8 @@ ex) 디비에 올라간걸 고치기 힘들잖아… 그러니까 올라가기 �
 
 <p><br /></p>
 
-<h2 id="시간공간-복잡도의-상관관계">시간/공간 복잡도의 상관관계</h2>
+<h1 id="시간공간-복잡도의-상관관계">시간/공간 복잡도의 상관관계</h1>
+<hr />
 <ul>
   <li>시간복잡도 : 특정크기의 연산에 걸리는 절대적인 시간 즉, 연산 횟수</li>
   <li>공간복잡도 : 특정크기의 연산에 드는 메모리 사용량</li>
@@ -264,8 +257,7 @@ ex) 디비에 올라간걸 고치기 힘들잖아… 그러니까 올라가기 �
 
 <p><br /></p>
 
-<h3 id="caching">Caching</h3>
-<hr />
+<h2 id="caching">Caching</h2>
 <ul>
   <li>시간복잡도의 리소스를 공간복잡도의 리소스로 바꾸는거다.</li>
   <li><code class="language-plaintext highlighter-rouge">redis</code>를 사용 해서 데이터를 보다 빠르게 조회할 수 있다면 그만큼 탐색범위를 줄여 시간복잡도를
@@ -275,24 +267,21 @@ ex) 디비에 올라간걸 고치기 힘들잖아… 그러니까 올라가기 �
 
 <p><br /></p>
 
-<h3 id="hashmap">HashMap</h3>
-<hr />
+<h2 id="hashmap">HashMap</h2>
 <ul>
   <li>해시알고리즘으로 만든 key를 메모리에 올려두고 그 key값만 찾아가면 되기때문에 데이터 크기에 상관 없이 시간복잡도가 O(1)인 대신 그만큼 key값을 저장하는 메모리 공간을 사용하기 때문에 공간복잡도는 올라간다.</li>
 </ul>
 
 <p><br /></p>
 
-<h3 id="만약-메모리가-부족하다면">만약 메모리가 부족하다면?</h3>
-<hr />
+<h2 id="만약-메모리가-부족하다면">만약 메모리가 부족하다면?</h2>
 <p>메모리를 적게 써야하는 상황이라면 공간복잡도를 줄여서 시간을 많이쓰는
 <br />
 즉, 탐색을 더해서 시간복잡도를 올려야 한다.</p>
 
 <p><br /></p>
 
-<h3 id="의문점">의문점</h3>
-<hr />
+<h2 id="의문점">의문점</h2>
 <p>보통 공간복잡도 보다 시간복잡도를 더 우위에 두고 작업을 하기 마련이다.
 <br />
 그렇다면 그 이유는 과거에 비해 하드웨어의 발전이 많이 이루어 졌기 때문이고
@@ -334,11 +323,18 @@ ex) 디비에 올라간걸 고치기 힘들잖아… 그러니까 올라가기 �
 <br />
 <code class="language-plaintext highlighter-rouge">redis</code>에 올리지 않는 것처럼 경우에 따라 적절하게 사용하는것이 중요하겠다.</p>
 
-<p><br /></p>
+<p><br />
+<br />
+<br /></p>
 
 <h1 id="to-do">To Do</h1>
 
-<h2 id="nested-class">Nested Class</h2>
+<p><br />
+<br />
+<br /></p>
+
+<h1 id="nested-class">Nested Class</h1>
+<hr />
 <p>중첩클래스(nested class)는 클래스 내에 정의된 클래스를 말한다. 
 <br />
 중첩클래스는 <code class="language-plaintext highlighter-rouge">static</code>으로 선언되지 않은 내부클래스(inner class)와
@@ -355,8 +351,7 @@ ex) 디비에 올라간걸 고치기 힘들잖아… 그러니까 올라가기 �
 
 <p><br /></p>
 
-<h3 id="inner-class">Inner Class</h3>
-<hr />
+<h2 id="inner-class">Inner Class</h2>
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">OuterClass</span> <span class="o">{</span>
 	<span class="kd">private</span> <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">10</span><span class="o">;</span>
 
@@ -399,8 +394,7 @@ ex) 디비에 올라간걸 고치기 힘들잖아… 그러니까 올라가기 �
 
 <p><br /></p>
 
-<h3 id="static-inner-class">Static Inner Class</h3>
-<hr />
+<h2 id="static-inner-class">Static Inner Class</h2>
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">OuterClass</span> <span class="o">{</span>
 	<span class="o">...</span>
 	<span class="kd">static</span> <span class="kd">class</span> <span class="nc">StaticInnerClass</span> <span class="o">{</span>
@@ -419,8 +413,7 @@ ex) 디비에 올라간걸 고치기 힘들잖아… 그러니까 올라가기 �
 
 <p><br /></p>
 
-<h3 id="local-class">Local Class</h3>
-<hr />
+<h2 id="local-class">Local Class</h2>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">OuterClass</span> <span class="o">{</span>
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">doSomething</span><span class="o">()</span> <span class="o">{</span>
@@ -442,8 +435,7 @@ ex) 디비에 올라간걸 고치기 힘들잖아… 그러니까 올라가기 �
 
 <p><br /></p>
 
-<h3 id="익명-클래스">익명 클래스</h3>
-<hr />
+<h2 id="익명-클래스">익명 클래스</h2>
 <p>펑션을 상속받는? 이름이 없는 로컬클래스.
 <br />
 선언과 동시에 초기화가 이루어 진다.
@@ -477,7 +469,7 @@ ex) 디비에 올라간걸 고치기 힘들잖아… 그러니까 올라가기 �
 
 <p><br /></p>
 
-<h4 id="장점">장점</h4>
+<h3 id="장점">장점</h3>
 <hr />
 <p>어느 메서드에서 <strong>부모 클래스의 자원을 상속받아 재정의하여 사용할 자식 클래스가 한번만 사용</strong>되고 버려질 자료형이면, 굳이 상단에 클래스를 정의하기보다는, <strong>지역 변수처럼</strong> 익명 클래스로 정의하고 스택이 끝나면 삭제되도록 하는 것이 유지보수면에서나 프로그램 메모리면에서나 이점을 얻을 수 있다.
 <br />
@@ -491,8 +483,7 @@ ex) 디비에 올라간걸 고치기 힘들잖아… 그러니까 올라가기 �
 
 <p><br /></p>
 
-<h3 id="활용">활용</h3>
-<hr />
+<h2 id="활용">활용</h2>
 <ul>
   <li><code class="language-plaintext highlighter-rouge">inner class</code>는 참조값을 담아야 하기 때문에 인스턴스 생성시 시간,공간적으로 성능이 낮아진다.</li>
   <li><code class="language-plaintext highlighter-rouge">static inner class</code>는 외부 인스턴스에 대한 참조가 존재하기 때문에, 
@@ -504,7 +495,7 @@ ex) 디비에 올라간걸 고치기 힘들잖아… 그러니까 올라가기 �
 
 <p><br /></p>
 
-<h2 id="람다">람다</h2>
+<h1 id="람다">람다</h1>
 <hr />
 <p>익명 함수 (Anonymous functions) 를 지칭하는 용어이다.
 <br />
@@ -527,8 +518,7 @@ ex) 디비에 올라간걸 고치기 힘들잖아… 그러니까 올라가기 �
 
 <p><br /></p>
 
-<h3 id="특징-1">특징</h3>
-<hr />
+<h2 id="특징-1">특징</h2>
 <ul>
   <li>람다식 내에서 사용되는 지역변수는 <code class="language-plaintext highlighter-rouge">final</code> 키워드가 붙지않아도 상수로 간주된다.
     <ul>
@@ -540,8 +530,7 @@ ex) 디비에 올라간걸 고치기 힘들잖아… 그러니까 올라가기 �
 
 <p><br /></p>
 
-<h3 id="장점-1">장점</h3>
-<hr />
+<h2 id="장점-1">장점</h2>
 <ul>
   <li>지연연산수행 : 지연연산을 수행함으로써 불필요한 연산을 최소화 할 수 있다.
     <ul>
@@ -569,8 +558,7 @@ ex) 디비에 올라간걸 고치기 힘들잖아… 그러니까 올라가기 �
 
 <p><br /></p>
 
-<h3 id="단점">단점</h3>
-<hr />
+<h2 id="단점">단점</h2>
 <ul>
   <li>람다를 사용하면서 만든 익명함수는 재사용이 불가능하다.</li>
   <li>디버깅이 어렵다.</li>
@@ -584,8 +572,7 @@ ex) 디비에 올라간걸 고치기 힘들잖아… 그러니까 올라가기 �
 
 <p><br /></p>
 
-<h3 id="stream">Stream</h3>
-<hr />
+<h2 id="stream">Stream</h2>
 <p>다양한 데이터를 표준화된 방법으로 다루기 위한 라이브러리 - <strong>Java8</strong>에 추가
 <br />
 <code class="language-plaintext highlighter-rouge">Stream</code>의 문법에 대해서는 이 글에서 다루지 않는다.</p>
@@ -602,8 +589,7 @@ ex) 디비에 올라간걸 고치기 힘들잖아… 그러니까 올라가기 �
 
 <p><br /></p>
 
-<h3 id="의문점-1">의문점</h3>
-<hr />
+<h2 id="의문점-1">의문점</h2>
 
 <ul>
   <li><strong><em>람다는 일종의 <code class="language-plaintext highlighter-rouge">inner class</code> 인데 가비지컬렉터의 메모리 누수에는 안전하다 알아보자.</em></strong>
@@ -622,11 +608,13 @@ ex) 디비에 올라간걸 고치기 힘들잖아… 그러니까 올라가기 �
 
 <p><br /></p>
 
-<h2 id="collection">Collection</h2>
+<h1 id="collection">Collection</h1>
+<hr />
 
 <p><br /></p>
 
-<h2 id="중복에-관한-의문점">중복에 관한 의문점</h2>
+<h1 id="중복에-관한-의문점">중복에 관한 의문점</h1>
+<hr />
 <p>객체지향의 장점인 재사용성(상속, 다형성 등) 을 보면 중복은 좋지 않다?
 <br />
 유지보수 관점에서 중복을 하는것이 좋을지, 중복을 제거하는것이 좋을지 고려해야 한다.
@@ -635,24 +623,20 @@ ex) 디비에 올라간걸 고치기 힘들잖아… 그러니까 올라가기 �
 
 <p><br /></p>
 
-<h3 id="중복이-나쁜경우">중복이 나쁜경우</h3>
-<hr />
+<h2 id="중복이-나쁜경우">중복이 나쁜경우</h2>
 
 <p><br /></p>
 
-<h3 id="중복이-차라리-나은경우">중복이 차라리 나은경우</h3>
-<hr />
+<h2 id="중복이-차라리-나은경우">중복이 차라리 나은경우</h2>
 
 <p><br /></p>
 
-<h3 id="멀티모듈의-설계">멀티모듈의 설계?</h3>
-<hr />
+<h2 id="멀티모듈의-설계">멀티모듈의 설계?</h2>
 
 <p><br /></p>]]></content><author><name>NNIIE</name></author><category term="TIL" /><category term="Generic" /><category term="시공간복잡도" /><category term="Nested Class" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">3주차</title><link href="http://localhost:4000/til/3%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="3주차" /><published>2022-12-29T00:00:00+09:00</published><updated>2022-12-29T00:00:00+09:00</updated><id>http://localhost:4000/til/3%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/3%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
 
-<h1 id="today-i-learned">Today I Learned</h1>
-
-<h2 id="property">Property</h2>
+<h1 id="property">Property</h1>
+<hr />
 <p>속성이란 뜻이다. 해당 <code class="language-plaintext highlighter-rouge">Object</code>의 특징.
 <br />
 사람을 예로들면 피부색, 키, 나이, 몸무게 등이다.
@@ -664,7 +648,8 @@ Property의 읽기와 쓰기는 일반적으로 <code class="language-plaintext 
 
 <p><br /></p>
 
-<h2 id="string">String</h2>
+<h1 id="string">String</h1>
+<hr />
 <p>자바에서 제일 많이 사용되는 String은 <strong>특별대우</strong>를 받는다.
 <br />
 Reference Type 이지만 기본적인 사용은 Primitive Type 이다.
@@ -691,16 +676,14 @@ String 객체생성은 2가지 방법이 있다.</p>
 
 <p><br /></p>
 
-<h3 id="constant-pool">Constant Pool</h3>
-<hr />
+<h2 id="constant-pool">Constant Pool</h2>
 <p>문자열 리터럴을 사용해서 생성한 String 객체가 담기는 곳이며 자바8 이후 힙 영역에 속한다.
 <br />
 같은 문자열을 각각 2개씩 리터럴과 new연산자로 생성했을 때, new 연산자로 생성된 문자열은 서로 다른객체를 만들고 바라보지만 리터럴로 생성해 <code class="language-plaintext highlighter-rouge">Constant Pool</code>에 담긴 두 객체는 동일한 객체를 바라본다.</p>
 
 <p><br /></p>
 
-<h3 id="string은-불변immutable하고-thread-safe-하다">String은 불변(immutable)하고 thread-safe 하다.</h3>
-<hr />
+<h2 id="string은-불변immutable하고-thread-safe-하다">String은 불변(immutable)하고 thread-safe 하다.</h2>
 <p>문자열 리터럴은 불변이기 때문에 <code class="language-plaintext highlighter-rouge">Constant Pool</code>에서 문자열이 같다면 동일한 객체를 참조할 수 있다.</p>
 <ul>
   <li><strong><em>static String?</em></strong>
@@ -713,8 +696,7 @@ String 객체생성은 2가지 방법이 있다.</p>
 
 <p><br /></p>
 
-<h3 id="string-연산">String 연산</h3>
-<hr />
+<h2 id="string-연산">String 연산</h2>
 <p><code class="language-plaintext highlighter-rouge">Constant Pool</code>의 특성 때문에 연산을 하게되서 문자열이 변경될 경우 기존 객체는 불변이기 때문에 새로운 객체를 만들고 해당 객체를 참조한다. 그리고 곧 참조가 사라진 기존 문자열은 가비지컬렉터의 수집 대상이 된다.
 <br />
 그렇기 때문에 문자열의 <code class="language-plaintext highlighter-rouge">+ 연산</code> 또는 <code class="language-plaintext highlighter-rouge">concat 연산</code> 은 좋지 않다.
@@ -743,7 +725,7 @@ String 객체생성은 2가지 방법이 있다.</p>
 
 <p><br /></p>
 
-<h4 id="활용">활용</h4>
+<h3 id="활용">활용</h3>
 <hr />
 <p>새로운 객체를 만들지 않고 문자열을 수정할 수 있기 때문에 참조가 끊어진 String 객체가
 <br />
@@ -795,7 +777,7 @@ String 객체생성은 2가지 방법이 있다.</p>
 
 <p><br /></p>
 
-<h4 id="jdk-15-이후">JDK 1.5 이후</h4>
+<h3 id="jdk-15-이후">JDK 1.5 이후</h3>
 <hr />
 <p>자바 1.5 이후  String의 <code class="language-plaintext highlighter-rouge">immutable</code>속성의 문제점을 해결하기 위해 도입되었다.
 <br />
@@ -811,7 +793,8 @@ String 객체생성은 2가지 방법이 있다.</p>
 
 <p><br /></p>
 
-<h2 id="annotation">Annotation</h2>
+<h1 id="annotation">Annotation</h1>
+<hr />
 <p><code class="language-plaintext highlighter-rouge">Annotation</code> 의 사전적인 의미로는 주석이다.
 <br />
 자바에서는 코드사이에 주석처럼 쓰여서 특별한 의미, 기능을 수행하도록 한다.
@@ -826,8 +809,7 @@ String 객체생성은 2가지 방법이 있다.</p>
 
 <p><br /></p>
 
-<h3 id="용도">용도</h3>
-<hr />
+<h2 id="용도">용도</h2>
 <ul>
   <li>컴파일러에게 에러를 체크하도록 정보 제공</li>
   <li>빌드나 패치 시 코드를 자동으로 생성할 수 있도록 정보 제공</li>
@@ -836,8 +818,7 @@ String 객체생성은 2가지 방법이 있다.</p>
 
 <p><br /></p>
 
-<h3 id="설정">설정</h3>
-<hr />
+<h2 id="설정">설정</h2>
 <ul>
   <li><strong>@Target</strong> : 적용대상
     <ul>
@@ -853,8 +834,7 @@ String 객체생성은 2가지 방법이 있다.</p>
 
 <p><br /></p>
 
-<h3 id="왜쓰는데">왜쓰는데?</h3>
-<hr />
+<h2 id="왜쓰는데">왜쓰는데?</h2>
 <p><code class="language-plaintext highlighter-rouge">Annotation</code> 을 붙일 타겟과 유지시기 등을 설정해 자신이 원하는 용도로 활용이 가능하다.
 <br />
 이것은 비즈니스 로직과는 별도로 시스템 설정과 관련된 부가적인 사항들을 <code class="language-plaintext highlighter-rouge">Annotation</code>
@@ -863,13 +843,18 @@ String 객체생성은 2가지 방법이 있다.</p>
 <br />
 즉, <code class="language-plaintext highlighter-rouge">Annotation</code> 을 사용함으로써 관심사의 분리를 가능하게 한다는 의미기도 하다.</p>
 
-<p><br /></p>
+<p><br />
+<br />
+<br /></p>
 
 <h1 id="to-do">To Do</h1>
 
-<p><br /></p>
+<p><br />
+<br />
+<br /></p>
 
-<h2 id="exception">Exception</h2>
+<h1 id="exception">Exception</h1>
+<hr />
 <p>예외는 기본적으로 폭탄돌리기와 같다.
 <br />
 처리하거나 처리 <code class="language-plaintext highlighter-rouge">try catch</code> 할 수 없다면 <code class="language-plaintext highlighter-rouge">throw</code> 즉, 던져야 한다.
@@ -896,8 +881,7 @@ String 객체생성은 2가지 방법이 있다.</p>
 
 <p><br /></p>
 
-<h3 id="checked-exception"><strong><em>Checked Exception</em></strong></h3>
-<hr />
+<h2 id="checked-exception"><strong><em>Checked Exception</em></strong></h2>
 <p><code class="language-plaintext highlighter-rouge">Exception</code>을 상속받는 예외는 <code class="language-plaintext highlighter-rouge">checked exception</code>이 되며 <code class="language-plaintext highlighter-rouge">Exception</code>은 어플리케이션에서 사용할 수 있는 실질적인 최상위 예외이다. 컴파일러가 체크하며 잡아서 처리하거나, 또는 밖으로 던지도록 선언해야 한다.
 <br />
 예외 발생 시 트랜잭션 <code class="language-plaintext highlighter-rouge">roll-back</code> 처리를 하지 않는다. 
@@ -945,8 +929,7 @@ String 객체생성은 2가지 방법이 있다.</p>
 
 <p><br /></p>
 
-<h3 id="unchecked-exception"><strong><em>UnChecked Exception</em></strong></h3>
-<hr />
+<h2 id="unchecked-exception"><strong><em>UnChecked Exception</em></strong></h2>
 <p><code class="language-plaintext highlighter-rouge">RuntimeException</code>과 그걸 상속받는 예외들은 <code class="language-plaintext highlighter-rouge">unchecked exception</code>이다.
 <br />
 컴파일러가 체크하지 않는 예외이며 <code class="language-plaintext highlighter-rouge">throw</code>를 생략할 수 있고 이럴 경우 자동으로 예외를 던진다.
@@ -978,8 +961,7 @@ String 객체생성은 2가지 방법이 있다.</p>
 
 <p><br /></p>
 
-<h3 id="예외-던져도-안죽던데">예외 던져도 안죽던데?</h3>
-<hr />
+<h2 id="예외-던져도-안죽던데">예외 던져도 안죽던데?</h2>
 <p>웹 어플리케이션은 <code class="language-plaintext highlighter-rouge">servlet</code>의 오류 페이지나, 또는 <code class="language-plaintext highlighter-rouge">Spring MVC</code>가 제공하는 <code class="language-plaintext highlighter-rouge">ControllerAdvice</code> 에서 이런 예외를 공통으로 처리해 주기 때문에 예외가 메인메서드까지 가지 않는다.</p>
 <ul>
   <li>하지만 이런 문제들은 클라이언트 입장에선 어떤 문제가 발생했는지 자세히 알기 어렵다.</li>
@@ -991,8 +973,7 @@ String 객체생성은 2가지 방법이 있다.</p>
 
 <p><br /></p>
 
-<h3 id="자바의-checked-exception-도입">자바의 Checked Exception 도입?</h3>
-<hr />
+<h2 id="자바의-checked-exception-도입">자바의 Checked Exception 도입?</h2>
 <p>자바의 <code class="language-plaintext highlighter-rouge">Checked Exception</code>은 자바만의 독특한 특징이다.
 <br />
 <strong><em>“강제성이 없기 때문에 실수할 여지가 있다”</em></strong> 를 해결하기위해 도입했지만
@@ -1012,7 +993,8 @@ String 객체생성은 2가지 방법이 있다.</p>
 
 <p><br /></p>
 
-<h2 id="의문점">의문점</h2>
+<h1 id="의문점">의문점</h1>
+<hr />
 <p>가비지컬렉터는 알아서 메모리를 관리해 주는데, 결국 한계점에선 Major GC를 실행할 수 밖에 없고
 <br />
 이것이 실행되는 동안에는 결국 <code class="language-plaintext highlighter-rouge">stop the world</code> 즉, JVM이 멈추게 되는 현상이 발생하는데 그렇기 때문에
@@ -1038,8 +1020,7 @@ request -&gt; response 이후 스레드가 종료되는 단순한 형태로 바�
 
 <p><br /></p>
 
-<h3 id="자바-11-이후-바뀐-가비지컬렉션에-대해-자세히-알아보자">자바 11 이후 바뀐 가비지컬렉션에 대해 자세히 알아보자</h3>
-<hr />
+<h2 id="자바-11-이후-바뀐-가비지컬렉션에-대해-자세히-알아보자">자바 11 이후 바뀐 가비지컬렉션에 대해 자세히 알아보자</h2>
 <ul>
   <li>
     <p><strong><em>Generational GC</em></strong>
@@ -1088,8 +1069,7 @@ G1은 지연 시간을 줄이기 위해서 지금까지 설명한 어떤 GC 방�
 
 <p><br /></p>
 
-<h3 id="튜닝">튜닝?</h3>
-<hr />
+<h2 id="튜닝">튜닝?</h2>
 <p>JVM을 튜닝한다는 의미는 기존 GC 에서 Old 영역으로 넘어가는 객체의 수를 최소화하는 것과 Full GC의 실행 시간을 줄이는 노력이다.
 <br />
 Full GC 실행 시간을 줄이기 위해서 Old 영역의 크기를 줄이면 자칫 OutOfMemoryError가 발생하거나 
@@ -1108,19 +1088,16 @@ JVM의 Heap을 증가시키기 보다는 JVM의 인스턴스를 늘려 클러스
 
 <p><br /></p>
 
-<h3 id="스택프레임에-대해-알고있는-것보다-더-자세히-알아보자">스택프레임에 대해 알고있는 것보다 더 자세히 알아보자</h3>
-<hr />
+<h2 id="스택프레임에-대해-알고있는-것보다-더-자세히-알아보자">스택프레임에 대해 알고있는 것보다 더 자세히 알아보자</h2>
 
 <p><br /></p>
 
-<h3 id="하나의-jvm으로-띄우는-것과-여러개의-컨테이너로-띄우는-것의-장단점에-대해-자세히-알아보자">하나의 JVM으로 띄우는 것과 여러개의 컨테이너로 띄우는 것의 장단점에 대해 자세히 알아보자</h3>
-<hr />
+<h2 id="하나의-jvm으로-띄우는-것과-여러개의-컨테이너로-띄우는-것의-장단점에-대해-자세히-알아보자">하나의 JVM으로 띄우는 것과 여러개의 컨테이너로 띄우는 것의 장단점에 대해 자세히 알아보자</h2>
 <p>노드js에선 쓰고있는거 같던데?</p>
 
 <p><br /></p>
 
-<h3 id="멀티코어에서의-jvm과-멀티스레드">멀티코어에서의 JVM과 멀티스레드</h3>
-<hr />
+<h2 id="멀티코어에서의-jvm과-멀티스레드">멀티코어에서의 JVM과 멀티스레드</h2>
 <p>과거에는 싱글코어의 성능을 극한으로 올렸다. 하지만 전력소모, 코어의 면적을 넓히는 방식으로의 해결등이 한계에 다다르면서 코어 수를 늘려서 CPU 전체의 성능을 향상하는 쪽으로 발전했다.</p>
 
 <ul>
@@ -1172,12 +1149,12 @@ JVM의 Heap을 증가시키기 보다는 JVM의 인스턴스를 늘려 클러스
 
 <p><br /></p>
 
-<h3 id="로드밸런싱에-대해서-자세히-알아보자">로드밸런싱에 대해서 자세히 알아보자</h3>
-<hr />
+<h2 id="로드밸런싱에-대해서-자세히-알아보자">로드밸런싱에 대해서 자세히 알아보자</h2>
 
 <p><br /></p>]]></content><author><name>NNIIE</name></author><category term="TIL" /><category term="String" /><category term="Annotation" /><category term="Exception" /><category term="Property" /><category term="JVM" /><category term="GC" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">자료구조</title><link href="http://localhost:4000/data_structure/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/" rel="alternate" type="text/html" title="자료구조" /><published>2022-12-24T00:00:00+09:00</published><updated>2022-12-24T00:00:00+09:00</updated><id>http://localhost:4000/data_structure/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0</id><content type="html" xml:base="http://localhost:4000/data_structure/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/"><![CDATA[<p><br /><br /><br /></p>
 
-<h2 id="시간복잡도">시간복잡도</h2>
+<h1 id="시간복잡도">시간복잡도</h1>
+<hr />
 <p>알고리즘 효율성을 판단하는 지표로써,
 <br />
 알고리즘 수행에 걸리는 시간이 아닌
@@ -1204,7 +1181,8 @@ JVM의 Heap을 증가시키기 보다는 JVM의 인스턴스를 늘려 클러스
 
 <p><br /></p>
 
-<h2 id="hash">Hash</h2>
+<h1 id="hash">Hash</h1>
+<hr />
 <p>임의의 크기를 가진 데이터를 고정된 크기의 데이터로 바꾸는 것.
 <br />
 단방향 암호화 기법으로 해시함수 또는 해시 알고리즘를 이용해 고정된 길이의 비트열로 변경한다.
@@ -1303,7 +1281,8 @@ key와 value의 쌍으로 이루어진 데이터 구조이다.
 
 <p><br /></p>
 
-<h2 id="array">Array</h2>
+<h1 id="array">Array</h1>
+<hr />
 <p>메모리상에 데이터를 순차적으로 배치하는 자료구조
 <br />
 동일한 <code class="language-plaintext highlighter-rouge">type</code>의 데이터를 여러개 나열한 선형구조이다.
@@ -1356,7 +1335,8 @@ key와 value의 쌍으로 이루어진 데이터 구조이다.
 
 <p><br /></p>
 
-<h2 id="list">List</h2>
+<h1 id="list">List</h1>
+<hr />
 <p>데이터를 순차적으로 저장하는 <code class="language-plaintext highlighter-rouge">선형구조</code>의 자료구조
 <br />
 데이터가 삭제되도 빈공간으로 남겨두고 <code class="language-plaintext highlighter-rouge">index</code>를 유지하는 배열과 달리 빈공간을 남겨두지 않기 때문에
@@ -1437,7 +1417,8 @@ key와 value의 쌍으로 이루어진 데이터 구조이다.
 
 <p><br /></p>
 
-<h2 id="set">Set</h2>
+<h1 id="set">Set</h1>
+<hr />
 <p>데이터의 집합이며 순서가 없고 집합이므로 중복된 데이터를 허용하지 않는다.
 <br />
 <code class="language-plaintext highlighter-rouge">index</code>가 따로 존재하지 않기 때문에 <code class="language-plaintext highlighter-rouge">Iterator</code>를 사용한다.
@@ -1516,7 +1497,8 @@ key와 value의 쌍으로 이루어진 데이터 구조이다.
 
 <p><br /></p>
 
-<h2 id="map">Map</h2>
+<h1 id="map">Map</h1>
+<hr />
 <p>순차적으로 메모리에 데이터를 저장하는 Array와 List와는 달리,
 <br />
 Key와 Value로 이루어진 자료구조이다.
@@ -1590,48 +1572,49 @@ Key와 Value로 이루어진 자료구조이다.
 
 <p><br /></p>
 
-<h2 id="stack">Stack</h2>
+<h1 id="stack">Stack</h1>
+<hr />
 
 <p><br /></p>
 
-<h2 id="queue">Queue</h2>
+<h1 id="queue">Queue</h1>
+<hr />
 <p><img src="/images/big-o/queue.png" alt="이미지" /></p>
 
 <p><br /></p>
 
-<h2 id="tree">Tree</h2>
+<h1 id="tree">Tree</h1>
+<hr />
 
 <p><br /></p>
 
-<h2 id="graph">Graph</h2>]]></content><author><name>NNIIE</name></author><category term="Data_Structure" /><category term="Data Structure" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">2주차</title><link href="http://localhost:4000/til/2%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="2주차" /><published>2022-12-22T00:00:00+09:00</published><updated>2022-12-22T00:00:00+09:00</updated><id>http://localhost:4000/til/2%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/2%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
+<h1 id="graph">Graph</h1>
+<hr />]]></content><author><name>NNIIE</name></author><category term="Data_Structure" /><category term="Data Structure" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">2주차</title><link href="http://localhost:4000/til/2%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="2주차" /><published>2022-12-22T00:00:00+09:00</published><updated>2022-12-22T00:00:00+09:00</updated><id>http://localhost:4000/til/2%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/2%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
 
-<h1 id="today-i-learned">Today I Learned</h1>
-
-<h2 id="enum">enum</h2>
+<h1 id="enum">enum</h1>
+<hr />
 <p>열거형이라고 부르며, 서로 연관된 상수들의 집합이다.
 <br />
 모든 열거형은 <code class="language-plaintext highlighter-rouge">Enum</code>클래스의 자손이며 <code class="language-plaintext highlighter-rouge">Enum</code>클래스의 멤버를 상속받는다.</p>
 
+<p><br /></p>
+
+<h2 id="특징과-장점">특징과 장점</h2>
 <ul>
-  <li><strong><em>특징과 장점</em></strong>
-    <ul>
-      <li>enum은 컴파일 후 <code class="language-plaintext highlighter-rouge">public static final</code> 필드이며 객체로 제공된다.</li>
-      <li>상수들은 JVM 메서드 영역에 자리한다.</li>
-      <li>Enum클래스는 상수와 같이 인스턴스가 단 한번만 생성된다.</li>
-      <li>컴파일 시점에 타입안정성이 보장되기 때문에 <code class="language-plaintext highlighter-rouge">private</code> 생성자만을 가진다. 
-  <br />
-  즉, 인스턴스 생성을 제어하며 싱글톤을 일반화 한다. (싱글톤 구현의 방법으로도 사용됨)</li>
-      <li>그렇기 때문에 주소값을 비교하는 == 연산자의 사용이 가능하다.
-  <br />
-  즉, 객체의 값을 비교하는 equals()보다 빠르고 컴파일 단계에서 검사되기 때문에 실수를 방지할 수 있다.</li>
-    </ul>
-  </li>
+  <li>enum은 컴파일 후 <code class="language-plaintext highlighter-rouge">public static final</code> 필드이며 객체로 제공된다.</li>
+  <li>상수들은 JVM 메서드 영역에 자리한다.</li>
+  <li>Enum클래스는 상수와 같이 인스턴스가 단 한번만 생성된다.</li>
+  <li>컴파일 시점에 타입안정성이 보장되기 때문에 <code class="language-plaintext highlighter-rouge">private</code> 생성자만을 가진다. 
+<br />
+즉, 인스턴스 생성을 제어하며 싱글톤을 일반화 한다. (싱글톤 구현의 방법으로도 사용됨)</li>
+  <li>그렇기 때문에 주소값을 비교하는 == 연산자의 사용이 가능하다.
+<br />
+즉, 객체의 값을 비교하는 equals()보다 빠르고 컴파일 단계에서 검사되기 때문에 실수를 방지할 수 있다.</li>
 </ul>
 
 <p><br /></p>
 
-<h3 id="enum-method">enum method</h3>
-<hr />
+<h2 id="enum-method">enum method</h2>
 <ul>
   <li><strong><em>values()</em></strong> : enum클래스의 모든 상수를 배열로 반환한다.</li>
 </ul>
@@ -1661,7 +1644,8 @@ enum자체가 가지는 비용이 적지 않다. static final 상수로도 충�
 
 <p><br /></p>
 
-<h2 id="싱글톤패턴">싱글톤패턴</h2>
+<h1 id="싱글톤패턴">싱글톤패턴</h1>
+<hr />
 <p>객체의 인스턴스가 오직 1개만 생성되는 패턴이다.
 <br />
 하나의 인스턴스로 공유되며 접근, 사용할 수 있다</p>
@@ -1705,8 +1689,7 @@ enum자체가 가지는 비용이 적지 않다. static final 상수로도 충�
 
 <p><br /></p>
 
-<h3 id="활용">활용</h3>
-<hr />
+<h2 id="활용">활용</h2>
 <ul>
   <li>
     <p><strong><em>synchronized</em></strong> : 사용하지 말자. 락을 걸어버리는 방법으로 동기화 문제를 간단하고 확실하게 해결하지만 그렇기 때문에 멀티스레드의 이점을 모두 막아버린다.</p>
@@ -1771,7 +1754,8 @@ enum자체가 가지는 비용이 적지 않다. static final 상수로도 충�
 
 <p><br /></p>
 
-<h2 id="인터페이스">인터페이스</h2>
+<h1 id="인터페이스">인터페이스</h1>
+<hr />
 <p>컴퓨터 사이언스에서 인터페이스란 서로간의 약속, 규약 등의 개념으로 사용하게 끔 오픈된 것을 말한다.
 <br />
 일종의 서로를 이어주는 <strong><em>메시지 창구</em></strong> 역할을 하며, 대표적인 소프트웨어 인터페이스로는 <code class="language-plaintext highlighter-rouge">API</code>가 있다.
@@ -1847,8 +1831,7 @@ enum자체가 가지는 비용이 적지 않다. static final 상수로도 충�
 
 <p><br /></p>
 
-<h3 id="쓰는-이유">쓰는 이유?</h3>
-<hr />
+<h2 id="쓰는-이유">쓰는 이유?</h2>
 <ul>
   <li>추상메서드와 상수를 통해 구현클래스에 <strong><em>동일한 동작</em></strong>을 보장한다.
     <ul>
@@ -1871,8 +1854,7 @@ enum자체가 가지는 비용이 적지 않다. static final 상수로도 충�
 
 <p><br /></p>
 
-<h3 id="문제점">문제점</h3>
-<hr />
+<h2 id="문제점">문제점</h2>
 <ul>
   <li>수정이 어렵다.
     <ul>
@@ -1884,8 +1866,7 @@ enum자체가 가지는 비용이 적지 않다. static final 상수로도 충�
 
 <p><br /></p>
 
-<h3 id="default-method">default method</h3>
-<hr />
+<h2 id="default-method">default method</h2>
 <p>이미 잘 운영중인데 휴면계좌 서비스를 점진적으로 도입하기로 정책이 바뀌었다고 치자.
 <br />
 추상메서드로 새로 추가하려고 하면 금융결제원의 Bank 인터페이스를 implements한 
@@ -1909,8 +1890,7 @@ enum자체가 가지는 비용이 적지 않다. static final 상수로도 충�
 
 <p><br /></p>
 
-<h3 id="함수형-인터페이스">함수형 인터페이스</h3>
-<hr />
+<h2 id="함수형-인터페이스">함수형 인터페이스</h2>
 <p>추상메서드가 단 하나뿐인 인터페이스 이다.</p>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/* 
@@ -1924,7 +1904,9 @@ enum자체가 가지는 비용이 적지 않다. static final 상수로도 충�
 <span class="o">}</span>
 </code></pre></div></div>
 
-<h4 id="쓰는-이유-1">쓰는 이유?</h4>
+<p><br /></p>
+
+<h3 id="쓰는-이유-1">쓰는 이유?</h3>
 <hr />
 <p>자바의 람다식은 함수형 인터페이스로만 접근할 수 있기 때문이다.
 <br />
@@ -1945,7 +1927,8 @@ enum자체가 가지는 비용이 적지 않다. static final 상수로도 충�
 
 <p><br /></p>
 
-<h2 id="추상클래스">추상클래스</h2>
+<h1 id="추상클래스">추상클래스</h1>
+<hr />
 <p>하나 이상의 추상메서드를 포함하는 클래스 이다.
 <br />
 추상클래스를 상속받는 클래스는 추상메서드를 반드시 재정의 해야한다.
@@ -1962,8 +1945,7 @@ enum자체가 가지는 비용이 적지 않다. static final 상수로도 충�
 
 <p><br /></p>
 
-<h3 id="쓰는이유">쓰는이유?</h3>
-<hr />
+<h2 id="쓰는이유">쓰는이유?</h2>
 <ul>
   <li>상속받는 클래스에게 추상메서드를 <strong><em>반드시 구현하도록 강제하기 위해</em></strong>
     <ul>
@@ -1978,7 +1960,8 @@ enum자체가 가지는 비용이 적지 않다. static final 상수로도 충�
 
 <p><br /></p>
 
-<h2 id="둘의-차이">둘의 차이</h2>
+<h1 id="둘의-차이">둘의 차이</h1>
+<hr />
 <p>인터페이스는 정의된 메서드를 각 클래스의 목적에 맞게 기능 구현을 하는 느낌.
 <br />
 (구현 객체가 같은 동작을 한다는것을 보장하기 위해)
@@ -2128,9 +2111,8 @@ enum자체가 가지는 비용이 적지 않다. static final 상수로도 충�
   </li>
 </ul>]]></content><author><name>NNIIE</name></author><category term="TIL" /><category term="Spring Annotation" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">1주차</title><link href="http://localhost:4000/til/1%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="1주차" /><published>2022-12-15T00:00:00+09:00</published><updated>2022-12-15T00:00:00+09:00</updated><id>http://localhost:4000/til/1%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/1%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
 
-<h1 id="today-i-learned">Today I Learned</h1>
-
-<h2 id="객체와-클래스-그리고-인스턴스">객체와 클래스 그리고 인스턴스</h2>
+<h1 id="객체와-클래스-그리고-인스턴스">객체와 클래스 그리고 인스턴스</h1>
+<hr />
 <ul>
   <li><strong><em>객체</em></strong>
     <ul>
@@ -2155,69 +2137,40 @@ enum자체가 가지는 비용이 적지 않다. static final 상수로도 충�
 
 <p><br /></p>
 
-<h2 id="절차형-객체지향-함수형-패러다임">절차형, 객체지향, 함수형 패러다임</h2>
-<ul>
-  <li>
-    <h2 id="절차형-프로그래밍-procedural-programming"><strong><em>절차형 프로그래밍 (Procedural Programming)</em></strong></h2>
-    <p>위에서부터 아래로의 순차적인 처리를 중요시 하며 루틴, 서브루틴, 메소드, 함수 등을 이용한 프로그래밍 패러다임</p>
-    <ul>
-      <li><strong><em>장점</em></strong>
-        <ul>
-          <li>컴퓨터 처리구조와 유사해 실행속도가 빠르다.</li>
-        </ul>
-      </li>
-      <li><strong><em>단점</em></strong>
-        <ul>
-          <li>코드가 길어지면 가독성이 떨어지며 유지보수가 어렵다.</li>
-          <li>정해진 순서대로 입력을 해야하므로 순서가 바뀌면 결과를 보장할 수 없다.</li>
-          <li>대형 프로젝트에 적합하지 않다.</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-</ul>
+<h1 id="절차형-객체지향-함수형-패러다임">절차형, 객체지향, 함수형 패러다임</h1>
+<h2 id="절차형-프로그래밍-procedural-programming">절차형 프로그래밍 (Procedural Programming)</h2>
+<p>위에서부터 아래로의 순차적인 처리를 중요시 하며 루틴, 서브루틴, 메소드, 함수 등을 이용한 프로그래밍 패러다임
+	* <strong><em>장점</em></strong>
+		* 컴퓨터 처리구조와 유사해 실행속도가 빠르다.
+	* <strong><em>단점</em></strong>
+		* 코드가 길어지면 가독성이 떨어지며 유지보수가 어렵다.
+		* 정해진 순서대로 입력을 해야하므로 순서가 바뀌면 결과를 보장할 수 없다.
+		* 대형 프로젝트에 적합하지 않다.</p>
 
 <p><br /></p>
 
-<ul>
-  <li>
-    <h2 id="객체지향-프로그래밍-oop"><strong><em>객체지향 프로그래밍 (OOP)</em></strong></h2>
-    <p>모든 것을 객체로 취급하고 객체가 처리요청을 받았을 때, 객체 내부의 기능을 사용해 처리하는 방법이다.
+<h2 id="객체지향-프로그래밍-oop">객체지향 프로그래밍 (OOP)</h2>
+<p>모든 것을 객체로 취급하고 객체가 처리요청을 받았을 때, 객체 내부의 기능을 사용해 처리하는 방법이다.
 <br />
 클래스 디자인과 객체들의 관계를 중심으로 설계가 이루어진다.
 <br />
-따라서, 상태, 멤버변수, 메서드 등이 긴밀한 관계를 가지고 있고, 멤버변수가 어떤 상태를 가지고 있는가에 따라 결과가 달라진다.</p>
-    <ul>
-      <li><strong><em>특징</em></strong>
-        <ul>
-          <li>캡슐화 - 정보를 은닉하고 노출시키지 않는다.</li>
-          <li>추상화 - 공통적인 속성이나 기능을 묶는다.</li>
-          <li>상속 - 아래 더 자세히..</li>
-          <li>다형성 - 아래 더 자세히..</li>
-        </ul>
-      </li>
-      <li><strong><em>장점</em></strong>
-        <ul>
-          <li>재사용에 용이하다. (확장, 유지보수)</li>
-          <li>분석과 설계의 전환이 쉽다.</li>
-        </ul>
-      </li>
-      <li><strong><em>단점</em></strong>
-        <ul>
-          <li>처리속도가 상대적으로 느리다.</li>
-          <li>모든 객체의 역할과 기능을 설계해야 하기 때문에 많은 시간이 소요된다.</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-</ul>
+따라서, 상태, 멤버변수, 메서드 등이 긴밀한 관계를 가지고 있고, 멤버변수가 어떤 상태를 가지고 있는가에 따라 결과가 달라진다.
+	* <strong><em>특징</em></strong>
+		* 캡슐화 - 정보를 은닉하고 노출시키지 않는다.
+		* 추상화 - 공통적인 속성이나 기능을 묶는다.
+		* 상속 - 아래 더 자세히..
+		* 다형성 - 아래 더 자세히..
+	* <strong><em>장점</em></strong>
+		* 재사용에 용이하다. (확장, 유지보수)
+		* 분석과 설계의 전환이 쉽다.
+	* <strong><em>단점</em></strong>
+		* 처리속도가 상대적으로 느리다.
+		* 모든 객체의 역할과 기능을 설계해야 하기 때문에 많은 시간이 소요된다.</p>
 
 <p><br /></p>
 
-<ul>
-  <li>
-    <h2 id="함수형-프로그래밍"><strong><em>함수형 프로그래밍</em></strong></h2>
-    <p>순수함수를 사용해 상태를 제어하지 않고 빠른 처리에 집중하는 방식, 함수 자체가 일급객체가 된다. 
+<h2 id="함수형-프로그래밍">함수형 프로그래밍</h2>
+<p>순수함수를 사용해 상태를 제어하지 않고 빠른 처리에 집중하는 방식, 함수 자체가 일급객체가 된다. 
 <br />
 OOP와는 데이터(상태)를 다루는 개념과, 간결한 코드 작성에 대한 관점차이가 있다.
 <br />
@@ -2225,19 +2178,17 @@ OOP와는 데이터(상태)를 다루는 개념과, 간결한 코드 작성에 �
 <strong><em>일급객체</em></strong> - 다른 요소들과 아무런 차별이 없는 객체, 함수를 변수로 사용할 수 있다는 의미도 된다.
 <br /></p>
 
+<ul>
+  <li><strong><em>장점</em></strong>
     <ul>
-      <li><strong><em>장점</em></strong>
-        <ul>
-          <li>함수가 하는일은 명확하기 때문에 코드의 가독성이 좋아지고 테스트가 쉬워진다.</li>
-          <li>값이 한번 변수에 할당되면 이후에 변경되지 않기 때문에 부수효과가 발생하지 않으며 참조투명성을 가진다. 즉, 멀티코어 프로세스에서 교착상태에 빠지지 않는다.</li>
-          <li>동시성 프로그래밍에 용이하다.</li>
-        </ul>
-      </li>
-      <li><strong><em>단점</em></strong>
-        <ul>
-          <li>상태의 조작이 불가능하다.</li>
-        </ul>
-      </li>
+      <li>함수가 하는일은 명확하기 때문에 코드의 가독성이 좋아지고 테스트가 쉬워진다.</li>
+      <li>값이 한번 변수에 할당되면 이후에 변경되지 않기 때문에 부수효과가 발생하지 않으며 참조투명성을 가진다. 즉, 멀티코어 프로세스에서 교착상태에 빠지지 않는다.</li>
+      <li>동시성 프로그래밍에 용이하다.</li>
+    </ul>
+  </li>
+  <li><strong><em>단점</em></strong>
+    <ul>
+      <li>상태의 조작이 불가능하다.</li>
     </ul>
   </li>
 </ul>
@@ -2274,9 +2225,8 @@ OOP와는 데이터(상태)를 다루는 개념과, 간결한 코드 작성에 �
 
 <p><br /></p>
 
-<h2 id="자바의-type">자바의 Type</h2>
-<h3 id="primitive-type원시타입">Primitive Type(원시타입)</h3>
-<hr />
+<h1 id="자바의-type">자바의 Type</h1>
+<h2 id="primitive-type원시타입">Primitive Type(원시타입)</h2>
 <ul>
   <li>정수, 실수, 문자, 논리 리터럴등의 실제 데이터값을 저장하는 타입</li>
   <li>기본값이 있기때문에 Null이 존재하지 않는다. 기본형 타입에 Null을 넣고싶다면 래퍼클래스를 활용한다.</li>
@@ -2287,8 +2237,7 @@ OOP와는 데이터(상태)를 다루는 개념과, 간결한 코드 작성에 �
 
 <p><br /></p>
 
-<h3 id="reference-type참조타입">Reference Type(참조타입)</h3>
-<hr />
+<h2 id="reference-type참조타입">Reference Type(참조타입)</h2>
 <ul>
   <li>객체의 주소를 저장하는 타입으로 메모리 번지값을 통해 객체를 참조하는 타입</li>
   <li>기본형 타입을 제외한 모든 타입은 참조형 타입이다. (문자열, 배열, 클래서, 열거, 인터페이스 등)</li>
@@ -2312,13 +2261,13 @@ OOP와는 데이터(상태)를 다루는 개념과, 간결한 코드 작성에 �
 
 <p><br /></p>
 
-<h2 id="wrapper-class">wrapper Class</h2>
+<h1 id="wrapper-class">Wrapper Class</h1>
+<hr />
 <p>원시타입을 객체로 다루기 위해 사용하는 클래스이다. 기본타입의 값을 내부에 두고 포장해서 포장객체 라고도 불리는데 래퍼클래스로 감싸고 있는 값은 외부에서 변경이 불가능하고 변경하려면 새로운 포장객체를 만들어야 한다. 자바의 모든 객체가 그러하듯 Object를 상속받는다.</p>
 
 <p><br /></p>
 
-<h3 id="박싱--언박싱">박싱 / 언박싱</h3>
-<hr />
+<h2 id="박싱--언박싱">박싱 / 언박싱</h2>
 <ul>
   <li>원시타입을 포장객체로 만드는게 박싱, 반대로 포장객체에서 원시타입을 얻는게 언박싱이다.</li>
   <li>JDK 1.5 이후로 오토 박싱/언박싱을 지원 한다.</li>
@@ -2328,8 +2277,7 @@ OOP와는 데이터(상태)를 다루는 개념과, 간결한 코드 작성에 �
 
 <p><br /></p>
 
-<h3 id="왜-쓰는데">왜 쓰는데?</h3>
-<hr />
+<h2 id="왜-쓰는데">왜 쓰는데?</h2>
 <ul>
   <li>원시타입을 클래스화 하여 클래스의 장점을 활용할 수 있다. (클래스에 지원되는 여러 메소드들)</li>
   <li>null 지원</li>
@@ -2354,9 +2302,8 @@ OOP와는 데이터(상태)를 다루는 개념과, 간결한 코드 작성에 �
 
 <p><br /></p>
 
-<h2 id="동일성과-동등성">동일성과 동등성</h2>
-<h3 id="동일성">동일성</h3>
-<hr />
+<h1 id="동일성과-동등성">동일성과 동등성</h1>
+<h2 id="동일성">동일성</h2>
 <ul>
   <li>두 객체가 완전히 같은 경우.
 <br />
@@ -2367,8 +2314,7 @@ OOP와는 데이터(상태)를 다루는 개념과, 간결한 코드 작성에 �
 
 <p><br /></p>
 
-<h3 id="동등성">동등성</h3>
-<hr />
+<h2 id="동등성">동등성</h2>
 <ul>
   <li>두 객체가 같은 정보를 가지고 있는 경우.
 <br />
@@ -2393,13 +2339,18 @@ OOP와는 데이터(상태)를 다루는 개념과, 간결한 코드 작성에 �
   </li>
 </ul>
 
-<p><br /></p>
+<p><br />
+<br />
+<br /></p>
 
 <h1 id="to-do">To Do</h1>
 
-<p><br /></p>
+<p><br />
+<br />
+<br /></p>
 
-<h2 id="자바의-접근제어자">자바의 접근제어자</h2>
+<h1 id="자바의-접근제어자">자바의 접근제어자</h1>
+<hr />
 <p>객체지향 패러다임에서 정보은닉이란 필요한 정보만 오픈한다는 개념이다.
 <br />
 자바에서는 정보은닉을 위해 접근제어자 라는 기능을 제공하여 클래스 외부에서 직접적인 접근을 허용하지 않는
@@ -2458,8 +2409,7 @@ protected멤버는 부모 클래스에게는 public 멤버처럼 취급되며, �
 
 <p><br /></p>
 
-<h3 id="왜-쓰는데-1">왜 쓰는데?</h3>
-<hr />
+<h2 id="왜-쓰는데-1">왜 쓰는데?</h2>
 <ul>
   <li>클래스 내부의 데이터를 보호하기 위해</li>
   <li>객체지향에서 캡슐화 라고 부른다.</li>
@@ -2467,7 +2417,8 @@ protected멤버는 부모 클래스에게는 public 멤버처럼 취급되며, �
 
 <p><br /></p>
 
-<h2 id="상속">상속</h2>
+<h1 id="상속">상속</h1>
+<hr />
 <p>자바의 상속(Inheritance)은 부모클래스와 자식클래스 관계에서 발생하며,
 상속을 받은 자식클래스는 부모클래스의 <strong><em>private 멤버를 제외한</em></strong> 모든 멤버를 물려받아 사용할 수 있다.
 <br />
@@ -2572,8 +2523,7 @@ SOLID원칙의 리스코프치환 원칙에서 알 수 있다.
 
 <p><br /></p>
 
-<h3 id="합성compotistion">합성(Compotistion)</h3>
-<hr />
+<h2 id="합성compotistion">합성(Compotistion)</h2>
 <p>구현에 의존하지 않고, public interface에만 의존한다.객체 관계가 수평적인 관계가 된다.</p>
 <ul>
   <li>두 객체 사이 의존성을 런타임에 해결한다. (상속은 컴파일단계에서 해결)</li>
@@ -2605,7 +2555,7 @@ SOLID원칙의 리스코프치환 원칙에서 알 수 있다.
 
 <p><br /></p>
 
-<h4 id="전략패턴strategy-pattern">전략패턴(Strategy Pattern)</h4>
+<h3 id="전략패턴strategy-pattern">전략패턴(Strategy Pattern)</h3>
 <hr />
 <p>합성을 이용한 디자인 패턴으로 프로그램 실행중에 알고리즘을 선택할 수 있게하는 패턴이다. 
 <br />
@@ -2728,8 +2678,7 @@ SOLID원칙의 리스코프치환 원칙에서 알 수 있다.
 
 <p><br /></p>
 
-<h3 id="상속-vs-합성">상속 vs 합성?</h3>
-<hr />
+<h2 id="상속-vs-합성">상속 vs 합성?</h2>
 <p>상속은 is-a, 합성은 has-a
 <br />
 결국, 코드의 재사용성 만을 위해 상속을 사용하는 방식은 여러 문제점을 가지고 있기 때문에 재사용성 뿐만 아니라 클래스간의 확실한 계층구조를 만들때 상속을 사용하며 그 외에는 의존성이 낮은 합성을 사용하는 것이 좋다고 생각이 든다.</p>

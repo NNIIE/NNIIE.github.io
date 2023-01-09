@@ -18,7 +18,7 @@ var store = [{
         "teaser": null
       },{
         "title": "1주차",
-        "excerpt":"Today I Learned 객체와 클래스 그리고 인스턴스 객체 물리적, 추상적으로 생각할 수 있는것 중에서 자신의 속성을 가지고 있고 다른것과 식별 가능한 것. 소프트웨어 에서 구현할 대상 클래스 java에서 객체를 생성하기 위한 일종의 설계도 속성(필드)을 가지고 있고, 행위(메소드)를 가지고있다. oop의 관점에서 클래스 타입으로 선언되었을 때 ‘객체’라고 부른다. 인스턴스 클래스를 가지고 객체를...","categories": ["TIL"],
+        "excerpt":"객체와 클래스 그리고 인스턴스 객체 물리적, 추상적으로 생각할 수 있는것 중에서 자신의 속성을 가지고 있고 다른것과 식별 가능한 것. 소프트웨어 에서 구현할 대상 클래스 java에서 객체를 생성하기 위한 일종의 설계도 속성(필드)을 가지고 있고, 행위(메소드)를 가지고있다. oop의 관점에서 클래스 타입으로 선언되었을 때 ‘객체’라고 부른다. 인스턴스 클래스를 가지고 객체를 실체화 한것. 메모리에...","categories": ["TIL"],
         "tags": ["접근제어자","상속","다형성","Wrapper Class"],
         "url": "/til/1%EC%A3%BC%EC%B0%A8/",
         "teaser": null
@@ -30,7 +30,7 @@ var store = [{
         "teaser": null
       },{
         "title": "2주차",
-        "excerpt":"Today I Learned enum 열거형이라고 부르며, 서로 연관된 상수들의 집합이다. 모든 열거형은 Enum클래스의 자손이며 Enum클래스의 멤버를 상속받는다. 특징과 장점 enum은 컴파일 후 public static final 필드이며 객체로 제공된다. 상수들은 JVM 메서드 영역에 자리한다. Enum클래스는 상수와 같이 인스턴스가 단 한번만 생성된다. 컴파일 시점에 타입안정성이 보장되기 때문에 private 생성자만을 가진다. 즉, 인스턴스...","categories": ["TIL"],
+        "excerpt":"enum 열거형이라고 부르며, 서로 연관된 상수들의 집합이다. 모든 열거형은 Enum클래스의 자손이며 Enum클래스의 멤버를 상속받는다. 특징과 장점 enum은 컴파일 후 public static final 필드이며 객체로 제공된다. 상수들은 JVM 메서드 영역에 자리한다. Enum클래스는 상수와 같이 인스턴스가 단 한번만 생성된다. 컴파일 시점에 타입안정성이 보장되기 때문에 private 생성자만을 가진다. 즉, 인스턴스 생성을 제어하며 싱글톤을...","categories": ["TIL"],
         "tags": ["Enum","Singleton","Interface","Abstract"],
         "url": "/til/2%EC%A3%BC%EC%B0%A8/",
         "teaser": null
@@ -42,13 +42,13 @@ var store = [{
         "teaser": null
       },{
         "title": "3주차",
-        "excerpt":"Today I Learned Property 속성이란 뜻이다. 해당 Object의 특징. 사람을 예로들면 피부색, 키, 나이, 몸무게 등이다. Property의 읽기와 쓰기는 일반적으로 getter 와 setter 메서드 호출로 변환된다. 자바는 property가 없고 코틀린이나 자바스크립트는 property를 사용 이건 왜그래? String 자바에서 제일 많이 사용되는 String은 특별대우를 받는다. Reference Type 이지만 기본적인 사용은 Primitive Type...","categories": ["TIL"],
+        "excerpt":"Property 속성이란 뜻이다. 해당 Object의 특징. 사람을 예로들면 피부색, 키, 나이, 몸무게 등이다. Property의 읽기와 쓰기는 일반적으로 getter 와 setter 메서드 호출로 변환된다. 자바는 property가 없고 코틀린이나 자바스크립트는 property를 사용 이건 왜그래? String 자바에서 제일 많이 사용되는 String은 특별대우를 받는다. Reference Type 이지만 기본적인 사용은 Primitive Type 이다. String 객체생성은...","categories": ["TIL"],
         "tags": ["String","Annotation","Exception","Property","JVM","GC"],
         "url": "/til/3%EC%A3%BC%EC%B0%A8/",
         "teaser": null
       },{
         "title": "4주차",
-        "excerpt":"Today I Learned CQRS Pattern Command and Query Responsibility Segregation (명령과 조회의 책임 분리) 즉, 명령(command)및 쿼리의 책임을 분리하는 패턴이다. 책임분리를 위해서는 코드의 모듈이 분리되어야 한다. read 와 write를 분리하는것을 뜻하며 어플리케이션까지만 적용할 수도 있고, DB의 모델까지만 분리할 수도 있고, DB 그 자체를 분리하여 적용할 수도 있다. 명령은 데이터중심이 아니라...","categories": ["TIL"],
+        "excerpt":"CQRS Pattern Command and Query Responsibility Segregation (명령과 조회의 책임 분리) 즉, 명령(command)및 쿼리의 책임을 분리하는 패턴이다. 책임분리를 위해서는 코드의 모듈이 분리되어야 한다. read 와 write를 분리하는것을 뜻하며 어플리케이션까지만 적용할 수도 있고, DB의 모델까지만 분리할 수도 있고, DB 그 자체를 분리하여 적용할 수도 있다. 명령은 데이터중심이 아니라 작업 기반이어야 한다....","categories": ["TIL"],
         "tags": ["Generic","시공간복잡도","Nested Class"],
         "url": "/til/4%EC%A3%BC%EC%B0%A8/",
         "teaser": null

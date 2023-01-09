@@ -249,16 +249,15 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> TIL</h4></header>
-              <ul class="toc__menu"><li><a href="#today-i-learned">Today I Learned</a><ul><li><a href="#cqrs-pattern">CQRS Pattern</a></li><li><a href="#generic">Generic</a><ul><li><a href="#특징">특징</a></li><li><a href="#컨벤션">컨벤션</a></li><li><a href="#타입범위지정">타입범위지정</a></li><li><a href="#제네릭-클래스">제네릭 클래스</a></li><li><a href="#제네릭-메서드">제네릭 메서드</a></li><li><a href="#제네릭의-타입소거">제네릭의 타입소거</a></li><li><a href="#왜쓰는데">왜쓰는데?</a></li><li><a href="#타입시스템">타입시스템?</a></li></ul></li><li><a href="#시간공간-복잡도의-상관관계">시간/공간 복잡도의 상관관계</a><ul><li><a href="#caching">Caching</a></li><li><a href="#hashmap">HashMap</a></li><li><a href="#만약-메모리가-부족하다면">만약 메모리가 부족하다면?</a></li><li><a href="#의문점">의문점</a></li></ul></li></ul></li><li><a href="#to-do">To Do</a><ul><li><a href="#nested-class">Nested Class</a><ul><li><a href="#inner-class">Inner Class</a></li><li><a href="#static-inner-class">Static Inner Class</a></li><li><a href="#local-class">Local Class</a></li><li><a href="#익명-클래스">익명 클래스</a><ul><li><a href="#장점">장점</a></li></ul></li><li><a href="#활용">활용</a></li></ul></li><li><a href="#람다">람다</a><ul><li><a href="#특징-1">특징</a></li><li><a href="#장점-1">장점</a></li><li><a href="#단점">단점</a></li><li><a href="#stream">Stream</a></li><li><a href="#의문점-1">의문점</a></li></ul></li><li><a href="#collection">Collection</a></li><li><a href="#중복에-관한-의문점">중복에 관한 의문점</a><ul><li><a href="#중복이-나쁜경우">중복이 나쁜경우</a></li><li><a href="#중복이-차라리-나은경우">중복이 차라리 나은경우</a></li><li><a href="#멀티모듈의-설계">멀티모듈의 설계?</a></li></ul></li></ul></li></ul>
+              <ul class="toc__menu"><li><a href="#cqrs-pattern">CQRS Pattern</a></li><li><a href="#generic">Generic</a><ul><li><a href="#특징">특징</a></li><li><a href="#컨벤션">컨벤션</a></li><li><a href="#타입범위지정">타입범위지정</a></li><li><a href="#제네릭-클래스">제네릭 클래스</a></li><li><a href="#제네릭-메서드">제네릭 메서드</a></li><li><a href="#제네릭의-타입소거">제네릭의 타입소거</a></li><li><a href="#왜쓰는데">왜쓰는데?</a></li><li><a href="#타입시스템">타입시스템?</a></li></ul></li><li><a href="#시간공간-복잡도의-상관관계">시간/공간 복잡도의 상관관계</a><ul><li><a href="#caching">Caching</a></li><li><a href="#hashmap">HashMap</a></li><li><a href="#만약-메모리가-부족하다면">만약 메모리가 부족하다면?</a></li><li><a href="#의문점">의문점</a></li></ul></li><li><a href="#to-do">To Do</a></li><li><a href="#nested-class">Nested Class</a><ul><li><a href="#inner-class">Inner Class</a></li><li><a href="#static-inner-class">Static Inner Class</a></li><li><a href="#local-class">Local Class</a></li><li><a href="#익명-클래스">익명 클래스</a><ul><li><a href="#장점">장점</a></li></ul></li><li><a href="#활용">활용</a></li></ul></li><li><a href="#람다">람다</a><ul><li><a href="#특징-1">특징</a></li><li><a href="#장점-1">장점</a></li><li><a href="#단점">단점</a></li><li><a href="#stream">Stream</a></li><li><a href="#의문점-1">의문점</a></li></ul></li><li><a href="#collection">Collection</a></li><li><a href="#중복에-관한-의문점">중복에 관한 의문점</a><ul><li><a href="#중복이-나쁜경우">중복이 나쁜경우</a></li><li><a href="#중복이-차라리-나은경우">중복이 차라리 나은경우</a></li><li><a href="#멀티모듈의-설계">멀티모듈의 설계?</a></li></ul></li></ul>
 
             </nav>
           </aside>
         
         <p><br /><br /><br /></p>
 
-<h1 id="today-i-learned">Today I Learned</h1>
-
-<h2 id="cqrs-pattern">CQRS Pattern</h2>
+<h1 id="cqrs-pattern">CQRS Pattern</h1>
+<hr />
 <p>Command and Query Responsibility Segregation (명령과 조회의 책임 분리)
 <br />
 즉, 명령(command)및 쿼리의 책임을 분리하는 패턴이다. 책임분리를 위해서는 코드의 모듈이 분리되어야 한다.
@@ -299,7 +298,8 @@ read 와 write를 분리하는것을 뜻하며 어플리케이션까지만 적�
 
 <p><br /></p>
 
-<h2 id="generic">Generic</h2>
+<h1 id="generic">Generic</h1>
+<hr />
 <p>아주 유용한 문법이고 대부분 최신 언어에선 사용한다.
 <br />
 타입시스템을 더 견고하게 사용하기 위해 제네릭을 사용한다.
@@ -343,8 +343,7 @@ read 와 write를 분리하는것을 뜻하며 어플리케이션까지만 적�
 <span class="o">}</span>
 </code></pre></div></div>
 
-<h3 id="특징">특징</h3>
-<hr />
+<h2 id="특징">특징</h2>
 <ul>
   <li>클래스 또는 메서드에 선언 가능</li>
   <li>동시에 여러타입 선언 가능</li>
@@ -354,8 +353,7 @@ read 와 write를 분리하는것을 뜻하며 어플리케이션까지만 적�
 
 <p><br /></p>
 
-<h3 id="컨벤션">컨벤션</h3>
-<hr />
+<h2 id="컨벤션">컨벤션</h2>
 <p>제네릭 타입을 선언할 때 어느정도의 컨벤션이 존재한다.</p>
 <ul>
   <li>E : Element (컬렉션에서 주로 사용됨)</li>
@@ -377,8 +375,7 @@ read 와 write를 분리하는것을 뜻하며 어플리케이션까지만 적�
 
 <p><br /></p>
 
-<h3 id="타입범위지정">타입범위지정</h3>
-<hr />
+<h2 id="타입범위지정">타입범위지정</h2>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// T에 비교불가능한 타입이 온다면 이 메서드는 기능을 수행할 수 없다.</span>
 <span class="kd">public</span> <span class="kt">int</span> <span class="nf">compare</span><span class="o">(</span><span class="no">T</span> <span class="n">t1</span><span class="o">,</span> <span class="no">T</span> <span class="n">t2</span><span class="o">)</span> <span class="o">{</span> 
@@ -401,8 +398,7 @@ read 와 write를 분리하는것을 뜻하며 어플리케이션까지만 적�
 
 <p><br /></p>
 
-<h3 id="제네릭-클래스">제네릭 클래스</h3>
-<hr />
+<h2 id="제네릭-클래스">제네릭 클래스</h2>
 <p>클래스 인스턴스화 시점에 제네릭 파라미터를 통해 타입 전달</p>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Sample</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="o">{</span> 
@@ -411,8 +407,7 @@ read 와 write를 분리하는것을 뜻하며 어플리케이션까지만 적�
 </code></pre></div></div>
 <p><br /></p>
 
-<h3 id="제네릭-메서드">제네릭 메서드</h3>
-<hr />
+<h2 id="제네릭-메서드">제네릭 메서드</h2>
 <p>메서드 호출 시점에 제네릭으로 리턴 타입, 파라미터의 타입이 정해지는 메서드</p>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Student</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="o">{</span> 
@@ -427,8 +422,7 @@ read 와 write를 분리하는것을 뜻하며 어플리케이션까지만 적�
 
 <p><br /></p>
 
-<h3 id="제네릭의-타입소거">제네릭의 타입소거</h3>
-<hr />
+<h2 id="제네릭의-타입소거">제네릭의 타입소거</h2>
 <p><strong>제네릭의 primitive 타입 사용 불가</strong>
 <br />
 <strong>타입소거</strong>란 원소 타입을 컴파일 타임에만 검사하고 <strong>런타임에는 해당 타입 정보를 알 수 없는 것</strong>이다. 
@@ -453,8 +447,7 @@ Object의 하위 타입이 아니기 때문에 제네릭에서 사용하는 것�
 
 <p><br /></p>
 
-<h3 id="왜쓰는데">왜쓰는데?</h3>
-<hr />
+<h2 id="왜쓰는데">왜쓰는데?</h2>
 <p>특정 타입으로 종속받지 않아서 편리하다.</p>
 <ul>
   <li>재사용성 증가
@@ -481,8 +474,7 @@ Object의 하위 타입이 아니기 때문에 제네릭에서 사용하는 것�
 
 <p><br /></p>
 
-<h3 id="타입시스템">타입시스템?</h3>
-<hr />
+<h2 id="타입시스템">타입시스템?</h2>
 <p>개발자가 올바른 프로그램을 작성하기 위해 도우미 역할을 하고 컴파일단계에서 타입을 체크하는 대충 뭐 그런거다. 불편하기 때문에 많은 개발자들이 정적타이핑 하는 자바를 버리고 동적타이핑 하는 파이썬, 루비 같은 스크립트 언어로 갈아타는 이유이기도 하다.
 <br />
 대표적인 프론트엔드, 백엔드 언어인 자바스크립트와 자바는 각각 약타입언어, 강타입언어 라고도 불린다.
@@ -507,7 +499,8 @@ ex) 디비에 올라간걸 고치기 힘들잖아… 그러니까 올라가기 �
 
 <p><br /></p>
 
-<h2 id="시간공간-복잡도의-상관관계">시간/공간 복잡도의 상관관계</h2>
+<h1 id="시간공간-복잡도의-상관관계">시간/공간 복잡도의 상관관계</h1>
+<hr />
 <ul>
   <li>시간복잡도 : 특정크기의 연산에 걸리는 절대적인 시간 즉, 연산 횟수</li>
   <li>공간복잡도 : 특정크기의 연산에 드는 메모리 사용량</li>
@@ -520,8 +513,7 @@ ex) 디비에 올라간걸 고치기 힘들잖아… 그러니까 올라가기 �
 
 <p><br /></p>
 
-<h3 id="caching">Caching</h3>
-<hr />
+<h2 id="caching">Caching</h2>
 <ul>
   <li>시간복잡도의 리소스를 공간복잡도의 리소스로 바꾸는거다.</li>
   <li><code class="language-plaintext highlighter-rouge">redis</code>를 사용 해서 데이터를 보다 빠르게 조회할 수 있다면 그만큼 탐색범위를 줄여 시간복잡도를
@@ -531,24 +523,21 @@ ex) 디비에 올라간걸 고치기 힘들잖아… 그러니까 올라가기 �
 
 <p><br /></p>
 
-<h3 id="hashmap">HashMap</h3>
-<hr />
+<h2 id="hashmap">HashMap</h2>
 <ul>
   <li>해시알고리즘으로 만든 key를 메모리에 올려두고 그 key값만 찾아가면 되기때문에 데이터 크기에 상관 없이 시간복잡도가 O(1)인 대신 그만큼 key값을 저장하는 메모리 공간을 사용하기 때문에 공간복잡도는 올라간다.</li>
 </ul>
 
 <p><br /></p>
 
-<h3 id="만약-메모리가-부족하다면">만약 메모리가 부족하다면?</h3>
-<hr />
+<h2 id="만약-메모리가-부족하다면">만약 메모리가 부족하다면?</h2>
 <p>메모리를 적게 써야하는 상황이라면 공간복잡도를 줄여서 시간을 많이쓰는
 <br />
 즉, 탐색을 더해서 시간복잡도를 올려야 한다.</p>
 
 <p><br /></p>
 
-<h3 id="의문점">의문점</h3>
-<hr />
+<h2 id="의문점">의문점</h2>
 <p>보통 공간복잡도 보다 시간복잡도를 더 우위에 두고 작업을 하기 마련이다.
 <br />
 그렇다면 그 이유는 과거에 비해 하드웨어의 발전이 많이 이루어 졌기 때문이고
@@ -590,11 +579,18 @@ ex) 디비에 올라간걸 고치기 힘들잖아… 그러니까 올라가기 �
 <br />
 <code class="language-plaintext highlighter-rouge">redis</code>에 올리지 않는 것처럼 경우에 따라 적절하게 사용하는것이 중요하겠다.</p>
 
-<p><br /></p>
+<p><br />
+<br />
+<br /></p>
 
 <h1 id="to-do">To Do</h1>
 
-<h2 id="nested-class">Nested Class</h2>
+<p><br />
+<br />
+<br /></p>
+
+<h1 id="nested-class">Nested Class</h1>
+<hr />
 <p>중첩클래스(nested class)는 클래스 내에 정의된 클래스를 말한다. 
 <br />
 중첩클래스는 <code class="language-plaintext highlighter-rouge">static</code>으로 선언되지 않은 내부클래스(inner class)와
@@ -611,8 +607,7 @@ ex) 디비에 올라간걸 고치기 힘들잖아… 그러니까 올라가기 �
 
 <p><br /></p>
 
-<h3 id="inner-class">Inner Class</h3>
-<hr />
+<h2 id="inner-class">Inner Class</h2>
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">OuterClass</span> <span class="o">{</span>
 	<span class="kd">private</span> <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">10</span><span class="o">;</span>
 
@@ -655,8 +650,7 @@ ex) 디비에 올라간걸 고치기 힘들잖아… 그러니까 올라가기 �
 
 <p><br /></p>
 
-<h3 id="static-inner-class">Static Inner Class</h3>
-<hr />
+<h2 id="static-inner-class">Static Inner Class</h2>
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">OuterClass</span> <span class="o">{</span>
 	<span class="o">...</span>
 	<span class="kd">static</span> <span class="kd">class</span> <span class="nc">StaticInnerClass</span> <span class="o">{</span>
@@ -675,8 +669,7 @@ ex) 디비에 올라간걸 고치기 힘들잖아… 그러니까 올라가기 �
 
 <p><br /></p>
 
-<h3 id="local-class">Local Class</h3>
-<hr />
+<h2 id="local-class">Local Class</h2>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">OuterClass</span> <span class="o">{</span>
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">doSomething</span><span class="o">()</span> <span class="o">{</span>
@@ -698,8 +691,7 @@ ex) 디비에 올라간걸 고치기 힘들잖아… 그러니까 올라가기 �
 
 <p><br /></p>
 
-<h3 id="익명-클래스">익명 클래스</h3>
-<hr />
+<h2 id="익명-클래스">익명 클래스</h2>
 <p>펑션을 상속받는? 이름이 없는 로컬클래스.
 <br />
 선언과 동시에 초기화가 이루어 진다.
@@ -733,7 +725,7 @@ ex) 디비에 올라간걸 고치기 힘들잖아… 그러니까 올라가기 �
 
 <p><br /></p>
 
-<h4 id="장점">장점</h4>
+<h3 id="장점">장점</h3>
 <hr />
 <p>어느 메서드에서 <strong>부모 클래스의 자원을 상속받아 재정의하여 사용할 자식 클래스가 한번만 사용</strong>되고 버려질 자료형이면, 굳이 상단에 클래스를 정의하기보다는, <strong>지역 변수처럼</strong> 익명 클래스로 정의하고 스택이 끝나면 삭제되도록 하는 것이 유지보수면에서나 프로그램 메모리면에서나 이점을 얻을 수 있다.
 <br />
@@ -747,8 +739,7 @@ ex) 디비에 올라간걸 고치기 힘들잖아… 그러니까 올라가기 �
 
 <p><br /></p>
 
-<h3 id="활용">활용</h3>
-<hr />
+<h2 id="활용">활용</h2>
 <ul>
   <li><code class="language-plaintext highlighter-rouge">inner class</code>는 참조값을 담아야 하기 때문에 인스턴스 생성시 시간,공간적으로 성능이 낮아진다.</li>
   <li><code class="language-plaintext highlighter-rouge">static inner class</code>는 외부 인스턴스에 대한 참조가 존재하기 때문에, 
@@ -760,7 +751,7 @@ ex) 디비에 올라간걸 고치기 힘들잖아… 그러니까 올라가기 �
 
 <p><br /></p>
 
-<h2 id="람다">람다</h2>
+<h1 id="람다">람다</h1>
 <hr />
 <p>익명 함수 (Anonymous functions) 를 지칭하는 용어이다.
 <br />
@@ -783,8 +774,7 @@ ex) 디비에 올라간걸 고치기 힘들잖아… 그러니까 올라가기 �
 
 <p><br /></p>
 
-<h3 id="특징-1">특징</h3>
-<hr />
+<h2 id="특징-1">특징</h2>
 <ul>
   <li>람다식 내에서 사용되는 지역변수는 <code class="language-plaintext highlighter-rouge">final</code> 키워드가 붙지않아도 상수로 간주된다.
     <ul>
@@ -796,8 +786,7 @@ ex) 디비에 올라간걸 고치기 힘들잖아… 그러니까 올라가기 �
 
 <p><br /></p>
 
-<h3 id="장점-1">장점</h3>
-<hr />
+<h2 id="장점-1">장점</h2>
 <ul>
   <li>지연연산수행 : 지연연산을 수행함으로써 불필요한 연산을 최소화 할 수 있다.
     <ul>
@@ -825,8 +814,7 @@ ex) 디비에 올라간걸 고치기 힘들잖아… 그러니까 올라가기 �
 
 <p><br /></p>
 
-<h3 id="단점">단점</h3>
-<hr />
+<h2 id="단점">단점</h2>
 <ul>
   <li>람다를 사용하면서 만든 익명함수는 재사용이 불가능하다.</li>
   <li>디버깅이 어렵다.</li>
@@ -840,8 +828,7 @@ ex) 디비에 올라간걸 고치기 힘들잖아… 그러니까 올라가기 �
 
 <p><br /></p>
 
-<h3 id="stream">Stream</h3>
-<hr />
+<h2 id="stream">Stream</h2>
 <p>다양한 데이터를 표준화된 방법으로 다루기 위한 라이브러리 - <strong>Java8</strong>에 추가
 <br />
 <code class="language-plaintext highlighter-rouge">Stream</code>의 문법에 대해서는 이 글에서 다루지 않는다.</p>
@@ -858,8 +845,7 @@ ex) 디비에 올라간걸 고치기 힘들잖아… 그러니까 올라가기 �
 
 <p><br /></p>
 
-<h3 id="의문점-1">의문점</h3>
-<hr />
+<h2 id="의문점-1">의문점</h2>
 
 <ul>
   <li><strong><em>람다는 일종의 <code class="language-plaintext highlighter-rouge">inner class</code> 인데 가비지컬렉터의 메모리 누수에는 안전하다 알아보자.</em></strong>
@@ -878,11 +864,13 @@ ex) 디비에 올라간걸 고치기 힘들잖아… 그러니까 올라가기 �
 
 <p><br /></p>
 
-<h2 id="collection">Collection</h2>
+<h1 id="collection">Collection</h1>
+<hr />
 
 <p><br /></p>
 
-<h2 id="중복에-관한-의문점">중복에 관한 의문점</h2>
+<h1 id="중복에-관한-의문점">중복에 관한 의문점</h1>
+<hr />
 <p>객체지향의 장점인 재사용성(상속, 다형성 등) 을 보면 중복은 좋지 않다?
 <br />
 유지보수 관점에서 중복을 하는것이 좋을지, 중복을 제거하는것이 좋을지 고려해야 한다.
@@ -891,18 +879,15 @@ ex) 디비에 올라간걸 고치기 힘들잖아… 그러니까 올라가기 �
 
 <p><br /></p>
 
-<h3 id="중복이-나쁜경우">중복이 나쁜경우</h3>
-<hr />
+<h2 id="중복이-나쁜경우">중복이 나쁜경우</h2>
 
 <p><br /></p>
 
-<h3 id="중복이-차라리-나은경우">중복이 차라리 나은경우</h3>
-<hr />
+<h2 id="중복이-차라리-나은경우">중복이 차라리 나은경우</h2>
 
 <p><br /></p>
 
-<h3 id="멀티모듈의-설계">멀티모듈의 설계?</h3>
-<hr />
+<h2 id="멀티모듈의-설계">멀티모듈의 설계?</h2>
 
 <p><br /></p>
 
