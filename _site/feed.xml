@@ -1,4 +1,98 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-01-10T17:24:56+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">4주차</title><link href="http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="4주차" /><published>2023-01-05T00:00:00+09:00</published><updated>2023-01-05T00:00:00+09:00</updated><id>http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-01-10T19:34:26+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">5주차</title><link href="http://localhost:4000/til/5%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="5주차" /><published>2023-01-10T00:00:00+09:00</published><updated>2023-01-10T00:00:00+09:00</updated><id>http://localhost:4000/til/5%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/5%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
+
+<h1 id="solid">SOLID</h1>
+<p>객체지향의 5가지 설계원칙</p>
+
+<p><br /></p>
+
+<h2 id="단일책임-원칙---srp">단일책임 원칙 - SRP</h2>
+<p>한 클래스는 하나의 책임만 가져야 한다.
+<br />
+<br />
+모든 클래스는 하나의 책임만 가지며, 클래스는 그 책임을 완전히 캡슐화 해야한다.
+<br />
+한 클래스가 수행할 수 있는 책임 (기능)이 여러가지라면, 클래스 내부 함수끼리의 강한 결합이
+<br />
+발생할 가능성이 높아지고 이는 유지보수에 비효율적이다.
+<br />
+한 클래스를 변경하기 위해 한가지 이상의 이유를 생각할 수 있다면, 그 클래스는 한가지 이상의 책임을 맡고있는 것이다.</p>
+
+<p><br /></p>
+
+<h2 id="개방-폐쇄-원칙---ocp">개방-폐쇄 원칙 - OCP</h2>
+<p>확장에는 열려있고 변경에는 닫혀 있어야 한다.
+<br />
+<br />
+수많은 모듈 중 하나를 수정할 때, 해당 모듈을 이용하는 다른 모듈들을 고쳐야 한다면 비효율적이다.
+<br />
+즉, 기능을 추가하거나 변경해도 이미 제대로 동작하고 있던 코드를 변경하지 않아도 기존의 코드에
+<br />
+새로운 코드를 추가함으로써 기능의 추가나 변경이 가능한걸 의미한다.
+<br />
+<br />
+추상화는 개방-폐쇄 원칙의 핵심요소이다.
+<br />
+자주 변화하는 부분을 추상화 함으로써 유연함을 높인다.
+<br />
+모듈은 고정된 추상화에 의존하기 때문에 수정에 대해 닫혀 있을 수 있고, 추상화의 파생클래스를 만드는것으로 확장이 가능하다.
+<br />
+<br />
+객체지향 프로그래밍의 가장 큰 장점인 유연성, 재사용성, 유지보수성을 위한 핵심원칙이다.</p>
+
+<p><br /></p>
+
+<h2 id="리스코프-치환원칙---lsp">리스코프 치환원칙 - LSP</h2>
+<p>객체는 프로그램의 정확성을 깨뜨리지 않으면서 하위타입의 인스턴스로 바꿀 수 있어야 한다.
+<br />
+<br />
+하위타입객체는 상위타입객체에서 가능한 행위를 수행할 수 있어야 한다.
+<br />
+즉, 상위타입객체를 하위타입객체로 치환해도 정상적으로 동작해야 한다. == IS-A
+<br />
+객체지향 초기에는 상속을 사용하도록 가이드하는 방법 정도로 간주되었지만 시간이 지나면서 인터페이스와 구현체에도 적용되는 광범위한 원칙으로 바뀌었다.</p>
+
+<p><br /></p>
+
+<h2 id="인터페이스-분리원칙---isp">인터페이스 분리원칙 - ISP</h2>
+<p>특정 클라이언트를 위한 인터페이스 여러 개가 범용 인터페이스 하나보다 낫다.
+<br />
+<br />
+클라이언트가 자신이 이용하지 않는 메서드에 의존하지 않아야 한다.
+<br />
+큰 덩어리의 인터페이스들을 구체적이고 작은 단위들로 분리시킴으로써 클라이언트들이 꼭 필요한 메서드들만 이용할 수 있게 한다.
+<br />
+이는 클라이언트가 사용하지 않는 인터페이스에 변경이 발생하더라도 영향을 받지 않게 한다.</p>
+
+<p><br /></p>
+
+<h2 id="의존관계-역전원칙---dip">의존관계 역전원칙 - DIP</h2>
+<p>추상화에 의존해야하고, 구체화에 의존하면 안된다. 
+<br />
+<br />
+의존 관계를 맺을 때, 
+<br />
+변하기 쉬운 것 (구체적인 것) 보다는 변하기 어려운 것 (추상적인 것)에 의존해야 한다
+<br />
+즉, 구체화된 클래스 보단 추상클래스나 인터페이스에 의존해야 한다.
+<br />
+<br />
+상위계층이 하위계층의 구현으로부터 독립적이어야 한다.</p>
+<ul>
+  <li>상위모듈은 하위모듈에 의존해선 안되고, 상위모듈과 하위모듈 모두 추상화에 의존해야한다.</li>
+  <li>추상화는 세부사항에 의존해서는 안된다. 세부사항이 추상화에 의존해야 한다.</li>
+</ul>
+
+<p><br />
+<br />
+<br /></p>
+
+<h1 id="to-do">To Do</h1>
+
+<p><br />
+<br />
+<br /></p>
+
+<p><br /></p>]]></content><author><name>NNIIE</name></author><category term="TIL" /><category term="SOLID" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">4주차</title><link href="http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="4주차" /><published>2023-01-05T00:00:00+09:00</published><updated>2023-01-05T00:00:00+09:00</updated><id>http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
 
 <h1 id="cqrs-pattern">CQRS Pattern</h1>
 <hr />
@@ -711,7 +805,7 @@ IDE를 몇개씩 띄워놓고 서버를 돌리는것도 힘들기 때문에 멀�
   <li>각 어플리케이션(모듈)에 대한 설정은 공통 모듈에 적용하지 않고 분리한다.</li>
 </ul>
 
-<p><br /></p>]]></content><author><name>NNIIE</name></author><category term="TIL" /><category term="Generic" /><category term="시공간복잡도" /><category term="Nested Class" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">3주차</title><link href="http://localhost:4000/til/3%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="3주차" /><published>2022-12-29T00:00:00+09:00</published><updated>2022-12-29T00:00:00+09:00</updated><id>http://localhost:4000/til/3%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/3%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
+<p><br /></p>]]></content><author><name>NNIIE</name></author><category term="TIL" /><category term="Generic" /><category term="시공간복잡도" /><category term="Nested Class" /><category term="Multi Module" /><category term="Lambda" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">3주차</title><link href="http://localhost:4000/til/3%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="3주차" /><published>2022-12-29T00:00:00+09:00</published><updated>2022-12-29T00:00:00+09:00</updated><id>http://localhost:4000/til/3%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/3%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
 
 <h1 id="property">Property</h1>
 <hr />

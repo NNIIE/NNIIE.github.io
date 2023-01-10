@@ -49,7 +49,13 @@ var store = [{
       },{
         "title": "4주차",
         "excerpt":"CQRS Pattern Command and Query Responsibility Segregation (명령과 조회의 책임 분리) 즉, 명령(command)및 쿼리의 책임을 분리하는 패턴이다. 책임분리를 위해서는 코드의 모듈이 분리되어야 한다. read 와 write를 분리하는것을 뜻하며 어플리케이션까지만 적용할 수도 있고, DB의 모델까지만 분리할 수도 있고, DB 그 자체를 분리하여 적용할 수도 있다. 명령은 데이터중심이 아니라 작업 기반이어야 한다....","categories": ["TIL"],
-        "tags": ["Generic","시공간복잡도","Nested Class"],
+        "tags": ["Generic","시공간복잡도","Nested Class","Multi Module","Lambda"],
         "url": "/til/4%EC%A3%BC%EC%B0%A8/",
+        "teaser": null
+      },{
+        "title": "5주차",
+        "excerpt":"SOLID 객체지향의 5가지 설계원칙 단일책임 원칙 - SRP 한 클래스는 하나의 책임만 가져야 한다. 모든 클래스는 하나의 책임만 가지며, 클래스는 그 책임을 완전히 캡슐화 해야한다. 한 클래스가 수행할 수 있는 책임 (기능)이 여러가지라면, 클래스 내부 함수끼리의 강한 결합이 발생할 가능성이 높아지고 이는 유지보수에 비효율적이다. 한 클래스를 변경하기 위해 한가지 이상의...","categories": ["TIL"],
+        "tags": ["SOLID"],
+        "url": "/til/5%EC%A3%BC%EC%B0%A8/",
         "teaser": null
       }]
