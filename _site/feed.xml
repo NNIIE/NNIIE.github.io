@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-01-11T00:09:13+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">5주차</title><link href="http://localhost:4000/til/5%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="5주차" /><published>2023-01-11T00:00:00+09:00</published><updated>2023-01-11T00:00:00+09:00</updated><id>http://localhost:4000/til/5%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/5%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-01-11T00:17:28+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">5주차</title><link href="http://localhost:4000/til/5%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="5주차" /><published>2023-01-11T00:00:00+09:00</published><updated>2023-01-11T00:00:00+09:00</updated><id>http://localhost:4000/til/5%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/5%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
 
 <h1 id="solid">SOLID</h1>
 <p>객체지향의 5가지 설계원칙</p>
@@ -275,6 +275,28 @@ C언어는 컴파일 시 코드를 모드 기계어로 번역해 메모리에 �
     </ul>
   </li>
 </ul>
+
+<p><br />
+<br />
+<code class="language-plaintext highlighter-rouge">NIO</code>는 불특정 다수의 클라이언트 연결 또는 멀티 파일들을 넌블로킹이나 비동기로 처리할 수 있다.
+<br />
+과도한 스레드 생성을 피하고 스레드를 효과적으로 재사용한다는 점이 큰 장점이다.
+<br />
+운영체제의 버퍼(다이렉트 버퍼)를 이용한 입출력이 가능하기 때문에 입출력 성능 향상
+<br />
+<code class="language-plaintext highlighter-rouge">NIO</code>는 연결 클라이언트 수가 많고, 하나의 입출력 처리 작업이 오래 걸리지 않는 경우에 사용하는것이 좋다.
+<br />
+스레드에서 입출력 처리가 오래 걸린다면 대기하는 작업의 수가 늘어나기 때문에 제한된 스레드로 처리하는 것이 불편할 수 있다.
+<br />
+<br />
+<br />
+대용량의 데이터 처리의 경우 <code class="language-plaintext highlighter-rouge">IO</code>가 좋다.
+<br />
+연결 클라이언트 수가 적고 전송되는 데이터가 대용량이면서 순차적으로 처리될 필요성이 있는 경우 
+<br />
+<code class="language-plaintext highlighter-rouge">IO</code>로 서버를 구현하는 것이 좋다. <code class="language-plaintext highlighter-rouge">NIO</code>는 버퍼 할당 크기도 문제되고, 모든 입출력 작업에 버퍼를
+<br />
+무조건 사용해야 하므로 받은 즉시 처리하는 <code class="language-plaintext highlighter-rouge">IO</code>보다 복잡하다.</p>
 
 <p><br />
 <br />
