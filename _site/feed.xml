@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-01-10T01:35:33+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">4주차</title><link href="http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="4주차" /><published>2023-01-05T00:00:00+09:00</published><updated>2023-01-05T00:00:00+09:00</updated><id>http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-01-10T17:24:56+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">4주차</title><link href="http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="4주차" /><published>2023-01-05T00:00:00+09:00</published><updated>2023-01-05T00:00:00+09:00</updated><id>http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
 
 <h1 id="cqrs-pattern">CQRS Pattern</h1>
 <hr />
@@ -634,14 +634,82 @@ ex) 디비에 올라간걸 고치기 힘들잖아… 그러니까 올라가기 �
 <p><br /></p>
 
 <h2 id="중복이-나쁜경우">중복이 나쁜경우</h2>
+<p>중복은 중복을 부르고, 논리의 조그마한 실수도 큰 오류가 날 가능성이 높아진다.
+<br />
+또한 어플리케이션이 복잡해 질수록 생산성은 떨어진다.
+<br />
+대부분의 경우 중복은 좋지 않다.</p>
 
 <p><br /></p>
 
 <h2 id="중복이-차라리-나은경우">중복이 차라리 나은경우</h2>
+<p>자원의 효율적인 사용이나 중복으로 인한 문제 발생보다 시스템의 안정성을 위주로 할 경우
+<br />
+코드의 중복 보다는 인스턴스들의 중복이 포인트이다.
+<br />
+예를들면, 인스턴스를 여러개 둘 수 있지만, 그 인스턴스를 만드는 코드는 하나만 존재해야 한다.
+<br />
+이렇지 않을 경우 언제나 동기화를 시켜주는 문제가 발생할 수도 있다.
+<br />
+또한 중복코드가 서로 의존을 해서 순환참조가 발생할 때?
+<br /></p>
+
+<h2 id="멀티모듈의-설계">멀티모듈의 설계?</h2>
+<p>모듈은 패키지의 한단계 위의 집합체이며, 관련된 패키지와 리소스들을 재사용할 수 있는 그룹이라고 정의한다.</p>
 
 <p><br /></p>
 
-<h2 id="멀티모듈의-설계">멀티모듈의 설계?</h2>
+<h3 id="msa프로젝트를-구성할-때-문제점">MSA프로젝트를 구성할 때 문제점</h3>
+<hr />
+<p>인증 서버, API서버, 배치서버 등을 각각 나누다 보니 기존 모놀리식에선 신경쓰지 못했던 문제중 하나가 중복코드의 문제이다.
+<br />
+<code class="language-plaintext highlighter-rouge">ResponseEntity</code>, <code class="language-plaintext highlighter-rouge">ExceptionHandler</code> 등의 모든 서버에서 쓰이는 로직은 서버 전부에서 코드를 가지고 있어야 했고, 변경되면 모두 다 바꿔줘야하는 비효율적인 문제가 발생한다. 
+<br />
+IDE를 몇개씩 띄워놓고 서버를 돌리는것도 힘들기 때문에 멀티프로젝트로 구성되 있던 서비스를 멀티모듈로 전환하는 경우도 많이 있다.</p>
+
+<p><br /></p>
+
+<h3 id="멀티모듈">멀티모듈</h3>
+<hr />
+<p>공통적인 기능을 모아 하나의 모듈(common)로 만들고 각 모듈에서 의존한다.
+<br />
+<strong>common 모듈에 공통로직을 몰아넣는다?</strong>
+<br />
+<strong>아니다.</strong> 어느 정도의 중복을 기준으로 common module 에 넣을 것이고, 어디까지의 역할만 시킬 것인지를 확실하게 나눠야 한다. 그렇지 않으면 common이 점 차 커지며 common안에 비즈니스가 흐르기 시작하고,
+<br />
+이것이 어쩔수 없이 반복되고 결국 다른 애플리케이션은 날씬하고 common만 굉장이 큰 프로젝트가 되버리는 지옥이 발생한다.</p>
+
+<p><br /></p>
+
+<h3 id="멀티모듈의-장점">멀티모듈의 장점</h3>
+<hr />
+<ul>
+  <li>코드의 중복을 줄일 수 있다.
+  공통된 로직이 있는 여러 서비스를 운영할 때, 공통부분을 모듈화 하고 이 의존성을 추가하여 공유할 수 있다.</li>
+  <li>각 모듈의 기능을 파악하기 쉽다.
+  공통의 기능은 의존송 주입으로, 모둘별로 기능을 분리하여 코드이해에 도움이 된다.</li>
+  <li>독립된 jar 로 단독 실행 가능
+    <ul>
+      <li>빌드도 쉬워진다.</li>
+    </ul>
+  </li>
+  <li>독립된 모듈(library)로서 여기저기서 가져다 쓸 수 있는 확장성</li>
+  <li>모듈별로 사용하는 의존성 (버전포함)을 다르게 관리할 수 있음</li>
+</ul>
+
+<p><br /></p>
+
+<h3 id="주의할점">주의할점</h3>
+<hr />
+<ul>
+  <li>공통 모듈이 가져야 하는 의존성을 고려해야 한다.</li>
+  <li>특정 모듈에선 불필요한 의존성으로 인해 어플리케이션이 무거워 질 수 있다.
+    <ul>
+      <li>모든 모든 모듈에서 전역적으로 적용되어야 할 때 common모듈에 넣자</li>
+    </ul>
+  </li>
+  <li>각 어플리케이션(모듈)에 대한 설정은 공통 모듈에 적용하지 않고 분리한다.</li>
+</ul>
 
 <p><br /></p>]]></content><author><name>NNIIE</name></author><category term="TIL" /><category term="Generic" /><category term="시공간복잡도" /><category term="Nested Class" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">3주차</title><link href="http://localhost:4000/til/3%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="3주차" /><published>2022-12-29T00:00:00+09:00</published><updated>2022-12-29T00:00:00+09:00</updated><id>http://localhost:4000/til/3%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/3%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
 
