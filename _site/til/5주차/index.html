@@ -234,7 +234,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          1 분 소요
+          2 분 소요
         
       </span>
     
@@ -249,7 +249,7 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> TIL</h4></header>
-              <ul class="toc__menu"><li><a href="#solid">SOLID</a><ul><li><a href="#단일책임-원칙---srp">단일책임 원칙 - SRP</a></li><li><a href="#개방-폐쇄-원칙---ocp">개방-폐쇄 원칙 - OCP</a></li><li><a href="#리스코프-치환원칙---lsp">리스코프 치환원칙 - LSP</a></li><li><a href="#인터페이스-분리원칙---isp">인터페이스 분리원칙 - ISP</a></li><li><a href="#의존관계-역전원칙---dip">의존관계 역전원칙 - DIP</a></li></ul></li><li><a href="#to-do">To Do</a></li></ul>
+              <ul class="toc__menu"><li><a href="#solid">SOLID</a><ul><li><a href="#단일책임-원칙---srp">단일책임 원칙 - SRP</a></li><li><a href="#개방-폐쇄-원칙---ocp">개방-폐쇄 원칙 - OCP</a></li><li><a href="#리스코프-치환원칙---lsp">리스코프 치환원칙 - LSP</a></li><li><a href="#인터페이스-분리원칙---isp">인터페이스 분리원칙 - ISP</a></li><li><a href="#의존관계-역전원칙---dip">의존관계 역전원칙 - DIP</a></li></ul></li><li><a href="#스레드">스레드</a><ul><li><a href="#생성">생성</a></li></ul></li><li><a href="#to-do">To Do</a></li></ul>
 
             </nav>
           </aside>
@@ -340,11 +340,73 @@
 
 <p><br />
 <br />
+<br />
+<br /></p>
+
+<h1 id="스레드">스레드</h1>
+<p>운영체제에 메모리를 할당받아 실행중인 프로그램을 프로세스라고 한다.
+<br />
+스레드란 프로세스 내에서 실제로 작업을 수행하는 주체를 의미한다.
+<br />
+모든 프로세스는 한 개 이상의 스레드가 존재하며 1개는 단일스레드 2개 이상은 멀티스레드 라고 한다.
+<br />
+<br />
+독립적인 프로세스들은 자원 및 데이터를 공유하지않아 리소스가 많이들어가지만 
+<br />
+멀티스레드의 경우는 자원 및 데이터 공유를 공유하기 때문에 리소스가 적게들어간다.
+<br />
+물론 데이터를 공유하기 때문에 동기화가 중요하다 -&gt; <code class="language-plaintext highlighter-rouge">thread-safe</code></p>
+
+<p>모든 자바 어플리케이션은 메인스레드가 <code class="language-plaintext highlighter-rouge">main()</code> 메서드를 실행하면서 시작한다.
+<br />
+이러한 Main Thread 흐름 안에서 싱글 스레드가 아닌 멀티 스레드 어플리케이션은 필요에 따라 작업 쓰레드를 
+<br />
+만들어 병렬로 코드를 실행할 수 있다. 단일 스레드 같은 경우 메인 스레드가 종료되면 프로세스도 종료되지만 
+<br />
+멀티 스레드는 <strong>메인 스레드가 종료되더라도 실행 중인 스레드가 하나라도 있다면 프로세스는 종료되지 않는다.</strong></p>
+
+<p><br /></p>
+
+<h2 id="생성">생성</h2>
+<ul>
+  <li>Runnable 인터페이스 구현</li>
+  <li>Thread 클래스 상속</li>
+  <li>람다</li>
+</ul>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">OfThreadClass</span> <span class="kd">extends</span> <span class="nc">Thread</span> <span class="o">{</span>
+	<span class="nd">@Override</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">()</span> <span class="o">{}</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">OfRunnableInterface</span> <span class="kd">implements</span> <span class="nc">Runnable</span> <span class="o">{</span>
+	<span class="nd">@Override</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">()</span> <span class="o">{}</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">OfLambda</span> <span class="o">{</span>
+	<span class="nc">Thread</span> <span class="n">thread</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Thread</span><span class="o">(()</span> <span class="o">-&gt;</span> <span class="o">{</span>
+		<span class="nc">String</span> <span class="n">threadName</span> <span class="o">=</span> <span class="nc">Thread</span><span class="o">.</span><span class="na">currentThread</span><span class="o">().</span><span class="na">getName</span><span class="o">();</span>
+		<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">threadName</span><span class="o">);</span>
+	<span class="o">});</span>
+    <span class="n">thread</span><span class="o">.</span><span class="na">setName</span><span class="o">(</span><span class="s">"Thread #1"</span><span class="o">);</span>
+    <span class="n">thread</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>자바에서는 다중상속이 안되기 때문에, <code class="language-plaintext highlighter-rouge">Thread</code> 클래스를 확장하는 클래스는 다른 클래스를 상속받을 수 없다. 
+<br />
+하지만 <code class="language-plaintext highlighter-rouge">Runnable</code> 인터페이스를 구현하는 경우에는 다른 인터페이스를 구현할 수도 있고 다른클래스도 상속 받을수 있다는 장점이 있다.</p>
+
+<p><br />
+<br />
+<br />
 <br /></p>
 
 <h1 id="to-do">To Do</h1>
 
 <p><br />
+<br />
 <br />
 <br /></p>
 
