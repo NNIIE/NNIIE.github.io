@@ -1,12 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-01-10T20:20:05+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">5주차</title><link href="http://localhost:4000/til/5%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="5주차" /><published>2023-01-10T00:00:00+09:00</published><updated>2023-01-10T00:00:00+09:00</updated><id>http://localhost:4000/til/5%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/5%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-01-11T00:09:13+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">5주차</title><link href="http://localhost:4000/til/5%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="5주차" /><published>2023-01-11T00:00:00+09:00</published><updated>2023-01-11T00:00:00+09:00</updated><id>http://localhost:4000/til/5%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/5%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
 
 <h1 id="solid">SOLID</h1>
 <p>객체지향의 5가지 설계원칙</p>
 
 <p><br /></p>
 
-<h2 id="단일책임-원칙---srp">단일책임 원칙 - SRP</h2>
-<p>한 클래스는 하나의 책임만 가져야 한다.
+<p><strong><em>단일 책임 원칙 (SRP) - 한 클래스는 하나의 책임만 가져야 한다.</em></strong>
 <br />
 <br />
 모든 클래스는 하나의 책임만 가지며, 클래스는 그 책임을 완전히 캡슐화 해야한다.
@@ -17,10 +16,10 @@
 <br />
 한 클래스를 변경하기 위해 한가지 이상의 이유를 생각할 수 있다면, 그 클래스는 한가지 이상의 책임을 맡고있는 것이다.</p>
 
-<p><br /></p>
+<p><br />
+<br /></p>
 
-<h2 id="개방-폐쇄-원칙---ocp">개방-폐쇄 원칙 - OCP</h2>
-<p>확장에는 열려있고 변경에는 닫혀 있어야 한다.
+<p><strong><em>개방-폐쇄 원칙 (OCP) - 확장에는 열려있고 변경에는 닫혀 있어야 한다.</em></strong>
 <br />
 <br />
 수많은 모듈 중 하나를 수정할 때, 해당 모듈을 이용하는 다른 모듈들을 고쳐야 한다면 비효율적이다.
@@ -29,20 +28,18 @@
 <br />
 새로운 코드를 추가함으로써 기능의 추가나 변경이 가능한걸 의미한다.
 <br />
-<br />
 추상화는 개방-폐쇄 원칙의 핵심요소이다.
 <br />
 자주 변화하는 부분을 추상화 함으로써 유연함을 높인다.
 <br />
 모듈은 고정된 추상화에 의존하기 때문에 수정에 대해 닫혀 있을 수 있고, 추상화의 파생클래스를 만드는것으로 확장이 가능하다.
 <br />
-<br />
 객체지향 프로그래밍의 가장 큰 장점인 유연성, 재사용성, 유지보수성을 위한 핵심원칙이다.</p>
 
-<p><br /></p>
+<p><br />
+<br /></p>
 
-<h2 id="리스코프-치환원칙---lsp">리스코프 치환원칙 - LSP</h2>
-<p>객체는 프로그램의 정확성을 깨뜨리지 않으면서 하위타입의 인스턴스로 바꿀 수 있어야 한다.
+<p><strong><em>리스코프 치환원칙 (LSP) - 객체는 프로그램의 정확성을 깨뜨리지 않으면서 하위타입의 인스턴스로 바꿀 수 있어야 한다.</em></strong>
 <br />
 <br />
 하위타입객체는 상위타입객체에서 가능한 행위를 수행할 수 있어야 한다.
@@ -51,10 +48,10 @@
 <br />
 객체지향 초기에는 상속을 사용하도록 가이드하는 방법 정도로 간주되었지만 시간이 지나면서 인터페이스와 구현체에도 적용되는 광범위한 원칙으로 바뀌었다.</p>
 
-<p><br /></p>
+<p><br />
+<br /></p>
 
-<h2 id="인터페이스-분리원칙---isp">인터페이스 분리원칙 - ISP</h2>
-<p>특정 클라이언트를 위한 인터페이스 여러 개가 범용 인터페이스 하나보다 낫다.
+<p><strong><em>인터페이스 분리원칙 (ISP) - 특정 클라이언트를 위한 인터페이스 여러 개가 범용 인터페이스 하나보다 낫다.</em></strong>
 <br />
 <br />
 클라이언트가 자신이 이용하지 않는 메서드에 의존하지 않아야 한다.
@@ -63,10 +60,10 @@
 <br />
 이는 클라이언트가 사용하지 않는 인터페이스에 변경이 발생하더라도 영향을 받지 않게 한다.</p>
 
-<p><br /></p>
+<p><br />
+<br /></p>
 
-<h2 id="의존관계-역전원칙---dip">의존관계 역전원칙 - DIP</h2>
-<p>추상화에 의존해야하고, 구체화에 의존하면 안된다. 
+<p><strong><em>의존관계 역전원칙 (DIP) - 추상화에 의존해야하고, 구체화에 의존하면 안된다.</em></strong>
 <br />
 <br />
 의존 관계를 맺을 때, 
@@ -111,7 +108,7 @@
 
 <p><br /></p>
 
-<h2 id="생성">생성</h2>
+<p><strong>생성</strong></p>
 <ul>
   <li>Runnable 인터페이스 구현</li>
   <li>Thread 클래스 상속</li>
@@ -147,6 +144,143 @@
 <br />
 <br /></p>
 
+<h1 id="자바는-느리다">자바는 느리다?</h1>
+<p>자바는 <code class="language-plaintext highlighter-rouge">Python</code> , <code class="language-plaintext highlighter-rouge">JavaScript</code> 같은 인터프리터 , 스크립트 언어 보다는 빠르다.
+<br />
+하지만 <code class="language-plaintext highlighter-rouge">C/C++</code> , <code class="language-plaintext highlighter-rouge">Pascal</code> , <code class="language-plaintext highlighter-rouge">Fortran</code> 같은 네이티브 바이너리 코드를 만드는 언어에 비해선 느리다.
+<br />
+그 이유는 여러가지가 있지만 크게 2가지를 들 수 있다.</p>
+<ul>
+  <li>객체지향 언어의 특성</li>
+  <li>JVM이라는 가상머신 사용</li>
+</ul>
+
+<p>자바는 개발자의 편의성을 위해 성능을 희생하고 있는데 시간이 지나면서
+<br />
+자바의 소프트웨어와 하드웨어가 발전해서 초기이슈였던 성능이슈는 잠잠해 졌지만
+<br />
+여전히 부족한 하드웨어 스펙을 쓰는 소규모 장비에선 C언어를 주로 사용한다.</p>
+
+<p><br /></p>
+
+<p><strong><em>객체지향의 특성</em></strong>
+<br />
+<br />
+자바는 클래스 단위로 모든 코드를 작성한다. C언어와 같은 함수단위가 아니기때문에
+<br />
+다른 클래스에 있는 메서드나 정보를 사용하기 위해선 해당 클래스 전체를 인스턴스로 만들어야 한다.
+<br />
+그만큼 메모리와 코드를 찾아 로드하는 시간에 많은 리소스가 들게되고 이것을 피하려고 <code class="language-plaintext highlighter-rouge">static</code> 사용이나
+<br />
+클래스 단위를 잘게 쪼개서 작성할 경우 객체를 다루는 효율성이 떨어지게 된다.
+<br />
+그렇기 때문에 자바는 C언어와 달리 모든 코드를 미리 메모리에 올려두지 않고 필요할 때 마다 가져다 쓰는
+<br />
+<strong>동적 할당 방식</strong>을 사용하기 때문에 C언어보다 상대적으로 느릴 수 밖에 없다.</p>
+
+<p><br /></p>
+
+<p><strong><em>JVM</em></strong>
+<br />
+<br />
+C언어는 컴파일 시 코드를 모드 기계어로 번역해 메모리에 올려두고 실행한다. 하지만 자바에서는
+<br />
+바이트코드로 먼저 컴파일 한 뒤, 동적할당 된 코드를 JVM의 JIT과 같은 방식으로 실행한다.
+<br />
+이렇게 함으로써 운영체제에 종속적이지 않게 된다는 이점이 있지만 그만큼 성능을 희생하게 된다.
+<br />
+또한 C언어에서는 동적할당한 메모리를 개발자가 직접 바로 해제하지만, 자바는 GC가 메모리를 해제하기 때문에
+<br />
+이 GC또한 프로그램이기 때문에 메모리와 연산작업을 동반하게 된다.</p>
+
+<p><br /></p>
+
+<p><strong><em>인터프리터 / 스크립트 언어</em></strong>
+<br />
+<br />
+<code class="language-plaintext highlighter-rouge">Python</code>과 같은 인터프리터 방식의 언어는 <strong>코드를 한줄씩</strong> 읽어 기계어로 번역한다.
+<br />
+그리고 같은 기능을 하는 코드가 다시 나와도 또 다시 해석하여 결과를 출력한다. 
+<br />
+이 때문에 일반적으로 컴파일 방식의 언어보다 수행 속도가 느리다.
+<br />
+하지만 수정사항이 발생했을 때, 컴파일러가 소스코드를 읽어 실행 파일을 만드는 자바는 소스코드를
+<br /> 
+다시 컴파일 해야하지만 인터프리터 언어는 소스코드를 수정해서 실행시키면 끝나기 때문에 수정이
+<br />
+아주 간단하다는 장점이 있다. 즉, 개발편의성이 좋다는 의미이다.
+<br />
+<code class="language-plaintext highlighter-rouge">Python</code>은 이 약점을 극복하기 위해 라이브러리들의 내부는 C / C++ 으로 되어있다.
+<br />
+<br />
+그리고 이 장점을 최대한 살린것이 스크립트 언어이다.</p>
+
+<p><br /></p>
+
+<h2 id="io--nio">IO / NIO</h2>
+<p>자바는 직접 메모리를 관리하고 운영체제의 <strong>시스템 콜</strong> 을 직접 사용하기 힘들다.
+<br />
+자바가 특별히 성능이 좋지 않은 부분이 <code class="language-plaintext highlighter-rouge">IO</code> 이고 이걸 개선한 것이 <code class="language-plaintext highlighter-rouge">NIO</code> 패키지 이다.</p>
+
+<p><br /></p>
+
+<ul>
+  <li><strong><em>IO</em></strong>
+    <ul>
+      <li>
+        <p><strong><em>Blocking API</em></strong>
+  <br />
+  API 를 호출한 스레드가 API의 작업이 끝날 때까지 다른동작을 하지 않는 API 를 말한다. <code class="language-plaintext highlighter-rouge">(idle 상태)</code>
+  <br />
+  자바의 기본 IO는 이 <code class="language-plaintext highlighter-rouge">Blocking API</code>로 사용되어 왔기 때문에 <code class="language-plaintext highlighter-rouge">File IO</code> 뿐만 아니라
+  <br />
+  <code class="language-plaintext highlighter-rouge">Network IO</code> 또한 오래 걸리기 때문에 더욱 자바에게 느리다는 인상을 심어준 녀석이다.</p>
+      </li>
+      <li>
+        <p><strong><em>Stream 기반</em></strong>
+  <br />
+  스트림 기반의 IO는 스트림으로부터 한번에 여러 바이트를 읽는다. 데이터는 캐싱되어 있지 않고
+  <br />
+  스트림 속 데이터에서 앞뒤로 이동할 수 없다. 만약 스트림으로 읽은 데이터 내부에서 앞뒤로
+  <br />
+  이동해야 한다면 버퍼를 만들어 캐싱을 해야한다.</p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<ul>
+  <li><strong><em>NIO</em></strong>
+    <ul>
+      <li>
+        <p><strong><em>Non Blocking API</em></strong>
+  <br />
+  API 호출 시 요청한 작업의 완료여부와 상관없이 즉각적으로 현재 상태에 대한 답이 온다.
+  <br />
+  그렇기 때문에 API 호출 후 스레드 제어권이 있기 때문에 다른작업을 진행할 수 있다.</p>
+      </li>
+      <li>
+        <p><strong><em>Buffer 기반</em></strong>
+  <br />
+  이미 처리된 버퍼로부터 데이터를 읽는다. 필요하다면 버퍼 내부에서 앞뒤로 이동할 수 있다.
+  <br />
+  즉, 데이터를 처리하는 동안 좀 더 유연함을 제공해 주지만 데이터를 완벽하게 처리하려면
+  <br />
+  필요한 데이터가 모두 버퍼 안에 있어야 한다. 또한 버퍼에서 더많은 데이터를 읽을때 버퍼속에서
+  <br />
+  아직 전처리되지 않은 데이터를 사용하지 않도록 확실히 해야한다.</p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p><br />
+<br />
+<br />
+<br /></p>
+
 <h1 id="to-do">To Do</h1>
 
 <p><br />
@@ -154,7 +288,7 @@
 <br />
 <br /></p>
 
-<p><br /></p>]]></content><author><name>NNIIE</name></author><category term="TIL" /><category term="SOLID" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">4주차</title><link href="http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="4주차" /><published>2023-01-05T00:00:00+09:00</published><updated>2023-01-05T00:00:00+09:00</updated><id>http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
+<p><br /></p>]]></content><author><name>NNIIE</name></author><category term="TIL" /><category term="SOLID" /><category term="스레드" /><category term="인터프리터 언어" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">4주차</title><link href="http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="4주차" /><published>2023-01-05T00:00:00+09:00</published><updated>2023-01-05T00:00:00+09:00</updated><id>http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
 
 <h1 id="cqrs-pattern">CQRS Pattern</h1>
 <p>Command and Query Responsibility Segregation (명령과 조회의 책임 분리)
