@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-01-11T00:17:28+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">5주차</title><link href="http://localhost:4000/til/5%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="5주차" /><published>2023-01-11T00:00:00+09:00</published><updated>2023-01-11T00:00:00+09:00</updated><id>http://localhost:4000/til/5%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/5%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-01-12T00:08:36+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">5주차</title><link href="http://localhost:4000/til/5%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="5주차" /><published>2023-01-12T00:00:00+09:00</published><updated>2023-01-12T00:00:00+09:00</updated><id>http://localhost:4000/til/5%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/5%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
 
 <h1 id="solid">SOLID</h1>
 <p>객체지향의 5가지 설계원칙</p>
@@ -303,7 +303,115 @@ C언어는 컴파일 시 코드를 모드 기계어로 번역해 메모리에 �
 <br />
 <br /></p>
 
+<h1 id="의존이-좋은경우와-나쁜경우">의존이 좋은경우와 나쁜경우</h1>
+<ul>
+  <li>기본적으로 객체는 상호작용을 하기위해 만들어진다. 아무상호작용도 안하면 그 객체가 왜필요할까
+    <ul>
+      <li>최소한의 의존? 이걸알고 설계하는게 베스트</li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<ul>
+  <li>스프링을 의존하는건 좋은걸까?</li>
+</ul>
+
+<p><br /></p>
+
+<ul>
+  <li>리팩토링 - 3의법칙 - 우발적 중복</li>
+</ul>
+
+<p><br />
+<br />
+<br />
+<br /></p>
+
 <h1 id="to-do">To Do</h1>
+
+<p><br />
+<br />
+<br />
+<br /></p>
+
+<h1 id="blocking-io-non-blocking-io">blocking I/O, non blocking I/O</h1>
+
+<p><br /></p>
+
+<p><strong><em>blocking I/O</em></strong>
+<br />
+<br />
+스레드를 늘리면 노는 부분이 줄어든다</p>
+
+<p><br />
+<br /></p>
+
+<p><strong><em>non blocking</em></strong>
+<br />
+<br />
+스레드가 하나일떄 사용할수 있는 패턴</p>
+
+<p><br />
+<br />
+<br />
+<br /></p>
+
+<h1 id="hashtable--concurrenthashmap-차이">HashTable / ConcurrentHashMap 차이</h1>
+<p>요즘은 ConcurrentHashMap 쓴다는데?</p>
+
+<p><br />
+<br />
+<br />
+<br /></p>
+
+<h1 id="동시성이슈">동시성이슈</h1>
+<p>동시성이슈란?
+<br />
+<br /></p>
+<ul>
+  <li>노드js는 프로세스에 참가하는 스레드가 하나 인데 동시성문제에 어떻게 이점을 가져갈까?
+    <ul>
+      <li>노드는 컨텍스트 스위칭에 들어가는 리소스가없다?</li>
+    </ul>
+  </li>
+</ul>
+
+<p><br />
+<br />
+<br />
+<br /></p>
+
+<h1 id="동시성-임계구역">동시성 임계구역</h1>
+
+<p><br />
+<br />
+<br />
+<br /></p>
+
+<h1 id="쿠키--세션">쿠키 / 세션</h1>
+
+<p><br />
+<br />
+<br />
+<br /></p>
+
+<h1 id="서블릿">서블릿</h1>
+
+<p><br />
+<br />
+<br />
+<br /></p>
+
+<h1 id="필터">필터</h1>
+
+<p><br />
+<br />
+<br />
+<br /></p>
+
+<h1 id="servletcontextlistener">ServletContextListener</h1>
 
 <p><br />
 <br />
