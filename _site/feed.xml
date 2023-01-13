@@ -1,4 +1,107 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-01-13T16:07:20+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">5주차</title><link href="http://localhost:4000/til/5%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="5주차" /><published>2023-01-12T00:00:00+09:00</published><updated>2023-01-12T00:00:00+09:00</updated><id>http://localhost:4000/til/5%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/5%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-01-13T17:08:40+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">refactoring</title><link href="http://localhost:4000/til/refactoring/" rel="alternate" type="text/html" title="refactoring" /><published>2023-01-13T00:00:00+09:00</published><updated>2023-01-13T00:00:00+09:00</updated><id>http://localhost:4000/til/refactoring</id><content type="html" xml:base="http://localhost:4000/til/refactoring/"><![CDATA[<p><br /><br /><br /></p>
+
+<h1 id="리팩토링">리팩토링?</h1>
+
+<p>소프트웨어 관점으로 결과의 변경 없이 코드의 구조를 재조정함 을 의미한다.
+<br />
+즉, 기능은 보존하면서 설계 및 구조를 개선하는 것이다.</p>
+<ul>
+  <li>소프트웨어 설계가 좋아진다.</li>
+  <li>소프트웨어를 이해하기 쉬워진다.</li>
+  <li>버그를 쉽게 찾을 수 있다.</li>
+  <li>프로그래밍 속도를 높일 수 있다.</li>
+</ul>
+
+<p><br />
+<br /></p>
+
+<p><strong>진짜 중복</strong></p>
+<ul>
+  <li>한 인스턴스가 변경되면, 동일한 변경을 그 인스턴스의 모든 복사본에 반드시 적용해야한다.</li>
+</ul>
+
+<p><strong>우발적 중복 (거짓된 중복)</strong></p>
+<ul>
+  <li>중복으로 보이는 두 코드의 영역이 각자의 경로로 발전한다면, 즉 서로 다른 속도와 다른 이유로 변경된다면 이 두 코드는 진짜 중복이 아니다.</li>
+</ul>
+
+<p><br />
+<br />
+<br />
+<br /></p>
+
+<h1 id="3의-법칙">3의 법칙</h1>
+<ol>
+  <li>처음에는 그냥 한다.</li>
+  <li>비슷한 일을 두 번째로 하게 되면(중복이 생겼다는 사실에 당황스럽겠지만), 일단 계속 진행한다.</li>
+  <li>비슷한 일을 세 번째 하게 되면 리팩토링한다.</li>
+</ol>
+
+<p><br />
+<br />
+<br /></p>
+
+<p><strong>기능을 새로 추가하기 직전</strong></p>
+<ul>
+  <li>리팩터링 하기 가장 좋은 시점은 기존 기능에 새로운 기능을 추가하기 직전이다.</li>
+  <li>기능을 추가하기 쉽게만드는 것이 리팩터링의 핵심</li>
+  <li>구조를 살짝 바꾸면 다른 작업하기 쉬워질 만한 부분을 찾는다.</li>
+  <li>기능을 추가하면서 중복코드가 생길만한 부분을 함수화 시킨다.</li>
+</ul>
+
+<p><br /></p>
+
+<p><strong>코드를 이해하기 어려울때</strong></p>
+<ul>
+  <li>코드 수정시 코드를 이해하기 어렵다면 이해를 위한 리팩터링을 진행한다.</li>
+  <li>코드만 보더라도 이해를 쉽게 할 수 있도록 변수와 함수의 이름을 변경한다.</li>
+  <li>코드를 이해하기 쉽게 만드는것은 협업하기도 좋고 코드를 오래 보존 할 수 있게된다.</li>
+</ul>
+
+<p><br /></p>
+
+<p><strong>불필요한 코드를 발견했을때</strong></p>
+<ul>
+  <li>코드가 비효율적으로 수행되는 것을 발견했을대 리팩터링을 진행한다.</li>
+  <li>로직 혹은 코드가 쓸데없이 복잡하거나 불필요한 코드를 발견했다면 보이스카웃 규칙을 떠올리자.</li>
+  <li>원래 하려던 작업시간을 뺏길 수 있으니 간단한 일이라면 바로 처리하고, 시간이 좀 걸릴 것 같으면 <code class="language-plaintext highlighter-rouge">TODO</code>를 남겨두자.</li>
+</ul>
+
+<p><br /></p>
+
+<p><strong>계획된 리팩토링</strong></p>
+<ul>
+  <li>수시로 진행하는 리팩터링 외에도 따로 시간을 내서 리팩터링을 진행 할 수 있다.</li>
+  <li>미리 새기능을 추가 할 수 있도록 코드를 개선해둔다.</li>
+  <li>코드가 이미 깔끔하다면 리팩터링을 하기에도 더 쉽다.</li>
+</ul>
+
+<p><br /></p>
+
+<p><strong>오래걸리는  리팩토링</strong></p>
+<ul>
+  <li>각 잡고 전체 개발자들이 달려들어서 리팩토링을 하는 짓은 좋지않다.</li>
+  <li>리팩토링 해야될 코드와 관련된 작업을 하게 될 때 마다 원하는 방향으로 조금씩 개선하는 방향을 추구하자</li>
+</ul>
+
+<p><br /></p>
+
+<p><strong>코드리뷰에 리팩토링 활용하기</strong></p>
+<ul>
+  <li>PR 피드백을 활용하여 리팩토링 해나가는 것도 좋은 방법이다.</li>
+</ul>
+
+<p><br /></p>
+
+<p><strong>리팩토링 하지 말아야 할 때</strong></p>
+<ul>
+  <li>호출해서 쓰는 코드라면 굳이 건들지 말자</li>
+  <li>리팩터링보다 새로 코드를 작성하는 쉬운 코드의 경우 그냥 둔다.</li>
+  <li>어떤 코드가 리팩터링보다 새로 만드는게 쉬운가에 대한 판단은 많은 경험이 뒷받침 되어야한다.</li>
+</ul>
+
+<p><br />
+<br /></p>]]></content><author><name>NNIIE</name></author><category term="TIL" /><category term="refactoring" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">5주차</title><link href="http://localhost:4000/til/5%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="5주차" /><published>2023-01-12T00:00:00+09:00</published><updated>2023-01-12T00:00:00+09:00</updated><id>http://localhost:4000/til/5%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/5%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
 
 <h1 id="solid">SOLID</h1>
 <p>객체지향의 5가지 설계원칙</p>
@@ -3776,92 +3879,4 @@ enum과 같이 자주 사용되는 요소의 개수가 정해져있다면 해당
   <li><code class="language-plaintext highlighter-rouge">newInstance</code> &amp; <code class="language-plaintext highlighter-rouge">create</code> : 새로운 인스턴스를 생성</li>
   <li><code class="language-plaintext highlighter-rouge">get[OtherType]</code> : 다른 타입의 인스턴스를 생성. 이전에 반환했던 것과 같을 수 있음.</li>
   <li><code class="language-plaintext highlighter-rouge">new[OtherType]</code> : 다른 타입의 새로운 인스턴스를 생성.</li>
-</ul>]]></content><author><name>NNIIE</name></author><category term="Effective_Java" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">22.11</title><link href="http://localhost:4000/til/TIL/" rel="alternate" type="text/html" title="22.11" /><published>2022-11-24T00:00:00+09:00</published><updated>2022-11-24T00:00:00+09:00</updated><id>http://localhost:4000/til/TIL</id><content type="html" xml:base="http://localhost:4000/til/TIL/"><![CDATA[<p><br /><br /><br /></p>
-
-<h1 id="equals--hashcode">equals &amp; hashcode</h1>
-<p>Object 클래스의 메소드이다.
-<br />
-모든 클래스가 Object를 상속받기 때문에
-<br />
-어떤 객체라도 Object의 메소드인 equals와 hashcode를 사용할 수 있다.
-<br /></p>
-
-<h2 id="equals">equals</h2>
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Object의 equals()</span>
-<span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">equals</span><span class="o">(</span><span class="nc">Object</span> <span class="n">obj</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">return</span> <span class="o">(</span><span class="k">this</span> <span class="o">==</span> <span class="n">obj</span><span class="o">);</span>
-<span class="o">}</span>
-</code></pre></div></div>
-<p>equals()는 오로지 참조값(객체의 주소값)이 같은지 즉, 동일 객체인지 확인하는 기능이다.
-<br />
-equals 메소드는 두 객체를 비교해서 논리적으로 동등하면 true를 반환한다.
-<br />
-논리적으로 동등하다는 것은 둘의 참조값이 다르더라도 객체 내부의 value는 같다는걸 의미한다.
-<br /></p>
-<ul>
-  <li><strong><em>동일성</em></strong> : ==비교. 객체 인스턴스 주소 값을 비교</li>
-  <li><strong><em>동등성</em></strong> : equals() 메소드를 사용해 객체 내부의 값을 비교한다.</li>
-</ul>
-
-<h2 id="hashcode">hashcode</h2>
-<p>객체 해시코드란 객체를 식별하는 하나의 정수값을 말한다. 
-<br />
-Object의 hashCode() 메소드는 객체의 메모리 번지를 이용해서 해시코드를 만들어 리턴하기 때문에 객체 마다 다른 값을 가지고 있다.
-<br /><br />
-<strong><em>hashcode 를 재정의 하지 않으면</em></strong></p>
-<ul>
-  <li>같은 값을 가진 객체가 서로 다른 해시값을 갖게 될 수 있다.</li>
-  <li>특히 HashMap의 key 값으로 해당 객체를 사용할 경우 문제가 발생한다.</li>
-</ul>
-
-<h3 id="hashtable">HashTable</h3>
-<p>HashTable은 &lt;key,value&gt; 형태로 데이터를 저장한다. 이 때 해시 함수(Hash Function)을 이용하여 key값을 기준으로 고유한 식별값인 해시값을 만든다. (hashcode가 해시값을 만드는 역할을 한다.) 
-<br />
-이 해시값을 버킷(Bucket)에 저장한다.
-<br />
-하지만 HashTable 크기는 한정적이기 때문에 같은 서로 다른 객체라 하더라도 같은 해시값을 갖게 될 수도 있다.
-<br />
-이것을 <strong>해시 충돌(Hash Collisions)</strong>이라고 한다.
-<br />
-이런 경우 아래와 같이 해당 버킷(Bucket)에 LinkedList 형태로 객체를 추가한다.
-<br /><br />
-이처럼 같은 해시값의 버킷 안에 다른 객체가 있는 경우 equals 메서드가 사용된다.
-<br /><br />
-HashTable에 put 메서드로 객체를 추가하는 경우
-<br /></p>
-<ul>
-  <li>값이 같은 객체가 이미 있다면(equals()가 true) 기존 객체를 덮어쓴다.</li>
-  <li>값이 같은 객체가 없다면(equals()가 false) 해당 entry를 LinkedList에 추가한다.
-<br /><br /></li>
-</ul>
-
-<p>HashTable에 get 메서드로 객체를 조회하는 경우</p>
-
-<ul>
-  <li>값이 같은 객체가 있다면 (equals()가 true) 그 객체를 리턴한다.</li>
-  <li>값이 같은 객체가 없다면(equals()가 false) null을 리턴한다.</li>
-</ul>
-
-<h2 id="equals-와-hashcode를-같이-재정의-하는-이유">equals() 와 hashcode()를 같이 재정의 하는 이유</h2>
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Override</span>
-<span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">equals</span><span class="o">(</span><span class="nc">Object</span> <span class="n">o</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">if</span> <span class="o">(</span><span class="k">this</span> <span class="o">==</span> <span class="n">o</span><span class="o">)</span> <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
-    <span class="k">if</span> <span class="o">(</span><span class="n">o</span> <span class="o">==</span> <span class="kc">null</span> <span class="o">||</span> <span class="n">getClass</span><span class="o">()</span> <span class="o">!=</span> <span class="n">o</span><span class="o">.</span><span class="na">getClass</span><span class="o">())</span> <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
-    <span class="nc">LottoNumber</span> <span class="n">that</span> <span class="o">=</span> <span class="o">(</span><span class="nc">LottoNumber</span><span class="o">)</span> <span class="n">o</span><span class="o">;</span>
-    <span class="k">return</span> <span class="nc">Objects</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">getLottoNumbers</span><span class="o">(),</span> <span class="n">that</span><span class="o">.</span><span class="na">getLottoNumbers</span><span class="o">());</span>
-<span class="o">}</span>
-
-<span class="nd">@Override</span>
-<span class="kd">public</span> <span class="kt">int</span> <span class="nf">hashCode</span><span class="o">()</span> <span class="o">{</span>
-    <span class="k">return</span> <span class="nc">Objects</span><span class="o">.</span><span class="na">hash</span><span class="o">(</span><span class="n">getLottoNumbers</span><span class="o">());</span>
-<span class="o">}</span>
-</code></pre></div></div>
-<p>만약 equals()와 hashcode() 중 하나만 재정의 하면 어떻게 될까?
-<br /> 
-위 예에서도 봤듯이 hashcode()를 재정의 하지 않으면 같은 값 객체라도 해시값이 다를 수 있다. 따라서 HashTable에서 해당 객체가 저장된 버킷을 찾을 수 없다.
-<br />
-반대로 equals()를 재정의하지 않으면 hashcode()가 만든 해시값을 이용해 객체가 저장된 버킷을 찾을 수는 있지만 해당 객체가 자신과 같은 객체인지 값을 비교할 수 없기 때문에 null을 리턴하게 된다. 
-<br />
-따라서 역시 원하는 객체를 찾을 수 없다.
-<br />
-이러한 이유로 객체의 정확한 동등 비교를 위해서는 (특히 Hash 관련 컬렉션 프레임워크를 사용할때!) Object의 equals() 메소드만 재정의하지 말고 hashCode()메소드도 재정의해서 논리적 동등 객체일경우 동일한 해시코드가 리턴되도록 해야한다.</p>]]></content><author><name>NNIIE</name></author><category term="TIL" /><category term="Java" /><summary type="html"><![CDATA[]]></summary></entry></feed>
+</ul>]]></content><author><name>NNIIE</name></author><category term="Effective_Java" /><summary type="html"><![CDATA[]]></summary></entry></feed>

@@ -58,4 +58,10 @@ var store = [{
         "tags": ["SOLID","스레드","인터프리터 언어","Blocking I/O","Non Blocking I/O","동시성"],
         "url": "/til/5%EC%A3%BC%EC%B0%A8/",
         "teaser": null
+      },{
+        "title": "refactoring",
+        "excerpt":"리팩토링? 소프트웨어 관점으로 결과의 변경 없이 코드의 구조를 재조정함 을 의미한다. 즉, 기능은 보존하면서 설계 및 구조를 개선하는 것이다. 소프트웨어 설계가 좋아진다. 소프트웨어를 이해하기 쉬워진다. 버그를 쉽게 찾을 수 있다. 프로그래밍 속도를 높일 수 있다. 진짜 중복 한 인스턴스가 변경되면, 동일한 변경을 그 인스턴스의 모든 복사본에 반드시 적용해야한다. 우발적 중복...","categories": ["TIL"],
+        "tags": ["refactoring"],
+        "url": "/til/refactoring/",
+        "teaser": null
       }]
