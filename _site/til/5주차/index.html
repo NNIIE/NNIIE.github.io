@@ -234,7 +234,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          5 분 소요
+          6 분 소요
         
       </span>
     
@@ -249,7 +249,7 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> TIL</h4></header>
-              <ul class="toc__menu"><li><a href="#solid">SOLID</a></li><li><a href="#스레드">스레드</a></li><li><a href="#자바는-느리다">자바는 느리다?</a><ul><li><a href="#io--nio">IO / NIO</a></li></ul></li><li><a href="#의존이-좋은경우와-나쁜경우">의존이 좋은경우와 나쁜경우</a></li><li><a href="#to-do">To Do</a></li><li><a href="#blocking-io-non-blocking-io">blocking I/O, non blocking I/O</a></li><li><a href="#hashtable--concurrenthashmap-차이">HashTable / ConcurrentHashMap 차이</a></li><li><a href="#동시성이슈">동시성이슈</a></li><li><a href="#동시성-임계구역">동시성 임계구역</a></li><li><a href="#쿠키--세션">쿠키 / 세션</a></li><li><a href="#서블릿">서블릿</a></li><li><a href="#필터">필터</a></li><li><a href="#servletcontextlistener">ServletContextListener</a></li></ul>
+              <ul class="toc__menu"><li><a href="#solid">SOLID</a></li><li><a href="#스레드">스레드</a></li><li><a href="#자바는-느리다">자바는 느리다?</a><ul><li><a href="#io--nio">IO / NIO</a></li></ul></li><li><a href="#의존이-좋은경우와-나쁜경우">의존이 좋은경우와 나쁜경우</a></li><li><a href="#to-do">To Do</a></li><li><a href="#blocking-io-non-blocking-io">blocking I/O, non blocking I/O</a></li><li><a href="#동시성이슈">동시성이슈</a></li><li><a href="#동시성-임계구역">동시성 임계구역</a></li><li><a href="#web-동작">Web 동작</a></li><li><a href="#쿠키--세션">쿠키 / 세션</a></li><li><a href="#톰캣">톰캣</a></li><li><a href="#서블릿">서블릿</a></li><li><a href="#필터">필터</a></li><li><a href="#servletcontextlistener">ServletContextListener</a></li></ul>
 
             </nav>
           </aside>
@@ -614,14 +614,6 @@ C언어는 컴파일 시 코드를 모드 기계어로 번역해 메모리에 �
 <br />
 <br /></p>
 
-<h1 id="hashtable--concurrenthashmap-차이">HashTable / ConcurrentHashMap 차이</h1>
-<p>요즘은 ConcurrentHashMap 쓴다는데?</p>
-
-<p><br />
-<br />
-<br />
-<br /></p>
-
 <h1 id="동시성이슈">동시성이슈</h1>
 <p>동시성이슈란?
 <br />
@@ -646,7 +638,79 @@ C언어는 컴파일 시 코드를 모드 기계어로 번역해 메모리에 �
 <br />
 <br /></p>
 
+<h1 id="web-동작">Web 동작</h1>
+<ul>
+  <li><strong>Request</strong>
+    <ul>
+      <li>사용자가 입력한 <code class="language-plaintext highlighter-rouge">URL</code> 주소 중 도메인 네임 부분을 <code class="language-plaintext highlighter-rouge">DNS</code> 서버에서 검색 후 IP 주소로 변환</li>
+      <li>IP 주소로 <code class="language-plaintext highlighter-rouge">HTTP</code> 프로토콜을 사용해 <code class="language-plaintext highlighter-rouge">HTTP</code> 요청 메시지를 생성 후 <code class="language-plaintext highlighter-rouge">TCP</code> 프로토콜을 사용해 사용자가 입력한 <code class="language-plaintext highlighter-rouge">URL</code> 정보와 함께 전송</li>
+    </ul>
+  </li>
+  <li><strong>Response</strong>
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">HTTP</code> 메시지를 받고 요청 URL에 대한 데이터 검색</li>
+      <li>검색된 데이터를 <code class="language-plaintext highlighter-rouge">HTTP</code> 프로토콜을 사용해 <code class="language-plaintext highlighter-rouge">HTTP</code> 응답 메시지를 <code class="language-plaintext highlighter-rouge">TCP</code> 프로토콜을 사용해 전송</li>
+      <li>랜더링 과정을 거쳐 클라이언트 화면에 표시</li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<ul>
+  <li><strong>Web Server</strong>
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">HTTP</code> 프로토콜을 기반으로 하여 웹 브라우저의 요청을 서비스 하는 기능을 담당</li>
+      <li><strong>정적</strong> 인 컨텐츠를 제공할 때는 <code class="language-plaintext highlighter-rouge">WAS</code>를 거치지 않고 바로 제공</li>
+      <li><strong>동적</strong> 인 컨텐츠 요청이 들어오면 요청을 <code class="language-plaintext highlighter-rouge">WAS</code> 로 보내고 처리한 결과는 <code class="language-plaintext highlighter-rouge">WAS</code> 가 전달</li>
+      <li><code class="language-plaintext highlighter-rouge">Apache Server</code>, <code class="language-plaintext highlighter-rouge">Nginx</code>, <code class="language-plaintext highlighter-rouge">IIS</code> 등</li>
+    </ul>
+  </li>
+  <li><strong>WAS (Web Application Server)</strong>
+    <ul>
+      <li>DB 조회나 다양한 로직 처리를 요구하는 <strong>동적</strong> 인 컨텐츠를 <code class="language-plaintext highlighter-rouge">HTTP</code> 통신을 통해 제공하는 기능을 담당</li>
+      <li>웹 컨테이너, 혹은 서블릿 컨테이너 라고도 불리우며 <code class="language-plaintext highlighter-rouge">JSP</code>, <code class="language-plaintext highlighter-rouge">Servlet</code> 구동 환경을 제공하는 서버</li>
+      <li>분산 트랜잭션, 보안, 메시징, 스레드 처리 등의 기능을 처리하는 분산 환경에서 사용</li>
+      <li><code class="language-plaintext highlighter-rouge">Tomcat</code>, <code class="language-plaintext highlighter-rouge">JBoss</code>, <code class="language-plaintext highlighter-rouge">Jeus</code>, <code class="language-plaintext highlighter-rouge">Web Sphere</code> 등</li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<ul>
+  <li><strong>2개를 따로 쓰는 이유?</strong>
+    <ul>
+      <li>기능을 분리하여 서버 부하를 방지</li>
+      <li>오류 화면 노출 가능 (<code class="language-plaintext highlighter-rouge">WAS</code> 장애 시 오류 화면 노출 불가능 할 수 있음)</li>
+      <li>여러 대의 <code class="language-plaintext highlighter-rouge">WAS</code>를 연결해 로드 밸런싱 용도로 사용</li>
+      <li>물리적으로 분리하여 보안을 강화
+        <ul>
+          <li><code class="language-plaintext highlighter-rouge">SSL</code> 대한 암복호화 처리에 <code class="language-plaintext highlighter-rouge">Web Server</code> 를 사용</li>
+        </ul>
+      </li>
+      <li>여러 언어의 웹 어플리케이션 서비스가 가능
+        <ul>
+          <li>하나의 서버에서 <code class="language-plaintext highlighter-rouge">PHP Application</code>, <code class="language-plaintext highlighter-rouge">Java Application</code> 를 함께 사용하는 등</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p><br />
+<br />
+<br />
+<br /></p>
+
 <h1 id="쿠키--세션">쿠키 / 세션</h1>
+
+<p><br />
+<br />
+<br />
+<br /></p>
+
+<h1 id="톰캣">톰캣</h1>
 
 <p><br />
 <br />
