@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-01-17T02:38:58+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">refactoring</title><link href="http://localhost:4000/til/refactoring/" rel="alternate" type="text/html" title="refactoring" /><published>2023-01-13T00:00:00+09:00</published><updated>2023-01-13T00:00:00+09:00</updated><id>http://localhost:4000/til/refactoring</id><content type="html" xml:base="http://localhost:4000/til/refactoring/"><![CDATA[<p><br /><br /><br /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-01-18T03:51:49+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">refactoring</title><link href="http://localhost:4000/til/refactoring/" rel="alternate" type="text/html" title="refactoring" /><published>2023-01-13T00:00:00+09:00</published><updated>2023-01-13T00:00:00+09:00</updated><id>http://localhost:4000/til/refactoring</id><content type="html" xml:base="http://localhost:4000/til/refactoring/"><![CDATA[<p><br /><br /><br /></p>
 
 <h1 id="리팩토링">리팩토링?</h1>
 
@@ -406,32 +406,6 @@ C언어는 컴파일 시 코드를 모드 기계어로 번역해 메모리에 �
 <br />
 <br /></p>
 
-<h1 id="의존이-좋은경우와-나쁜경우">의존이 좋은경우와 나쁜경우</h1>
-<ul>
-  <li>기본적으로 객체는 상호작용을 하기위해 만들어진다. 아무상호작용도 안하면 그 객체가 왜필요할까
-    <ul>
-      <li>최소한의 의존? 이걸알고 설계하는게 베스트</li>
-    </ul>
-  </li>
-</ul>
-
-<p><br /></p>
-
-<ul>
-  <li>스프링을 의존하는건 좋은걸까?</li>
-</ul>
-
-<p><br /></p>
-
-<ul>
-  <li>리팩토링 - 3의법칙 - 우발적 중복</li>
-</ul>
-
-<p><br />
-<br />
-<br />
-<br /></p>
-
 <h1 id="to-do">To Do</h1>
 
 <p><br />
@@ -439,22 +413,139 @@ C언어는 컴파일 시 코드를 모드 기계어로 번역해 메모리에 �
 <br />
 <br /></p>
 
-<h1 id="blocking-io-non-blocking-io">blocking I/O, non blocking I/O</h1>
+<h1 id="io">I/O</h1>
+<p>데이터의 입력(Input) / 출력(Output)이다. <code class="language-plaintext highlighter-rouge">I/O</code> 는 어플리케이션 성능에 가장 큰 영향을 미치는데
+<br />
+<code class="language-plaintext highlighter-rouge">I/O</code> 에서 발생하는 시간은 CPU를 사용하는 시간과 대기 시간이 있고 어플리케이션이 연산을 할 때까지
+<br />
+CPU가 다음 작업 실행을 block 한다. <code class="language-plaintext highlighter-rouge">I/O</code> 로 인한 blocking은 CPU를 긴 시간동안 idle 상태에 두는데
+<br />
+이것은 다른작업을 할 수 있음에도 할수가 없어 매우 비효율 적이다.</p>
+<ul>
+  <li>파일 <code class="language-plaintext highlighter-rouge">I/O</code> 뿐만 아니라 어떤 디바이스를 통해 입력과 출력이 이뤄지는 작업을 모두 말한다.
+    <ul>
+      <li>다른 서버로부터 데이터를 전송받는것도 <code class="language-plaintext highlighter-rouge">I/O</code> 에 포함한다.</li>
+      <li>콘솔에 출력하는 것도 스트림을 통해 출력하는 것이기 때문에 <code class="language-plaintext highlighter-rouge">I/O</code> 이다.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><br />
+<code class="language-plaintext highlighter-rouge">I/O</code> 는 어플리케이션에서 직접 수행 될 수 없고 무조건 커널에 한번 이상 시스템콜을 보내야 한다.
+<br />
+시스템 콜을 보내면 그순간 커널로 제어권이 넘어가고 (context-switch), 유저 프로세스 / 스레드는 제어권이
+<br />
+다시 돌아오기 전까진 block상태가 되고 그동안 다른 작업을 하지 못하게 된다.</p>
 
 <p><br /></p>
 
-<p><strong><em>blocking I/O</em></strong>
+<h2 id="blocking-io">blocking I/O</h2>
+<p><code class="language-plaintext highlighter-rouge">I/O</code> 작업이 진행되는 동안 프로세스가 자신의 작업을 중단하고 <code class="language-plaintext highlighter-rouge">I/O</code>가 끝날때까지 block 되는 방식이다.
 <br />
+<code class="language-plaintext highlighter-rouge">I/O</code> 가 호출되면 완료되기 전까지 제어권을 커널이 가져가서 유저 프로세스 / 스레드는 block 상태가 된다.</p>
+
+<ul>
+  <li>장점
+    <ul>
+      <li>호출마다 스레드를 생성하니 요청이 적은 서비스에서 효율이 좋다. (병렬작업의 장점)</li>
+    </ul>
+  </li>
+  <li>단점
+    <ul>
+      <li>요청마다 스레드를 생성하는 부분의 리소스가 크다.</li>
+      <li><code class="language-plaintext highlighter-rouge">context-switching</code> 이 빈번하게 일어난다.</li>
+      <li>각각의 스레드는 <code class="language-plaintext highlighter-rouge">I/O</code> 작업이 완료되기 전까진 block 상태가 된다.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><br />
+전통적인 방식에서는 스레드를 늘려 멀티스레드를 지원하는 방식으로 진화해 나갔다.
 <br />
-스레드를 늘리면 노는 부분이 줄어든다</p>
+하지만 스레드 갯수에는 한계가 있고 리소스 측면에서도 좋지 않기 때문에 각 <code class="language-plaintext highlighter-rouge">I/O</code>에 대해서 장시간 
+<br />
+사용하지 않고 실행되어 있는 스레드를 방치하는 것은 효율성 측면에서 최상의 방법은 아니다.</p>
+
+<p><br /></p>
+
+<h2 id="non-blocking">non blocking</h2>
+<p><code class="language-plaintext highlighter-rouge">I/O</code> 작업이 완료될 때 까지 커널이 제어권을 가지지 않고 <code class="language-plaintext highlighter-rouge">I/O</code> 호출에 대해 즉시 응답을 리턴하는 방식이다.
+<br />
+<code class="language-plaintext highlighter-rouge">I/O</code> 호출되면 작업 여부와는 무관하게 즉시 결과를 리턴하고, 커널이 시스템콜을 받자마자 CPU 제어권을 다시 어플리케이션에게
+넘겨주게 된다. 그리고 어플리케이션은 다른 작업을 수행하다 중간중간 시스템콜을 보내 <code class="language-plaintext highlighter-rouge">I/O</code>가 완료되었는지 커널에게 물어보고 완료되면 <code class="language-plaintext highlighter-rouge">I/O</code> 작업을 완료한다.</p>
+
+<ul>
+  <li>장점
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">I/O</code> 작업이 완료되기 전까진 block 상태가 되지 않는다.</li>
+    </ul>
+  </li>
+  <li>단점
+    <ul>
+      <li>반복적으로 시스템콜이 일어나게 된다.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><br />
+싱글스레드 방식으로 block되는 시간을 최소화 할 수 있어 <code class="language-plaintext highlighter-rouge">I/O</code> 작업(read/write) 이 많은 경우 유리하지만
+<br />
+CPU의 할일이 많은 경우에는 적합하지 않다.</p>
 
 <p><br />
 <br /></p>
 
-<p><strong><em>non blocking</em></strong>
+<h2 id="io-이벤트-통지-모델">I/O 이벤트 통지 모델</h2>
+<p><code class="language-plaintext highlighter-rouge">non blocking</code> 의 문제인 반복적 시스템콜 호출을 해결하기 위해 <code class="language-plaintext highlighter-rouge">I/O</code> <strong>이벤트 통지 모델</strong>이 도입되었다.
+<br />
+반복적으로 시스템콜을 호출하지 않고 입력 버퍼에서 완료되었다는 알림(이벤트 통지 모델)을 주게 된다.
+<br />
+<code class="language-plaintext highlighter-rouge">I/O</code> 결과 반환 방식에 따라 <strong>Sync(동기)</strong> / <strong>Async(비동기)</strong> 모델로 분류한다.</p>
+<ul>
+  <li><strong>이벤트</strong> : <strong>수신버퍼</strong> or <strong>출력버퍼</strong>에 데이터를 처리하는 동작을 의미한다.</li>
+  <li><strong>수신버퍼</strong> : 입력버퍼에 데이터가 수신되었다는 걸 알림 출력</li>
+  <li><strong>출력버퍼</strong> : 출력버퍼가 비었으니 데이터 전송이 가능한 상황을 알림</li>
+</ul>
+
+<p><br /></p>
+
+<h3 id="sync-동기">Sync (동기)</h3>
+<p><code class="language-plaintext highlighter-rouge">I/O</code> 작업이 진행되는 동안 유저 프로세스는 결과를 기다렸다가 이벤트(결과)를 직접 처리하는 방식이다.
+<br />
+<code class="language-plaintext highlighter-rouge">blocking</code> 방식처럼 완료될 때 까지 기다릴 수도 있고, <code class="language-plaintext highlighter-rouge">non blocking</code> 방식처럼 커널에 계속 요청할 수 도 있다.
+<br />
+<code class="language-plaintext highlighter-rouge">I/O</code> 가 완료될 때 까지 계속 기다리던가, 다른작업을 하면서 기다리던가 결국에는 기다려야 하지만
+<br />
+<strong><em>다른점</em></strong>은 <code class="language-plaintext highlighter-rouge">notify</code>를 <strong>유저 프로세스가 주체적</strong>으로 진행하고 커널은 유저 프로세스의 요청에 수동적으로 응답한다.</p>
+
+<p><br /></p>
+
+<h3 id="async-비동기">Async (비동기)</h3>
+<p><code class="language-plaintext highlighter-rouge">I/O</code>가 진행되는 동안 유저 프로세스는 자신의 일을 하다가 이벤트 핸들러에 의해 알림이 오면 처리하는 방식이다.
+<br />
+결국 <code class="language-plaintext highlighter-rouge">notify</code>를 <strong>커널이 주체적</strong>으로 진행하며, 유저 프로세스는 수동적인 입장에서 통지가 오면 그때 <code class="language-plaintext highlighter-rouge">I/O</code> 처리를 
+<br />
+한다. (이벤트 핸들러, callback)에 의해 운영체제에서 처리 결과 통지받는다.</p>
+
+<p><br /></p>
+
+<h3 id="뭐쓰는데">뭐쓰는데?</h3>
+<p><strong>Sync</strong> : 어떤 작업을 수행한 결과로 다음 작업을 수행해야 하는 즉, 순차적 작업일 때 (인출 후 송금)
+<br />
+<strong>Async</strong> : <code class="language-plaintext highlighter-rouge">I/O</code> 작업이 많을 때</p>
+
+<p><br /></p>
+
+<h2 id="차이">차이?</h2>
+<ul>
+  <li><strong><em>블로킹/논블로킹</em></strong> : 각 작업의 수행 형태와 우선순위에 따라 각 작업의 수행가능 시기를 어떻게 제어할 것인가.</li>
+  <li><strong><em>동기/비동기</em></strong> : 각 작업이 주고받는 데이터의 상태와 흐름을 어떻게 제어할 것인가. 데이터의 일관성 유지
 <br />
 <br />
-스레드가 하나일떄 사용할수 있는 패턴</p>
+즉, <strong>특정 작업의 행위가 일어나는 시점 관리</strong> 라는 관심사가 다르다.
+<br />
+또한 <code class="language-plaintext highlighter-rouge">notify</code>의 제어권을 가짐으로써 시스템콜 호출에 대한 차이도 있다.</li>
+</ul>
 
 <p><br />
 <br />
