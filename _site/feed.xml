@@ -1,4 +1,92 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-01-18T21:38:19+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">refactoring</title><link href="http://localhost:4000/til/refactoring/" rel="alternate" type="text/html" title="refactoring" /><published>2023-01-13T00:00:00+09:00</published><updated>2023-01-13T00:00:00+09:00</updated><id>http://localhost:4000/til/refactoring</id><content type="html" xml:base="http://localhost:4000/til/refactoring/"><![CDATA[<p><br /><br /><br /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-01-19T02:02:36+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">6 Week</title><link href="http://localhost:4000/til/6%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="6 Week" /><published>2023-01-19T00:00:00+09:00</published><updated>2023-01-19T00:00:00+09:00</updated><id>http://localhost:4000/til/6%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/6%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
+
+<h1 id="web">Web</h1>
+<p>웹의 정의란?
+<br />
+여기저기 거미줄처럼 퍼져있는 정보의 모음?
+<br />
+웹페이지 / 웹어플리케이션
+<br />
+둘의 차이는 정적과 동적의 차이?</p>
+
+<p><br />
+<br />
+<br />
+<br /></p>
+
+<h1 id="서버사이드-랜더링">서버사이드 랜더링</h1>
+
+<p><br />
+<br />
+<br />
+<br /></p>
+
+<h1 id="http의-전송방식">HTTP의 전송방식</h1>
+<p>http는 왜 전송방식으로 텍스트를 사용했을까?</p>
+<ul>
+  <li>텍스트는 눈으로 보고 해석할 수 있고</li>
+  <li>다양한 환경에 맞는 (범용적, 유연함) 규약이 필요해서 - 텍스트가 가장 보편적이었다</li>
+  <li>웹의 뜻은 월드 와이드 웹 -&gt; 말그대로 월드, 엄청나게 많은 곳에서 쓰인다</li>
+</ul>
+
+<p><br /></p>
+
+<p><strong>HTTPS?</strong></p>
+<ul>
+  <li>텍스트는 읽기쉬우니까 보안책이 필요하자나
+    <ul>
+      <li>암호화 / 복호화에 필요한 인증서를 포함</li>
+    </ul>
+  </li>
+</ul>
+
+<p><br />
+<br />
+<br />
+<br /></p>
+
+<h1 id="base64">base64</h1>
+<ul>
+  <li>텍스트 배열로 바꾼다?</li>
+</ul>
+
+<p><br />
+<br />
+<br />
+<br /></p>
+
+<h1 id="to-do">To Do</h1>
+
+<p><br />
+<br />
+<br />
+<br /></p>
+
+<h1 id="세션이-왜필요할까">세션이 왜필요할까?</h1>
+<p>쿠키도 있는데 말이야..</p>
+
+<p><br />
+<br />
+<br />
+<br /></p>
+
+<h1 id="osi-7-계층">OSI 7 계층</h1>
+<p>계층이 올라간다는건 무슨 의미일까?
+<br />
+<br />
+TCP 기반의 HTTP가 UDP통신을 도입하고 있는데 과연 데이터 정합성의 문제는?</p>
+
+<ul>
+  <li>데이터 정합성의 검증을 한 계층 더 올려서 거기서 한다는데?</li>
+  <li>그러니까 TCP를 사용하는 계층에선 정합성의 문제에서 자유로우니 UDP 통신을 이용한다?</li>
+</ul>
+
+<p><br />
+<br />
+<br />
+<br /></p>
+
+<p><br /></p>]]></content><author><name>NNIIE</name></author><category term="TIL" /><category term="Tomcat" /><category term="Filter" /><category term="Web" /><category term="Session" /><category term="OSI" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">refactoring</title><link href="http://localhost:4000/til/refactoring/" rel="alternate" type="text/html" title="refactoring" /><published>2023-01-13T00:00:00+09:00</published><updated>2023-01-13T00:00:00+09:00</updated><id>http://localhost:4000/til/refactoring</id><content type="html" xml:base="http://localhost:4000/til/refactoring/"><![CDATA[<p><br /><br /><br /></p>
 
 <h1 id="리팩토링">리팩토링?</h1>
 
@@ -101,7 +189,7 @@
 </ul>
 
 <p><br />
-<br /></p>]]></content><author><name>NNIIE</name></author><category term="TIL" /><category term="refactoring" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">5주차</title><link href="http://localhost:4000/til/5%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="5주차" /><published>2023-01-12T00:00:00+09:00</published><updated>2023-01-12T00:00:00+09:00</updated><id>http://localhost:4000/til/5%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/5%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
+<br /></p>]]></content><author><name>NNIIE</name></author><category term="TIL" /><category term="refactoring" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">5 Week</title><link href="http://localhost:4000/til/5%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="5 Week" /><published>2023-01-12T00:00:00+09:00</published><updated>2023-01-12T00:00:00+09:00</updated><id>http://localhost:4000/til/5%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/5%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
 
 <h1 id="solid">SOLID</h1>
 <p>객체지향의 5가지 설계원칙</p>
@@ -826,7 +914,7 @@ WAS는 HttpServleResponse 객체를 생성해 서블릿에게 전달하고 이 �
 <br />
 <br /></p>
 
-<p><br /></p>]]></content><author><name>NNIIE</name></author><category term="TIL" /><category term="SOLID" /><category term="스레드" /><category term="인터프리터 언어" /><category term="Blocking / Non Blocking" /><category term="동시성" /><category term="Servlet" /><category term="Tomcat" /><category term="cookie / session" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">4주차</title><link href="http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="4주차" /><published>2023-01-05T00:00:00+09:00</published><updated>2023-01-05T00:00:00+09:00</updated><id>http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
+<p><br /></p>]]></content><author><name>NNIIE</name></author><category term="TIL" /><category term="SOLID" /><category term="스레드" /><category term="인터프리터 언어" /><category term="Blocking / Non Blocking" /><category term="동시성" /><category term="Servlet" /><category term="cookie / session" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">4 Week</title><link href="http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="4 Week" /><published>2023-01-05T00:00:00+09:00</published><updated>2023-01-05T00:00:00+09:00</updated><id>http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
 
 <h1 id="cqrs-pattern">CQRS Pattern</h1>
 <p>Command and Query Responsibility Segregation (명령과 조회의 책임 분리)
@@ -1542,7 +1630,7 @@ IDE를 몇개씩 띄워놓고 서버를 돌리는것도 힘들기 때문에 멀�
   <li>각 어플리케이션(모듈)에 대한 설정은 공통 모듈에 적용하지 않고 분리한다.</li>
 </ul>
 
-<p><br /></p>]]></content><author><name>NNIIE</name></author><category term="TIL" /><category term="Generic" /><category term="시공간복잡도" /><category term="Nested Class" /><category term="Multi Module" /><category term="Lambda" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">3주차</title><link href="http://localhost:4000/til/3%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="3주차" /><published>2022-12-29T00:00:00+09:00</published><updated>2022-12-29T00:00:00+09:00</updated><id>http://localhost:4000/til/3%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/3%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
+<p><br /></p>]]></content><author><name>NNIIE</name></author><category term="TIL" /><category term="Generic" /><category term="시공간복잡도" /><category term="Nested Class" /><category term="Multi Module" /><category term="Lambda" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">3 Week</title><link href="http://localhost:4000/til/3%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="3 Week" /><published>2022-12-29T00:00:00+09:00</published><updated>2022-12-29T00:00:00+09:00</updated><id>http://localhost:4000/til/3%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/3%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
 
 <h1 id="property">Property</h1>
 <p>속성이란 뜻이다. 해당 <code class="language-plaintext highlighter-rouge">Object</code>의 특징.
@@ -2589,7 +2677,7 @@ Key와 Value로 이루어진 자료구조이다.
 
 <h1 id="graph">Graph</h1>
 
-<p><br /></p>]]></content><author><name>NNIIE</name></author><category term="Data_Structure" /><category term="Data Structure" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">2주차</title><link href="http://localhost:4000/til/2%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="2주차" /><published>2022-12-22T00:00:00+09:00</published><updated>2022-12-22T00:00:00+09:00</updated><id>http://localhost:4000/til/2%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/2%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
+<p><br /></p>]]></content><author><name>NNIIE</name></author><category term="Data_Structure" /><category term="Data Structure" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">2 Week</title><link href="http://localhost:4000/til/2%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="2 Week" /><published>2022-12-22T00:00:00+09:00</published><updated>2022-12-22T00:00:00+09:00</updated><id>http://localhost:4000/til/2%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/2%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
 
 <h1 id="enum">enum</h1>
 <p>열거형이라고 부르며, 서로 연관된 상수들의 집합이다.
@@ -3121,7 +3209,7 @@ enum자체가 가지는 비용이 적지 않다. static final 상수로도 충�
       <li>QueueCapacity 초과 요청에 대한 비동기 method 호출시 방어 코드 작성</li>
     </ul>
   </li>
-</ul>]]></content><author><name>NNIIE</name></author><category term="TIL" /><category term="Spring Annotation" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">1주차</title><link href="http://localhost:4000/til/1%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="1주차" /><published>2022-12-15T00:00:00+09:00</published><updated>2022-12-15T00:00:00+09:00</updated><id>http://localhost:4000/til/1%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/1%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
+</ul>]]></content><author><name>NNIIE</name></author><category term="TIL" /><category term="Spring Annotation" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">1 Week</title><link href="http://localhost:4000/til/1%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="1 Week" /><published>2022-12-15T00:00:00+09:00</published><updated>2022-12-15T00:00:00+09:00</updated><id>http://localhost:4000/til/1%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/1%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
 
 <h1 id="객체와-클래스-그리고-인스턴스">객체와 클래스 그리고 인스턴스</h1>
 <ul>
@@ -4056,130 +4144,4 @@ static같은 정적 메모리를 남발하여 지워지지 않고 계속 쌓일�
   <li>힙덤프 내역을 분석</li>
 </ol>
 
-<h2 id="함수형">함수형</h2>]]></content><author><name>NNIIE</name></author><category term="TIL" /><category term="Lombok" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">이펙티브 자바 - 객체 생성과 파괴</title><link href="http://localhost:4000/effective_java/%EC%9D%B4%ED%8E%99%ED%8B%B0%EB%B8%8C%EC%9E%90%EB%B0%94/" rel="alternate" type="text/html" title="이펙티브 자바 - 객체 생성과 파괴" /><published>2022-11-30T00:00:00+09:00</published><updated>2022-11-30T00:00:00+09:00</updated><id>http://localhost:4000/effective_java/%EC%9D%B4%ED%8E%99%ED%8B%B0%EB%B8%8C%EC%9E%90%EB%B0%94</id><content type="html" xml:base="http://localhost:4000/effective_java/%EC%9D%B4%ED%8E%99%ED%8B%B0%EB%B8%8C%EC%9E%90%EB%B0%94/"><![CDATA[<p><br /><br /><br /></p>
-
-<h1 id="정적-팩토리-메소드">정적 팩토리 메소드</h1>
-<p><br />
-<strong><em>생성자 대신 정적 팩토리 메서드를 고려하라</em></strong></p>
-
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 정적 팩토리 메소드 ex</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Person</span> <span class="o">{</span>
-
-    <span class="kd">private</span> <span class="kd">final</span> <span class="nc">String</span> <span class="n">name</span><span class="o">;</span>
-    <span class="kd">private</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">age</span><span class="o">;</span>
-
-    <span class="kd">private</span> <span class="nf">Person</span><span class="o">(</span><span class="nc">String</span> <span class="n">name</span><span class="o">,</span> <span class="kt">int</span> <span class="n">age</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">this</span><span class="o">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">;</span>
-        <span class="k">this</span><span class="o">.</span><span class="na">age</span> <span class="o">=</span> <span class="n">age</span><span class="o">;</span>
-    <span class="o">}</span>
-
-    <span class="kd">public</span> <span class="kd">static</span> <span class="nc">Person</span> <span class="nf">of</span><span class="o">(</span><span class="nc">String</span> <span class="n">name</span><span class="o">,</span> <span class="kt">int</span> <span class="n">age</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">return</span> <span class="k">new</span> <span class="nf">Person</span><span class="o">(</span><span class="n">name</span><span class="o">,</span> <span class="n">age</span><span class="o">);</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-</code></pre></div></div>
-<p>클라이언트가 클래스의 인스턴스를 얻는 전통적인 수단은 public 생성자 이다.
-<br />
-하지만 클래스는 public 생성자와 대신 (혹은 생성자와 함께) 정적 팩터리 메서드를 제공할 수 있다.
-<br /></p>
-
-<h2 id="장점">장점</h2>
-<h3 id="1-이름을-가질-수-있다">1. 이름을 가질 수 있다.</h3>
-
-<p>생성자에 넘기는 매개변수와 생성자 만으로는 반환될 객체의 특성을 제대로 파악하기 힘들다.
-<br />
-그러나 정적 팩터리는 네이밍이 가능함으로 반환될 객체의 특성을 쉽게 파악할 수 있다.</p>
-
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Car</span> <span class="o">{</span>
-
-    <span class="kd">private</span> <span class="kd">final</span> <span class="nc">String</span> <span class="n">brand</span><span class="o">;</span>
-
-    <span class="kd">private</span> <span class="nf">Car</span><span class="o">(</span><span class="nc">String</span> <span class="n">brand</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">this</span><span class="o">.</span><span class="na">brand</span> <span class="o">=</span> <span class="n">brand</span><span class="o">;</span>
-    <span class="o">}</span>
-
-    <span class="kd">public</span> <span class="kd">static</span> <span class="nc">Car</span> <span class="nf">brandFrom</span><span class="o">(</span><span class="nc">String</span> <span class="n">brand</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">return</span> <span class="k">new</span> <span class="nf">Car</span><span class="o">(</span><span class="n">brand</span><span class="o">);</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-</code></pre></div></div>
-
-<h3 id="2-호출될-때마다-인스턴스를-새로-생성하지-않을-수-있다">2. 호출될 때마다 인스턴스를 새로 생성하지 않을 수 있다.</h3>
-<p>불변클래스는 인스턴스를 미리 만들어 놓거나 새로 생성한 인스턴스를 캐싱하여 재활용하는 식으로 
-<br />
-불필요한 객체 생성을 피할 수 있다.
-<br />
-enum과 같이 자주 사용되는 요소의 개수가 정해져있다면 해당 개수만큼 미리 생성해놓고 
-<br />
-조회(캐싱)할 수 있는 구조로 만들수 있다.
-<br />
-정적 팩터리 메서드와 캐싱구조를 함께 사용하면 매번 새로운 객체를 생성할 필요가 없어진다.
-<br />
-즉, 객체 생성 비용이 큰 객체가 자주 생성된다면 성능상 이점을 볼 수 있다.</p>
-
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">LottoNumber</span> <span class="o">{</span>
-    
-    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="no">MIN_LOTTO_NUMBER</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>
-    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="no">MAX_LOTTO_NUMBER</span> <span class="o">=</span> <span class="mi">45</span><span class="o">;</span>
-
-    <span class="kd">private</span> <span class="kd">static</span> <span class="nc">Map</span><span class="o">&lt;</span><span class="nc">Integer</span><span class="o">,</span> <span class="nc">LottoNumber</span><span class="o">&gt;</span> <span class="n">lottoNumberCache</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">HashMap</span><span class="o">&lt;&gt;();</span>
-
-    <span class="kd">static</span> <span class="o">{</span>
-        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="no">MIN_LOTTO_NUMBER</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="no">MAX_LOTTO_NUMBER</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
-            <span class="n">lottoNumberCache</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">i</span><span class="o">,</span> <span class="k">new</span> <span class="nc">LottoNumber</span><span class="o">(</span><span class="n">i</span><span class="o">));</span>
-        <span class="o">}</span>
-    <span class="o">}</span>
-
-    <span class="kd">private</span> <span class="kt">int</span> <span class="n">number</span><span class="o">;</span>
-
-    <span class="kd">private</span> <span class="nf">LottoNumber</span><span class="o">(</span><span class="kt">int</span> <span class="n">number</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">this</span><span class="o">.</span><span class="na">number</span> <span class="o">=</span> <span class="n">number</span><span class="o">;</span>
-    <span class="o">}</span>
-
-    <span class="kd">public</span> <span class="nc">LottoNumber</span> <span class="nf">from</span><span class="o">(</span><span class="kt">int</span> <span class="n">number</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">return</span> <span class="n">lottoNumberCache</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">number</span><span class="o">);</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-</code></pre></div></div>
-
-<h3 id="3-하위-객체를-반환할-수-있다">3. 하위 객체를 반환할 수 있다.</h3>
-<p>상속을 사용할 때 확인할 수 있다.
-<br />
-클라이언트에게 구현체를 노출하지 않고 반환할 수 있고 결국 API의 개념적 무게가 가벼워 진다.</p>
-
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="nc">Grade</span> <span class="nf">of</span><span class="o">(</span><span class="kt">int</span> <span class="n">score</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">if</span> <span class="o">(</span><span class="n">score</span> <span class="o">&lt;</span> <span class="mi">70</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">return</span> <span class="k">new</span> <span class="nc">Fail</span><span class="o">;</span>
-    <span class="o">}</span>
-    <span class="k">if</span> <span class="o">(</span><span class="n">score</span> <span class="o">&gt;</span> <span class="mi">70</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">return</span> <span class="k">new</span> <span class="nc">Pass</span><span class="o">;</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-<span class="kd">class</span> <span class="nc">Fail</span> <span class="kd">extends</span> <span class="nc">Grade</span> <span class="o">{}</span>
-<span class="kd">class</span> <span class="nc">Pass</span> <span class="kd">extends</span> <span class="nc">Grade</span> <span class="o">{}</span>
-</code></pre></div></div>
-
-<h2 id="단점">단점</h2>
-<h3 id="1-상속문제">1. 상속문제</h3>
-<p>인스턴스 통제 클래스를 구현하기 위해서는 new 키워드를 사용하여 임의로 객체를 생성함을 막아야한다. 
-<br />
-이를 위해 생성자의 접근 제어자를 private 로 설정해야하는데, 생성자가 private 인 클래스는 상속을 할 수 없다. 
-<br />
-즉, 부모 클래스가 될 수 없다.
-<br />
-이 제약은 컴포지션을 사용하도록 유도하고 불변타입으로 만들려면 이 제약을 지켜야 한다는 점에서 오히려 장점으로
-받아들여 진다는데, 
-<br />
-이해가 가지 않는다. 이펙티브 자바를 조금더 공부해 보자</p>
-
-<h3 id="2-정적-팩터리-메서드는-프로그래머가-찾기-어렵다">2. 정적 팩터리 메서드는 프로그래머가 찾기 어렵다.</h3>
-
-<h2 id="네이밍-컨벤션">네이밍 컨벤션</h2>
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">from</code> : 하나의 매개 변수를 받아서 객체를 생성</li>
-  <li><code class="language-plaintext highlighter-rouge">of</code> : 여러개의 매개 변수를 받아서 객체를 생성</li>
-  <li><code class="language-plaintext highlighter-rouge">getInstance</code> &amp; <code class="language-plaintext highlighter-rouge">instance</code> : 인스턴스를 생성. 이전에 반환했던 것과 같을 수 있음.</li>
-  <li><code class="language-plaintext highlighter-rouge">newInstance</code> &amp; <code class="language-plaintext highlighter-rouge">create</code> : 새로운 인스턴스를 생성</li>
-  <li><code class="language-plaintext highlighter-rouge">get[OtherType]</code> : 다른 타입의 인스턴스를 생성. 이전에 반환했던 것과 같을 수 있음.</li>
-  <li><code class="language-plaintext highlighter-rouge">new[OtherType]</code> : 다른 타입의 새로운 인스턴스를 생성.</li>
-</ul>]]></content><author><name>NNIIE</name></author><category term="Effective_Java" /><summary type="html"><![CDATA[]]></summary></entry></feed>
+<h2 id="함수형">함수형</h2>]]></content><author><name>NNIIE</name></author><category term="TIL" /><category term="Lombok" /><summary type="html"><![CDATA[]]></summary></entry></feed>

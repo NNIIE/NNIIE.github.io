@@ -17,7 +17,7 @@ var store = [{
         "url": "/til/1-TIL/",
         "teaser": null
       },{
-        "title": "1주차",
+        "title": "1 Week",
         "excerpt":"객체와 클래스 그리고 인스턴스 객체 물리적, 추상적으로 생각할 수 있는것 중에서 자신의 속성을 가지고 있고 다른것과 식별 가능한 것. 소프트웨어 에서 구현할 대상 클래스 java에서 객체를 생성하기 위한 일종의 설계도 속성(필드)을 가지고 있고, 행위(메소드)를 가지고있다. oop의 관점에서 클래스 타입으로 선언되었을 때 ‘객체’라고 부른다. 인스턴스 클래스를 가지고 객체를 실체화 한것. 메모리에...","categories": ["TIL"],
         "tags": ["접근제어자","상속","다형성","Wrapper Class"],
         "url": "/til/1%EC%A3%BC%EC%B0%A8/",
@@ -29,7 +29,7 @@ var store = [{
         "url": "/til/Annotation/",
         "teaser": null
       },{
-        "title": "2주차",
+        "title": "2 Week",
         "excerpt":"enum 열거형이라고 부르며, 서로 연관된 상수들의 집합이다. 모든 열거형은 Enum클래스의 자손이며 Enum클래스의 멤버를 상속받는다. 특징과 장점 enum은 컴파일 후 public static final 필드이며 객체로 제공된다. 상수들은 JVM 메서드 영역에 자리한다. Enum클래스는 상수와 같이 인스턴스가 단 한번만 생성된다. 컴파일 시점에 타입안정성이 보장되기 때문에 private 생성자만을 가진다. 즉, 인스턴스 생성을 제어하며 싱글톤을...","categories": ["TIL"],
         "tags": ["Enum","Singleton","Interface","Abstract"],
         "url": "/til/2%EC%A3%BC%EC%B0%A8/",
@@ -41,21 +41,21 @@ var store = [{
         "url": "/data_structure/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/",
         "teaser": null
       },{
-        "title": "3주차",
+        "title": "3 Week",
         "excerpt":"Property 속성이란 뜻이다. 해당 Object의 특징. 사람을 예로들면 피부색, 키, 나이, 몸무게 등이다. Property의 읽기와 쓰기는 일반적으로 getter 와 setter 메서드 호출로 변환된다. 자바는 property가 없고 코틀린이나 자바스크립트는 property를 사용 이건 왜그래? String 자바에서 제일 많이 사용되는 String은 특별대우를 받는다. Reference Type 이지만 기본적인 사용은 Primitive Type 이다. String 객체생성은...","categories": ["TIL"],
         "tags": ["String","Annotation","Exception","Property","JVM","GC"],
         "url": "/til/3%EC%A3%BC%EC%B0%A8/",
         "teaser": null
       },{
-        "title": "4주차",
+        "title": "4 Week",
         "excerpt":"CQRS Pattern Command and Query Responsibility Segregation (명령과 조회의 책임 분리) 즉, 명령(command)및 쿼리의 책임을 분리하는 패턴이다. 책임분리를 위해서는 코드의 모듈이 분리되어야 한다. read 와 write를 분리하는것을 뜻하며 어플리케이션까지만 적용할 수도 있고, DB의 모델까지만 분리할 수도 있고, DB 그 자체를 분리하여 적용할 수도 있다. 명령은 데이터중심이 아니라 작업 기반이어야 한다....","categories": ["TIL"],
         "tags": ["Generic","시공간복잡도","Nested Class","Multi Module","Lambda"],
         "url": "/til/4%EC%A3%BC%EC%B0%A8/",
         "teaser": null
       },{
-        "title": "5주차",
+        "title": "5 Week",
         "excerpt":"SOLID 객체지향의 5가지 설계원칙 단일 책임 원칙 (SRP) - 한 클래스는 하나의 책임만 가져야 한다. 모든 클래스는 하나의 책임만 가지며, 클래스는 그 책임을 완전히 캡슐화 해야한다. 한 클래스가 수행할 수 있는 책임 (기능)이 여러가지라면, 클래스 내부 함수끼리의 강한 결합이 발생할 가능성이 높아지고 이는 유지보수에 비효율적이다. 한 클래스를 변경하기 위해 한가지...","categories": ["TIL"],
-        "tags": ["SOLID","스레드","인터프리터 언어","Blocking / Non Blocking","동시성","Servlet","Tomcat","cookie / session"],
+        "tags": ["SOLID","스레드","인터프리터 언어","Blocking / Non Blocking","동시성","Servlet","cookie / session"],
         "url": "/til/5%EC%A3%BC%EC%B0%A8/",
         "teaser": null
       },{
@@ -63,5 +63,11 @@ var store = [{
         "excerpt":"리팩토링? 소프트웨어 관점으로 결과의 변경 없이 코드의 구조를 재조정함 을 의미한다. 즉, 기능은 보존하면서 설계 및 구조를 개선하는 것이다. 소프트웨어 설계가 좋아진다. 소프트웨어를 이해하기 쉬워진다. 버그를 쉽게 찾을 수 있다. 프로그래밍 속도를 높일 수 있다. 진짜 중복 한 인스턴스가 변경되면, 동일한 변경을 그 인스턴스의 모든 복사본에 반드시 적용해야한다. 우발적 중복...","categories": ["TIL"],
         "tags": ["refactoring"],
         "url": "/til/refactoring/",
+        "teaser": null
+      },{
+        "title": "6 Week",
+        "excerpt":"Web 웹의 정의란? 여기저기 거미줄처럼 퍼져있는 정보의 모음? 웹페이지 / 웹어플리케이션 둘의 차이는 정적과 동적의 차이? 서버사이드 랜더링 HTTP의 전송방식 http는 왜 전송방식으로 텍스트를 사용했을까? 텍스트는 눈으로 보고 해석할 수 있고 다양한 환경에 맞는 (범용적, 유연함) 규약이 필요해서 - 텍스트가 가장 보편적이었다 웹의 뜻은 월드 와이드 웹 -&gt; 말그대로 월드,...","categories": ["TIL"],
+        "tags": ["Tomcat","Filter","Web","Session","OSI"],
+        "url": "/til/6%EC%A3%BC%EC%B0%A8/",
         "teaser": null
       }]
