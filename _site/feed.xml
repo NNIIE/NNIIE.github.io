@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-01-18T20:18:13+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">refactoring</title><link href="http://localhost:4000/til/refactoring/" rel="alternate" type="text/html" title="refactoring" /><published>2023-01-13T00:00:00+09:00</published><updated>2023-01-13T00:00:00+09:00</updated><id>http://localhost:4000/til/refactoring</id><content type="html" xml:base="http://localhost:4000/til/refactoring/"><![CDATA[<p><br /><br /><br /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-01-18T21:38:19+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">refactoring</title><link href="http://localhost:4000/til/refactoring/" rel="alternate" type="text/html" title="refactoring" /><published>2023-01-13T00:00:00+09:00</published><updated>2023-01-13T00:00:00+09:00</updated><id>http://localhost:4000/til/refactoring</id><content type="html" xml:base="http://localhost:4000/til/refactoring/"><![CDATA[<p><br /><br /><br /></p>
 
 <h1 id="리팩토링">리팩토링?</h1>
 
@@ -719,14 +719,93 @@ JWT는 Json Web Token의 약자이고 인증에 필요한 정보들을 암호화
 <br />
 <br /></p>
 
-<h1 id="톰캣">톰캣</h1>
+<h1 id="servlet">Servlet</h1>
+<p>동적인 웹페이지를 만들 때 사용되는 자바기반 기술이다.
+<br />
+<code class="language-plaintext highlighter-rouge">Request / Response</code> 흐름을 간단한 메서드 호출로 다룰 수 있게 해준다.
+<br />
+서블릿을 통해 개발자는 비즈니스 로직에 더 집중할 수 있다.</p>
+
+<ul>
+  <li>Request에 동적으로 작동하는 웹 어플리케이션 컴포넌트</li>
+  <li>HTML을 사용해 response 한다.
+    <ul>
+      <li>HTML 변경 시 재 컴파일해야 한다.</li>
+    </ul>
+  </li>
+  <li>자바의 스레드를 이용해 동작한다.</li>
+  <li>MVC패턴에서 Controller 로 이용된다.</li>
+  <li>HTTP 프로토콜을 지원하는 HttpServlet 클래스를 상속받는다.</li>
+</ul>
+
+<p><br /></p>
+
+<p><strong>서블릿 동작 과정</strong></p>
+<ol>
+  <li>Servlet Request, Servlet Response 객체를 생성</li>
+  <li>설정 파일을 참고하여 매핑할 Servlet을 확인</li>
+  <li>해당 서블릿 인스턴스 존재의 유무를 확인하여 없으면 생성</li>
+  <li>Servlet Container에 스레드를 생성하고 service를 실행</li>
+  <li>응답을 처리하면 Servlet Request, Servlet Response 객체를 소멸</li>
+</ol>
+
+<p><br />
+<br /></p>
+
+<h2 id="servlet-container">Servlet Container</h2>
+<p>서블릿을 담고 관리해주는 컨테이너
+<br />
+Request에가 오면 HttpServletRequest, HttpServletResponse 객체를 생성해 
+<br />
+GET / POST 여부에 따라 동적 페이지를 생성해 Response를 보낸다.</p>
+
+<ul>
+  <li>
+    <p><strong>HttpServletRequest</strong>
+<br />
+헤더정보, 파라미터, 쿠키, URL 등의 정보를 읽는 메서드와 body의 stream을 읽는 메서드 보유</p>
+  </li>
+  <li>
+    <p><strong>HttpServletResponse</strong>
+<br />
+WAS는 HttpServleResponse 객체를 생성해 서블릿에게 전달하고 이 객체로 contentType, 응답코드, 응답메시지 등을 전송한다.</p>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<p><strong>주요기능</strong></p>
+<ul>
+  <li>
+    <p><strong>생명주기 관리</strong>
+<br />
+서블릿클래스를 인스턴스화 하고 요청에 따라 적절한 서블릿메서드를 찾아 동작한다.
+<br />
+그리고 라이프사이클이 끝나면 가비지컬렉션을 통해 메모리에서 지운다.</p>
+  </li>
+  <li>
+    <p><strong>통신지원</strong>
+<br />
+클라이언트와 Request / Response 할 수 있게 웹서버와 소켓을 만들어 통신을 해준다.</p>
+  </li>
+  <li>
+    <p><strong>멀티스레드 관리</strong>
+<br />
+해당 서블릿의 요청이 들어오면 스레드를 생성해 작업을 수행한다.</p>
+  </li>
+  <li>
+    <p><strong>선언적인 보안관리</strong>
+<br />
+보안관련 기능을 제공하기 때문에 자바 클래스에 보안관련 메서드를 구현하지 않아도 된다.</p>
+  </li>
+</ul>
 
 <p><br />
 <br />
 <br />
 <br /></p>
 
-<h1 id="서블릿">서블릿</h1>
+<h1 id="tomcat">Tomcat</h1>
 
 <p><br />
 <br />
@@ -747,7 +826,7 @@ JWT는 Json Web Token의 약자이고 인증에 필요한 정보들을 암호화
 <br />
 <br /></p>
 
-<p><br /></p>]]></content><author><name>NNIIE</name></author><category term="TIL" /><category term="SOLID" /><category term="스레드" /><category term="인터프리터 언어" /><category term="Blocking I/O" /><category term="Non Blocking I/O" /><category term="동시성" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">4주차</title><link href="http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="4주차" /><published>2023-01-05T00:00:00+09:00</published><updated>2023-01-05T00:00:00+09:00</updated><id>http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
+<p><br /></p>]]></content><author><name>NNIIE</name></author><category term="TIL" /><category term="SOLID" /><category term="스레드" /><category term="인터프리터 언어" /><category term="Blocking / Non Blocking" /><category term="동시성" /><category term="Servlet" /><category term="Tomcat" /><category term="cookie / session" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">4주차</title><link href="http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="4주차" /><published>2023-01-05T00:00:00+09:00</published><updated>2023-01-05T00:00:00+09:00</updated><id>http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/4%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
 
 <h1 id="cqrs-pattern">CQRS Pattern</h1>
 <p>Command and Query Responsibility Segregation (명령과 조회의 책임 분리)
@@ -2095,7 +2174,16 @@ key와 value의 쌍으로 이루어진 데이터 구조이다.
 
 <p><br /></p>
 
-<p><br /></p>
+<p><strong><em>단점</em></strong></p>
+<ul>
+  <li>정렬이나 순차적인 데이터 저장에 적합하지 않다</li>
+  <li>데이터가 저장되기 전에 저장공간을 확보해야 하기 때문에 공간효율성이 떨어진다.</li>
+  <li>Hash Function이 복잡할수록 연산속도가 증가한다.</li>
+  <li>해시충돌이 발생할 경우 최악의 경우 시간복잡도가 O(N) 에 점점 수렴함</li>
+</ul>
+
+<p><br />
+<br /></p>
 
 <p><strong><em>HashMap</em></strong>
 <br />
@@ -2172,17 +2260,6 @@ Entry 아이템별로 락을 거는 ConcurrentHashMap 을 쓰는게 좋다.
 대부분 request와 response의 스레드 생명주기를 가지는 웹 어플리케이션을 개발할때 스레드풀을 사용하기 때문에 큰 신경을 쓰지 않아도 <code class="language-plaintext highlighter-rouge">thread-safe</code> 한 것이다.
 <br />
 물론 싱글톤 이라던가 여러 스레드가 동일한 자원에 접근하여 수정하는 작업에선 따로 처리를 해줘야겠지?</p>
-
-<p><br />
-<br /></p>
-
-<p><strong><em>단점</em></strong></p>
-<ul>
-  <li>정렬이나 순차적인 데이터 저장에 적합하지 않다</li>
-  <li>데이터가 저장되기 전에 저장공간을 확보해야 하기 때문에 공간효율성이 떨어진다.</li>
-  <li>Hash Function이 복잡할수록 연산속도가 증가한다.</li>
-  <li>해시충돌이 발생할 경우 최악의 경우 시간복잡도가 O(N) 에 점점 수렴함</li>
-</ul>
 
 <p><br />
 <br />
