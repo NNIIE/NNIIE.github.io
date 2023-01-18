@@ -2,7 +2,7 @@
 layout: single
 title:  "refactoring"
 categories: TIL
-tag: [refactoring]
+tag: [Refactoring]
 author_profile: false
 toc: true
 toc_label: "TIL"

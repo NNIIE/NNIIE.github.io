@@ -55,19 +55,19 @@ var store = [{
       },{
         "title": "5 Week",
         "excerpt":"SOLID 객체지향의 5가지 설계원칙 단일 책임 원칙 (SRP) - 한 클래스는 하나의 책임만 가져야 한다. 모든 클래스는 하나의 책임만 가지며, 클래스는 그 책임을 완전히 캡슐화 해야한다. 한 클래스가 수행할 수 있는 책임 (기능)이 여러가지라면, 클래스 내부 함수끼리의 강한 결합이 발생할 가능성이 높아지고 이는 유지보수에 비효율적이다. 한 클래스를 변경하기 위해 한가지...","categories": ["TIL"],
-        "tags": ["SOLID","스레드","인터프리터 언어","Blocking / Non Blocking","동시성","Servlet","cookie / session"],
+        "tags": ["SOLID","스레드","인터프리터 언어","Blocking / Non Blocking","동시성","Servlet","Cookie / Session"],
         "url": "/til/5%EC%A3%BC%EC%B0%A8/",
         "teaser": null
       },{
         "title": "refactoring",
         "excerpt":"리팩토링? 소프트웨어 관점으로 결과의 변경 없이 코드의 구조를 재조정함 을 의미한다. 즉, 기능은 보존하면서 설계 및 구조를 개선하는 것이다. 소프트웨어 설계가 좋아진다. 소프트웨어를 이해하기 쉬워진다. 버그를 쉽게 찾을 수 있다. 프로그래밍 속도를 높일 수 있다. 진짜 중복 한 인스턴스가 변경되면, 동일한 변경을 그 인스턴스의 모든 복사본에 반드시 적용해야한다. 우발적 중복...","categories": ["TIL"],
-        "tags": ["refactoring"],
+        "tags": ["Refactoring"],
         "url": "/til/refactoring/",
         "teaser": null
       },{
         "title": "6 Week",
         "excerpt":"Web 웹의 정의란? 여기저기 거미줄처럼 퍼져있는 정보의 모음? 웹페이지 / 웹어플리케이션 둘의 차이는 정적과 동적의 차이? 서버사이드 랜더링 HTTP의 전송방식 http는 왜 전송방식으로 텍스트를 사용했을까? 텍스트는 눈으로 보고 해석할 수 있고 다양한 환경에 맞는 (범용적, 유연함) 규약이 필요해서 - 텍스트가 가장 보편적이었다 웹의 뜻은 월드 와이드 웹 -&gt; 말그대로 월드,...","categories": ["TIL"],
-        "tags": ["Tomcat","Filter","Web","Session","OSI"],
+        "tags": ["Tomcat","Filter","Web","Session","OSI 7계층","TCP / UDP"],
         "url": "/til/6%EC%A3%BC%EC%B0%A8/",
         "teaser": null
       }]
