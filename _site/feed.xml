@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-01-19T02:05:24+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">6 Week</title><link href="http://localhost:4000/til/6%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="6 Week" /><published>2023-01-19T00:00:00+09:00</published><updated>2023-01-19T00:00:00+09:00</updated><id>http://localhost:4000/til/6%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/6%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-01-19T02:15:54+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">6 Week</title><link href="http://localhost:4000/til/6%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="6 Week" /><published>2023-01-19T00:00:00+09:00</published><updated>2023-01-19T00:00:00+09:00</updated><id>http://localhost:4000/til/6%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/6%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
 
 <h1 id="web">Web</h1>
 <p>웹의 정의란?
@@ -64,6 +64,27 @@
 
 <h1 id="세션이-왜필요할까">세션이 왜필요할까?</h1>
 <p>쿠키도 있는데 말이야..</p>
+
+<p><br />
+<br />
+<br />
+<br /></p>
+
+<h1 id="tomcat">Tomcat</h1>
+
+<p><br />
+<br />
+<br />
+<br /></p>
+
+<h1 id="filter">Filter</h1>
+
+<p><br />
+<br />
+<br />
+<br /></p>
+
+<h1 id="servletcontextlistener">ServletContextListener</h1>
 
 <p><br />
 <br />
@@ -196,6 +217,8 @@ TCP 기반의 HTTP가 UDP통신을 도입하고 있는데 과연 데이터 정�
 </ul>
 
 <p><br />
+<br />
+<br />
 <br /></p>]]></content><author><name>NNIIE</name></author><category term="TIL" /><category term="Refactoring" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">5 Week</title><link href="http://localhost:4000/til/5%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="5 Week" /><published>2023-01-12T00:00:00+09:00</published><updated>2023-01-12T00:00:00+09:00</updated><id>http://localhost:4000/til/5%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/5%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
 
 <h1 id="solid">SOLID</h1>
@@ -894,27 +917,6 @@ WAS는 HttpServleResponse 객체를 생성해 서블릿에게 전달하고 이 �
 보안관련 기능을 제공하기 때문에 자바 클래스에 보안관련 메서드를 구현하지 않아도 된다.</p>
   </li>
 </ul>
-
-<p><br />
-<br />
-<br />
-<br /></p>
-
-<h1 id="tomcat">Tomcat</h1>
-
-<p><br />
-<br />
-<br />
-<br /></p>
-
-<h1 id="필터">필터</h1>
-
-<p><br />
-<br />
-<br />
-<br /></p>
-
-<h1 id="servletcontextlistener">ServletContextListener</h1>
 
 <p><br />
 <br />
@@ -1637,7 +1639,10 @@ IDE를 몇개씩 띄워놓고 서버를 돌리는것도 힘들기 때문에 멀�
   <li>각 어플리케이션(모듈)에 대한 설정은 공통 모듈에 적용하지 않고 분리한다.</li>
 </ul>
 
-<p><br /></p>]]></content><author><name>NNIIE</name></author><category term="TIL" /><category term="Generic" /><category term="시공간복잡도" /><category term="Nested Class" /><category term="Multi Module" /><category term="Lambda" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">3 Week</title><link href="http://localhost:4000/til/3%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="3 Week" /><published>2022-12-29T00:00:00+09:00</published><updated>2022-12-29T00:00:00+09:00</updated><id>http://localhost:4000/til/3%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/3%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
+<p><br />
+<br />
+<br />
+<br /></p>]]></content><author><name>NNIIE</name></author><category term="TIL" /><category term="Generic" /><category term="시공간복잡도" /><category term="Nested Class" /><category term="Multi Module" /><category term="Lambda" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">3 Week</title><link href="http://localhost:4000/til/3%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="3 Week" /><published>2022-12-29T00:00:00+09:00</published><updated>2022-12-29T00:00:00+09:00</updated><id>http://localhost:4000/til/3%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/3%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
 
 <h1 id="property">Property</h1>
 <p>속성이란 뜻이다. 해당 <code class="language-plaintext highlighter-rouge">Object</code>의 특징.
@@ -2161,7 +2166,12 @@ JVM의 Heap을 증가시키기 보다는 JVM의 인스턴스를 늘려 클러스
 
 <h2 id="로드밸런싱에-대해서-자세히-알아보자">로드밸런싱에 대해서 자세히 알아보자</h2>
 
-<p><br /></p>]]></content><author><name>NNIIE</name></author><category term="TIL" /><category term="String" /><category term="Annotation" /><category term="Exception" /><category term="Property" /><category term="JVM" /><category term="GC" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">자료구조</title><link href="http://localhost:4000/data_structure/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/" rel="alternate" type="text/html" title="자료구조" /><published>2022-12-24T00:00:00+09:00</published><updated>2022-12-24T00:00:00+09:00</updated><id>http://localhost:4000/data_structure/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0</id><content type="html" xml:base="http://localhost:4000/data_structure/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/"><![CDATA[<p><br /><br /><br /></p>
+<p><br /></p>
+
+<p><br />
+<br />
+<br />
+<br /></p>]]></content><author><name>NNIIE</name></author><category term="TIL" /><category term="String" /><category term="Annotation" /><category term="Exception" /><category term="Property" /><category term="JVM" /><category term="GC" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">자료구조</title><link href="http://localhost:4000/data_structure/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/" rel="alternate" type="text/html" title="자료구조" /><published>2022-12-24T00:00:00+09:00</published><updated>2022-12-24T00:00:00+09:00</updated><id>http://localhost:4000/data_structure/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0</id><content type="html" xml:base="http://localhost:4000/data_structure/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/"><![CDATA[<p><br /><br /><br /></p>
 
 <h1 id="시간복잡도">시간복잡도</h1>
 <p>알고리즘 효율성을 판단하는 지표로써,
@@ -2684,7 +2694,10 @@ Key와 Value로 이루어진 자료구조이다.
 
 <h1 id="graph">Graph</h1>
 
-<p><br /></p>]]></content><author><name>NNIIE</name></author><category term="Data_Structure" /><category term="Data Structure" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">2 Week</title><link href="http://localhost:4000/til/2%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="2 Week" /><published>2022-12-22T00:00:00+09:00</published><updated>2022-12-22T00:00:00+09:00</updated><id>http://localhost:4000/til/2%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/2%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
+<p><br />
+<br />
+<br />
+<br /></p>]]></content><author><name>NNIIE</name></author><category term="Data_Structure" /><category term="Data Structure" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">2 Week</title><link href="http://localhost:4000/til/2%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="2 Week" /><published>2022-12-22T00:00:00+09:00</published><updated>2022-12-22T00:00:00+09:00</updated><id>http://localhost:4000/til/2%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/2%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
 
 <h1 id="enum">enum</h1>
 <p>열거형이라고 부르며, 서로 연관된 상수들의 집합이다.
@@ -3083,7 +3096,12 @@ enum자체가 가지는 비용이 적지 않다. static final 상수로도 충�
       <li>인터페이스는 다중으로 구현이 가능하지만 추상클래스는 단일 상속만 가능하다.</li>
     </ul>
   </li>
-</ul>]]></content><author><name>NNIIE</name></author><category term="TIL" /><category term="Enum" /><category term="Singleton" /><category term="Interface" /><category term="Abstract" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Annotation</title><link href="http://localhost:4000/til/Annotation/" rel="alternate" type="text/html" title="Annotation" /><published>2022-12-20T00:00:00+09:00</published><updated>2022-12-20T00:00:00+09:00</updated><id>http://localhost:4000/til/Annotation</id><content type="html" xml:base="http://localhost:4000/til/Annotation/"><![CDATA[<p><br /><br /><br /></p>
+</ul>
+
+<p><br />
+<br />
+<br />
+<br /></p>]]></content><author><name>NNIIE</name></author><category term="TIL" /><category term="Enum" /><category term="Singleton" /><category term="Interface" /><category term="Abstract" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Annotation</title><link href="http://localhost:4000/til/Annotation/" rel="alternate" type="text/html" title="Annotation" /><published>2022-12-20T00:00:00+09:00</published><updated>2022-12-20T00:00:00+09:00</updated><id>http://localhost:4000/til/Annotation</id><content type="html" xml:base="http://localhost:4000/til/Annotation/"><![CDATA[<p><br /><br /><br /></p>
 
 <h1 id="enablescheduling">@EnableScheduling</h1>
 <p>스프링의 스케쥴링을 위한 어노테이션이다.
@@ -3216,7 +3234,12 @@ enum자체가 가지는 비용이 적지 않다. static final 상수로도 충�
       <li>QueueCapacity 초과 요청에 대한 비동기 method 호출시 방어 코드 작성</li>
     </ul>
   </li>
-</ul>]]></content><author><name>NNIIE</name></author><category term="TIL" /><category term="Spring Annotation" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">1 Week</title><link href="http://localhost:4000/til/1%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="1 Week" /><published>2022-12-15T00:00:00+09:00</published><updated>2022-12-15T00:00:00+09:00</updated><id>http://localhost:4000/til/1%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/1%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
+</ul>
+
+<p><br />
+<br />
+<br />
+<br /></p>]]></content><author><name>NNIIE</name></author><category term="TIL" /><category term="Spring Annotation" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">1 Week</title><link href="http://localhost:4000/til/1%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="1 Week" /><published>2022-12-15T00:00:00+09:00</published><updated>2022-12-15T00:00:00+09:00</updated><id>http://localhost:4000/til/1%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/1%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
 
 <h1 id="객체와-클래스-그리고-인스턴스">객체와 클래스 그리고 인스턴스</h1>
 <ul>
@@ -3962,7 +3985,12 @@ SOLID원칙의 리스코프치환 원칙에서 알 수 있다.
   <span class="o">}</span>
 </code></pre></div>    </div>
   </li>
-</ul>]]></content><author><name>NNIIE</name></author><category term="TIL" /><category term="접근제어자" /><category term="상속" /><category term="다형성" /><category term="Wrapper Class" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">22.12</title><link href="http://localhost:4000/til/1-TIL/" rel="alternate" type="text/html" title="22.12" /><published>2022-12-04T00:00:00+09:00</published><updated>2022-12-04T00:00:00+09:00</updated><id>http://localhost:4000/til/1-TIL</id><content type="html" xml:base="http://localhost:4000/til/1-TIL/"><![CDATA[<p><br /><br /><br /></p>
+</ul>
+
+<p><br />
+<br />
+<br />
+<br /></p>]]></content><author><name>NNIIE</name></author><category term="TIL" /><category term="접근제어자" /><category term="상속" /><category term="다형성" /><category term="Wrapper Class" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">22.12</title><link href="http://localhost:4000/til/1-TIL/" rel="alternate" type="text/html" title="22.12" /><published>2022-12-04T00:00:00+09:00</published><updated>2022-12-04T00:00:00+09:00</updated><id>http://localhost:4000/til/1-TIL</id><content type="html" xml:base="http://localhost:4000/til/1-TIL/"><![CDATA[<p><br /><br /><br /></p>
 
 <h1 id="lombok">lombok</h1>
 <h2 id="getter---prefix">@getter - prefix</h2>
@@ -4151,4 +4179,9 @@ static같은 정적 메모리를 남발하여 지워지지 않고 계속 쌓일�
   <li>힙덤프 내역을 분석</li>
 </ol>
 
-<h2 id="함수형">함수형</h2>]]></content><author><name>NNIIE</name></author><category term="TIL" /><category term="Lombok" /><summary type="html"><![CDATA[]]></summary></entry></feed>
+<h2 id="함수형">함수형</h2>
+
+<p><br />
+<br />
+<br />
+<br /></p>]]></content><author><name>NNIIE</name></author><category term="TIL" /><category term="Lombok" /><summary type="html"><![CDATA[]]></summary></entry></feed>
