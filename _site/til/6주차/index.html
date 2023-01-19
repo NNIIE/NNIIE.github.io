@@ -234,7 +234,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          1 분 소요
+          2 분 소요
         
       </span>
     
@@ -249,7 +249,7 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> TIL</h4></header>
-              <ul class="toc__menu"><li><a href="#web">Web</a></li><li><a href="#서버사이드-랜더링">서버사이드 랜더링</a></li><li><a href="#http의-전송방식">HTTP의 전송방식</a></li><li><a href="#base64">base64</a></li><li><a href="#bulk-처리">Bulk 처리</a></li><li><a href="#to-do">To Do</a></li><li><a href="#세션이-왜필요할까">세션이 왜필요할까?</a></li><li><a href="#tomcat">Tomcat</a></li><li><a href="#filter">Filter</a></li><li><a href="#servletcontextlistener">ServletContextListener</a></li><li><a href="#tcp--udp">TCP / UDP</a></li><li><a href="#osi-7-계층">OSI 7 계층</a></li></ul>
+              <ul class="toc__menu"><li><a href="#web">Web</a></li><li><a href="#browser-rendering">Browser Rendering</a><ul><li><a href="#ssr">SSR</a></li><li><a href="#csr">CSR</a></li></ul></li><li><a href="#http의-전송방식">HTTP의 전송방식</a></li><li><a href="#base64">base64</a></li><li><a href="#bulk-처리">Bulk 처리</a></li><li><a href="#to-do">To Do</a></li><li><a href="#세션이-왜필요할까">세션이 왜필요할까?</a></li><li><a href="#tomcat">Tomcat</a></li><li><a href="#filter">Filter</a></li><li><a href="#servletcontextlistener">ServletContextListener</a></li><li><a href="#tcp--udp">TCP / UDP</a></li><li><a href="#osi-7-계층">OSI 7 계층</a></li></ul>
 
             </nav>
           </aside>
@@ -299,7 +299,71 @@
 <br />
 <br /></p>
 
-<h1 id="서버사이드-랜더링">서버사이드 랜더링</h1>
+<h1 id="browser-rendering">Browser Rendering</h1>
+
+<p><br /></p>
+
+<h2 id="ssr">SSR</h2>
+<p><strong>서버사이드 렌더링 - Server Side Rendering</strong>
+<br />
+서버로부터 완전하게 만들어진 <code class="language-plaintext highlighter-rouge">HTML</code> 파일을 받아와 페이지 전체를 렌더링 하는 방식
+<br /></p>
+<ul>
+  <li><strong>동작</strong>
+    <ol>
+      <li>클라이언트가 초기화면을 로드하기 위해 서버에 요청을 보냄</li>
+      <li>서버는 화면에 표시하는데 필요한 데이터를 모두 얻어와 삽입하고 <code class="language-plaintext highlighter-rouge">CSS</code> 까지 적용해서 렌더링 준비를 마친 <code class="language-plaintext highlighter-rouge">HTML</code>과 <code class="language-plaintext highlighter-rouge">JS</code> 코드를 브라우저에 응답</li>
+      <li>브라우저에서 전달받은 페이지를 띄우고, <code class="language-plaintext highlighter-rouge">JS</code> 코드를 다운로드하고 <code class="language-plaintext highlighter-rouge">HTML</code> 에 실행시킴
+<br />
+<br /></li>
+    </ol>
+  </li>
+  <li><strong>장점</strong>
+    <ul>
+      <li>빠른 초기 로딩
+<br />
+<br /></li>
+    </ul>
+  </li>
+  <li><strong>단점</strong>
+    <ul>
+      <li>요청시마다 새로고침 (깜빡임)</li>
+      <li>서버부하 (작은 변경이라도 서버에서 모든걸 다시 받아옴)</li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="csr">CSR</h2>
+<p><strong>클라이언트 사이드 렌더링 - Client Side Rendering</strong>
+<br />
+사용자에 요청에 따라 필요한 부분만 응답받아 렌더링 하는 방식
+<br /></p>
+<ul>
+  <li><strong>동작</strong>
+    <ol>
+      <li>클라이언트에서 초기화면을 로드하기 위해 서버에 요청을 보냄</li>
+      <li>서버는 화면에 표시하는데 필요한 완전한 리소스 응답
+<br />
+<br /></li>
+    </ol>
+  </li>
+  <li><strong>장점</strong>
+    <ul>
+      <li>빠른속도 (초기화면 렌더링X)</li>
+      <li>서버부하 감소 (클라이언트에서 변경부분만 요청)</li>
+      <li>유저경험 증가 (깜빡임)
+<br />
+<br /></li>
+    </ul>
+  </li>
+  <li><strong>단점</strong>
+    <ul>
+      <li>초기화면 로딩 느림 (모든 <code class="language-plaintext highlighter-rouge">JS</code>파일 받아와야 됨)</li>
+    </ul>
+  </li>
+</ul>
 
 <p><br />
 <br />
@@ -483,11 +547,15 @@ TCP 기반의 HTTP가 UDP통신을 도입하고 있는데 과연 데이터 정�
     
       <a href="/tags/#bulk-%EC%B2%98%EB%A6%AC" class="page__taxonomy-item" rel="tag">Bulk 처리</a><span class="sep">, </span>
     
+      <a href="/tags/#csr" class="page__taxonomy-item" rel="tag">CSR</a><span class="sep">, </span>
+    
       <a href="/tags/#filter" class="page__taxonomy-item" rel="tag">Filter</a><span class="sep">, </span>
     
       <a href="/tags/#osi-7%EA%B3%84%EC%B8%B5" class="page__taxonomy-item" rel="tag">OSI 7계층</a><span class="sep">, </span>
     
       <a href="/tags/#session" class="page__taxonomy-item" rel="tag">Session</a><span class="sep">, </span>
+    
+      <a href="/tags/#ssr" class="page__taxonomy-item" rel="tag">SSR</a><span class="sep">, </span>
     
       <a href="/tags/#tcp-udp" class="page__taxonomy-item" rel="tag">TCP / UDP</a><span class="sep">, </span>
     
