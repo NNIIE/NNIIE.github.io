@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-01-19T02:15:54+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">6 Week</title><link href="http://localhost:4000/til/6%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="6 Week" /><published>2023-01-19T00:00:00+09:00</published><updated>2023-01-19T00:00:00+09:00</updated><id>http://localhost:4000/til/6%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/6%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-01-19T16:58:20+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">6 Week</title><link href="http://localhost:4000/til/6%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="6 Week" /><published>2023-01-19T00:00:00+09:00</published><updated>2023-01-19T00:00:00+09:00</updated><id>http://localhost:4000/til/6%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/6%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
 
 <h1 id="web">Web</h1>
 <p>웹의 정의란?
@@ -49,6 +49,71 @@
 <ul>
   <li>텍스트 배열로 바꾼다?</li>
 </ul>
+
+<p><br />
+<br />
+<br />
+<br /></p>
+
+<h1 id="bulk-처리">Bulk 처리</h1>
+<p>대량의 데이터를 한번의 트랜잭션으로 삽입하는 방법이다.
+<br />
+<br />
+insert 로 예를들면
+<br />
+<code class="language-plaintext highlighter-rouge">MyBatis</code> 기준 insert 구문 수행 시 values 리스트를 다중으로 사용한다.
+<br /></p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">insert</span> <span class="k">into</span> <span class="n">A</span> <span class="k">values</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="k">c</span><span class="p">),</span> <span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="k">c</span><span class="p">),</span> <span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="k">c</span><span class="p">)</span> <span class="p">...</span>
+
+
+<span class="k">insert</span> <span class="k">into</span> <span class="n">A</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="k">c</span><span class="p">)</span> <span class="k">values</span>
+<span class="o">&lt;</span><span class="n">foreach</span> <span class="n">collection</span><span class="o">=</span><span class="nv">"list"</span> <span class="n">item</span><span class="o">=</span><span class="nv">"item"</span> <span class="n">separator</span><span class="o">=</span><span class="nv">","</span><span class="o">&gt;</span>
+	<span class="o">#</span><span class="p">{</span><span class="n">item</span><span class="p">}</span>
+<span class="o">&lt;/</span><span class="n">foreach</span><span class="o">&gt;</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p><strong>왜쓰는데?</strong>
+<br />
+<br />
+DB와의 트랜잭션은 커넥션을 열고 닫는 등의 생각보다 복잡하고 리소스가 큰데 10000건의 데이터를 
+<br />
+저장하는 경우를 생각해 보면 데이터를 저장하는데 10000번의 트랜잭션이 일어나게 된다.
+<br />
+하지만 <code class="language-plaintext highlighter-rouge">bulk insert</code> 의 경우 단 한번의 트랜잭션으로 처리를 할 수 있기 때문에
+<br />
+데이터 수가 많을수록 비약적으로 성능이 향상된다.
+<br />
+실제로도 예전에 거의 안쓰이는 스케쥴러 처리한 <code class="language-plaintext highlighter-rouge">insert</code> 용도의 <code class="language-plaintext highlighter-rouge">API</code> 가 있는데 어느순간
+<br />
+급격히 사용량이 많아져서 데이터 처리에 딜레이가 발생하는 상황이 생긴적이 있는데
+<br />
+이때 <code class="language-plaintext highlighter-rouge">bulk</code> 처리 하나로 비약적인 성능향상과 이슈를 해결한 적이 있었다.
+<br />
+물론 신경써야할 것도 있는데 그건 아래 단점에서..</p>
+
+<p><br />
+<br /></p>
+
+<p><strong>단점</strong>
+<br />
+<br />
+<code class="language-plaintext highlighter-rouge">bulk insert</code> 로 10000건의 데이터를 insert 하던 중 마지막 <code class="language-plaintext highlighter-rouge">low</code> 에서 에러가 발생한다면?
+<br />
+이럴경우 모두 롤백된다.
+<br />
+<br />
+10000번의 트랜잭션을 1번의 트랜잭션으로 해결해서 비약적인 성능향상을 가져올 수 있지만 하나라도 
+<br />
+실패하는 순간 트랜잭션은 롤백되고 그 트랜잭션 안에 10000건이 있기 때문에 이렇게 되면 매우 비효율적이다.
+<br />
+그래서 너무 대량의 데이터를 <code class="language-plaintext highlighter-rouge">bulk</code> 처리 하는건 좋지않고,
+<br />
+실패할 경우를 대비해 <code class="language-plaintext highlighter-rouge">retry</code> 하는 코드도 별도로 짜주는게 좋다.
+<br />
+제일 좋은건 정합성이 뛰어난 데이터여서 실패할 가능성이 거의 없을때 사용하는게 좋겠다.</p>
 
 <p><br />
 <br />
@@ -114,7 +179,7 @@ TCP 기반의 HTTP가 UDP통신을 도입하고 있는데 과연 데이터 정�
 <br />
 <br /></p>
 
-<p><br /></p>]]></content><author><name>NNIIE</name></author><category term="TIL" /><category term="Tomcat" /><category term="Filter" /><category term="Web" /><category term="Session" /><category term="OSI 7계층" /><category term="TCP / UDP" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">refactoring</title><link href="http://localhost:4000/til/refactoring/" rel="alternate" type="text/html" title="refactoring" /><published>2023-01-13T00:00:00+09:00</published><updated>2023-01-13T00:00:00+09:00</updated><id>http://localhost:4000/til/refactoring</id><content type="html" xml:base="http://localhost:4000/til/refactoring/"><![CDATA[<p><br /><br /><br /></p>
+<p><br /></p>]]></content><author><name>NNIIE</name></author><category term="TIL" /><category term="Tomcat" /><category term="Filter" /><category term="Web" /><category term="Session" /><category term="OSI 7계층" /><category term="TCP / UDP" /><category term="Bulk 처리" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">refactoring</title><link href="http://localhost:4000/til/refactoring/" rel="alternate" type="text/html" title="refactoring" /><published>2023-01-13T00:00:00+09:00</published><updated>2023-01-13T00:00:00+09:00</updated><id>http://localhost:4000/til/refactoring</id><content type="html" xml:base="http://localhost:4000/til/refactoring/"><![CDATA[<p><br /><br /><br /></p>
 
 <h1 id="리팩토링">리팩토링?</h1>
 

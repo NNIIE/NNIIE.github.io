@@ -234,7 +234,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          최대 1 분 소요
+          1 분 소요
         
       </span>
     
@@ -249,7 +249,7 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> TIL</h4></header>
-              <ul class="toc__menu"><li><a href="#web">Web</a></li><li><a href="#서버사이드-랜더링">서버사이드 랜더링</a></li><li><a href="#http의-전송방식">HTTP의 전송방식</a></li><li><a href="#base64">base64</a></li><li><a href="#to-do">To Do</a></li><li><a href="#세션이-왜필요할까">세션이 왜필요할까?</a></li><li><a href="#tomcat">Tomcat</a></li><li><a href="#filter">Filter</a></li><li><a href="#servletcontextlistener">ServletContextListener</a></li><li><a href="#tcp--udp">TCP / UDP</a></li><li><a href="#osi-7-계층">OSI 7 계층</a></li></ul>
+              <ul class="toc__menu"><li><a href="#web">Web</a></li><li><a href="#서버사이드-랜더링">서버사이드 랜더링</a></li><li><a href="#http의-전송방식">HTTP의 전송방식</a></li><li><a href="#base64">base64</a></li><li><a href="#bulk-처리">Bulk 처리</a></li><li><a href="#to-do">To Do</a></li><li><a href="#세션이-왜필요할까">세션이 왜필요할까?</a></li><li><a href="#tomcat">Tomcat</a></li><li><a href="#filter">Filter</a></li><li><a href="#servletcontextlistener">ServletContextListener</a></li><li><a href="#tcp--udp">TCP / UDP</a></li><li><a href="#osi-7-계층">OSI 7 계층</a></li></ul>
 
             </nav>
           </aside>
@@ -305,6 +305,71 @@
 <ul>
   <li>텍스트 배열로 바꾼다?</li>
 </ul>
+
+<p><br />
+<br />
+<br />
+<br /></p>
+
+<h1 id="bulk-처리">Bulk 처리</h1>
+<p>대량의 데이터를 한번의 트랜잭션으로 삽입하는 방법이다.
+<br />
+<br />
+insert 로 예를들면
+<br />
+<code class="language-plaintext highlighter-rouge">MyBatis</code> 기준 insert 구문 수행 시 values 리스트를 다중으로 사용한다.
+<br /></p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">insert</span> <span class="k">into</span> <span class="n">A</span> <span class="k">values</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="k">c</span><span class="p">),</span> <span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="k">c</span><span class="p">),</span> <span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="k">c</span><span class="p">)</span> <span class="p">...</span>
+
+
+<span class="k">insert</span> <span class="k">into</span> <span class="n">A</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="k">c</span><span class="p">)</span> <span class="k">values</span>
+<span class="o">&lt;</span><span class="n">foreach</span> <span class="n">collection</span><span class="o">=</span><span class="nv">"list"</span> <span class="n">item</span><span class="o">=</span><span class="nv">"item"</span> <span class="n">separator</span><span class="o">=</span><span class="nv">","</span><span class="o">&gt;</span>
+	<span class="o">#</span><span class="p">{</span><span class="n">item</span><span class="p">}</span>
+<span class="o">&lt;/</span><span class="n">foreach</span><span class="o">&gt;</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p><strong>왜쓰는데?</strong>
+<br />
+<br />
+DB와의 트랜잭션은 커넥션을 열고 닫는 등의 생각보다 복잡하고 리소스가 큰데 10000건의 데이터를 
+<br />
+저장하는 경우를 생각해 보면 데이터를 저장하는데 10000번의 트랜잭션이 일어나게 된다.
+<br />
+하지만 <code class="language-plaintext highlighter-rouge">bulk insert</code> 의 경우 단 한번의 트랜잭션으로 처리를 할 수 있기 때문에
+<br />
+데이터 수가 많을수록 비약적으로 성능이 향상된다.
+<br />
+실제로도 예전에 거의 안쓰이는 스케쥴러 처리한 <code class="language-plaintext highlighter-rouge">insert</code> 용도의 <code class="language-plaintext highlighter-rouge">API</code> 가 있는데 어느순간
+<br />
+급격히 사용량이 많아져서 데이터 처리에 딜레이가 발생하는 상황이 생긴적이 있는데
+<br />
+이때 <code class="language-plaintext highlighter-rouge">bulk</code> 처리 하나로 비약적인 성능향상과 이슈를 해결한 적이 있었다.
+<br />
+물론 신경써야할 것도 있는데 그건 아래 단점에서..</p>
+
+<p><br />
+<br /></p>
+
+<p><strong>단점</strong>
+<br />
+<br />
+<code class="language-plaintext highlighter-rouge">bulk insert</code> 로 10000건의 데이터를 insert 하던 중 마지막 <code class="language-plaintext highlighter-rouge">low</code> 에서 에러가 발생한다면?
+<br />
+이럴경우 모두 롤백된다.
+<br />
+<br />
+10000번의 트랜잭션을 1번의 트랜잭션으로 해결해서 비약적인 성능향상을 가져올 수 있지만 하나라도 
+<br />
+실패하는 순간 트랜잭션은 롤백되고 그 트랜잭션 안에 10000건이 있기 때문에 이렇게 되면 매우 비효율적이다.
+<br />
+그래서 너무 대량의 데이터를 <code class="language-plaintext highlighter-rouge">bulk</code> 처리 하는건 좋지않고,
+<br />
+실패할 경우를 대비해 <code class="language-plaintext highlighter-rouge">retry</code> 하는 코드도 별도로 짜주는게 좋다.
+<br />
+제일 좋은건 정합성이 뛰어난 데이터여서 실패할 가능성이 거의 없을때 사용하는게 좋겠다.</p>
 
 <p><br />
 <br />
@@ -386,6 +451,8 @@ TCP 기반의 HTTP가 UDP통신을 도입하고 있는데 과연 데이터 정�
   <p class="page__taxonomy">
     <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
     <span itemprop="keywords">
+    
+      <a href="/tags/#bulk-%EC%B2%98%EB%A6%AC" class="page__taxonomy-item" rel="tag">Bulk 처리</a><span class="sep">, </span>
     
       <a href="/tags/#filter" class="page__taxonomy-item" rel="tag">Filter</a><span class="sep">, </span>
     

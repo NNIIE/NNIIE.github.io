@@ -67,7 +67,7 @@ var store = [{
       },{
         "title": "6 Week",
         "excerpt":"Web 웹의 정의란? 여기저기 거미줄처럼 퍼져있는 정보의 모음? 웹페이지 / 웹어플리케이션 둘의 차이는 정적과 동적의 차이? 서버사이드 랜더링 HTTP의 전송방식 http는 왜 전송방식으로 텍스트를 사용했을까? 텍스트는 눈으로 보고 해석할 수 있고 다양한 환경에 맞는 (범용적, 유연함) 규약이 필요해서 - 텍스트가 가장 보편적이었다 웹의 뜻은 월드 와이드 웹 -&gt; 말그대로 월드,...","categories": ["TIL"],
-        "tags": ["Tomcat","Filter","Web","Session","OSI 7계층","TCP / UDP"],
+        "tags": ["Tomcat","Filter","Web","Session","OSI 7계층","TCP / UDP","Bulk 처리"],
         "url": "/til/6%EC%A3%BC%EC%B0%A8/",
         "teaser": null
       }]
