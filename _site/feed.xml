@@ -1,7 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-01-20T00:04:59+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">6 Week</title><link href="http://localhost:4000/til/6%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="6 Week" /><published>2023-01-19T00:00:00+09:00</published><updated>2023-01-19T00:00:00+09:00</updated><id>http://localhost:4000/til/6%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/6%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-01-20T20:53:25+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">6 Week</title><link href="http://localhost:4000/til/6%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="6 Week" /><published>2023-01-19T00:00:00+09:00</published><updated>2023-01-19T00:00:00+09:00</updated><id>http://localhost:4000/til/6%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/6%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
 
 <h1 id="web">Web</h1>
-<p>Web의 정의를 물어보면 뭐라고 답하기 애매하다. 간단하게 한번 짚고 넘어가자
+<p>아래 내용들을 무엇이다 라고 정의해보려고 했는데 명쾌하게 떠오르지 않았다.
+<br />
+이참에 한번 짚고 넘어가자.
 <br />
 <br />
 <br />
@@ -50,21 +52,24 @@
 <h2 id="ssr">SSR</h2>
 <p><strong>서버사이드 렌더링 - Server Side Rendering</strong>
 <br />
-서버로부터 완전하게 만들어진 <code class="language-plaintext highlighter-rouge">HTML</code> 파일을 받아와 페이지 전체를 렌더링 하는 방식
+서버로부터 완전하게 만들어진 <code class="language-plaintext highlighter-rouge">HTML</code>  파일을 받아오는 방식
+<br />
+렌더링이 서버에서 일어난다.
 <br /></p>
 <ul>
   <li><strong>동작</strong>
     <ol>
-      <li>클라이언트가 초기화면을 로드하기 위해 서버에 요청을 보냄</li>
-      <li>서버는 화면에 표시하는데 필요한 데이터를 모두 얻어와 삽입하고 <code class="language-plaintext highlighter-rouge">CSS</code> 까지 적용해서 렌더링 준비를 마친 <code class="language-plaintext highlighter-rouge">HTML</code>과 <code class="language-plaintext highlighter-rouge">JS</code> 코드를 브라우저에 응답</li>
-      <li>브라우저에서 전달받은 페이지를 띄우고, <code class="language-plaintext highlighter-rouge">JS</code> 코드를 다운로드하고 <code class="language-plaintext highlighter-rouge">HTML</code> 에 실행시킴
+      <li>클라이언트가 요청을 보냄</li>
+      <li>서버는 <code class="language-plaintext highlighter-rouge">HTML</code> 에 데이터, <code class="language-plaintext highlighter-rouge">CSS</code>, <code class="language-plaintext highlighter-rouge">JS</code> 를 렌더링하여 컴파일 후 보낸다.</li>
+      <li>클라이언트는 즉시 <code class="language-plaintext highlighter-rouge">HTML</code> 을 먼저 렌더링 하고 그 후 <code class="language-plaintext highlighter-rouge">JS</code> 코드를 받아 실행한다.
 <br />
 <br /></li>
     </ol>
   </li>
   <li><strong>장점</strong>
     <ul>
-      <li>빠른 초기 로딩
+      <li>빠른 초기 로딩</li>
+      <li><code class="language-plaintext highlighter-rouge">HTML</code> 안에 모든 데이터가 포함되어 있어 검색엔진에 노출이 잘됨 (크롤링)
 <br />
 <br /></li>
     </ul>
@@ -83,6 +88,8 @@
 <p><strong>클라이언트 사이드 렌더링 - Client Side Rendering</strong>
 <br />
 사용자에 요청에 따라 필요한 부분만 응답받아 렌더링 하는 방식
+<br />
+렌더링이 클라이언트 쪽에서 일어난다.
 <br /></p>
 <ul>
   <li><strong>동작</strong>
@@ -104,7 +111,8 @@
   </li>
   <li><strong>단점</strong>
     <ul>
-      <li>초기화면 로딩 느림 (모든 <code class="language-plaintext highlighter-rouge">JS</code>파일 받아와야 됨)</li>
+      <li>초기화면 로딩 느림 (<code class="language-plaintext highlighter-rouge">JS</code>포함 모든 파일을 받아야 함)</li>
+      <li>검색엔진에 노출이 잘 안됨 (<code class="language-plaintext highlighter-rouge">HTML</code> 자체는 깡통이므로)</li>
     </ul>
   </li>
 </ul>
