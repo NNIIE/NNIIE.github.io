@@ -379,11 +379,15 @@
 <br /></p>
 
 <h1 id="http의-전송방식">HTTP의 전송방식</h1>
-<p>http는 왜 전송방식으로 텍스트를 사용했을까?</p>
+<p><code class="language-plaintext highlighter-rouge">GET</code>, <code class="language-plaintext highlighter-rouge">POST</code> 등의 전송방식이 있지만 모두 텍스트 형식이다.
+<br />
+HTTP 전송방식에 왜 텍스트를 사용했을까?</p>
 <ul>
-  <li>텍스트는 눈으로 보고 해석할 수 있고</li>
-  <li>다양한 환경에 맞는 (범용적, 유연함) 규약이 필요해서 - 텍스트가 가장 보편적이었다</li>
-  <li>웹의 뜻은 월드 와이드 웹 -&gt; 말그대로 월드, 엄청나게 많은 곳에서 쓰인다</li>
+  <li>다양한 환경에 맞는 (범용적, 유연함) 규약이 필요했다.</li>
+  <li>왜나햐면 <code class="language-plaintext highlighter-rouge">Web</code>은 말그대로 전세계 모든 사람이 이용하는, 엄창나게 많은 곳에서 쓰인다.</li>
+  <li>일단 텍스트는 눈으로 보고 어느정도 의미를 유추할 수 있고</li>
+  <li>클라이언트에 상황에 구애받지 않는 텍스트가 가장 보편적이었다.</li>
+  <li>따라서 바이트코드나 비트같이 가볍지만 제약이 따르는 것들 대신 보편적인 텍스트를 쓰는것이다.</li>
 </ul>
 
 <p><br /></p>
