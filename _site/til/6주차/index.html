@@ -249,7 +249,7 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> TIL</h4></header>
-              <ul class="toc__menu"><li><a href="#web">Web</a></li><li><a href="#browser-rendering">Browser Rendering</a><ul><li><a href="#ssr">SSR</a></li><li><a href="#csr">CSR</a></li></ul></li><li><a href="#http의-전송방식">HTTP의 전송방식</a></li><li><a href="#base64">base64</a></li><li><a href="#bulk-처리">Bulk 처리</a></li><li><a href="#to-do">To Do</a></li><li><a href="#세션이-왜필요할까">세션이 왜필요할까?</a></li><li><a href="#tomcat">Tomcat</a></li><li><a href="#filter">Filter</a></li><li><a href="#servletcontextlistener">ServletContextListener</a></li><li><a href="#tcp--udp">TCP / UDP</a></li><li><a href="#배치시스템-vs-스트리밍-시스템">배치시스템 vs 스트리밍 시스템</a></li><li><a href="#osi-7-계층">OSI 7 계층</a></li></ul>
+              <ul class="toc__menu"><li><a href="#web">Web</a></li><li><a href="#browser-rendering">Browser Rendering</a><ul><li><a href="#ssr">SSR</a></li><li><a href="#csr">CSR</a></li></ul></li><li><a href="#http의-전송방식">HTTP의 전송방식</a></li><li><a href="#base64">Base64</a></li><li><a href="#bulk-처리">Bulk 처리</a></li><li><a href="#to-do">To Do</a></li><li><a href="#세션이-왜필요할까">세션이 왜필요할까?</a></li><li><a href="#tomcat">Tomcat</a></li><li><a href="#filter">Filter</a></li><li><a href="#servletcontextlistener">ServletContextListener</a></li><li><a href="#tcp--udp">TCP / UDP</a></li><li><a href="#배치시스템-vs-스트리밍-시스템">배치시스템 vs 스트리밍 시스템</a></li><li><a href="#osi-7-계층">OSI 7 계층</a></li></ul>
 
             </nav>
           </aside>
@@ -437,10 +437,31 @@ HTTP 전송방식에 왜 텍스트를 사용했을까?</p>
 <br />
 <br /></p>
 
-<h1 id="base64">base64</h1>
+<h1 id="base64">Base64</h1>
+<p><strong>Binary Data 를 Text로 바꾸는 인코딩</strong> 의 하나로써 <code class="language-plaintext highlighter-rouge">Binary Data</code> 를 Character set에 영향을 받지 않는 공통 <code class="language-plaintext highlighter-rouge">ASCII</code> 영역의 문자로만 이루어진 문자열로 바꾸는 인코딩이다.
+<br />
+<code class="language-plaintext highlighter-rouge">Base64</code>는 직역하면 64진법인데, 64진법은 2의 제곱수에 기반한 진법 중 화면에 표시되는 <code class="language-plaintext highlighter-rouge">ASCII</code> 문자들로 표시할 수 있는 가장큰 진법이다.</p>
 <ul>
-  <li>텍스트 배열로 바꾼다?</li>
+  <li><strong>인코딩</strong> : 정보의 형태나 형식을 표준화, 보안, 처리속도향상 등을위해 다른 형태나 형식으로 변환하는 처리</li>
 </ul>
+
+<p><br /></p>
+
+<p><strong>왜쓰는데?</strong>
+<br />
+<br />
+<code class="language-plaintext highlighter-rouge">Base64</code>로 인코딩하면 데이터양이 약 33% 늘어나고 다시 디코딩하는 추가연산도 필요하다. 근데 왜쓸까?
+<br />
+HTTP로 <code class="language-plaintext highlighter-rouge">Binary Data</code>(이미지, 오디오 등)를 전송하면 문제가 발생하는데, 대표적으로</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">ASCII</code>는 <code class="language-plaintext highlighter-rouge">7bits</code> 인코딩 인데 나머지 <code class="language-plaintext highlighter-rouge">1bit</code> 를 처리하는 방식이 시스템 별로 상이하다.</li>
+  <li>일부 제어문자 (e.g. Line ending)의 경우 시스템 별로 다른 코드값을 갖는다.
+<br /></li>
+</ul>
+
+<p>즉,<code class="language-plaintext highlighter-rouge">Binary Data</code>의 손실이 일어나기 때문에, <strong>ASCII는 시스템간 데이터를 전달하기에 안전하지가 않다.</strong> 
+<br />
+그래서 <code class="language-plaintext highlighter-rouge">ASCII</code> 중 제어문자와 일부 특수문자를 제외한 64개의 안전한 출력 문자만 사용하는 <code class="language-plaintext highlighter-rouge">Base64</code>를 사용한다.</p>
 
 <p><br />
 <br />
@@ -594,6 +615,8 @@ TCP 기반의 HTTP가 UDP통신을 도입하고 있는데 과연 데이터 정�
   <p class="page__taxonomy">
     <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
     <span itemprop="keywords">
+    
+      <a href="/tags/#base64" class="page__taxonomy-item" rel="tag">Base64</a><span class="sep">, </span>
     
       <a href="/tags/#bulk-%EC%B2%98%EB%A6%AC" class="page__taxonomy-item" rel="tag">Bulk 처리</a><span class="sep">, </span>
     
