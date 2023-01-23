@@ -234,7 +234,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          2 분 소요
+          3 분 소요
         
       </span>
     
@@ -392,11 +392,42 @@ HTTP 전송방식에 왜 텍스트를 사용했을까?</p>
 
 <p><br /></p>
 
-<p><strong>HTTPS?</strong></p>
+<p><strong>그렇다면 HTTPS는?</strong>
+<br />
+<br />
+하이퍼 텍스트 전송 프로토콜 즉, <code class="language-plaintext highlighter-rouge">HTTP</code>는 <code class="language-plaintext highlighter-rouge">HTML</code>을 전송하기 위한 통신 규약이다.
+<br />
+하지만 암호화 되지 않은 방법으로 데이터를 전송하기 때문에 보안에 취약하다.
+<br />
+그래서 이를 보완한 것이 <code class="language-plaintext highlighter-rouge">SSL</code> 또는 <code class="language-plaintext highlighter-rouge">TLS</code> 사용해 암호화된 <code class="language-plaintext highlighter-rouge">HTTPS</code> 이다.
+<br />
+<code class="language-plaintext highlighter-rouge">SSL, TLS</code> 는 응용계층<code class="language-plaintext highlighter-rouge">(HTTP)</code> 과 전송계층<code class="language-plaintext highlighter-rouge">(TCP)</code> 사이에 위치해 있다.</p>
+
 <ul>
-  <li>텍스트는 읽기쉬우니까 보안책이 필요하자나
+  <li><strong>SSL</strong> : 서버와 브라우저 사이에 전송되는 데이터를 암호화 함</li>
+  <li><strong>TSL</strong> : <code class="language-plaintext highlighter-rouge">SSL</code>의 향상된 버전, 통신하는 대상간의 데이터의 무결성을 제공하는걸 목표로 함
+<br />
+<br /></li>
+</ul>
+
+<p><strong>인증서 동작</strong>
+<br />
+<br />
+<code class="language-plaintext highlighter-rouge">SSL/TSL</code> 세션은 핸드셰이크라는 과정을 통해 클라이언트-서버 간에 암호화 된 연결을 수립한다.</p>
+<ul>
+  <li><strong>인증</strong>
     <ul>
-      <li>암호화 / 복호화에 필요한 인증서를 포함</li>
+      <li>클라이언트가 시작하는 모든 신규 세션에 대해 서버는 각각 다른 <code class="language-plaintext highlighter-rouge">SSL</code> 인증서를 교환하고 검증한다.</li>
+    </ul>
+  </li>
+  <li><strong>암호화</strong>
+    <ul>
+      <li>서버는 클라이언트와 공개 키를 공유하고 클라이언트는 이 키를 사용해 프리마스터 키를 생성해 암호화한다. 이를 키교환이라고 한다.</li>
+    </ul>
+  </li>
+  <li><strong>복호화</strong>
+    <ul>
+      <li>서버는 개인 키를 사용해 프리마스터 키를 복호화 하고, 세션기간동안 사용되는 암호화된 보안연결을 수립한다.</li>
     </ul>
   </li>
 </ul>
@@ -569,6 +600,8 @@ TCP 기반의 HTTP가 UDP통신을 도입하고 있는데 과연 데이터 정�
       <a href="/tags/#csr" class="page__taxonomy-item" rel="tag">CSR</a><span class="sep">, </span>
     
       <a href="/tags/#filter" class="page__taxonomy-item" rel="tag">Filter</a><span class="sep">, </span>
+    
+      <a href="/tags/#https" class="page__taxonomy-item" rel="tag">HTTPS</a><span class="sep">, </span>
     
       <a href="/tags/#osi-7%EA%B3%84%EC%B8%B5" class="page__taxonomy-item" rel="tag">OSI 7계층</a><span class="sep">, </span>
     
