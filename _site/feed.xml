@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-01-24T06:09:57+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">6 Week</title><link href="http://localhost:4000/til/6%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="6 Week" /><published>2023-01-19T00:00:00+09:00</published><updated>2023-01-19T00:00:00+09:00</updated><id>http://localhost:4000/til/6%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/6%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-01-24T23:52:17+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">6 Week</title><link href="http://localhost:4000/til/6%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="6 Week" /><published>2023-01-19T00:00:00+09:00</published><updated>2023-01-19T00:00:00+09:00</updated><id>http://localhost:4000/til/6%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/6%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
 
 <h1 id="web">Web</h1>
 <p>아래 내용들을 무엇이다 라고 정의해보려고 했는데 명쾌하게 떠오르지 않았다.
@@ -292,7 +292,41 @@ DB와의 트랜잭션은 커넥션을 열고 닫는 등의 생각보다 복잡�
 <br />
 <br /></p>
 
-<h1 id="tomcat">Tomcat</h1>
+<h1 id="apache-tomcat">Apache Tomcat</h1>
+<p>기본적으로 <code class="language-plaintext highlighter-rouge">Apache</code> 와 <code class="language-plaintext highlighter-rouge">Tomcat</code> 의 기능은 나뉘어져 있지만, <code class="language-plaintext highlighter-rouge">Tomcat</code> 안에 컨테이너를 통해 
+<br />
+일부 <code class="language-plaintext highlighter-rouge">Apache</code> 기능을 발휘하기 때문에 보통 <code class="language-plaintext highlighter-rouge">Apache Tomcat</code> 으로 부른다.</p>
+<ul>
+  <li><strong>Apache HTTP Server</strong>
+    <ul>
+      <li>아파치 소프트웨어 재단에서 만든 서블릿컨테이너 또는 웹컨테이너만 있는 웹서버 프로그램</li>
+      <li><strong>웹서버</strong> : <code class="language-plaintext highlighter-rouge">HTTP</code> 프로토콜을 주고받는 서버</li>
+    </ul>
+  </li>
+  <li><strong>Tomcat</strong>
+    <ul>
+      <li><strong>WAS(Web Application Server)</strong> - 컨테이너, 웹컨테이너, 서블릿컨테이너 로도 불림
+        <ul>
+          <li>DB, 로직처리 등을 요구하는 동적타입을 제공하는 소프트웨어</li>
+          <li>프로그램 실행환경과 DB접속 기능 등을 제공한다.</li>
+          <li>여러개의 트랜잭션을 관리한다.</li>
+          <li>비즈니스 로직을 수행한다.</li>
+        </ul>
+      </li>
+      <li><strong>서블릿</strong> : 동적인 웹페이지를 만들 때 사용되는 자바기반 기술.
+        <ul>
+          <li><code class="language-plaintext highlighter-rouge">Request / Response</code> 흐름을 간단한 메서드 호출로 다룰 수 있게 해준다.</li>
+        </ul>
+      </li>
+      <li><strong>서블릿 컨테이너</strong> : 서블릿을 담고 관리하는 컨테이너
+        <ul>
+          <li>새로운 요청이 들어올 때 마다 스레드를 생성</li>
+          <li>작업이 끝난 서블릿 스레드를 제거</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
 
 <p><br />
 <br />
@@ -343,7 +377,7 @@ TCP 기반의 HTTP가 UDP통신을 도입하고 있는데 과연 데이터 정�
 <br />
 <br /></p>
 
-<p><br /></p>]]></content><author><name>NNIIE</name></author><category term="TIL" /><category term="Tomcat" /><category term="Filter" /><category term="Web" /><category term="Session" /><category term="OSI 7계층" /><category term="TCP / UDP" /><category term="Bulk 처리" /><category term="SSR" /><category term="CSR" /><category term="HTTPS" /><category term="Base64" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">refactoring</title><link href="http://localhost:4000/til/refactoring/" rel="alternate" type="text/html" title="refactoring" /><published>2023-01-13T00:00:00+09:00</published><updated>2023-01-13T00:00:00+09:00</updated><id>http://localhost:4000/til/refactoring</id><content type="html" xml:base="http://localhost:4000/til/refactoring/"><![CDATA[<p><br /><br /><br /></p>
+<p><br /></p>]]></content><author><name>NNIIE</name></author><category term="TIL" /><category term="Apache Tomcat" /><category term="Filter" /><category term="Web" /><category term="Session" /><category term="OSI 7계층" /><category term="TCP / UDP" /><category term="Bulk 처리" /><category term="SSR" /><category term="CSR" /><category term="HTTPS" /><category term="Base64" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">refactoring</title><link href="http://localhost:4000/til/refactoring/" rel="alternate" type="text/html" title="refactoring" /><published>2023-01-13T00:00:00+09:00</published><updated>2023-01-13T00:00:00+09:00</updated><id>http://localhost:4000/til/refactoring</id><content type="html" xml:base="http://localhost:4000/til/refactoring/"><![CDATA[<p><br /><br /><br /></p>
 
 <h1 id="리팩토링">리팩토링?</h1>
 

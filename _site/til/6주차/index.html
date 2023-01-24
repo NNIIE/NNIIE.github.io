@@ -234,7 +234,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          3 분 소요
+          4 분 소요
         
       </span>
     
@@ -249,7 +249,7 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> TIL</h4></header>
-              <ul class="toc__menu"><li><a href="#web">Web</a></li><li><a href="#browser-rendering">Browser Rendering</a><ul><li><a href="#ssr">SSR</a></li><li><a href="#csr">CSR</a></li></ul></li><li><a href="#http의-전송방식">HTTP의 전송방식</a></li><li><a href="#base64">Base64</a></li><li><a href="#bulk-처리">Bulk 처리</a></li><li><a href="#to-do">To Do</a></li><li><a href="#세션이-왜필요할까">세션이 왜필요할까?</a></li><li><a href="#tomcat">Tomcat</a></li><li><a href="#filter">Filter</a></li><li><a href="#servletcontextlistener">ServletContextListener</a></li><li><a href="#tcp--udp">TCP / UDP</a></li><li><a href="#배치시스템-vs-스트리밍-시스템">배치시스템 vs 스트리밍 시스템</a></li><li><a href="#osi-7-계층">OSI 7 계층</a></li></ul>
+              <ul class="toc__menu"><li><a href="#web">Web</a></li><li><a href="#browser-rendering">Browser Rendering</a><ul><li><a href="#ssr">SSR</a></li><li><a href="#csr">CSR</a></li></ul></li><li><a href="#http의-전송방식">HTTP의 전송방식</a></li><li><a href="#base64">Base64</a></li><li><a href="#bulk-처리">Bulk 처리</a></li><li><a href="#to-do">To Do</a></li><li><a href="#세션이-왜필요할까">세션이 왜필요할까?</a></li><li><a href="#apache-tomcat">Apache Tomcat</a></li><li><a href="#filter">Filter</a></li><li><a href="#servletcontextlistener">ServletContextListener</a></li><li><a href="#tcp--udp">TCP / UDP</a></li><li><a href="#배치시스템-vs-스트리밍-시스템">배치시스템 vs 스트리밍 시스템</a></li><li><a href="#osi-7-계층">OSI 7 계층</a></li></ul>
 
             </nav>
           </aside>
@@ -548,7 +548,41 @@ DB와의 트랜잭션은 커넥션을 열고 닫는 등의 생각보다 복잡�
 <br />
 <br /></p>
 
-<h1 id="tomcat">Tomcat</h1>
+<h1 id="apache-tomcat">Apache Tomcat</h1>
+<p>기본적으로 <code class="language-plaintext highlighter-rouge">Apache</code> 와 <code class="language-plaintext highlighter-rouge">Tomcat</code> 의 기능은 나뉘어져 있지만, <code class="language-plaintext highlighter-rouge">Tomcat</code> 안에 컨테이너를 통해 
+<br />
+일부 <code class="language-plaintext highlighter-rouge">Apache</code> 기능을 발휘하기 때문에 보통 <code class="language-plaintext highlighter-rouge">Apache Tomcat</code> 으로 부른다.</p>
+<ul>
+  <li><strong>Apache HTTP Server</strong>
+    <ul>
+      <li>아파치 소프트웨어 재단에서 만든 서블릿컨테이너 또는 웹컨테이너만 있는 웹서버 프로그램</li>
+      <li><strong>웹서버</strong> : <code class="language-plaintext highlighter-rouge">HTTP</code> 프로토콜을 주고받는 서버</li>
+    </ul>
+  </li>
+  <li><strong>Tomcat</strong>
+    <ul>
+      <li><strong>WAS(Web Application Server)</strong> - 컨테이너, 웹컨테이너, 서블릿컨테이너 로도 불림
+        <ul>
+          <li>DB, 로직처리 등을 요구하는 동적타입을 제공하는 소프트웨어</li>
+          <li>프로그램 실행환경과 DB접속 기능 등을 제공한다.</li>
+          <li>여러개의 트랜잭션을 관리한다.</li>
+          <li>비즈니스 로직을 수행한다.</li>
+        </ul>
+      </li>
+      <li><strong>서블릿</strong> : 동적인 웹페이지를 만들 때 사용되는 자바기반 기술.
+        <ul>
+          <li><code class="language-plaintext highlighter-rouge">Request / Response</code> 흐름을 간단한 메서드 호출로 다룰 수 있게 해준다.</li>
+        </ul>
+      </li>
+      <li><strong>서블릿 컨테이너</strong> : 서블릿을 담고 관리하는 컨테이너
+        <ul>
+          <li>새로운 요청이 들어올 때 마다 스레드를 생성</li>
+          <li>작업이 끝난 서블릿 스레드를 제거</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
 
 <p><br />
 <br />
@@ -616,6 +650,8 @@ TCP 기반의 HTTP가 UDP통신을 도입하고 있는데 과연 데이터 정�
     <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
     <span itemprop="keywords">
     
+      <a href="/tags/#apache-tomcat" class="page__taxonomy-item" rel="tag">Apache Tomcat</a><span class="sep">, </span>
+    
       <a href="/tags/#base64" class="page__taxonomy-item" rel="tag">Base64</a><span class="sep">, </span>
     
       <a href="/tags/#bulk-%EC%B2%98%EB%A6%AC" class="page__taxonomy-item" rel="tag">Bulk 처리</a><span class="sep">, </span>
@@ -633,8 +669,6 @@ TCP 기반의 HTTP가 UDP통신을 도입하고 있는데 과연 데이터 정�
       <a href="/tags/#ssr" class="page__taxonomy-item" rel="tag">SSR</a><span class="sep">, </span>
     
       <a href="/tags/#tcp-udp" class="page__taxonomy-item" rel="tag">TCP / UDP</a><span class="sep">, </span>
-    
-      <a href="/tags/#tomcat" class="page__taxonomy-item" rel="tag">Tomcat</a><span class="sep">, </span>
     
       <a href="/tags/#web" class="page__taxonomy-item" rel="tag">Web</a>
     
