@@ -67,7 +67,7 @@ var store = [{
       },{
         "title": "6 Week",
         "excerpt":"Web 아래 내용들을 무엇이다 라고 정의해보려고 했는데 명쾌하게 떠오르지 않았다. 이참에 한번 짚고 넘어가자. World Wide Web 인터넷에 연결된 사용자들이 서로의 정보를 공유할 수 있는 공간 텍스트, 그림, 소리, 영상 등의 멀티미디어 정보를 하이퍼텍스트 방식으로 연결 하이퍼텍스트 : 문서 내부에 또다른 문서가 연결되는 참조를 넣음 웹페이지들은 각각 연결되어 있는데 이로...","categories": ["TIL"],
-        "tags": ["Apache Tomcat","Filter","Web","Session","OSI 7계층","TCP / UDP","Bulk 처리","SSR","CSR","HTTPS","Base64"],
+        "tags": ["Apache Tomcat","Servlet Filter","Web","Session","OSI 7계층","TCP / UDP","Bulk 처리","SSR","CSR","HTTPS","Base64"],
         "url": "/til/6%EC%A3%BC%EC%B0%A8/",
         "teaser": null
       }]

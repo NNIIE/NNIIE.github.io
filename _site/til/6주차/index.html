@@ -234,7 +234,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          4 분 소요
+          6 분 소요
         
       </span>
     
@@ -249,7 +249,7 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> TIL</h4></header>
-              <ul class="toc__menu"><li><a href="#web">Web</a></li><li><a href="#browser-rendering">Browser Rendering</a><ul><li><a href="#ssr">SSR</a></li><li><a href="#csr">CSR</a></li></ul></li><li><a href="#http의-전송방식">HTTP의 전송방식</a></li><li><a href="#base64">Base64</a></li><li><a href="#bulk-처리">Bulk 처리</a></li><li><a href="#to-do">To Do</a></li><li><a href="#세션이-왜필요할까">세션이 왜필요할까?</a></li><li><a href="#apache-tomcat">Apache Tomcat</a></li><li><a href="#filter">Filter</a></li><li><a href="#servletcontextlistener">ServletContextListener</a></li><li><a href="#tcp--udp">TCP / UDP</a></li><li><a href="#배치시스템-vs-스트리밍-시스템">배치시스템 vs 스트리밍 시스템</a></li><li><a href="#osi-7-계층">OSI 7 계층</a></li></ul>
+              <ul class="toc__menu"><li><a href="#web">Web</a></li><li><a href="#browser-rendering">Browser Rendering</a><ul><li><a href="#ssr">SSR</a></li><li><a href="#csr">CSR</a></li></ul></li><li><a href="#http의-전송방식">HTTP의 전송방식</a></li><li><a href="#base64">Base64</a></li><li><a href="#bulk-처리">Bulk 처리</a></li><li><a href="#to-do">To Do</a></li><li><a href="#세션이-왜필요할까">세션이 왜필요할까?</a></li><li><a href="#apache-tomcat">Apache Tomcat</a></li><li><a href="#servlet-filter">Servlet Filter</a><ul><li><a href="#관심사의-분리">관심사의 분리?</a><ul><li><a href="#interceptor">Interceptor</a></li><li><a href="#aop">AOP</a></li></ul></li></ul></li><li><a href="#servletcontextlistener">ServletContextListener</a></li><li><a href="#tcp--udp">TCP / UDP</a></li><li><a href="#배치시스템-vs-스트리밍-시스템">배치시스템 vs 스트리밍 시스템</a></li><li><a href="#osi-7-계층">OSI 7 계층</a></li></ul>
 
             </nav>
           </aside>
@@ -495,20 +495,19 @@ DB와의 트랜잭션은 커넥션을 열고 닫는 등의 생각보다 복잡�
 <br />
 저장하는 경우를 생각해 보면 데이터를 저장하는데 10000번의 트랜잭션이 일어나게 된다.
 <br />
+<br />
 하지만 <code class="language-plaintext highlighter-rouge">bulk insert</code> 의 경우 단 한번의 트랜잭션으로 처리를 할 수 있기 때문에
 <br />
 데이터 수가 많을수록 비약적으로 성능이 향상된다.
+<br />
 <br />
 실제로도 예전에 거의 안쓰이는 스케쥴러 처리한 <code class="language-plaintext highlighter-rouge">insert</code> 용도의 <code class="language-plaintext highlighter-rouge">API</code> 가 있는데 어느순간
 <br />
 급격히 사용량이 많아져서 데이터 처리에 딜레이가 발생하는 상황이 생긴적이 있는데
 <br />
-이때 <code class="language-plaintext highlighter-rouge">bulk</code> 처리 하나로 비약적인 성능향상과 이슈를 해결한 적이 있었다.
-<br />
-물론 신경써야할 것도 있는데 그건 아래 단점에서..</p>
+이때 <code class="language-plaintext highlighter-rouge">bulk</code> 처리 하나로 비약적인 성능향상과 이슈를 해결한 적이 있었다.</p>
 
-<p><br />
-<br /></p>
+<p><br /></p>
 
 <p><strong>단점</strong>
 <br />
@@ -577,16 +576,16 @@ DB와의 트랜잭션은 커넥션을 열고 닫는 등의 생각보다 복잡�
       <li>비즈니스 로직을 수행한다.</li>
     </ul>
   </li>
-  <li><strong>Sevlet</strong>
+  <li><strong>Sevrlet</strong>
     <ul>
       <li>동적인 처리를 하는 역할을 담당하는 자바 기반 기술</li>
       <li><code class="language-plaintext highlighter-rouge">WAS</code>에서 동작하는 Java 클래스이며, <code class="language-plaintext highlighter-rouge">HttpServlet</code> 을 상속받는다.</li>
       <li><code class="language-plaintext highlighter-rouge">Request / Response</code> 흐름을 간단한 메서드 호출로 다룰 수 있게 해준다.</li>
     </ul>
   </li>
-  <li><strong>Sevlet Container</strong>
+  <li><strong>Sevrlet Container</strong>
     <ul>
-      <li><code class="language-plaintext highlighter-rouge">Sevlet</code> 을 담고 관리하는 컨테이너</li>
+      <li><code class="language-plaintext highlighter-rouge">Sevrlet</code> 을 담고 관리하는 컨테이너</li>
       <li>새로운 요청이 들어올 때 마다 스레드를 생성</li>
       <li>작업이 끝난 서블릿 스레드를 제거</li>
     </ul>
@@ -625,7 +624,94 @@ DB와의 트랜잭션은 커넥션을 열고 닫는 등의 생각보다 복잡�
 <br />
 <br /></p>
 
-<h1 id="filter">Filter</h1>
+<h1 id="servlet-filter">Servlet Filter</h1>
+<p>J2EE 표준 스펙을 구현한 기술이다. <code class="language-plaintext highlighter-rouge">Tomcat</code>과 같은 <code class="language-plaintext highlighter-rouge">Web Container</code>에 의해 관리된다.
+<br />
+<code class="language-plaintext highlighter-rouge">Servlet</code>으로 전달되는 클라이언트의 <code class="language-plaintext highlighter-rouge">request</code> 혹은 <code class="language-plaintext highlighter-rouge">Servlet</code>에서 클라이언트로 전달되는 <code class="language-plaintext highlighter-rouge">response</code>를
+<br />
+중간에 가로채서 <code class="language-plaintext highlighter-rouge">request / response</code> 객체 자체를 조작할 수 있다.
+<br />
+<br />
+사용자인증, 로깅, 인코딩 같은 기능들은 모든 <code class="language-plaintext highlighter-rouge">Servlet</code>이나 JSP가 공통적으로 필요로 하기 때문에 공통적인
+<br />
+기능들을 <code class="language-plaintext highlighter-rouge">Servlet</code> 이 호출되기 전에 전처리 혹은 후처리 하고 싶을 때 <code class="language-plaintext highlighter-rouge">Servlet Filter</code>로 구현한다.
+<br />
+클라이언트 요청을 <code class="language-plaintext highlighter-rouge">Servlet</code> 이 받기전에 먼저 가로채서 서버컴포넌트의 공통적인 기능을 수행시킬 수 있다.
+<br />
+<br />
+예를들어 모든 페이지에서 로그인 유무를 확인해야 할 경우 각 <code class="language-plaintext highlighter-rouge">Controller</code> 마다 로그인 유무를 체크하는 로직을
+<br />
+작성하면 추후 로그인 관련 로직이 변경될 경우 모든 로직을 바꿔야 하기 때문에 매우 비효율 적일 것이다.
+<br />
+그렇다면 이 <strong>공통관심사</strong> 를 분리해서 필터에 위임하면 유지보수가 훨씬 용이해 질 것이다. 
+<br />
+<code class="language-plaintext highlighter-rouge">Servlet Filter</code> 는 <code class="language-plaintext highlighter-rouge">Servlet</code>과 비슷한 <code class="language-plaintext highlighter-rouge">LifeCycle</code>을 가진다. (생성 - 초기화 - 필터 - 종료)</p>
+<ul>
+  <li>필터로 구현하면 좋은 기능들
+    <ul>
+      <li>인증(사용자 인증) 필터</li>
+      <li>로깅 및 감시 필터</li>
+      <li>이미지 변환 및 데이터 압축 필터</li>
+      <li>암호화 필터</li>
+      <li>XML 컨텐츠를 변형하는 XSLT 필터</li>
+      <li>URL 및 기타 정보들을 캐싱하는 필터</li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+<h2 id="관심사의-분리">관심사의 분리?</h2>
+<p><code class="language-plaintext highlighter-rouge">Filter</code>를 공부하다가 <code class="language-plaintext highlighter-rouge">관심사의 분리</code> 라는 키워드를 보게 되었다.
+<br />
+<code class="language-plaintext highlighter-rouge">Filter</code>는 무슨 행동을 하기전에 먼저 실행하거나, 실행한 후 추가적인 행동을 할 때 사용하는데
+<br />
+스프링에는 <strong>공통처리</strong> 를 위해 활용할 수 있는 <code class="language-plaintext highlighter-rouge">Interceptor</code>와 <code class="language-plaintext highlighter-rouge">AOP</code> 가 더 있다.
+<br />
+<code class="language-plaintext highlighter-rouge">Interceptor</code>와 <code class="language-plaintext highlighter-rouge">Filter</code>는 <code class="language-plaintext highlighter-rouge">Servlet</code>단위에서 실행되지만 <code class="language-plaintext highlighter-rouge">AOP</code>는 메소드 앞에 Proxy패턴의 형태로 실행된다.
+<br />
+실행순서는 <code class="language-plaintext highlighter-rouge">Filter</code>가 가장 밖에 있고 그안에 <code class="language-plaintext highlighter-rouge">Interceptor</code>, 그안에 <code class="language-plaintext highlighter-rouge">AOP</code>가 있는 형태이다.
+<br />
+따라서 요청이 들어오면 <code class="language-plaintext highlighter-rouge">Filter</code> → <code class="language-plaintext highlighter-rouge">Interceptor</code> → <code class="language-plaintext highlighter-rouge">AOP</code> → <code class="language-plaintext highlighter-rouge">Interceptor</code> → <code class="language-plaintext highlighter-rouge">Filter</code> 순으로 거치게 된다.</p>
+
+<p><br /></p>
+
+<h3 id="interceptor">Interceptor</h3>
+<p>스프링에서 제공하는 기술이다. 
+ <br />
+ <code class="language-plaintext highlighter-rouge">DistpatcherServlet</code>이 <code class="language-plaintext highlighter-rouge">Controller</code>를 호출하기 전과 후에 응답을 참조하거나 가공한다.
+<br />
+<code class="language-plaintext highlighter-rouge">Filter</code>는 스프링 컨텍스트 외부에 존재하여 스프링과 무관한 자원에 대해 동작하지만
+<br />
+<code class="language-plaintext highlighter-rouge">Interceptor</code>는 스프링의 <code class="language-plaintext highlighter-rouge">DistpatcherServlet</code>이 <code class="language-plaintext highlighter-rouge">Controller</code>를 호출하기 전, 후로 끼어들기 때문에 
+<br />
+스프링 컨텍스트(Context, 영역) 내부에서 Controller(Handler)에 관한 요청과 응답에 대해 처리한다.</p>
+<ul>
+  <li>스프링의 모든 빈 객체에 접근할 수 있다.</li>
+  <li><code class="language-plaintext highlighter-rouge">Interceptor</code>는 여러개를 사용할 수 있고 다음과 같은 작업을 수행한다.
+    <ul>
+      <li>로그인 체크</li>
+      <li>권한 체크</li>
+      <li>프로그램 실행시간 계산작업</li>
+      <li>API 호출에 대한 로깅</li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h3 id="aop">AOP</h3>
+<p><strong>OOP</strong>를 보완하기 위해 나온 개념 
+<br />
+객체지향 프로그래밍을 했을 때 중복을 줄일 수 없는 부분을 줄이기 위해 종단면(관점)에서 바라보고 처리한다.
+<br />
+주로 <strong>비즈니스단</strong>의 메서드에서 로깅, 트랜잭션, 에러처리 등을 조금 더 세밀하게 조정하고 싶을 때 사용한다.
+<br />
+<code class="language-plaintext highlighter-rouge">Interceptor</code>와 <code class="language-plaintext highlighter-rouge">Filter</code> 와 다르게 메서드 전후의 지점에 자유롭게 설정이 가능하고
+<br />
+<code class="language-plaintext highlighter-rouge">Interceptor</code>와 <code class="language-plaintext highlighter-rouge">Filter</code>는 주소로 대상을 구분해서 걸러내지만 <code class="language-plaintext highlighter-rouge">AOP</code>는 주소, 파라미터, 어노테이션 등 다양하게 대상을 지정할 수 있다.</p>
+<ul>
+  <li><strong>메서드 단위 공통로직</strong> 에 적합 예를들면, 각 메서드가 얼마나 걸리는지 시간측정하는 로그를 뿌리는 작업</li>
+</ul>
 
 <p><br />
 <br />
@@ -694,11 +780,11 @@ TCP 기반의 HTTP가 UDP통신을 도입하고 있는데 과연 데이터 정�
     
       <a href="/tags/#csr" class="page__taxonomy-item" rel="tag">CSR</a><span class="sep">, </span>
     
-      <a href="/tags/#filter" class="page__taxonomy-item" rel="tag">Filter</a><span class="sep">, </span>
-    
       <a href="/tags/#https" class="page__taxonomy-item" rel="tag">HTTPS</a><span class="sep">, </span>
     
       <a href="/tags/#osi-7%EA%B3%84%EC%B8%B5" class="page__taxonomy-item" rel="tag">OSI 7계층</a><span class="sep">, </span>
+    
+      <a href="/tags/#servlet-filter" class="page__taxonomy-item" rel="tag">Servlet Filter</a><span class="sep">, </span>
     
       <a href="/tags/#session" class="page__taxonomy-item" rel="tag">Session</a><span class="sep">, </span>
     
