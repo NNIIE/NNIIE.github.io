@@ -549,37 +549,73 @@ DB와의 트랜잭션은 커넥션을 열고 닫는 등의 생각보다 복잡�
 <br /></p>
 
 <h1 id="apache-tomcat">Apache Tomcat</h1>
-<p>기본적으로 <code class="language-plaintext highlighter-rouge">Apache</code> 와 <code class="language-plaintext highlighter-rouge">Tomcat</code> 의 기능은 나뉘어져 있지만, <code class="language-plaintext highlighter-rouge">Tomcat</code> 안에 컨테이너를 통해 
+<p>가장 범용적인 <code class="language-plaintext highlighter-rouge">WAS</code> 중 하나이며, Apache 재단 에서 개발한 <code class="language-plaintext highlighter-rouge">HTTP Web Application Server</code>이다.
+<br />
+오픈소스이기 때문에 무료이고 구축이 쉽다는 이유로 전세계에서 매우 많이 사용되고 있다.
+<br />
+기본적으로 <code class="language-plaintext highlighter-rouge">Apache</code> 와 <code class="language-plaintext highlighter-rouge">Tomcat</code> 의 기능은 나뉘어져 있지만, <code class="language-plaintext highlighter-rouge">Tomcat</code> 안에 컨테이너를 통해 
 <br />
 일부 <code class="language-plaintext highlighter-rouge">Apache</code> 기능을 발휘하기 때문에 보통 <code class="language-plaintext highlighter-rouge">Apache Tomcat</code> 으로 부른다.</p>
 <ul>
-  <li><strong>Apache HTTP Server</strong>
+  <li><strong>Apache</strong>
     <ul>
-      <li>아파치 소프트웨어 재단에서 만든 서블릿컨테이너 또는 웹컨테이너만 있는 웹서버 프로그램</li>
-      <li><strong>웹서버</strong> : <code class="language-plaintext highlighter-rouge">HTTP</code> 프로토콜을 주고받는 서버</li>
+      <li>웹서버이며, 80포트로 클라이언트 요청(GET, POST 등)이 왔을때만 응답한다.</li>
+      <li>정적인 데이터만 처리한다 (HTML, CSS, 이미지 등)
+        <ul>
+          <li><strong>웹서버</strong> : <code class="language-plaintext highlighter-rouge">HTTP</code> 프로토콜 요청을 처리하는 서버</li>
+        </ul>
+      </li>
     </ul>
   </li>
   <li><strong>Tomcat</strong>
     <ul>
-      <li><strong>WAS(Web Application Server)</strong> - 컨테이너, 웹컨테이너, 서블릿컨테이너 로도 불림
-        <ul>
-          <li>DB, 로직처리 등을 요구하는 동적타입을 제공하는 소프트웨어</li>
-          <li>프로그램 실행환경과 DB접속 기능 등을 제공한다.</li>
-          <li>여러개의 트랜잭션을 관리한다.</li>
-          <li>비즈니스 로직을 수행한다.</li>
-        </ul>
-      </li>
-      <li><strong>서블릿</strong> : 동적인 웹페이지를 만들 때 사용되는 자바기반 기술.
-        <ul>
-          <li><code class="language-plaintext highlighter-rouge">Request / Response</code> 흐름을 간단한 메서드 호출로 다룰 수 있게 해준다.</li>
-        </ul>
-      </li>
-      <li><strong>서블릿 컨테이너</strong> : 서블릿을 담고 관리하는 컨테이너
-        <ul>
-          <li>새로운 요청이 들어올 때 마다 스레드를 생성</li>
-          <li>작업이 끝난 서블릿 스레드를 제거</li>
-        </ul>
-      </li>
+      <li>동적인 웹을 만들기 위한 <code class="language-plaintext highlighter-rouge">Web Container</code>, <code class="language-plaintext highlighter-rouge">Servlet Container</code> 로도 불림</li>
+      <li><code class="language-plaintext highlighter-rouge">Servlet</code> 을 실행키고 <code class="language-plaintext highlighter-rouge">JSP</code> 코드가 포함되어 있는 웹 페이지를 만들어준다.</li>
+      <li>DB, 로직처리 등을 요구하는 동적타입을 제공하는 소프트웨어</li>
+      <li>프로그램 실행환경과 DB 접속 기능 등을 제공한다.</li>
+      <li>여러개의 트랜잭션을 관리한다.</li>
+      <li>비즈니스 로직을 수행한다.</li>
+    </ul>
+  </li>
+  <li><strong>Sevlet</strong>
+    <ul>
+      <li>동적인 처리를 하는 역할을 담당하는 자바 기반 기술</li>
+      <li><code class="language-plaintext highlighter-rouge">WAS</code>에서 동작하는 Java 클래스이며, <code class="language-plaintext highlighter-rouge">HttpServlet</code> 을 상속받는다.</li>
+      <li><code class="language-plaintext highlighter-rouge">Request / Response</code> 흐름을 간단한 메서드 호출로 다룰 수 있게 해준다.</li>
+    </ul>
+  </li>
+  <li><strong>Sevlet Container</strong>
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">Sevlet</code> 을 담고 관리하는 컨테이너</li>
+      <li>새로운 요청이 들어올 때 마다 스레드를 생성</li>
+      <li>작업이 끝난 서블릿 스레드를 제거</li>
+    </ul>
+  </li>
+</ul>
+
+<p><br />
+<strong>정리하면</strong>
+<br />
+<br />
+<strong>Apache Tomcat != Apache</strong></p>
+<ul>
+  <li><strong>Apache 만 사용하면?</strong>
+    <ul>
+      <li>구조가 단순하여 트래픽 과부하에 장점이 있다.</li>
+      <li>정적인 웹페이지만 처리가 가능하다.</li>
+    </ul>
+  </li>
+  <li><strong>Tomcat 만 사용하면?</strong>
+    <ul>
+      <li>동적인 웹페이지 처리가 가능하지만 <code class="language-plaintext highlighter-rouge">Apache</code> 에서 필요한 기능을 가져오지 못한다.</li>
+      <li><code class="language-plaintext highlighter-rouge">Apache</code> 에 비해 속도가 느려 트래픽 과부하에 단점이 있다.</li>
+    </ul>
+  </li>
+  <li><strong>둘을 같이쓰면?</strong>
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">Apache</code> 는 정적인 데이터만 처리하고, JSP 처리는 Web Container(Tomcat의 일부)로 보낸다. 
+  <br />
+  결국 분산처리가 가능하다.</li>
     </ul>
   </li>
 </ul>
