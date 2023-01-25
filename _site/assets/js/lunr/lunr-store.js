@@ -70,4 +70,10 @@ var store = [{
         "tags": ["Apache Tomcat","Servlet Filter","Web","Session","OSI 7계층","TCP / UDP","Bulk 처리","SSR","CSR","HTTPS","Base64"],
         "url": "/til/6%EC%A3%BC%EC%B0%A8/",
         "teaser": null
+      },{
+        "title": "7 Week",
+        "excerpt":"      To Do             MVC             MVP             MVVM                ","categories": ["TIL"],
+        "tags": ["MVC","MVP","MVVM"],
+        "url": "/til/7%EC%A3%BC%EC%B0%A8/",
+        "teaser": null
       }]

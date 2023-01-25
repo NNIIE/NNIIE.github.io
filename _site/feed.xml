@@ -1,4 +1,34 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-01-25T06:18:03+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">6 Week</title><link href="http://localhost:4000/til/6%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="6 Week" /><published>2023-01-19T00:00:00+09:00</published><updated>2023-01-19T00:00:00+09:00</updated><id>http://localhost:4000/til/6%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/6%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-01-26T01:07:14+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">7 Week</title><link href="http://localhost:4000/til/7%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="7 Week" /><published>2023-01-26T00:00:00+09:00</published><updated>2023-01-26T00:00:00+09:00</updated><id>http://localhost:4000/til/7%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/7%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
+
+<h1 id="to-do">To Do</h1>
+
+<p><br />
+<br />
+<br />
+<br /></p>
+
+<h1 id="mvc">MVC</h1>
+
+<p><br />
+<br />
+<br />
+<br /></p>
+
+<h1 id="mvp">MVP</h1>
+
+<p><br />
+<br />
+<br />
+<br /></p>
+
+<h1 id="mvvm">MVVM</h1>
+
+<p><br />
+<br />
+<br />
+<br /></p>
+
+<p><br /></p>]]></content><author><name>NNIIE</name></author><category term="TIL" /><category term="MVC" /><category term="MVP" /><category term="MVVM" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">6 Week</title><link href="http://localhost:4000/til/6%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="6 Week" /><published>2023-01-19T00:00:00+09:00</published><updated>2023-01-19T00:00:00+09:00</updated><id>http://localhost:4000/til/6%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/6%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
 
 <h1 id="web">Web</h1>
 <p>아래 내용들을 무엇이다 라고 정의해보려고 했는데 명쾌하게 떠오르지 않았다.
@@ -4375,198 +4405,4 @@ SOLID원칙의 리스코프치환 원칙에서 알 수 있다.
 <p><br />
 <br />
 <br />
-<br /></p>]]></content><author><name>NNIIE</name></author><category term="TIL" /><category term="접근제어자" /><category term="상속" /><category term="다형성" /><category term="Wrapper Class" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">22.12</title><link href="http://localhost:4000/til/1-TIL/" rel="alternate" type="text/html" title="22.12" /><published>2022-12-04T00:00:00+09:00</published><updated>2022-12-04T00:00:00+09:00</updated><id>http://localhost:4000/til/1-TIL</id><content type="html" xml:base="http://localhost:4000/til/1-TIL/"><![CDATA[<p><br /><br /><br /></p>
-
-<h1 id="lombok">lombok</h1>
-<h2 id="getter---prefix">@getter - prefix</h2>
-<p>lombok은 boolean 타입일 때 변수의 prefix가 is인 경우 getIsXXX 대신 isXXX 으로 get메서드를 만들어준다.</p>
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">lombok.Getter</span><span class="o">;</span>
-
-<span class="nd">@Getter</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Person</span> <span class="o">{</span>
-    <span class="kd">private</span> <span class="kt">boolean</span> <span class="n">isMan</span><span class="o">;</span>
-    <span class="o">...</span>
-<span class="o">}</span>
-</code></pre></div></div>
-<p>이때 @Getter 로 만들어진 메서드는 getIsMan() 가 아니고 isMan() 가 된다.
-<br />
-결국 이 DTO 를 받을 경우 아래와 같다.</p>
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
-    </span><span class="nl">"man"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div></div>
-<p><strong><em>해결방법 1. boolean -&gt; Boolean</em></strong>
-<br /></p>
-
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Getter</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Person</span> <span class="o">{</span>
-    <span class="kd">private</span> <span class="nc">Boolean</span> <span class="n">isMan</span><span class="o">;</span>
-    <span class="o">...</span>
-<span class="o">}</span>
-</code></pre></div></div>
-
-<p>원시타입 대신 래퍼타입을 사용한다.
-<br />
-하지만 래퍼타입이라 null값이 들어가게 되므로 지양하자
-<br />
-<br />
-<strong><em>해결방법 2. get 메서드 직접 작성</em></strong></p>
-
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Getter</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Person</span> <span class="o">{</span>
-    <span class="kd">private</span> <span class="kt">boolean</span> <span class="n">isMan</span><span class="o">;</span>
-    <span class="o">...</span>
-
-    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">getIsMan</span><span class="o">()</span> <span class="o">{</span>
-        <span class="k">return</span> <span class="n">isMan</span><span class="o">;</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-</code></pre></div></div>
-
-<h2 id="builder">@Builder</h2>
-<p>생성자 대신 builder 패턴 적용</p>
-
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Getter</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Person</span> <span class="o">{</span>
-    <span class="kd">private</span> <span class="nc">String</span> <span class="n">name</span><span class="o">;</span>
-    <span class="kd">private</span> <span class="kt">int</span> <span class="n">age</span><span class="o">;</span>
-
-    <span class="nd">@Builder</span>
-    <span class="kd">public</span> <span class="nf">Person</span><span class="o">(</span><span class="nc">String</span> <span class="n">name</span><span class="o">,</span> <span class="kt">int</span> <span class="n">age</span><span class="o">){</span>
-        <span class="k">this</span><span class="o">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">;</span>
-        <span class="k">this</span><span class="o">.</span><span class="na">age</span> <span class="o">=</span> <span class="n">age</span><span class="o">;</span>
-    <span class="o">}</span>
-
-    <span class="c1">// 사용</span>
-    <span class="nc">Person</span><span class="o">.</span><span class="na">builder</span><span class="o">().</span><span class="na">name</span><span class="o">(</span><span class="s">"이름"</span><span class="o">).</span><span class="na">age</span><span class="o">(</span><span class="mi">1</span><span class="o">).</span><span class="na">build</span><span class="o">();</span>
-<span class="o">}</span>
-</code></pre></div></div>
-
-<p><br />
-같은 이름과 같은 매게변수를 가진 메서드가 있으면 @Getter는 메서드를 생성하지 않는다.</p>
-
-<h2 id="noargsconstructor">@NoArgsConstructor</h2>
-<p>파라미터 없는 기본생성자</p>
-
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@NoArgsConstructor</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Person</span> <span class="o">{</span>
-    <span class="kd">private</span> <span class="nc">String</span> <span class="n">name</span><span class="o">;</span>
-    <span class="kd">private</span> <span class="kt">int</span> <span class="n">age</span><span class="o">;</span>
-<span class="o">}</span>
-
-<span class="c1">// 기본생성자 생성</span>
-<span class="kd">public</span> <span class="nf">Person</span><span class="o">()</span> <span class="o">{</span>
-<span class="o">}</span>
-</code></pre></div></div>
-
-<h2 id="allargsconstructor">@AllArgsConstructor</h2>
-<p>모든 필드값을 파라미터로 받는 생성자</p>
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@AllArgsConstructor</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Person</span> <span class="o">{</span>
-    <span class="kd">private</span> <span class="nc">String</span> <span class="n">name</span><span class="o">;</span>
-    <span class="kd">private</span> <span class="kt">int</span> <span class="n">age</span><span class="o">;</span>
-<span class="o">}</span>
-
-<span class="c1">// 모든 필드를 가진 생성자 생성</span>
-<span class="kd">public</span> <span class="nf">Person</span><span class="o">(</span><span class="nc">String</span> <span class="n">name</span><span class="o">,</span> <span class="kt">int</span> <span class="n">age</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">this</span><span class="o">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">;</span>
-    <span class="k">this</span><span class="o">.</span><span class="na">age</span> <span class="o">=</span> <span class="n">age</span><span class="o">;</span>
-<span class="o">}</span>
-</code></pre></div></div>
-
-<h2 id="requireargsconstructor">@RequireArgsConstructor</h2>
-<p>final이나 @NonNull인 필드 값만 파라미터로 받는 생성자 생성</p>
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@RequireArgsConstructor</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Person</span> <span class="o">{</span>
-    <span class="kd">private</span> <span class="kd">final</span> <span class="kt">long</span> <span class="n">id</span><span class="o">;</span> 
-    <span class="kd">private</span> <span class="nc">String</span> <span class="n">name</span><span class="o">;</span>
-    <span class="kd">private</span> <span class="kt">int</span> <span class="n">age</span><span class="o">;</span>
-<span class="o">}</span>
-
-<span class="c1">// final이나 @NonNull인 필드를 가진 생성자 생성</span>
-<span class="kd">public</span> <span class="nf">Person</span><span class="o">(</span><span class="kt">long</span> <span class="n">id</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">this</span><span class="o">.</span><span class="na">id</span> <span class="o">=</span> <span class="n">id</span><span class="o">;</span>
-<span class="o">}</span>
-</code></pre></div></div>
-
-<h2 id="data">@Data</h2>
-<p>@Getter @Setter @ToString @EqualsAndHashCode @RequiredArgsConstructor 자동생성
-<br />
-최대한 지양하자</p>
-<ul>
-  <li>무분별한 getter / setter 남용</li>
-  <li>ToString으로 인한 양방향 연관관계시 순환 참조 문제</li>
-</ul>
-
-<p><br /></p>
-
-<h1 id="maven--gradle">maven / gradle</h1>
-<p>빌드관리도구
-<br /></p>
-<ul>
-  <li>소스코드에서 어플리케이션 생성을 하면서 여러가지 여부 라이브러리를 사용하는데, 빌드 관리 도구는 사용자가 직접 관리할 필요 없이 필요한 라이브러리들을 자동으로 관리한다.</li>
-</ul>
-
-<h2 id="maven">maven</h2>
-<ul>
-  <li>java용 프로젝트 관리 도구로 Apache 의 Ant 대안으로 만들어졌다.</li>
-  <li>빌드중인 프로젝트, 빌드순서, 외부라이브러리 종속성 관계를 pom.xml파일에 명시</li>
-  <li>멀티프로젝트에서 특정 설정을 다른 모듈에서 사용하려면 <strong><em>상속</em></strong>방식 사용</li>
-</ul>
-
-<h2 id="gradle">gradle</h2>
-<ul>
-  <li>JVM의 스크립트 언어인 groovy로 만들어졌다.</li>
-  <li>멀티프로젝트에서 특정 설정을 다른 모듈에서 사용하려면 <strong><em>설정주입</em></strong>방식 사용</li>
-</ul>
-
-<h2 id="maven-vs-gradle">maven vs gradle</h2>
-<ul>
-  <li>gradle 은 빌드시 <strong><em>변경된 파일만 작업</em></strong>하기 때문에 maven 보다 빠름 (10~100배)</li>
-  <li>gradle 은 스크립트 언어로 프로젝트가 커질수록 가독성이 maven 보다 좋음</li>
-  <li>gradle 이 멀티 프로젝트에 maven보다 적합하다.</li>
-</ul>
-
-<p><br /></p>
-
-<h1 id="oom-java-out-of-memory">OOM (java Out Of Memory)</h1>
-<h2 id="자바의-메모리">자바의 메모리</h2>
-<p>자바는 가비지컬렉터로 메모리 관리를 한다.
-<br />
-덕분에 개발자는 메모리에 큰 신경을 쓰지 않고 코드를 작성할수 있다
-<br />
-하지만 가비지컬렉터가 정리해야 할 메모리가 정리되지 못하고 계속 메모리에 남아있게 되는걸 Memory Leak(메모리 누수)
-라고 한다. 
-<br />
-메모리 릭이 계속 될 경우 결국 JVM이 종료되고 만다. 
-<br />
-메모리 릭의 양이 아주 작고 메모리는 많은 경우에는 주기적으로 JVM을 재시작 하면서 크게 신경안써도 될 경우도 있지만, 메모리릭이 빠르게 증가하는 경우에는 반드시 해결해줘야 한다</p>
-
-<h2 id="왜-발생">왜 발생?</h2>
-<p>메모리가 부족하기 때문이다. 한정된 서버 자원에 여러 어플리케이션을 띄운다던가
-<br />
-static같은 정적 메모리를 남발하여 지워지지 않고 계속 쌓일경우 이다.</p>
-
-<h2 id="어떻게-찾을까">어떻게 찾을까?</h2>
-<ol>
-  <li>JVM이 oom 에러로 정지된걸 확인</li>
-  <li>정지된 JVM 메모리영역을 확인했더니 특정 영역이 Full로 가득차있고, GC후 메모리할당에 실패하는걸 확인</li>
-  <li>코드레벨 (대게 싱글톤이나 static 잘못사용)</li>
-  <li>쓰레드생성이나 JNI에서 oom이 일어날 경우 OS의 자원소진일 수 있다. 이경우 외부자원을 조심스럽게 쓰던지 외부자원량을 늘림</li>
-  <li>외부 라이브러리가 많을 경우 문제해결이 쉽지않다. JVM옵션과 tool의 도움을 받자</li>
-  <li>옵션 추가
-    <ul>
-      <li>JVM 시작시 -verbose:gc옵션을 추가 - 가비지콜렉션 로그를 자세히 볼수있음</li>
-      <li>JVM 시작시에 -XX:+HeapDumpOnOutOfMemoryError 추가 - JVM 정지시에 힙덤프를 받아놓을수 있음</li>
-      <li>JVM 시작시에  –verbose:class옵션을 추가 - 클래스 로드, 언로드 상황을 볼수 있음</li>
-    </ul>
-  </li>
-  <li>힙덤프 내역을 분석</li>
-</ol>
-
-<h2 id="함수형">함수형</h2>
-
-<p><br />
-<br />
-<br />
-<br /></p>]]></content><author><name>NNIIE</name></author><category term="TIL" /><category term="Lombok" /><summary type="html"><![CDATA[]]></summary></entry></feed>
+<br /></p>]]></content><author><name>NNIIE</name></author><category term="TIL" /><category term="접근제어자" /><category term="상속" /><category term="다형성" /><category term="Wrapper Class" /><summary type="html"><![CDATA[]]></summary></entry></feed>
