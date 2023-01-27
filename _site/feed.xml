@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-01-28T01:20:30+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">7 Week</title><link href="http://localhost:4000/til/7%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="7 Week" /><published>2023-01-26T00:00:00+09:00</published><updated>2023-01-26T00:00:00+09:00</updated><id>http://localhost:4000/til/7%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/7%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-01-28T01:42:22+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">7 Week</title><link href="http://localhost:4000/til/7%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="7 Week" /><published>2023-01-26T00:00:00+09:00</published><updated>2023-01-26T00:00:00+09:00</updated><id>http://localhost:4000/til/7%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/7%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
 
 <h1 id="to-do">To Do</h1>
 
@@ -2758,7 +2758,9 @@ HashMap의 동기화 문제를 보완하기 위해 나왔다. 동기화 처리�
 <br />
 Entry 아이템별로 락을 거는 ConcurrentHashMap 을 쓰는게 좋다.
 <br />
-하지만, 우리는 서버개발시 <code class="language-plaintext highlighter-rouge">Thread-safe</code> 하지 않은 HashMap을 자주쓴다.</p>
+완벽한 비교는 아니지만 비슷한 맥락으로 비유해 보자면 <strong>HashTable / ConcurrentHashMap</strong> 의 차이는 
+<br />
+테이블 락 과도 비유해 볼 수 있다. 모든 작업에 동기화를 거는건 테이블락과 비슷할 정도로 비효율 적이기 때문에</p>
 
 <p><br />
 <br /></p>

@@ -422,7 +422,9 @@ HashMap의 동기화 문제를 보완하기 위해 나왔다. 동기화 처리�
 <br />
 Entry 아이템별로 락을 거는 ConcurrentHashMap 을 쓰는게 좋다.
 <br />
-하지만, 우리는 서버개발시 <code class="language-plaintext highlighter-rouge">Thread-safe</code> 하지 않은 HashMap을 자주쓴다.</p>
+완벽한 비교는 아니지만 비슷한 맥락으로 비유해 보자면 <strong>HashTable / ConcurrentHashMap</strong> 의 차이는 
+<br />
+테이블 락 과도 비유해 볼 수 있다. 모든 작업에 동기화를 거는건 테이블락과 비슷할 정도로 비효율 적이기 때문에</p>
 
 <p><br />
 <br /></p>
