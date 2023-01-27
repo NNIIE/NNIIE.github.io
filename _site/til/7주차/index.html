@@ -249,7 +249,7 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> TIL</h4></header>
-              <ul class="toc__menu"><li><a href="#jdbc">JDBC</a><ul><li><a href="#jdbc의-정의">JDBC의 정의</a></li><li><a href="#jdbc-driver">JDBC Driver</a></li><li><a href="#jdbc-api">JDBC API</a></li><li><a href="#커넥션풀은-뭐고-왜써">커넥션풀은 뭐고 왜써?</a></li></ul></li><li><a href="#to-do">To Do</a></li><li><a href="#mvc">MVC</a></li><li><a href="#mvp">MVP</a></li><li><a href="#mvvm">MVVM</a></li></ul>
+              <ul class="toc__menu"><li><a href="#jdbc">JDBC</a><ul><li><a href="#jdbc의-정의">JDBC의 정의</a></li><li><a href="#jdbc-driver">JDBC Driver</a></li><li><a href="#jdbc-api">JDBC API</a></li><li><a href="#connection-pool">Connection Pool</a></li></ul></li><li><a href="#to-do">To Do</a></li><li><a href="#mvc">MVC</a></li><li><a href="#mvp">MVP</a></li><li><a href="#mvvm">MVVM</a></li></ul>
 
             </nav>
           </aside>
@@ -282,7 +282,25 @@ API는 <code class="language-plaintext highlighter-rouge">Application Programmin
 
 <p><br /></p>
 
-<h2 id="커넥션풀은-뭐고-왜써">커넥션풀은 뭐고 왜써?</h2>
+<h2 id="connection-pool">Connection Pool</h2>
+<p>데이터베이스에 대한 커넥션을 미리 생성해두고 재사용 하기 위한 방법
+<br />
+어플리케이션 시작 시점에 필요한 만큼의 커넥션을 미리 확보해서 풀에 보관한다.
+<br />
+<br />
+<br />
+<strong>왜쓰는데?</strong>
+<br /></p>
+
+<p>DB Driver는 데이터베이스와 <strong>TCP/IP</strong> 커넥션을 연결하는데, 이 과정에서 <code class="language-plaintext highlighter-rouge">3 way handshake</code> 같은
+<br /> 
+네트워크 동작이 발생하게 된다.
+<br />
+<code class="language-plaintext highlighter-rouge">3 way handshake</code> 는 <strong>Network Pass</strong> 를 확보하는데 3번의 통신을 해야 서로가 신뢰를
+<br />
+가지고 <strong>Pass</strong> 를 확정하기 때문에 이 과정에서 시간이라는 리소스가 많이 들어가게 된다.
+<br />
+비용적인 측면에서 <strong>느린거로</strong>는 네트워크가 압도적이기 때문에 <code class="language-plaintext highlighter-rouge">Connection Pool</code> 을 사용한다.</p>
 
 <p><br />
 <br />
@@ -333,6 +351,8 @@ API는 <code class="language-plaintext highlighter-rouge">Application Programmin
   <p class="page__taxonomy">
     <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
     <span itemprop="keywords">
+    
+      <a href="/tags/#connection-pool" class="page__taxonomy-item" rel="tag">Connection Pool</a><span class="sep">, </span>
     
       <a href="/tags/#jdbc" class="page__taxonomy-item" rel="tag">JDBC</a><span class="sep">, </span>
     

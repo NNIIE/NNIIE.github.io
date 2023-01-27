@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-01-28T01:54:38+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">7 Week</title><link href="http://localhost:4000/til/7%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="7 Week" /><published>2023-01-26T00:00:00+09:00</published><updated>2023-01-26T00:00:00+09:00</updated><id>http://localhost:4000/til/7%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/7%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-01-28T02:08:37+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">7 Week</title><link href="http://localhost:4000/til/7%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="7 Week" /><published>2023-01-26T00:00:00+09:00</published><updated>2023-01-26T00:00:00+09:00</updated><id>http://localhost:4000/til/7%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/7%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
 
 <h1 id="jdbc">JDBC</h1>
 <h2 id="jdbc의-정의">JDBC의 정의</h2>
@@ -26,7 +26,25 @@ API는 <code class="language-plaintext highlighter-rouge">Application Programmin
 
 <p><br /></p>
 
-<h2 id="커넥션풀은-뭐고-왜써">커넥션풀은 뭐고 왜써?</h2>
+<h2 id="connection-pool">Connection Pool</h2>
+<p>데이터베이스에 대한 커넥션을 미리 생성해두고 재사용 하기 위한 방법
+<br />
+어플리케이션 시작 시점에 필요한 만큼의 커넥션을 미리 확보해서 풀에 보관한다.
+<br />
+<br />
+<br />
+<strong>왜쓰는데?</strong>
+<br /></p>
+
+<p>DB Driver는 데이터베이스와 <strong>TCP/IP</strong> 커넥션을 연결하는데, 이 과정에서 <code class="language-plaintext highlighter-rouge">3 way handshake</code> 같은
+<br /> 
+네트워크 동작이 발생하게 된다.
+<br />
+<code class="language-plaintext highlighter-rouge">3 way handshake</code> 는 <strong>Network Pass</strong> 를 확보하는데 3번의 통신을 해야 서로가 신뢰를
+<br />
+가지고 <strong>Pass</strong> 를 확정하기 때문에 이 과정에서 시간이라는 리소스가 많이 들어가게 된다.
+<br />
+비용적인 측면에서 <strong>느린거로</strong>는 네트워크가 압도적이기 때문에 <code class="language-plaintext highlighter-rouge">Connection Pool</code> 을 사용한다.</p>
 
 <p><br />
 <br />
@@ -61,7 +79,7 @@ API는 <code class="language-plaintext highlighter-rouge">Application Programmin
 <br />
 <br /></p>
 
-<p><br /></p>]]></content><author><name>NNIIE</name></author><category term="TIL" /><category term="MVC" /><category term="MVP" /><category term="MVVM" /><category term="JDBC" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">6 Week</title><link href="http://localhost:4000/til/6%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="6 Week" /><published>2023-01-19T00:00:00+09:00</published><updated>2023-01-19T00:00:00+09:00</updated><id>http://localhost:4000/til/6%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/6%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
+<p><br /></p>]]></content><author><name>NNIIE</name></author><category term="TIL" /><category term="MVC" /><category term="MVP" /><category term="MVVM" /><category term="JDBC" /><category term="Connection Pool" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">6 Week</title><link href="http://localhost:4000/til/6%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="6 Week" /><published>2023-01-19T00:00:00+09:00</published><updated>2023-01-19T00:00:00+09:00</updated><id>http://localhost:4000/til/6%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/6%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
 
 <h1 id="web">Web</h1>
 <p>아래 내용들을 무엇이다 라고 정의해보려고 했는데 명쾌하게 떠오르지 않았다.
