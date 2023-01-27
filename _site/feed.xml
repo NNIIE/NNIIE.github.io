@@ -1,4 +1,37 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-01-28T01:42:22+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">7 Week</title><link href="http://localhost:4000/til/7%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="7 Week" /><published>2023-01-26T00:00:00+09:00</published><updated>2023-01-26T00:00:00+09:00</updated><id>http://localhost:4000/til/7%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/7%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-01-28T01:54:38+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">7 Week</title><link href="http://localhost:4000/til/7%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="7 Week" /><published>2023-01-26T00:00:00+09:00</published><updated>2023-01-26T00:00:00+09:00</updated><id>http://localhost:4000/til/7%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/7%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
+
+<h1 id="jdbc">JDBC</h1>
+<h2 id="jdbc의-정의">JDBC의 정의</h2>
+<p>데이터베이스 접근기술</p>
+
+<p><br /></p>
+
+<h2 id="jdbc-driver">JDBC Driver</h2>
+<p>서로 다른 디비들에 대한 연결방법이 모두 다르기 때문에 거기에 대응하기 위해서 사용한다.
+<br />
+결국 디비가 서로 다르고 다른 연결방식 이어도 모두 같은방식으로 다루고 싶고
+<br />
+또한 프로그래밍 단에서는 하나의 방식으로 사용하고 싶기 때문에 사용한다.</p>
+
+<p><br /></p>
+
+<h2 id="jdbc-api">JDBC API</h2>
+<p>드라이버가 매꿔준 걸 이용해서 같은방식으로 디비에 대한 접근을 제공하는 <strong>인터페이스</strong>
+<br />
+API는 <code class="language-plaintext highlighter-rouge">Application Programming Interface</code>의 약자이고
+<br />
+<code class="language-plaintext highlighter-rouge">JDBC API</code>란 여기에 접근하기 위해 추상적으로 공개한 루트이다.
+<br />
+이것도 결국 프로그래밍 단에서 다른걸 신경쓰지 않고 하나의 방법으로 사용하고 싶기 때문</p>
+
+<p><br /></p>
+
+<h2 id="커넥션풀은-뭐고-왜써">커넥션풀은 뭐고 왜써?</h2>
+
+<p><br />
+<br />
+<br />
+<br /></p>
 
 <h1 id="to-do">To Do</h1>
 
@@ -28,7 +61,7 @@
 <br />
 <br /></p>
 
-<p><br /></p>]]></content><author><name>NNIIE</name></author><category term="TIL" /><category term="MVC" /><category term="MVP" /><category term="MVVM" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">6 Week</title><link href="http://localhost:4000/til/6%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="6 Week" /><published>2023-01-19T00:00:00+09:00</published><updated>2023-01-19T00:00:00+09:00</updated><id>http://localhost:4000/til/6%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/6%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
+<p><br /></p>]]></content><author><name>NNIIE</name></author><category term="TIL" /><category term="MVC" /><category term="MVP" /><category term="MVVM" /><category term="JDBC" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">6 Week</title><link href="http://localhost:4000/til/6%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="6 Week" /><published>2023-01-19T00:00:00+09:00</published><updated>2023-01-19T00:00:00+09:00</updated><id>http://localhost:4000/til/6%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/6%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
 
 <h1 id="web">Web</h1>
 <p>아래 내용들을 무엇이다 라고 정의해보려고 했는데 명쾌하게 떠오르지 않았다.

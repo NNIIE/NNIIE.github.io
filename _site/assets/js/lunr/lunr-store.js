@@ -72,8 +72,8 @@ var store = [{
         "teaser": null
       },{
         "title": "7 Week",
-        "excerpt":"      To Do             MVC             MVP             MVVM                ","categories": ["TIL"],
-        "tags": ["MVC","MVP","MVVM"],
+        "excerpt":"JDBC JDBC의 정의 데이터베이스 접근기술 JDBC Driver 서로 다른 디비들에 대한 연결방법이 모두 다르기 때문에 거기에 대응하기 위해서 사용한다. 결국 디비가 서로 다르고 다른 연결방식 이어도 모두 같은방식으로 다루고 싶고 또한 프로그래밍 단에서는 하나의 방식으로 사용하고 싶기 때문에 사용한다. JDBC API 드라이버가 매꿔준 걸 이용해서 같은방식으로 디비에 대한 접근을 제공하는...","categories": ["TIL"],
+        "tags": ["MVC","MVP","MVVM","JDBC"],
         "url": "/til/7%EC%A3%BC%EC%B0%A8/",
         "teaser": null
       }]

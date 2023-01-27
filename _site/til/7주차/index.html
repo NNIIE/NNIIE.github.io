@@ -249,12 +249,45 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> TIL</h4></header>
-              <ul class="toc__menu"><li><a href="#to-do">To Do</a></li><li><a href="#mvc">MVC</a></li><li><a href="#mvp">MVP</a></li><li><a href="#mvvm">MVVM</a></li></ul>
+              <ul class="toc__menu"><li><a href="#jdbc">JDBC</a><ul><li><a href="#jdbc의-정의">JDBC의 정의</a></li><li><a href="#jdbc-driver">JDBC Driver</a></li><li><a href="#jdbc-api">JDBC API</a></li><li><a href="#커넥션풀은-뭐고-왜써">커넥션풀은 뭐고 왜써?</a></li></ul></li><li><a href="#to-do">To Do</a></li><li><a href="#mvc">MVC</a></li><li><a href="#mvp">MVP</a></li><li><a href="#mvvm">MVVM</a></li></ul>
 
             </nav>
           </aside>
         
         <p><br /><br /><br /></p>
+
+<h1 id="jdbc">JDBC</h1>
+<h2 id="jdbc의-정의">JDBC의 정의</h2>
+<p>데이터베이스 접근기술</p>
+
+<p><br /></p>
+
+<h2 id="jdbc-driver">JDBC Driver</h2>
+<p>서로 다른 디비들에 대한 연결방법이 모두 다르기 때문에 거기에 대응하기 위해서 사용한다.
+<br />
+결국 디비가 서로 다르고 다른 연결방식 이어도 모두 같은방식으로 다루고 싶고
+<br />
+또한 프로그래밍 단에서는 하나의 방식으로 사용하고 싶기 때문에 사용한다.</p>
+
+<p><br /></p>
+
+<h2 id="jdbc-api">JDBC API</h2>
+<p>드라이버가 매꿔준 걸 이용해서 같은방식으로 디비에 대한 접근을 제공하는 <strong>인터페이스</strong>
+<br />
+API는 <code class="language-plaintext highlighter-rouge">Application Programming Interface</code>의 약자이고
+<br />
+<code class="language-plaintext highlighter-rouge">JDBC API</code>란 여기에 접근하기 위해 추상적으로 공개한 루트이다.
+<br />
+이것도 결국 프로그래밍 단에서 다른걸 신경쓰지 않고 하나의 방법으로 사용하고 싶기 때문</p>
+
+<p><br /></p>
+
+<h2 id="커넥션풀은-뭐고-왜써">커넥션풀은 뭐고 왜써?</h2>
+
+<p><br />
+<br />
+<br />
+<br /></p>
 
 <h1 id="to-do">To Do</h1>
 
@@ -300,6 +333,8 @@
   <p class="page__taxonomy">
     <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
     <span itemprop="keywords">
+    
+      <a href="/tags/#jdbc" class="page__taxonomy-item" rel="tag">JDBC</a><span class="sep">, </span>
     
       <a href="/tags/#mvc" class="page__taxonomy-item" rel="tag">MVC</a><span class="sep">, </span>
     
