@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-01-30T16:01:41+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">7 Week</title><link href="http://localhost:4000/til/7%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="7 Week" /><published>2023-01-26T00:00:00+09:00</published><updated>2023-01-26T00:00:00+09:00</updated><id>http://localhost:4000/til/7%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/7%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-01-31T02:27:56+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">7 Week</title><link href="http://localhost:4000/til/7%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="7 Week" /><published>2023-01-26T00:00:00+09:00</published><updated>2023-01-26T00:00:00+09:00</updated><id>http://localhost:4000/til/7%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/7%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
 
 <h1 id="jdbc">JDBC</h1>
 <h2 id="jdbc의-정의">JDBC의 정의</h2>
@@ -169,6 +169,38 @@ MVC패턴은 모델1과 모델2가 있다.</li>
 <br /></p>
 
 <h1 id="mvp">MVP</h1>
+<p><strong>Model-View</strong> 는 <strong>MVC</strong> 패턴과 동일하고 <strong>Controller</strong> 대신 <strong>Presenter</strong> 가 존재하는 패턴</p>
+<ul>
+  <li><strong>Presenter</strong>
+    <ul>
+      <li><strong>View</strong> 와 <strong>Model</strong> 의 <strong>인스턴스</strong> 를 가지고 있다.</li>
+      <li><strong>Presenter</strong> 와 <strong>View</strong> 는 1:1 관계이다.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<p><strong>동작</strong></p>
+<ol>
+  <li>사용자 요청은 <strong>View</strong> 를 통해 들어옴</li>
+  <li><strong>View</strong> 는 데이터를 <strong>Presenter</strong> 에 요청</li>
+  <li><strong>Presenter</strong> 는 <strong>Model</strong> 에게 데이터 요청</li>
+  <li><strong>Model</strong> 은 <strong>Presenter</strong> 에게 요청받은 데이터 응답</li>
+  <li><strong>Presenter</strong> 는 <strong>View</strong> 에게 데이터를 응답</li>
+  <li><strong>View</strong> 는 <strong>Presenter</strong> 가 응답한 데이터를 사용해 화면을 나타냄</li>
+</ol>
+
+<p><br /></p>
+
+<p><strong>왜쓰는데?</strong>
+<br />
+<br />
+<strong>Presenter</strong> 를 통해서만 데이터를 전달 받기 때문에 <strong>View-Model</strong> 간의 의존성이 없다.
+<br />
+하지만 <strong>View-Model</strong> 간의 의존성은 해결되었지만 반대로 <strong>View-Presenter</strong> 간의
+<br />
+의존성이 높아지고 어플리케이션이 복잡해 질 수록 의존성을 더 강해진다.</p>
 
 <p><br />
 <br />
@@ -176,6 +208,46 @@ MVC패턴은 모델1과 모델2가 있다.</li>
 <br /></p>
 
 <h1 id="mvvm">MVVM</h1>
+<p>Command 패턴과 Data Binding 이라는 두 가지 패턴을 사용하여 구현되었다.
+<br />
+Command 패턴과 Data Binding을 이용하여 <strong>View</strong> 와 <strong>View Model</strong> 사이의 의존성을 없앰
+<br />
+<strong>View Model</strong> 과 <strong>View</strong> 는 <strong>1:N</strong> 관계이다.
+<br />
+<strong>Model-View</strong> 는 <strong>MVC</strong> 패턴과 동일하고 <strong>Controller</strong> 대신 <strong>View Model</strong> 이 존재한다.</p>
+<ul>
+  <li><strong>View Model</strong>
+    <ul>
+      <li><strong>View</strong> 를 표현하기 위해 만든 <strong>View</strong> 를 위한 <strong>Model</strong> 이다.</li>
+      <li><strong>View</strong> 에서 필요로 하는 데이터 처리와 비즈니스 로직을 수행한다.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<p><strong>동작</strong></p>
+<ol>
+  <li>사용자 요청은 <strong>View</strong> 를 통해 들어옴</li>
+  <li><strong>View</strong> 는 Command 패턴으로 <strong>View Model</strong> 에게 요청 전달</li>
+  <li><strong>View Model</strong> 은 <strong>Model</strong> 에게 데이터 요청</li>
+  <li><strong>Model</strong> 은 <strong>View Model</strong> 에게 요청받은 데이터 응답</li>
+  <li><strong>View Model</strong> 은 응답받은 데이터를 가공하여 저장</li>
+  <li><strong>View</strong> 는 <strong>View Model</strong> 과 <strong>Data Binding</strong> 하여 화면을 나타냄</li>
+</ol>
+
+<p><br /></p>
+
+<p><strong>왜쓰는데?</strong>
+<br />
+<br />
+<strong>View-Model</strong> 간의 의존성이 없다. 또한 Command 패턴과 Data Binding을 사용하여 
+<br />
+<strong>View-View Model</strong> 간의 의존성 또한 없앤 디자인패턴 
+<br />
+각각의 부분은 독립적이기 때문에 모듈화 하여 개발할 수 있는 장점이 있지만
+<br />
+<strong>View Model</strong> 의 설계가 쉽지 않다는 단점이 있다.</p>
 
 <p><br />
 <br />
