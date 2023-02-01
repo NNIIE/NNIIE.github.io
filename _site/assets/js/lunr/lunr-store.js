@@ -76,4 +76,10 @@ var store = [{
         "tags": ["MVC","MVP","MVVM","JDBC","Connection Pool"],
         "url": "/til/7%EC%A3%BC%EC%B0%A8/",
         "teaser": null
+      },{
+        "title": "8 Week",
+        "excerpt":"      Data Binding       양방향 바인딩       단방향 바인딩             To Do             OOP       OOP 왜쓰는데?       OOP와 상속       OOP와 추상화       OOP와 캡술화       OOP와 Getter / Setter                ","categories": ["TIL"],
+        "tags": ["Data Binding"],
+        "url": "/til/8%EC%A3%BC%EC%B0%A8/",
+        "teaser": null
       }]
