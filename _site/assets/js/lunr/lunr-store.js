@@ -78,8 +78,8 @@ var store = [{
         "teaser": null
       },{
         "title": "8 Week",
-        "excerpt":"      Data Binding       양방향 바인딩       단방향 바인딩             To Do             OOP       OOP 왜쓰는데?       OOP와 상속       OOP와 추상화       OOP와 캡술화       OOP와 Getter / Setter                ","categories": ["TIL"],
-        "tags": ["Data Binding"],
+        "excerpt":"Data Binding 분리된 View 와 Model 을 하나로 묶어 두개의 데이터 소스를 연결하고 동기화 하는 기술이다. Data Binding 은 대표적으로 단방향 데이터 바인딩과 양방향 데이터 바인딩으로 나뉜다. 백엔드 개발자에게 익숙한 MVC 패턴 은 View 대신 json 을 사용한다고 볼 수 있다. 프론트에선 요즘은 MVVM 패턴 을 자주 사용하는데 여기서 Data...","categories": ["TIL"],
+        "tags": ["Data Binding","OOP"],
         "url": "/til/8%EC%A3%BC%EC%B0%A8/",
         "teaser": null
       }]

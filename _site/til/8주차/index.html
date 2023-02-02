@@ -249,7 +249,7 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> TIL</h4></header>
-              <ul class="toc__menu"><li><a href="#data-binding">Data Binding</a><ul><li><a href="#양방향-바인딩">양방향 바인딩</a></li><li><a href="#단방향-바인딩">단방향 바인딩</a></li></ul></li><li><a href="#to-do">To Do</a></li><li><a href="#oop">OOP</a><ul><li><a href="#oop-왜쓰는데">OOP 왜쓰는데?</a></li><li><a href="#oop와-상속">OOP와 상속</a></li><li><a href="#oop와-추상화">OOP와 추상화</a></li><li><a href="#oop와-캡술화">OOP와 캡술화</a></li><li><a href="#oop와-getter--setter">OOP와 Getter / Setter</a></li></ul></li></ul>
+              <ul class="toc__menu"><li><a href="#data-binding">Data Binding</a></li><li><a href="#to-do">To Do</a></li><li><a href="#oop">OOP</a><ul><li><a href="#oop-왜쓰는데">OOP 왜쓰는데?</a></li><li><a href="#oop와-상속">OOP와 상속</a></li><li><a href="#oop와-추상화">OOP와 추상화</a></li><li><a href="#oop와-캡술화">OOP와 캡술화</a></li><li><a href="#oop와-getter--setter">OOP와 Getter / Setter</a></li></ul></li></ul>
 
             </nav>
           </aside>
@@ -257,14 +257,53 @@
         <p><br /><br /><br /></p>
 
 <h1 id="data-binding">Data Binding</h1>
+<p>분리된 <strong>View</strong> 와 <strong>Model</strong> 을 하나로 묶어 두개의 데이터 소스를 연결하고 동기화 하는 기술이다.
+<br />
+<strong>Data Binding</strong> 은 대표적으로 단방향 데이터 바인딩과 양방향 데이터 바인딩으로 나뉜다.
+<br />
+<br />
+백엔드 개발자에게 익숙한 <strong>MVC 패턴</strong> 은 <strong>View</strong> 대신 <strong>json</strong> 을 사용한다고 볼 수 있다.
+<br />
+프론트에선 요즘은 <strong>MVVM 패턴</strong> 을 자주 사용하는데 여기서 <strong>Data Binding</strong> 을 활용한다.</p>
 
 <p><br /></p>
 
-<h2 id="양방향-바인딩">양방향 바인딩</h2>
+<ul>
+  <li><strong>단방향 데이터 바인딩</strong>
+    <ul>
+      <li><strong>event</strong> 를 통해 데이터 흐름이 단방향으로 이루어 진다. (부모 -&gt; 자식)</li>
+      <li><strong>View</strong> 가 바로 업데이트 되지 않는다.</li>
+      <li><strong>양방향 데이터 바인딩</strong> 보다 리소스가 적게 든다.</li>
+    </ul>
+  </li>
+</ul>
 
 <p><br /></p>
 
-<h2 id="단방향-바인딩">단방향 바인딩</h2>
+<ul>
+  <li><strong>양방향 데이터 바인딩</strong>
+    <ul>
+      <li>데이터 변경에 따라 프레임워크를 통해 양방향으로 이루어 진다. (부모 &lt;-&gt; 자식)</li>
+      <li><strong>View</strong> 가 즉시 업데이트 된다.</li>
+      <li><strong>단방향 데이터 바인딩</strong> 보다 리소스가 많이 든다.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<p><strong>왜쓰는데?</strong>
+<br />
+<br />
+웹 애플리케이션의 복잡도가 갈수록 향상되면서 브라우저 메모리가 
+<br />
+자바스크립트 객체와 화면에 있는 데이터를 맞추는데 큰 어려움이 생기고 있다.
+<br />
+이러한 상황을 쉽게 해결 해주기 위해 <strong>Data Binding</strong> 을 사용한다.
+<br />
+대표적인 프론트엔드 프레임워크인 <strong>Angular, React, Vue</strong> 모두 
+<br />
+<strong>Data Binding</strong> 을 지원하는데 상황에 따라 적절하게 쓰면 되겠다.</p>
 
 <p><br />
 <br />
@@ -322,7 +361,9 @@
     <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
     <span itemprop="keywords">
     
-      <a href="/tags/#data-binding" class="page__taxonomy-item" rel="tag">Data Binding</a>
+      <a href="/tags/#data-binding" class="page__taxonomy-item" rel="tag">Data Binding</a><span class="sep">, </span>
+    
+      <a href="/tags/#oop" class="page__taxonomy-item" rel="tag">OOP</a>
     
     </span>
   </p>
