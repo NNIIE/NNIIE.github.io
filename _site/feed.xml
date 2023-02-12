@@ -1,4 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-02-07T03:22:38+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">8 Week</title><link href="http://localhost:4000/til/8%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="8 Week" /><published>2023-02-02T00:00:00+09:00</published><updated>2023-02-02T00:00:00+09:00</updated><id>http://localhost:4000/til/8%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/8%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-02-12T22:47:40+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">9 Week</title><link href="http://localhost:4000/til/9%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="9 Week" /><published>2023-02-09T00:00:00+09:00</published><updated>2023-02-09T00:00:00+09:00</updated><id>http://localhost:4000/til/9%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/9%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
+
+<p><br />
+<br />
+<br />
+<br /></p>
+
+<p><br /></p>]]></content><author><name>NNIIE</name></author><category term="TIL" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">8 Week</title><link href="http://localhost:4000/til/8%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="8 Week" /><published>2023-02-02T00:00:00+09:00</published><updated>2023-02-02T00:00:00+09:00</updated><id>http://localhost:4000/til/8%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/8%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
 
 <h1 id="data-binding">Data Binding</h1>
 <p>분리된 <strong>View</strong> 와 <strong>Model</strong> 을 하나로 묶어 두개의 데이터 소스를 연결하고 동기화 하는 기술이다.
@@ -3958,142 +3965,4 @@ enum자체가 가지는 비용이 적지 않다. static final 상수로도 충�
 <p><br />
 <br />
 <br />
-<br /></p>]]></content><author><name>NNIIE</name></author><category term="TIL" /><category term="Enum" /><category term="Singleton" /><category term="Interface" /><category term="Abstract" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Annotation</title><link href="http://localhost:4000/til/Annotation/" rel="alternate" type="text/html" title="Annotation" /><published>2022-12-20T00:00:00+09:00</published><updated>2022-12-20T00:00:00+09:00</updated><id>http://localhost:4000/til/Annotation</id><content type="html" xml:base="http://localhost:4000/til/Annotation/"><![CDATA[<p><br /><br /><br /></p>
-
-<h1 id="enablescheduling">@EnableScheduling</h1>
-<p>스프링의 스케쥴링을 위한 어노테이션이다.
-<br />
-기본적으로 스프링에 의헤 생성된 한개의 <code class="language-plaintext highlighter-rouge">Thread Pool</code>에서 작동한다. 
-<br />
-하나의 스케쥴이 돌고 있으면 그것이 다 끝나야 다음 스케쥴이 실행되기 때문에 설정을 통해 스케쥴에 대한 스레드풀을 생성하고 
-그 스레드풀을 사용해서 병렬적으로 처리하는게 좋을 수 있다.</p>
-
-<ul>
-  <li>스프링 스케쥴링에 사용</li>
-  <li>스프링 빈으로 등록해서 사용한다.</li>
-  <li>Application Class에 @EnableScheduling 선언</li>
-  <li>scheduler를 사용할 class에 @Component 선언, 메서드에 @Scheduled 선언
-    <ul>
-      <li>메서드 타입은 void</li>
-      <li>메서드에 매개변수 사용 불가</li>
-    </ul>
-  </li>
-</ul>
-
-<p><br /></p>
-
-<ul>
-  <li><strong><em>왜 이거쓰는데?</em></strong>
-<br />
-  <code class="language-plaintext highlighter-rouge">Spring Quartz</code>라는 더 많은 기능을 가진 스케줄러도 존재한다.
-  <br />
-  하지만 의존성이 추가되어야 하고 사용법이 좀 더 복잡하기 때문에 단순한 스케쥴링 작업에는 
-  <br />
-  별도의 추가적인 의존성이 필요없고 사용법이 간단한 <code class="language-plaintext highlighter-rouge">Spring Scheduler</code>를 추천한다.</li>
-</ul>
-
-<p><br />
-<br />
-<br />
-<br /></p>
-
-<h1 id="value">@Value</h1>
-<p>properties 파일의 설정정보를 key-value형태로 가져오는데 쓰인다.
-<br />
-단일값 주입에 권장되고 있으며 여러개의 값을 주입받아야 할 경우
-<br />
-<code class="language-plaintext highlighter-rouge">@ConfigurationProperties</code> 사용을 권장한다.</p>
-
-<ul>
-  <li><strong><em>이거 왜쓰는데?</em></strong>
-<br />
-  만약 소스코드로 설정정보를 관리한다면 보안에도 좋지않고, 컴파일 된 바이트코드를 JVM에서 실행 후에 의미있는 정보가 되기때문에 서버를 내리지 않고는 변경할 수 없다.
-  <br />
-  하지만 properties 파일로 관리하면 key-value값만 불러서 치환하기 때문에 소스코드를 수정 할 필요가 없고 서버의 properties파일만 수정하면 되기 때문에 서버를 중단할 필요가 없다.
-  <br />
-  또한 각 서버환경에 따라 설정도 유연하게 관리할 수 있다.</li>
-</ul>
-
-<p><br />
-<br />
-<br />
-<br /></p>
-
-<h1 id="bean">@Bean</h1>
-<ul>
-  <li><strong><em>@Bean</em></strong>
-    <ul>
-      <li>스프링에서 IoC 컨테이너가 관리하는 자바 객체</li>
-      <li>기본적으로 싱글톤으로 생성하고 관리한다.</li>
-    </ul>
-  </li>
-  <li><strong><em>@Component</em></strong>
-    <ul>
-      <li>개발자가 직접 작성한 클래스를 Bean으로 등록할 때 사용한다.</li>
-      <li>선언 시 Component-Scan에 의해 Bean으로 등록 된다.</li>
-    </ul>
-  </li>
-  <li><strong><em>@Configuration</em></strong>
-    <ul>
-      <li>외부라이브러리 또는 내장 클래스를 Bean으로 등록하고자 할 경우 사용한다.</li>
-      <li>1개 이상의 @Bean을 제공하는 클래스의 경우 반드시 @Configuration를 선언한다.</li>
-      <li>선언 시 Component-Scan에 의해 Bean으로 등록 된다.</li>
-    </ul>
-  </li>
-</ul>
-
-<p><br />
-<br />
-<br />
-<br /></p>
-
-<h1 id="async">@Async</h1>
-<p>스프링에서 제공하는 <code class="language-plaintext highlighter-rouge">Thread Pool</code>을 활용하는 비동기 메서드 지원 어노테이션이다.
-<br />
-간단하게 사용하고 싶다면 Application 클래스에 <code class="language-plaintext highlighter-rouge">@EnableAsync</code>를 선언하고 비동기로 작동하고자 하는 메서드에 <code class="language-plaintext highlighter-rouge">@Async</code>를 선언해주면 사용할 수 있다.
-<br />
-하지만 이럴 경우 기본설정인 <code class="language-plaintext highlighter-rouge">SimpleAsyncTaskExecutor</code>를 사용해서 스레드를 관리하지 않는 등의 문제가 있기 때문에 <code class="language-plaintext highlighter-rouge">AsyncConfigurer</code> 인터페이스를 상속받아 구현하는게 좋을 수 있다.</p>
-
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Configuration</span>
-<span class="nd">@EnableAsync</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">AsyncConfig</span> <span class="kd">implements</span> <span class="nc">AsyncConfigurer</span> <span class="o">{</span>
-	
-	<span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="nc">Executor</span> <span class="nf">getAsyncExecutor</span><span class="o">()</span> <span class="o">{</span>
-        <span class="nc">ThreadPoolTaskExecutor</span> <span class="n">executor</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ThreadPoolTaskExecutor</span><span class="o">();</span>
-        <span class="n">executor</span><span class="o">.</span><span class="na">setCorePoolSize</span><span class="o">(</span><span class="mi">5</span><span class="o">);</span>
-        <span class="n">executor</span><span class="o">.</span><span class="na">setMaxPoolSize</span><span class="o">(</span><span class="mi">30</span><span class="o">);</span>
-        <span class="n">executor</span><span class="o">.</span><span class="na">setQueueCapacity</span><span class="o">(</span><span class="mi">50</span><span class="o">);</span>
-        <span class="n">executor</span><span class="o">.</span><span class="na">setThreadNamePrefix</span><span class="o">(</span><span class="s">"async-pool"</span><span class="o">);</span>
-        <span class="n">executor</span><span class="o">.</span><span class="na">initialize</span><span class="o">();</span>
-        <span class="k">return</span> <span class="n">executor</span><span class="o">;</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-</code></pre></div></div>
-
-<ul>
-  <li><strong><em>@Configuration</em></strong> : 빈 등록</li>
-  <li><strong><em>@EnableAsync</em></strong> : 메서드에서 비동기 기능을 사용할 수 있게 한다.</li>
-  <li><strong><em>CorePoolSize</em></strong> : 기본 실행 대기하는 Thread의 수</li>
-  <li><strong><em>MaxPoolSize</em></strong> : 동시 동작하는 최대 Thread의 수</li>
-  <li><strong><em>QueueCapacity</em></strong> : MaxPoolSize 초과 요청에서 Thread 생성 요청시,  해당 요청을 Queue에 저장하는데 이때 최대 수용 가능한 Queue의 수,   Queue에 저장되어있다가 Thread에 자리가 생기면 하나씩 빠져나가 동작</li>
-  <li><strong><em>ThreadNamePrefix</em></strong> : 생성되는 Thread 접두사 지정</li>
-  <li>그 후 비동기를 원하는 메서드에 <code class="language-plaintext highlighter-rouge">@Async</code> 어노테이션을 선언해 주면 된다.</li>
-</ul>
-
-<p><br /></p>
-
-<ul>
-  <li><strong><em>주의할 점</em></strong>
-    <ul>
-      <li>private method에 사용 불가</li>
-      <li>자가호출 불가 즉, 이너클래스에서 사용 불가</li>
-      <li>QueueCapacity 초과 요청에 대한 비동기 method 호출시 방어 코드 작성</li>
-    </ul>
-  </li>
-</ul>
-
-<p><br />
-<br />
-<br />
-<br /></p>]]></content><author><name>NNIIE</name></author><category term="TIL" /><category term="Spring Annotation" /><summary type="html"><![CDATA[]]></summary></entry></feed>
+<br /></p>]]></content><author><name>NNIIE</name></author><category term="TIL" /><category term="Enum" /><category term="Singleton" /><category term="Interface" /><category term="Abstract" /><summary type="html"><![CDATA[]]></summary></entry></feed>

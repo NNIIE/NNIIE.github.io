@@ -82,4 +82,10 @@ var store = [{
         "tags": ["Data Binding","OOP"],
         "url": "/til/8%EC%A3%BC%EC%B0%A8/",
         "teaser": null
+      },{
+        "title": "9 Week",
+        "excerpt":"                   ","categories": ["TIL"],
+        "tags": [],
+        "url": "/til/9%EC%A3%BC%EC%B0%A8/",
+        "teaser": null
       }]
