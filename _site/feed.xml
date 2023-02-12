@@ -1,11 +1,134 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-02-12T22:47:40+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">9 Week</title><link href="http://localhost:4000/til/9%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="9 Week" /><published>2023-02-09T00:00:00+09:00</published><updated>2023-02-09T00:00:00+09:00</updated><id>http://localhost:4000/til/9%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/9%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-02-13T01:21:32+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">SOLID</title><link href="http://localhost:4000/til/SOLID/" rel="alternate" type="text/html" title="SOLID" /><published>2023-02-13T00:00:00+09:00</published><updated>2023-02-13T00:00:00+09:00</updated><id>http://localhost:4000/til/SOLID</id><content type="html" xml:base="http://localhost:4000/til/SOLID/"><![CDATA[<p><br /><br /><br /></p>
+
+<h1 id="solid">SOLID</h1>
+
+<p><br /></p>
+
+<h2 id="srp">SRP</h2>
+
+<p><br /></p>
+
+<h2 id="ocp">OCP</h2>
+
+<p><br /></p>
+
+<h2 id="lsp">LSP</h2>
+
+<p><br /></p>
+
+<h2 id="isp">ISP</h2>
+
+<p><br /></p>
+
+<h2 id="dip">DIP</h2>
+
+<p><br /></p>
+
+<h2 id="책임이란">책임이란?</h2>
+<p>솔리드원칙에서도 말하지만 기능이 변경될 때 같이 변경되면 이건 다른 책임이다?</p>
 
 <p><br />
 <br />
 <br />
 <br /></p>
 
-<p><br /></p>]]></content><author><name>NNIIE</name></author><category term="TIL" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">8 Week</title><link href="http://localhost:4000/til/8%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="8 Week" /><published>2023-02-02T00:00:00+09:00</published><updated>2023-02-02T00:00:00+09:00</updated><id>http://localhost:4000/til/8%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/8%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
+<p><br /></p>]]></content><author><name>NNIIE</name></author><category term="TIL" /><category term="SRP" /><category term="OCP" /><category term="LSP" /><category term="ISP" /><category term="DIP" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">OOP</title><link href="http://localhost:4000/til/OOP/" rel="alternate" type="text/html" title="OOP" /><published>2023-02-13T00:00:00+09:00</published><updated>2023-02-13T00:00:00+09:00</updated><id>http://localhost:4000/til/OOP</id><content type="html" xml:base="http://localhost:4000/til/OOP/"><![CDATA[<p><br /><br /><br /></p>
+
+<h1 id="oop">OOP</h1>
+<p>어플리케이션을 구성하는 요소들을 객체로 보고, 객체들을 유기적으로 연결하여 프로그래밍 하는걸 말한다.
+<br />
+데이터와 이를 처리하는 루틴을 하나의 <strong>독립된 객체</strong> 로 본다.
+<br />
+재사용성, 유지보수 에 용이하고 대형 프로젝트에 적합하다.
+<br />
+하지만 속도가 상대적으로 느리고, 설계 시 많은 리소스가 들어간다.</p>
+<ul>
+  <li><strong>추상화</strong>
+    <ul>
+      <li>목적과 관련이 없는 부분을 제거하여 필요한 부분만을 표현하기 위한 개념</li>
+    </ul>
+  </li>
+  <li><strong>캡슐화</strong>
+    <ul>
+      <li>정보은닉 - 접근제어자</li>
+      <li>코드의 의존성을 줄이고, 결합도를 낮추는 것</li>
+      <li>필요한 부분만 외부에 노출시키고 나머지는 숨긴다.</li>
+      <li>외부에서 불필요한 의존을 할 일이 없어지고 의존성이 줄어드는 만큼 유지보수도 편해진다.</li>
+    </ul>
+  </li>
+  <li><strong>상속</strong>
+    <ul>
+      <li>코드의 재사용성에 이점이 있지만 코드의 재사용성만을 위해 사용은 지양한다.</li>
+      <li>흔히 재사용성 뿐 아니라 계층구조 같은 구조를 만들 때 사용하자</li>
+    </ul>
+  </li>
+  <li><strong>다형성</strong>
+    <ul>
+      <li>객체지향의 꽃이라고도 불린다.</li>
+      <li>형태가 같지만 다른 기능을 하는 것을 말한다.</li>
+      <li>하나의 타입에 여러 객체를 대입할 수 있는 성질이다.
+        <ul>
+          <li>업캐스팅
+            <ul>
+              <li>서로 다른 클래스의 인스턴스를 동일한 타입에 할당할 수 있게 한다.</li>
+            </ul>
+          </li>
+          <li>동적바인딩
+            <ul>
+              <li>메시지를 수신했을 때 실행도리 메서드가 런타임에 결정된다.</li>
+            </ul>
+          </li>
+          <li>오버로딩</li>
+          <li>오버라이딩</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="oop-왜쓰는데">OOP 왜쓰는데?</h2>
+
+<p><br /></p>
+
+<h2 id="oop와-상속">OOP와 상속</h2>
+
+<h3 id="서브클래싱">서브클래싱</h3>
+<h3 id="서브타이핑">서브타이핑</h3>
+
+<p><br /></p>
+
+<h2 id="oop와-추상화">OOP와 추상화</h2>
+<p>책에서는 모델링이라고 설명한다.
+<br />
+대상에 집중하지말고 문제에 집중을 하면 올바른 추상화에 가까이 갈 수 있다.
+<br />
+대상은 문제를 풀기 충분한 정도의 속성만 가지고 있으면 되고, 이 문제를 푸는데 불필요한 
+<br />
+속성은 제거하는 편이 낫다.</p>
+
+<p><br /></p>
+
+<h2 id="oop와-캡술화">OOP와 캡술화</h2>
+
+<p><br /></p>
+
+<h2 id="oop와-다형성">OOP와 다형성</h2>
+<p>한가지 메서드로 여러가지의 역할을 할 수 있다. 일종의 분기
+<br />
+다형성과 리스코프치환 원칙은 비슷함</p>
+
+<p><br /></p>
+
+<h2 id="oop와-getter--setter">OOP와 Getter / Setter</h2>
+
+<p><br />
+<br />
+<br />
+<br /></p>
+
+<p><br /></p>]]></content><author><name>NNIIE</name></author><category term="TIL" /><category term="OOP" /><category term="서브클래싱 / 서브타이핑" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">8 Week</title><link href="http://localhost:4000/til/8%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="8 Week" /><published>2023-02-02T00:00:00+09:00</published><updated>2023-02-02T00:00:00+09:00</updated><id>http://localhost:4000/til/8%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/8%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
 
 <h1 id="data-binding">Data Binding</h1>
 <p>분리된 <strong>View</strong> 와 <strong>Model</strong> 을 하나로 묶어 두개의 데이터 소스를 연결하고 동기화 하는 기술이다.
@@ -131,6 +254,13 @@
 <p><br /></p>
 
 <h2 id="oop와-추상화">OOP와 추상화</h2>
+<p>책에서는 모델링이라고 설명한다.
+<br />
+대상에 집중하지말고 문제에 집중을 하면 올바른 추상화에 가까이 갈 수 있다.
+<br />
+대상은 문제를 풀기 충분한 정도의 속성만 가지고 있으면 되고, 이 문제를 푸는데 불필요한 
+<br />
+속성은 제거하는 편이 낫다.</p>
 
 <p><br /></p>
 
@@ -3561,408 +3691,4 @@ Key와 Value로 이루어진 자료구조이다.
 <p><br />
 <br />
 <br />
-<br /></p>]]></content><author><name>NNIIE</name></author><category term="Data_Structure" /><category term="Data Structure" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">2 Week</title><link href="http://localhost:4000/til/2%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="2 Week" /><published>2022-12-22T00:00:00+09:00</published><updated>2022-12-22T00:00:00+09:00</updated><id>http://localhost:4000/til/2%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/2%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
-
-<h1 id="enum">enum</h1>
-<p>열거형이라고 부르며, 서로 연관된 상수들의 집합이다.
-<br />
-모든 열거형은 <code class="language-plaintext highlighter-rouge">Enum</code>클래스의 자손이며 <code class="language-plaintext highlighter-rouge">Enum</code>클래스의 멤버를 상속받는다.</p>
-
-<p><br /></p>
-
-<h2 id="특징과-장점">특징과 장점</h2>
-<ul>
-  <li>enum은 컴파일 후 <code class="language-plaintext highlighter-rouge">public static final</code> 필드이며 객체로 제공된다.</li>
-  <li>상수들은 JVM 메서드 영역에 자리한다.</li>
-  <li>Enum클래스는 상수와 같이 인스턴스가 단 한번만 생성된다.</li>
-  <li>컴파일 시점에 타입안정성이 보장되기 때문에 <code class="language-plaintext highlighter-rouge">private</code> 생성자만을 가진다. 
-<br />
-즉, 인스턴스 생성을 제어하며 싱글톤을 일반화 한다. (싱글톤 구현의 방법으로도 사용됨)</li>
-  <li>그렇기 때문에 주소값을 비교하는 == 연산자의 사용이 가능하다.
-<br />
-즉, 객체의 값을 비교하는 equals()보다 빠르고 컴파일 단계에서 검사되기 때문에 실수를 방지할 수 있다.</li>
-</ul>
-
-<p><br /></p>
-
-<h2 id="enum-method">enum method</h2>
-<ul>
-  <li><strong><em>values()</em></strong> : enum클래스의 모든 상수를 배열로 반환한다.</li>
-</ul>
-
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// values 활용</span>
-<span class="kd">public</span> <span class="kd">static</span> <span class="nc">LottoRank</span> <span class="nf">countOfMatchNumber</span><span class="o">(</span><span class="kt">int</span> <span class="n">countOfMatchNumber</span><span class="o">)</span> <span class="o">{</span>
-	<span class="k">return</span> <span class="nc">Arrays</span><span class="o">.</span><span class="na">stream</span><span class="o">(</span><span class="n">values</span><span class="o">())</span>
-			<span class="o">.</span><span class="na">filter</span><span class="o">(</span><span class="nc">LottoRank</span> <span class="o">-&gt;</span> <span class="nc">LottoRank</span><span class="o">.</span><span class="na">countOfMatchNumber</span> <span class="o">==</span> <span class="n">countOfMatchNumber</span><span class="o">)</span>
-			<span class="o">.</span><span class="na">findAny</span><span class="o">()</span>
-			<span class="o">.</span><span class="na">orElse</span><span class="o">(</span><span class="no">MISS</span><span class="o">);</span>
-			<span class="c1">// 또는 orElseThrow(new IllegalArgumentException(error message))</span>
-<span class="o">}</span>
-</code></pre></div></div>
-
-<ul>
-  <li><strong><em>valueOf()</em></strong> : <code class="language-plaintext highlighter-rouge">String</code>을 매개변수로 받아 일치하는 상수를 반환한다. (없으면 런타임 에러 발생)</li>
-  <li><strong><em>ordinal()</em></strong> : 상수들의 index를 반환한다.</li>
-</ul>
-
-<p><br /></p>
-
-<ul>
-  <li><strong><em>단점</em></strong>
-<br />
-enum자체가 가지는 비용이 적지 않다. static final 상수로도 충분하다면 enum의 사용 여부는 고려해보자</li>
-</ul>
-
-<p><br />
-<br />
-<br />
-<br /></p>
-
-<h1 id="싱글톤패턴">싱글톤패턴</h1>
-<p>객체의 인스턴스가 오직 1개만 생성되는 패턴이다.
-<br />
-하나의 인스턴스로 공유되며 접근, 사용할 수 있다</p>
-
-<ul>
-  <li>가장 단순한 코드레벨의 싱글톤 패턴</li>
-</ul>
-
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 동시성 이슈를 배제한 Lazy initialization 방식</span>
-<span class="c1">// Thread Safety 하지 않다.</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Person</span> <span class="o">{</span>
-    <span class="kd">private</span> <span class="kd">static</span> <span class="nc">Person</span> <span class="n">instance</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
-    
-    <span class="kd">private</span> <span class="nf">Person</span><span class="o">()</span> <span class="o">{</span>
-    <span class="o">}</span>
-    
-    <span class="kd">public</span> <span class="kd">static</span> <span class="nc">Person</span> <span class="nf">getInstance</span><span class="o">()</span> <span class="o">{</span>
-        <span class="k">if</span> <span class="o">(</span><span class="n">instance</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
-            <span class="n">instance</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Person</span><span class="o">();</span>
-        <span class="o">}</span>
-        <span class="k">return</span> <span class="n">instance</span><span class="o">;</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-</code></pre></div></div>
-
-<ul>
-  <li><strong><em>장점</em></strong>
-    <ul>
-      <li>인스턴스가 하나기 때문에 매번 새로 인스턴스를 생성할 필요가 없다.</li>
-      <li>싱글톤 패턴으로 만들어진 클래스는 전역 인스턴스이기 때문에 접근하기 편하다.</li>
-    </ul>
-  </li>
-  <li><strong><em>단점</em></strong>
-    <ul>
-      <li>클라이언트가 구체클래스에 의존 -&gt; DIP OCP 위반</li>
-      <li>멀티스레드 환경에서 인스턴스가 하나이기 때문에 문제가 발생할 수 있다.</li>
-      <li>테스트가 어렵다. 인스턴스가 하나기 때문에 테스트를 하려면 매번 초기화를 시켜주어야 한다.</li>
-    </ul>
-  </li>
-</ul>
-
-<p><br /></p>
-
-<h2 id="활용">활용</h2>
-<ul>
-  <li>
-    <p><strong><em>synchronized</em></strong> : 사용하지 말자. 락을 걸어버리는 방법으로 동기화 문제를 간단하고 확실하게 해결하지만 그렇기 때문에 멀티스레드의 이점을 모두 막아버린다.</p>
-  </li>
-  <li>
-    <p><strong><em>Lazy initialization + Double-checked Locking</em></strong> : 이것도 좋지 않다.</p>
-  </li>
-</ul>
-
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 조건문으로 먼저 인스턴스를 확인한 다음 synchronized를 동기화 시켜 인스턴스를</span>
-<span class="c1">// 생성하는방법, 처음 생성이후 synchronized를 실행하지 않아서 성능저하 완화 가능</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Person</span> <span class="o">{</span>
-	<span class="kd">private</span> <span class="kd">static</span> <span class="kd">volatile</span> <span class="nc">Person</span> <span class="n">instance</span><span class="o">;</span>
-	
-	<span class="kd">private</span> <span class="nf">Person</span><span class="o">()</span> <span class="o">{</span>
-	<span class="o">}</span>
-	
-	<span class="kd">public</span> <span class="kd">static</span> <span class="nc">Person</span> <span class="nf">getInstance</span><span class="o">()</span> <span class="o">{</span>
-		<span class="k">if</span> <span class="o">(</span><span class="n">instance</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
-			<span class="kd">synchronized</span> <span class="o">(</span><span class="nc">Person</span><span class="o">.</span><span class="na">class</span><span class="o">)</span> <span class="o">{</span>
-				<span class="k">if</span> <span class="o">(</span><span class="n">instance</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
-					<span class="n">instance</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Person</span><span class="o">();</span>
-				<span class="o">}</span>
-			<span class="o">}</span>
-		<span class="o">}</span>
-		<span class="k">return</span> <span class="n">instance</span><span class="o">;</span>
-	<span class="o">}</span>
-<span class="o">}</span>
-</code></pre></div></div>
-
-<ul>
-  <li><strong><em>Initialization on demand holder idiom</em></strong> : 제일 많이 사용되는 방법</li>
-</ul>
-
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 클래스 안에 클래스(holder)를 두어 JVM의 클래스 로더 매커니즘과 클래스가 로드되는</span>
-<span class="c1">// 시점을 이용한 방법</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Person</span> <span class="o">{</span>
-	<span class="kd">private</span> <span class="nf">Person</span><span class="o">()</span> <span class="o">{</span>
-	<span class="o">}</span>
-	
-	<span class="kd">private</span> <span class="kd">static</span> <span class="kd">class</span> <span class="nc">LazyHorder</span> <span class="o">{</span>
-		<span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="nc">Person</span> <span class="no">INSTANCE</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Person</span><span class="o">();</span>
-	<span class="o">}</span>
-
-	<span class="kd">public</span> <span class="kd">static</span> <span class="nc">Person</span> <span class="nf">getInstance</span><span class="o">()</span> <span class="o">{</span>
-		<span class="k">return</span> <span class="nc">LazyHorder</span><span class="o">.</span><span class="na">INSTANCE</span><span class="o">;</span>
-	<span class="o">}</span>
-<span class="o">}</span>
-</code></pre></div></div>
-
-<ul>
-  <li><strong><em>스프링 컨테이너를 사용하는게 가장 좋다.</em></strong>
-    <ul>
-      <li>상태를 유지(stateful)하면 안되고 무상태(stateless)로 설계해야 한다.</li>
-      <li>특정 클라이언트가 값을 변경할 수 있는 필드가 있으면 안된다</li>
-      <li>읽기만 가능해야 한다.</li>
-      <li>필드 대신에 자바에서 공유되지 않는, 지역변수, 파라미터, ThreadLocal 등을 사용해야 한다.</li>
-      <li><code class="language-plaintext highlighter-rouge">@Configuration</code>, <code class="language-plaintext highlighter-rouge">@Bean</code>을 같이 사용한다.</li>
-    </ul>
-  </li>
-</ul>
-
-<p><br />
-<br />
-<br />
-<br /></p>
-
-<h1 id="인터페이스">인터페이스</h1>
-<p>컴퓨터 사이언스에서 인터페이스란 서로간의 약속, 규약 등의 개념으로 사용하게 끔 오픈된 것을 말한다.
-<br />
-일종의 서로를 이어주는 <strong><em>메시지 창구</em></strong> 역할을 하며, 대표적인 소프트웨어 인터페이스로는 <code class="language-plaintext highlighter-rouge">API</code>가 있다.
-<br />
-<strong><em>자바</em></strong> 에서 인터페이스란, 다른 클래스의 기본이 되는 틀을 제공하면서
-<br />
-다른 클래스 사이의 중간 매개역할을 하는 일종의 추상클래스 이다.
-<br />
-자바8 이전에는 오로지 추상메서드와 상수만을 포함할 수 있었는데 
-<br />
-자바8이후 <code class="language-plaintext highlighter-rouge">default method</code>, <code class="language-plaintext highlighter-rouge">static method</code>가 추가되었다.</p>
-
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 은행시스템을 운영하려면 이 금융결제원 인터페이스에 맞게 구현해야 한다고 치자</span>
-<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Bank</span> <span class="o">{</span>
-
-	<span class="c1">// 상수 (하루 최대 인출 금액)</span>
-	<span class="kd">public</span> <span class="kt">int</span> <span class="no">MAX_INTEGER</span> <span class="o">=</span> <span class="mi">10000000</span><span class="o">;</span>
-	
-	<span class="c1">// 추상메서드 (인출)</span>
-	<span class="kt">void</span> <span class="nf">withDraw</span><span class="o">(</span><span class="kt">int</span> <span class="n">price</span><span class="o">);</span>
-	
-	<span class="c1">// 추상메서드 (입금)</span>
-	<span class="kt">void</span> <span class="nf">deposit</span><span class="o">(</span><span class="kt">int</span> <span class="n">price</span><span class="o">);</span>
-	
-	<span class="c1">// defualt 메서드 (고객의 휴면계좌 찾아주는 메서드 : 필수구현은 선택사항)</span>
-	<span class="k">default</span> <span class="nc">String</span> <span class="nf">findDormancyAccount</span><span class="o">(</span><span class="nc">String</span> <span class="n">custId</span><span class="o">){</span>
-		<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"**금융개정법안 00이후 고객의 휴면계좌 찾아주기 운동**"</span><span class="o">);</span>
-		<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"**금융결제원에서 제공하는 로직**"</span><span class="o">);</span>
-		<span class="k">return</span> <span class="s">"00은행 000-000-0000-00"</span><span class="o">;</span>
-	<span class="o">}</span>
-	
-	<span class="c1">// 정적 메서드 (블록체인 인증)</span>
-	<span class="kd">static</span> <span class="kt">void</span> <span class="nf">BCAuth</span><span class="o">(</span><span class="nc">String</span> <span class="n">bankName</span><span class="o">){</span>
-		<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">bankName</span><span class="o">+</span><span class="s">" 에서 블록체인 인증을 요청합니다."</span><span class="o">);</span>
-		<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"전 금융사 공통 블록체인 로직 수행"</span><span class="o">);</span>
-	<span class="o">}</span>
-<span class="o">}</span>
-</code></pre></div></div>
-<ul>
-  <li><strong><em>상수</em></strong> : 컴파일 단계에서 정해지는, 인터페이스가 제공하는 변하지 않는 값
-    <ul>
-      <li><code class="language-plaintext highlighter-rouge">public static final</code>을 명시하지 않아도 컴파일 단계에서 자동 선언 된다.</li>
-    </ul>
-  </li>
-  <li><strong><em>정적메서드</em></strong> : 인터페이스에서 제공하는 변하지 않는 메서드
-    <ul>
-      <li><code class="language-plaintext highlighter-rouge">public</code>을 명시하지 않아도 컴파일 단계에서 자동 선언 된다.</li>
-    </ul>
-  </li>
-  <li><strong><em>추상메서드</em></strong> : 구현클래스에서 구현해야만 하고 거기서 실행된다.
-    <ul>
-      <li><code class="language-plaintext highlighter-rouge">public abstract</code>를 명시하지 않아도 컴파일 단계에서 자동 선언 된다.</li>
-    </ul>
-  </li>
-  <li><strong><em>디폴트메서드</em></strong> : 인터페이스에서 제공해주지만, 구현클래스에서 재구현 할 수 있고 안써도 된다.
-    <ul>
-      <li><code class="language-plaintext highlighter-rouge">public</code>을 명시하지 않아도 컴파일 단계에서 자동 선언 된다.</li>
-      <li>구현클래스에 인스턴스 메서드로 추가됨. 즉, 구현객체가 있어야 사용할 수 있다.</li>
-    </ul>
-  </li>
-</ul>
-
-<p><br /></p>
-
-<ul>
-  <li><strong><em>특징</em></strong>
-    <ul>
-      <li>인터페이스는 직접 인스턴스를 생성할 수는 없고 추상메서드를 구현해 줄 클래스를 작성해야 한다.</li>
-      <li>자바에서 다중상속은 지원하지 않지만 다중 인터페이스는 구현할 수 있다.</li>
-    </ul>
-  </li>
-</ul>
-
-<p><br /></p>
-
-<h2 id="쓰는-이유">쓰는 이유?</h2>
-<ul>
-  <li>추상메서드와 상수를 통해 구현클래스에 <strong><em>동일한 동작</em></strong>을 보장한다.
-    <ul>
-      <li>클래스의 설계 또는 표준화를 유도할 수 있다.</li>
-      <li>자바8 이후 <code class="language-plaintext highlighter-rouge">default method</code>로 유연성을 추가로 확보했다.</li>
-    </ul>
-  </li>
-  <li><strong><em>다형성</em></strong>을 이용하여 타입변환을 한다.
-    <ul>
-      <li>회사에서 입출금 업무를 하는 로직이 있다면 인터페이스를 이용할 시 
-<br /> 새로운 은행에 대한 코드만 작성해서 인스턴스만 바꿔 끼면 끝난다.</li>
-    </ul>
-  </li>
-  <li>개인적으로 상속보다 좋아보인다..
-    <ul>
-      <li><strong><em>has-a</em></strong> : “~를 할 수 있는”</li>
-    </ul>
-  </li>
-</ul>
-
-<p><br /></p>
-
-<h2 id="문제점">문제점</h2>
-<ul>
-  <li>수정이 어렵다.
-    <ul>
-      <li>자바8 이후 대대적인 개선으로 많이 좋아졌다고 생각한다. <code class="language-plaintext highlighter-rouge">(default method)</code></li>
-    </ul>
-  </li>
-  <li><strong><em>잘사용해야한다..</em></strong> 불필요하게 어플리케이션의 복잡도만 증가시킬 수 있다.</li>
-</ul>
-
-<p><br /></p>
-
-<h2 id="default-method">default method</h2>
-<p>이미 잘 운영중인데 휴면계좌 서비스를 점진적으로 도입하기로 정책이 바뀌었다고 치자.
-<br />
-추상메서드로 새로 추가하려고 하면 금융결제원의 Bank 인터페이스를 implements한 
-<br />
-각 은행사의 모든 클래스에서 무조건 구현을 해야한다.
-<br />
-은행사 마다 개발, 운영환경이 다르고 개발기간도 다르기 때문에 쉽지않다.
-<br />
-만약 <code class="language-plaintext highlighter-rouge">default method</code>로 정의하고 기본적인 구현부를 제공하면 각 은행에서 자신들만의 로직으로 재구현 할 수도 있고
-사용을 안할 수도 있어서 점진적으로 도입하기로 한 정책을 실행할 수 있을것이다.
-<br />
-그대로 쓰거나, 재구현 하거나, 안쓰거나 할 수 있는것이다.
-<br />
-이것은 구현클래스가 자신만의 메서드를 각자 추가하는 것과는 엄연히 다르다.
-<br />
-<strong><em>즉, 운영중인 시스템에 효과적으로 유연함을 제공한다.</em></strong>
-<br />
-또한 <code class="language-plaintext highlighter-rouge">default method</code>는 <code class="language-plaintext highlighter-rouge">functional</code> 하다.
-<br />
-이 말은 에러에 최소화 되었다는 의미 이기도 하다.</p>
-
-<p><br /></p>
-
-<h2 id="함수형-인터페이스">함수형 인터페이스</h2>
-<p>추상메서드가 단 하나뿐인 인터페이스 이다.</p>
-
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/* 
-어노테이션의 기능은 단일 추상메서드인지 컴파일 단계에서 확인하기 위함이다.
-@FunctionalInterface 가 붙지 않아도 함수형인터페이스로 사용될 수 있으나
-직관성을 위해 붙이는걸 추천한다
-*/</span>
-<span class="nd">@FunctionalInterface</span>
-<span class="kd">interface</span> <span class="nc">Calculate</span> <span class="o">{</span>
-	<span class="kt">int</span> <span class="nf">cal</span><span class="o">(</span><span class="kt">int</span> <span class="n">a</span><span class="o">,</span> <span class="kt">int</span> <span class="n">b</span><span class="o">);</span>
-<span class="o">}</span>
-</code></pre></div></div>
-
-<p><br /></p>
-
-<h3 id="쓰는-이유-1">쓰는 이유?</h3>
-<hr />
-<p>자바의 람다식은 함수형 인터페이스로만 접근할 수 있기 때문이다.
-<br />
-람다식과 인터페이스는 1:1로 연결될 수 있기 때문에 이 추상메서드의
-<br />
-매개변수의 개수와 타입, 리턴타입과 동일한 람다식을 할당해서 사용할 수 있다.
-<br />
-단, <code class="language-plaintext highlighter-rouge">static method</code>와 <code class="language-plaintext highlighter-rouge">default method</code>의 개수는 제약이 없다.</p>
-
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">FunctionalInterface</span> <span class="n">func</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">FunctionalInterface</span><span class="o">()</span> <span class="o">{</span>
-	<span class="nd">@Override</span>
-	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">doSomething</span><span class="o">(</span><span class="nc">String</span> <span class="n">text</span><span class="o">)</span> <span class="o">{</span>
-		<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">text</span><span class="o">);</span>
-	<span class="o">}</span>
-<span class="o">};</span>
-<span class="n">func</span><span class="o">.</span><span class="na">doSomething</span><span class="o">(</span><span class="s">"do something"</span><span class="o">);</span>
-</code></pre></div></div>
-
-<p><br />
-<br />
-<br />
-<br /></p>
-
-<h1 id="추상클래스">추상클래스</h1>
-<p>하나 이상의 추상메서드를 포함하는 클래스 이다.
-<br />
-추상클래스를 상속받는 클래스는 추상메서드를 반드시 재정의 해야한다.
-<br />
-추상클래스는 인스턴스를 생성할 수 없으며, 자식클래스가 인스턴스를 생성할 수 있다.</p>
-
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">Person</span> <span class="o">{</span>
-	<span class="kd">public</span> <span class="nc">String</span> <span class="n">name</span><span class="o">;</span>
-	<span class="kd">public</span> <span class="nc">Int</span> <span class="n">age</span><span class="o">;</span>
-
-	<span class="kd">public</span> <span class="kd">abstract</span> <span class="kt">void</span> <span class="nf">say</span><span class="o">();</span>
-<span class="o">}</span>
-</code></pre></div></div>
-
-<p><br /></p>
-
-<h2 id="쓰는이유">쓰는이유?</h2>
-<ul>
-  <li>상속받는 클래스에게 추상메서드를 <strong><em>반드시 구현하도록 강제하기 위해</em></strong>
-    <ul>
-      <li>공통적인 부분에 대한 어느정도의 <strong><em>규격</em></strong>을 잡아 놓는다. (미완성 설계도)</li>
-      <li>공통된 필드와 메서드를 통일할 목적 - 중복 제거</li>
-      <li>다형성</li>
-    </ul>
-  </li>
-  <li>구조를 재사용하기 위해서</li>
-  <li>특정필드를 재사용하고 싶고 공개하고 싶지 않아서</li>
-</ul>
-
-<p><br />
-<br />
-<br />
-<br /></p>
-
-<h1 id="둘의-차이">둘의 차이</h1>
-<p>인터페이스는 정의된 메서드를 각 클래스의 목적에 맞게 기능 구현을 하는 느낌.
-<br />
-(구현 객체가 같은 동작을 한다는것을 보장하기 위해)
-<br />
-추상클래스는 자신의 기능들을 하위클래스로 확장시키는 느낌으로 다가가자.
-<br />
-(같은 부모클래스가 가진 기능들을 구현하기 위해)</p>
-
-<ul>
-  <li>상태의 차이
-    <ul>
-      <li><code class="language-plaintext highlighter-rouge">non-static</code> 멤버 즉, <strong><em>상태 값</em></strong> 을 가지는가에 대한 차이</li>
-    </ul>
-  </li>
-  <li>다중 상속
-    <ul>
-      <li>인터페이스는 다중으로 구현이 가능하지만 추상클래스는 단일 상속만 가능하다.</li>
-    </ul>
-  </li>
-</ul>
-
-<p><br />
-<br />
-<br />
-<br /></p>]]></content><author><name>NNIIE</name></author><category term="TIL" /><category term="Enum" /><category term="Singleton" /><category term="Interface" /><category term="Abstract" /><summary type="html"><![CDATA[]]></summary></entry></feed>
+<br /></p>]]></content><author><name>NNIIE</name></author><category term="Data_Structure" /><category term="Data Structure" /><summary type="html"><![CDATA[]]></summary></entry></feed>

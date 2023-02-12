@@ -83,9 +83,15 @@ var store = [{
         "url": "/til/8%EC%A3%BC%EC%B0%A8/",
         "teaser": null
       },{
-        "title": "9 Week",
-        "excerpt":"                   ","categories": ["TIL"],
-        "tags": [],
-        "url": "/til/9%EC%A3%BC%EC%B0%A8/",
+        "title": "OOP",
+        "excerpt":"OOP 어플리케이션을 구성하는 요소들을 객체로 보고, 객체들을 유기적으로 연결하여 프로그래밍 하는걸 말한다. 데이터와 이를 처리하는 루틴을 하나의 독립된 객체 로 본다. 재사용성, 유지보수 에 용이하고 대형 프로젝트에 적합하다. 하지만 속도가 상대적으로 느리고, 설계 시 많은 리소스가 들어간다. 추상화 목적과 관련이 없는 부분을 제거하여 필요한 부분만을 표현하기 위한 개념 캡슐화 정보은닉...","categories": ["TIL"],
+        "tags": ["OOP","서브클래싱 / 서브타이핑"],
+        "url": "/til/OOP/",
+        "teaser": null
+      },{
+        "title": "SOLID",
+        "excerpt":"      SOLID       SRP       OCP       LSP       ISP       DIP       책임이란?  솔리드원칙에서도 말하지만 기능이 변경될 때 같이 변경되면 이건 다른 책임이다?                ","categories": ["TIL"],
+        "tags": ["SRP","OCP","LSP","ISP","DIP"],
+        "url": "/til/SOLID/",
         "teaser": null
       }]
