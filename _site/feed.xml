@@ -1,26 +1,40 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-02-14T03:21:47+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">SOLID</title><link href="http://localhost:4000/til/SOLID/" rel="alternate" type="text/html" title="SOLID" /><published>2023-02-13T00:00:00+09:00</published><updated>2023-02-13T00:00:00+09:00</updated><id>http://localhost:4000/til/SOLID</id><content type="html" xml:base="http://localhost:4000/til/SOLID/"><![CDATA[<p><br /><br /><br /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-02-14T03:34:59+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">SOLID</title><link href="http://localhost:4000/til/SOLID/" rel="alternate" type="text/html" title="SOLID" /><published>2023-02-13T00:00:00+09:00</published><updated>2023-02-13T00:00:00+09:00</updated><id>http://localhost:4000/til/SOLID</id><content type="html" xml:base="http://localhost:4000/til/SOLID/"><![CDATA[<p><br /><br /><br /></p>
 
 <h1 id="solid">SOLID</h1>
+<p>객체지향 프로그래밍에서 소프트웨어 디자인 품질을 향상시키기 위한 다섯 가지 원칙이다.
+<br />
+이 원칙을 따르면 아래와 같은 장점이 있다.</p>
+
+<ul>
+  <li>유지보수성 향상</li>
+  <li>재사용성 항샹</li>
+  <li>확장성 향상</li>
+  <li>변경에 대한 유연성 향상</li>
+  <li>코드의 가독성 향상</li>
+  <li>결합도 감소</li>
+  <li>테스트 용이성 향상</li>
+  <li>오류발생 가능성 감소</li>
+</ul>
 
 <p><br /></p>
 
-<h2 id="srp">SRP</h2>
+<h2 id="srp---단일-책임-원칙">SRP - 단일 책임 원칙</h2>
 
 <p><br /></p>
 
-<h2 id="ocp">OCP</h2>
+<h2 id="ocp---개방--폐쇄-원칙">OCP - 개방 / 폐쇄 원칙</h2>
 
 <p><br /></p>
 
-<h2 id="lsp">LSP</h2>
+<h2 id="lsp---리스코프-치환-원칙">LSP - 리스코프 치환 원칙</h2>
 
 <p><br /></p>
 
-<h2 id="isp">ISP</h2>
+<h2 id="isp---인터페이스-분리-원칙">ISP - 인터페이스 분리 원칙</h2>
 
 <p><br /></p>
 
-<h2 id="dip">DIP</h2>
+<h2 id="dip---의존관계-역전-원칙">DIP - 의존관계 역전 원칙</h2>
 
 <p><br /></p>
 

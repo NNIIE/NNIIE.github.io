@@ -90,7 +90,7 @@ var store = [{
         "teaser": null
       },{
         "title": "SOLID",
-        "excerpt":"      SOLID       SRP       OCP       LSP       ISP       DIP       책임이란?  솔리드원칙에서도 말하지만 기능이 변경될 때 같이 변경되면 이건 다른 책임이다?                ","categories": ["TIL"],
+        "excerpt":"SOLID 객체지향 프로그래밍에서 소프트웨어 디자인 품질을 향상시키기 위한 다섯 가지 원칙이다. 이 원칙을 따르면 아래와 같은 장점이 있다. 유지보수성 향상 재사용성 항샹 확장성 향상 변경에 대한 유연성 향상 코드의 가독성 향상 결합도 감소 테스트 용이성 향상 오류발생 가능성 감소 SRP - 단일 책임 원칙 OCP - 개방 / 폐쇄 원칙...","categories": ["TIL"],
         "tags": ["SRP","OCP","LSP","ISP","DIP"],
         "url": "/til/SOLID/",
         "teaser": null
