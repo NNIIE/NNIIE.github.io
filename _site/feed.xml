@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-02-14T02:53:05+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">SOLID</title><link href="http://localhost:4000/til/SOLID/" rel="alternate" type="text/html" title="SOLID" /><published>2023-02-13T00:00:00+09:00</published><updated>2023-02-13T00:00:00+09:00</updated><id>http://localhost:4000/til/SOLID</id><content type="html" xml:base="http://localhost:4000/til/SOLID/"><![CDATA[<p><br /><br /><br /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-02-14T03:08:02+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">SOLID</title><link href="http://localhost:4000/til/SOLID/" rel="alternate" type="text/html" title="SOLID" /><published>2023-02-13T00:00:00+09:00</published><updated>2023-02-13T00:00:00+09:00</updated><id>http://localhost:4000/til/SOLID</id><content type="html" xml:base="http://localhost:4000/til/SOLID/"><![CDATA[<p><br /><br /><br /></p>
 
 <h1 id="solid">SOLID</h1>
 
@@ -645,9 +645,22 @@ Dog 클래스의 객체를 Animal 인터페이스로 대체할 수 있게 된다
 <br /></p>
 
 <h3 id="oop와-다형성">OOP와 다형성</h3>
-<p>한가지 메서드로 여러가지의 역할을 할 수 있다. 일종의 분기
+<p><strong>다형성</strong> 이란 객체가 동일한 메시지를 받았을 경우, 각각의 객체가 다르게 반응하도록 하는걸 말한다.
 <br />
-다형성과 리스코프치환 원칙은 비슷함</p>
+즉, 객체들이 동일한 메서드를 호출할 때, 이 메서드가 각 클래스에 따라 다르게 동작하는 것이다.
+<br />
+이러면 하나의 메서드가 다양한 형태로 동작하므로 재사용성과 유지보수성이 증가한다.
+<br />
+여러개의 클래스가 하나의 인터페이스를 구현할 수 있고, 인터페이스에 선언된 메서드는 각 클래스에서
+<br />
+오버라이딩 되어 동작하므로, 이 인터페이스의 메서드를 호출하는 코드는 각 클래스에 따라 동적으로 변하게 된다.
+<br />
+<br />
+하지만, <strong>다형성</strong> 은 객체의 실제 타입을 런타임에 결정하기 때문에, 컴파일러가 정적으로 최적화 할 수 없어
+<br />
+성능저하를 가져올 수 있고 런타임 시에 오류가 발생할 수 있다.
+<br />
+또한 남발되면 객체 생성이 많아지고 코드의 가독성이 떨어지고 디버깅이 힘들어 지게 된다.</p>
 
 <p><br />
 <br />
