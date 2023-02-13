@@ -234,7 +234,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          6 분 소요
+          8 분 소요
         
       </span>
     
@@ -268,6 +268,9 @@
 재사용성, 유지보수 에 용이하고 대형 프로젝트에 적합하다.
 <br />
 하지만 속도가 상대적으로 느리고, 설계 시 많은 리소스가 들어간다.</p>
+
+<p><br /></p>
+
 <ul>
   <li><strong>객체</strong>
     <ul>
@@ -281,11 +284,21 @@
       </li>
     </ul>
   </li>
+</ul>
+
+<p><br /></p>
+
+<ul>
   <li><strong>추상화</strong>
     <ul>
       <li>목적과 관련이 없는 부분을 제거하여 필요한 부분만을 표현하기 위한 개념</li>
     </ul>
   </li>
+</ul>
+
+<p><br /></p>
+
+<ul>
   <li><strong>캡슐화</strong>
     <ul>
       <li>정보은닉 - 접근제어자</li>
@@ -294,12 +307,22 @@
       <li>외부에서 불필요한 의존을 할 일이 없어지고 의존성이 줄어드는 만큼 유지보수도 편해진다.</li>
     </ul>
   </li>
+</ul>
+
+<p><br /></p>
+
+<ul>
   <li><strong>상속</strong>
     <ul>
       <li>코드의 재사용성에 이점이 있지만 코드의 재사용성만을 위해 사용은 지양한다.</li>
       <li>흔히 재사용성 뿐 아니라 계층구조 같은 구조를 만들 때 사용하자</li>
     </ul>
   </li>
+</ul>
+
+<p><br /></p>
+
+<ul>
   <li><strong>다형성</strong>
     <ul>
       <li>객체지향의 꽃이라고도 불린다.</li>
@@ -716,7 +739,6 @@ Dog 클래스의 객체를 Animal 인터페이스로 대체할 수 있게 된다
         <span class="n">feedAnimal</span><span class="o">(</span><span class="n">dog</span><span class="o">);</span>
     <span class="o">}</span>
 <span class="o">}</span>
-
 </code></pre></div></div>
 
 <p><br />
@@ -725,13 +747,119 @@ Dog 클래스의 객체를 Animal 인터페이스로 대체할 수 있게 된다
 <br /></p>
 
 <h3 id="oop와-추상화">OOP와 추상화</h3>
-<p>책에서는 모델링이라고 설명한다.
+<p><br />
+<strong>추상화</strong> 는 객체를 설계하는 과정에서 필요한 정보만 선택하고 나머지는 숨겨서 단순하게 만드는걸 말한다.
 <br />
-대상에 집중하지말고 문제에 집중을 하면 올바른 추상화에 가까이 갈 수 있다.
+<strong>캡슐화</strong> 의 정의와 비슷하지만 <strong>캡슐화</strong> 는 객체의 상태와 행동을 외부로부터 보호하고 객체 간 결합도를 낮추는데
 <br />
-대상은 문제를 풀기 충분한 정도의 속성만 가지고 있으면 되고, 이 문제를 푸는데 불필요한 
+목적이 있다면, <strong>추상화</strong> 는 객체를 단순화 하여 코드의 가독성과 유지보수성을 높이는데에 목적이 있다.
 <br />
-속성은 제거하는 편이 낫다.</p>
+<strong>캡슐화</strong> 에선 접근제어자를 사용하지만, <strong>추상화</strong> 에선 인터페이스와 추상클래스를 사용한다.</p>
+
+<ul>
+  <li><strong>interface</strong>
+    <ul>
+      <li>추상메서드와 상수만을 가질 수 있다.</li>
+      <li>인터페이스를 구현하는 클래스에선 모든 메서드를 구현해야 한다.</li>
+      <li>다중 상속 지원</li>
+      <li>
+        <p>인터페이스 타입으로 변수 선언 후, 변수에 다양한 구현 객체를 대입할 수 있다.</p>
+      </li>
+      <li><strong>장점</strong>
+        <ul>
+          <li>다중상속을 지원해 다양한 클래스 간의 유연한 상호작용 가능</li>
+          <li>구현객체간의 관계를 약화시켜 코드의 결합도를 낮출 수 있음</li>
+        </ul>
+      </li>
+      <li><strong>단점</strong>
+        <ul>
+          <li>인터페이스를 구현하는 클래스에서 모든 메서드를 구현해야 하므로, 코드의 양이 증가</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 여러개의 클래스에서 같은 인터페이스를 구현하면, 해당 인터페이스를 모든 코드에서 동일하 게 다룰 수 있다. 즉, 다형성</span>
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Vehicle</span> <span class="o">{</span>
+    <span class="kt">void</span> <span class="nf">start</span><span class="o">();</span>
+    <span class="kt">void</span> <span class="nf">stop</span><span class="o">();</span>
+<span class="o">}</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Car</span> <span class="kd">implements</span> <span class="nc">Vehicle</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">start</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Car start"</span><span class="o">);</span>
+    <span class="o">}</span>
+    
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">stop</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Car stopp"</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Motorcycle</span> <span class="kd">implements</span> <span class="nc">Vehicle</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">start</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Motorcycle start"</span><span class="o">);</span>
+    <span class="o">}</span>
+    
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">stop</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Motorcycle stopp"</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="c1">// 인터페이스 타입으로 변수를 선언하고, 이 변수에 다양한 구현객체를 대입할 수 있다. 이를 통해 코드의 유연성을 높일 수 있다.</span>
+<span class="nc">Vehicle</span> <span class="n">car</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Car</span><span class="o">();</span>
+<span class="n">car</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
+<span class="n">car</span><span class="o">.</span><span class="na">stop</span><span class="o">();</span>
+
+<span class="nc">Vehicle</span> <span class="n">motorcycle</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Motorcycle</span><span class="o">();</span>
+<span class="n">motorcycle</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
+<span class="n">motorcycle</span><span class="o">.</span><span class="na">stop</span><span class="o">();</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>abstract class</strong>
+    <ul>
+      <li>추상메서드와 일반 메서드도 가질 수 있다.</li>
+      <li>추상클래스를 구현하는 클래스에선 추상 메서드를 구현해야 한다.</li>
+      <li>단일 상속만 지원</li>
+      <li>인스턴스 생성 불가</li>
+      <li>
+        <p>추상클래스 타입으로 변수 선언 후, 변수에 다양한 구현 객체를 대입할 수 있다.</p>
+      </li>
+      <li><strong>장점</strong>
+        <ul>
+          <li>공통된 코드를 추상클래스에 구현하여 재사용성을 높일 수 있음</li>
+          <li>일반메서드를 포함할 수 있으므로, 공통된 기능을 쉽게 구현할 수 있음</li>
+        </ul>
+      </li>
+      <li><strong>단점</strong>
+        <ul>
+          <li>단일상속만을 지원해서, 기능확장에 한계가 있음</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">Vehicle</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">abstract</span> <span class="kt">void</span> <span class="nf">start</span><span class="o">();</span>
+    <span class="kd">public</span> <span class="kd">abstract</span> <span class="kt">void</span> <span class="nf">stop</span><span class="o">();</span>
+<span class="o">}</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Car</span> <span class="kd">extends</span> <span class="nc">Vehicle</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">start</span><span class="o">()</span> <span class="o">{</span>
+        <span class="c1">// 자동차 악셀</span>
+    <span class="o">}</span>
+    
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">stop</span><span class="o">()</span> <span class="o">{</span>
+        <span class="c1">// 자동차 브레이크</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="c1">// 추상클래스 타입으로 변수를 선언하고, 이 변수에 다양한 구현객체를 대입할 수 있다.이를 통해 코드의 유연성을 높일 수 있다.</span>
+<span class="nc">Vehicle</span> <span class="n">car</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Car</span><span class="o">();</span>
+<span class="nc">Vehicle</span> <span class="n">motorcycle</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Motorcycle</span><span class="o">();</span>
+</code></pre></div></div>
 
 <p><br />
 <br />
