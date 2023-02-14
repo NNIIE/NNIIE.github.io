@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-02-14T03:34:59+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">SOLID</title><link href="http://localhost:4000/til/SOLID/" rel="alternate" type="text/html" title="SOLID" /><published>2023-02-13T00:00:00+09:00</published><updated>2023-02-13T00:00:00+09:00</updated><id>http://localhost:4000/til/SOLID</id><content type="html" xml:base="http://localhost:4000/til/SOLID/"><![CDATA[<p><br /><br /><br /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-02-14T14:28:46+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">SOLID</title><link href="http://localhost:4000/til/SOLID/" rel="alternate" type="text/html" title="SOLID" /><published>2023-02-13T00:00:00+09:00</published><updated>2023-02-13T00:00:00+09:00</updated><id>http://localhost:4000/til/SOLID</id><content type="html" xml:base="http://localhost:4000/til/SOLID/"><![CDATA[<p><br /><br /><br /></p>
 
 <h1 id="solid">SOLID</h1>
 <p>객체지향 프로그래밍에서 소프트웨어 디자인 품질을 향상시키기 위한 다섯 가지 원칙이다.
@@ -19,6 +19,63 @@
 <p><br /></p>
 
 <h2 id="srp---단일-책임-원칙">SRP - 단일 책임 원칙</h2>
+<p>하나의 클래스는 하나의 책임을 가져야 한다는 원칙이다.
+<br />
+이것은 클래스가 변경되어야 하는 이유는 단 하나여야 함을 의미한다.
+<br />
+클래스의 응집력은 높이고 결합도는 낮춰서 유지보수, 재사용성, 확장성에 용이하게 하는 원칙으로, 
+<br />
+클래스 하나가 여러 책임을 가지게 되면 그 클래스를 변경해야 하는 이유도 여러가지가 생기므로, 
+<br />
+코드를 변경할때 다른 책임과 관련된 코드까지 함께 변경해야 한다. 
+<br />
+<br />
+<strong>SRP</strong> 원칙을 지키기 위해서는 클래스가 자신의 책임을 명확하게 정의하고, 
+<br />
+다른 책임을 수행하는 클래스와의 의존성을 최소화 해야한다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Order 클래스는 너무 많은 책임을 가지고 있다.</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Order</span> <span class="o">{</span>
+	<span class="kd">private</span> <span class="nc">List</span><span class="o">&lt;</span><span class="nc">Item</span><span class="o">&gt;</span> <span class="n">items</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="nc">Customer</span> <span class="n">customer</span><span class="o">;</span>
+    
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">addItem</span><span class="o">(</span><span class="nc">Item</span> <span class="n">item</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">// 주문서에 상품 추가</span>
+    <span class="o">}</span>
+    
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">removeItem</span><span class="o">(</span><span class="nc">Item</span> <span class="n">item</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">// 주문서에서 상품 제거</span>
+    <span class="o">}</span>
+    
+    <span class="kd">public</span> <span class="kt">double</span> <span class="nf">calculateTotalPrice</span><span class="o">()</span> <span class="o">{</span>
+        <span class="c1">// 주문서 총액 계산</span>
+    <span class="o">}</span>
+    
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">sendConfirmEmail</span><span class="o">()</span> <span class="o">{</span>
+        <span class="c1">// 고객에게 confirm 이메일 발송</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="c1">// 아래처럼 클래스의 책임을 분리함으로써, 클래스간 의존성이 낮아지게 된다.</span>
+<span class="c1">// 이렇게 단일책임원칙을 따르게 되면 유지보수, 재사용성, 확장성이 향상된다.</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">OrderItem</span> <span class="o">{</span>
+	<span class="c1">// 주문항목을 관리하는 클래스</span>
+    <span class="kd">private</span> <span class="nc">Item</span> <span class="n">item</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">quantity</span><span class="o">;</span>
+<span class="o">}</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">OrderCalculator</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">double</span> <span class="nf">calculateTotalPrice</span><span class="o">(</span><span class="nc">List</span><span class="o">&lt;</span><span class="nc">OrderItem</span><span class="o">&gt;</span> <span class="n">orderItems</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">// 주문서 총액 계산</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">EmailSender</span> <span class="o">{</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">sendConfirmEmail</span><span class="o">(</span><span class="nc">Customer</span> <span class="n">customer</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">// 고객에게 confirm 이메일 발송</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
 
 <p><br /></p>
 
