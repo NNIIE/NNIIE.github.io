@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-02-14T14:28:46+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">SOLID</title><link href="http://localhost:4000/til/SOLID/" rel="alternate" type="text/html" title="SOLID" /><published>2023-02-13T00:00:00+09:00</published><updated>2023-02-13T00:00:00+09:00</updated><id>http://localhost:4000/til/SOLID</id><content type="html" xml:base="http://localhost:4000/til/SOLID/"><![CDATA[<p><br /><br /><br /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-02-14T17:29:50+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">SOLID</title><link href="http://localhost:4000/til/SOLID/" rel="alternate" type="text/html" title="SOLID" /><published>2023-02-13T00:00:00+09:00</published><updated>2023-02-13T00:00:00+09:00</updated><id>http://localhost:4000/til/SOLID</id><content type="html" xml:base="http://localhost:4000/til/SOLID/"><![CDATA[<p><br /><br /><br /></p>
 
 <h1 id="solid">SOLID</h1>
 <p>객체지향 프로그래밍에서 소프트웨어 디자인 품질을 향상시키기 위한 다섯 가지 원칙이다.
@@ -16,7 +16,10 @@
   <li>오류발생 가능성 감소</li>
 </ul>
 
-<p><br /></p>
+<p><br />
+<br />
+<br />
+<br /></p>
 
 <h2 id="srp---단일-책임-원칙">SRP - 단일 책임 원칙</h2>
 <p>하나의 클래스는 하나의 책임을 가져야 한다는 원칙이다.
@@ -32,68 +35,184 @@
 <br />
 <strong>SRP</strong> 원칙을 지키기 위해서는 클래스가 자신의 책임을 명확하게 정의하고, 
 <br />
-다른 책임을 수행하는 클래스와의 의존성을 최소화 해야한다.</p>
+다른 책임을 수행하는 클래스와의 의존성을 최소화 해야한다.
+<br />
+<br />
+<strong>단점으로는</strong> 클래스와 인터페이스 수가 늘어나게 되고 클래스간의 상호작용을 복잡하게 만들 수 있다.
+<br />
+<br />
+자바에서 <strong>SRP</strong> 를 구현하는 방식에는 <strong>클래스를 단일책임으로 분리</strong>, 
+<br />
+<strong>인터페이스를 이용해 책임을 분리</strong>, <strong>디자인패턴</strong>, <strong>AOP</strong> 등이 있다.</p>
+
+<p><br /></p>
+
+<ul>
+  <li>클래스를 단일 책임으로 분리하는 방식</li>
+</ul>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Order 클래스는 너무 많은 책임을 가지고 있다.</span>
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Order</span> <span class="o">{</span>
-	<span class="kd">private</span> <span class="nc">List</span><span class="o">&lt;</span><span class="nc">Item</span><span class="o">&gt;</span> <span class="n">items</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="nc">List</span><span class="o">&lt;</span><span class="nc">Item</span><span class="o">&gt;</span> <span class="n">items</span><span class="o">;</span>
     <span class="kd">private</span> <span class="nc">Customer</span> <span class="n">customer</span><span class="o">;</span>
     
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">addItem</span><span class="o">(</span><span class="nc">Item</span> <span class="n">item</span><span class="o">)</span> <span class="o">{</span>
-        <span class="c1">// 주문서에 상품 추가</span>
-    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">addItem</span><span class="o">(</span><span class="nc">Item</span> <span class="n">item</span><span class="o">)</span> <span class="o">{}</span>
     
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">removeItem</span><span class="o">(</span><span class="nc">Item</span> <span class="n">item</span><span class="o">)</span> <span class="o">{</span>
-        <span class="c1">// 주문서에서 상품 제거</span>
-    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">removeItem</span><span class="o">(</span><span class="nc">Item</span> <span class="n">item</span><span class="o">)</span> <span class="o">{}</span>
     
-    <span class="kd">public</span> <span class="kt">double</span> <span class="nf">calculateTotalPrice</span><span class="o">()</span> <span class="o">{</span>
-        <span class="c1">// 주문서 총액 계산</span>
-    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kt">double</span> <span class="nf">calculateTotalPrice</span><span class="o">()</span> <span class="o">{}</span>
     
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">sendConfirmEmail</span><span class="o">()</span> <span class="o">{</span>
-        <span class="c1">// 고객에게 confirm 이메일 발송</span>
-    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">sendConfirmEmail</span><span class="o">()</span> <span class="o">{}</span>
 <span class="o">}</span>
 
-<span class="c1">// 아래처럼 클래스의 책임을 분리함으로써, 클래스간 의존성이 낮아지게 된다.</span>
-<span class="c1">// 이렇게 단일책임원칙을 따르게 되면 유지보수, 재사용성, 확장성이 향상된다.</span>
+<span class="c1">// 클래스의 책임을 분리함으로써, 클래스간 의존성이 낮아지게 된다.</span>
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">OrderItem</span> <span class="o">{</span>
-	<span class="c1">// 주문항목을 관리하는 클래스</span>
     <span class="kd">private</span> <span class="nc">Item</span> <span class="n">item</span><span class="o">;</span>
     <span class="kd">private</span> <span class="kt">int</span> <span class="n">quantity</span><span class="o">;</span>
 <span class="o">}</span>
 
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">OrderCalculator</span> <span class="o">{</span>
-    <span class="kd">public</span> <span class="kt">double</span> <span class="nf">calculateTotalPrice</span><span class="o">(</span><span class="nc">List</span><span class="o">&lt;</span><span class="nc">OrderItem</span><span class="o">&gt;</span> <span class="n">orderItems</span><span class="o">)</span> <span class="o">{</span>
-        <span class="c1">// 주문서 총액 계산</span>
-    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kt">double</span> <span class="nf">calculateTotalPrice</span><span class="o">(</span><span class="nc">List</span><span class="o">&lt;</span><span class="nc">OrderItem</span><span class="o">&gt;</span> <span class="n">orderItems</span><span class="o">)</span> <span class="o">{}</span>
 <span class="o">}</span>
 
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">EmailSender</span> <span class="o">{</span>
-	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">sendConfirmEmail</span><span class="o">(</span><span class="nc">Customer</span> <span class="n">customer</span><span class="o">)</span> <span class="o">{</span>
-        <span class="c1">// 고객에게 confirm 이메일 발송</span>
-    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">sendConfirmEmail</span><span class="o">(</span><span class="nc">Customer</span> <span class="n">customer</span><span class="o">)</span> <span class="o">{}</span>
 <span class="o">}</span>
 </code></pre></div></div>
 
 <p><br /></p>
 
+<ul>
+  <li>인터페이스로 책임을 분리하는 방식</li>
+</ul>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 상품 목록을 관리하는 ItemManager 인터페이스</span>
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">ItemManager</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">addItem</span><span class="o">(</span><span class="nc">Item</span> <span class="n">item</span><span class="o">);</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">removeItem</span><span class="o">(</span><span class="nc">Item</span> <span class="n">item</span><span class="o">);</span>
+    <span class="kd">public</span> <span class="kt">double</span> <span class="nf">calculateTotalPrice</span><span class="o">();</span>
+<span class="o">}</span>
+
+<span class="c1">// 이메일을 전송하는 EmailSender 인터페이스</span>
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">EmailSender</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">sendConfirmEmail</span><span class="o">(</span><span class="nc">Customer</span> <span class="n">customer</span><span class="o">);</span>
+<span class="o">}</span>
+
+<span class="c1">// ItemManager 인터페이스를 구현하는 ItemManagerImpl 클래스</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ItemManagerImpl</span> <span class="kd">implements</span> <span class="nc">ItemManager</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="nc">List</span><span class="o">&lt;</span><span class="nc">Item</span><span class="o">&gt;</span> <span class="n">items</span><span class="o">;</span>
+    
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">addItem</span><span class="o">(</span><span class="nc">Item</span> <span class="n">item</span><span class="o">)</span> <span class="o">{}</span>
+    
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">removeItem</span><span class="o">(</span><span class="nc">Item</span> <span class="n">item</span><span class="o">)</span> <span class="o">{}</span>
+    
+    <span class="kd">public</span> <span class="kt">double</span> <span class="nf">calculateTotalPrice</span><span class="o">()</span> <span class="o">{}</span>
+<span class="o">}</span>
+
+<span class="c1">// EmailSender 인터페이스를 구현하는 EmailSenderImpl 클래스</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">EmailSenderImpl</span> <span class="kd">implements</span> <span class="nc">EmailSender</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">sendConfirmEmail</span><span class="o">(</span><span class="nc">Customer</span> <span class="n">customer</span><span class="o">)</span> <span class="o">{}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><br />
+<br />
+<br />
+<br /></p>
+
 <h2 id="ocp---개방--폐쇄-원칙">OCP - 개방 / 폐쇄 원칙</h2>
+<p>소프트웨어 구성요소 (클래스, 모듈, 함수 등) 는 확장에는 열려있어야 하지만, 변경에는 닫혀 있어야 한다. 
+<br />
+즉, 기존의 코드를 변경하지 않아도 새로운 기능을 추가할 수 있도록 하는 것이다.
+<br />
+<strong>OCP</strong> 는 다형성, 추상화, 인터페이스 등을 통해 내부 구현을 외부로 노출시키지 않고도 기능을 확장할 수 있는데
+<br />
+이는 코드의 유지보수, 확장성, 재사용성 등을 향상시킬 수 있다.
+<br />
+<br />
+<strong>단점으로는</strong> 초기 설계와 인터페이스 설계등의 리소스가 많이 들어가게 되며 OCP를 적용하기 위해 
+<br />
+인터페이스와 추상화를 사용해 내부의 세부 구현사항을 숨기게 되면 코드의 복잡성이 증가하게 된다.
+<br />
+<br />
+자바에서 <strong>OCP</strong> 를 구현하는 방식에는 
+<br />
+<strong>추상클래스 / 인터페이스</strong>, <strong>전략패턴</strong>, <strong>팩토리 메서드 패턴</strong>, <strong>데코레이터 패턴</strong> 등이 있다.</p>
 
 <p><br /></p>
+
+<ul>
+  <li>추상클래스를 이용한 방식</li>
+</ul>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">Animal</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">abstract</span> <span class="kt">void</span> <span class="nf">makeSound</span><span class="o">();</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">Dog</span> <span class="kd">extends</span> <span class="nc">Animal</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">makeSound</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"멍멍"</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="c1">// 새로운 동물인 고양이를 이렇게 기존 코드를 변경하지 않고 확장할 수 있다. Cat 클래스는 Animal 타입으로 선언될 수 있고,</span>
+<span class="c1">// Animal 타입으로 다루어 질때 makeSound() 메서드가 호출된다.</span>
+<span class="kd">class</span> <span class="nc">Cat</span> <span class="kd">extends</span> <span class="nc">Animal</span> <span class="o">{</span> 
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">makeSound</span><span class="o">()</span> <span class="o">{</span> 
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"야옹"</span><span class="o">);</span> 
+    <span class="o">}</span> 
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<ul>
+  <li>인터페이스를 이용한 방식</li>
+</ul>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">interface</span> <span class="nc">Animal</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">makeSound</span><span class="o">();</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">Dog</span> <span class="kd">implements</span> <span class="nc">Animal</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">makeSound</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"멍멍"</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="c1">// 기존의 코드를 변경하지 않고 Cat 클래스를 확장</span>
+<span class="kd">class</span> <span class="nc">Cat</span> <span class="kd">implements</span> <span class="nc">Animal</span> <span class="o">{</span> 
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">makeSound</span><span class="o">()</span> <span class="o">{</span> 
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"야옹"</span><span class="o">);</span> 
+    <span class="o">}</span> 
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><br />
+<br />
+<br />
+<br /></p>
 
 <h2 id="lsp---리스코프-치환-원칙">LSP - 리스코프 치환 원칙</h2>
 
-<p><br /></p>
+<p><br />
+<br />
+<br />
+<br /></p>
 
 <h2 id="isp---인터페이스-분리-원칙">ISP - 인터페이스 분리 원칙</h2>
 
-<p><br /></p>
+<p><br />
+<br />
+<br />
+<br /></p>
 
 <h2 id="dip---의존관계-역전-원칙">DIP - 의존관계 역전 원칙</h2>
 
-<p><br /></p>
+<p><br />
+<br />
+<br />
+<br /></p>
 
 <h2 id="책임이란">책임이란?</h2>
 <p>솔리드원칙에서도 말하지만 기능이 변경될 때 같이 변경되면 이건 다른 책임이다?</p>
