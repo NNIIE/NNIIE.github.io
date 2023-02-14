@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-02-14T17:29:50+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">SOLID</title><link href="http://localhost:4000/til/SOLID/" rel="alternate" type="text/html" title="SOLID" /><published>2023-02-13T00:00:00+09:00</published><updated>2023-02-13T00:00:00+09:00</updated><id>http://localhost:4000/til/SOLID</id><content type="html" xml:base="http://localhost:4000/til/SOLID/"><![CDATA[<p><br /><br /><br /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-02-14T20:03:51+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">SOLID</title><link href="http://localhost:4000/til/SOLID/" rel="alternate" type="text/html" title="SOLID" /><published>2023-02-13T00:00:00+09:00</published><updated>2023-02-13T00:00:00+09:00</updated><id>http://localhost:4000/til/SOLID</id><content type="html" xml:base="http://localhost:4000/til/SOLID/"><![CDATA[<p><br /><br /><br /></p>
 
 <h1 id="solid">SOLID</h1>
 <p>객체지향 프로그래밍에서 소프트웨어 디자인 품질을 향상시키기 위한 다섯 가지 원칙이다.
@@ -48,7 +48,7 @@
 <p><br /></p>
 
 <ul>
-  <li>클래스를 단일 책임으로 분리하는 방식</li>
+  <li><strong>클래스를 단일 책임으로 분리하는 방식</strong></li>
 </ul>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Order 클래스는 너무 많은 책임을 가지고 있다.</span>
@@ -83,7 +83,7 @@
 <p><br /></p>
 
 <ul>
-  <li>인터페이스로 책임을 분리하는 방식</li>
+  <li><strong>인터페이스로 책임을 분리하는 방식</strong></li>
 </ul>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 상품 목록을 관리하는 ItemManager 인터페이스</span>
@@ -142,7 +142,7 @@
 <p><br /></p>
 
 <ul>
-  <li>추상클래스를 이용한 방식</li>
+  <li><strong>추상클래스를 이용한 방식</strong></li>
 </ul>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">Animal</span> <span class="o">{</span>
@@ -167,7 +167,7 @@
 <p><br /></p>
 
 <ul>
-  <li>인터페이스를 이용한 방식</li>
+  <li><strong>인터페이스를 이용한 방식</strong></li>
 </ul>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">interface</span> <span class="nc">Animal</span> <span class="o">{</span>
@@ -194,6 +194,109 @@
 <br /></p>
 
 <h2 id="lsp---리스코프-치환-원칙">LSP - 리스코프 치환 원칙</h2>
+<p>하위타입은 상위타입으로 대체 가능해야 한다는 원칙이다. 
+<br />
+상속관계에서 부모클래스에 선언된 속성과 메서드는 하위클래스에서 동일하게 동작해야 한다.
+<br />
+즉, <strong>하위클래스가 상위클래스의 기능을 정확하게 대체할 수 있어야 한다.</strong>
+<br />
+<strong>LSP</strong> 는 유연한 확장, 재사용성 등에 장점이 있다.
+<br />
+<br />
+단점으로는 설계에 리소스가 들어가게 되며 <strong>LSP</strong> 는 인터페이스와 상속관계에서만 적용할 수 있다.
+<br />
+<br />
+자바에서 <strong>LSP</strong> 를 구현하는 방식에는 <strong>인터페이스</strong>, <strong>상속</strong> 이 있다.</p>
+
+<p><br /></p>
+
+<ul>
+  <li><strong>LSP 를 위반한 코드</strong></li>
+</ul>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">Animal</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">abstract</span> <span class="kt">void</span> <span class="nf">makeSound</span><span class="o">();</span> 
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">Dog</span> <span class="kd">extends</span> <span class="nc">Animal</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">makeSound</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Bark"</span><span class="o">);</span>
+    <span class="o">}</span>
+    
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">wagTail</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Tail wagging"</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">BigDog</span> <span class="kd">extends</span> <span class="nc">Dog</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">makeSound</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Big bark"</span><span class="o">);</span>
+    <span class="o">}</span>
+    
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">wagTail</span><span class="o">(</span><span class="kt">int</span> <span class="n">speed</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Tail wagging at speed "</span> <span class="o">+</span> <span class="n">speed</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="cm">/*
+BigDog 클래스의 wagTail() 메서드는 Dog 클래스의 wagTail() 메서드와
+시그니처가 다르기 때문에 에러가 발생한다.
+즉, BigDog 객체가 Dog 객체를 완벽하게 대체하지 못한다.
+*/</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">Dog</span> <span class="n">bigDog</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">BigDog</span><span class="o">();</span>
+        <span class="n">bigDog</span><span class="o">.</span><span class="na">makeSound</span><span class="o">();</span>
+        <span class="n">bigDog</span><span class="o">.</span><span class="na">wagTail</span><span class="o">();</span>  <span class="c1">// 컴파일 에러 발생</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<ul>
+  <li><strong>LSP 를 준수한 코드</strong></li>
+</ul>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">Animal</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">abstract</span> <span class="kt">void</span> <span class="nf">makeSound</span><span class="o">();</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">Dog</span> <span class="kd">extends</span> <span class="nc">Animal</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">makeSound</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Bark"</span><span class="o">);</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">wagTail</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Tail wagging"</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">BigDog</span> <span class="kd">extends</span> <span class="nc">Dog</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">makeSound</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Big bark"</span><span class="o">);</span>
+    <span class="o">}</span>
+    
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">wagTail</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">wagTail</span><span class="o">(</span><span class="mi">1</span><span class="o">);</span>
+    <span class="o">}</span>
+    
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">wagTail</span><span class="o">(</span><span class="kt">int</span> <span class="n">speed</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Tail wagging at speed "</span> <span class="o">+</span> <span class="n">speed</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="c1">// Dog 클래스와 BidDog 클래스 모두 같은 wagTail() 메서드를 가지게 된다.</span>
+<span class="c1">// Dog 객체를 대신하여 BigDog 객체를 사용할 때 문제가 일어나지 않는다.</span>
+<span class="c1">// 즉, 부모클래스를 자식클래스로 대체해도 동일한 기능을 수행해서 LSP를 준수한다.</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">BigDog</span> <span class="n">bigDog</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">BigDog</span><span class="o">();</span>
+        <span class="n">bigDog</span><span class="o">.</span><span class="na">makeSound</span><span class="o">();</span>
+        <span class="n">bigDog</span><span class="o">.</span><span class="na">wagTail</span><span class="o">();</span>
+        <span class="n">bigDog</span><span class="o">.</span><span class="na">wagTail</span><span class="o">(</span><span class="mi">2</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
 
 <p><br />
 <br />
