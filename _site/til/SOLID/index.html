@@ -459,7 +459,7 @@
 <strong>LSP</strong> 는 유연한 확장, 재사용성 등에 장점이 있다.
 <br />
 <br />
-단점으로는 설계에 리소스가 들어가게 되며 <strong>LSP</strong> 는 인터페이스와 상속관계에서만 적용할 수 있다.
+<strong>단점으로는</strong> 설계에 리소스가 들어가게 되며 <strong>LSP</strong> 는 인터페이스와 상속관계에서만 적용할 수 있다.
 <br />
 <br />
 자바에서 <strong>LSP</strong> 를 구현하는 방식에는 <strong>인터페이스</strong>, <strong>상속</strong> 이 있다.</p>
@@ -560,6 +560,55 @@ BigDog 클래스의 wagTail() 메서드는 Dog 클래스의 wagTail() 메서드�
 <br /></p>
 
 <h2 id="isp---인터페이스-분리-원칙">ISP - 인터페이스 분리 원칙</h2>
+<p>인터페이스 분리 원칙을 의미한다.
+<br />
+즉, 인터페이스가 클라이언트에서 필요한 메서드만 가지도록 권장한다.
+<br />
+이렇게 함으로써 클라이언트 입장에선 필요하지 않은 메서드를 호출하거나
+<br />
+구현할 필요가 없게되고, 이것은 의존성을 줄이고 유지보수, 재사용성을 증가시킨다.
+<br />
+<br />
+<strong>단점으로는</strong> <strong>인터페이스</strong> 와 <strong>클래스</strong> 가 많아지는 문제가 있다.</p>
+
+<p><br /></p>
+
+<ul>
+  <li><strong>ISP 를 위반한 코드</strong></li>
+</ul>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Animal</span> <span class="o">{</span>
+    <span class="kt">void</span> <span class="nf">run</span><span class="o">();</span>
+    <span class="kt">void</span> <span class="nf">fly</span><span class="o">();</span>
+<span class="o">}</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Bird</span> <span class="kd">implements</span> <span class="nc">Animal</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">()</span> <span class="o">{}</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">fly</span><span class="o">()</span> <span class="o">{}</span>
+<span class="o">}</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Dog</span> <span class="kd">implements</span> <span class="nc">Animal</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">()</span> <span class="o">{}</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">fly</span><span class="o">()</span> <span class="o">{}</span>
+<span class="o">}</span>
+
+<span class="cm">/*
+Bird 클래스는 run() 메서드를 구현하지 않고, Dog 클래스는 fly() 메서드를 구현하지 않는다.
+이것은 필요하지 않은 메서드를 구현체에서 구현하기 때문에 ISP 원칙을 위반한다.
+
+Animal 인터페이스를 run() 메서드와 fly() 메서드를 각각 가지는 2개의 인터페이스로 분리하면
+ISP 원칙을 준수할 수 있다.
+*/</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">Animal</span> <span class="n">bird</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Bird</span><span class="o">();</span>
+        <span class="n">bird</span><span class="o">.</span><span class="na">fly</span><span class="o">();</span>
+        
+        <span class="nc">Animal</span> <span class="n">dog</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Dog</span><span class="o">();</span>
+        <span class="n">fish</span><span class="o">.</span><span class="na">run</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
 
 <p><br />
 <br />
