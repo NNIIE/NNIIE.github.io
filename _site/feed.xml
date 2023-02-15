@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-02-15T20:17:06+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">SOLID</title><link href="http://localhost:4000/til/SOLID/" rel="alternate" type="text/html" title="SOLID" /><published>2023-02-13T00:00:00+09:00</published><updated>2023-02-13T00:00:00+09:00</updated><id>http://localhost:4000/til/SOLID</id><content type="html" xml:base="http://localhost:4000/til/SOLID/"><![CDATA[<p><br /><br /><br /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-02-15T20:47:10+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">SOLID</title><link href="http://localhost:4000/til/SOLID/" rel="alternate" type="text/html" title="SOLID" /><published>2023-02-13T00:00:00+09:00</published><updated>2023-02-13T00:00:00+09:00</updated><id>http://localhost:4000/til/SOLID</id><content type="html" xml:base="http://localhost:4000/til/SOLID/"><![CDATA[<p><br /><br /><br /></p>
 
 <h1 id="solid">SOLID</h1>
 <p>객체지향 프로그래밍에서 소프트웨어 디자인 품질을 향상시키기 위한 다섯 가지 원칙이다.
@@ -360,6 +360,78 @@ ISP 원칙을 준수할 수 있다.
 <br /></p>
 
 <h2 id="dip---의존관계-역전-원칙">DIP - 의존관계 역전 원칙</h2>
+<p>상위모듈이 하위모듈에게 의존하면 안되며 둘다 추상화에 의존해야 한다는 원칙이다.
+<br />
+즉, 클래스는 다른 클래스에 의존하지말고 추상화를 통해 상호작용 해야 한다는 의미이다.
+<br />
+이것은 결합도를 낮추기 위한 방식으로 객체간의 의존성을 느슨하게 만드는 효과가 있다.
+<br />
+<strong>DIP</strong> 를 준수하면 하위 모듈이 변경되어도 상위 모듈에 영향이 없으므로 유연성과 확장성이 향상된다.
+<br />
+<br />
+<strong>단점으로는</strong> 추상화를 위한 <strong>인터페이스</strong> 와 <strong>추상클래스</strong> 가 많아지고 복잡성이 증가한다.</p>
+
+<p><br /></p>
+
+<ul>
+  <li><strong>DIP 를 위반한 코드</strong></li>
+</ul>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">UserService</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="nc">UserRepository</span> <span class="n">userRepository</span><span class="o">;</span>
+    
+    <span class="kd">public</span> <span class="nf">UserService</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">userRepository</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">UserRepository</span><span class="o">();</span>
+    <span class="o">}</span>
+    
+    <span class="kd">public</span> <span class="nc">User</span> <span class="nf">findUserById</span><span class="o">(</span><span class="kt">int</span> <span class="n">id</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">userRepository</span><span class="o">.</span><span class="na">findById</span><span class="o">(</span><span class="n">id</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+
+<span class="c1">// UserRepository 에 직접 의존하고 있으므로 UserRepository 클래스의 변경이 UserService 에게 영향을 준다.</span>
+<span class="kd">class</span> <span class="nc">UserRepository</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="nc">User</span> <span class="nf">findById</span><span class="o">(</span><span class="kt">int</span> <span class="n">id</span><span class="o">)</span> <span class="o">{</span>
+        <span class="o">...</span>
+        <span class="k">return</span> <span class="n">user</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<ul>
+  <li><strong>DIP 를 준수한 코드</strong></li>
+</ul>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">interface</span> <span class="nc">UserRepository</span> <span class="o">{</span>
+    <span class="nc">User</span> <span class="nf">findById</span><span class="o">(</span><span class="kt">int</span> <span class="n">id</span><span class="o">);</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">UserService</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="nc">UserRepository</span> <span class="n">userRepository</span><span class="o">;</span>
+    
+    <span class="kd">public</span> <span class="nf">UserService</span><span class="o">(</span><span class="nc">UserRepository</span> <span class="n">userRepository</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">userRepository</span> <span class="o">=</span> <span class="n">userRepository</span><span class="o">;</span>
+    <span class="o">}</span>
+    
+    <span class="kd">public</span> <span class="nc">User</span> <span class="nf">findUserById</span><span class="o">(</span><span class="kt">int</span> <span class="n">id</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">userRepository</span><span class="o">.</span><span class="na">findById</span><span class="o">(</span><span class="n">id</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="cm">/*
+UserService 클래스는 UserRepository 인터페이스에만 의존하도록 하고 생성자를 통해 주입받는다.
+이제 UserRepository 클래스의 구현체인 DatabaseUserRepository 클래스가 UserRepository 인터페이스를 구현하도록 해서 DatabaseUserRepository 클래스가 변경되더라도 UserService 클래스에 영향을 미치지 않는다.
+*/</span>
+<span class="kd">class</span> <span class="nc">DatabaseUserRepository</span> <span class="kd">implements</span> <span class="nc">UserRepository</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="nc">User</span> <span class="nf">findById</span><span class="o">(</span><span class="kt">int</span> <span class="n">id</span><span class="o">)</span> <span class="o">{</span>
+        <span class="o">...</span>
+        <span class="k">return</span> <span class="n">user</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
 
 <p><br />
 <br />
@@ -367,7 +439,15 @@ ISP 원칙을 준수할 수 있다.
 <br /></p>
 
 <h2 id="책임이란">책임이란?</h2>
-<p>솔리드원칙에서도 말하지만 기능이 변경될 때 같이 변경되면 이건 다른 책임이다?</p>
+<p>객체가 수행하는 역할 또는 기능을 말한다. <strong>책임은 객체의 상태와 행위를 결정한다.</strong>
+<br />
+<strong>SOLID원칙</strong> 에서 책임은 객체나 모듈은 단 한가지의 책임을 가져야 하고 
+<br />
+이 객체나 모듈이 변경될 이유는 단 하나여야만 한다.
+<br />
+즉, 변경이 일어날 때 해당 객체만을 수정하면 단일책임원칙을 따르는 것이고 해당 객체 뿐만이 아니라
+<br />
+다른객체 까지 수정이 일어나면 단일책임원칙을 준수하지 못한것이다.</p>
 
 <p><br />
 <br />
