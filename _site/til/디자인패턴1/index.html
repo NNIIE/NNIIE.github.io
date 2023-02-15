@@ -9,7 +9,7 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>8 Week | NNIIE</title>
+<!-- begin _includes/seo.html --><title>Design Pattern | NNIIE</title>
 <meta name="description" content="">
 
 
@@ -22,8 +22,8 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="NNIIE">
-<meta property="og:title" content="8 Week">
-<meta property="og:url" content="http://localhost:4000/til/8%EC%A3%BC%EC%B0%A8/">
+<meta property="og:title" content="Design Pattern">
+<meta property="og:url" content="http://localhost:4000/til/%EB%94%94%EC%9E%90%EC%9D%B8%ED%8C%A8%ED%84%B41/">
 
 
   <meta property="og:description" content="">
@@ -34,7 +34,7 @@
 
 
 
-  <meta property="article:published_time" content="2023-02-02T00:00:00+09:00">
+  <meta property="article:published_time" content="2023-02-16T00:00:00+09:00">
 
 
 
@@ -45,7 +45,7 @@
   
 
 
-<link rel="canonical" href="http://localhost:4000/til/8%EC%A3%BC%EC%B0%A8/">
+<link rel="canonical" href="http://localhost:4000/til/%EB%94%94%EC%9E%90%EC%9D%B8%ED%8C%A8%ED%84%B41/">
 
 
 
@@ -189,7 +189,7 @@
     
       
       
-        <li class="current">8 Week</li>
+        <li class="current">Design Pattern</li>
       
     
   </ol>
@@ -203,15 +203,15 @@
 
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="8 Week">
+    <meta itemprop="headline" content="Design Pattern">
     <meta itemprop="description" content="">
-    <meta itemprop="datePublished" content="2023-02-02T00:00:00+09:00">
+    <meta itemprop="datePublished" content="2023-02-16T00:00:00+09:00">
     
 
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">8 Week
+          <h1 id="page-title" class="page__title" itemprop="headline">Design Pattern
 </h1>
           
 
@@ -221,7 +221,7 @@
       <span class="page__meta-date">
         <i class="far fa-calendar-alt" aria-hidden="true"></i>
         
-        <time datetime="2023-02-02T00:00:00+09:00">2023-02-02</time>
+        <time datetime="2023-02-16T00:00:00+09:00">2023-02-16</time>
       </span>
     
 
@@ -234,7 +234,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          1 분 소요
+          최대 1 분 소요
         
       </span>
     
@@ -249,152 +249,70 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> TIL</h4></header>
-              <ul class="toc__menu"><li><a href="#data-binding">Data Binding</a></li><li><a href="#to-do">To Do</a></li><li><a href="#oop">OOP</a><ul><li><a href="#oop-왜쓰는데">OOP 왜쓰는데?</a></li><li><a href="#oop와-상속">OOP와 상속</a></li><li><a href="#oop와-추상화">OOP와 추상화</a></li><li><a href="#oop와-캡술화">OOP와 캡술화</a></li><li><a href="#oop와-getter--setter">OOP와 Getter / Setter</a></li></ul></li></ul>
+              <ul class="toc__menu"><li><a href="#디자인패턴">디자인패턴</a><ul><li><a href="#어댑터-패턴---adapter-pattern">어댑터 패턴 - Adapter Pattern</a></li><li><a href="#프록시-패턴---proxy-pattern">프록시 패턴 - Proxy Pattern</a></li><li><a href="#데코레이터-패턴---decorator-pattern">데코레이터 패턴 - Decorator Pattern</a></li><li><a href="#싱글톤-패턴---singleton-pattern">싱글톤 패턴 - Singleton Pattern</a></li><li><a href="#템플릿-메서드-패턴---template-method-pattern">템플릿 메서드 패턴 - Template Method Pattern</a></li><li><a href="#팩터리-메서드-패턴---factory-method-pattern">팩터리 메서드 패턴 - Factory Method Pattern</a></li><li><a href="#전략-패턴---strategy-pattern">전략 패턴 - Strategy Pattern</a></li><li><a href="#템플릿-콜백-패턴---template-callback-pattern---견본회신-패턴">템플릿 콜백 패턴 - Template Callback Pattern - 견본/회신 패턴</a></li></ul></li></ul>
 
             </nav>
           </aside>
         
         <p><br /><br /><br /></p>
 
-<h1 id="data-binding">Data Binding</h1>
-<p>분리된 <strong>View</strong> 와 <strong>Model</strong> 을 하나로 묶어 두개의 데이터 소스를 연결하고 동기화 하는 기술이다.
-<br />
-<strong>Data Binding</strong> 은 대표적으로 단방향 데이터 바인딩과 양방향 데이터 바인딩으로 나뉜다.
-<br />
-<br />
-백엔드 개발자에게 익숙한 <strong>MVC 패턴</strong> 은 <strong>View</strong> 대신 <strong>json</strong> 을 사용한다고 볼 수 있다.
-<br />
-프론트에선 요즘은 <strong>MVVM 패턴</strong> 을 자주 사용하는데 여기서 <strong>Data Binding</strong> 을 활용한다.</p>
-
-<p><br /></p>
-
-<ul>
-  <li><strong>단방향 데이터 바인딩</strong>
-    <ul>
-      <li><strong>event</strong> 를 통해 데이터 흐름이 단방향으로 이루어 진다. (부모 -&gt; 자식)</li>
-      <li><strong>View</strong> 가 바로 업데이트 되지 않는다.</li>
-      <li><strong>양방향 데이터 바인딩</strong> 보다 리소스가 적게 든다.</li>
-    </ul>
-  </li>
-</ul>
-
-<p><br /></p>
-
-<ul>
-  <li><strong>양방향 데이터 바인딩</strong>
-    <ul>
-      <li>데이터 변경에 따라 프레임워크를 통해 양방향으로 이루어 진다. (부모 &lt;-&gt; 자식)</li>
-      <li><strong>View</strong> 가 즉시 업데이트 된다.</li>
-      <li><strong>단방향 데이터 바인딩</strong> 보다 리소스가 많이 든다.</li>
-    </ul>
-  </li>
-</ul>
-
-<p><br /></p>
-
-<p><strong>왜쓰는데?</strong>
-<br />
-<br />
-웹 애플리케이션의 복잡도가 갈수록 향상되면서 브라우저 메모리가 
-<br />
-자바스크립트 객체와 화면에 있는 데이터를 맞추는데 큰 어려움이 생기고 있다.
-<br />
-이러한 상황을 쉽게 해결 해주기 위해 <strong>Data Binding</strong> 을 사용한다.
-<br />
-대표적인 프론트엔드 프레임워크인 <strong>Angular, React, Vue</strong> 모두 
-<br />
-<strong>Data Binding</strong> 을 지원하는데 상황에 따라 적절하게 쓰면 되겠다.</p>
+<h1 id="디자인패턴">디자인패턴</h1>
 
 <p><br />
 <br />
 <br />
 <br /></p>
 
-<h1 id="to-do">To Do</h1>
+<h2 id="어댑터-패턴---adapter-pattern">어댑터 패턴 - Adapter Pattern</h2>
 
 <p><br />
 <br />
 <br />
 <br /></p>
 
-<h1 id="oop">OOP</h1>
-<p>어플리케이션을 구성하는 요소들을 객체로 보고, 객체들을 유기적으로 연결하여 프로그래밍 하는걸 말한다.
+<h2 id="프록시-패턴---proxy-pattern">프록시 패턴 - Proxy Pattern</h2>
+
+<p><br />
 <br />
-데이터와 이를 처리하는 루틴을 하나의 <strong>독립된 객체</strong> 로 본다.
 <br />
-재사용성, 유지보수 에 용이하고 대형 프로젝트에 적합하다.
+<br /></p>
+
+<h2 id="데코레이터-패턴---decorator-pattern">데코레이터 패턴 - Decorator Pattern</h2>
+
+<p><br />
 <br />
-하지만 속도가 상대적으로 느리고, 설계 시 많은 리소스가 들어간다.</p>
-<ul>
-  <li><strong>추상화</strong>
-    <ul>
-      <li>목적과 관련이 없는 부분을 제거하여 필요한 부분만을 표현하기 위한 개념</li>
-    </ul>
-  </li>
-  <li><strong>캡슐화</strong>
-    <ul>
-      <li>정보은닉 - 접근제어자</li>
-      <li>코드의 의존성을 줄이고, 결합도를 낮추는 것</li>
-      <li>필요한 부분만 외부에 노출시키고 나머지는 숨긴다.</li>
-      <li>외부에서 불필요한 의존을 할 일이 없어지고 의존성이 줄어드는 만큼 유지보수도 편해진다.</li>
-    </ul>
-  </li>
-  <li><strong>상속</strong>
-    <ul>
-      <li>코드의 재사용성에 이점이 있지만 코드의 재사용성만을 위해 사용은 지양한다.</li>
-      <li>흔히 재사용성 뿐 아니라 계층구조 같은 구조를 만들 때 사용하자</li>
-    </ul>
-  </li>
-  <li><strong>다형성</strong>
-    <ul>
-      <li>객체지향의 꽃이라고도 불린다.</li>
-      <li>형태가 같지만 다른 기능을 하는 것을 말한다.</li>
-      <li>하나의 타입에 여러 객체를 대입할 수 있는 성질이다.
-        <ul>
-          <li>업캐스팅
-            <ul>
-              <li>서로 다른 클래스의 인스턴스를 동일한 타입에 할당할 수 있게 한다.</li>
-            </ul>
-          </li>
-          <li>동적바인딩
-            <ul>
-              <li>메시지를 수신했을 때 실행도리 메서드가 런타임에 결정된다.</li>
-            </ul>
-          </li>
-          <li>오버로딩</li>
-          <li>오버라이딩</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-</ul>
-
-<p><br /></p>
-
-<h2 id="oop-왜쓰는데">OOP 왜쓰는데?</h2>
-
-<p><br /></p>
-
-<h2 id="oop와-상속">OOP와 상속</h2>
-
-<p><br /></p>
-
-<h2 id="oop와-추상화">OOP와 추상화</h2>
-<p>책에서는 모델링이라고 설명한다.
 <br />
-대상에 집중하지말고 문제에 집중을 하면 올바른 추상화에 가까이 갈 수 있다.
+<br /></p>
+
+<h2 id="싱글톤-패턴---singleton-pattern">싱글톤 패턴 - Singleton Pattern</h2>
+
+<p><br />
 <br />
-대상은 문제를 풀기 충분한 정도의 속성만 가지고 있으면 되고, 이 문제를 푸는데 불필요한 
 <br />
-속성은 제거하는 편이 낫다.</p>
+<br /></p>
 
-<p><br /></p>
+<h2 id="템플릿-메서드-패턴---template-method-pattern">템플릿 메서드 패턴 - Template Method Pattern</h2>
 
-<h2 id="oop와-캡술화">OOP와 캡술화</h2>
+<p><br />
+<br />
+<br />
+<br /></p>
 
-<p><br /></p>
+<h2 id="팩터리-메서드-패턴---factory-method-pattern">팩터리 메서드 패턴 - Factory Method Pattern</h2>
 
-<h2 id="oop와-getter--setter">OOP와 Getter / Setter</h2>
+<p><br />
+<br />
+<br />
+<br /></p>
+
+<h2 id="전략-패턴---strategy-pattern">전략 패턴 - Strategy Pattern</h2>
+
+<p><br />
+<br />
+<br />
+<br /></p>
+
+<h2 id="템플릿-콜백-패턴---template-callback-pattern---견본회신-패턴">템플릿 콜백 패턴 - Template Callback Pattern - 견본/회신 패턴</h2>
 
 <p><br />
 <br />
@@ -418,9 +336,21 @@
     <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
     <span itemprop="keywords">
     
-      <a href="/tags/#data-binding" class="page__taxonomy-item" rel="tag">Data Binding</a><span class="sep">, </span>
+      <a href="/tags/#%EB%8D%B0%EC%BD%94%EB%A0%88%EC%9D%B4%ED%84%B0-%ED%8C%A8%ED%84%B4" class="page__taxonomy-item" rel="tag">데코레이터 패턴</a><span class="sep">, </span>
     
-      <a href="/tags/#oop" class="page__taxonomy-item" rel="tag">OOP</a>
+      <a href="/tags/#%EC%8B%B1%EA%B8%80%ED%86%A4-%ED%8C%A8%ED%84%B4" class="page__taxonomy-item" rel="tag">싱글톤 패턴</a><span class="sep">, </span>
+    
+      <a href="/tags/#%EC%96%B4%EB%8C%91%ED%84%B0-%ED%8C%A8%ED%84%B4" class="page__taxonomy-item" rel="tag">어댑터 패턴</a><span class="sep">, </span>
+    
+      <a href="/tags/#%EC%A0%84%EB%9E%B5-%ED%8C%A8%ED%84%B4" class="page__taxonomy-item" rel="tag">전략 패턴</a><span class="sep">, </span>
+    
+      <a href="/tags/#%ED%85%9C%ED%94%8C%EB%A6%BF-%EB%A9%94%EC%84%9C%EB%93%9C-%ED%8C%A8%ED%84%B4" class="page__taxonomy-item" rel="tag">템플릿 메서드 패턴</a><span class="sep">, </span>
+    
+      <a href="/tags/#%ED%85%9C%ED%94%8C%EB%A6%BF-%EC%BD%9C%EB%B0%B1-%ED%8C%A8%ED%84%B4" class="page__taxonomy-item" rel="tag">템플릿 콜백 패턴</a><span class="sep">, </span>
+    
+      <a href="/tags/#%ED%8C%A9%ED%84%B0%EB%A6%AC-%EB%A9%94%EC%84%9C%EB%93%9C-%ED%8C%A8%ED%84%B4" class="page__taxonomy-item" rel="tag">팩터리 메서드 패턴</a><span class="sep">, </span>
+    
+      <a href="/tags/#%ED%94%84%EB%A1%9D%EC%8B%9C-%ED%8C%A8%ED%84%B4" class="page__taxonomy-item" rel="tag">프록시 패턴</a>
     
     </span>
   </p>
@@ -445,7 +375,7 @@
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2023-02-02T00:00:00+09:00">2023-02-02</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2023-02-16T00:00:00+09:00">2023-02-16</time></p>
 
 
       </footer>
@@ -455,23 +385,22 @@
     <h4 class="page__share-title">공유하기</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=8+Week%20http%3A%2F%2Flocalhost%3A4000%2Ftil%2F8%25EC%25A3%25BC%25EC%25B0%25A8%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=Design+Pattern%20http%3A%2F%2Flocalhost%3A4000%2Ftil%2F%25EB%2594%2594%25EC%259E%2590%25EC%259D%25B8%25ED%258C%25A8%25ED%2584%25B41%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Ftil%2F8%25EC%25A3%25BC%25EC%25B0%25A8%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Ftil%2F%25EB%2594%2594%25EC%259E%2590%25EC%259D%25B8%25ED%258C%25A8%25ED%2584%25B41%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Ftil%2F8%25EC%25A3%25BC%25EC%25B0%25A8%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Ftil%2F%25EB%2594%2594%25EC%259E%2590%25EC%259D%25B8%25ED%258C%25A8%25ED%2584%25B41%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="/til/7%EC%A3%BC%EC%B0%A8/" class="pagination--pager" title="7 Week
+      <a href="/til/SOLID/" class="pagination--pager" title="SOLID
 ">이전</a>
     
     
-      <a href="/til/OOP/" class="pagination--pager" title="OOP
-">다음</a>
+      <a href="#" class="pagination--pager disabled">다음</a>
     
   </nav>
 
@@ -485,53 +414,6 @@
     <div class="page__related">
       <h4 class="page__related-title">참고</h4>
       <div class="grid__wrapper">
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/til/%EB%94%94%EC%9E%90%EC%9D%B8%ED%8C%A8%ED%84%B41/" rel="permalink">Design Pattern
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
-        
-        <time datetime="2023-02-16T00:00:00+09:00">2023-02-16</time>
-      </span>
-    
-
-    <span class="page__meta-sep"></span>
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
-        
-          최대 1 분 소요
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">
-</p>
-  </article>
-</div>
-
         
           
 
@@ -567,7 +449,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-fw fa-clock" aria-hidden="true"></i>
         
-          6 분 소요
+          5 분 소요
         
       </span>
     
@@ -614,7 +496,54 @@
       <span class="page__meta-readtime">
         <i class="far fa-fw fa-clock" aria-hidden="true"></i>
         
-          9 분 소요
+          8 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/til/8%EC%A3%BC%EC%B0%A8/" rel="permalink">8 Week
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-02-02T00:00:00+09:00">2023-02-02</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          1 분 소요
         
       </span>
     
@@ -726,8 +655,8 @@
     
   <script>
     var disqus_config = function () {
-      this.page.url = "http://localhost:4000/til/8%EC%A3%BC%EC%B0%A8/";  /* Replace PAGE_URL with your page's canonical URL variable */
-      this.page.identifier = "/til/8주차"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+      this.page.url = "http://localhost:4000/til/%EB%94%94%EC%9E%90%EC%9D%B8%ED%8C%A8%ED%84%B41/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/til/디자인패턴1"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
     };
     (function() { /* DON'T EDIT BELOW THIS LINE */
       var d = document, s = d.createElement('script');

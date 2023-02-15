@@ -1,460 +1,69 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-02-15T20:47:10+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">SOLID</title><link href="http://localhost:4000/til/SOLID/" rel="alternate" type="text/html" title="SOLID" /><published>2023-02-13T00:00:00+09:00</published><updated>2023-02-13T00:00:00+09:00</updated><id>http://localhost:4000/til/SOLID</id><content type="html" xml:base="http://localhost:4000/til/SOLID/"><![CDATA[<p><br /><br /><br /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-02-16T01:25:01+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">Design Pattern</title><link href="http://localhost:4000/til/%EB%94%94%EC%9E%90%EC%9D%B8%ED%8C%A8%ED%84%B41/" rel="alternate" type="text/html" title="Design Pattern" /><published>2023-02-16T00:00:00+09:00</published><updated>2023-02-16T00:00:00+09:00</updated><id>http://localhost:4000/til/%EB%94%94%EC%9E%90%EC%9D%B8%ED%8C%A8%ED%84%B41</id><content type="html" xml:base="http://localhost:4000/til/%EB%94%94%EC%9E%90%EC%9D%B8%ED%8C%A8%ED%84%B41/"><![CDATA[<p><br /><br /><br /></p>
 
-<h1 id="solid">SOLID</h1>
-<p>객체지향 프로그래밍에서 소프트웨어 디자인 품질을 향상시키기 위한 다섯 가지 원칙이다.
-<br />
-이 원칙을 따르면 아래와 같은 장점이 있다.</p>
-
-<ul>
-  <li>유지보수성 향상</li>
-  <li>재사용성 항샹</li>
-  <li>확장성 향상</li>
-  <li>변경에 대한 유연성 향상</li>
-  <li>코드의 가독성 향상</li>
-  <li>결합도 감소</li>
-  <li>테스트 용이성 향상</li>
-  <li>오류발생 가능성 감소</li>
-</ul>
+<h1 id="디자인패턴">디자인패턴</h1>
 
 <p><br />
 <br />
 <br />
 <br /></p>
 
-<h2 id="srp---단일-책임-원칙">SRP - 단일 책임 원칙</h2>
-<p>하나의 클래스는 하나의 책임을 가져야 한다는 원칙이다.
-<br />
-이것은 클래스가 변경되어야 하는 이유는 단 하나여야 함을 의미한다.
-<br />
-클래스의 응집력은 높이고 결합도는 낮춰서 유지보수, 재사용성, 확장성에 용이하게 하는 원칙으로, 
-<br />
-클래스 하나가 여러 책임을 가지게 되면 그 클래스를 변경해야 하는 이유도 여러가지가 생기므로, 
-<br />
-코드를 변경할때 다른 책임과 관련된 코드까지 함께 변경해야 한다. 
-<br />
-<br />
-<strong>SRP</strong> 원칙을 지키기 위해서는 클래스가 자신의 책임을 명확하게 정의하고, 
-<br />
-다른 책임을 수행하는 클래스와의 의존성을 최소화 해야한다.
-<br />
-<br />
-<strong>단점으로는</strong> 클래스와 인터페이스 수가 늘어나게 되고 클래스간의 상호작용을 복잡하게 만들 수 있다.
-<br />
-<br />
-자바에서 <strong>SRP</strong> 를 구현하는 방식에는 <strong>클래스를 단일책임으로 분리</strong>, 
-<br />
-<strong>인터페이스를 이용해 책임을 분리</strong>, <strong>디자인패턴</strong>, <strong>AOP</strong> 등이 있다.</p>
-
-<p><br /></p>
-
-<ul>
-  <li><strong>클래스를 단일 책임으로 분리하는 방식</strong></li>
-</ul>
-
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Order 클래스는 너무 많은 책임을 가지고 있다.</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Order</span> <span class="o">{</span>
-    <span class="kd">private</span> <span class="nc">List</span><span class="o">&lt;</span><span class="nc">Item</span><span class="o">&gt;</span> <span class="n">items</span><span class="o">;</span>
-    <span class="kd">private</span> <span class="nc">Customer</span> <span class="n">customer</span><span class="o">;</span>
-    
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">addItem</span><span class="o">(</span><span class="nc">Item</span> <span class="n">item</span><span class="o">)</span> <span class="o">{}</span>
-    
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">removeItem</span><span class="o">(</span><span class="nc">Item</span> <span class="n">item</span><span class="o">)</span> <span class="o">{}</span>
-    
-    <span class="kd">public</span> <span class="kt">double</span> <span class="nf">calculateTotalPrice</span><span class="o">()</span> <span class="o">{}</span>
-    
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">sendConfirmEmail</span><span class="o">()</span> <span class="o">{}</span>
-<span class="o">}</span>
-
-<span class="c1">// 클래스의 책임을 분리함으로써, 클래스간 의존성이 낮아지게 된다.</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">OrderItem</span> <span class="o">{</span>
-    <span class="kd">private</span> <span class="nc">Item</span> <span class="n">item</span><span class="o">;</span>
-    <span class="kd">private</span> <span class="kt">int</span> <span class="n">quantity</span><span class="o">;</span>
-<span class="o">}</span>
-
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">OrderCalculator</span> <span class="o">{</span>
-    <span class="kd">public</span> <span class="kt">double</span> <span class="nf">calculateTotalPrice</span><span class="o">(</span><span class="nc">List</span><span class="o">&lt;</span><span class="nc">OrderItem</span><span class="o">&gt;</span> <span class="n">orderItems</span><span class="o">)</span> <span class="o">{}</span>
-<span class="o">}</span>
-
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">EmailSender</span> <span class="o">{</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">sendConfirmEmail</span><span class="o">(</span><span class="nc">Customer</span> <span class="n">customer</span><span class="o">)</span> <span class="o">{}</span>
-<span class="o">}</span>
-</code></pre></div></div>
-
-<p><br /></p>
-
-<ul>
-  <li><strong>인터페이스로 책임을 분리하는 방식</strong></li>
-</ul>
-
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 상품 목록을 관리하는 ItemManager 인터페이스</span>
-<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">ItemManager</span> <span class="o">{</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">addItem</span><span class="o">(</span><span class="nc">Item</span> <span class="n">item</span><span class="o">);</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">removeItem</span><span class="o">(</span><span class="nc">Item</span> <span class="n">item</span><span class="o">);</span>
-    <span class="kd">public</span> <span class="kt">double</span> <span class="nf">calculateTotalPrice</span><span class="o">();</span>
-<span class="o">}</span>
-
-<span class="c1">// 이메일을 전송하는 EmailSender 인터페이스</span>
-<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">EmailSender</span> <span class="o">{</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">sendConfirmEmail</span><span class="o">(</span><span class="nc">Customer</span> <span class="n">customer</span><span class="o">);</span>
-<span class="o">}</span>
-
-<span class="c1">// ItemManager 인터페이스를 구현하는 ItemManagerImpl 클래스</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ItemManagerImpl</span> <span class="kd">implements</span> <span class="nc">ItemManager</span> <span class="o">{</span>
-    <span class="kd">private</span> <span class="nc">List</span><span class="o">&lt;</span><span class="nc">Item</span><span class="o">&gt;</span> <span class="n">items</span><span class="o">;</span>
-    
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">addItem</span><span class="o">(</span><span class="nc">Item</span> <span class="n">item</span><span class="o">)</span> <span class="o">{}</span>
-    
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">removeItem</span><span class="o">(</span><span class="nc">Item</span> <span class="n">item</span><span class="o">)</span> <span class="o">{}</span>
-    
-    <span class="kd">public</span> <span class="kt">double</span> <span class="nf">calculateTotalPrice</span><span class="o">()</span> <span class="o">{}</span>
-<span class="o">}</span>
-
-<span class="c1">// EmailSender 인터페이스를 구현하는 EmailSenderImpl 클래스</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">EmailSenderImpl</span> <span class="kd">implements</span> <span class="nc">EmailSender</span> <span class="o">{</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">sendConfirmEmail</span><span class="o">(</span><span class="nc">Customer</span> <span class="n">customer</span><span class="o">)</span> <span class="o">{}</span>
-<span class="o">}</span>
-</code></pre></div></div>
+<h2 id="어댑터-패턴---adapter-pattern">어댑터 패턴 - Adapter Pattern</h2>
 
 <p><br />
 <br />
 <br />
 <br /></p>
 
-<h2 id="ocp---개방--폐쇄-원칙">OCP - 개방 / 폐쇄 원칙</h2>
-<p>소프트웨어 구성요소 (클래스, 모듈, 함수 등) 는 확장에는 열려있어야 하지만, 변경에는 닫혀 있어야 한다. 
-<br />
-즉, 기존의 코드를 변경하지 않아도 새로운 기능을 추가할 수 있도록 하는 것이다.
-<br />
-<strong>OCP</strong> 는 다형성, 추상화, 인터페이스 등을 통해 내부 구현을 외부로 노출시키지 않고도 기능을 확장할 수 있는데
-<br />
-이는 코드의 유지보수, 확장성, 재사용성 등을 향상시킬 수 있다.
-<br />
-<br />
-<strong>단점으로는</strong> 초기 설계와 인터페이스 설계등의 리소스가 많이 들어가게 되며 OCP를 적용하기 위해 
-<br />
-인터페이스와 추상화를 사용해 내부의 세부 구현사항을 숨기게 되면 코드의 복잡성이 증가하게 된다.
-<br />
-<br />
-자바에서 <strong>OCP</strong> 를 구현하는 방식에는 
-<br />
-<strong>추상클래스 / 인터페이스</strong>, <strong>전략패턴</strong>, <strong>팩토리 메서드 패턴</strong>, <strong>데코레이터 패턴</strong> 등이 있다.</p>
-
-<p><br /></p>
-
-<ul>
-  <li><strong>추상클래스를 이용한 방식</strong></li>
-</ul>
-
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">Animal</span> <span class="o">{</span>
-    <span class="kd">public</span> <span class="kd">abstract</span> <span class="kt">void</span> <span class="nf">makeSound</span><span class="o">();</span>
-<span class="o">}</span>
-
-<span class="kd">class</span> <span class="nc">Dog</span> <span class="kd">extends</span> <span class="nc">Animal</span> <span class="o">{</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">makeSound</span><span class="o">()</span> <span class="o">{</span>
-        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"멍멍"</span><span class="o">);</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-
-<span class="c1">// 새로운 동물인 고양이를 이렇게 기존 코드를 변경하지 않고 확장할 수 있다. Cat 클래스는 Animal 타입으로 선언될 수 있고,</span>
-<span class="c1">// Animal 타입으로 다루어 질때 makeSound() 메서드가 호출된다.</span>
-<span class="kd">class</span> <span class="nc">Cat</span> <span class="kd">extends</span> <span class="nc">Animal</span> <span class="o">{</span> 
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">makeSound</span><span class="o">()</span> <span class="o">{</span> 
-        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"야옹"</span><span class="o">);</span> 
-    <span class="o">}</span> 
-<span class="o">}</span>
-</code></pre></div></div>
-
-<p><br /></p>
-
-<ul>
-  <li><strong>인터페이스를 이용한 방식</strong></li>
-</ul>
-
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">interface</span> <span class="nc">Animal</span> <span class="o">{</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">makeSound</span><span class="o">();</span>
-<span class="o">}</span>
-
-<span class="kd">class</span> <span class="nc">Dog</span> <span class="kd">implements</span> <span class="nc">Animal</span> <span class="o">{</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">makeSound</span><span class="o">()</span> <span class="o">{</span>
-        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"멍멍"</span><span class="o">);</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-
-<span class="c1">// 기존의 코드를 변경하지 않고 Cat 클래스를 확장</span>
-<span class="kd">class</span> <span class="nc">Cat</span> <span class="kd">implements</span> <span class="nc">Animal</span> <span class="o">{</span> 
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">makeSound</span><span class="o">()</span> <span class="o">{</span> 
-        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"야옹"</span><span class="o">);</span> 
-    <span class="o">}</span> 
-<span class="o">}</span>
-</code></pre></div></div>
+<h2 id="프록시-패턴---proxy-pattern">프록시 패턴 - Proxy Pattern</h2>
 
 <p><br />
 <br />
 <br />
 <br /></p>
 
-<h2 id="lsp---리스코프-치환-원칙">LSP - 리스코프 치환 원칙</h2>
-<p>하위타입은 상위타입으로 대체 가능해야 한다는 원칙이다. 
-<br />
-상속관계에서 부모클래스에 선언된 속성과 메서드는 하위클래스에서 동일하게 동작해야 한다.
-<br />
-즉, <strong>하위클래스가 상위클래스의 기능을 정확하게 대체할 수 있어야 한다.</strong>
-<br />
-<strong>LSP</strong> 는 유연한 확장, 재사용성 등에 장점이 있다.
-<br />
-<br />
-<strong>단점으로는</strong> 설계에 리소스가 들어가게 되며 <strong>LSP</strong> 는 인터페이스와 상속관계에서만 적용할 수 있다.
-<br />
-<br />
-자바에서 <strong>LSP</strong> 를 구현하는 방식에는 <strong>인터페이스</strong>, <strong>상속</strong> 이 있다.</p>
-
-<p><br /></p>
-
-<ul>
-  <li><strong>LSP 를 위반한 코드</strong></li>
-</ul>
-
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">Animal</span> <span class="o">{</span>
-    <span class="kd">public</span> <span class="kd">abstract</span> <span class="kt">void</span> <span class="nf">makeSound</span><span class="o">();</span> 
-<span class="o">}</span>
-
-<span class="kd">class</span> <span class="nc">Dog</span> <span class="kd">extends</span> <span class="nc">Animal</span> <span class="o">{</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">makeSound</span><span class="o">()</span> <span class="o">{</span>
-        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Bark"</span><span class="o">);</span>
-    <span class="o">}</span>
-    
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">wagTail</span><span class="o">()</span> <span class="o">{</span>
-        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Tail wagging"</span><span class="o">);</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-
-<span class="kd">class</span> <span class="nc">BigDog</span> <span class="kd">extends</span> <span class="nc">Dog</span> <span class="o">{</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">makeSound</span><span class="o">()</span> <span class="o">{</span>
-        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Big bark"</span><span class="o">);</span>
-    <span class="o">}</span>
-    
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">wagTail</span><span class="o">(</span><span class="kt">int</span> <span class="n">speed</span><span class="o">)</span> <span class="o">{</span>
-        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Tail wagging at speed "</span> <span class="o">+</span> <span class="n">speed</span><span class="o">);</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-
-<span class="cm">/*
-BigDog 클래스의 wagTail() 메서드는 Dog 클래스의 wagTail() 메서드와
-시그니처가 다르기 때문에 에러가 발생한다.
-즉, BigDog 객체가 Dog 객체를 완벽하게 대체하지 못한다.
-*/</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
-        <span class="nc">Dog</span> <span class="n">bigDog</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">BigDog</span><span class="o">();</span>
-        <span class="n">bigDog</span><span class="o">.</span><span class="na">makeSound</span><span class="o">();</span>
-        <span class="n">bigDog</span><span class="o">.</span><span class="na">wagTail</span><span class="o">();</span>  <span class="c1">// 컴파일 에러 발생</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-</code></pre></div></div>
-
-<p><br /></p>
-
-<ul>
-  <li><strong>LSP 를 준수한 코드</strong></li>
-</ul>
-
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">Animal</span> <span class="o">{</span>
-    <span class="kd">public</span> <span class="kd">abstract</span> <span class="kt">void</span> <span class="nf">makeSound</span><span class="o">();</span>
-<span class="o">}</span>
-
-<span class="kd">class</span> <span class="nc">Dog</span> <span class="kd">extends</span> <span class="nc">Animal</span> <span class="o">{</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">makeSound</span><span class="o">()</span> <span class="o">{</span>
-        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Bark"</span><span class="o">);</span>
-    <span class="o">}</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">wagTail</span><span class="o">()</span> <span class="o">{</span>
-        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Tail wagging"</span><span class="o">);</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-
-<span class="kd">class</span> <span class="nc">BigDog</span> <span class="kd">extends</span> <span class="nc">Dog</span> <span class="o">{</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">makeSound</span><span class="o">()</span> <span class="o">{</span>
-        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Big bark"</span><span class="o">);</span>
-    <span class="o">}</span>
-    
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">wagTail</span><span class="o">()</span> <span class="o">{</span>
-        <span class="n">wagTail</span><span class="o">(</span><span class="mi">1</span><span class="o">);</span>
-    <span class="o">}</span>
-    
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">wagTail</span><span class="o">(</span><span class="kt">int</span> <span class="n">speed</span><span class="o">)</span> <span class="o">{</span>
-        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Tail wagging at speed "</span> <span class="o">+</span> <span class="n">speed</span><span class="o">);</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-
-<span class="c1">// Dog 클래스와 BidDog 클래스 모두 같은 wagTail() 메서드를 가지게 된다.</span>
-<span class="c1">// Dog 객체를 대신하여 BigDog 객체를 사용할 때 문제가 일어나지 않는다.</span>
-<span class="c1">// 즉, 부모클래스를 자식클래스로 대체해도 동일한 기능을 수행해서 LSP를 준수한다.</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
-        <span class="nc">BigDog</span> <span class="n">bigDog</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">BigDog</span><span class="o">();</span>
-        <span class="n">bigDog</span><span class="o">.</span><span class="na">makeSound</span><span class="o">();</span>
-        <span class="n">bigDog</span><span class="o">.</span><span class="na">wagTail</span><span class="o">();</span>
-        <span class="n">bigDog</span><span class="o">.</span><span class="na">wagTail</span><span class="o">(</span><span class="mi">2</span><span class="o">);</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-</code></pre></div></div>
+<h2 id="데코레이터-패턴---decorator-pattern">데코레이터 패턴 - Decorator Pattern</h2>
 
 <p><br />
 <br />
 <br />
 <br /></p>
 
-<h2 id="isp---인터페이스-분리-원칙">ISP - 인터페이스 분리 원칙</h2>
-<p>인터페이스 분리 원칙을 의미한다.
-<br />
-즉, 인터페이스가 클라이언트에서 필요한 메서드만 가지도록 권장한다.
-<br />
-이렇게 함으로써 클라이언트 입장에선 필요하지 않은 메서드를 호출하거나
-<br />
-구현할 필요가 없게되고, 이것은 의존성을 줄이고 유지보수, 재사용성을 증가시킨다.
-<br />
-<br />
-<strong>단점으로는</strong> <strong>인터페이스</strong> 와 <strong>클래스</strong> 가 많아지는 문제가 있다.</p>
-
-<p><br /></p>
-
-<ul>
-  <li><strong>ISP 를 위반한 코드</strong></li>
-</ul>
-
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Animal</span> <span class="o">{</span>
-    <span class="kt">void</span> <span class="nf">run</span><span class="o">();</span>
-    <span class="kt">void</span> <span class="nf">fly</span><span class="o">();</span>
-<span class="o">}</span>
-
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Bird</span> <span class="kd">implements</span> <span class="nc">Animal</span> <span class="o">{</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">()</span> <span class="o">{}</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">fly</span><span class="o">()</span> <span class="o">{}</span>
-<span class="o">}</span>
-
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Dog</span> <span class="kd">implements</span> <span class="nc">Animal</span> <span class="o">{</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">()</span> <span class="o">{}</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">fly</span><span class="o">()</span> <span class="o">{}</span>
-<span class="o">}</span>
-
-<span class="cm">/*
-Bird 클래스는 run() 메서드를 구현하지 않고, Dog 클래스는 fly() 메서드를 구현하지 않는다.
-이것은 필요하지 않은 메서드를 구현체에서 구현하기 때문에 ISP 원칙을 위반한다.
-
-Animal 인터페이스를 run() 메서드와 fly() 메서드를 각각 가지는 2개의 인터페이스로 분리하면
-ISP 원칙을 준수할 수 있다.
-*/</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
-        <span class="nc">Animal</span> <span class="n">bird</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Bird</span><span class="o">();</span>
-        <span class="n">bird</span><span class="o">.</span><span class="na">fly</span><span class="o">();</span>
-        
-        <span class="nc">Animal</span> <span class="n">dog</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Dog</span><span class="o">();</span>
-        <span class="n">fish</span><span class="o">.</span><span class="na">run</span><span class="o">();</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-</code></pre></div></div>
+<h2 id="싱글톤-패턴---singleton-pattern">싱글톤 패턴 - Singleton Pattern</h2>
 
 <p><br />
 <br />
 <br />
 <br /></p>
 
-<h2 id="dip---의존관계-역전-원칙">DIP - 의존관계 역전 원칙</h2>
-<p>상위모듈이 하위모듈에게 의존하면 안되며 둘다 추상화에 의존해야 한다는 원칙이다.
-<br />
-즉, 클래스는 다른 클래스에 의존하지말고 추상화를 통해 상호작용 해야 한다는 의미이다.
-<br />
-이것은 결합도를 낮추기 위한 방식으로 객체간의 의존성을 느슨하게 만드는 효과가 있다.
-<br />
-<strong>DIP</strong> 를 준수하면 하위 모듈이 변경되어도 상위 모듈에 영향이 없으므로 유연성과 확장성이 향상된다.
-<br />
-<br />
-<strong>단점으로는</strong> 추상화를 위한 <strong>인터페이스</strong> 와 <strong>추상클래스</strong> 가 많아지고 복잡성이 증가한다.</p>
-
-<p><br /></p>
-
-<ul>
-  <li><strong>DIP 를 위반한 코드</strong></li>
-</ul>
-
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">UserService</span> <span class="o">{</span>
-    <span class="kd">private</span> <span class="kd">final</span> <span class="nc">UserRepository</span> <span class="n">userRepository</span><span class="o">;</span>
-    
-    <span class="kd">public</span> <span class="nf">UserService</span><span class="o">()</span> <span class="o">{</span>
-        <span class="k">this</span><span class="o">.</span><span class="na">userRepository</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">UserRepository</span><span class="o">();</span>
-    <span class="o">}</span>
-    
-    <span class="kd">public</span> <span class="nc">User</span> <span class="nf">findUserById</span><span class="o">(</span><span class="kt">int</span> <span class="n">id</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">return</span> <span class="n">userRepository</span><span class="o">.</span><span class="na">findById</span><span class="o">(</span><span class="n">id</span><span class="o">);</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-
-
-<span class="c1">// UserRepository 에 직접 의존하고 있으므로 UserRepository 클래스의 변경이 UserService 에게 영향을 준다.</span>
-<span class="kd">class</span> <span class="nc">UserRepository</span> <span class="o">{</span>
-    <span class="kd">public</span> <span class="nc">User</span> <span class="nf">findById</span><span class="o">(</span><span class="kt">int</span> <span class="n">id</span><span class="o">)</span> <span class="o">{</span>
-        <span class="o">...</span>
-        <span class="k">return</span> <span class="n">user</span><span class="o">;</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-</code></pre></div></div>
-
-<p><br /></p>
-
-<ul>
-  <li><strong>DIP 를 준수한 코드</strong></li>
-</ul>
-
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">interface</span> <span class="nc">UserRepository</span> <span class="o">{</span>
-    <span class="nc">User</span> <span class="nf">findById</span><span class="o">(</span><span class="kt">int</span> <span class="n">id</span><span class="o">);</span>
-<span class="o">}</span>
-
-<span class="kd">class</span> <span class="nc">UserService</span> <span class="o">{</span>
-    <span class="kd">private</span> <span class="kd">final</span> <span class="nc">UserRepository</span> <span class="n">userRepository</span><span class="o">;</span>
-    
-    <span class="kd">public</span> <span class="nf">UserService</span><span class="o">(</span><span class="nc">UserRepository</span> <span class="n">userRepository</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">this</span><span class="o">.</span><span class="na">userRepository</span> <span class="o">=</span> <span class="n">userRepository</span><span class="o">;</span>
-    <span class="o">}</span>
-    
-    <span class="kd">public</span> <span class="nc">User</span> <span class="nf">findUserById</span><span class="o">(</span><span class="kt">int</span> <span class="n">id</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">return</span> <span class="n">userRepository</span><span class="o">.</span><span class="na">findById</span><span class="o">(</span><span class="n">id</span><span class="o">);</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-
-<span class="cm">/*
-UserService 클래스는 UserRepository 인터페이스에만 의존하도록 하고 생성자를 통해 주입받는다.
-이제 UserRepository 클래스의 구현체인 DatabaseUserRepository 클래스가 UserRepository 인터페이스를 구현하도록 해서 DatabaseUserRepository 클래스가 변경되더라도 UserService 클래스에 영향을 미치지 않는다.
-*/</span>
-<span class="kd">class</span> <span class="nc">DatabaseUserRepository</span> <span class="kd">implements</span> <span class="nc">UserRepository</span> <span class="o">{</span>
-    <span class="kd">public</span> <span class="nc">User</span> <span class="nf">findById</span><span class="o">(</span><span class="kt">int</span> <span class="n">id</span><span class="o">)</span> <span class="o">{</span>
-        <span class="o">...</span>
-        <span class="k">return</span> <span class="n">user</span><span class="o">;</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-</code></pre></div></div>
+<h2 id="템플릿-메서드-패턴---template-method-pattern">템플릿 메서드 패턴 - Template Method Pattern</h2>
 
 <p><br />
 <br />
 <br />
 <br /></p>
 
-<h2 id="책임이란">책임이란?</h2>
-<p>객체가 수행하는 역할 또는 기능을 말한다. <strong>책임은 객체의 상태와 행위를 결정한다.</strong>
-<br />
-<strong>SOLID원칙</strong> 에서 책임은 객체나 모듈은 단 한가지의 책임을 가져야 하고 
-<br />
-이 객체나 모듈이 변경될 이유는 단 하나여야만 한다.
-<br />
-즉, 변경이 일어날 때 해당 객체만을 수정하면 단일책임원칙을 따르는 것이고 해당 객체 뿐만이 아니라
-<br />
-다른객체 까지 수정이 일어나면 단일책임원칙을 준수하지 못한것이다.</p>
+<h2 id="팩터리-메서드-패턴---factory-method-pattern">팩터리 메서드 패턴 - Factory Method Pattern</h2>
 
 <p><br />
 <br />
 <br />
 <br /></p>
 
-<p><br /></p>]]></content><author><name>NNIIE</name></author><category term="TIL" /><category term="SRP" /><category term="OCP" /><category term="LSP" /><category term="ISP" /><category term="DIP" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">OOP</title><link href="http://localhost:4000/til/OOP/" rel="alternate" type="text/html" title="OOP" /><published>2023-02-13T00:00:00+09:00</published><updated>2023-02-13T00:00:00+09:00</updated><id>http://localhost:4000/til/OOP</id><content type="html" xml:base="http://localhost:4000/til/OOP/"><![CDATA[<p><br /><br /><br /></p>
+<h2 id="전략-패턴---strategy-pattern">전략 패턴 - Strategy Pattern</h2>
+
+<p><br />
+<br />
+<br />
+<br /></p>
+
+<h2 id="템플릿-콜백-패턴---template-callback-pattern---견본회신-패턴">템플릿 콜백 패턴 - Template Callback Pattern - 견본/회신 패턴</h2>
+
+<p><br />
+<br />
+<br />
+<br /></p>
+
+<p><br /></p>]]></content><author><name>NNIIE</name></author><category term="TIL" /><category term="어댑터 패턴" /><category term="프록시 패턴" /><category term="데코레이터 패턴" /><category term="싱글톤 패턴" /><category term="템플릿 메서드 패턴" /><category term="팩터리 메서드 패턴" /><category term="전략 패턴" /><category term="템플릿 콜백 패턴" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">OOP</title><link href="http://localhost:4000/til/OOP/" rel="alternate" type="text/html" title="OOP" /><published>2023-02-13T00:00:00+09:00</published><updated>2023-02-13T00:00:00+09:00</updated><id>http://localhost:4000/til/OOP</id><content type="html" xml:base="http://localhost:4000/til/OOP/"><![CDATA[<p><br /><br /><br /></p>
 
 <h1 id="oop">OOP</h1>
 <p>어플리케이션을 구성하는 요소들을 객체로 보고, 
@@ -1112,7 +721,463 @@ Dog 클래스의 객체를 Animal 인터페이스로 대체할 수 있게 된다
 <br />
 <br /></p>
 
-<p><br /></p>]]></content><author><name>NNIIE</name></author><category term="TIL" /><category term="OOP" /><category term="서브클래싱 / 서브타이핑" /><category term="OOP와 상속" /><category term="OOP와 캡슐화" /><category term="OOP와 추상화" /><category term="OOP와 다형성" /><category term="Getter / Setter" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">8 Week</title><link href="http://localhost:4000/til/8%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="8 Week" /><published>2023-02-02T00:00:00+09:00</published><updated>2023-02-02T00:00:00+09:00</updated><id>http://localhost:4000/til/8%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/8%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
+<p><br /></p>]]></content><author><name>NNIIE</name></author><category term="TIL" /><category term="OOP" /><category term="서브클래싱 / 서브타이핑" /><category term="OOP와 상속" /><category term="OOP와 캡슐화" /><category term="OOP와 추상화" /><category term="OOP와 다형성" /><category term="Getter / Setter" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">SOLID</title><link href="http://localhost:4000/til/SOLID/" rel="alternate" type="text/html" title="SOLID" /><published>2023-02-13T00:00:00+09:00</published><updated>2023-02-13T00:00:00+09:00</updated><id>http://localhost:4000/til/SOLID</id><content type="html" xml:base="http://localhost:4000/til/SOLID/"><![CDATA[<p><br /><br /><br /></p>
+
+<h1 id="solid">SOLID</h1>
+<p>객체지향 프로그래밍에서 소프트웨어 디자인 품질을 향상시키기 위한 다섯 가지 원칙이다.
+<br />
+이 원칙을 따르면 아래와 같은 장점이 있다.</p>
+
+<ul>
+  <li>유지보수성 향상</li>
+  <li>재사용성 항샹</li>
+  <li>확장성 향상</li>
+  <li>변경에 대한 유연성 향상</li>
+  <li>코드의 가독성 향상</li>
+  <li>결합도 감소</li>
+  <li>테스트 용이성 향상</li>
+  <li>오류발생 가능성 감소</li>
+</ul>
+
+<p><br />
+<br />
+<br />
+<br /></p>
+
+<h2 id="srp---단일-책임-원칙">SRP - 단일 책임 원칙</h2>
+<p>하나의 클래스는 하나의 책임을 가져야 한다는 원칙이다.
+<br />
+이것은 클래스가 변경되어야 하는 이유는 단 하나여야 함을 의미한다.
+<br />
+클래스의 응집력은 높이고 결합도는 낮춰서 유지보수, 재사용성, 확장성에 용이하게 하는 원칙으로, 
+<br />
+클래스 하나가 여러 책임을 가지게 되면 그 클래스를 변경해야 하는 이유도 여러가지가 생기므로, 
+<br />
+코드를 변경할때 다른 책임과 관련된 코드까지 함께 변경해야 한다. 
+<br />
+<br />
+<strong>SRP</strong> 원칙을 지키기 위해서는 클래스가 자신의 책임을 명확하게 정의하고, 
+<br />
+다른 책임을 수행하는 클래스와의 의존성을 최소화 해야한다.
+<br />
+<br />
+<strong>단점으로는</strong> 클래스와 인터페이스 수가 늘어나게 되고 클래스간의 상호작용을 복잡하게 만들 수 있다.
+<br />
+<br />
+자바에서 <strong>SRP</strong> 를 구현하는 방식에는 <strong>클래스를 단일책임으로 분리</strong>, 
+<br />
+<strong>인터페이스를 이용해 책임을 분리</strong>, <strong>디자인패턴</strong>, <strong>AOP</strong> 등이 있다.</p>
+
+<p><br /></p>
+
+<ul>
+  <li><strong>클래스를 단일 책임으로 분리하는 방식</strong></li>
+</ul>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Order 클래스는 너무 많은 책임을 가지고 있다.</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Order</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="nc">List</span><span class="o">&lt;</span><span class="nc">Item</span><span class="o">&gt;</span> <span class="n">items</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="nc">Customer</span> <span class="n">customer</span><span class="o">;</span>
+    
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">addItem</span><span class="o">(</span><span class="nc">Item</span> <span class="n">item</span><span class="o">)</span> <span class="o">{}</span>
+    
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">removeItem</span><span class="o">(</span><span class="nc">Item</span> <span class="n">item</span><span class="o">)</span> <span class="o">{}</span>
+    
+    <span class="kd">public</span> <span class="kt">double</span> <span class="nf">calculateTotalPrice</span><span class="o">()</span> <span class="o">{}</span>
+    
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">sendConfirmEmail</span><span class="o">()</span> <span class="o">{}</span>
+<span class="o">}</span>
+
+<span class="c1">// 클래스의 책임을 분리함으로써, 클래스간 의존성이 낮아지게 된다.</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">OrderItem</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="nc">Item</span> <span class="n">item</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">quantity</span><span class="o">;</span>
+<span class="o">}</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">OrderCalculator</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">double</span> <span class="nf">calculateTotalPrice</span><span class="o">(</span><span class="nc">List</span><span class="o">&lt;</span><span class="nc">OrderItem</span><span class="o">&gt;</span> <span class="n">orderItems</span><span class="o">)</span> <span class="o">{}</span>
+<span class="o">}</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">EmailSender</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">sendConfirmEmail</span><span class="o">(</span><span class="nc">Customer</span> <span class="n">customer</span><span class="o">)</span> <span class="o">{}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<ul>
+  <li><strong>인터페이스로 책임을 분리하는 방식</strong></li>
+</ul>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 상품 목록을 관리하는 ItemManager 인터페이스</span>
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">ItemManager</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">addItem</span><span class="o">(</span><span class="nc">Item</span> <span class="n">item</span><span class="o">);</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">removeItem</span><span class="o">(</span><span class="nc">Item</span> <span class="n">item</span><span class="o">);</span>
+    <span class="kd">public</span> <span class="kt">double</span> <span class="nf">calculateTotalPrice</span><span class="o">();</span>
+<span class="o">}</span>
+
+<span class="c1">// 이메일을 전송하는 EmailSender 인터페이스</span>
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">EmailSender</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">sendConfirmEmail</span><span class="o">(</span><span class="nc">Customer</span> <span class="n">customer</span><span class="o">);</span>
+<span class="o">}</span>
+
+<span class="c1">// ItemManager 인터페이스를 구현하는 ItemManagerImpl 클래스</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ItemManagerImpl</span> <span class="kd">implements</span> <span class="nc">ItemManager</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="nc">List</span><span class="o">&lt;</span><span class="nc">Item</span><span class="o">&gt;</span> <span class="n">items</span><span class="o">;</span>
+    
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">addItem</span><span class="o">(</span><span class="nc">Item</span> <span class="n">item</span><span class="o">)</span> <span class="o">{}</span>
+    
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">removeItem</span><span class="o">(</span><span class="nc">Item</span> <span class="n">item</span><span class="o">)</span> <span class="o">{}</span>
+    
+    <span class="kd">public</span> <span class="kt">double</span> <span class="nf">calculateTotalPrice</span><span class="o">()</span> <span class="o">{}</span>
+<span class="o">}</span>
+
+<span class="c1">// EmailSender 인터페이스를 구현하는 EmailSenderImpl 클래스</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">EmailSenderImpl</span> <span class="kd">implements</span> <span class="nc">EmailSender</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">sendConfirmEmail</span><span class="o">(</span><span class="nc">Customer</span> <span class="n">customer</span><span class="o">)</span> <span class="o">{}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><br />
+<br />
+<br />
+<br /></p>
+
+<h2 id="ocp---개방--폐쇄-원칙">OCP - 개방 / 폐쇄 원칙</h2>
+<p>소프트웨어 구성요소 (클래스, 모듈, 함수 등) 는 확장에는 열려있어야 하지만, 변경에는 닫혀 있어야 한다. 
+<br />
+즉, 기존의 코드를 변경하지 않아도 새로운 기능을 추가할 수 있도록 하는 것이다.
+<br />
+<strong>OCP</strong> 는 다형성, 추상화, 인터페이스 등을 통해 내부 구현을 외부로 노출시키지 않고도 기능을 확장할 수 있는데
+<br />
+이는 코드의 유지보수, 확장성, 재사용성 등을 향상시킬 수 있다.
+<br />
+<br />
+<strong>단점으로는</strong> 초기 설계와 인터페이스 설계등의 리소스가 많이 들어가게 되며 OCP를 적용하기 위해 
+<br />
+인터페이스와 추상화를 사용해 내부의 세부 구현사항을 숨기게 되면 코드의 복잡성이 증가하게 된다.
+<br />
+<br />
+자바에서 <strong>OCP</strong> 를 구현하는 방식에는 
+<br />
+<strong>추상클래스 / 인터페이스</strong>, <strong>전략패턴</strong>, <strong>팩토리 메서드 패턴</strong>, <strong>데코레이터 패턴</strong> 등이 있다.</p>
+
+<p><br /></p>
+
+<ul>
+  <li><strong>추상클래스를 이용한 방식</strong></li>
+</ul>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">Animal</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">abstract</span> <span class="kt">void</span> <span class="nf">makeSound</span><span class="o">();</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">Dog</span> <span class="kd">extends</span> <span class="nc">Animal</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">makeSound</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"멍멍"</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="c1">// 새로운 동물인 고양이를 이렇게 기존 코드를 변경하지 않고 확장할 수 있다. Cat 클래스는 Animal 타입으로 선언될 수 있고,</span>
+<span class="c1">// Animal 타입으로 다루어 질때 makeSound() 메서드가 호출된다.</span>
+<span class="kd">class</span> <span class="nc">Cat</span> <span class="kd">extends</span> <span class="nc">Animal</span> <span class="o">{</span> 
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">makeSound</span><span class="o">()</span> <span class="o">{</span> 
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"야옹"</span><span class="o">);</span> 
+    <span class="o">}</span> 
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<ul>
+  <li><strong>인터페이스를 이용한 방식</strong></li>
+</ul>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">interface</span> <span class="nc">Animal</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">makeSound</span><span class="o">();</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">Dog</span> <span class="kd">implements</span> <span class="nc">Animal</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">makeSound</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"멍멍"</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="c1">// 기존의 코드를 변경하지 않고 Cat 클래스를 확장</span>
+<span class="kd">class</span> <span class="nc">Cat</span> <span class="kd">implements</span> <span class="nc">Animal</span> <span class="o">{</span> 
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">makeSound</span><span class="o">()</span> <span class="o">{</span> 
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"야옹"</span><span class="o">);</span> 
+    <span class="o">}</span> 
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><br />
+<br />
+<br />
+<br /></p>
+
+<h2 id="lsp---리스코프-치환-원칙">LSP - 리스코프 치환 원칙</h2>
+<p>하위타입은 상위타입으로 대체 가능해야 한다는 원칙이다. 
+<br />
+상속관계에서 부모클래스에 선언된 속성과 메서드는 하위클래스에서 동일하게 동작해야 한다.
+<br />
+즉, <strong>하위클래스가 상위클래스의 기능을 정확하게 대체할 수 있어야 한다.</strong>
+<br />
+<strong>LSP</strong> 는 유연한 확장, 재사용성 등에 장점이 있다.
+<br />
+<br />
+<strong>단점으로는</strong> 설계에 리소스가 들어가게 되며 <strong>LSP</strong> 는 인터페이스와 상속관계에서만 적용할 수 있다.
+<br />
+<br />
+자바에서 <strong>LSP</strong> 를 구현하는 방식에는 <strong>인터페이스</strong>, <strong>상속</strong> 이 있다.</p>
+
+<p><br /></p>
+
+<ul>
+  <li><strong>LSP 를 위반한 코드</strong></li>
+</ul>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">Animal</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">abstract</span> <span class="kt">void</span> <span class="nf">makeSound</span><span class="o">();</span> 
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">Dog</span> <span class="kd">extends</span> <span class="nc">Animal</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">makeSound</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Bark"</span><span class="o">);</span>
+    <span class="o">}</span>
+    
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">wagTail</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Tail wagging"</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">BigDog</span> <span class="kd">extends</span> <span class="nc">Dog</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">makeSound</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Big bark"</span><span class="o">);</span>
+    <span class="o">}</span>
+    
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">wagTail</span><span class="o">(</span><span class="kt">int</span> <span class="n">speed</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Tail wagging at speed "</span> <span class="o">+</span> <span class="n">speed</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="cm">/*
+BigDog 클래스의 wagTail() 메서드는 Dog 클래스의 wagTail() 메서드와
+시그니처가 다르기 때문에 에러가 발생한다.
+즉, BigDog 객체가 Dog 객체를 완벽하게 대체하지 못한다.
+*/</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">Dog</span> <span class="n">bigDog</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">BigDog</span><span class="o">();</span>
+        <span class="n">bigDog</span><span class="o">.</span><span class="na">makeSound</span><span class="o">();</span>
+        <span class="n">bigDog</span><span class="o">.</span><span class="na">wagTail</span><span class="o">();</span>  <span class="c1">// 컴파일 에러 발생</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<ul>
+  <li><strong>LSP 를 준수한 코드</strong></li>
+</ul>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">Animal</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">abstract</span> <span class="kt">void</span> <span class="nf">makeSound</span><span class="o">();</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">Dog</span> <span class="kd">extends</span> <span class="nc">Animal</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">makeSound</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Bark"</span><span class="o">);</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">wagTail</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Tail wagging"</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">BigDog</span> <span class="kd">extends</span> <span class="nc">Dog</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">makeSound</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Big bark"</span><span class="o">);</span>
+    <span class="o">}</span>
+    
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">wagTail</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">wagTail</span><span class="o">(</span><span class="mi">1</span><span class="o">);</span>
+    <span class="o">}</span>
+    
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">wagTail</span><span class="o">(</span><span class="kt">int</span> <span class="n">speed</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Tail wagging at speed "</span> <span class="o">+</span> <span class="n">speed</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="c1">// Dog 클래스와 BidDog 클래스 모두 같은 wagTail() 메서드를 가지게 된다.</span>
+<span class="c1">// Dog 객체를 대신하여 BigDog 객체를 사용할 때 문제가 일어나지 않는다.</span>
+<span class="c1">// 즉, 부모클래스를 자식클래스로 대체해도 동일한 기능을 수행해서 LSP를 준수한다.</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">BigDog</span> <span class="n">bigDog</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">BigDog</span><span class="o">();</span>
+        <span class="n">bigDog</span><span class="o">.</span><span class="na">makeSound</span><span class="o">();</span>
+        <span class="n">bigDog</span><span class="o">.</span><span class="na">wagTail</span><span class="o">();</span>
+        <span class="n">bigDog</span><span class="o">.</span><span class="na">wagTail</span><span class="o">(</span><span class="mi">2</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><br />
+<br />
+<br />
+<br /></p>
+
+<h2 id="isp---인터페이스-분리-원칙">ISP - 인터페이스 분리 원칙</h2>
+<p>인터페이스 분리 원칙을 의미한다.
+<br />
+즉, 인터페이스가 클라이언트에서 필요한 메서드만 가지도록 권장한다.
+<br />
+이렇게 함으로써 클라이언트 입장에선 필요하지 않은 메서드를 호출하거나
+<br />
+구현할 필요가 없게되고, 이것은 의존성을 줄이고 유지보수, 재사용성을 증가시킨다.
+<br />
+<br />
+<strong>단점으로는</strong> <strong>인터페이스</strong> 와 <strong>클래스</strong> 가 많아지는 문제가 있다.</p>
+
+<p><br /></p>
+
+<ul>
+  <li><strong>ISP 를 위반한 코드</strong></li>
+</ul>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Animal</span> <span class="o">{</span>
+    <span class="kt">void</span> <span class="nf">run</span><span class="o">();</span>
+    <span class="kt">void</span> <span class="nf">fly</span><span class="o">();</span>
+<span class="o">}</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Bird</span> <span class="kd">implements</span> <span class="nc">Animal</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">()</span> <span class="o">{}</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">fly</span><span class="o">()</span> <span class="o">{}</span>
+<span class="o">}</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Dog</span> <span class="kd">implements</span> <span class="nc">Animal</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">()</span> <span class="o">{}</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">fly</span><span class="o">()</span> <span class="o">{}</span>
+<span class="o">}</span>
+
+<span class="cm">/*
+Bird 클래스는 run() 메서드를 구현하지 않고, Dog 클래스는 fly() 메서드를 구현하지 않는다.
+이것은 필요하지 않은 메서드를 구현체에서 구현하기 때문에 ISP 원칙을 위반한다.
+
+Animal 인터페이스를 run() 메서드와 fly() 메서드를 각각 가지는 2개의 인터페이스로 분리하면
+ISP 원칙을 준수할 수 있다.
+*/</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">Animal</span> <span class="n">bird</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Bird</span><span class="o">();</span>
+        <span class="n">bird</span><span class="o">.</span><span class="na">fly</span><span class="o">();</span>
+        
+        <span class="nc">Animal</span> <span class="n">dog</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Dog</span><span class="o">();</span>
+        <span class="n">fish</span><span class="o">.</span><span class="na">run</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><br />
+<br />
+<br />
+<br /></p>
+
+<h2 id="dip---의존관계-역전-원칙">DIP - 의존관계 역전 원칙</h2>
+<p>상위모듈이 하위모듈에게 의존하면 안되며 둘다 추상화에 의존해야 한다는 원칙이다.
+<br />
+즉, 클래스는 다른 클래스에 의존하지말고 추상화를 통해 상호작용 해야 한다는 의미이다.
+<br />
+이것은 결합도를 낮추기 위한 방식으로 객체간의 의존성을 느슨하게 만드는 효과가 있다.
+<br />
+<strong>DIP</strong> 를 준수하면 하위 모듈이 변경되어도 상위 모듈에 영향이 없으므로 유연성과 확장성이 향상된다.
+<br />
+<br />
+<strong>단점으로는</strong> 추상화를 위한 <strong>인터페이스</strong> 와 <strong>추상클래스</strong> 가 많아지고 복잡성이 증가한다.</p>
+
+<p><br /></p>
+
+<ul>
+  <li><strong>DIP 를 위반한 코드</strong></li>
+</ul>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">UserService</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="nc">UserRepository</span> <span class="n">userRepository</span><span class="o">;</span>
+    
+    <span class="kd">public</span> <span class="nf">UserService</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">userRepository</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">UserRepository</span><span class="o">();</span>
+    <span class="o">}</span>
+    
+    <span class="kd">public</span> <span class="nc">User</span> <span class="nf">findUserById</span><span class="o">(</span><span class="kt">int</span> <span class="n">id</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">userRepository</span><span class="o">.</span><span class="na">findById</span><span class="o">(</span><span class="n">id</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+
+<span class="c1">// UserRepository 에 직접 의존하고 있으므로 UserRepository 클래스의 변경이 UserService 에게 영향을 준다.</span>
+<span class="kd">class</span> <span class="nc">UserRepository</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="nc">User</span> <span class="nf">findById</span><span class="o">(</span><span class="kt">int</span> <span class="n">id</span><span class="o">)</span> <span class="o">{</span>
+        <span class="o">...</span>
+        <span class="k">return</span> <span class="n">user</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<ul>
+  <li><strong>DIP 를 준수한 코드</strong></li>
+</ul>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">interface</span> <span class="nc">UserRepository</span> <span class="o">{</span>
+    <span class="nc">User</span> <span class="nf">findById</span><span class="o">(</span><span class="kt">int</span> <span class="n">id</span><span class="o">);</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">UserService</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="nc">UserRepository</span> <span class="n">userRepository</span><span class="o">;</span>
+    
+    <span class="kd">public</span> <span class="nf">UserService</span><span class="o">(</span><span class="nc">UserRepository</span> <span class="n">userRepository</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">userRepository</span> <span class="o">=</span> <span class="n">userRepository</span><span class="o">;</span>
+    <span class="o">}</span>
+    
+    <span class="kd">public</span> <span class="nc">User</span> <span class="nf">findUserById</span><span class="o">(</span><span class="kt">int</span> <span class="n">id</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">userRepository</span><span class="o">.</span><span class="na">findById</span><span class="o">(</span><span class="n">id</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="cm">/*
+UserService 클래스는 UserRepository 인터페이스에만 의존하도록 하고 생성자를 통해 주입받는다.
+이제 UserRepository 클래스의 구현체인 DatabaseUserRepository 클래스가 UserRepository 인터페이스를 구현하도록 해서 DatabaseUserRepository 클래스가 변경되더라도 UserService 클래스에 영향을 미치지 않는다.
+*/</span>
+<span class="kd">class</span> <span class="nc">DatabaseUserRepository</span> <span class="kd">implements</span> <span class="nc">UserRepository</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="nc">User</span> <span class="nf">findById</span><span class="o">(</span><span class="kt">int</span> <span class="n">id</span><span class="o">)</span> <span class="o">{</span>
+        <span class="o">...</span>
+        <span class="k">return</span> <span class="n">user</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><br />
+<br />
+<br />
+<br /></p>
+
+<h2 id="책임이란">책임이란?</h2>
+<p>객체가 수행하는 역할 또는 기능을 말한다. <strong>책임은 객체의 상태와 행위를 결정한다.</strong>
+<br />
+<strong>SOLID원칙</strong> 에서 책임은 객체나 모듈은 단 한가지의 책임을 가져야 하고 
+<br />
+이 객체나 모듈이 변경될 이유는 단 하나여야만 한다.
+<br />
+즉, 변경이 일어날 때 해당 객체만을 수정하면 단일책임원칙을 따르는 것이고 해당 객체 뿐만이 아니라
+<br />
+다른객체 까지 수정이 일어나면 단일책임원칙을 준수하지 못한것이다.</p>
+
+<p><br />
+<br />
+<br />
+<br /></p>
+
+<p><br /></p>]]></content><author><name>NNIIE</name></author><category term="TIL" /><category term="SRP" /><category term="OCP" /><category term="LSP" /><category term="ISP" /><category term="DIP" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">8 Week</title><link href="http://localhost:4000/til/8%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="8 Week" /><published>2023-02-02T00:00:00+09:00</published><updated>2023-02-02T00:00:00+09:00</updated><id>http://localhost:4000/til/8%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/8%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
 
 <h1 id="data-binding">Data Binding</h1>
 <p>분리된 <strong>View</strong> 와 <strong>Model</strong> 을 하나로 묶어 두개의 데이터 소스를 연결하고 동기화 하는 기술이다.
@@ -4147,532 +4212,4 @@ JVM의 Heap을 증가시키기 보다는 JVM의 인스턴스를 늘려 클러스
 <p><br />
 <br />
 <br />
-<br /></p>]]></content><author><name>NNIIE</name></author><category term="TIL" /><category term="String" /><category term="Annotation" /><category term="Exception" /><category term="Property" /><category term="JVM" /><category term="GC" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">자료구조</title><link href="http://localhost:4000/data_structure/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/" rel="alternate" type="text/html" title="자료구조" /><published>2022-12-24T00:00:00+09:00</published><updated>2022-12-24T00:00:00+09:00</updated><id>http://localhost:4000/data_structure/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0</id><content type="html" xml:base="http://localhost:4000/data_structure/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/"><![CDATA[<p><br /><br /><br /></p>
-
-<h1 id="시간복잡도">시간복잡도</h1>
-<p>알고리즘 효율성을 판단하는 지표로써,
-<br />
-알고리즘 수행에 걸리는 시간이 아닌
-<br />
-<strong><em>연산들이 몇번 이루어지는가</em></strong> 에 대한 지표이다.
-<br />
-메모리 사용량을 분석한 결과는 <strong><em>공간복잡도</em></strong> 이다.</p>
-
-<ul>
-  <li><strong><em>Big-O 표기법</em></strong>
-    <ul>
-      <li>빠른 순서</li>
-      <li><strong><em>O(1)</em></strong> : 데이터의 크기에 상관없이 언제나 일정한 시간이 걸림 (<code class="language-plaintext highlighter-rouge">index</code>를 통한 접근)</li>
-      <li>O(log₂ n) : 데이터가 커질수록 시간이 로그만큼 짧아짐 (이진탐색 / Tree)</li>
-      <li><strong><em>O(n)</em></strong> : 데이터의 크기에 비례해 처리시간이 증가함 (선형탐색 / for문)</li>
-      <li>O(n log₂ n) : 데이터가 커질수록 시간이 로그 배 만큼 늘어남 (퀵/병합/힙 정렬)</li>
-      <li>O(n²): 데이터의 크기가 커질수록 처리시간이 기하급수적으로 늘어남 (이중for문 / 삽입/버블/선택 정렬)</li>
-      <li>O(2ⁿ) : 데이터의 크기가 커질수록 처리시간이 기하급수적으로 늘어남 (피보나치 수열)</li>
-    </ul>
-  </li>
-</ul>
-
-<p><img src="/images/big-o/big-o.png" alt="이미지" /></p>
-
-<p><br />
-<br />
-<br />
-<br /></p>
-
-<h1 id="hash">Hash</h1>
-<p>임의의 크기를 가진 데이터를 고정된 크기의 데이터로 바꾸는 것.
-<br />
-단방향 암호화 기법으로 해시함수 또는 해시 알고리즘를 이용해 고정된 길이의 비트열로 변경한다.
-<br />
-10 X 10 = 100 이라는 것은 쉽게 알지만, 몇과 몇을 곱해야 100이 나오는지는 많은 경우의 수가 나오는데
-<br />
-해싱은 이런식으로 복호화가 어렵다.
-<br />
-하지만 동일한 내용은 <code class="language-plaintext highlighter-rouge">항상 같은 해시값이 나온다는 단점</code>이 있다.
-<br />
-예를들면 동일한 비밀번호는 항상 해시값이 같다.</p>
-
-<ul>
-  <li>
-    <p><strong><em>HashTable</em></strong>
-<br />
-key와 value의 쌍으로 이루어진 데이터 구조이다.
-<br />
-해시충돌이 일어나지 않는 가정 하에 평균 시간복잡도 O(1)로 효율적이다. 
-<br />
-이는 배열에서 <code class="language-plaintext highlighter-rouge">index</code>를 알고 접근하는 것과 동일한 시간복잡도를 보인다.</p>
-  </li>
-  <li><strong><em>key</em></strong> : 해시함수의 input이 되는 고유 값, 키는 해시함수를 통해 해시로 변경되고 <code class="language-plaintext highlighter-rouge">index</code> 역할을 하게된다.</li>
-  <li><strong><em>value</em></strong> : 저장소(버킷, 슬롯)에 최종적으로 저장되는 값.</li>
-  <li><strong><em>Hash</em></strong> : 임의의 값을 가지는 key값을 고정된 길이로 변환하는 것</li>
-  <li><strong><em>Hash Function</em></strong> : 임의의 값을 고정된 크기의 값으로 변환하는 함수.  key -&gt; hash</li>
-  <li><strong><em>저장소(Bucket, Slot)</em></strong> : Hash Table 에서 하나의 데이터가 저장되는 공간</li>
-  <li>
-    <p><strong><em>해시충돌</em></strong> : 서로 다른 key가 같은 hash값이 되는 경우</p>
-
-    <ul>
-      <li>
-        <p><strong><em>데이터 저장</em></strong>
-  <br />
-  해시함수를 이용해 키값을 해시로 변경한 후 미리 준비해둔 저장소(버킷, 슬롯)중 
-  <br />
-  알맞는 해시값을 찾아 value를 저장한다.
-  <br />
-  이 과정의 시간복잡도는 O(1) 이다.</p>
-      </li>
-      <li>
-        <p><strong><em>데이터 삭제</em></strong>
-  <br />
-  버킷에서 삭제하려고 하는 key와 매핑되는 value값을 찾아서 삭제한다
-  <br />
-  이 과정의 시간복잡도는 O(1) 이다.</p>
-      </li>
-      <li>
-        <p><strong><em>데이터 검색</em></strong>
-  <br />
-  key를 이용해 value를 찾아내는 과정.
-  <br />
-  먼저 key값과 해시함수를 이용해 hash를 찾아내고 해당 hash로 value를 찾는다.
-  <br />
-  이 과정의 시간복잡도는 O(1) 이다.</p>
-      </li>
-    </ul>
-  </li>
-</ul>
-
-<p><br /></p>
-
-<ul>
-  <li><strong><em>자바의 Hash?</em></strong>
-    <ul>
-      <li>자바에서는 <code class="language-plaintext highlighter-rouge">Object</code>클래스의 hashCode() 메서드로 모든 객체의 해시코드를 쉽게 구할 수 있다</li>
-      <li>자바는 객체의 주소를 이용하는 알고리즘으로 해시코드를 만들어 내기 때문에 모든 객체에 대해 중복되지 않는 값을 제공한다.</li>
-      <li>String의 경우 <code class="language-plaintext highlighter-rouge">Object</code>로부터 상속받은 hashCode()를 오버라이딩 하여 문자열의 내용으로 해시코드를 만들어 낸다. 그렇기 때문에 다른 인스턴스의 String이어도 문자열이 같다면 같은 해시코드값을 가진다.</li>
-      <li>HashMap도 같은 방법으로 객체를 구별하기 때문에 이미 존재하는 키와 동일한 값을 저장하면 기존의 값을 덮어쓰게 된다.</li>
-    </ul>
-  </li>
-</ul>
-
-<p><br /></p>
-
-<p><strong><em>단점</em></strong></p>
-<ul>
-  <li>정렬이나 순차적인 데이터 저장에 적합하지 않다</li>
-  <li>데이터가 저장되기 전에 저장공간을 확보해야 하기 때문에 공간효율성이 떨어진다.</li>
-  <li>Hash Function이 복잡할수록 연산속도가 증가한다.</li>
-  <li>해시충돌이 발생할 경우 최악의 경우 시간복잡도가 O(N) 에 점점 수렴함</li>
-</ul>
-
-<p><br />
-<br /></p>
-
-<p><strong><em>HashMap</em></strong>
-<br />
-<br />
-<code class="language-plaintext highlighter-rouge">thread-safe</code> 하지 않아 싱글스레드 환경에 적합하며, 동기화 처리를 하지않기 때문에 탐색속도가 가장 빠르다.</p>
-<ul>
-  <li>Key, Value 에 null을 허용한다.</li>
-  <li>동기화를 보장하지 않는다.</li>
-</ul>
-
-<p><br />
-<br /></p>
-
-<p><strong><em>HashTable</em></strong>
-<br />
-<br />
-<code class="language-plaintext highlighter-rouge">thread-safe</code> 하기 때문에 멀티스레드 환경에 적합하며, get(), put(), remove()등에 <code class="language-plaintext highlighter-rouge">synchronized</code> 키워드가
-<br />
-붙어있다. 스레드간 락을 걸기 때문에 데이터의 무결성을 보장하지만 <code class="language-plaintext highlighter-rouge">synchronized</code> 때문에 느리다.</p>
-<ul>
-  <li>Key, Value 에 null을 허용하지 않는다.</li>
-  <li>동기화를 보장한다.</li>
-</ul>
-
-<p><br />
-<br /></p>
-
-<p><strong><em>ConcurrentHashMap</em></strong>
-<br />
-<br />
-HashMap의 동기화 문제를 보완하기 위해 나왔다. 동기화 처리를 할때, data를 조작하는 경우에만
-<br />
-선택적으로 락을건다.  락의 범위는 HashMap의 Bucket수준이다. 
-<br />
-즉, data 수정작업에만 동기화 되며, read작업은 hashMap과 동일한 성능을 제공한다.</p>
-<ul>
-  <li>Key, Value 에 null을 허용하지 않는다.</li>
-  <li>동기화를 보장한다.</li>
-</ul>
-
-<p><br />
-<br /></p>
-
-<p><strong><em>그래서 뭐쓰는데?</em></strong>
-<br />
-<br />
-싱글스레드 에선 HashMap을, 멀티스레드 환경에서 동기화처리가 필요하다면 스레드간 락을거는 HashTable보다 
-<br />
-Entry 아이템별로 락을 거는 ConcurrentHashMap 을 쓰는게 좋다.
-<br />
-완벽한 비교는 아니지만 비슷한 맥락으로 비유해 보자면 <strong>HashTable / ConcurrentHashMap</strong> 의 차이는 
-<br />
-테이블 락 과도 비유해 볼 수 있다. 모든 작업에 동기화를 거는건 테이블락과 비슷할 정도로 비효율 적이기 때문에</p>
-
-<p><br />
-<br /></p>
-
-<p><strong><em>하지만?</em></strong>
-<br />
-<br />
-우리는 <code class="language-plaintext highlighter-rouge">Thread-safe</code> 하지 않은 HashMap을 자주쓴다. 그래도 동시성 문제에서 어느정도 자유로웠을 것이다. 
-<br />
-이건 왜그럴까?
-<br />
-<br />
-<code class="language-plaintext highlighter-rouge">java.util.concurrent</code> 라는 패키지가 존재한다.
-<br />
-<br />
-<strong><em>이펙티브자바 Item80 : 스레드보다는 실행자, 태스크, 스트림을 애용하라.</em></strong>
-<br />
-<br />
-작업 큐를 손수 만드는 일은 삼가해야 하고, 스레드를 직접 다루는것도 일반적으로 삼가하라고 한다.
-<br />
-즉, 실행자 프레임워크를 통해 작업하라는 말이다.
-<br />
-대부분 request와 response의 스레드 생명주기를 가지는 웹 어플리케이션을 개발할때 스레드풀을 사용하기 때문에 큰 신경을 쓰지 않아도 <code class="language-plaintext highlighter-rouge">thread-safe</code> 한 것이다.
-<br />
-물론 싱글톤 이라던가 여러 스레드가 동일한 자원에 접근하여 수정하는 작업에선 따로 처리를 해줘야겠지?</p>
-
-<p><br />
-<br />
-<br />
-<br /></p>
-
-<h1 id="array">Array</h1>
-<p>메모리상에 데이터를 순차적으로 배치하는 자료구조
-<br />
-동일한 <code class="language-plaintext highlighter-rouge">type</code>의 데이터를 여러개 나열한 선형구조이다.
-<br />
-<code class="language-plaintext highlighter-rouge">index</code>를 사용할 수 있으며, <code class="language-plaintext highlighter-rouge">index</code>값을 알고 접근할 경우 시간복잡도는 O(1)이다.</p>
-
-<ul>
-  <li><strong><em>특징</em></strong>
-    <ul>
-      <li>선언할 때 지정한 크기가 고정된다.</li>
-      <li>선언된 값은 다시 배열을 선언하지 않는이상 변경할 수 없다.</li>
-      <li>삽입 순서대로 저장된다. (새로운 데이터는 배열 맨 끝에 들어감)</li>
-      <li>중복 가능</li>
-    </ul>
-  </li>
-</ul>
-
-<p><br /></p>
-
-<ul>
-  <li><strong><em>단점</em></strong>
-    <ul>
-      <li>처음에 선언한 배열의 크기를 수정할 수 없다.</li>
-      <li>데이터의 추가 / 삭제를 할 경우 뒤에있는 데이터들을 앞으로 옮기는 작업이 추가로 필요하다.
-        <ul>
-          <li>원소의 개수가 1000개인 배열에서 0번 <code class="language-plaintext highlighter-rouge">index</code>를 삭제하면,  삭제를 하는 작업 외에 (1000 - 1)만큼의 원소를 이동하는 추가작업 필요</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-</ul>
-
-<p><br /></p>
-
-<ul>
-  <li><strong><em>활용?</em></strong>
-    <ul>
-      <li>순차적인 데이터를 저장할 때 유용</li>
-      <li>특정요소를 빠르게 읽을 때 (<code class="language-plaintext highlighter-rouge">index</code>값이 필요함)</li>
-      <li>데이터 사이즈가 바뀌지 않거나 데이터의 추가 / 삭제가 자주 일어나지 않을 때</li>
-      <li>이펙티브 자바에서는 배열보다 리스트를 사용하라 라는 챕터가 있다.
-        <ul>
-          <li>간단하게 말해 타입실수를 컴파일 단계에서 확인할 수 있냐 없냐의 차이</li>
-          <li>배열의 성능이점보다 안전함을 더 중요하게 생각하는듯 하다.</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-</ul>
-
-<p><br />
-<br />
-<br />
-<br /></p>
-
-<h1 id="list">List</h1>
-<p>데이터를 순차적으로 저장하는 <code class="language-plaintext highlighter-rouge">선형구조</code>의 자료구조
-<br />
-데이터가 삭제되도 빈공간으로 남겨두고 <code class="language-plaintext highlighter-rouge">index</code>를 유지하는 배열과 달리 빈공간을 남겨두지 않기 때문에
-<br />
-낭비되는 메모리가 없고 빈틈없는 데이터 구조를 가질 수 있다.
-<br />
-또한 배열과 다르게 데이터를 담을 공간의 추가가 가능하다.
-<br />
-하지만 배열처럼 고정된 <code class="language-plaintext highlighter-rouge">index</code>를 식별자로 이용할 수 없다.
-<br /></p>
-<ul>
-  <li><strong><em>선형구조</em></strong> : 데이터가 순차적으로 저장되고 끊어지지 않으며 빈틈없이 데이터를 적재하는,
-<br />
-보기에 한줄로 계속되기 때문에 마치 선과 같은 형태를 띈다 하여 선형구조라 함
-<br /></li>
-</ul>
-
-<p><img src="/images/big-o/list.png" alt="이미지" /></p>
-
-<p><br /></p>
-
-<ul>
-  <li><strong><em>ArrayList</em></strong>
-    <ul>
-      <li>배열을 이용해 구현된 List</li>
-      <li>데이터를 추가/삭제 할때, 연속적인 물리적위치를 유지하기 위해 원소를 옮기는 추가작업이 필요하다.
-        <ul>
-          <li>원소의 개수가 1000개인 ArrayList에서 0번 index를 삭제하면, 
-  <br />
-  삭제를 하는 작업 외에 (1000 - 1)만큼의 원소를 이동하는 추가작업이 필요하다.</li>
-        </ul>
-      </li>
-      <li>데이터 조회의 시간복잡도는 O(1)이다.</li>
-      <li><strong><em>데이터 탐색에 효율적이다.</em></strong></li>
-    </ul>
-  </li>
-</ul>
-
-<p><br /></p>
-
-<ul>
-  <li><strong><em>LinkedList</em></strong>
-    <ul>
-      <li>연결 포인터를 이용해 구현한다.
-        <ul>
-          <li>기본단위는 노드이다</li>
-          <li>노드 : 자료(Data) + 링크(Link)</li>
-        </ul>
-      </li>
-      <li>각 데이터마다 다음 순서의 데이터가 뭔지 알려주는 포인터가 존재하는 구조이다.</li>
-      <li>데이터를 추가/삭제 할때, 특정 노드의 링크필드(다음 노드주소)만 수정하면 된다.
-  <br />
-  즉, 노드의 포인트가 가리키는 것만 바꾸면 되기 때문에 시간복잡도는 O(1)이다.</li>
-      <li><code class="language-plaintext highlighter-rouge">index</code>가 없기때문에 데이터 조회의 시간복잡도는 모든 노드를 순회하는 O(n)이다.</li>
-      <li><strong><em>데이터의 추가/삭제에 효율적이다.</em></strong></li>
-    </ul>
-  </li>
-</ul>
-
-<p><br /></p>
-
-<ul>
-  <li><strong><em>활용?</em></strong>
-    <ul>
-      <li><strong><em>ArrayList</em></strong> : 탐색에 유용
-        <ul>
-          <li>데이터를 중간에 추가 / 삭제하는 경우가 적다면 사용을 고려해보자.</li>
-        </ul>
-      </li>
-      <li><strong><em>LinkedList</em></strong> : 추가/삭제에 유용
-        <ul>
-          <li>데이터를 중간에 추가 / 삭제하는 경우가 많다면 사용을 고려해보자.</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-</ul>
-
-<p><br />
-<br />
-<br />
-<br /></p>
-
-<h1 id="set">Set</h1>
-<p>데이터의 집합이며 순서가 없고 집합이므로 중복된 데이터를 허용하지 않는다.
-<br />
-<code class="language-plaintext highlighter-rouge">index</code>가 따로 존재하지 않기 때문에 <code class="language-plaintext highlighter-rouge">Iterator</code>를 사용한다.
-<br /></p>
-
-<p><img src="/images/big-o/set.png" alt="이미지" /></p>
-
-<p><br /></p>
-
-<ul>
-  <li><strong><em>특징</em></strong>
-    <ul>
-      <li>순서가 없고 중복을 허용하지 않는다.</li>
-      <li>자바의 Set
-        <ul>
-          <li>Hash알고리즘을 이용한 <code class="language-plaintext highlighter-rouge">HashSet</code></li>
-          <li>이진탐색트리를 사용해 오름차순정렬을 해주는 <code class="language-plaintext highlighter-rouge">TreeSet</code></li>
-          <li>순서를 부여해주는 <code class="language-plaintext highlighter-rouge">LinkedHashSet</code></li>
-        </ul>
-      </li>
-      <li>일반적으로 <code class="language-plaintext highlighter-rouge">HashSet &gt; TreeSet &gt; LinkedHashSet</code> 순으로 빠르다.</li>
-    </ul>
-  </li>
-</ul>
-
-<p><br /></p>
-
-<ul>
-  <li><strong><em>HashSet</em></strong>
-    <ul>
-      <li>입력된 키를 해시알고리즘으로 해시코드로 변환한다.</li>
-      <li>그 후 해시코드를 인덱스로 bucket저장소에 저장한다.</li>
-      <li>값이 키와 동일하게 설정된다.</li>
-      <li>순서를 보장하지 않는다.</li>
-    </ul>
-  </li>
-</ul>
-
-<p><br /></p>
-
-<ul>
-  <li><strong><em>TreeSet</em></strong>
-    <ul>
-      <li>이진 탐색 트리(Red-Black Tree)를 기반으로 한다.</li>
-      <li>오름차순으로 데이터를 저장한다.</li>
-      <li>추가 / 삭제는 LinkedHashSet보다 느리지만 검색 / 정렬은 더 효율적이다.</li>
-    </ul>
-  </li>
-</ul>
-
-<p><br /></p>
-
-<ul>
-  <li><strong><em>LinkedHashSet</em></strong>
-    <ul>
-      <li>데이터가 들어간 순서대로 저장된다.</li>
-    </ul>
-  </li>
-</ul>
-
-<p><br /></p>
-
-<ul>
-  <li><strong><em>활용?</em></strong>
-    <ul>
-      <li>중복된 값을 골라낼때 유용하다.</li>
-      <li>빠른 탐색에 유용하다.
-        <ul>
-          <li><strong><em>특정 요소의 값을 찾기보다는 요소가 집합에 존재하는지 확인할 때</em></strong></li>
-          <li>List의 contains 시간복잡도는 O(n)이지만 <strong><em>Set은 O(1)</em></strong></li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-</ul>
-
-<p><br />
-<br />
-<br />
-<br /></p>
-
-<h1 id="map">Map</h1>
-<p>순차적으로 메모리에 데이터를 저장하는 Array와 List와는 달리,
-<br />
-Key와 Value로 이루어진 자료구조이다.
-<br /></p>
-
-<p><img src="/images/big-o/map.png" alt="이미지" /></p>
-
-<p><br /></p>
-
-<ul>
-  <li><strong><em>특징</em></strong>
-    <ul>
-      <li>데이터의 순서가 없다.</li>
-      <li>Key는 중복을 허용하지 않는다.</li>
-      <li>List와 마찬가지로 인터페이스이다.</li>
-    </ul>
-  </li>
-</ul>
-
-<p><br /></p>
-
-<ul>
-  <li><strong><em>Hash Table / Map</em></strong>
-    <ul>
-      <li><strong><em>Hash</em></strong>를 Key로 가지는 Map, 앞에서 설명했듯 가장 큰 차이점은 <code class="language-plaintext highlighter-rouge">동기화</code>와 <code class="language-plaintext highlighter-rouge">null</code>이다.
-        <ul>
-          <li><strong><em>HashMap</em></strong> : <code class="language-plaintext highlighter-rouge">동기화</code>를 지원하지 않고 Key 와 Value에 <code class="language-plaintext highlighter-rouge">null</code>이 허용된다.</li>
-          <li><strong><em>HashTable</em></strong> : <code class="language-plaintext highlighter-rouge">동기화</code>를 지원하고 Key 와 Value에 <code class="language-plaintext highlighter-rouge">null</code>이 허용되지 않는다.</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-</ul>
-
-<p><br /></p>
-
-<ul>
-  <li><strong><em>LinkedHashMap</em></strong>
-    <ul>
-      <li>데이터가 들어간 순서대로 저장된다.</li>
-    </ul>
-  </li>
-</ul>
-
-<p><br /></p>
-
-<ul>
-  <li><strong><em>TreeMap</em></strong>
-    <ul>
-      <li>이진검색 트리구조, Key를 기준으로 오름차순으로 저장된다.
-        <ul>
-          <li>숫자 &gt; 대문자 &gt; 소문자 &gt; 한글</li>
-        </ul>
-      </li>
-      <li>정렬된 순서로 저장하기 때문에 검색에는 빠르지만 저장 시 효율이 떨어진다.</li>
-    </ul>
-  </li>
-</ul>
-
-<p><br /></p>
-
-<ul>
-  <li><strong><em>활용?</em></strong>
-    <ul>
-      <li><strong><em>저장하고 싶은 데이터가 특별한 Key 값을 가질 때</em></strong> - 검색에 유용</li>
-      <li>특정 데이터를 순간마다 캐치해야 할 때</li>
-      <li>특정 품목의 갯수를 카운트 해야할 때</li>
-    </ul>
-  </li>
-</ul>
-
-<p><br />
-<br />
-<br />
-<br /></p>
-
-<h1 id="stack">Stack</h1>
-
-<p><br />
-<br />
-<br />
-<br /></p>
-
-<h1 id="queue">Queue</h1>
-<p><img src="/images/big-o/queue.png" alt="이미지" /></p>
-
-<p><br />
-<br />
-<br />
-<br /></p>
-
-<h1 id="tree">Tree</h1>
-
-<p><br />
-<br />
-<br />
-<br /></p>
-
-<h1 id="graph">Graph</h1>
-
-<p><br />
-<br />
-<br />
-<br /></p>]]></content><author><name>NNIIE</name></author><category term="Data_Structure" /><category term="Data Structure" /><summary type="html"><![CDATA[]]></summary></entry></feed>
+<br /></p>]]></content><author><name>NNIIE</name></author><category term="TIL" /><category term="String" /><category term="Annotation" /><category term="Exception" /><category term="Property" /><category term="JVM" /><category term="GC" /><summary type="html"><![CDATA[]]></summary></entry></feed>
