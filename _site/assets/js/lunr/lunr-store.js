@@ -96,7 +96,7 @@ var store = [{
         "teaser": null
       },{
         "title": "Design Pattern",
-        "excerpt":"디자인패턴 어댑터 패턴 - Adapter Pattern 프록시 패턴 - Proxy Pattern 데코레이터 패턴 - Decorator Pattern 싱글톤 패턴 - Singleton Pattern 템플릿 메서드 패턴 - Template Method Pattern 팩터리 메서드 패턴 - Factory Method Pattern 전략 패턴 - Strategy Pattern 템플릿 콜백 패턴 - Template Callback Pattern - 견본/회신 패턴...","categories": ["TIL"],
+        "excerpt":"디자인패턴 일종의 설계 템플릿으로, 구체적인 구현방법을 제시하는것이 아니라 어떤 문제에 대해 어떤 구조와 접근법이 적절한지에 대한 가이드라인이다. 소프트웨어가 점점 복잡해지면서 다양한 문제가 발생하게 되었고, 이런 문제를 해결하기 위해 많은 개발자들이 각자의 방식으로 접근하다보니 비슷한 문제를 다른방식으로 해결하는 경우가 많았다. 결국 유지보수 등의 어려움을 겪게되고, 이러한 문제를 해결하기 위해 많은 개발자들의...","categories": ["TIL"],
         "tags": ["어댑터 패턴","프록시 패턴","데코레이터 패턴","싱글톤 패턴","템플릿 메서드 패턴","팩터리 메서드 패턴","전략 패턴","템플릿 콜백 패턴"],
         "url": "/til/%EB%94%94%EC%9E%90%EC%9D%B8%ED%8C%A8%ED%84%B41/",
         "teaser": null
