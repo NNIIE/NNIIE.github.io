@@ -283,7 +283,7 @@
 <br />
 또한 어댑터를 중간에 두기 때문에 다른 객체와의 결합도도 줄일 수 있다.
 <br />
-단점으로는, 중간객체를 추가함으로써 성능이 저하될 수 있고 코드가 복잡해 진다.</p>
+단점으로는, 중간객체 <strong>(어댑터)</strong> 를 추가함으로써 클래스가 많아지고 코드가 복잡해 진다.</p>
 
 <p><br /></p>
 
@@ -305,7 +305,7 @@
 <span class="o">}</span>
 
 <span class="cm">/*
-WolfAdapter 클래스는 Animal 클래스를 상속받고, makeSount() 메서드를 오버라이드 해서 
+WolfAdapter 클래스는 Animal 클래스를 상속받고, makeSound() 메서드를 오버라이드 해서 
 Wolf 클래스의 howl() 메서드를 호출하도록 구현한다.
 */</span>
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">WolfAdapter</span> <span class="kd">extends</span> <span class="nc">Animal</span> <span class="o">{</span>
