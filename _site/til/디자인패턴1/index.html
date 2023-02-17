@@ -234,7 +234,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          최대 1 분 소요
+          2 분 소요
         
       </span>
     
@@ -277,6 +277,95 @@
 <br /></p>
 
 <h2 id="어댑터-패턴---adapter-pattern">어댑터 패턴 - Adapter Pattern</h2>
+<p>호환되지 않는 두 <strong>인터페이스</strong>를 연결하여 함께 동작할 수 있게 만드는 디자인 패턴이다.
+<br />
+코드를 수정하지 않아도 다른 객체와 동작할 수 있고 유지보수, 확장성, 재사용성에 용이하다.
+<br />
+또한 어댑터를 중간에 두기 때문에 다른 객체와의 결합도도 줄일 수 있다.
+<br />
+단점으로는, 중간객체를 추가함으로써 성능이 저하될 수 있고 코드가 복잡해 진다.</p>
+
+<p><br /></p>
+
+<ul>
+  <li><strong>어댑터 패턴 예제</strong></li>
+</ul>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Animal</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">makeSound</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Generic animal sound"</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="c1">// Wolf 클래스는 Animal 클래스와 호환되지 않는 인터페이스를 가지고 있다.</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Wolf</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">howl</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Howl"</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="cm">/*
+WolfAdapter 클래스는 Animal 클래스를 상속받고, makeSount() 메서드를 오버라이드 해서 
+Wolf 클래스의 howl() 메서드를 호출하도록 구현한다.
+*/</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">WolfAdapter</span> <span class="kd">extends</span> <span class="nc">Animal</span> <span class="o">{</span>
+
+    <span class="kd">private</span> <span class="nc">Wolf</span> <span class="n">wolf</span><span class="o">;</span>
+    
+    <span class="kd">public</span> <span class="nf">WolfAdapter</span><span class="o">(</span><span class="nc">Wolf</span> <span class="n">wolf</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">wolf</span> <span class="o">=</span> <span class="n">wolf</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">makeSound</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">wolf</span><span class="o">.</span><span class="na">howl</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="c1">// 어댑터패턴으로 호환되지 않는 인터페이스를 연결하면 기존 코드를 수정하지 않아도 다른 객체와 같이 동작할 수 있게 된다.</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">AdapterExample</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">Animal</span> <span class="n">animal</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Animal</span><span class="o">();</span>
+        <span class="n">animal</span><span class="o">.</span><span class="na">makeSound</span><span class="o">();</span> <span class="c1">// "Generic animal sound" 출력</span>
+        
+        <span class="nc">Wolf</span> <span class="n">wolf</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Wolf</span><span class="o">();</span>
+        <span class="nc">WolfAdapter</span> <span class="n">adapter</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">WolfAdapter</span><span class="o">(</span><span class="n">wolf</span><span class="o">);</span>
+        <span class="n">adapter</span><span class="o">.</span><span class="na">makeSound</span><span class="o">();</span> <span class="c1">// "Howl" 출력</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<ul>
+  <li><strong>JDBC API에 사용된 어댑터 패턴</strong></li>
+</ul>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/*
+Class.forName() 메서드로 Driver 클래스를 로드한다. 이 클래스는 MySQL 제조사가 제공하는 드라이버이다.
+그런다음 DriverManager.getConnection() 메서드를 사용하여 데이터베이스와 연결한다. 
+이 메서드는 실제로 Driver 인터페이스를 구현한 객체를 생성하여 Connection 인터페이스와 연결한다.
+*/</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+    <span class="c1">// JDBC 드라이버 로드</span>
+    <span class="nc">Class</span><span class="o">.</span><span class="na">forName</span><span class="o">(</span><span class="s">"com.mysql.cj.jdbc.Driver"</span><span class="o">);</span>
+    
+    <span class="c1">// 데이터베이스 연결</span>
+    <span class="nc">String</span> <span class="n">url</span> <span class="o">=</span> <span class="s">"jdbc:mysql://localhost/test"</span><span class="o">;</span>
+    <span class="nc">String</span> <span class="n">user</span> <span class="o">=</span> <span class="s">"user"</span><span class="o">;</span>
+    <span class="nc">String</span> <span class="n">password</span> <span class="o">=</span> <span class="s">"password"</span><span class="o">;</span>
+    <span class="nc">Connection</span> <span class="n">conn</span> <span class="o">=</span> <span class="nc">DriverManager</span><span class="o">.</span><span class="na">getConnection</span><span class="o">(</span><span class="n">url</span><span class="o">,</span> <span class="n">user</span><span class="o">,</span> <span class="n">password</span><span class="o">);</span>
+<span class="o">}</span>
+
+<span class="cm">/*
+JDBC 는 데이터베이스와 연결하기 위해 인터페이스를 제공한다. 데이테베이스 제조사마다 제공하는
+드라이버의 인터페이스가 다르기 떄문에 DriverManager클래스에 어댑터 패턴을 사용한다.
+*/</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">DriverManager</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="nc">Connection</span> <span class="nf">getConnection</span><span class="o">(</span><span class="nc">String</span> <span class="n">url</span><span class="o">,</span> <span class="nc">String</span> <span class="n">user</span><span class="o">,</span> <span class="nc">String</span> <span class="n">password</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">// 데이터베이스 제조사가 제공하는 드라이버를 찾아서 Driver 인터페이스를 구현한 객체를 생성</span>
+        <span class="nc">Driver</span> <span class="n">driver</span> <span class="o">=</span> <span class="n">findDriver</span><span class="o">(</span><span class="n">url</span><span class="o">);</span>
+        <span class="c1">// Driver 인터페이스를 구현</span>
+</code></pre></div></div>
 
 <p><br />
 <br />
