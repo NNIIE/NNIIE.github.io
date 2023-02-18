@@ -1044,7 +1044,6 @@ thread safe 하다.
 
 <hr />
 
-<p><strong>추상팩토리(Abstract Factory) 방식</strong></p>
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Animal 인터페이스</span>
 <span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Animal</span> <span class="o">{</span>
     <span class="nc">String</span> <span class="nf">getAnimalName</span><span class="o">();</span>
@@ -1107,7 +1106,8 @@ thread safe 하다.
 
 <h2 id="전략-패턴">전략 패턴</h2>
 <p><strong>Strategy Pattern</strong>
-<br /></p>
+<br />
+알고리즘의 집합을 정의하고 각각을 캡슐화하여 동적으로 교체하여 사용할 수 있는 디자인 패턴</p>
 
 <p><br /></p>
 
@@ -1126,18 +1126,17 @@ thread safe 하다.
 
 <p><strong>장점</strong></p>
 <ul>
-  <li></li>
-  <li></li>
-  <li></li>
+  <li>알고리즘을 동적으로 교체할 수 있고 캡슐화 할 수 있다.</li>
+  <li>전략객체를 독립적으로 변경할 수 있기 때문에 객체간 결합도가 감소한다.</li>
 </ul>
 
 <p><br /></p>
 
 <p><strong>단점</strong></p>
 <ul>
-  <li></li>
-  <li></li>
-  <li></li>
+  <li>인터페이스와 클래스 수가 많아진다.</li>
+  <li>많은 전략을 사용할 수 있지만 이걸 모두 객체로 생성하는건 무리다.</li>
+  <li>컨텍스트, 전략객체, 인터페이스 사용으로 비용이 증가할 수 있다</li>
 </ul>
 
 <p><br /></p>
@@ -1146,15 +1145,51 @@ thread safe 하다.
 
 <hr />
 
-<p><strong>방식1</strong></p>
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-</code></pre></div></div>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 전략(알고리즘)을 캡슐화한 인터페이스</span>
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">MoveStrategy</span> <span class="o">{</span>
+    <span class="kt">void</span> <span class="nf">move</span><span class="o">();</span>
+<span class="o">}</span>
 
-<hr />
+<span class="c1">// 전략(알고리즘)을 구현한 클래스</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">WalkStrategy</span> <span class="kd">implements</span> <span class="nc">MoveStrategy</span> <span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">move</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"걷는다."</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
 
-<p><strong>방식2</strong></p>
+<span class="c1">// 전략(알고리즘)을 구현한 클래스</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">RunStrategy</span> <span class="kd">implements</span> <span class="nc">MoveStrategy</span> <span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">move</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"달린다."</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
 
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="c1">// 컨텍스트(전략을 사용하는 클래스)</span>
+<span class="c1">// 생성자를 통해 MoveStrategy 인터페이스를 구현한 객체를 받아서 실행한다.</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Animal</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="nc">MoveStrategy</span> <span class="n">moveStrategy</span><span class="o">;</span>
+
+    <span class="kd">public</span> <span class="nf">Animal</span><span class="o">(</span><span class="nc">MoveStrategy</span> <span class="n">moveStrategy</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">moveStrategy</span> <span class="o">=</span> <span class="n">moveStrategy</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">move</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">moveStrategy</span><span class="o">.</span><span class="na">move</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="c1">// Animal 객체를 생성할 때 원하는 전략 객체를 주입하여 원하는 동작을 실행한다.</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">Animal</span> <span class="n">dog</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Animal</span><span class="o">(</span><span class="k">new</span> <span class="nc">WalkStrategy</span><span class="o">());</span>
+        <span class="n">dog</span><span class="o">.</span><span class="na">move</span><span class="o">();</span>
+
+        <span class="nc">Animal</span> <span class="n">cat</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Animal</span><span class="o">(</span><span class="k">new</span> <span class="nc">RunStrategy</span><span class="o">());</span>
+        <span class="n">cat</span><span class="o">.</span><span class="na">move</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
 </code></pre></div></div>
 
 <p><br />
