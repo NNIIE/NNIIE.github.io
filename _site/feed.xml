@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-02-19T03:15:48+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">Design Pattern</title><link href="http://localhost:4000/til/%EB%94%94%EC%9E%90%EC%9D%B8%ED%8C%A8%ED%84%B41/" rel="alternate" type="text/html" title="Design Pattern" /><published>2023-02-16T00:00:00+09:00</published><updated>2023-02-16T00:00:00+09:00</updated><id>http://localhost:4000/til/%EB%94%94%EC%9E%90%EC%9D%B8%ED%8C%A8%ED%84%B41</id><content type="html" xml:base="http://localhost:4000/til/%EB%94%94%EC%9E%90%EC%9D%B8%ED%8C%A8%ED%84%B41/"><![CDATA[<p><br /><br /><br /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-02-19T03:36:55+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">Design Pattern</title><link href="http://localhost:4000/til/%EB%94%94%EC%9E%90%EC%9D%B8%ED%8C%A8%ED%84%B41/" rel="alternate" type="text/html" title="Design Pattern" /><published>2023-02-16T00:00:00+09:00</published><updated>2023-02-16T00:00:00+09:00</updated><id>http://localhost:4000/til/%EB%94%94%EC%9E%90%EC%9D%B8%ED%8C%A8%ED%84%B41</id><content type="html" xml:base="http://localhost:4000/til/%EB%94%94%EC%9E%90%EC%9D%B8%ED%8C%A8%ED%84%B41/"><![CDATA[<p><br /><br /><br /></p>
 
 <h1 id="디자인패턴">디자인패턴</h1>
 <p>일종의 설계 템플릿으로, 구체적인 구현방법을 제시하는것이 아니라 어떤 문제에 대해
@@ -524,7 +524,8 @@ Dog 객체를 생성한 후 Proxy.newProxyInstance 메서드를 사용해 Animal
 
 <h2 id="싱글톤-패턴">싱글톤 패턴</h2>
 <p><strong>Singleton Pattern</strong>
-<br /></p>
+<br />
+어떤 클래스의 인스턴스가 오직 한 개만 존재하도록 보장하고, 전역적인 접근점을 제공하는 디자인 패턴이다.</p>
 
 <p><br /></p>
 
@@ -543,18 +544,29 @@ Dog 객체를 생성한 후 Proxy.newProxyInstance 메서드를 사용해 Animal
 
 <p><strong>장점</strong></p>
 <ul>
-  <li></li>
-  <li></li>
-  <li></li>
+  <li>인스턴스를 오직 하나만 생성하기 때문에, 메모리 사용량이 줄어든다.</li>
+  <li>유일한 인스턴스에 대한 접근점이 하나뿐이기 때문에, 인스턴스를 다른 클래스에서 변경할 수 없다.</li>
 </ul>
 
 <p><br /></p>
 
 <p><strong>단점</strong></p>
 <ul>
-  <li></li>
-  <li></li>
-  <li></li>
+  <li>멀티스레드 환경에서 동시성 문제가 발생할 수 있다.
+    <ul>
+      <li>동기화 처리가 필요하기 때문에 성능저하를 가져올 수 있다.</li>
+    </ul>
+  </li>
+  <li><strong>OCP원칙</strong> 을 위반한다.
+    <ul>
+      <li>싱글톤객체를 사용하는 객체가 다른 객체에 의존할 경우, 변경 시 싱글톤객체도 같이 변경해야 할 수 있다.</li>
+    </ul>
+  </li>
+  <li>전역적으로 사용할 수 있기 때문에 다른 객체들과의 결합도가 높아질 수 있다.
+    <ul>
+      <li><strong>Dependency Injection</strong> 사용으로 해결할 수 있다.</li>
+    </ul>
+  </li>
 </ul>
 
 <p><br /></p>
@@ -563,15 +575,52 @@ Dog 객체를 생성한 후 Proxy.newProxyInstance 메서드를 사용해 Animal
 
 <hr />
 
-<p><strong>방식1</strong></p>
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<p><strong>Eager Initialization 방식</strong></p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 클래스가 로딩될 때, 인스턴스를 미리 생성하는 방식, thread safe 하지 않다.</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Singleton</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="nc">Singleton</span> <span class="n">instance</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Singleton</span><span class="o">();</span>
+    <span class="kd">private</span> <span class="nf">Singleton</span><span class="o">()</span> <span class="o">{}</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="nc">Singleton</span> <span class="nf">getInstance</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">instance</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
 </code></pre></div></div>
 
 <hr />
 
-<p><strong>방식2</strong></p>
+<p><strong>Lazy Initialization 방식</strong></p>
 
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Double-Checked Locking</span>
+<span class="c1">// 인스턴스가 필요한 시점에 생성하는 방식, thread safe 하다.</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Singleton</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">volatile</span> <span class="nc">Singleton</span> <span class="n">instance</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="nf">Singleton</span><span class="o">()</span> <span class="o">{}</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="nc">Singleton</span> <span class="nf">getInstance</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">instance</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="kd">synchronized</span> <span class="o">(</span><span class="nc">Singleton</span><span class="o">.</span><span class="na">class</span><span class="o">)</span> <span class="o">{</span>
+                <span class="k">if</span> <span class="o">(</span><span class="n">instance</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+                    <span class="n">instance</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Singleton</span><span class="o">();</span>
+                <span class="o">}</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="n">instance</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<hr />
+
+<p><strong>스프링 프레임워크 방식</strong></p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/*
+스프링에서는 빈(Bean)이라는 개념을 사용하며, 이 빈들은 스프링 컨테이너에서 생성되고 관리된다. 
+이때, 스프링 컨테이너는 기본적으로 싱글톤 패턴을 적용하므로, 모든 빈들은 기본적으로 싱글톤으로 생성된다.
+thread safe 하다.
+*/</span>
+<span class="nd">@Component</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">MyComponent</span> <span class="o">{</span>
+    <span class="c1">// ...</span>
+<span class="o">}</span>
 </code></pre></div></div>
 
 <p><br />
