@@ -249,7 +249,7 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> TIL</h4></header>
-              <ul class="toc__menu"><li><a href="#디자인패턴">디자인패턴</a><ul><li><a href="#어댑터-패턴---adapter-pattern">어댑터 패턴 - Adapter Pattern</a></li><li><a href="#프록시-패턴---proxy-pattern">프록시 패턴 - Proxy Pattern</a><ul><li><a href="#장점">장점</a></li><li><a href="#단점">단점</a></li><li><a href="#구현">구현</a><ul><li><a href="#정적-프록시-방식">정적 프록시 방식</a></li><li><a href="#동적-프록시-방식">동적 프록시 방식</a></li></ul></li></ul></li><li><a href="#데코레이터-패턴---decorator-pattern">데코레이터 패턴 - Decorator Pattern</a></li><li><a href="#싱글톤-패턴---singleton-pattern">싱글톤 패턴 - Singleton Pattern</a></li><li><a href="#템플릿-메서드-패턴---template-method-pattern">템플릿 메서드 패턴 - Template Method Pattern</a></li><li><a href="#팩터리-메서드-패턴---factory-method-pattern">팩터리 메서드 패턴 - Factory Method Pattern</a></li><li><a href="#전략-패턴---strategy-pattern">전략 패턴 - Strategy Pattern</a></li><li><a href="#템플릿-콜백-패턴---template-callback-pattern---견본회신-패턴">템플릿 콜백 패턴 - Template Callback Pattern - 견본/회신 패턴</a></li></ul></li></ul>
+              <ul class="toc__menu"><li><a href="#디자인패턴">디자인패턴</a><ul><li><a href="#어댑터-패턴">어댑터 패턴</a><ul><li><a href="#trade-off">trade-off</a></li><li><a href="#구현">구현</a></li></ul></li><li><a href="#프록시-패턴">프록시 패턴</a><ul><li><a href="#trade-off-1">trade-off</a></li><li><a href="#구현-1">구현</a></li></ul></li><li><a href="#데코레이터-패턴">데코레이터 패턴</a></li><li><a href="#싱글톤-패턴">싱글톤 패턴</a></li><li><a href="#템플릿-메서드-패턴">템플릿 메서드 패턴</a></li><li><a href="#팩터리-메서드-패턴">팩터리 메서드 패턴</a></li><li><a href="#전략-패턴">전략 패턴</a></li><li><a href="#템플릿-콜백-패턴">템플릿 콜백 패턴</a></li></ul></li></ul>
 
             </nav>
           </aside>
@@ -276,21 +276,42 @@
 <br />
 <br /></p>
 
-<h2 id="어댑터-패턴---adapter-pattern">어댑터 패턴 - Adapter Pattern</h2>
-<p>호환되지 않는 두 <strong>인터페이스</strong>를 연결하여 함께 동작할 수 있게 만드는 디자인 패턴이다.
+<h2 id="어댑터-패턴">어댑터 패턴</h2>
+<p><strong>Adapter Pattern</strong>
 <br />
-코드를 수정하지 않아도 다른 객체와 동작할 수 있고 유지보수, 확장성, 재사용성에 용이하다.
+호환되지 않는 여러 객체를 하나의 <strong>인터페이스</strong> 로 묶어서 사용할 수 있는 디자인 패턴이다.
 <br />
-또한 어댑터를 중간에 두기 때문에 다른 객체와의 결합도도 줄일 수 있다.
-<br />
-단점으로는, 중간객체 <strong>(어댑터)</strong> 를 추가함으로써 클래스가 많아지고 코드가 복잡해 진다.</p>
+이를통해, 재사용성, 유지보수성 을 향상시킬 수 있다.</p>
 
 <p><br /></p>
 
+<h3 id="trade-off">trade-off</h3>
+
+<hr />
+
+<p><strong>장점</strong></p>
 <ul>
-  <li><strong>어댑터 패턴 예제</strong></li>
+  <li>기존코드의 수정없이 호환되지 않는 객체를 연결할 수 있다.</li>
+  <li>객체간의 결합도를 줄일 수 있다.</li>
+  <li>호환성이 없는 여러 객체를 하나의 어댑터로 묶어서 사용할 수 있다.</li>
 </ul>
 
+<p><br /></p>
+
+<p><strong>단점</strong></p>
+<ul>
+  <li>객체가 추가될 때 마다 어댑터 클래스가 늘어난다.</li>
+  <li>어댑터가 객체를 감싸는 구조를 가지기 때문에 어댑터로 연결된 객체는 성능상 손실이 있을 수 있다.</li>
+  <li>코드가 복잡해진다.</li>
+</ul>
+
+<p><br /></p>
+
+<h3 id="구현">구현</h3>
+
+<hr />
+
+<p><strong>일반적인 방식</strong></p>
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Animal</span> <span class="o">{</span>
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">makeSound</span><span class="o">()</span> <span class="o">{</span>
         <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Generic animal sound"</span><span class="o">);</span>
@@ -334,11 +355,9 @@ Wolf 클래스의 howl() 메서드를 호출하도록 구현한다.
 <span class="o">}</span>
 </code></pre></div></div>
 
-<p><br /></p>
+<hr />
 
-<ul>
-  <li><strong>JDBC API에 사용된 어댑터 패턴</strong></li>
-</ul>
+<p><strong>JDBC API에 사용된 어댑터 패턴</strong></p>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/*
 Class.forName() 메서드로 Driver 클래스를 로드한다. 이 클래스는 MySQL 제조사가 제공하는 드라이버이다.
@@ -372,8 +391,10 @@ JDBC 는 데이터베이스와 연결하기 위해 인터페이스를 제공한�
 <br />
 <br /></p>
 
-<h2 id="프록시-패턴---proxy-pattern">프록시 패턴 - Proxy Pattern</h2>
-<p><strong>Proxy</strong> 를 사용하여 객체에 대한 접근을 제어하고 간접적으로 제어하는 디자인 패턴이다.
+<h2 id="프록시-패턴">프록시 패턴</h2>
+<p><strong>Proxy Pattern</strong>
+<br />
+Proxy 를 사용하여 객체에 대한 접근을 제어하고 간접적으로 제어하는 디자인 패턴이다.
 <br />
 객체에 대한 직접적인 접근을 대신해 <strong>Proxy 객체</strong> 를 사용해 객체에 접근을 하고 <strong>Proxy 객체</strong> 는
 <br />
@@ -383,7 +404,11 @@ JDBC 는 데이터베이스와 연결하기 위해 인터페이스를 제공한�
 
 <p><br /></p>
 
-<h3 id="장점">장점</h3>
+<h3 id="trade-off-1">trade-off</h3>
+
+<hr />
+
+<p><strong>장점</strong></p>
 <ul>
   <li>객체 생성과 초기화를 지연시킬 수 있어, 성능을 개선할 수 있다.
     <ul>
@@ -406,7 +431,7 @@ JDBC 는 데이터베이스와 연결하기 위해 인터페이스를 제공한�
 
 <p><br /></p>
 
-<h3 id="단점">단점</h3>
+<p><strong>단점</strong></p>
 <ul>
   <li>프록시 객체는 실제객체에 접근하기 위해 추가적인 리소스가 들어가므로 성능이 저하될 수 있다.</li>
   <li>프록시 객체라는 추가적은 클래스가 필요하고, 이는 복잡성이 증가하고 유지보수를 어렵게 할 수 있다.</li>
@@ -416,9 +441,13 @@ JDBC 는 데이터베이스와 연결하기 위해 인터페이스를 제공한�
 
 <p><br /></p>
 
-<h3 id="구현">구현</h3>
-<h4 id="정적-프록시-방식">정적 프록시 방식</h4>
-<p>프록시 객체를 컴파일 시점에 미리 생성하는 방식</p>
+<h3 id="구현-1">구현</h3>
+
+<hr />
+
+<p><strong>정적 프록시 방식</strong>
+<br />
+프록시 객체를 컴파일 시점에 미리 생성하는 방식</p>
 <ul>
   <li>컴파일 시점에 생성되므로 런타임에 추가적인 비용이 발생하지 않는다.</li>
   <li>인터페이스를 구현하는 클래스만 프록시 객체를 생성할 수 있다.</li>
@@ -466,8 +495,9 @@ AnimalProxy 클래스는 AnimalInterface 인터페이스를 구현한다.
 
 <p><br /></p>
 
-<h4 id="동적-프록시-방식">동적 프록시 방식</h4>
-<p>프록시 객체를 런타임에 동적으로 생성하는 방식
+<p><strong>동적 프록시 방식</strong>
+<br />
+프록시 객체를 런타임에 동적으로 생성하는 방식
 <br />
 일반적으로 유연성이 높고 프록시 객체를 동적으로 수정할 수 있어 더 많이 사용된다.</p>
 <ul>
@@ -527,42 +557,54 @@ Dog 객체를 생성한 후 Proxy.newProxyInstance 메서드를 사용해 Animal
 <br />
 <br /></p>
 
-<h2 id="데코레이터-패턴---decorator-pattern">데코레이터 패턴 - Decorator Pattern</h2>
+<h2 id="데코레이터-패턴">데코레이터 패턴</h2>
+<p><strong>Decorator Pattern</strong>
+<br /></p>
 
 <p><br />
 <br />
 <br />
 <br /></p>
 
-<h2 id="싱글톤-패턴---singleton-pattern">싱글톤 패턴 - Singleton Pattern</h2>
+<h2 id="싱글톤-패턴">싱글톤 패턴</h2>
+<p><strong>Singleton Pattern</strong>
+<br /></p>
 
 <p><br />
 <br />
 <br />
 <br /></p>
 
-<h2 id="템플릿-메서드-패턴---template-method-pattern">템플릿 메서드 패턴 - Template Method Pattern</h2>
+<h2 id="템플릿-메서드-패턴">템플릿 메서드 패턴</h2>
+<p><strong>Template Method Pattern</strong>
+<br /></p>
 
 <p><br />
 <br />
 <br />
 <br /></p>
 
-<h2 id="팩터리-메서드-패턴---factory-method-pattern">팩터리 메서드 패턴 - Factory Method Pattern</h2>
+<h2 id="팩터리-메서드-패턴">팩터리 메서드 패턴</h2>
+<p><strong>Factory Method Pattern</strong>
+<br /></p>
 
 <p><br />
 <br />
 <br />
 <br /></p>
 
-<h2 id="전략-패턴---strategy-pattern">전략 패턴 - Strategy Pattern</h2>
+<h2 id="전략-패턴">전략 패턴</h2>
+<p><strong>Strategy Pattern</strong>
+<br /></p>
 
 <p><br />
 <br />
 <br />
 <br /></p>
 
-<h2 id="템플릿-콜백-패턴---template-callback-pattern---견본회신-패턴">템플릿 콜백 패턴 - Template Callback Pattern - 견본/회신 패턴</h2>
+<h2 id="템플릿-콜백-패턴">템플릿 콜백 패턴</h2>
+<p><strong>Template Callback Pattern</strong>
+<br /></p>
 
 <p><br />
 <br />
