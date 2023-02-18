@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-02-19T02:55:57+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">Design Pattern</title><link href="http://localhost:4000/til/%EB%94%94%EC%9E%90%EC%9D%B8%ED%8C%A8%ED%84%B41/" rel="alternate" type="text/html" title="Design Pattern" /><published>2023-02-16T00:00:00+09:00</published><updated>2023-02-16T00:00:00+09:00</updated><id>http://localhost:4000/til/%EB%94%94%EC%9E%90%EC%9D%B8%ED%8C%A8%ED%84%B41</id><content type="html" xml:base="http://localhost:4000/til/%EB%94%94%EC%9E%90%EC%9D%B8%ED%8C%A8%ED%84%B41/"><![CDATA[<p><br /><br /><br /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-02-19T02:59:31+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">Design Pattern</title><link href="http://localhost:4000/til/%EB%94%94%EC%9E%90%EC%9D%B8%ED%8C%A8%ED%84%B41/" rel="alternate" type="text/html" title="Design Pattern" /><published>2023-02-16T00:00:00+09:00</published><updated>2023-02-16T00:00:00+09:00</updated><id>http://localhost:4000/til/%EB%94%94%EC%9E%90%EC%9D%B8%ED%8C%A8%ED%84%B41</id><content type="html" xml:base="http://localhost:4000/til/%EB%94%94%EC%9E%90%EC%9D%B8%ED%8C%A8%ED%84%B41/"><![CDATA[<p><br /><br /><br /></p>
 
 <h1 id="디자인패턴">디자인패턴</h1>
 <p>일종의 설계 템플릿으로, 구체적인 구현방법을 제시하는것이 아니라 어떤 문제에 대해
@@ -526,6 +526,54 @@ Dog 객체를 생성한 후 Proxy.newProxyInstance 메서드를 사용해 Animal
 <p><strong>Singleton Pattern</strong>
 <br /></p>
 
+<p><br /></p>
+
+<p><strong><em>사용이유</em></strong></p>
+<ul>
+  <li></li>
+  <li></li>
+  <li></li>
+</ul>
+
+<p><br /></p>
+
+<h3 id="trade-off-3">trade-off</h3>
+
+<hr />
+
+<p><strong>장점</strong></p>
+<ul>
+  <li></li>
+  <li></li>
+  <li></li>
+</ul>
+
+<p><br /></p>
+
+<p><strong>단점</strong></p>
+<ul>
+  <li></li>
+  <li></li>
+  <li></li>
+</ul>
+
+<p><br /></p>
+
+<h3 id="구현-3">구현</h3>
+
+<hr />
+
+<p><strong>방식1</strong></p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+</code></pre></div></div>
+
+<hr />
+
+<p><strong>방식2</strong></p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+</code></pre></div></div>
+
 <p><br />
 <br />
 <br />
@@ -534,6 +582,54 @@ Dog 객체를 생성한 후 Proxy.newProxyInstance 메서드를 사용해 Animal
 <h2 id="템플릿-메서드-패턴">템플릿 메서드 패턴</h2>
 <p><strong>Template Method Pattern</strong>
 <br /></p>
+
+<p><br /></p>
+
+<p><strong><em>사용이유</em></strong></p>
+<ul>
+  <li></li>
+  <li></li>
+  <li></li>
+</ul>
+
+<p><br /></p>
+
+<h3 id="trade-off-4">trade-off</h3>
+
+<hr />
+
+<p><strong>장점</strong></p>
+<ul>
+  <li></li>
+  <li></li>
+  <li></li>
+</ul>
+
+<p><br /></p>
+
+<p><strong>단점</strong></p>
+<ul>
+  <li></li>
+  <li></li>
+  <li></li>
+</ul>
+
+<p><br /></p>
+
+<h3 id="구현-4">구현</h3>
+
+<hr />
+
+<p><strong>방식1</strong></p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+</code></pre></div></div>
+
+<hr />
+
+<p><strong>방식2</strong></p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+</code></pre></div></div>
 
 <p><br />
 <br />
@@ -544,6 +640,54 @@ Dog 객체를 생성한 후 Proxy.newProxyInstance 메서드를 사용해 Animal
 <p><strong>Factory Method Pattern</strong>
 <br /></p>
 
+<p><br /></p>
+
+<p><strong><em>사용이유</em></strong></p>
+<ul>
+  <li></li>
+  <li></li>
+  <li></li>
+</ul>
+
+<p><br /></p>
+
+<h3 id="trade-off-5">trade-off</h3>
+
+<hr />
+
+<p><strong>장점</strong></p>
+<ul>
+  <li></li>
+  <li></li>
+  <li></li>
+</ul>
+
+<p><br /></p>
+
+<p><strong>단점</strong></p>
+<ul>
+  <li></li>
+  <li></li>
+  <li></li>
+</ul>
+
+<p><br /></p>
+
+<h3 id="구현-5">구현</h3>
+
+<hr />
+
+<p><strong>방식1</strong></p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+</code></pre></div></div>
+
+<hr />
+
+<p><strong>방식2</strong></p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+</code></pre></div></div>
+
 <p><br />
 <br />
 <br />
@@ -553,6 +697,54 @@ Dog 객체를 생성한 후 Proxy.newProxyInstance 메서드를 사용해 Animal
 <p><strong>Strategy Pattern</strong>
 <br /></p>
 
+<p><br /></p>
+
+<p><strong><em>사용이유</em></strong></p>
+<ul>
+  <li></li>
+  <li></li>
+  <li></li>
+</ul>
+
+<p><br /></p>
+
+<h3 id="trade-off-6">trade-off</h3>
+
+<hr />
+
+<p><strong>장점</strong></p>
+<ul>
+  <li></li>
+  <li></li>
+  <li></li>
+</ul>
+
+<p><br /></p>
+
+<p><strong>단점</strong></p>
+<ul>
+  <li></li>
+  <li></li>
+  <li></li>
+</ul>
+
+<p><br /></p>
+
+<h3 id="구현-6">구현</h3>
+
+<hr />
+
+<p><strong>방식1</strong></p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+</code></pre></div></div>
+
+<hr />
+
+<p><strong>방식2</strong></p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+</code></pre></div></div>
+
 <p><br />
 <br />
 <br />
@@ -561,6 +753,54 @@ Dog 객체를 생성한 후 Proxy.newProxyInstance 메서드를 사용해 Animal
 <h2 id="템플릿-콜백-패턴">템플릿 콜백 패턴</h2>
 <p><strong>Template Callback Pattern</strong>
 <br /></p>
+
+<p><br /></p>
+
+<p><strong><em>사용이유</em></strong></p>
+<ul>
+  <li></li>
+  <li></li>
+  <li></li>
+</ul>
+
+<p><br /></p>
+
+<h3 id="trade-off-7">trade-off</h3>
+
+<hr />
+
+<p><strong>장점</strong></p>
+<ul>
+  <li></li>
+  <li></li>
+  <li></li>
+</ul>
+
+<p><br /></p>
+
+<p><strong>단점</strong></p>
+<ul>
+  <li></li>
+  <li></li>
+  <li></li>
+</ul>
+
+<p><br /></p>
+
+<h3 id="구현-7">구현</h3>
+
+<hr />
+
+<p><strong>방식1</strong></p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+</code></pre></div></div>
+
+<hr />
+
+<p><strong>방식2</strong></p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+</code></pre></div></div>
 
 <p><br />
 <br />
