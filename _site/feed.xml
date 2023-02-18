@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-02-19T03:36:55+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">Design Pattern</title><link href="http://localhost:4000/til/%EB%94%94%EC%9E%90%EC%9D%B8%ED%8C%A8%ED%84%B41/" rel="alternate" type="text/html" title="Design Pattern" /><published>2023-02-16T00:00:00+09:00</published><updated>2023-02-16T00:00:00+09:00</updated><id>http://localhost:4000/til/%EB%94%94%EC%9E%90%EC%9D%B8%ED%8C%A8%ED%84%B41</id><content type="html" xml:base="http://localhost:4000/til/%EB%94%94%EC%9E%90%EC%9D%B8%ED%8C%A8%ED%84%B41/"><![CDATA[<p><br /><br /><br /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-02-19T03:53:11+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">Design Pattern</title><link href="http://localhost:4000/til/%EB%94%94%EC%9E%90%EC%9D%B8%ED%8C%A8%ED%84%B41/" rel="alternate" type="text/html" title="Design Pattern" /><published>2023-02-16T00:00:00+09:00</published><updated>2023-02-16T00:00:00+09:00</updated><id>http://localhost:4000/til/%EB%94%94%EC%9E%90%EC%9D%B8%ED%8C%A8%ED%84%B41</id><content type="html" xml:base="http://localhost:4000/til/%EB%94%94%EC%9E%90%EC%9D%B8%ED%8C%A8%ED%84%B41/"><![CDATA[<p><br /><br /><br /></p>
 
 <h1 id="디자인패턴">디자인패턴</h1>
 <p>일종의 설계 템플릿으로, 구체적인 구현방법을 제시하는것이 아니라 어떤 문제에 대해
@@ -630,7 +630,12 @@ thread safe 하다.
 
 <h2 id="템플릿-메서드-패턴">템플릿 메서드 패턴</h2>
 <p><strong>Template Method Pattern</strong>
-<br /></p>
+<br />
+상위 클래스에서 공통적인 로직을 구현하고 하위클래스에서 구체적으로 구현하기 위한 디자인 패턴이다.
+<br />
+추상클래스를 사용하는데, 공통로직을 구현하는 템플릿 메서드를 정의하고 하위클래스에선 이 템플릿 메서드를
+<br />
+상속받아 구체적인 구현을 한다. 상위클래스에서는 추상메서드를 선언해 하위클래스에서 구현을 강제할 수 있다.</p>
 
 <p><br /></p>
 
@@ -652,18 +657,26 @@ thread safe 하다.
 
 <p><strong>장점</strong></p>
 <ul>
-  <li></li>
-  <li></li>
-  <li></li>
+  <li>중복코드를 줄일 수 있다.
+    <ul>
+      <li>공통으로 사용되어야 하는 로직이 있을경우, 추상클래스로 정의하여 한곳에서 관리할 수 있다.</li>
+    </ul>
+  </li>
+  <li>일관성을 유지할 수 있다.
+    <ul>
+      <li>추상클래스에서 공통로직을 정의하므로, 여러 하위클래스에서 일관성있는 코드를 유지할 수 있다.</li>
+    </ul>
+  </li>
+  <li>추상 클래스에서 정의한걸 상속받아 하위 클래스에서 구현하므로, 유연한 확장성을 가진다.</li>
 </ul>
 
 <p><br /></p>
 
 <p><strong>단점</strong></p>
 <ul>
-  <li></li>
-  <li></li>
-  <li></li>
+  <li>추상클래스와 구체클래스 간의 결합도가 높다.</li>
+  <li>상 클래스가 변경될 경우 하위 클래스들도 함께 수정해야 한다.</li>
+  <li>상속을 사용하기 때문에 하위 클래스의 개수가 많아질 경우 클래스의 수가 증가할 수 있다.</li>
 </ul>
 
 <p><br /></p>
@@ -672,15 +685,52 @@ thread safe 하다.
 
 <hr />
 
-<p><strong>방식1</strong></p>
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-</code></pre></div></div>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 추상클래스로 play() 메서드에서 공통로직을 정의하고, makeSound(), move() 의 구현을 강제한다.</span>
+<span class="kd">public</span> <span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">Animal</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">play</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">makeSound</span><span class="o">();</span>
+        <span class="n">move</span><span class="o">();</span>
+    <span class="o">}</span>
 
-<hr />
+    <span class="kd">protected</span> <span class="kd">abstract</span> <span class="kt">void</span> <span class="nf">makeSound</span><span class="o">();</span>
+    <span class="kd">protected</span> <span class="kd">abstract</span> <span class="kt">void</span> <span class="nf">move</span><span class="o">();</span>
+<span class="o">}</span>
 
-<p><strong>방식2</strong></p>
+<span class="c1">// Animal 클래스를 상속받은 구현클래스</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Dog</span> <span class="kd">extends</span> <span class="nc">Animal</span> <span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">makeSound</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Bark!"</span><span class="o">);</span>
+    <span class="o">}</span>
 
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+    <span class="nd">@Override</span>
+    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">move</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Running!"</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="c1">// Animal 클래스를 상속받은 구현클래스</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Cat</span> <span class="kd">extends</span> <span class="nc">Animal</span> <span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">makeSound</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Meow!"</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">move</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Jumping!"</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">Animal</span> <span class="n">dog</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Dog</span><span class="o">();</span>
+        <span class="n">dog</span><span class="o">.</span><span class="na">play</span><span class="o">();</span>
+
+        <span class="nc">Animal</span> <span class="n">cat</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Cat</span><span class="o">();</span>
+        <span class="n">cat</span><span class="o">.</span><span class="na">play</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
 </code></pre></div></div>
 
 <p><br />
