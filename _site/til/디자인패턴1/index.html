@@ -234,7 +234,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          4 분 소요
+          7 분 소요
         
       </span>
     
@@ -249,7 +249,7 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> TIL</h4></header>
-              <ul class="toc__menu"><li><a href="#디자인패턴">디자인패턴</a><ul><li><a href="#어댑터-패턴">어댑터 패턴</a><ul><li><a href="#trade-off">trade-off</a></li><li><a href="#구현">구현</a></li></ul></li><li><a href="#프록시-패턴">프록시 패턴</a><ul><li><a href="#trade-off-1">trade-off</a></li><li><a href="#구현-1">구현</a></li></ul></li><li><a href="#데코레이터-패턴">데코레이터 패턴</a></li><li><a href="#싱글톤-패턴">싱글톤 패턴</a></li><li><a href="#템플릿-메서드-패턴">템플릿 메서드 패턴</a></li><li><a href="#팩터리-메서드-패턴">팩터리 메서드 패턴</a></li><li><a href="#전략-패턴">전략 패턴</a></li><li><a href="#템플릿-콜백-패턴">템플릿 콜백 패턴</a></li></ul></li></ul>
+              <ul class="toc__menu"><li><a href="#디자인패턴">디자인패턴</a><ul><li><a href="#어댑터-패턴">어댑터 패턴</a><ul><li><a href="#trade-off">trade-off</a></li><li><a href="#구현">구현</a></li></ul></li><li><a href="#프록시-패턴">프록시 패턴</a><ul><li><a href="#trade-off-1">trade-off</a></li><li><a href="#구현-1">구현</a></li></ul></li><li><a href="#데코레이터-패턴">데코레이터 패턴</a><ul><li><a href="#trade-off-2">trade-off</a></li><li><a href="#구현-2">구현</a></li></ul></li><li><a href="#싱글톤-패턴">싱글톤 패턴</a></li><li><a href="#템플릿-메서드-패턴">템플릿 메서드 패턴</a></li><li><a href="#팩터리-메서드-패턴">팩터리 메서드 패턴</a></li><li><a href="#전략-패턴">전략 패턴</a></li><li><a href="#템플릿-콜백-패턴">템플릿 콜백 패턴</a></li></ul></li></ul>
 
             </nav>
           </aside>
@@ -493,7 +493,7 @@ AnimalProxy 클래스는 AnimalInterface 인터페이스를 구현한다.
 <span class="n">proxy</span><span class="o">.</span><span class="na">eat</span><span class="o">();</span>
 </code></pre></div></div>
 
-<p><br /></p>
+<hr />
 
 <p><strong>동적 프록시 방식</strong>
 <br />
@@ -559,7 +559,192 @@ Dog 객체를 생성한 후 Proxy.newProxyInstance 메서드를 사용해 Animal
 
 <h2 id="데코레이터-패턴">데코레이터 패턴</h2>
 <p><strong>Decorator Pattern</strong>
-<br /></p>
+<br />
+객체의 기능을 동적으로 추가 / 변경 할 수 있도록 해주는 디자인 패턴이다.
+<br />
+객체를 래핑하고, 래핑된 객체에 새로운 기능을 추가해 새로운 객체를 생성하는 방식으로 동작한다.
+<br />
+이렇게 생성된 객체는 래핑된 객체의 기능을 그대로 사용하면서 새로운 기능을 추가한 객체가 된다.
+<br />
+이를통해, 확장성, 유연성이 높아지고 객체 간의 결합도가 낮아지게 된다.</p>
+
+<p><br /></p>
+
+<h3 id="trade-off-2">trade-off</h3>
+
+<hr />
+<p><strong>장점</strong></p>
+<ul>
+  <li>객체의 기능을 동적으로 추가 / 변경 할 수 있어서 기존 코드를 변경하지 않고 기능을 추가할 수 있다.
+    <ul>
+      <li>데코레이터 패턴은 <strong>OCP원칙</strong> 을 준수한다.</li>
+    </ul>
+  </li>
+  <li>객체간의 결합도가 낮다.</li>
+  <li>객체를 책임별로 분리하기 용이하고 여러개의 데코레이터를 조합해 다양한 기능을 구현할 수 있다.</li>
+</ul>
+
+<p><br /></p>
+
+<p><strong>단점</strong></p>
+<ul>
+  <li>새로운 데코레이터 클래스를 만들어야 하기 때문에 클래스가 늘어난다.</li>
+  <li>런타임에 객체를 생성하기 때문에 아주 약간의 오버헤드가 발생한다.</li>
+  <li>초기 설계에 리소스가 든다.</li>
+</ul>
+
+<p><br /></p>
+
+<h3 id="구현-2">구현</h3>
+
+<hr />
+
+<p><strong>인터페이스를 이용한 구현</strong></p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Animal</span> <span class="o">{</span>
+    <span class="kt">void</span> <span class="nf">speak</span><span class="o">();</span>
+<span class="o">}</span>
+
+<span class="c1">// Animal 구현클래스</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Dog</span> <span class="kd">implements</span> <span class="nc">Animal</span> <span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">speak</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"멍멍!"</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="c1">// Animal을 데코레이팅하는 인터페이스</span>
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">AnimalDecorator</span> <span class="kd">extends</span> <span class="nc">Animal</span> <span class="o">{</span>
+    <span class="kt">void</span> <span class="nf">decorate</span><span class="o">();</span>
+<span class="o">}</span>
+
+<span class="c1">// AnimalDecorator를 구현한 구현 클래스</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">DogWithHat</span> <span class="kd">implements</span> <span class="nc">AnimalDecorator</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="nc">Animal</span> <span class="n">animal</span><span class="o">;</span>
+
+    <span class="kd">public</span> <span class="nf">DogWithHat</span><span class="o">(</span><span class="nc">Animal</span> <span class="n">animal</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">animal</span> <span class="o">=</span> <span class="n">animal</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">speak</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">animal</span><span class="o">.</span><span class="na">speak</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">decorate</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"모자를 쓴 강아지"</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">// 기존의 Dog 객체</span>
+        <span class="nc">Animal</span> <span class="n">dog1</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Dog</span><span class="o">();</span>
+        <span class="n">dog1</span><span class="o">.</span><span class="na">speak</span><span class="o">();</span>
+
+        <span class="c1">// 모자를 쓴 Dog 객체</span>
+        <span class="nc">Animal</span> <span class="n">dog2</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Hat</span><span class="o">(</span><span class="k">new</span> <span class="nc">Dog</span><span class="o">());</span>
+        <span class="n">dog2</span><span class="o">.</span><span class="na">speak</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<hr />
+
+<p><strong>추상클래스를 이용한 구현</strong></p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">Animal</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">abstract</span> <span class="nc">String</span> <span class="nf">speak</span><span class="o">();</span>
+<span class="o">}</span>
+
+<span class="c1">// Animal 구현클래스</span>
+<span class="kd">class</span> <span class="nc">Dog</span> <span class="kd">extends</span> <span class="nc">Animal</span> <span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">speak</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"멍멍!"</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="c1">// Animal을 데코레이팅하는 데코레이터 추상 클래스</span>
+<span class="kd">public</span> <span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">AnimalDecorator</span> <span class="kd">extends</span> <span class="nc">Animal</span> <span class="o">{</span>
+    <span class="kd">protected</span> <span class="nc">Animal</span> <span class="n">animal</span><span class="o">;</span>
+
+    <span class="kd">public</span> <span class="nf">AnimalDecorator</span><span class="o">(</span><span class="nc">Animal</span> <span class="n">animal</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">animal</span> <span class="o">=</span> <span class="n">animal</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">speak</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">animal</span><span class="o">.</span><span class="na">speak</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="c1">// AnimalDecorator를 구현한 Hat 클래스</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Hat</span> <span class="kd">extends</span> <span class="nc">AnimalDecorator</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="nf">Hat</span><span class="o">(</span><span class="nc">Animal</span> <span class="n">animal</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kd">super</span><span class="o">(</span><span class="n">animal</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">speak</span><span class="o">()</span> <span class="o">{</span>
+        <span class="kd">super</span><span class="o">.</span><span class="na">speak</span><span class="o">();</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"모자를 쓴 강아지"</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">// 기존의 Dog 객체</span>
+        <span class="nc">Animal</span> <span class="n">dog1</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Dog</span><span class="o">();</span>
+        <span class="n">dog1</span><span class="o">.</span><span class="na">speak</span><span class="o">();</span>
+
+        <span class="c1">// 모자를 쓴 Dog 객체</span>
+        <span class="nc">Animal</span> <span class="n">dog2</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Hat</span><span class="o">(</span><span class="k">new</span> <span class="nc">Dog</span><span class="o">());</span>
+        <span class="n">dog2</span><span class="o">.</span><span class="na">speak</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<hr />
+
+<p><strong>람다를 이용한 구현</strong></p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">interface</span> <span class="nc">Animal</span> <span class="o">{</span>
+    <span class="nc">String</span> <span class="nf">speak</span><span class="o">();</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">Dog</span> <span class="kd">implements</span> <span class="nc">Animal</span> <span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="nc">String</span> <span class="nf">speak</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="s">"멍멍"</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">Hat</span> <span class="kd">implements</span> <span class="nc">Animal</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="nc">Animal</span> <span class="n">animal</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="nc">Function</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span> <span class="nc">String</span><span class="o">&gt;</span> <span class="n">decorate</span><span class="o">;</span>  <span class="c1">// 함수형 인터페이스 사용</span>
+
+    <span class="kd">public</span> <span class="nf">Hat</span><span class="o">(</span><span class="nc">Animal</span> <span class="n">animal</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">animal</span> <span class="o">=</span> <span class="n">animal</span><span class="o">;</span>
+        <span class="n">decorate</span> <span class="o">=</span> <span class="o">(</span><span class="n">sound</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">sound</span> <span class="o">+</span> <span class="s">", 모자쓴 강아지"</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="nc">String</span> <span class="nf">speak</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">decorate</span><span class="o">.</span><span class="na">apply</span><span class="o">(</span><span class="n">animal</span><span class="o">.</span><span class="na">speak</span><span class="o">());</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">Animal</span> <span class="n">dog</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Dog</span><span class="o">();</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">dog</span><span class="o">.</span><span class="na">speak</span><span class="o">());</span> <span class="c1">// "멍멍"</span>
+
+        <span class="nc">Animal</span> <span class="n">dogWithHat</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Hat</span><span class="o">(</span><span class="k">new</span> <span class="nc">Dog</span><span class="o">());</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">dogWithHat</span><span class="o">.</span><span class="na">speak</span><span class="o">());</span> <span class="c1">// "멍멍, 모자쓴 강아지"</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
 
 <p><br />
 <br />
