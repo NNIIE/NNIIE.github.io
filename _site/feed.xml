@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-02-23T03:06:56+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">Stream Note</title><link href="http://localhost:4000/til/Stream/" rel="alternate" type="text/html" title="Stream Note" /><published>2023-02-23T00:00:00+09:00</published><updated>2023-02-23T00:00:00+09:00</updated><id>http://localhost:4000/til/Stream</id><content type="html" xml:base="http://localhost:4000/til/Stream/"><![CDATA[<p><br /><br /><br /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-02-23T03:09:24+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">Stream Note 1</title><link href="http://localhost:4000/til/StreamNote1/" rel="alternate" type="text/html" title="Stream Note 1" /><published>2023-02-23T00:00:00+09:00</published><updated>2023-02-23T00:00:00+09:00</updated><id>http://localhost:4000/til/StreamNote1</id><content type="html" xml:base="http://localhost:4000/til/StreamNote1/"><![CDATA[<p><br /><br /><br /></p>
 
 <h1 id="stream">Stream</h1>
 
@@ -16,7 +16,7 @@
 <p><br />
 <br />
 <br />
-<br /></p>]]></content><author><name>NNIIE</name></author><category term="TIL" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Spring Basic</title><link href="http://localhost:4000/til/Spring1/" rel="alternate" type="text/html" title="Spring Basic" /><published>2023-02-21T00:00:00+09:00</published><updated>2023-02-21T00:00:00+09:00</updated><id>http://localhost:4000/til/Spring1</id><content type="html" xml:base="http://localhost:4000/til/Spring1/"><![CDATA[<p><br /><br /><br /></p>
+<br /></p>]]></content><author><name>NNIIE</name></author><category term="TIL" /><category term="Stream" /><category term="Parallel Stream" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Spring Basic</title><link href="http://localhost:4000/til/Spring1/" rel="alternate" type="text/html" title="Spring Basic" /><published>2023-02-21T00:00:00+09:00</published><updated>2023-02-21T00:00:00+09:00</updated><id>http://localhost:4000/til/Spring1</id><content type="html" xml:base="http://localhost:4000/til/Spring1/"><![CDATA[<p><br /><br /><br /></p>
 
 <h1 id="ioc-컨테이너">IoC 컨테이너</h1>
 <p><strong>IoC(제어의 역전)</strong> - 객체간의 결합도를 줄이기 위한 디자인 패턴중의 하나이다.
@@ -129,7 +129,7 @@ IoC 컨테이너가 B객체를 생성하고, A객체가 B객체를 사용할 수
 <p><br />
 <br />
 <br />
-<br /></p>]]></content><author><name>NNIIE</name></author><category term="TIL" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Design Pattern</title><link href="http://localhost:4000/til/%EB%94%94%EC%9E%90%EC%9D%B8%ED%8C%A8%ED%84%B41/" rel="alternate" type="text/html" title="Design Pattern" /><published>2023-02-16T00:00:00+09:00</published><updated>2023-02-16T00:00:00+09:00</updated><id>http://localhost:4000/til/%EB%94%94%EC%9E%90%EC%9D%B8%ED%8C%A8%ED%84%B41</id><content type="html" xml:base="http://localhost:4000/til/%EB%94%94%EC%9E%90%EC%9D%B8%ED%8C%A8%ED%84%B41/"><![CDATA[<p><br /><br /><br /></p>
+<br /></p>]]></content><author><name>NNIIE</name></author><category term="TIL" /><category term="IoC컨테이너" /><category term="Bean" /><category term="DI" /><category term="AOP" /><category term="PSA" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Design Pattern</title><link href="http://localhost:4000/til/%EB%94%94%EC%9E%90%EC%9D%B8%ED%8C%A8%ED%84%B41/" rel="alternate" type="text/html" title="Design Pattern" /><published>2023-02-16T00:00:00+09:00</published><updated>2023-02-16T00:00:00+09:00</updated><id>http://localhost:4000/til/%EB%94%94%EC%9E%90%EC%9D%B8%ED%8C%A8%ED%84%B41</id><content type="html" xml:base="http://localhost:4000/til/%EB%94%94%EC%9E%90%EC%9D%B8%ED%8C%A8%ED%84%B41/"><![CDATA[<p><br /><br /><br /></p>
 
 <h1 id="디자인패턴">디자인패턴</h1>
 <p>일종의 설계 템플릿으로, 구체적인 구현방법을 제시하는것이 아니라 어떤 문제에 대해

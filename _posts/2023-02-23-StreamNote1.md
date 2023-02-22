@@ -1,8 +1,8 @@
 ---
 layout: single
-title:  "Stream Note"
+title:  "Stream Note 1"
 categories: TIL
-tag: []
+tag: [Stream, Parallel Stream]
 author_profile: false
 toc: true
 toc_label: "TIL"
