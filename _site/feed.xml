@@ -1,17 +1,84 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-02-21T01:57:59+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">Spring Basic</title><link href="http://localhost:4000/til/Spring1/" rel="alternate" type="text/html" title="Spring Basic" /><published>2023-02-21T00:00:00+09:00</published><updated>2023-02-21T00:00:00+09:00</updated><id>http://localhost:4000/til/Spring1</id><content type="html" xml:base="http://localhost:4000/til/Spring1/"><![CDATA[<p><br /><br /><br /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-02-22T20:47:34+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">Spring Basic</title><link href="http://localhost:4000/til/Spring1/" rel="alternate" type="text/html" title="Spring Basic" /><published>2023-02-21T00:00:00+09:00</published><updated>2023-02-21T00:00:00+09:00</updated><id>http://localhost:4000/til/Spring1</id><content type="html" xml:base="http://localhost:4000/til/Spring1/"><![CDATA[<p><br /><br /><br /></p>
 
-<h1 id="a">A</h1>
+<h1 id="ioc-컨테이너">IoC 컨테이너</h1>
+<p><strong>IoC(제어의 역전)</strong> - 객체간의 결합도를 줄이기 위한 디자인 패턴중의 하나이다.
+<br />
+<br />
+IoC 컨테이너는 객체들의 생명주기와 객체간의 의존성을 관리한다.
+<br />
+IoC 컨테이너는 <strong>BeanFactory</strong> 인터페이스를 구현한 <strong>ApplicationContext</strong> 를 통해 사용된다.
+<br />
+<strong>ApplicationContext</strong> 는 <strong>빈</strong> 이라고 불리는 객체들의 라이프사이클, 빈 간의 의존성 등을 
+<br />
+관리하며 필요한 시점에 빈을 제공해준다.</p>
+
+<p><br /></p>
+
+<h2 id="trade-off">trade-off</h2>
+
+<p><strong>장점</strong></p>
+<ul>
+  <li>개발자가 직접 객체를 생성하고 관리하는 번거로움을 대신 관리함으로써 메모리 누수나 비즈니스로직에 더 집중할 수 있는 환경을 제공한다.</li>
+</ul>
+
+<p><br /></p>
+
+<p><strong>단점</strong></p>
 
 <p><br />
 <br />
 <br />
 <br /></p>
 
-<h2 id="aa">AA</h2>
+<h1 id="bean">Bean</h1>
+<p>어플리케이션에서 사용되는 객체이다. 
+<br />
+<strong>XML, 어노테이션, Configuration</strong> 파일등을 통해 정의되고 
+<br />
+<strong>ApplicationContext</strong> 는 이러한 빈들의 정의를 읽어들이고, 필요에 따라 객체를 생성한다.</p>
+
+<p><br />
+<br />
+<br />
+<br /></p>
+
+<h1 id="di">DI</h1>
+<p>IoC 컨테이너가 제공하는 DI 기능으로 객체간의 의존성을 설정하고 관리할 수 있다.
+<br />
+예를들어, A객체가 B객체를 사용할 경우, A가 B객체를 생성하고 관리하는게 아니라
+<br />
+IoC 컨테이너가 B객체를 생성하고, A객체가 B객체를 사용할 수 있도록 주입해준다.</p>
 
 <p><br /></p>
 
-<h3 id="aaa">AAA</h3>
+<h2 id="trade-off-1">trade-off</h2>
+
+<p><strong>장점</strong></p>
+<ul>
+  <li>어플리케이션에서 발생하는 객체간의 결합도를 줄일 수 있다.
+    <ul>
+      <li>이를 통해 유지보수, 확장성을 향상시킬 수 있다.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<p><strong>단점</strong></p>
+
+<p><br />
+<br />
+<br />
+<br /></p>
+
+<h1 id="aop">AOP</h1>
+
+<p><br />
+<br />
+<br />
+<br /></p>
+
+<h1 id="psa">PSA</h1>
 
 <p><br />
 <br />
