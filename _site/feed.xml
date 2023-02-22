@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-02-23T03:51:34+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">Test</title><link href="http://localhost:4000/til/Test1/" rel="alternate" type="text/html" title="Test" /><published>2023-02-23T00:00:00+09:00</published><updated>2023-02-23T00:00:00+09:00</updated><id>http://localhost:4000/til/Test1</id><content type="html" xml:base="http://localhost:4000/til/Test1/"><![CDATA[<p><br /><br /><br /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-02-23T04:17:45+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">Test</title><link href="http://localhost:4000/til/Test1/" rel="alternate" type="text/html" title="Test" /><published>2023-02-23T00:00:00+09:00</published><updated>2023-02-23T00:00:00+09:00</updated><id>http://localhost:4000/til/Test1</id><content type="html" xml:base="http://localhost:4000/til/Test1/"><![CDATA[<p><br /><br /><br /></p>
 
 <h1 id="테스트-피라미드">테스트 피라미드</h1>
 
@@ -47,9 +47,11 @@ IoC 컨테이너는 <strong>BeanFactory</strong> 인터페이스를 구현한 <s
 
 <p><br /></p>
 
-<h2 id="trade-off">trade-off</h2>
+<p><strong>trade-off</strong></p>
 
-<p><strong>장점</strong></p>
+<hr />
+<p><br />
+<strong>장점</strong></p>
 <ul>
   <li>객체들 간의 결합도를 낮출수 있다.
     <ul>
@@ -104,9 +106,11 @@ IoC 컨테이너가 B객체를 생성하고, A객체가 B객체를 사용할 수
 
 <p><br /></p>
 
-<h2 id="trade-off-1">trade-off</h2>
+<p><strong>trade-off</strong></p>
 
-<p><strong>장점</strong></p>
+<hr />
+<p><br />
+<strong>장점</strong></p>
 <ul>
   <li>어플리케이션에서 발생하는 객체간의 결합도를 줄일 수 있다.
     <ul>
@@ -174,11 +178,11 @@ IoC 컨테이너가 B객체를 생성하고, A객체가 B객체를 사용할 수
 
 <p><br /></p>
 
-<h2 id="trade-off-2">trade-off</h2>
+<p><strong>trade-off</strong></p>
 
-<p><br /></p>
-
-<p><strong>장점</strong></p>
+<hr />
+<p><br />
+<strong>장점</strong></p>
 <ul>
   <li>비즈니스 로직과 부가기능의 분리
     <ul>
@@ -208,6 +212,62 @@ IoC 컨테이너가 B객체를 생성하고, A객체가 B객체를 사용할 수
 <br /></p>
 
 <h1 id="psa">PSA</h1>
+<p>여러개의 서비스 구현체를 추상화 하여 사용할 수 있도록 일관된 인터페이스를 제공하는 기법이다.
+<br />
+스프링에서는 <strong>JDBC, JMS, 캐시, 메일 등</strong> 의 서비스에 대해 <strong>PSA</strong> 를 적용하고 있다.
+<br />
+예를들어, <strong>JdbcTemplate</strong> 은 <strong>JDBC</strong> 서비스에 대한 <strong>PSA</strong> 를 제공하며 클라이언트 코드에서 
+<br />
+<strong>서비스 구현체를 직접 참조하지 않고, 일관된 방법으로 서비스를 사용할 수 있게 된다.</strong>
+<br />
+<strong>또한 서비스 구현체를 변경하더라도, 클라이언트 코드가 변경되지 않도록 해주는 역할을 한다.</strong></p>
+
+<ul>
+  <li><strong>인터페이스 추상화</strong>
+    <ul>
+      <li>서비스를 추상화 하기 위해 인터페이스를 사용</li>
+      <li>인터페이스는 일반적으로 서비스의 기능을 제공하는 메서드로 구성</li>
+      <li><strong>인터페이스 추상화</strong> 는 서비스 구현체를 추상화 하는데 사용</li>
+      <li>클라이언트는 인터페이스를 사용하여 서비스를 호출한다.</li>
+    </ul>
+  </li>
+  <li><strong>팩토리 추상화</strong>
+    <ul>
+      <li>서비스 구현체를 생성하고 제공하기 위한 일관된 방법을 제공하는 추상화</li>
+      <li><strong>팩토리 추상화</strong> 는 서비스 구현체를 생성하고 관리하는 데 사용</li>
+      <li>클라이언트는 팩토리를 사용하여 서비스 구현체를 얻을 수 있다.</li>
+    </ul>
+  </li>
+  <li><strong>예외 추상화</strong>
+    <ul>
+      <li>서비스에서 발생하는 예외를 일관된 방식으로 처리하기 위한 추상화</li>
+      <li><strong>예외 추상화</strong> 는 서비스에서 발생하는 예외를 처리하기 위한 일관된 방법을 제공하는 데 사용</li>
+      <li>클라이언트는 예외 추상화를 사용하여 서비스에서 발생하는 예외를 처리할 수 있다.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<p><strong>trade-off</strong></p>
+
+<hr />
+<p><br />
+<strong>장점</strong></p>
+<ul>
+  <li>클라이언트는 서비스 구현체를 직접 참조하지 않고, 일관된 방식으로 서비스를 호출할 수 있다.</li>
+  <li>클라이언트 코드에서 서비스 구현체를 직접적으로 참조하지 않기 때문에, 서비스 구현체가 변경되더라도 클라이언트 코드를 수정할 필요가 없다.</li>
+  <li>다양한 기술과 프레임워크에서 동일한 인터페이스를 사용하여 서비스를 호출할 수 있도록 한다.</li>
+  <li><strong>인터페이스 추상화</strong> 와 <strong>팩토리 추상화</strong> 를 통해 서비스를 모듈화할 수 있다.</li>
+</ul>
+
+<p><br /></p>
+
+<p><strong>단점</strong></p>
+<ul>
+  <li>인터페이스 추상화와 팩토리 추상화 등을 정의해야 하기 때문에 코드의 양과 복잡성이 증가할 수 있다.</li>
+  <li>특정한 프레임워크에서만 적용될 수 있기 때문에, 표준화가 되어 있지 않은 경우에는 다른 프레임워크나 라이브러리에서는 적용할 수 없다.</li>
+</ul>
 
 <p><br />
 <br />
