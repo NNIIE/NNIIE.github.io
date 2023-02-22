@@ -106,4 +106,10 @@ var store = [{
         "tags": [],
         "url": "/til/Spring1/",
         "teaser": null
+      },{
+        "title": "Stream Note",
+        "excerpt":"      Stream             Parallel Stream   1   2             ","categories": ["TIL"],
+        "tags": [],
+        "url": "/til/Stream/",
+        "teaser": null
       }]
