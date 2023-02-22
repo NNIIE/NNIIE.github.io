@@ -234,7 +234,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          최대 1 분 소요
+          1 분 소요
         
       </span>
     
@@ -266,7 +266,10 @@ IoC 컨테이너는 <strong>BeanFactory</strong> 인터페이스를 구현한 <s
 <br />
 <strong>ApplicationContext</strong> 는 <strong>빈</strong> 이라고 불리는 객체들의 라이프사이클, 빈 간의 의존성 등을 
 <br />
-관리하며 필요한 시점에 빈을 제공해준다.</p>
+관리하며 필요한 시점에 빈을 제공해준다.
+<br />
+<br />
+<strong>한마디로 객체의 생성과 관리를 전적으로 스프링 프레임워크에 맡기는 것이다.</strong></p>
 
 <p><br /></p>
 
@@ -274,12 +277,22 @@ IoC 컨테이너는 <strong>BeanFactory</strong> 인터페이스를 구현한 <s
 
 <p><strong>장점</strong></p>
 <ul>
-  <li>개발자가 직접 객체를 생성하고 관리하는 번거로움을 대신 관리함으로써 메모리 누수나 비즈니스로직에 더 집중할 수 있는 환경을 제공한다.</li>
+  <li>객체들 간의 결합도를 낮출수 있다.
+    <ul>
+      <li>유지보수성, 확장성 향상</li>
+    </ul>
+  </li>
+  <li>겍체간의 의존성을 쉽게 변경할 수 있어 테스트에 용이하다.</li>
+  <li>객체들의 라이프사이클을 맡기고 비즈니스 로직에 집중할 수 있다.</li>
 </ul>
 
 <p><br /></p>
 
 <p><strong>단점</strong></p>
+<ul>
+  <li>스프링 프레임워크에 대한 러닝커브</li>
+  <li>직접 객체의 라이프사이클을 관리할 수 없다.</li>
+</ul>
 
 <p><br />
 <br />
@@ -287,11 +300,19 @@ IoC 컨테이너는 <strong>BeanFactory</strong> 인터페이스를 구현한 <s
 <br /></p>
 
 <h1 id="bean">Bean</h1>
-<p>어플리케이션에서 사용되는 객체이다. 
+<p>IoC 컨테이너에 의해 생성되고 관리되는 객체를 의미한다. 일반적으로 스프링의 모든 객체를 의미한다.
 <br />
 <strong>XML, 어노테이션, Configuration</strong> 파일등을 통해 정의되고 
 <br />
-<strong>ApplicationContext</strong> 는 이러한 빈들의 정의를 읽어들이고, 필요에 따라 객체를 생성한다.</p>
+<strong>ApplicationContext</strong> 에 의해 생성되고 빈 간의 의존성을 처리한다.
+<br />
+기본적으로 싱글톤 스코프를 가지고 다음과 같은 다양한 스코프를 지원한다.</p>
+<ul>
+  <li><strong>Singleton</strong> : 하나의 Bean 인스턴스만 생성되며, 모든 요청에 대해 같은 인스턴스가 반환</li>
+  <li><strong>Prototype</strong> : 요청마다 새로운 Bean 인스턴스가 생성</li>
+  <li><strong>Request</strong> : 각 HTTP 요청마다 새로운 Bean 인스턴스가 생성</li>
+  <li><strong>Session</strong> : 각 세션마다 새로운 Bean 인스턴스가 생성</li>
+</ul>
 
 <p><br />
 <br />
@@ -303,7 +324,9 @@ IoC 컨테이너는 <strong>BeanFactory</strong> 인터페이스를 구현한 <s
 <br />
 예를들어, A객체가 B객체를 사용할 경우, A가 B객체를 생성하고 관리하는게 아니라
 <br />
-IoC 컨테이너가 B객체를 생성하고, A객체가 B객체를 사용할 수 있도록 주입해준다.</p>
+IoC 컨테이너가 B객체를 생성하고, A객체가 B객체를 사용할 수 있도록 주입해준다.
+<br />
+즉, 개발자 직접 처리하는게 아닌 IoC 컨테이너가 자동으로 처리한다.</p>
 
 <p><br /></p>
 
@@ -316,11 +339,16 @@ IoC 컨테이너가 B객체를 생성하고, A객체가 B객체를 사용할 수
       <li>이를 통해 유지보수, 확장성을 향상시킬 수 있다.</li>
     </ul>
   </li>
+  <li>의존성을 주입할 때 인터페이스를 사용해서 <strong>의존성 역전 원칙</strong> 을 지킬 수 있다.</li>
 </ul>
 
 <p><br /></p>
 
 <p><strong>단점</strong></p>
+<ul>
+  <li>스프링 프레임워크에 대한 러닝커브</li>
+  <li>잘못 구현할 경우 객체간의 의존성이 너무 복잡해 질 수 있다.</li>
+</ul>
 
 <p><br />
 <br />
