@@ -107,9 +107,15 @@ var store = [{
         "url": "/til/Spring1/",
         "teaser": null
       },{
-        "title": "Stream Note 1",
+        "title": "Stream",
         "excerpt":"      Stream             Parallel Stream   1   2             ","categories": ["TIL"],
         "tags": ["Stream","Parallel Stream"],
-        "url": "/til/StreamNote1/",
+        "url": "/til/Stream1/",
+        "teaser": null
+      },{
+        "title": "Test",
+        "excerpt":"      테스트 피라미드                       ","categories": ["TIL"],
+        "tags": ["테스트피라미드"],
+        "url": "/til/Test1/",
         "teaser": null
       }]
