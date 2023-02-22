@@ -108,7 +108,7 @@ var store = [{
         "teaser": null
       },{
         "title": "Stream",
-        "excerpt":"      Stream             Parallel Stream   1   2             ","categories": ["TIL"],
+        "excerpt":"Stream Collection, Array 등의 데이터 소스를 함수형 프로그래밍의 Stream 형태로 다룰 수 있도록 지원하는 API Stream 은 대표적으로 Collection 데이터를 처리하거나 I/O 처리에 스트리밍 방식을 사용한다. 데이터의 필터링, 매핑, 정렬, 집계 등과 대량의 데이터를 처리할 때 효과적으로 사용할 수 있다. Stream의 스트리밍 방식 데이터를 작은 블록 단위로 분할하여 처리하는 방식...","categories": ["TIL"],
         "tags": ["Stream","Parallel Stream"],
         "url": "/til/Stream1/",
         "teaser": null
