@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-02-24T15:34:46+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">Test</title><link href="http://localhost:4000/til/Test1/" rel="alternate" type="text/html" title="Test" /><published>2023-02-23T00:00:00+09:00</published><updated>2023-02-23T00:00:00+09:00</updated><id>http://localhost:4000/til/Test1</id><content type="html" xml:base="http://localhost:4000/til/Test1/"><![CDATA[<p><br /><br /><br /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-02-27T21:41:30+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">Test</title><link href="http://localhost:4000/til/Test1/" rel="alternate" type="text/html" title="Test" /><published>2023-02-23T00:00:00+09:00</published><updated>2023-02-23T00:00:00+09:00</updated><id>http://localhost:4000/til/Test1</id><content type="html" xml:base="http://localhost:4000/til/Test1/"><![CDATA[<p><br /><br /><br /></p>
 
 <h1 id="테스트-피라미드">테스트 피라미드</h1>
 
@@ -234,6 +234,18 @@ IoC 컨테이너는 <strong>BeanFactory</strong> 인터페이스를 구현한 <s
   <li>직접 객체의 라이프사이클을 관리할 수 없다.</li>
 </ul>
 
+<p><br /></p>
+
+<p><strong>@Autowire</strong></p>
+
+<p><br /></p>
+
+<p><strong>@Component, @ComponentScan</strong></p>
+
+<p><br /></p>
+
+<p><strong>@Environment</strong></p>
+
 <p><br />
 <br />
 <br />
@@ -291,6 +303,10 @@ IoC 컨테이너가 B객체를 생성하고, A객체가 B객체를 사용할 수
   <li>스프링 프레임워크에 대한 러닝커브</li>
   <li>잘못 구현할 경우 객체간의 의존성이 너무 복잡해 질 수 있다.</li>
 </ul>
+
+<p><br /></p>
+
+<p><strong>@Bean Scope</strong></p>
 
 <p><br />
 <br />
