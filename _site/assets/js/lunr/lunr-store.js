@@ -118,4 +118,10 @@ var store = [{
         "tags": ["테스트피라미드"],
         "url": "/til/Test1/",
         "teaser": null
+      },{
+        "title": "Performance Test",
+        "excerpt":"JMH 이런저런 요구사항에서 내가 작성한 코드가 효율적일까? 라는 의문이 생기기 마련이다. 작성한 로직을 요구사항에 맞춰 Big-O 표기법으로 계산해 시간복잡도를 계산할 수도 있고, 운영환경에서 Stress Test 를 진행하여 성능을 측정할 수도 있지만 작은 규모의 코드조각에 대한 측정을 더 빠르고 간단하게 사용할 수 있는 방법은 JMH 를 사용하는 것이다. JMH 는 JVM...","categories": ["TIL"],
+        "tags": ["JMH"],
+        "url": "/til/PerformanceTest/",
+        "teaser": null
       }]

@@ -1,0 +1,809 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.23.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Performance Test | NNIIE</title>
+<meta name="description" content="">
+
+
+  <meta name="author" content="NNIIE">
+  
+  <meta property="article:author" content="NNIIE">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="NNIIE">
+<meta property="og:title" content="Performance Test">
+<meta property="og:url" content="http://localhost:4000/til/PerformanceTest/">
+
+
+  <meta property="og:description" content="">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2023-03-02T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/til/PerformanceTest/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "NNIIE",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+  <meta name="naver-site-verification" content="a9b132831ec364004ae67956e7379a878de72a85">
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="NNIIE Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/images/2021-05-10-first-posting/profile_image.png" alt="NNIIE"></a>
+        
+        <a class="site-title" href="/">
+          NNIIE
+          <span class="site-subtitle">backend developer</span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/categories/">Category</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tag</a>
+            </li><li class="masthead__menu-item">
+              <a href="/search/">Search</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="http://localhost:4000/" itemprop="item"><span itemprop="name">Home</span></a>
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/categories/#til" itemprop="item"><span itemprop="name">Til</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">Performance Test</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<div id="main" role="main">
+  
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Performance Test">
+    <meta itemprop="description" content="">
+    <meta itemprop="datePublished" content="2023-03-02T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Performance Test
+</h1>
+          
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-03-02T00:00:00+09:00">2023-03-02</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> TIL</h4></header>
+              <ul class="toc__menu"><li><a href="#jmh">JMH</a></li></ul>
+
+            </nav>
+          </aside>
+        
+        <p><br /><br /><br /></p>
+
+<h1 id="jmh">JMH</h1>
+<p>이런저런 요구사항에서 내가 작성한 코드가 효율적일까? 라는 의문이 생기기 마련이다.
+<br />
+작성한 로직을 요구사항에 맞춰 <code class="language-plaintext highlighter-rouge">Big-O</code> 표기법으로 계산해 시간복잡도를 계산할 수도 있고,
+<br />
+운영환경에서 <code class="language-plaintext highlighter-rouge">Stress Test</code> 를 진행하여 성능을 측정할 수도 있지만 작은 규모의 코드조각에
+<br />
+대한 측정을 더 빠르고 간단하게 사용할 수 있는 방법은 <code class="language-plaintext highlighter-rouge">JMH</code> 를 사용하는 것이다.
+<br />
+<br />
+<code class="language-plaintext highlighter-rouge">JMH</code> 는 <code class="language-plaintext highlighter-rouge">JVM</code> 상에서 실행되는 코드의 성능을 측정하기 위한 벤치마크 도구로써, 성능측정은 일반적으로
+<br />
+코드실행시간, 메모리사용량, GC활동 등을 측정하여 수행하고 실행 결과에 대한 통계 및 분석을 제공한다.</p>
+
+<p><br />
+<br /></p>
+
+<p><strong>의존성 추가</strong></p>
+
+<hr />
+<p>사용하기 위한 간단한 방법은 Gradle, Maven 등의 빌드시스템에 의존성을 추가하면 된다.</p>
+
+<div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dependencies</span> <span class="o">{</span>
+    <span class="n">compile</span> <span class="s1">'org.openjdk.jmh:jmh-core:{version}'</span>
+    <span class="n">compile</span> <span class="s1">'org.openjdk.jmh:jmh-generator-annprocess:{version}'</span>
+<span class="o">}</span>
+</code></pre></div></div>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;dependencies&gt;</span>
+    <span class="nt">&lt;dependency&gt;</span>
+        <span class="nt">&lt;groupId&gt;</span>org.openjdk.jmh<span class="nt">&lt;/groupId&gt;</span>
+        <span class="nt">&lt;artifactId&gt;</span>jmh-core<span class="nt">&lt;/artifactId&gt;</span>
+        <span class="nt">&lt;version&gt;</span>${jmh.version}<span class="nt">&lt;/version&gt;</span>
+    <span class="nt">&lt;/dependency&gt;</span>
+    <span class="nt">&lt;dependency&gt;</span>
+        <span class="nt">&lt;groupId&gt;</span>org.openjdk.jmh<span class="nt">&lt;/groupId&gt;</span>
+        <span class="nt">&lt;artifactId&gt;</span>jmh-generator-annprocess<span class="nt">&lt;/artifactId&gt;</span>
+        <span class="nt">&lt;version&gt;</span>${jmh.version}<span class="nt">&lt;/version&gt;</span>
+    <span class="nt">&lt;/dependency&gt;</span>
+<span class="nt">&lt;/dependencies&gt;</span>
+</code></pre></div></div>
+
+<hr />
+<p><br /></p>
+
+<p><strong>@Benchmark</strong>
+<br /></p>
+
+<ul>
+  <li><strong>Mode.Throughput</strong> : 시간당 처리량 측정</li>
+  <li><strong>Mode.AverageTime</strong> : 평균 실행 시간 측정</li>
+  <li><strong>Mode.SampleTime</strong> : 실행 시간 샘플링 측정</li>
+  <li><strong>Mode.SingleShotTime</strong> : 단일 실행 시간 측정</li>
+  <li><strong>Mode.All</strong> : 모든 시간 측정</li>
+</ul>
+
+<hr />
+<p><br /></p>
+
+<p><strong>@OutputTimeUnit</strong>
+<br /></p>
+
+<ul>
+  <li><strong>TimeUnit.NANOSECONDS</strong> : 나노</li>
+  <li><strong>TimeUnit.MICROSECONDS</strong> : 마이크로</li>
+  <li><strong>TimeUnit.MILLISECONDS</strong> : 밀리</li>
+  <li><strong>TimeUnit.SECONDS</strong> : 초</li>
+  <li><strong>TimeUnit.MINUTES</strong> : 분</li>
+  <li><strong>TimeUnit.HOURS</strong> : 시간</li>
+  <li><strong>TimeUnit.DAYS</strong> : 일</li>
+</ul>
+
+<hr />
+<p><br /></p>
+
+<p><strong>@State</strong>
+<br /></p>
+
+<ul>
+  <li><strong>Scope.Benchmark</strong> : 벤치마크 전체에서 공유</li>
+  <li><strong>Scope.Thread</strong> : 각 스레드마다 별도로 생성. 멀티스레드 환경에서 안전</li>
+  <li><strong>Scope.Group</strong> : 벤치마크 실행 그룹에서 공유</li>
+</ul>
+
+<hr />
+<p><br /></p>
+
+<p><strong>@Setup</strong>
+<br /></p>
+
+<ul>
+  <li><strong>Level.Trial</strong> : 벤치마크 전체에서 한 번만 실행</li>
+  <li><strong>Level.Iteration</strong> : 벤치마크 반복마다 실행</li>
+  <li><strong>Level.Invocation</strong> : 각 메서드 호출마다 실행</li>
+</ul>
+
+<hr />
+<p><br /></p>
+
+<p><strong>@TearDown</strong>
+<br /></p>
+
+<ul>
+  <li><strong>Scope.Benchmark</strong> : 벤치마크 전체에서 공유</li>
+  <li><strong>Scope.Thread</strong> : 각 스레드마다 별도로 생성. 멀티스레드 환경에서 안전</li>
+  <li><strong>Scope.Group</strong> : 벤치마크 실행 그룹에서 공유</li>
+</ul>
+
+<hr />
+<p><br /></p>
+
+<p><strong>예제</strong></p>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;dependency&gt;</span>
+    <span class="nt">&lt;groupId&gt;</span>org.openjdk.jmh<span class="nt">&lt;/groupId&gt;</span>
+    <span class="nt">&lt;artifactId&gt;</span>jmh-core<span class="nt">&lt;/artifactId&gt;</span>
+    <span class="nt">&lt;version&gt;</span>1.19<span class="nt">&lt;/version&gt;</span>
+<span class="nt">&lt;/dependency&gt;</span>
+<span class="nt">&lt;dependency&gt;</span>
+    <span class="nt">&lt;groupId&gt;</span>org.openjdk.jmh<span class="nt">&lt;/groupId&gt;</span>
+    <span class="nt">&lt;artifactId&gt;</span>jmh-generator-annprocess<span class="nt">&lt;/artifactId&gt;</span>
+    <span class="nt">&lt;version&gt;</span>1.19<span class="nt">&lt;/version&gt;</span>
+<span class="nt">&lt;/dependency&gt;</span>
+</code></pre></div></div>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@State</span><span class="o">(</span><span class="nc">Scope</span><span class="o">.</span><span class="na">Benchmark</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">StreamBenchmark</span> <span class="o">{</span>
+
+    <span class="kd">private</span> <span class="nc">ForkJoinPool</span> <span class="n">forkJoinPool</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ForkJoinPool</span><span class="o">(</span><span class="mi">10</span><span class="o">);</span>
+
+    <span class="kd">final</span> <span class="nc">HashSet</span><span class="o">&lt;</span><span class="nc">PersonDTO</span><span class="o">&gt;</span> <span class="n">personSet</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">HashSet</span><span class="o">&lt;&gt;();</span>
+    <span class="kd">final</span> <span class="nc">HashSet</span><span class="o">&lt;</span><span class="nc">PersonSession</span><span class="o">&gt;</span> <span class="n">streamSet</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">HashSet</span><span class="o">&lt;&gt;();</span>
+    <span class="kd">final</span> <span class="nc">HashSet</span><span class="o">&lt;</span><span class="nc">PersonSession</span><span class="o">&gt;</span> <span class="n">parallelStreamSet</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">HashSet</span><span class="o">&lt;&gt;();</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">Options</span> <span class="n">opt</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">OptionsBuilder</span><span class="o">()</span>
+            <span class="o">.</span><span class="na">include</span><span class="o">(</span><span class="nc">StreamBenchmark</span><span class="o">.</span><span class="na">class</span><span class="o">.</span><span class="na">getSimpleName</span><span class="o">())</span>
+            <span class="o">.</span><span class="na">warmupIterations</span><span class="o">(</span><span class="mi">5</span><span class="o">)</span>            <span class="c1">// JVM warm-up 반복 횟수</span>
+            <span class="o">.</span><span class="na">measurementIterations</span><span class="o">(</span><span class="mi">10</span><span class="o">)</span>      <span class="c1">// warm-up 이후 실제 실행 횟수</span>
+            <span class="o">.</span><span class="na">fork</span><span class="o">(</span><span class="mi">1</span><span class="o">)</span>                        <span class="c1">// 하나의 JVM 에서 실행 횟수</span>
+            <span class="o">.</span><span class="na">thread</span><span class="o">(</span><span class="mi">2</span><span class="o">)</span>                      <span class="c1">// 사용할 스레드 수</span>
+            <span class="o">.</span><span class="na">build</span><span class="o">();</span>
+        <span class="k">new</span> <span class="nf">Runner</span><span class="o">(</span><span class="n">opt</span><span class="o">).</span><span class="na">run</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Benchmark</span>
+    <span class="nd">@BenchmarkMode</span><span class="o">(</span><span class="nc">Mode</span><span class="o">.</span><span class="na">AverageTime</span><span class="o">)</span>
+    <span class="nd">@OutputTimeUnit</span><span class="o">(</span><span class="nc">TimeUnit</span><span class="o">.</span><span class="na">MILLISECONDS</span><span class="o">)</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">streamTest</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">personSet</span><span class="o">.</span><span class="na">stream</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">map</span><span class="o">(</span><span class="nl">PersonSession:</span><span class="o">:</span><span class="n">from</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">collect</span><span class="o">(</span><span class="nc">Collectors</span><span class="o">.</span><span class="na">toCollection</span><span class="o">(</span><span class="nl">HashSet:</span><span class="o">:</span><span class="k">new</span><span class="o">));</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Benchmark</span>
+    <span class="nd">@BenchmarkMode</span><span class="o">(</span><span class="nc">Mode</span><span class="o">.</span><span class="na">AverageTime</span><span class="o">)</span>
+    <span class="nd">@OutputTimeUnit</span><span class="o">(</span><span class="nc">TimeUnit</span><span class="o">.</span><span class="na">MILLISECONDS</span><span class="o">)</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">parallelStreamTest1</span><span class="o">(){</span>
+        <span class="n">forkJoinPool</span><span class="o">.</span><span class="na">submit</span><span class="o">(()</span> <span class="o">-&gt;</span> <span class="o">{</span>
+            <span class="n">personSet</span><span class="o">.</span><span class="na">parallelStream</span><span class="o">()</span>
+                    <span class="o">.</span><span class="na">map</span><span class="o">(</span><span class="nl">PersonSession:</span><span class="o">:</span><span class="n">from</span><span class="o">)</span>
+                    <span class="o">.</span><span class="na">collect</span><span class="o">(</span><span class="nc">Collectors</span><span class="o">.</span><span class="na">toCollection</span><span class="o">(</span><span class="nl">HashSet:</span><span class="o">:</span><span class="k">new</span><span class="o">));</span>
+        <span class="o">});</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Benchmark</span>
+    <span class="nd">@BenchmarkMode</span><span class="o">(</span><span class="nc">Mode</span><span class="o">.</span><span class="na">AverageTime</span><span class="o">)</span>
+    <span class="nd">@OutputTimeUnit</span><span class="o">(</span><span class="nc">TimeUnit</span><span class="o">.</span><span class="na">MILLISECONDS</span><span class="o">)</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">parallelStreamTest2</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">personSet</span><span class="o">.</span><span class="na">parallelStream</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">map</span><span class="o">(</span><span class="nl">PersonSession:</span><span class="o">:</span><span class="n">from</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">collect</span><span class="o">(</span><span class="nc">Collectors</span><span class="o">.</span><span class="na">toCollection</span><span class="o">(</span><span class="nl">HashSet:</span><span class="o">:</span><span class="k">new</span><span class="o">));</span>
+    <span class="o">}</span>
+
+    <span class="c1">// 사전 셋업</span>
+    <span class="nd">@Setup</span><span class="o">(</span><span class="nc">Level</span><span class="o">.</span><span class="na">Trial</span><span class="o">)</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setup</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">IntStream</span><span class="o">.</span><span class="na">range</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="mi">2001</span><span class="o">).</span><span class="na">forEach</span><span class="o">(</span><span class="n">i</span> <span class="o">-&gt;</span> <span class="o">{</span>
+            <span class="nc">PersonDTO</span> <span class="n">personDTO</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">PersonDTO</span><span class="o">();</span>
+            <span class="n">personDTO</span><span class="o">.</span><span class="na">setName</span><span class="o">(</span><span class="s">"abc"</span><span class="o">);</span>
+            <span class="n">personDTO</span><span class="o">.</span><span class="na">setAge</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>
+            <span class="n">personSet</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">personDTO</span><span class="o">);</span>
+        <span class="o">});</span>
+    <span class="o">}</span>
+
+    <span class="c1">// pool 종료</span>
+    <span class="nd">@TearDown</span><span class="o">(</span><span class="nc">Level</span><span class="o">.</span><span class="na">Trial</span><span class="o">)</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">tearDown</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">forkJoinPool</span><span class="o">.</span><span class="na">shutdown</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Getter</span>
+    <span class="nd">@Setter</span>
+    <span class="nd">@EqualsAndHashCode</span>
+    <span class="kd">static</span> <span class="kd">class</span> <span class="nc">PersonDTO</span> <span class="o">{</span>
+        <span class="kd">private</span> <span class="nc">String</span> <span class="n">name</span><span class="o">;</span>
+        <span class="kd">private</span> <span class="kt">int</span> <span class="n">age</span><span class="o">;</span>
+    <span class="o">}</span>
+
+<span class="o">}</span>
+</code></pre></div></div>
+<p><br />
+<strong>결과</strong>
+<br /></p>
+
+<p><img src="/images/2021-05-10-first-posting/JMH.png" alt="이미지" /></p>
+
+<p><br />
+<br />
+<br />
+<br /></p>
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#jmh" class="page__taxonomy-item" rel="tag">JMH</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#til" class="page__taxonomy-item" rel="tag">TIL</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2023-03-02T00:00:00+09:00">2023-03-02</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Performance+Test%20http%3A%2F%2Flocalhost%3A4000%2Ftil%2FPerformanceTest%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Ftil%2FPerformanceTest%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Ftil%2FPerformanceTest%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/til/Test1/" class="pagination--pager" title="Test
+">이전</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">다음</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">참고</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/til/Test1/" rel="permalink">Test
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-02-23T00:00:00+09:00">2023-02-23</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          최대 1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/til/Stream1/" rel="permalink">Stream
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-02-23T00:00:00+09:00">2023-02-23</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          2 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/til/Spring1/" rel="permalink">Spring Basic
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-02-21T00:00:00+09:00">2023-02-21</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          3 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/til/%EB%94%94%EC%9E%90%EC%9D%B8%ED%8C%A8%ED%84%B41/" rel="permalink">Design Pattern
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-02-16T00:00:00+09:00">2023-02-16</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          14 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://github.com/NNIIE" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 NNIIE. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "http://localhost:4000/til/PerformanceTest/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/til/PerformanceTest"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://nniie.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>
