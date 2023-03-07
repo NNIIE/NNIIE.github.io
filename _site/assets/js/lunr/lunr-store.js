@@ -101,7 +101,7 @@ var store = [{
         "url": "/til/%EB%94%94%EC%9E%90%EC%9D%B8%ED%8C%A8%ED%84%B41/",
         "teaser": null
       },{
-        "title": "Spring Basic",
+        "title": "Spring",
         "excerpt":"IoC 컨테이너 IoC(제어의 역전) - 객체간의 결합도를 줄이기 위한 디자인 패턴중의 하나이다. IoC 컨테이너는 객체들의 생명주기와 객체간의 의존성을 관리한다. IoC 컨테이너는 BeanFactory 인터페이스를 구현한 ApplicationContext 를 통해 사용된다. ApplicationContext 는 빈 이라고 불리는 객체들의 라이프사이클, 빈 간의 의존성 등을 관리하며 필요한 시점에 빈을 제공해준다. 한마디로 객체의 생성과 관리를 전적으로 스프링...","categories": ["TIL"],
         "tags": ["IoC컨테이너","Bean","DI","AOP","PSA"],
         "url": "/til/Spring1/",
@@ -123,5 +123,17 @@ var store = [{
         "excerpt":"JMH 이런저런 요구사항에서 내가 작성한 코드가 효율적일까? 라는 의문이 생기기 마련이다. 작성한 로직을 요구사항에 맞춰 Big-O 표기법으로 계산해 시간복잡도를 계산할 수도 있고, 운영환경에서 Stress Test 를 진행하여 성능을 측정할 수도 있지만 작은 규모의 코드조각에 대한 측정을 더 빠르고 간단하게 사용할 수 있는 방법은 JMH 를 사용하는 것이다. JMH 는 JVM...","categories": ["TIL"],
         "tags": ["JMH"],
         "url": "/til/PerformanceTest/",
+        "teaser": null
+      },{
+        "title": "Spring Basic",
+        "excerpt":"      IoC 컨테이너   @Autowire   @Component / @ComponentScan   빈 스코프   Environment - 프로파일 / 프로퍼티   MessageSource   ApplicationEventPublisher   ResourceLoader   Resource 추상화 / Validation 추상화   데이터바인딩 추상화 - PropertyEditor / Converter 와 Fomatter   spEL (스프링 Expression Language)   프록시기반 AOP   @AOP   Null - Safety            ","categories": ["TIL"],
+        "tags": [],
+        "url": "/til/Spring_Basic/",
+        "teaser": null
+      },{
+        "title": "Spring MVC",
+        "excerpt":"스프링 MVC 서블릿 서블릿 리스터 / 필터 스프링 IoC 컨테이너 연동 스프링 MVC 연동 DispatcherServlet 스프링 MVC 구성요소 스프링 MVC 동작 원리 스프링 MVC 빈 설정 @EnableWebMVC 도메인 클래스 컨버터 핸들러 인터셉터 리소스 핸들러 HTTP 메시지 컨버터 HTTP 메시지 컨버터 JSON HTTP 메시지 컨버터 XML WebMVC Configurer 스프링 MVC 활용...","categories": ["TIL"],
+        "tags": [],
+        "url": "/til/Spring_MVC/",
         "teaser": null
       }]
