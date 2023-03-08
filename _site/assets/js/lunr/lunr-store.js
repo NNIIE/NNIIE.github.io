@@ -132,7 +132,7 @@ var store = [{
         "teaser": null
       },{
         "title": "Spring MVC",
-        "excerpt":"스프링 MVC 서블릿 서블릿 리스터 / 필터 스프링 IoC 컨테이너 연동 스프링 MVC 연동 DispatcherServlet 스프링 MVC 구성요소 스프링 MVC 동작 원리 스프링 MVC 빈 설정 @EnableWebMVC 도메인 클래스 컨버터 핸들러 인터셉터 리소스 핸들러 HTTP 메시지 컨버터 HTTP 메시지 컨버터 JSON HTTP 메시지 컨버터 XML WebMVC Configurer 스프링 MVC 활용...","categories": ["TIL"],
+        "excerpt":"서블릿 HTTP 요청에 대한 동적인 처리를 담당 서블릿 컨테이너를 통해 실행 멀티스레드 환경에서 안전하게 동작 서블릿 리스너 / 필터 리스너 웹 어플리케이션이 시작 / 종료 될 때 이벤트를 처리하는 인터페이스 web.xml 파일에서 설정할 수 있으며, 해당 이벤트가 발생할 때마다 서블릿 리스너가 호출된다 웹 어플리케이션 시작 / 종료 때의 이벤트 시작할...","categories": ["TIL"],
         "tags": [],
         "url": "/til/Spring_MVC/",
         "teaser": null
