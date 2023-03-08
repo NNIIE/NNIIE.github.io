@@ -126,7 +126,7 @@ var store = [{
         "teaser": null
       },{
         "title": "Spring Basic",
-        "excerpt":"      IoC 컨테이너   @Autowire   @Component / @ComponentScan   빈 스코프   Environment - 프로파일 / 프로퍼티   MessageSource   ApplicationEventPublisher   ResourceLoader   Resource 추상화 / Validation 추상화   데이터바인딩 추상화 - PropertyEditor / Converter 와 Fomatter   spEL (스프링 Expression Language)   프록시기반 AOP   @AOP   Null - Safety            ","categories": ["TIL"],
+        "excerpt":"IoC 컨테이너 IoC 는 객체간의 의존성 관리를 프레임워크가 대신 수행하는 디자인 패턴이다. IoC 컨테이너 는 스프링 프레임워크의 핵심 기능 중 하나이다. 객체를 직접 생성하는 대신 객체를 생성하고 관리하는 책임을 프레임워크에게 위임하는걸 의미한다. 객체의 라이프사이클 및 관리의 간소화 개발자가 아닌 프레임워크가 수행 객체간의 결합도 감소 IoC 가 의존성을 자동으로 주입 @Autowire...","categories": ["TIL"],
         "tags": [],
         "url": "/til/Spring_Basic/",
         "teaser": null

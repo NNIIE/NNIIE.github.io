@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-03-07T17:04:07+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">Spring MVC</title><link href="http://localhost:4000/til/Spring_MVC/" rel="alternate" type="text/html" title="Spring MVC" /><published>2023-03-07T00:00:00+09:00</published><updated>2023-03-07T00:00:00+09:00</updated><id>http://localhost:4000/til/Spring_MVC</id><content type="html" xml:base="http://localhost:4000/til/Spring_MVC/"><![CDATA[<p><br /><br /><br /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-03-08T19:28:11+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">Spring MVC</title><link href="http://localhost:4000/til/Spring_MVC/" rel="alternate" type="text/html" title="Spring MVC" /><published>2023-03-07T00:00:00+09:00</published><updated>2023-03-07T00:00:00+09:00</updated><id>http://localhost:4000/til/Spring_MVC</id><content type="html" xml:base="http://localhost:4000/til/Spring_MVC/"><![CDATA[<p><br /><br /><br /></p>
 
 <h1 id="스프링-mvc">스프링 MVC</h1>
 
@@ -69,32 +69,318 @@
 <br /></p>]]></content><author><name>NNIIE</name></author><category term="TIL" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Spring Basic</title><link href="http://localhost:4000/til/Spring_Basic/" rel="alternate" type="text/html" title="Spring Basic" /><published>2023-03-04T00:00:00+09:00</published><updated>2023-03-04T00:00:00+09:00</updated><id>http://localhost:4000/til/Spring_Basic</id><content type="html" xml:base="http://localhost:4000/til/Spring_Basic/"><![CDATA[<p><br /><br /><br /></p>
 
 <h1 id="ioc-컨테이너">IoC 컨테이너</h1>
+<p><strong>IoC</strong> 는 객체간의 의존성 관리를 프레임워크가 대신 수행하는 디자인 패턴이다.
+<br />
+<strong>IoC 컨테이너</strong> 는 스프링 프레임워크의 핵심 기능 중 하나이다.
+<br />
+객체를 직접 생성하는 대신 객체를 생성하고 관리하는 책임을 프레임워크에게 위임하는걸 의미한다.</p>
+<ul>
+  <li>객체의 라이프사이클 및 관리의 간소화
+    <ul>
+      <li>개발자가 아닌 프레임워크가 수행</li>
+    </ul>
+  </li>
+  <li>객체간의 결합도 감소
+    <ul>
+      <li>IoC 가 의존성을 자동으로 주입</li>
+    </ul>
+  </li>
+</ul>
+
+<p><br />
+<br />
+<br />
+<br /></p>
 
 <h1 id="autowire">@Autowire</h1>
+<p>의존성 주입을 자동으로 처리하기 위한 어노테이션
+<br />
+적용된 필드, 생성자, 메서드 파라미터에 해당하는 객체를 스프링이 자동으로 생성하고
+<br />
+필요한 의존성을 주입하여 객체간의 결합도를 줄인다.
+<br />
+기본적으로 타입을 이용한 의존성 주입을 수행한다.</p>
 
-<h1 id="component--componentscan">@Component / @ComponentScan</h1>
+<p><br /></p>
+
+<p><strong>동작방식</strong></p>
+<ul>
+  <li>스프링이 <strong>@Autowired</strong> 가 선언된 곳의 클래스의 빈 객체를 생성</li>
+  <li>스프링은 생성된 빈 객체를 검색해 @Autowired 어노테이션이 선언된 필드, 생성자 등을 탐색</li>
+  <li><strong>@Autowired</strong> 어노테이션이 적용된 위치에서 필요한 의존성을 주입
+    <ul>
+      <li>의존성은 자동으로 생성된 빈 객체 중 해당 타입과 일치하는 객체를 찾아서 주입</li>
+    </ul>
+  </li>
+  <li>의존성 주입이 완료된 빈 객체가 스프링 컨테이너에 등록되어 관리됨</li>
+  <li>컴파일 타임에 의존성이 결정된다.</li>
+</ul>
+
+<p><br />
+<br />
+<br />
+<br /></p>
+
+<h1 id="component">@Component</h1>
+<p>해당 클래스가 스프링 빈으로 등록되어야 함을 나타낸다.
+<br />
+스프링 컨테이너는 <strong>@Component</strong> 가 선언된 클래스를 스캔해 해당 클래스를 스프링
+<br />
+빈으로 등록한다. 이를 통해 객체의 라이프사이클에 대한 코드를 작성하지 않아도 된다.</p>
+
+<p><br /></p>
+
+<h1 id="componentscan">@ComponentScan</h1>
+<p>스프링 컨테이너는 <strong>@ComponentScan</strong> 가 선언된 패키지를 스캔하여 해당 패키지에
+속한 클래스 중 <strong>@Component</strong> 가 선언된 클래스를 찾아 빈으로 등록한다.</p>
+
+<p><br />
+<br />
+<br />
+<br /></p>
 
 <h1 id="빈-스코프">빈 스코프</h1>
+<p>빈의 라이프사이클 범위이다.</p>
 
-<h1 id="environment---프로파일--프로퍼티">Environment - 프로파일 / 프로퍼티</h1>
+<ul>
+  <li><strong>Singleton</strong>
+    <ul>
+      <li>스프링에서 기본적으로 제공하는 스코프로, 애플리케이션 전체에서 하나의 인스턴스만 생성, 스프링 컨테이너가 생성하고 초기화한 후, 컨테이너가 종료될 때까지 유지된다.
+        <ul>
+          <li>하나의 인스턴스만 생성되기 때문에 메모리, 성능에 효율적이다.</li>
+          <li>빈 상태를 공유할 수 있으므로 멀티스레드 환경에서 주의가 필요하다.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<ul>
+  <li><strong>Prototype</strong>
+    <ul>
+      <li>각각의 요청마다 새로운 인스턴스를 생성, 해당 요청이 끝날 때까지 유지되며, 이후에는 소멸
+        <ul>
+          <li>각각의 요청마다 새로운 인스턴스를 생성하기 때문에 상태를 공유하지 않는다.</li>
+          <li>메모리 사용량, 객체 생성 비용이 높아질 수 있음</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<ul>
+  <li><strong>Request</strong>
+    <ul>
+      <li>웹 애플리케이션에서 HTTP 요청마다 새로운 인스턴스를 생성, 해당 요청이 처리될 때까지 유지되며, 이후에는 소멸
+        <ul>
+          <li>각각의 요청마다 새로운 인스턴스를 생성하기 때문에 상태를 공유하지 않는다.</li>
+          <li>메모리 사용량, 객체 생성 비용이 높아질 수 있음</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<ul>
+  <li><strong>Session</strong>
+    <ul>
+      <li>웹 애플리케이션에서 HTTP 세션마다 새로운 인스턴스를 생성, 해당 세션이 유지되는 동안에만 유지되며, 이후에는 소멸
+        <ul>
+          <li>각각의 HTTP 세션 마다 새로운 인스턴스를 생성하기 때문에 상태를 공유하지 않는다.</li>
+          <li>메모리 사용량, 객체 생성 비용이 높아질 수 있음</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<ul>
+  <li><strong>Global session</strong>
+    <ul>
+      <li>전역 세션마다 새로운 인스턴스를 생성, 해당 전역 세션이 유지되는 동안에만 유지되며, 이후에는 소멸된다.
+        <ul>
+          <li>ServletContext 마다 새로운 인스턴스를 생성하기 때문에 상태를 공유하지 않는다.</li>
+          <li>메모리 사용량, 객체 생성 비용이 높아질 수 있음</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<ul>
+  <li><strong>Application</strong>
+    <ul>
+      <li>웹 애플리케이션에서 ServletContext마다 새로운 인스턴스를 생성, 웹 애플리케이션이 유지되는 동안에만 유지되며, 이후에는 소멸
+        <ul>
+          <li>각각의 요청마다 새로운 인스턴스를 생성하기 때문에 상태를 공유하지 않는다.</li>
+          <li>메모리 사용량, 객체 생성 비용이 높아질 수 있음</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<ul>
+  <li><strong>WebSocket</strong>
+    <ul>
+      <li>WebSocket 세션이 시작될 때마다 새로운 인스턴스를 생성, WebSocket 세션이 유지되는 동안에만 유지되며, 이후에는 소멸</li>
+    </ul>
+  </li>
+</ul>
+
+<p><br />
+<br />
+<br />
+<br /></p>
+
+<h1 id="environment">Environment</h1>
+<p>스프링 어플리케이션에서 사용되는 환경변수들을 캡슐화한 인터페이스
+<br />
+어플리케이션의 구성정보들을 다양한 환경에 맞춰 쉽게 관리할 수 있다.</p>
+<ul>
+  <li><strong>Profile</strong>
+    <ul>
+      <li>@Profile 어노테이션으로 설정하거나 .properties 파일을 사용해</li>
+      <li>프로파일이 지정된 빈은 해당 프로파일이 활성화 된 경우에만 사용 가능</li>
+    </ul>
+  </li>
+  <li><strong>Property</strong>
+    <ul>
+      <li>설정 정보를 담은 키-값</li>
+      <li>.properties / .yml 파일에 설정</li>
+      <li>@Value 어노테이션을 사용해 프로퍼티를 주입받음</li>
+    </ul>
+  </li>
+</ul>
+
+<p><br />
+<br />
+<br />
+<br /></p>
 
 <h1 id="messagesource">MessageSource</h1>
+<p>스프링 어플리케이션에서 다국어 지원을 위한 인터페이스</p>
+
+<p><br />
+<br />
+<br />
+<br /></p>
 
 <h1 id="applicationeventpublisher">ApplicationEventPublisher</h1>
+<p>이벤트를 발생시키는 인터페이스
+<br />
+ApplicationEventPublisher 를 주입받아 publishEvent() 메서드로 이벤트를 발생시키고
+<br />
+@EventListener 어노테이션으로 이벤트 발생시 해당 메서드가 자동으로 호출되게 한다.</p>
+
+<p><br />
+<br />
+<br />
+<br /></p>
 
 <h1 id="resourceloader">ResourceLoader</h1>
+<p>어플리케이션에서 리소스를 로드하는 인터페이스</p>
+<ul>
+  <li><strong>Resource</strong>
+    <ul>
+      <li>파일시스템, 클래스패스, URL 등 의 리소스를 추상화한 인터페이스</li>
+      <li>리소스를 추상화 하여 일관된 방식으로 처리할 수 있다.</li>
+    </ul>
+  </li>
+  <li><strong>Validation</strong>
+    <ul>
+      <li>유효성 검사를 위한 인터페이스</li>
+      <li>실패 시 에러메시지 전달</li>
+    </ul>
+  </li>
+</ul>
 
-<h1 id="resource-추상화--validation-추상화">Resource 추상화 / Validation 추상화</h1>
+<p><br />
+<br />
+<br />
+<br /></p>
 
 <h1 id="데이터바인딩-추상화---propertyeditor--converter-와-fomatter">데이터바인딩 추상화 - PropertyEditor / Converter 와 Fomatter</h1>
+<p>웹 요청 파라미터를 자바 객체에 바인딩 하는 인터페이스</p>
+<ul>
+  <li><strong>PropertyEditor</strong>
+    <ul>
+      <li>문자열과 객체간의 변환을 수행하는 인터페이스</li>
+      <li>문자열 값을 읽어와 자바 객체로 변환하거나, 자바객체를 문자열로 변환하여 저장</li>
+      <li><strong>Converter</strong>
+        <ul>
+          <li>문자열과 객체간의 일반적인 변환을 처리</li>
+        </ul>
+      </li>
+      <li><strong>Fomatter</strong>
+        <ul>
+          <li>특정 타입의 변환을 처리</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p><br />
+<br />
+<br />
+<br /></p>
 
 <h1 id="spel-스프링-expression-language">spEL (스프링 Expression Language)</h1>
+<p>문자열 템플릿을 사용해 런타임에 객체 그래프를 조작하는 기능을 제공하는 표현 언어
+<br />
+스프링 빈 구성, XML 구성 파일, 애노테이션 구성 등에서 사용할 수 있는 다양한 형태의 표현식을
+<br />
+사용할 수 있고 이를 통해 스프링 애플리케이션을 보다 유연하고 동적으로 만들 수 있다.</p>
 
-<h1 id="프록시기반-aop">프록시기반 AOP</h1>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;bean</span> <span class="na">id=</span><span class="s">"myBean"</span> <span class="na">class=</span><span class="s">"com.example.MyBean"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">"message"</span> <span class="na">value=</span><span class="s">"#{'Hello, ' + systemProperties['user.name']}"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/bean&gt;</span>
+</code></pre></div></div>
 
-<h1 id="aop">@AOP</h1>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Component</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">MyBean</span> <span class="o">{</span>
+    <span class="nd">@Value</span><span class="o">(</span><span class="s">"#{systemProperties['user.name']}"</span><span class="o">)</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">userName</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><br />
+<br />
+<br />
+<br /></p>
 
 <h1 id="null---safety">Null - Safety</h1>
+<p>스프링은 <strong>Null - Safety</strong> 를 지원하는 프레임워크 이다.</p>
+<ul>
+  <li><strong>Optional</strong>
+    <ul>
+      <li>null을 반환할 가능성이 있는 메서드를 호출할 때 null 체크 없이 처리 가능</li>
+    </ul>
+  </li>
+  <li><strong>@NonNull</strong>
+    <ul>
+      <li>어노테이션 사용으로 매개변수, 필드, 반환값 등에 null 이 들어오지 않게 강제</li>
+    </ul>
+  </li>
+  <li><strong>Assert</strong>
+    <ul>
+      <li>런타임중에 조건을 검사해 예외를 발생시킴</li>
+    </ul>
+  </li>
+</ul>
 
 <p><br />
 <br />
