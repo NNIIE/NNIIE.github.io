@@ -139,6 +139,26 @@ web.xml 파일에서 설정할 수 있으며, 필터 체인에서 여러 필터�
 
 # 스프링 MVC 동작 원리
 
+* **DispatcherServlet**
+    * 클라이언트로부터 요청이 들어오면, DispatcherServlet이 해당 요청을 받는다.
+    * DispatcherServlet은 요청을 처리하기 위해 다양한 컴포넌트들과 상호작용하며, 요청과 응답을 처리하는데 필요한 기능들을 제공
+* **HandlerMapping**
+    * HandlerMapping을 통해 요청 URL에 해당하는 Controller를 찾는다.
+    * HandlerMapping은 요청 URL을 컨트롤러 객체와 매핑시켜주는 역할을 함
+* **Controller**
+    * 요청에 대한 작업을 수행하고, Model 객체에 결과 데이터를 담아 DispatcherServlet으로 반환
+    * @RestController 어노테이션을 사용하면 RESTful API 를 만들 수 있다.
+* **Model and View**
+    * Controller에서 반환된 Model 객체는 ViewResolver를 통해 요청 URL에 매핑되는 View로 전달
+    * View는 JSP, Thymeleaf, Freemarker 등 다양한 템플릿 엔진을 사용할 수 있다.
+* **Interceptor**
+    * DispatcherServlet과 Controller 사이에서 요청 전/후에 추가적인 로직을 수행할 수 있는 기능
+        * 인증, 로깅, 캐싱 등 다양한 기능을 구현 가능
+    * 스프링에서는 HandlerInterceptor 인터페이스를 구현하여 Interceptor를 만들 수 있다.
+* **Exception Handling**
+    * 예외가 발생하면, DispatcherServlet은 등록된 ExceptionHandlerExceptionResolver를 통해 예외를 처리할 수 있는 HandlerExceptionResolver를 찾는다.
+    * HandlerExceptionResolver는 예외 처리를 위한 컨트롤러를 찾아 예외를 처리하고, ViewResolver를 통해 예외에 대한 적절한 View를 선택한다.
+
 <br>
 <br>
 <br>
@@ -152,7 +172,7 @@ web.xml 파일에서 설정할 수 있으며, 필터 체인에서 여러 필터�
 <br>
 
 # @EnableWebMVC
-
+스프링에서 사용하는 스프링부트의 @SpringBootApplication 같은 기능
 <br>
 <br>
 <br>
@@ -189,6 +209,22 @@ web.xml 파일에서 설정할 수 있으며, 필터 체인에서 여러 필터�
 <br>
 
 # WebMVC Configurer
+스프링 MVC를 사용하는 웹 어플리케이션에서 웹 기능을 구성하는 데 사용되는 인터페이스
+* **Interceptor 등록**
+    * WebMvcConfigurer를 사용하여 스프링 MVC Interceptor를 등록할 수 있다. 
+    * 이를 통해 요청 전/후에 추가적인 작업을 수행 가능
+* **View Controller 등록**
+    * View Controller는 특정 URL을 특정 View에 매핑할 수 있다. 
+    * WebMvcConfigurer를 사용하여 View Controller를 등록 가능
+* **Resource Handler 등록**
+    * Resource Handler는 정적 자원 (이미지, CSS, 자바스크립트 등)에 대한 요청을 처리. 
+    * WebMvcConfigurer를 사용하여 Resource Handler를 등록 가능
+* **Formatter 등록**
+    * Formatter는 특정 타입의 값을 원하는 형식으로 변환하는 데 사용
+    * WebMvcConfigurer를 사용하여 Formatter를 등록 가능
+* **Message Converter 등록**
+    * Message Converter는 요청 및 응답 본문에 대한 자동 변환을 처리
+    * WebMvcConfigurer를 사용하여 Message Converter를 등록 가능
 
 <br>
 <br>
@@ -230,6 +266,27 @@ web.xml 파일에서 설정할 수 있으며, 필터 체인에서 여러 필터�
 <br>
 
 # @initBinder
+컨트롤러에서 사용하는 매개변수를 변환할 때 사용되는 메소드를 정의하는 데 사용되는 어노테이션
+* 메서드 / 클래스 레벨에서 사용 가능
+* 컨트롤러 내에 선언된 메서드를 통해 요청 매개변수를 객체로 변환하는 로직을 구현할 수 있다.
+
+```java
+@Controller
+public class MyController {
+
+    @InitBinder
+    public void initBinder(WebDataBinder binder) {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        dateFormat.setLenient(false);
+        binder.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, false));
+    }
+
+    @GetMapping("/example")
+    public String example(Date date) {
+
+    }
+}
+```
 
 <br>
 <br>
@@ -237,6 +294,29 @@ web.xml 파일에서 설정할 수 있으며, 필터 체인에서 여러 필터�
 <br>
 
 # @ExceptionHandler
+예외 처리를 위해 사용되는 어노테이션
+<br>
+컨트롤러에서 예외가 발생했을 때, 예외 처리를 담당하는 메소드를 정의할 수 있다.
+<br>
+@ControllerAdvice 과 함께 사용되며, @ControllerAdvice rk 적용된 클래스 내에 @ExceptionHandler 를 사용하여
+<br>
+예외 처리 메소드를 정의한다. 예외 처리 메소드는 예외 객체를 매개변수로 받아 처리한다.
+* ExceptionHandler 을 사용하면, 예외 처리를 전체적으로 일괄 처리할 수 있다.
+* 또한, 예외 처리 로직을 별도의 클래스로 분리하여 관리할 수 있다.
+
+```java
+@ControllerAdvice
+public class GlobalExceptionHandler {
+
+    @ExceptionHandler(IllegalArgumentException.class)
+    public ModelAndView handleIllegalArgumentException(IllegalArgumentException ex) {
+        ModelAndView mav = new ModelAndView();
+        mav.addObject("errorMessage", "잘못된 입력입니다.");
+        mav.setViewName("error");
+        return mav;
+    }
+}
+```
 
 <br>
 <br>
@@ -244,6 +324,8 @@ web.xml 파일에서 설정할 수 있으며, 필터 체인에서 여러 필터�
 <br>
 
 # @ControllerAdvice
+스프링 MVC에서 예외 처리와 같은 공통 로직을 처리하는 데 사용되는 어노테이션
+* @ControllerAdvice 을 사용하면, 여러 컨트롤러에서 발생하는 예외를 중앙에서 처리할 수 있다.
 
 
 <br>
