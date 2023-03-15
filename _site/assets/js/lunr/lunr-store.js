@@ -136,4 +136,10 @@ var store = [{
         "tags": [],
         "url": "/til/Spring_MVC/",
         "teaser": null
+      },{
+        "title": "토비의 스프링 1",
+        "excerpt":"1장 1.1 ~ 1.5 DAO 예제를 차차 리팩토링 해나가는 과정이다. SOLID 원칙, 디자인패턴, 인터페이스, IoC 메서드로 DB Connection 에 대한 관심사의 분리 팩토리 메서드 적용 인터페이스 도입 스프링 적용 1.6 싱글톤 Application Context 는 싱글톤을 저장하고 관리하는 싱글톤 레지스트리 이기도 하다. 스프링은 빈 오브젝트를 기본값으로 모두 싱글톤으로 생성 (디자인패턴의 싱글톤...","categories": ["TIL"],
+        "tags": ["toby-spring"],
+        "url": "/til/%ED%86%A0%EB%B9%84%EC%9D%98%EC%8A%A4%ED%94%84%EB%A7%811/",
+        "teaser": null
       }]

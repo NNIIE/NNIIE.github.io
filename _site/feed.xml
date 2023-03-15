@@ -1,4 +1,53 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-03-08T21:50:36+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">Spring MVC</title><link href="http://localhost:4000/til/Spring_MVC/" rel="alternate" type="text/html" title="Spring MVC" /><published>2023-03-07T00:00:00+09:00</published><updated>2023-03-07T00:00:00+09:00</updated><id>http://localhost:4000/til/Spring_MVC</id><content type="html" xml:base="http://localhost:4000/til/Spring_MVC/"><![CDATA[<p><br /><br /><br /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-03-16T02:37:12+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">토비의 스프링 1</title><link href="http://localhost:4000/til/%ED%86%A0%EB%B9%84%EC%9D%98%EC%8A%A4%ED%94%84%EB%A7%811/" rel="alternate" type="text/html" title="토비의 스프링 1" /><published>2023-03-16T00:00:00+09:00</published><updated>2023-03-16T00:00:00+09:00</updated><id>http://localhost:4000/til/%ED%86%A0%EB%B9%84%EC%9D%98%EC%8A%A4%ED%94%84%EB%A7%811</id><content type="html" xml:base="http://localhost:4000/til/%ED%86%A0%EB%B9%84%EC%9D%98%EC%8A%A4%ED%94%84%EB%A7%811/"><![CDATA[<p><br /><br /><br /></p>
+
+<h1 id="1장">1장</h1>
+<h2 id="11--15">1.1 ~ 1.5</h2>
+<p>DAO 예제를 차차 리팩토링 해나가는 과정이다.
+<br />
+SOLID 원칙, 디자인패턴, 인터페이스, IoC
+<br /></p>
+
+<ol>
+  <li>메서드로 DB Connection 에 대한 관심사의 분리</li>
+  <li>팩토리 메서드 적용</li>
+  <li>인터페이스 도입</li>
+  <li>스프링 적용</li>
+</ol>
+
+<p><br /></p>
+
+<h2 id="16-싱글톤">1.6 싱글톤</h2>
+<ul>
+  <li><strong>Application Context 는 싱글톤을 저장하고 관리하는 싱글톤 레지스트리 이기도 하다.</strong></li>
+  <li><strong>스프링은 빈 오브젝트를 기본값으로 모두 싱글톤으로 생성 (디자인패턴의 싱글톤 패턴과는 구현방법이 다름)</strong>
+    <ul>
+      <li>스프링은 엔터프라이즈 서버환경에서 주로 사용</li>
+      <li>클라이언트 요청이 올때마다 각각의 오브젝트를 새로 생성하는건 매우 비효율적</li>
+    </ul>
+  </li>
+  <li><strong>싱글톤 패턴의 한계</strong>
+    <ul>
+      <li>private 생성자로 인한 상속 불가능</li>
+      <li>테스트 하기 어려움</li>
+      <li>멀티 JVM 환경에서 유일한 인스턴스가 보장되지 않음</li>
+    </ul>
+  </li>
+  <li><strong>싱글톤 레지스트리</strong>
+    <ul>
+      <li>생명주기, 관계설정, 사용등의 제어권을 컨테이너에게 넘김</li>
+      <li>덕분에 public 생성자를 가질 수 있음</li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="17-di">1.7 DI</h2>
+
+<p><br />
+<br />
+<br />
+<br /></p>]]></content><author><name>NNIIE</name></author><category term="TIL" /><category term="toby-spring" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Spring MVC</title><link href="http://localhost:4000/til/Spring_MVC/" rel="alternate" type="text/html" title="Spring MVC" /><published>2023-03-07T00:00:00+09:00</published><updated>2023-03-07T00:00:00+09:00</updated><id>http://localhost:4000/til/Spring_MVC</id><content type="html" xml:base="http://localhost:4000/til/Spring_MVC/"><![CDATA[<p><br /><br /><br /></p>
 
 <h1 id="서블릿">서블릿</h1>
 <ul>
@@ -958,7 +1007,106 @@ ApplicationEventPublisher 를 주입받아 publishEvent() 메서드로 이벤트
 <p><br />
 <br />
 <br />
-<br /></p>]]></content><author><name>NNIIE</name></author><category term="TIL" /><category term="JMH" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Stream</title><link href="http://localhost:4000/til/Stream1/" rel="alternate" type="text/html" title="Stream" /><published>2023-02-23T00:00:00+09:00</published><updated>2023-02-23T00:00:00+09:00</updated><id>http://localhost:4000/til/Stream1</id><content type="html" xml:base="http://localhost:4000/til/Stream1/"><![CDATA[<p><br /><br /><br /></p>
+<br /></p>]]></content><author><name>NNIIE</name></author><category term="TIL" /><category term="JMH" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Test</title><link href="http://localhost:4000/til/Test1/" rel="alternate" type="text/html" title="Test" /><published>2023-02-23T00:00:00+09:00</published><updated>2023-02-23T00:00:00+09:00</updated><id>http://localhost:4000/til/Test1</id><content type="html" xml:base="http://localhost:4000/til/Test1/"><![CDATA[<p><br /><br /><br /></p>
+
+<h1 id="테스트-피라미드">테스트 피라미드</h1>
+<p>마틴파울러의 테스트피라미드는 어플리케이션을 테스트 하는 방법 중 하나로 다양한 종류의 
+<br />
+테스트를 적절하게 조합하여 효율적인 테스트를 수행할 수 있도록 도와준다.</p>
+
+<p><br /></p>
+
+<h2 id="단위-테스트">단위 테스트</h2>
+<ul>
+  <li>가장 작은 단위인 모듈을 테스트 하는 단계</li>
+  <li>빠르고 자주 실행할 수 있으며, 주로 개발자들이 로직, 함수등을 검증한다.</li>
+  <li>어플리케이션의 다른부분과 <strong>독립적으로</strong> 수행할 수 있어야 한다.</li>
+  <li>마틴 파울러는 단위 테스트가 테스트 피라미드 중 가장많은 부분을 차지해야 한다고 말한다.</li>
+  <li>대표적인 도구로 <code class="language-plaintext highlighter-rouge">JUnit, Mockito</code> 등이 있다.</li>
+</ul>
+
+<p><br /></p>
+
+<ul>
+  <li><strong>코드 품질 개선</strong>
+    <ul>
+      <li>작은 단위의 코드블록에 대한 테스트로 버그를 미리 발견할 수 있다.</li>
+      <li>단위테스트 작성 시 코드를 더 객체지향적으로 작성할 수 있다.</li>
+    </ul>
+  </li>
+  <li><strong>리팩토링의 안전망</strong>
+    <ul>
+      <li>리팩토링을 안전하게 수행할 때 중요한 역할을 한다.</li>
+    </ul>
+  </li>
+  <li><strong>개발시간 단축</strong>
+    <ul>
+      <li>빠른 실행 시간으로 버그를 빠르게 발견하고 수정할 수 있다.</li>
+    </ul>
+  </li>
+  <li><strong>팀 혐업 개선</strong>
+    <ul>
+      <li>팀원들간의 코드통합을 용이하게 만든다.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="통합-테스트">통합 테스트</h2>
+<ul>
+  <li>여러 모듈이 상호작용하는 시스템을 테스트 하는 단계</li>
+  <li>단위 테스트보다 더 많은 리소스가 소요된다.</li>
+</ul>
+
+<p><br /></p>
+
+<ul>
+  <li><strong>여러 모듈들 간의 상호작용 확인</strong>
+    <ul>
+      <li>단위테스트가 개별적인 코드블록을 검증한다면, 통합테스트는 이들의 결합을 테스트한다.</li>
+    </ul>
+  </li>
+  <li><strong>문제발견 가능성 증가</strong>
+    <ul>
+      <li>단위테스트에서 발견하지 못한 결합되었을 때의 문제를 발견할 수 있다.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="인수-테스트">인수 테스트</h2>
+<ul>
+  <li>시스템 전체가 의도한 대로 동작하는지 테스트 하는 단계</li>
+  <li>사용자 관점에서 기능 및 비기능적 요구사항(성능, 보안)을 검증한다.</li>
+  <li>테스트 피라미드의 단계 중 가장 많은 리소스가 들어간다.</li>
+</ul>
+
+<p><br /></p>
+
+<ul>
+  <li><strong>사용자 관점에서의 검증</strong>
+    <ul>
+      <li>사용자가 경험하는것과 동일한 환경에서 검증할 수 있다.</li>
+    </ul>
+  </li>
+  <li><strong>요구사항 충족여부 확인</strong>
+    <ul>
+      <li>개발된 기능이 요구사항을 충족하는지 확인한다.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><br />
+<br />
+<br />
+<br /></p>
+
+<p><br />
+<br />
+<br />
+<br /></p>]]></content><author><name>NNIIE</name></author><category term="TIL" /><category term="테스트피라미드" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Stream</title><link href="http://localhost:4000/til/Stream1/" rel="alternate" type="text/html" title="Stream" /><published>2023-02-23T00:00:00+09:00</published><updated>2023-02-23T00:00:00+09:00</updated><id>http://localhost:4000/til/Stream1</id><content type="html" xml:base="http://localhost:4000/til/Stream1/"><![CDATA[<p><br /><br /><br /></p>
 
 <h1 id="stream">Stream</h1>
 <p><strong>Collection, Array</strong> 등의 데이터 소스를 함수형 프로그래밍의 <strong>Stream</strong> 형태로 다룰 수 있도록 지원하는 <strong>API</strong>
@@ -1140,106 +1288,7 @@ Stream 인터페이스의 병렬처리를 위해서는 <strong>parallel()</stron
 <p><br />
 <br />
 <br />
-<br /></p>]]></content><author><name>NNIIE</name></author><category term="TIL" /><category term="Stream" /><category term="Parallel Stream" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Test</title><link href="http://localhost:4000/til/Test1/" rel="alternate" type="text/html" title="Test" /><published>2023-02-23T00:00:00+09:00</published><updated>2023-02-23T00:00:00+09:00</updated><id>http://localhost:4000/til/Test1</id><content type="html" xml:base="http://localhost:4000/til/Test1/"><![CDATA[<p><br /><br /><br /></p>
-
-<h1 id="테스트-피라미드">테스트 피라미드</h1>
-<p>마틴파울러의 테스트피라미드는 어플리케이션을 테스트 하는 방법 중 하나로 다양한 종류의 
-<br />
-테스트를 적절하게 조합하여 효율적인 테스트를 수행할 수 있도록 도와준다.</p>
-
-<p><br /></p>
-
-<h2 id="단위-테스트">단위 테스트</h2>
-<ul>
-  <li>가장 작은 단위인 모듈을 테스트 하는 단계</li>
-  <li>빠르고 자주 실행할 수 있으며, 주로 개발자들이 로직, 함수등을 검증한다.</li>
-  <li>어플리케이션의 다른부분과 <strong>독립적으로</strong> 수행할 수 있어야 한다.</li>
-  <li>마틴 파울러는 단위 테스트가 테스트 피라미드 중 가장많은 부분을 차지해야 한다고 말한다.</li>
-  <li>대표적인 도구로 <code class="language-plaintext highlighter-rouge">JUnit, Mockito</code> 등이 있다.</li>
-</ul>
-
-<p><br /></p>
-
-<ul>
-  <li><strong>코드 품질 개선</strong>
-    <ul>
-      <li>작은 단위의 코드블록에 대한 테스트로 버그를 미리 발견할 수 있다.</li>
-      <li>단위테스트 작성 시 코드를 더 객체지향적으로 작성할 수 있다.</li>
-    </ul>
-  </li>
-  <li><strong>리팩토링의 안전망</strong>
-    <ul>
-      <li>리팩토링을 안전하게 수행할 때 중요한 역할을 한다.</li>
-    </ul>
-  </li>
-  <li><strong>개발시간 단축</strong>
-    <ul>
-      <li>빠른 실행 시간으로 버그를 빠르게 발견하고 수정할 수 있다.</li>
-    </ul>
-  </li>
-  <li><strong>팀 혐업 개선</strong>
-    <ul>
-      <li>팀원들간의 코드통합을 용이하게 만든다.</li>
-    </ul>
-  </li>
-</ul>
-
-<p><br /></p>
-
-<h2 id="통합-테스트">통합 테스트</h2>
-<ul>
-  <li>여러 모듈이 상호작용하는 시스템을 테스트 하는 단계</li>
-  <li>단위 테스트보다 더 많은 리소스가 소요된다.</li>
-</ul>
-
-<p><br /></p>
-
-<ul>
-  <li><strong>여러 모듈들 간의 상호작용 확인</strong>
-    <ul>
-      <li>단위테스트가 개별적인 코드블록을 검증한다면, 통합테스트는 이들의 결합을 테스트한다.</li>
-    </ul>
-  </li>
-  <li><strong>문제발견 가능성 증가</strong>
-    <ul>
-      <li>단위테스트에서 발견하지 못한 결합되었을 때의 문제를 발견할 수 있다.</li>
-    </ul>
-  </li>
-</ul>
-
-<p><br /></p>
-
-<h2 id="인수-테스트">인수 테스트</h2>
-<ul>
-  <li>시스템 전체가 의도한 대로 동작하는지 테스트 하는 단계</li>
-  <li>사용자 관점에서 기능 및 비기능적 요구사항(성능, 보안)을 검증한다.</li>
-  <li>테스트 피라미드의 단계 중 가장 많은 리소스가 들어간다.</li>
-</ul>
-
-<p><br /></p>
-
-<ul>
-  <li><strong>사용자 관점에서의 검증</strong>
-    <ul>
-      <li>사용자가 경험하는것과 동일한 환경에서 검증할 수 있다.</li>
-    </ul>
-  </li>
-  <li><strong>요구사항 충족여부 확인</strong>
-    <ul>
-      <li>개발된 기능이 요구사항을 충족하는지 확인한다.</li>
-    </ul>
-  </li>
-</ul>
-
-<p><br />
-<br />
-<br />
-<br /></p>
-
-<p><br />
-<br />
-<br />
-<br /></p>]]></content><author><name>NNIIE</name></author><category term="TIL" /><category term="테스트피라미드" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Spring</title><link href="http://localhost:4000/til/Spring1/" rel="alternate" type="text/html" title="Spring" /><published>2023-02-21T00:00:00+09:00</published><updated>2023-02-21T00:00:00+09:00</updated><id>http://localhost:4000/til/Spring1</id><content type="html" xml:base="http://localhost:4000/til/Spring1/"><![CDATA[<p><br /><br /><br /></p>
+<br /></p>]]></content><author><name>NNIIE</name></author><category term="TIL" /><category term="Stream" /><category term="Parallel Stream" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Spring</title><link href="http://localhost:4000/til/Spring1/" rel="alternate" type="text/html" title="Spring" /><published>2023-02-21T00:00:00+09:00</published><updated>2023-02-21T00:00:00+09:00</updated><id>http://localhost:4000/til/Spring1</id><content type="html" xml:base="http://localhost:4000/til/Spring1/"><![CDATA[<p><br /><br /><br /></p>
 
 <h1 id="ioc-컨테이너">IoC 컨테이너</h1>
 <p><strong>IoC(제어의 역전)</strong> - 객체간의 결합도를 줄이기 위한 디자인 패턴중의 하나이다.
@@ -3719,151 +3768,4 @@ Dog 클래스의 객체를 Animal 인터페이스로 대체할 수 있게 된다
 <br />
 <br /></p>
 
-<p><br /></p>]]></content><author><name>NNIIE</name></author><category term="TIL" /><category term="OOP" /><category term="서브클래싱 / 서브타이핑" /><category term="OOP와 상속" /><category term="OOP와 캡슐화" /><category term="OOP와 추상화" /><category term="OOP와 다형성" /><category term="Getter / Setter" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">8 Week</title><link href="http://localhost:4000/til/8%EC%A3%BC%EC%B0%A8/" rel="alternate" type="text/html" title="8 Week" /><published>2023-02-02T00:00:00+09:00</published><updated>2023-02-02T00:00:00+09:00</updated><id>http://localhost:4000/til/8%EC%A3%BC%EC%B0%A8</id><content type="html" xml:base="http://localhost:4000/til/8%EC%A3%BC%EC%B0%A8/"><![CDATA[<p><br /><br /><br /></p>
-
-<h1 id="data-binding">Data Binding</h1>
-<p>분리된 <strong>View</strong> 와 <strong>Model</strong> 을 하나로 묶어 두개의 데이터 소스를 연결하고 동기화 하는 기술이다.
-<br />
-<strong>Data Binding</strong> 은 대표적으로 단방향 데이터 바인딩과 양방향 데이터 바인딩으로 나뉜다.
-<br />
-<br />
-백엔드 개발자에게 익숙한 <strong>MVC 패턴</strong> 은 <strong>View</strong> 대신 <strong>json</strong> 을 사용한다고 볼 수 있다.
-<br />
-프론트에선 요즘은 <strong>MVVM 패턴</strong> 을 자주 사용하는데 여기서 <strong>Data Binding</strong> 을 활용한다.</p>
-
-<p><br /></p>
-
-<ul>
-  <li><strong>단방향 데이터 바인딩</strong>
-    <ul>
-      <li><strong>event</strong> 를 통해 데이터 흐름이 단방향으로 이루어 진다. (부모 -&gt; 자식)</li>
-      <li><strong>View</strong> 가 바로 업데이트 되지 않는다.</li>
-      <li><strong>양방향 데이터 바인딩</strong> 보다 리소스가 적게 든다.</li>
-    </ul>
-  </li>
-</ul>
-
-<p><br /></p>
-
-<ul>
-  <li><strong>양방향 데이터 바인딩</strong>
-    <ul>
-      <li>데이터 변경에 따라 프레임워크를 통해 양방향으로 이루어 진다. (부모 &lt;-&gt; 자식)</li>
-      <li><strong>View</strong> 가 즉시 업데이트 된다.</li>
-      <li><strong>단방향 데이터 바인딩</strong> 보다 리소스가 많이 든다.</li>
-    </ul>
-  </li>
-</ul>
-
-<p><br /></p>
-
-<p><strong>왜쓰는데?</strong>
-<br />
-<br />
-웹 애플리케이션의 복잡도가 갈수록 향상되면서 브라우저 메모리가 
-<br />
-자바스크립트 객체와 화면에 있는 데이터를 맞추는데 큰 어려움이 생기고 있다.
-<br />
-이러한 상황을 쉽게 해결 해주기 위해 <strong>Data Binding</strong> 을 사용한다.
-<br />
-대표적인 프론트엔드 프레임워크인 <strong>Angular, React, Vue</strong> 모두 
-<br />
-<strong>Data Binding</strong> 을 지원하는데 상황에 따라 적절하게 쓰면 되겠다.</p>
-
-<p><br />
-<br />
-<br />
-<br /></p>
-
-<h1 id="to-do">To Do</h1>
-
-<p><br />
-<br />
-<br />
-<br /></p>
-
-<h1 id="oop">OOP</h1>
-<p>어플리케이션을 구성하는 요소들을 객체로 보고, 객체들을 유기적으로 연결하여 프로그래밍 하는걸 말한다.
-<br />
-데이터와 이를 처리하는 루틴을 하나의 <strong>독립된 객체</strong> 로 본다.
-<br />
-재사용성, 유지보수 에 용이하고 대형 프로젝트에 적합하다.
-<br />
-하지만 속도가 상대적으로 느리고, 설계 시 많은 리소스가 들어간다.</p>
-<ul>
-  <li><strong>추상화</strong>
-    <ul>
-      <li>목적과 관련이 없는 부분을 제거하여 필요한 부분만을 표현하기 위한 개념</li>
-    </ul>
-  </li>
-  <li><strong>캡슐화</strong>
-    <ul>
-      <li>정보은닉 - 접근제어자</li>
-      <li>코드의 의존성을 줄이고, 결합도를 낮추는 것</li>
-      <li>필요한 부분만 외부에 노출시키고 나머지는 숨긴다.</li>
-      <li>외부에서 불필요한 의존을 할 일이 없어지고 의존성이 줄어드는 만큼 유지보수도 편해진다.</li>
-    </ul>
-  </li>
-  <li><strong>상속</strong>
-    <ul>
-      <li>코드의 재사용성에 이점이 있지만 코드의 재사용성만을 위해 사용은 지양한다.</li>
-      <li>흔히 재사용성 뿐 아니라 계층구조 같은 구조를 만들 때 사용하자</li>
-    </ul>
-  </li>
-  <li><strong>다형성</strong>
-    <ul>
-      <li>객체지향의 꽃이라고도 불린다.</li>
-      <li>형태가 같지만 다른 기능을 하는 것을 말한다.</li>
-      <li>하나의 타입에 여러 객체를 대입할 수 있는 성질이다.
-        <ul>
-          <li>업캐스팅
-            <ul>
-              <li>서로 다른 클래스의 인스턴스를 동일한 타입에 할당할 수 있게 한다.</li>
-            </ul>
-          </li>
-          <li>동적바인딩
-            <ul>
-              <li>메시지를 수신했을 때 실행도리 메서드가 런타임에 결정된다.</li>
-            </ul>
-          </li>
-          <li>오버로딩</li>
-          <li>오버라이딩</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-</ul>
-
-<p><br /></p>
-
-<h2 id="oop-왜쓰는데">OOP 왜쓰는데?</h2>
-
-<p><br /></p>
-
-<h2 id="oop와-상속">OOP와 상속</h2>
-
-<p><br /></p>
-
-<h2 id="oop와-추상화">OOP와 추상화</h2>
-<p>책에서는 모델링이라고 설명한다.
-<br />
-대상에 집중하지말고 문제에 집중을 하면 올바른 추상화에 가까이 갈 수 있다.
-<br />
-대상은 문제를 풀기 충분한 정도의 속성만 가지고 있으면 되고, 이 문제를 푸는데 불필요한 
-<br />
-속성은 제거하는 편이 낫다.</p>
-
-<p><br /></p>
-
-<h2 id="oop와-캡술화">OOP와 캡술화</h2>
-
-<p><br /></p>
-
-<h2 id="oop와-getter--setter">OOP와 Getter / Setter</h2>
-
-<p><br />
-<br />
-<br />
-<br /></p>
-
-<p><br /></p>]]></content><author><name>NNIIE</name></author><category term="TIL" /><category term="Data Binding" /><category term="OOP" /><summary type="html"><![CDATA[]]></summary></entry></feed>
+<p><br /></p>]]></content><author><name>NNIIE</name></author><category term="TIL" /><category term="OOP" /><category term="서브클래싱 / 서브타이핑" /><category term="OOP와 상속" /><category term="OOP와 캡슐화" /><category term="OOP와 추상화" /><category term="OOP와 다형성" /><category term="Getter / Setter" /><summary type="html"><![CDATA[]]></summary></entry></feed>
