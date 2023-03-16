@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-03-16T02:37:12+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">토비의 스프링 1</title><link href="http://localhost:4000/til/%ED%86%A0%EB%B9%84%EC%9D%98%EC%8A%A4%ED%94%84%EB%A7%811/" rel="alternate" type="text/html" title="토비의 스프링 1" /><published>2023-03-16T00:00:00+09:00</published><updated>2023-03-16T00:00:00+09:00</updated><id>http://localhost:4000/til/%ED%86%A0%EB%B9%84%EC%9D%98%EC%8A%A4%ED%94%84%EB%A7%811</id><content type="html" xml:base="http://localhost:4000/til/%ED%86%A0%EB%B9%84%EC%9D%98%EC%8A%A4%ED%94%84%EB%A7%811/"><![CDATA[<p><br /><br /><br /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-03-17T00:23:37+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">토비의 스프링 1</title><link href="http://localhost:4000/til/%ED%86%A0%EB%B9%84%EC%9D%98%EC%8A%A4%ED%94%84%EB%A7%811/" rel="alternate" type="text/html" title="토비의 스프링 1" /><published>2023-03-16T00:00:00+09:00</published><updated>2023-03-16T00:00:00+09:00</updated><id>http://localhost:4000/til/%ED%86%A0%EB%B9%84%EC%9D%98%EC%8A%A4%ED%94%84%EB%A7%811</id><content type="html" xml:base="http://localhost:4000/til/%ED%86%A0%EB%B9%84%EC%9D%98%EC%8A%A4%ED%94%84%EB%A7%811/"><![CDATA[<p><br /><br /><br /></p>
 
 <h1 id="1장">1장</h1>
 <h2 id="11--15">1.1 ~ 1.5</h2>
@@ -43,6 +43,28 @@ SOLID 원칙, 디자인패턴, 인터페이스, IoC
 <p><br /></p>
 
 <h2 id="17-di">1.7 DI</h2>
+<ul>
+  <li><strong>의존관계 주입</strong>
+    <ul>
+      <li>코드엔 런타임 시점의 의존관계가 드러나지 않는다. 이러기 위해선 인터페이스에만 의존해야한다.</li>
+      <li>런타임 시점의 의존관계는 컨테이너나 팩토리 같은 제 3의 존재가 결정한다.</li>
+      <li>의존관계는 사용할 오브젝트의 레퍼런스를 외부에서 제공해 줌으로써 만들어진다.</li>
+      <li>즉, 런타임 시에 의존관계를 맺을 오브젝트를 주입해 준다.</li>
+    </ul>
+  </li>
+  <li><strong>장점</strong>
+    <ul>
+      <li>코드에 런타임 클래스에 대한 의존관계가 나타나지 않는다.</li>
+      <li>인터페이스를 통해 결합도가 낮은 코드를 만든다.
+        <ul>
+          <li>인터페이스만 의존한다는건 인터페이스를 구현하기만 하면 어떤 오브젝트던지 사용가능하다</li>
+        </ul>
+      </li>
+      <li>의존관계에 있는 대상이 바뀌거나 변경되도 영향을 받지 않는다.</li>
+      <li>변경을 통한 확장에 열려있다.</li>
+    </ul>
+  </li>
+</ul>
 
 <p><br />
 <br />
