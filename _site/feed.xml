@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-03-17T00:23:37+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">토비의 스프링 1</title><link href="http://localhost:4000/til/%ED%86%A0%EB%B9%84%EC%9D%98%EC%8A%A4%ED%94%84%EB%A7%811/" rel="alternate" type="text/html" title="토비의 스프링 1" /><published>2023-03-16T00:00:00+09:00</published><updated>2023-03-16T00:00:00+09:00</updated><id>http://localhost:4000/til/%ED%86%A0%EB%B9%84%EC%9D%98%EC%8A%A4%ED%94%84%EB%A7%811</id><content type="html" xml:base="http://localhost:4000/til/%ED%86%A0%EB%B9%84%EC%9D%98%EC%8A%A4%ED%94%84%EB%A7%811/"><![CDATA[<p><br /><br /><br /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-03-20T04:05:57+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">NNIIE</title><subtitle>nniie의 블로그 입니다</subtitle><author><name>NNIIE</name></author><entry><title type="html">토비의 스프링 1</title><link href="http://localhost:4000/til/%ED%86%A0%EB%B9%84%EC%9D%98%EC%8A%A4%ED%94%84%EB%A7%811/" rel="alternate" type="text/html" title="토비의 스프링 1" /><published>2023-03-16T00:00:00+09:00</published><updated>2023-03-16T00:00:00+09:00</updated><id>http://localhost:4000/til/%ED%86%A0%EB%B9%84%EC%9D%98%EC%8A%A4%ED%94%84%EB%A7%811</id><content type="html" xml:base="http://localhost:4000/til/%ED%86%A0%EB%B9%84%EC%9D%98%EC%8A%A4%ED%94%84%EB%A7%811/"><![CDATA[<p><br /><br /><br /></p>
 
-<h1 id="1장">1장</h1>
+<h1 id="1장---초난감-dao">1장 - 초난감 DAO</h1>
 <h2 id="11--15">1.1 ~ 1.5</h2>
 <p>DAO 예제를 차차 리팩토링 해나가는 과정이다.
 <br />
@@ -65,6 +65,22 @@ SOLID 원칙, 디자인패턴, 인터페이스, IoC
     </ul>
   </li>
 </ul>
+
+<p><br /></p>
+
+<h2 id="18-xml">1.8 XML</h2>
+<p>자바코드 대신 단순한 텍스트 파일인 XML로 DI 를 설정할 수 있다.
+<br />
+컴파일같은 빌드작업 필요없이 빠르게 변경사항을 반영할 수 있다.</p>
+
+<ul>
+  <li>@Configuration -&gt; <code class="language-plaintext highlighter-rouge">&lt;beans&gt;</code></li>
+  <li>@Bean -&gt; <code class="language-plaintext highlighter-rouge">&lt;bean&gt;</code></li>
+</ul>
+
+<p><br /></p>
+
+<h1 id="2장---테스트">2장 - 테스트</h1>
 
 <p><br />
 <br />
